@@ -1,6 +1,8 @@
 # Contributor agent instructions
 
-Read README, docs/PROTOCOL.md, docs/ENVIRONMENT.md, docs/RUNNING.md and the selected algorithm/source/scene locks before executing an experiment. Explain blockers plainly; never quietly substitute a model, API account, simulator, task layout or client version.
+Read README, docs/GETTING_STARTED_zh-CN.md, docs/PROTOCOL.md, docs/ENVIRONMENT.md, docs/QUOTA.md, docs/RUNNING.md and the selected algorithm/source/scene locks before executing an experiment. Explain blockers plainly; never quietly substitute a model, API account, simulator, task layout or client version.
+
+For a first-time contributor, begin with environment discovery and the offline sample/validate/import roundtrip. Identify controller and simulator hosts, exact interpreters and private config paths before showing launch commands. Detect what you can read safely rather than asking the owner to fill detectable fields. Distinguish the everyday setup assistant from the frozen experiment client. The runner does not bootstrap its first passive quota snapshot, and identity-less native notifications may block execution: report that real compatibility boundary rather than fabricating identity, timestamps or paid probes. An example accepted-assignment file is not an authoritative shared claim. Follow the onboarding document's expected outputs and final manifest/receipt registration steps.
 
 ## Before any paid inference
 

@@ -14,24 +14,24 @@ A current claim grants one owner and one immutable run. Before native startup, i
 
 ```sh
 python -m robodojo_collab.runner binding-info \
-  --config .private/simulator.json --package .private/package.json
+  --config .private/simulator.json --package .private/task.json > .private/binding.json
 ```
 
-The command performs no paid or GPU operation and prints only public identity fields. The runner requires the same instance at controller startup. A different output root/machine is a migration requiring explicit reconciliation, not a transparent restart.
+The command performs no paid or GPU operation and prints only public identity fields. For a remote simulator, use its `.private/simulator.json`; the controller uses `.private/contributor.json`, and `.private/task.json` must have identical bytes on both hosts. A single-host setup may use its one `.private/contributor.json` instead. The runner requires the same instance at controller startup. A different output root/machine is a migration requiring explicit reconciliation, not a transparent restart.
 
 ## One-time maintainer setup
 
-Do this once, in a new temporary checkout, after the repository exists. These commands are instructions; the toolkit does not automatically create remote branches or change permissions.
+Maintainers only: ordinary contributors should skip this section because this project's ledger already exists. Do this once for a new deployment, in a new temporary checkout, after the repository exists. These commands are instructions; the toolkit does not automatically create remote branches or change permissions.
 
 ```sh
-export ROBOCOLLAB_CLAIM_REMOTE='YOUR_ACTUAL_REPOSITORY_REMOTE'
-export CLAIM_SETUP_DIR="$(mktemp -d)"
-git clone --no-checkout "$ROBOCOLLAB_CLAIM_REMOTE" "$CLAIM_SETUP_DIR/repo"
-git -C "$CLAIM_SETUP_DIR/repo" switch --orphan work-claims
-printf '%s\n' '# Authoritative RoboDojo work reservations' > "$CLAIM_SETUP_DIR/repo/README.md"
-git -C "$CLAIM_SETUP_DIR/repo" add README.md
-git -C "$CLAIM_SETUP_DIR/repo" commit -m 'Initialize work reservation ledger'
-git -C "$CLAIM_SETUP_DIR/repo" push origin HEAD:refs/heads/work-claims
+export RDC_UPSTREAM_REMOTE='YOUR_ACTUAL_REPOSITORY_REMOTE'
+export RDC_SETUP_DIR="$(mktemp -d)"
+git clone --no-checkout "$RDC_UPSTREAM_REMOTE" "$RDC_SETUP_DIR/repo"
+git -C "$RDC_SETUP_DIR/repo" switch --orphan work-claims
+printf '%s\n' '# Authoritative RoboDojo work reservations' > "$RDC_SETUP_DIR/repo/README.md"
+git -C "$RDC_SETUP_DIR/repo" add README.md
+git -C "$RDC_SETUP_DIR/repo" commit -m 'Initialize work reservation ledger'
+git -C "$RDC_SETUP_DIR/repo" push origin HEAD:refs/heads/work-claims
 ```
 
 Keep branch history: prohibit force pushes and deletion. Direct CAS writers need ordinary non-force push permission on this branch. If branch protection requires pull requests for every update, use the PR flow below instead; the CLI does not bypass protection. Keep the code and Pages branch separate from this ledger.
@@ -41,14 +41,17 @@ Keep branch history: prohibit force pushes and deletion. Direct CAS writers need
 Create the task package and record your quota decision first. Use a private claim token file outside every repository; this token is only an ownership nonce and is not a Codex credential.
 
 ```sh
-export PUBLIC_CONTRIBUTOR_ID='your-public-pseudonym'
-export REGISTERED_WORK_ID='COPY_THE_PACKAGE_WORK_ID'
-export PRIVATE_CLAIM_TOKEN_FILE="$HOME/.config/robodojo-collab/one-scene-claim"
-mkdir -p "$(dirname "$PRIVATE_CLAIM_TOKEN_FILE")"
+export RDC_UPSTREAM_REMOTE='https://github.com/ZefanW/robodojo-collab.git'
+export RDC_RUN_ID="$(python -c 'import json; print(json.load(open(".private/task.json"))["run_id"])')"
+export RDC_WORK_ID="$(python -c 'import json; print(json.load(open(".private/task.json"))["work_id"])')"
+export RDC_CONTRIBUTOR_ID="$(python -c 'import json; print(json.load(open(".private/task.json"))["attempt"]["contributor_id"])')"
+export RDC_EXECUTION_ID="$(python -c 'import json; print(json.load(open(".private/binding.json"))["execution_instance_id"])')"
+export RDC_TOKEN_FILE="$HOME/.config/robodojo-collab/${RDC_RUN_ID}-claim"
+mkdir -p "$(dirname "$RDC_TOKEN_FILE")"
 python -m robodojo_collab git-claim acquire \
-  --remote "$ROBOCOLLAB_CLAIM_REMOTE" --branch work-claims \
-  --work-id "$REGISTERED_WORK_ID" --owner "$PUBLIC_CONTRIBUTOR_ID" \
-  --token-file "$PRIVATE_CLAIM_TOKEN_FILE" --lease-seconds 86400
+  --remote "$RDC_UPSTREAM_REMOTE" --branch work-claims \
+  --work-id "$RDC_WORK_ID" --owner "$RDC_CONTRIBUTOR_ID" \
+  --token-file "$RDC_TOKEN_FILE" --lease-seconds 86400
 ```
 
 The token file is created once with mode 0600; only its SHA-256 goes into Git. Do not delete or replace it after a network error. The command clones the latest ledger, commits the reservation and uses a normal **non-force push**. Two simultaneous clones cannot both win: the stale push is rejected. Success includes `remote_readback_verified: true`; anything else is a hold, not permission to use the GPU or make paid calls.
@@ -57,10 +60,10 @@ The runner binds the reservation to the exact run/instance before native startup
 
 ```sh
 python -m robodojo_collab git-claim bind \
-  --remote "$ROBOCOLLAB_CLAIM_REMOTE" --branch work-claims \
-  --work-id "$REGISTERED_WORK_ID" --owner "$PUBLIC_CONTRIBUTOR_ID" \
-  --token-file "$PRIVATE_CLAIM_TOKEN_FILE" \
-  --run-id "$REGISTERED_RUN_ID" --execution-instance-id "$EXECUTION_INSTANCE_ID"
+  --remote "$RDC_UPSTREAM_REMOTE" --branch work-claims \
+  --work-id "$RDC_WORK_ID" --owner "$RDC_CONTRIBUTOR_ID" \
+  --token-file "$RDC_TOKEN_FILE" \
+  --run-id "$RDC_RUN_ID" --execution-instance-id "$RDC_EXECUTION_ID"
 ```
 
 An exact already-accepted binding is verified read-only; it does not generate another commit or require write access. A different or omitted instance after binding is rejected. The native scene separately keeps an immutable controller identity, so another controller state cannot take it over just by knowing the run ID.
@@ -69,12 +72,70 @@ An exact already-accepted binding is verified read-only; it does not generate an
 
 A fork is a place to prepare a reservation PR. Its independent ledger **does not allocate authoritative work**. Do not start native or paid work until the accepted upstream record exists.
 
-1. On the simulator host, run `binding-info` and keep the exact run/instance values. Choose a new private token-file path; the acquire command will create it once.
-2. In a separate checkout, clone the current authoritative `work-claims` branch. Add your own fork as a remote and push that current commit to a new branch in the fork, such as `reserve-ONE_SCENE`. This preserves the existing ledger and avoids mixing code changes into allocation.
-3. Run the `git-claim acquire` and `git-claim bind` commands above against **your fork and reservation branch**. Both operations must use the exact package work ID, contributor, run and execution instance. The CLI creates the token file; do not prefill or commit it.
-4. Open a pull request from your fork's reservation branch to the authoritative **`work-claims`** branch. Include the package's public identity, intended simulator family, your chosen quota boundary and an explicit statement that no native scene or paid call has started. Do not include account IDs, auth files or internal paths.
-5. The maintainer reviews the current upstream work ID, all prior attempts, the owner and token SHA, run/instance binding and lease. Accept exactly one owner. If the same work was claimed while the PR waited, resolve allocation before merging; do not choose a new alias or rerun a completed attempt.
-6. After merge, configure the runner's claim remote/branch as the **authoritative repository**, not your fork. `git-claim inspect` must show the accepted owner, original token SHA, run, instance and an unexpired lease. The runner's identical bind is read-only, so this works without upstream push permission.
+First create your GitHub fork using the repository's Fork button, and sign in to your own Git client. On the simulator host, generate `.private/binding.json` with the command above; transfer that **public hash-only file** and the exact same proposed task package to your controller's code checkout. All Python commands below run from that main checkout with its virtual environment active. The temporary ledger checkout contains no Python package and is used only through `git -C`.
+
+The following prepares a fresh fork branch from the current authoritative ledger. Replace only your public GitHub login; the package supplies the run, contributor and work IDs. A fork's branch must exist before `git-claim` can clone it.
+
+```sh
+export RDC_UPSTREAM_REMOTE='https://github.com/ZefanW/robodojo-collab.git'
+export RDC_FORK_OWNER='YOUR_PUBLIC_GITHUB_LOGIN'
+export RDC_FORK_REMOTE="https://github.com/${RDC_FORK_OWNER}/robodojo-collab.git"
+export RDC_RUN_ID="$(python -c 'import json; print(json.load(open(".private/task.json"))["run_id"])')"
+export RDC_WORK_ID="$(python -c 'import json; print(json.load(open(".private/task.json"))["work_id"])')"
+export RDC_CONTRIBUTOR_ID="$(python -c 'import json; print(json.load(open(".private/task.json"))["attempt"]["contributor_id"])')"
+export RDC_EXECUTION_ID="$(python -c 'import json; print(json.load(open(".private/binding.json"))["execution_instance_id"])')"
+export RDC_CLAIM_BRANCH="reserve-${RDC_RUN_ID}"
+export RDC_TOKEN_FILE="$HOME/.config/robodojo-collab/${RDC_RUN_ID}-claim"
+export RDC_CLAIM_CHECKOUT="$(mktemp -d)"
+mkdir -p "$(dirname "$RDC_TOKEN_FILE")"
+git clone --single-branch --branch work-claims "$RDC_UPSTREAM_REMOTE" "$RDC_CLAIM_CHECKOUT/ledger"
+git -C "$RDC_CLAIM_CHECKOUT/ledger" remote add fork "$RDC_FORK_REMOTE"
+git -C "$RDC_CLAIM_CHECKOUT/ledger" push fork "HEAD:refs/heads/$RDC_CLAIM_BRANCH"
+python -m robodojo_collab git-claim acquire \
+  --remote "$RDC_FORK_REMOTE" --branch "$RDC_CLAIM_BRANCH" \
+  --work-id "$RDC_WORK_ID" --owner "$RDC_CONTRIBUTOR_ID" \
+  --token-file "$RDC_TOKEN_FILE" --lease-seconds 86400
+python -m robodojo_collab git-claim bind \
+  --remote "$RDC_FORK_REMOTE" --branch "$RDC_CLAIM_BRANCH" \
+  --work-id "$RDC_WORK_ID" --owner "$RDC_CONTRIBUTOR_ID" \
+  --token-file "$RDC_TOKEN_FILE" --run-id "$RDC_RUN_ID" \
+  --execution-instance-id "$RDC_EXECUTION_ID"
+```
+
+Stop on any error; do not change branch names or run IDs to bypass an existing claim. `acquire` creates the token file once, so do not prefill it or rerun acquisition with a new token after an uncertain push. An existing fork reservation branch is resumed by inspecting its original record, not by force-pushing this setup again.
+
+Open a pull request targeting **`work-claims`**, not `main`. With the optional GitHub CLI installed and authenticated:
+
+```sh
+gh pr create --repo ZefanW/robodojo-collab --base work-claims \
+  --head "$RDC_FORK_OWNER:$RDC_CLAIM_BRANCH" \
+  --title "Reserve $RDC_RUN_ID" \
+  --body 'Please review the exact work ID, public owner, token hash, run and execution-instance binding. No native scene or paid call has started. My proposed quota boundary is documented in the accompanying review.'
+```
+
+You can instead use GitHub's Compare and pull request UI with the same base/head branches. Add your actual quota reserve/credit policy and simulator family to the PR; do not paste account IDs, internal paths, the token file or Codex/cloud authentication. The maintainer must review the latest upstream ledger and accept exactly one owner. If another claim arrived while this PR waited, resolve that conflict before merge; a different alias is not new work.
+
+After merge, confirm the authoritative record. The following prints no token or account data:
+
+```sh
+python -m robodojo_collab git-claim inspect \
+  --remote "$RDC_UPSTREAM_REMOTE" --branch work-claims \
+  --work-id "$RDC_WORK_ID" > .private/accepted-claim.json
+python - <<'PYVERIFY'
+import hashlib, json, os, time
+from pathlib import Path
+rdc_claim = json.loads(Path('.private/accepted-claim.json').read_text())
+rdc_token_sha = hashlib.sha256(Path(os.environ['RDC_TOKEN_FILE']).read_text().strip().encode()).hexdigest()
+rdc_expected = {'work_id': os.environ['RDC_WORK_ID'], 'owner': os.environ['RDC_CONTRIBUTOR_ID'],
+                'run_id': os.environ['RDC_RUN_ID'], 'execution_instance_id': os.environ['RDC_EXECUTION_ID'],
+                'token_sha256': rdc_token_sha, 'status': 'claimed'}
+if any(rdc_claim.get(k) != v for k, v in rdc_expected.items()) or rdc_claim.get('expires_unix', 0) <= time.time():
+    raise SystemExit('Upstream reservation is missing, different, or expired. Do not start execution.')
+print('Accepted upstream reservation matches the original private nonce and native instance.')
+PYVERIFY
+```
+
+Set **both hosts' private runner configurations** to `claim.mode="git"`, `claim.remote="https://github.com/ZefanW/robodojo-collab.git"`, and `claim.branch="work-claims"`. Set `claim.token_file` to the original external token's absolute path on that host, never `.private/claim-token` inside a repository. Securely copy this reservation nonce to your own simulator if it is on another machine, retain mode 0600, and do not put it in Git. It is distinct from Codex or cloud authentication, which stays on the controller. The already-merged exact binding is checked read-only at native/controller startup, so the simulator need not have GitHub push credentials. Do not point runtime checks at your fork.
 
 For an active lease, prepare renewal on your fork using the original token and submit the resulting ledger update as a PR before expiration. If it expires, stop new paid calls and preserve the scene. The maintainer must reconcile the actual original scene, session and paid receipts before accepting a continuation. If the lease expired **before any scene or paid turn existed**, state that explicitly and provide the zero-start evidence for a reviewed extension; do not fabricate an original session or claim a successful reconciliation. Unknown delivery always remains a hold.
 
@@ -86,14 +147,14 @@ Inspection is always read-only:
 
 ```sh
 python -m robodojo_collab git-claim inspect \
-  --remote "$ROBOCOLLAB_CLAIM_REMOTE" --work-id "$REGISTERED_WORK_ID"
+  --remote "$RDC_UPSTREAM_REMOTE" --work-id "$RDC_WORK_ID"
 ```
 
 For direct writers, `git-claim renew` takes the original `--owner`, `--token-file`, `--work-id` and `--lease-seconds`. An expired claim cannot be renewed or acquired by someone else automatically. `git-claim reconcile --evidence PRIVATE_JSON` requires the original owner/token and a reviewed record containing:
 
 ```json
 {
-  "work_id": "EXACT_REGISTERED_WORK_ID",
+  "work_id": "EXACT_PACKAGE_WORK_ID",
   "original_session_preserved": true,
   "native_state_verified": true,
   "paid_receipts_reconciled": true,

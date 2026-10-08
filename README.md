@@ -6,6 +6,30 @@ This is an independent collaboration harness, not the official RoboDojo leaderbo
 
 [Explore results](https://zefanw.github.io/robodojo-collab/) · [Cloud evidence](https://cloud.tsinghua.edu.cn/d/5aa7d2260f914aebb1b7/)
 
+## First time here? Start with Codex
+
+**[中文完整上手指南：从下载到第一个真实场景](docs/GETTING_STARTED_zh-CN.md)** includes a copyable prompt for your GPT‑6/Codex assistant, prerequisites, configuration fields, single-machine/SSH responsibilities, expected outputs and troubleshooting. Open this repository as a Codex project so the assistant can read its files and operate your own environment.
+
+Your everyday Codex assistant helps with setup; the experiment controller separately uses the frozen **GPT-6 Astra medium / Codex CLI 0.153.4** binary. Do not downgrade your desktop app or replace your global CLI. The portable runner currently executes only `astra-l3-persistent-cap20`; the four historical algorithms shown on the website are archival imports, not four interchangeable launch options.
+
+Give your assistant this starting request:
+
+```text
+Read AGENTS.md and the onboarding/ENVIRONMENT/QUOTA/CLAIMS/RUNNING docs.
+Help me prepare one assigned scene with my own account and machine.
+First inspect my environment and run the offline sample/validate/import roundtrip.
+Create private local/SSH configuration and explain which commands run on which host.
+Detect paths and versions yourself where possible; ask only for missing machine access,
+my quota reserve, personal login/license acceptance and work assignment.
+Do not start a GPU scene or paid inference until allocation, quota evidence and my
+execution scope are confirmed. If passive quota identity cannot be verified, report
+the exact compatibility gap; never invent a snapshot or spend quota as a probe.
+Use the frozen client/model, preserve every attempt, and resume the original scene
+after interruption. For each stage show its evidence, missing prerequisites and next action.
+```
+
+Read in order: **[environment and login](docs/ENVIRONMENT.md) → [first quota evidence](docs/QUOTA.md) → [shared assignment](docs/CLAIMS.md) → [run/resume](docs/RUNNING.md) → [export](docs/EXPORT.md) → [CLI upload and result PR](docs/STORAGE.md)**. You can complete the offline quick start without any login or GPU. A real run additionally needs a supported Linux RTX simulator and your own account's verified passive quota evidence; a ChatGPT subscription by itself does not install or validate those components.
+
 ## Quick start
 
 Use Python 3.10+ for the offline tools (3.12 recommended for the controller):
@@ -39,6 +63,8 @@ Open `http://localhost:8080`. The synthetic example is a failed/offline fixture 
 ```sh
 python -m robodojo_collab validate .private/PUBLIC_RUN
 python -m robodojo_collab import .private/PUBLIC_RUN --store .private/verified-results
+# Copy ONLY the verified immutable manifest into results/RUN_ID; see docs/EXPORT.md.
+# Do not import directly into results: import copies all artifact bytes as well.
 python -m robodojo_collab index --store results --manifest-only \
   --storage registry/storage.json --output web/data/index.json
 ```
