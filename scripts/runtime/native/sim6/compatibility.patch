@@ -1,0 +1,158 @@
+diff --git a/env/environment/base_env.py b/env/environment/base_env.py
+index bcde808..036cf5f 100644
+--- a/env/environment/base_env.py
++++ b/env/environment/base_env.py
+@@ -7,7 +7,7 @@ from isaaclab.scene import InteractiveSceneCfg
+ from isaaclab_tasks.utils import parse_env_cfg  # this need dynamic import
+ from isaacsim.core.utils.stage import get_current_stage
+ from omegaconf import DictConfig, OmegaConf
+-from omni.physx import acquire_physx_interface
++from omni.physx import get_physx_interface as acquire_physx_interface
+ 
+ from env.environment.isaac.isaac_rl_env import IsaacRLEnv
+ from env.seeding import seed_everywhere
+diff --git a/env/planner_manager/curobo_planner.py b/env/planner_manager/curobo_planner.py
+index 311c075..8a74b55 100644
+--- a/env/planner_manager/curobo_planner.py
++++ b/env/planner_manager/curobo_planner.py
+@@ -1,3 +1,4 @@
++import os
+ from copy import deepcopy
+ 
+ from curobo.batch_motion_planner import BatchMotionPlanner, MotionPlannerCfg
+@@ -67,7 +68,7 @@ class CuroboPlanner:
+                 )
+             self._active_to_cspace_idx.append(self.cspace_joint_names.index(joint_name))
+ 
+-        self.device_cfg = DeviceCfg()
++        self.device_cfg = DeviceCfg(device=os.environ.get("ROBODOJO_CUROBO_DEVICE", "cuda:0"))
+ 
+         self.use_cuda_graph = True
+ 
+diff --git a/env/scene_manager/objects/fluid.py b/env/scene_manager/objects/fluid.py
+index 4d2aa3c..597a7b0 100644
+--- a/env/scene_manager/objects/fluid.py
++++ b/env/scene_manager/objects/fluid.py
+@@ -201,24 +201,29 @@ class FluidObject:
+         create_mdl_material(material_url, material_name, color_material_path)
+ 
+         inst_particle_material_cfg = self.physics_cfg.get("particle_material", {})
++        material_kwargs = {
++            'stage': self.stage,
++            'path': color_material_path,
++            'adhesion': inst_particle_material_cfg.get('adhesion'),
++            'adhesion_offset_scale': inst_particle_material_cfg.get('adhesion_offset_scale'),
++            'cohesion': inst_particle_material_cfg.get('cohesion'),
++            'particle_adhesion_scale': inst_particle_material_cfg.get('particle_adhesion_scale'),
++            'particle_friction_scale': inst_particle_material_cfg.get('particle_friction_scale'),
++            'drag': inst_particle_material_cfg.get('drag'),
++            'lift': inst_particle_material_cfg.get('lift'),
++            'friction': inst_particle_material_cfg.get('friction'),
++            'damping': inst_particle_material_cfg.get('damping'),
++            'gravity_scale': inst_particle_material_cfg.get('gravity_scale', 1.0),
++            'viscosity': inst_particle_material_cfg.get('viscosity'),
++            'vorticity_confinement': inst_particle_material_cfg.get('vorticity_confinement'),
++            'surface_tension': inst_particle_material_cfg.get('surface_tension'),
++            'density': inst_particle_material_cfg.get('density'),
++            'cfl_coefficient': inst_particle_material_cfg.get('cfl_coefficient'),
++        }
++        # Unset optional values have the same meaning as omitted default-None arguments.
++        # Sim6 removed drag/lift keywords; explicit non-None settings still raise.
+         particleUtils.add_pbd_particle_material(
+-            stage=self.stage,
+-            path=color_material_path,
+-            adhesion=inst_particle_material_cfg.get("adhesion"),
+-            adhesion_offset_scale=inst_particle_material_cfg.get("adhesion_offset_scale"),
+-            cohesion=inst_particle_material_cfg.get("cohesion"),
+-            particle_adhesion_scale=inst_particle_material_cfg.get("particle_adhesion_scale"),
+-            particle_friction_scale=inst_particle_material_cfg.get("particle_friction_scale"),
+-            drag=inst_particle_material_cfg.get("drag"),
+-            lift=inst_particle_material_cfg.get("lift"),
+-            friction=inst_particle_material_cfg.get("friction"),
+-            damping=inst_particle_material_cfg.get("damping"),
+-            gravity_scale=inst_particle_material_cfg.get("gravity_scale", 1.0),
+-            viscosity=inst_particle_material_cfg.get("viscosity"),
+-            vorticity_confinement=inst_particle_material_cfg.get("vorticity_confinement"),
+-            surface_tension=inst_particle_material_cfg.get("surface_tension"),
+-            density=inst_particle_material_cfg.get("density"),
+-            cfl_coefficient=inst_particle_material_cfg.get("cfl_coefficient"),
++            **{key: value for key, value in material_kwargs.items() if value is not None}
+         )
+ 
+         omni.kit.commands.execute(
+diff --git a/env/seed_manager/seed_manager.py b/env/seed_manager/seed_manager.py
+index 3c8c74f..79a0e76 100644
+--- a/env/seed_manager/seed_manager.py
++++ b/env/seed_manager/seed_manager.py
+@@ -43,6 +43,14 @@ class SeedManager:
+             self.seed_info[idx] = {"scene_layout": file_path}
+ 
+         all_layout_ids = list(range(len(matching_files)))
++        # Fixed-panel evaluation must never substitute a different layout.
++        fixed_ids = os.environ.get("ROBODOJO_LAYOUT_IDS")
++        if fixed_ids is not None:
++            requested_ids = [int(s) for s in fixed_ids.split(",") if s.strip()]
++            if len(requested_ids) != len(set(requested_ids)) or not set(requested_ids).issubset(all_layout_ids):
++                raise ValueError(f"Invalid ROBODOJO_LAYOUT_IDS: {fixed_ids}")
++            all_layout_ids = requested_ids
++            print(f"[SeedManager] fixed panel layouts: {all_layout_ids}")
+         excluded = set(int(s) for s in (completed_layout_ids or [])) | set(int(s) for s in (abandoned_layout_ids or []))
+         if excluded:
+             self.seed_list: List[int] = [s for s in all_layout_ids if s not in excluded]
+diff --git a/env_cfg/sim/sim_config.yml b/env_cfg/sim/sim_config.yml
+index fde7dc4..e33aea3 100644
+--- a/env_cfg/sim/sim_config.yml
++++ b/env_cfg/sim/sim_config.yml
+@@ -2,5 +2,5 @@ decimation: 1
+ dt: 0.004
+ render_interval: 10
+ scene:
+-  num_envs: 10
++  num_envs: 1
+   env_spacing: 7
+diff --git a/scripts/eval_policy.sh b/scripts/eval_policy.sh
+index b86c88e..cc52043 100755
+--- a/scripts/eval_policy.sh
++++ b/scripts/eval_policy.sh
+@@ -103,8 +103,9 @@ if [[ -n "${policy_server_url}" ]]; then
+ fi
+ 
+ if [[ -n "${device_id}" ]]; then
+-  export CUDA_VISIBLE_DEVICES="${device_id}"
+-  echo "[INFO] device_id = ${device_id} → CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES}"
++  unset CUDA_VISIBLE_DEVICES
++  export CUDA_DEVICE_ORDER=PCI_BUS_ID
++  echo "[INFO] Isaac Sim 6 uses physical GPU enumeration; device_id=${device_id}"
+ fi
+ 
+ if [[ -n "${eval_batch}" ]]; then
+@@ -125,7 +126,7 @@ KIT_ENABLE_EXTS=(
+   "isaacsim.sensors.camera"
+ )
+ 
+-KIT_ARGS=""
++KIT_ARGS=" --/app/fastShutdown=true --/renderer/multiGpu/enabled=false --/renderer/activeGpu=${device_id} --/physics/cudaDevice=${device_id}"
+ for ext in "${KIT_ENABLE_EXTS[@]}"; do
+   KIT_ARGS+=" --enable ${ext}"
+ done
+@@ -150,6 +151,7 @@ while : ; do
+     --enable_cameras \
+     --kit_args "$KIT_ARGS" \
+     --device_id "$device_id" \
++    --device "cuda:${device_id}" \
+     --policy_name "$policy_name" \
+     --port "$port" \
+     --protocol "$protocol" \
+diff --git a/utils/save_file.py b/utils/save_file.py
+index e0d9b2e..e6fc801 100644
+--- a/utils/save_file.py
++++ b/utils/save_file.py
+@@ -74,6 +74,8 @@ class VideoStreamWriter:
+                 "libx264",
+                 "-crf",
+                 "23",
++                "-threads",
++                "2",
+                 out_path,
+             ],
+             stdin=subprocess.PIPE,

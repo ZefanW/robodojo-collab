@@ -1,0 +1,78 @@
+{
+  "checked_date": "2026-10-08",
+  "source_lock_sha256": "e238736c011d5d68327c1cd64d64fca43cee97f87f8db69cf0fc1453626f1928",
+  "gpu_tasks_started": 0,
+  "paid_model_calls": 0,
+  "frozen_cap20_cpu_tests_passed": 16,
+  "portable_boundary_tests_passed": 5,
+  "actual_pinned_client_local_wire": {
+    "real_model_calls": 0,
+    "synthetic_requests": 3,
+    "same_original_thread_after_process_restart": true,
+    "checks": [
+      {
+        "index": 0,
+        "prior_reasoning_items": 0,
+        "active_images": 3,
+        "official_system_present": true,
+        "no_global_project_instructions": true
+      },
+      {
+        "index": 1,
+        "prior_reasoning_items": 1,
+        "active_images": 6,
+        "official_system_present": true,
+        "no_global_project_instructions": true
+      },
+      {
+        "index": 2,
+        "prior_reasoning_items": 2,
+        "active_images": 9,
+        "official_system_present": true,
+        "no_global_project_instructions": true
+      }
+    ]
+  },
+  "native_patch_checks": [
+    {
+      "family": "sim51",
+      "files": [
+        "env/planner_manager/curobo_planner.py",
+        "env/seed_manager/seed_manager.py",
+        "env_cfg/sim/sim_config.yml",
+        "scripts/eval_policy.sh",
+        "utils/save_file.py"
+      ],
+      "patch_applies": true
+    },
+    {
+      "family": "sim6",
+      "files": [
+        "env/environment/base_env.py",
+        "env/planner_manager/curobo_planner.py",
+        "env/scene_manager/objects/fluid.py",
+        "env/seed_manager/seed_manager.py",
+        "env_cfg/sim/sim_config.yml",
+        "scripts/eval_policy.sh",
+        "utils/save_file.py"
+      ],
+      "patch_applies": true
+    }
+  ],
+  "original_experiment_mutations": 0,
+  "limitations": [
+    "No fresh third-party account paid model call or entitlement test",
+    "No fresh contributor GPU rendering/physics native rollout test",
+    "No claim that source preparation proves all dependency constraints",
+    "Normal passive quota must be obtained from contributor own native evidence before live use",
+    "RoboDojo source LICENSE/README terms differ; assets are not redistributed"
+  ],
+  "final_cpu_suite": {
+    "tests_passed": 59,
+    "tests_skipped": 0,
+    "includes_frozen_cap20_tests": 16,
+    "includes_portable_boundary_tests": 5,
+    "portable_sources_verified": 31,
+    "upstream_sources_verified": 44
+  }
+}
