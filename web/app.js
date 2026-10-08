@@ -7,6 +7,11 @@ const verificationNames={local_sha256:'仅本地 SHA 已核验',remote_sha256:'�
 const viewNames={head:'头部相机',left_wrist:'左腕相机',right_wrist:'右腕相机'};
 const reasonNames={'original':'首次尝试','original frozen experiment imported after archive completion':'原始冻结实验，归档完成后导入'};
 const limitationNames={
+  'This is one historical run; a complete comparable round requires independent coverage and evidence validation.':'这是单条历史记录；完整可比轮次还需核对任务覆盖与证据。',
+  'Historical action limit is unknown or unspecified; null must not be interpreted as zero, 20, or an unlimited policy.':'历史动作上限未知或未注明；空值不表示零步、20 步或不限步数。',
+  'Asset identity is the frozen original manifest SHA; direct source asset bytes were not available for an independent hash check during this export.':'场景标识采用原冻结清单的 SHA；本次导出未取得场景源文件，无法再次独立核验其字节。',
+  'Some historical source lock entries are no longer present or differ; each is listed explicitly. Selected policy SHA verified.':'部分历史源码锁定文件缺失或已变化，已逐项列明；本次所选动作策略的 SHA 已核验。',
+  'Only the archived terminal and last native ACK snapshot are exported for this run; full per-control command/observation trace remains available.':'本次导出包含归档终态和最后一次原生动作回执快照；逐控制步的命令与观测轨迹另行保留。',
   'This representative sample is not a complete comparable round and has no overall benchmark score.':'当前代表性样例未覆盖完整可比轮次，不提供基准总分。',
   'Native internal identities are pseudonymized; raw account/session journals are retained only by the source owner.':'原生内部标识已替换为匿名标识；原始账号与会话日志仅由来源方保留。',
   'Public note/reason is original visible tool text, not hidden model reasoning.':'公开说明来自原始工具可见文本，不含模型私有推理。',
