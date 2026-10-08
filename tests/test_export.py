@@ -2,10 +2,46 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from robodojo_collab.export_legacy import public, cost_attempts, validate_terminal, deterministic_tar, write
+from robodojo_collab.export_legacy import public, cost_attempts, validate_terminal, deterministic_tar, write, protocol_metadata, INITIAL_SAMPLE_RUNS
 
 
 class ExportTests(unittest.TestCase):
+    def test_original_four_sample_metadata_is_unchanged(self):
+        for run in INITIAL_SAMPLE_RUNS:
+            metadata, compatible = protocol_metadata({}, run)
+            self.assertTrue(compatible)
+            self.assertEqual(metadata, {'scope': 'representative-import', 'action_limit': 20,
+                'round_index': 0, 'selection_policy': 'All selected solve_equation variants, independent of outcome; not best-of selection.'})
+
+    def test_explicit_historical_metadata_preserves_15_and_round_1(self):
+        metadata, compatible = protocol_metadata({'case': {'round_index': 1}}, 'historical-run',
+            scope='official-scene-repetitions', action_limit=15, selection_policy='All original attempts, independent of outcome.')
+        self.assertFalse(compatible)
+        self.assertEqual(metadata['action_limit'], 15)
+        self.assertEqual(metadata['round_index'], 1)
+        self.assertEqual(metadata['scope'], 'official-scene-repetitions')
+
+    def test_unknown_cap_stays_null_and_unknown_round_rejected(self):
+        metadata, _ = protocol_metadata({}, 'old-long-action', round_index=0)
+        self.assertIsNone(metadata['action_limit'])
+        self.assertIn('unspecified', metadata['selection_policy'])
+        with self.assertRaisesRegex(ValueError, 'round index is unknown'):
+            protocol_metadata({'case': {'layout_ordinal': 0}}, 'old-long-action')
+
+    def test_round_conflict_and_invalid_explicit_limits_rejected(self):
+        with self.assertRaisesRegex(ValueError, 'disagrees'):
+            protocol_metadata({'case': {'round_index': 1}}, 'run', round_index=0)
+        for value in [-1, True, '20']:
+            with self.assertRaisesRegex(ValueError, 'Action limit'):
+                protocol_metadata({}, 'run', round_index=0, action_limit=value)
+
+    def test_explicit_metadata_overrides_sample_compatibility(self):
+        metadata, compatible = protocol_metadata({}, next(iter(INITIAL_SAMPLE_RUNS)),
+            scope='historical-import', action_limit=20, round_index=0,
+            selection_policy='All original completed runs, independent of outcome.')
+        self.assertFalse(compatible)
+        self.assertEqual(metadata['scope'], 'historical-import')
+
     def test_allowlist_secondary_redaction(self):
         x=public({'account_id':'private','safe':'abc','nested':{'reasoning':'hidden','path':'/Users/person/private'},'list':[{'thread_id':'s','value':3}]})
         self.assertEqual(x,{'safe':'abc','nested':{'path':'[redacted private infrastructure reference]'},'list':[{'value':3}]})

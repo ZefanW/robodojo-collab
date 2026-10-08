@@ -157,12 +157,53 @@ def deterministic_tar(bundle, output):
     return {"file": output.name, "sha256": sha_file(output), "bytes": output.stat().st_size}
 
 
-def export_run(source, destination, *, run_id, runtime, video_root, protocol, algorithm_id, evidence, client_version, contributor_id="maintainer-archive", policy_key=None, scene_verification=None):
+INITIAL_SAMPLE_RUNS = frozenset({
+    "l3_persistent_cap20_solve_equation_s0_layout0_20261006_v1",
+    "l3_persistent_sol61_cap20_solve_equation_s0_layout0_20261007_v1",
+    "l3_cap20_coor_solve_equation_20261005_v1",
+    "l3_cap20_full_codex_solve_equation_20261005_v1",
+})
+
+
+def protocol_metadata(row, run_id, *, scope=None, action_limit=None,
+                      round_index=None, selection_policy=None):
+    """Use explicit import metadata; retain the four published sample defaults.
+
+    A filename, algorithm label or layout ordinal is not evidence of an action
+    cap or round number. Null action_limit means unknown/unspecified, never 20.
+    The schema requires a numeric round, so absent evidence must fail closed.
+    """
+    legacy_sample = run_id in INITIAL_SAMPLE_RUNS and all(
+        value is None for value in (scope, action_limit, round_index, selection_policy))
+    if legacy_sample:
+        return {"scope": "representative-import", "action_limit": 20,
+                "round_index": 0,
+                "selection_policy": "All selected solve_equation variants, independent of outcome; not best-of selection."}, True
+    recorded_round = row.get("case", {}).get("round_index", row.get("round_index"))
+    if recorded_round is not None and round_index is not None and recorded_round != round_index:
+        raise ValueError("Explicit round index disagrees with original source evidence")
+    round_index = recorded_round if round_index is None else round_index
+    if type(round_index) is not int or round_index < 0:
+        raise ValueError("Historical round index is unknown; supply an evidence-backed --round-index")
+    if action_limit is not None and (type(action_limit) is not int or action_limit < 0):
+        raise ValueError("Action limit must be a nonnegative integer or null (unknown)")
+    scope = "historical-import" if scope is None else scope
+    selection_policy = ("Historical selection is unspecified; completeness and outcome-independent selection are not established."
+                        if selection_policy is None else selection_policy)
+    if not isinstance(scope, str) or not scope.strip() or not isinstance(selection_policy, str) or not selection_policy.strip():
+        raise ValueError("Scope and selection policy must be nonempty strings")
+    return {"scope": scope, "action_limit": action_limit, "round_index": round_index,
+            "selection_policy": selection_policy}, False
+
+
+def export_run(source, destination, *, run_id, runtime, video_root, protocol, algorithm_id, evidence, client_version, contributor_id="maintainer-archive", policy_key=None, scene_verification=None, scope=None, action_limit=None, round_index=None, selection_policy=None):
     source, destination = Path(source).resolve(), Path(destination).resolve()
     if destination == source or source in destination.parents:
         raise ValueError("Exports must live outside the source workspace")
     video = source / video_root / run_id
     row = read(video / "native-source.json")
+    metadata, legacy_sample = protocol_metadata(row, run_id, scope=scope, action_limit=action_limit,
+                                                round_index=round_index, selection_policy=selection_policy)
     marker = read(source / runtime / "archives" / (run_id + ".json"))
     if not all(marker.get(k) is True for k in ("verified", "videos_sha256", "receipts_and_sessions_sha256", "demo_sha256")):
         raise ValueError("Archive marker is missing or unverified")
@@ -327,7 +368,10 @@ def export_run(source, destination, *, run_id, runtime, video_root, protocol, al
     if demo.get("public_note_only") is not True:
         raise ValueError("Demo is not marked public-note-only")
     copy(video / "04_three_views_rationale.mp4", "videos/public-demo.mp4", "public_demo", expected=demo["video_sha256"])
-    limitations = ["This representative sample is not a complete comparable round and has no overall benchmark score.", "Native internal identities are pseudonymized; raw account/session journals are retained only by the source owner.", "Public note/reason is original visible tool text, not hidden model reasoning.", "Historical GPU model, driver, full dependency versions, and source Git commit were not captured in the per-run imported records; null is intentional.", "Official scene asset bytes are not redistributed; scene identity is a SHA256."]
+    limitations = [("This representative sample is not a complete comparable round and has no overall benchmark score."
+                    if legacy_sample else "This is one historical run; a complete comparable round requires independent coverage and evidence validation."), "Native internal identities are pseudonymized; raw account/session journals are retained only by the source owner.", "Public note/reason is original visible tool text, not hidden model reasoning.", "Historical GPU model, driver, full dependency versions, and source Git commit were not captured in the per-run imported records; null is intentional.", "Official scene asset bytes are not redistributed; scene identity is a SHA256."]
+    if metadata["action_limit"] is None:
+        limitations.append("Historical action limit is unknown or unspecified; null must not be interpreted as zero, 20, or an unlimited policy.")
     if not asset_verified:
         limitations.append("Asset identity is the frozen original manifest SHA; direct source asset bytes were not available for an independent hash check during this export.")
     if unavailable_locks:
@@ -338,8 +382,8 @@ def export_run(source, destination, *, run_id, runtime, video_root, protocol, al
         limitations.append("This case ran on Sim5.1; the selected Astra baseline and coor case ran on Sim6. The comparison is not isolated to algorithm alone.")
     manifest = {"schema_version": "1.0", "run_id": run_id,
                 "algorithm": {"algorithm_id": algorithm_id, "version": "legacy-v1", "source_commit": None, "prompt_sha256": digest(next(m["content"] for m in request["messages"] if m["role"] == "system").encode()), "tools_sha256": digest(canonical(request["tools"])), "policy_sha256": policy_sha, "model": request["model"], "reasoning_effort": request.get("reasoning_effort"), "codex_client_version": client_version},
-                "protocol": {"id": protocol, "version": "1", "scope": "representative-import", "action_limit": 20, "episode_control_limit": episode_limit, "model_decision_limit": row.get("effective_max_model_calls"), "selection_policy": "All selected solve_equation variants, independent of outcome; not best-of selection."},
-                "scene": {"task": case["task"], "capability": case["capability"], "variant": case["variant"], "official_seed": case["evaluation_seed"], "layout_ordinal": case["layout_ordinal"], "asset_path": case["original_asset_path"], "asset_sha256": case["layout_sha256"], "round_index": 0},
+                "protocol": {"id": protocol, "version": "1", "scope": metadata["scope"], "action_limit": metadata["action_limit"], "episode_control_limit": episode_limit, "model_decision_limit": row.get("effective_max_model_calls"), "selection_policy": metadata["selection_policy"]},
+                "scene": {"task": case["task"], "capability": case["capability"], "variant": case["variant"], "official_seed": case["evaluation_seed"], "layout_ordinal": case["layout_ordinal"], "asset_path": case["original_asset_path"], "asset_sha256": case["layout_sha256"], "round_index": metadata["round_index"]},
                 "attempt": {"index": 0, "contributor_id": contributor_id, "reason": "original frozen experiment imported after archive completion", "repeats_run_id": None},
                 "environment": {"simulator_version": case.get("simulator"), "machine_id": "archive-simulator-" + str(case.get("simulator", "unknown")).lower().replace(".", "-"), "gpu": None, "driver": None, "os": "Linux", "dependencies": {}},
                 "status": "complete", "timestamps": {"started_at": iso(row.get("started_unix")), "finished_at": iso(row.get("finished_unix"))},
@@ -359,6 +403,10 @@ def main():
     parser.add_argument("--contributor-id", default="maintainer-archive")
     parser.add_argument("--policy-key")
     parser.add_argument("--scene-verification")
+    parser.add_argument("--scope", help="Public import scope, e.g. historical-import; not inferred from filenames")
+    parser.add_argument("--action-limit", type=int, help="Evidence-backed action cap; omit for unknown, never inferred as 20")
+    parser.add_argument("--round-index", type=int, help="Evidence-backed round; must agree with an original recorded round")
+    parser.add_argument("--selection-policy", help="Explicit historical inclusion policy for the batch")
     parser.add_argument("--tar", action="store_true")
     args = vars(parser.parse_args()); tar = args.pop("tar")
     result = export_run(**args)
