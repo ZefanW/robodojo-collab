@@ -4,6 +4,8 @@ Run reproducible robot-manipulation experiments on independent machines and Code
 
 This is an independent collaboration harness, not the official RoboDojo leaderboard. The initial implementation preserves the Astra L3 persistent-history cap20 protocol and imports a small, explicitly labeled historical batch. CPU/offline checks and historical native evidence are available; a fresh contributor's GPU installation and paid inference have **not** been validated by this release.
 
+[Explore results](https://zefanw.github.io/robodojo-collab/) · [Cloud evidence](https://cloud.tsinghua.edu.cn/d/5aa7d2260f914aebb1b7/)
+
 ## Quick start
 
 Use Python 3.10+ for the offline tools (3.12 recommended for the controller):
