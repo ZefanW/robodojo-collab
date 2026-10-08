@@ -21,7 +21,7 @@ Only upload a bundle that passes the exporter and public validator. Keep origina
 
 ```sh
 python -m robodojo_collab validate staging/PUBLIC_RUN
-python -m robodojo_collab.storage publish staging/PUBLIC_RUN.tar.gz \
+python -m robodojo_collab.storage publish staging/PUBLIC_RUN.tar \
   --library YOUR_LIBRARY_UUID --receipt staging/receipts/PUBLIC_RUN.json
 ```
 
@@ -36,7 +36,7 @@ Native and public-demo MP4s can also be published individually. `playback_candid
 The minimal adapter limits individual objects to 128 MiB. Split a large, deterministic archive into 64 MiB content-addressed parts:
 
 ```sh
-python -m robodojo_collab.storage pack staging/PUBLIC_RUN.tar.gz --output staging/chunks --chunk-mib 64
+python -m robodojo_collab.storage pack staging/PUBLIC_RUN.tar --output staging/chunks --chunk-mib 64
 ```
 
 Publish each part and `chunks.json`. A restart reuses verified parts; no incomplete object is marked committed. Reassemble in the explicit order in `chunks.json`, checking each part and the final whole-file SHA. Split archives support download and audit; publish MP4s separately if inline playback is needed. Do not overwrite an old result with a new archive.

@@ -66,7 +66,7 @@ After a portable run reaches an actual native terminal, use the runner's `collec
 
 ```sh
 python -m robodojo_collab.runner collect \
-  --config configs/my-private-config.json --package my-package.json
+  --config .private/contributor.json --package .private/package.json
 python -m robodojo_collab.export_new \
   --controller .private/controller/MY_RUN_ID \
   --native .private/collected/MY_RUN_ID \
