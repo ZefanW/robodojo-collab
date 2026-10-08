@@ -1,5 +1,7 @@
 # Contribute one scene without a central scheduler
 
+Before repairing a failed start or interruption, consult [Chinese errata E11–E19](ERRATA_zh-CN.md#allocation). It separates claim/initialization failures, already-paid reply delivery, generation failures and file-only archive repairs; each needs different evidence before continuation.
+
 Start with the CPU example contribution and validation commands in the main README. They require no Codex login, GPU, or quota. Real execution is a separate opt-in operation, and the portable runner has not yet been exercised on a fresh third-party GPU/account. Read [ENVIRONMENT.md](ENVIRONMENT.md) for machine setup and [QUOTA.md](QUOTA.md) for the first-login/passive-notification limitation before starting a scene.
 
 Commands below run from the collaboration repository root. `controller` means the host with your own Codex login; `simulator` means the Linux RTX host. They may be the same machine. Keep the run ID, package and original state across every later command; do not restart this guide from step 1 after a connection failure.

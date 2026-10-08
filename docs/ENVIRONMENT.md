@@ -1,5 +1,7 @@
 # Controller and simulator setup
 
+For concrete historical failures and their limits, see [Chinese errata E01–E10](ERRATA_zh-CN.md#environment): RTX support, simulator differences, WebSocket interfaces, C++ libraries, executable PATH, client compatibility and passive quota evidence. The recorded fixes are diagnosis examples, not a universal installation script.
+
 The controller can run on macOS or Linux. The simulator needs its own supported NVIDIA RTX/Linux environment. SSH is optional: choose `transport.mode=local` when both run on one machine. Each contributor signs in to their own Codex account. Never send Codex credentials to a separate simulator host or publish `.private/`, `auth.json`, sessions, or raw Codex logs.
 
 Run commands from the collaboration repository root unless a command explicitly changes directory. JSON paths are **not shell expressions**: `$HOME` is not expanded, relative paths resolve against the process's current working directory, and not every field expands `~`. Use absolute paths in real configurations. The examples below show preparation commands; running this document is not permission to start paid inference.

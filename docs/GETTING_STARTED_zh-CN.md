@@ -204,6 +204,8 @@ python -m robodojo_collab import staging/my-contribution/MY_RUN_ID --store .priv
 
 ## 9. 遇到问题时，先定位在哪一层
 
+更完整的 **[勘误与实际踩坑记录](ERRATA_zh-CN.md)** 收录 30 条问题，包含历史错误、当时的修复、当前版本适用范围和验收标准。第一次配置环境前建议浏览一遍；遇到中断后按症状查阅，不要逐条照抄修复。尤其先看额度证据缺口、已付费回复未送达、认领过期和公开下载回验。
+
 | 现象 | 下一步 |
 |---|---|
 | `No module named robodojo_collab` | 回仓库根目录，确认当前解释器/虚拟环境，再 `python -m pip install -e .` |

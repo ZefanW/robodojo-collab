@@ -1,6 +1,6 @@
 # Contributor agent instructions
 
-Read README, docs/GETTING_STARTED_zh-CN.md, docs/PROTOCOL.md, docs/ENVIRONMENT.md, docs/QUOTA.md, docs/RUNNING.md and the selected algorithm/source/scene locks before executing an experiment. Explain blockers plainly; never quietly substitute a model, API account, simulator, task layout or client version.
+Read README, docs/GETTING_STARTED_zh-CN.md, docs/ERRATA_zh-CN.md, docs/PROTOCOL.md, docs/ENVIRONMENT.md, docs/QUOTA.md, docs/RUNNING.md and the selected algorithm/source/scene locks before executing an experiment. Explain blockers plainly; never quietly substitute a model, API account, simulator, task layout or client version.
 
 For a first-time contributor, begin with environment discovery and the offline sample/validate/import roundtrip. Identify controller and simulator hosts, exact interpreters and private config paths before showing launch commands. Detect what you can read safely rather than asking the owner to fill detectable fields. Distinguish the everyday setup assistant from the frozen experiment client. The runner does not bootstrap its first passive quota snapshot, and identity-less native notifications may block execution: report that real compatibility boundary rather than fabricating identity, timestamps or paid probes. An example accepted-assignment file is not an authoritative shared claim. Follow the onboarding document's expected outputs and final manifest/receipt registration steps.
 
@@ -15,6 +15,8 @@ For a first-time contributor, begin with environment discovery and the offline s
 ## Continue safely
 
 Treat native scene, persistent thread, paid receipt and ACK as distinct state. Before resuming, reconcile already-paid replies and executed prefixes; reuse exact saved receipts. Never reset/replay/rebuild history or start a replacement session at an ambiguous boundary. The portable runner currently makes no automatic paid retries. Pausing stops new calls and preserves native processes. GPU heartbeats and unrelated user processes must never be killed for capacity.
+
+Use the errata by symptom before trying a repair. Historical client upgrades, dependency fixes and bounded retries apply only to their recorded conditions; they are not standing authorization for new experiments. Separate observed symptoms from proven causes, current state from old error snapshots, and byte-transfer failures from policy failures. Report the evidence needed to verify a repair and preserve the original failed attempt.
 
 ## Share and review
 

@@ -10,12 +10,14 @@ This is an independent collaboration harness, not the official RoboDojo leaderbo
 
 **[中文完整上手指南：从下载到第一个真实场景](docs/GETTING_STARTED_zh-CN.md)** includes a copyable prompt for your GPT‑6/Codex assistant, prerequisites, configuration fields, single-machine/SSH responsibilities, expected outputs and troubleshooting. Open this repository as a Codex project so the assistant can read its files and operate your own environment.
 
+**[中文勘误与踩坑记录：30 个具体问题](docs/ERRATA_zh-CN.md)** covers actual environment failures, interrupted paid replies, claims, result accounting and cloud delivery. Each entry explains the symptom, safe next step and evidence needed to confirm recovery, separating historical repairs from current limitations.
+
 Your everyday Codex assistant helps with setup; the experiment controller separately uses the frozen **GPT-6 Astra medium / Codex CLI 0.153.4** binary. Do not downgrade your desktop app or replace your global CLI. The portable runner currently executes only `astra-l3-persistent-cap20`; the four historical algorithms shown on the website are archival imports, not four interchangeable launch options.
 
 Give your assistant this starting request:
 
 ```text
-Read AGENTS.md and the onboarding/ENVIRONMENT/QUOTA/CLAIMS/RUNNING docs.
+Read AGENTS.md and the onboarding/ERRATA/ENVIRONMENT/QUOTA/CLAIMS/RUNNING docs.
 Help me prepare one assigned scene with my own account and machine.
 First inspect my environment and run the offline sample/validate/import roundtrip.
 Create private local/SSH configuration and explain which commands run on which host.

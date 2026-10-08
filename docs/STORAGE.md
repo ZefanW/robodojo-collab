@@ -78,7 +78,7 @@ The returned TAR receipt describes the **archive SHA**. The index instead looks 
 
 Use `bundles[run_id]` for the complete archive receipt. For each contained file, add `artifacts[file_sha]` with the bundle URL, `bundle_sha256`, `bundle_member` relative path, and `verification: "bundle_remote_sha256"`. This means the uploaded archive was read back and verified; it does not pretend that each member has its own public URL. A verified individually published MP4 receipt can replace that same run's bundle fallback with `verification: "remote_sha256"`.
 
-The following merge uses the `RDC_*` variables from the upload section. It validates the local bundle again, requires a publicly downloadable SHA-matched archive receipt, preserves other contributors' existing mappings, and only promotes this run's member fallback when an individually verified receipt exists. It prints no credentials or private paths. A location conflict or failed check stops before editing the registry; review it rather than discarding an existing record.
+The following merge uses the `RDC_*` variables from the upload section. It validates the local bundle again, requires a publicly downloadable SHA-matched archive receipt, preserves other contributors' existing mappings, and only promotes this run's member fallback when an individually verified receipt exists. It prints no credentials or private paths. A different archive already registered for the same run or a failed check stops before editing the registry. Apart from that verified member promotion, existing locations for identical file content are preserved; replacing those locations requires a separate reviewed update.
 
 ```sh
 python - <<'PYMERGE'
