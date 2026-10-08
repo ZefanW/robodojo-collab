@@ -1,0 +1,1997 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Four bottles are visible on the table; the open dustbin is to the left. No bottle is grasped or discarded. Check: First observation; no prior motion. Expect: Move the open left jaws toward the pink bottle body, retaining the horizontal approach. Position is estimated from RGB. Verify: Wrist view should show the pink body centered between the jaws; contact or displacement would contradict a clear approach. Risk: Estimated range may be short or long; inspect before closing. Lesson: None established yet.",
+      "targets": {
+        "left_x": -0.22,
+        "left_y": -0.015,
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 21,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 21,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 21,
+        "start": 1
+      }
+    },
+    "control_end": 20,
+    "control_start": 0,
+    "feedback": "Accepted: the original plan contains 35 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 0,
+    "public_note": "State: Four bottles are visible on the table; the open dustbin is to the left. No bottle is grasped or discarded. Check: First observation; no prior motion. Expect: Move the open left jaws toward the pink bottle body, retaining the horizontal approach. Position is estimated from RGB. Verify: Wrist view should show the pink body centered between the jaws; contact or displacement would contradict a clear approach. Risk: Estimated range may be short or long; inspect before closing. Lesson: None established yet.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pink bottle remains standing; left jaws are open and approaching. All four disposals remain unresolved. Check: Only 20/35 steps executed, leaving 109 mm error; no visible bottle displacement. Expect: Finish the estimated body approach with open jaws. Verify: Body should lie between jaw tips without tilting; inspect actual arrival before grasping. Risk: Range is still estimated; stop and correct if a jaw pushes the bottle. Lesson: Long plans execute only a 20-step prefix, so measured arrival must guide continuation.",
+      "targets": {
+        "left_x": -0.22,
+        "left_y": -0.015,
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 36,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 36,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 36,
+        "start": 22
+      }
+    },
+    "control_end": 34,
+    "control_start": 20,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "State: Pink bottle remains standing; left jaws are open and approaching. All four disposals remain unresolved. Check: Only 20/35 steps executed, leaving 109 mm error; no visible bottle displacement. Expect: Finish the estimated body approach with open jaws. Verify: Body should lie between jaw tips without tilting; inspect actual arrival before grasping. Risk: Range is still estimated; stop and correct if a jaw pushes the bottle. Lesson: Long plans execute only a 20-step prefix, so measured arrival must guide continuation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pink body is centered between open left jaws; no disposal yet. Check: Approach landed with zero reported position error; bottle appears more upright, so some contact may have occurred. Expect: Close around the body without translating it. Verify: Jaw contact is provisional; a subsequent lift must show the bottle following to establish retention. Risk: Body could slip or be pushed away; reopen and reposition if displaced. Lesson: The estimated approach centers this bottle in the wrist view.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 43,
+        "start": 37
+      },
+      "left_wrist": {
+        "end": 43,
+        "start": 37
+      },
+      "right_wrist": {
+        "end": 43,
+        "start": 37
+      }
+    },
+    "control_end": 40,
+    "control_start": 34,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 2,
+    "public_note": "State: Pink body is centered between open left jaws; no disposal yet. Check: Approach landed with zero reported position error; bottle appears more upright, so some contact may have occurred. Expect: Close around the body without translating it. Verify: Jaw contact is provisional; a subsequent lift must show the bottle following to establish retention. Risk: Body could slip or be pushed away; reopen and reposition if displaced. Lesson: The estimated approach centers this bottle in the wrist view.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left jaws contact the pink body at opening 0.58; retention is unverified and all bottles remain outside the bin. Check: Closure stopped against the visible bottle, with no major displacement. Expect: A vertical 4 cm lift will test retention and clear the table. Verify: Bottle bottom should rise with the hand and remain fixed between jaws; remaining on the table or sliding contradicts retention. Risk: Slippage during lift; lower and regrasp if observed. Lesson: Jaw contact alone does not establish a transportable grasp.",
+      "targets": {
+        "left_z": 0.96
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 49,
+        "start": 44
+      },
+      "left_wrist": {
+        "end": 49,
+        "start": 44
+      },
+      "right_wrist": {
+        "end": 49,
+        "start": 44
+      }
+    },
+    "control_end": 45,
+    "control_start": 40,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "State: Left jaws contact the pink body at opening 0.58; retention is unverified and all bottles remain outside the bin. Check: Closure stopped against the visible bottle, with no major displacement. Expect: A vertical 4 cm lift will test retention and clear the table. Verify: Bottle bottom should rise with the hand and remain fixed between jaws; remaining on the table or sliding contradicts retention. Risk: Slippage during lift; lower and regrasp if observed. Lesson: Jaw contact alone does not establish a transportable grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pink bottle is visibly lifted and retained; three bottles remain on the table. No discard verified. Check: Lift landed within 1 mm and the bottle followed above the table. Expect: Carry pink leftward toward the bin while increasing bottom clearance. Verify: Bottle should remain between jaws and move over the bin opening; inspect actual prefix endpoint before release. Risk: Table-edge or rim contact if clearance is insufficient; raise before further lateral travel if needed. Lesson: This body grasp retained the pink bottle during a short vertical lift.",
+      "targets": {
+        "left_x": -0.48,
+        "left_y": -0.07,
+        "left_z": 1.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 70,
+        "start": 50
+      },
+      "left_wrist": {
+        "end": 70,
+        "start": 50
+      },
+      "right_wrist": {
+        "end": 70,
+        "start": 50
+      }
+    },
+    "control_end": 65,
+    "control_start": 45,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 4,
+    "public_note": "State: Pink bottle is visibly lifted and retained; three bottles remain on the table. No discard verified. Check: Lift landed within 1 mm and the bottle followed above the table. Expect: Carry pink leftward toward the bin while increasing bottom clearance. Verify: Bottle should remain between jaws and move over the bin opening; inspect actual prefix endpoint before release. Risk: Table-edge or rim contact if clearance is insufficient; raise before further lateral travel if needed. Lesson: This body grasp retained the pink bottle during a short vertical lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pink bottle remains held over the visible black bin opening; three bottles remain on the table. Check: Transport reached within 1 mm; bottle followed and is clear of the table. Expect: Opening the left jaws will drop pink into the bin. Verify: Next view should show pink below the rim within the bin and empty open jaws; disappearance alone would leave placement uncertain. Risk: Bottle may hit the rim if its projection is misleading; inspect its landing before further work. Lesson: The pink body grasp survived lateral transport to this bin approach.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 74,
+        "start": 71
+      },
+      "left_wrist": {
+        "end": 74,
+        "start": 71
+      },
+      "right_wrist": {
+        "end": 74,
+        "start": 71
+      }
+    },
+    "control_end": 68,
+    "control_start": 65,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 5,
+    "public_note": "State: Pink bottle remains held over the visible black bin opening; three bottles remain on the table. Check: Transport reached within 1 mm; bottle followed and is clear of the table. Expect: Opening the left jaws will drop pink into the bin. Verify: Next view should show pink below the rim within the bin and empty open jaws; disappearance alone would leave placement uncertain. Risk: Bottle may hit the rim if its projection is misleading; inspect its landing before further work. Lesson: The pink body grasp survived lateral transport to this bin approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pink has left the open jaws and is falling over the bin; settled containment is not yet verified. Yellow, white and pale bottles remain on the table. Check: Release executed and pink moved downward, as expected. Expect: Retract left toward a clear central approach for yellow while pink settles. Verify: Next head view should show pink inside the bin and the left hand empty. Risk: Long motion may truncate; use actual endpoint before approaching yellow. Lesson: Release produced visible downward motion into the bin opening, not yet a settled placement.",
+      "targets": {
+        "left_x": -0.2,
+        "left_y": -0.2,
+        "left_z": 0.98
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 95,
+        "start": 75
+      },
+      "left_wrist": {
+        "end": 95,
+        "start": 75
+      },
+      "right_wrist": {
+        "end": 95,
+        "start": 75
+      }
+    },
+    "control_end": 88,
+    "control_start": 68,
+    "feedback": "Accepted: the original plan contains 34 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 6,
+    "public_note": "State: Pink has left the open jaws and is falling over the bin; settled containment is not yet verified. Yellow, white and pale bottles remain on the table. Check: Release executed and pink moved downward, as expected. Expect: Retract left toward a clear central approach for yellow while pink settles. Verify: Next head view should show pink inside the bin and the left hand empty. Risk: Long motion may truncate; use actual endpoint before approaching yellow. Lesson: Release produced visible downward motion into the bin opening, not yet a settled placement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left hand is empty; pink is no longer visible above the bin, but its settled location is occluded. Three bottles remain visible. Check: Retraction executed only a prefix, ending 100 mm short; no disturbance of remaining bottles. Expect: Approach the yellow bottle from the front at estimated upper-body height. Verify: Wrist view should bring yellow between the jaws; actual endpoint determines further approach. Risk: Estimated yellow location may be inaccurate; keep jaws open and inspect before closure. Lesson: Prefix endpoints can deviate substantially from final targets.",
+      "targets": {
+        "left_x": 0.1,
+        "left_y": -0.23,
+        "left_z": 0.87
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 116,
+        "start": 96
+      },
+      "left_wrist": {
+        "end": 116,
+        "start": 96
+      },
+      "right_wrist": {
+        "end": 116,
+        "start": 96
+      }
+    },
+    "control_end": 108,
+    "control_start": 88,
+    "feedback": "Accepted: the original plan contains 27 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 7,
+    "public_note": "State: Left hand is empty; pink is no longer visible above the bin, but its settled location is occluded. Three bottles remain visible. Check: Retraction executed only a prefix, ending 100 mm short; no disturbance of remaining bottles. Expect: Approach the yellow bottle from the front at estimated upper-body height. Verify: Wrist view should bring yellow between the jaws; actual endpoint determines further approach. Risk: Estimated yellow location may be inaccurate; keep jaws open and inspect before closure. Lesson: Prefix endpoints can deviate substantially from final targets.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow has tipped onto its side beside the left hand; no grasp. Pink is partly visible low inside the bin, supporting containment. Two other bottles remain unchanged. Check: The approach stopped 74 mm short and unexpectedly knocked yellow over; horizontal lateral entry was unsuitable. Expect: Raise the empty left hand clear before changing to a top-down grasp of the lying bottle. Verify: Hand should separate upward while yellow stays on the table. Risk: Nearby right gripper limits space; avoid lateral movement until clear. Lesson: Approaching this small bottle laterally at body height caused tipping; switch to an overhead approach.",
+      "targets": {
+        "left_z": 1.04
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 128,
+        "start": 117
+      },
+      "left_wrist": {
+        "end": 128,
+        "start": 117
+      },
+      "right_wrist": {
+        "end": 128,
+        "start": 117
+      }
+    },
+    "control_end": 119,
+    "control_start": 108,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "State: Yellow has tipped onto its side beside the left hand; no grasp. Pink is partly visible low inside the bin, supporting containment. Two other bottles remain unchanged. Check: The approach stopped 74 mm short and unexpectedly knocked yellow over; horizontal lateral entry was unsuitable. Expect: Raise the empty left hand clear before changing to a top-down grasp of the lying bottle. Verify: Hand should separate upward while yellow stays on the table. Risk: Nearby right gripper limits space; avoid lateral movement until clear. Lesson: Approaching this small bottle laterally at body height caused tipping; switch to an overhead approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Empty left hand is raised; yellow has rolled farther toward the table front and right. Pink appears inside the bin; three disposals and final return remain. Check: Vertical clearance reached accurately, but yellow continued moving after its earlier tipping. Expect: Begin rotating left toward a downward grasp in clear space. Verify: Orientation should approach 45 degrees without touching objects; observe whether yellow settles. Risk: Wrist rotation may be planner-limited; split the turn and retain clearance. Lesson: A tipped bottle can continue rolling after the hand withdraws; re-estimate its resting position.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 149,
+        "start": 129
+      },
+      "left_wrist": {
+        "end": 149,
+        "start": 129
+      },
+      "right_wrist": {
+        "end": 149,
+        "start": 129
+      }
+    },
+    "control_end": 139,
+    "control_start": 119,
+    "feedback": "Accepted: the original plan contains 43 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 9,
+    "public_note": "State: Empty left hand is raised; yellow has rolled farther toward the table front and right. Pink appears inside the bin; three disposals and final return remain. Check: Vertical clearance reached accurately, but yellow continued moving after its earlier tipping. Expect: Begin rotating left toward a downward grasp in clear space. Verify: Orientation should approach 45 degrees without touching objects; observe whether yellow settles. Risk: Wrist rotation may be planner-limited; split the turn and retain clearance. Lesson: A tipped bottle can continue rolling after the hand withdraws; re-estimate its resting position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left hand remains empty above the table; yellow now lies near the front-right. Pink containment is visually supported; three bottles remain. Check: Rotation executed only 20/43 steps, reaching 75 degrees with positional drift rather than the requested 45. No new object contact is visible. Expect: Continue the split rotation toward downward access while holding the measured position. Verify: Pitch should decrease toward 45 with the hand still clear. Risk: Intermediate paths drift; inspect position and clearance before descending. Lesson: Rotation prefixes also change position and need measured-state replanning.",
+      "targets": {
+        "left_pitch_deg": 45,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 170,
+        "start": 150
+      },
+      "left_wrist": {
+        "end": 170,
+        "start": 150
+      },
+      "right_wrist": {
+        "end": 170,
+        "start": 150
+      }
+    },
+    "control_end": 159,
+    "control_start": 139,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 10,
+    "public_note": "State: Left hand remains empty above the table; yellow now lies near the front-right. Pink containment is visually supported; three bottles remain. Check: Rotation executed only 20/43 steps, reaching 75 degrees with positional drift rather than the requested 45. No new object contact is visible. Expect: Continue the split rotation toward downward access while holding the measured position. Verify: Pitch should decrease toward 45 with the hand still clear. Risk: Intermediate paths drift; inspect position and clearance before descending. Lesson: Rotation prefixes also change position and need measured-state replanning.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left is empty and extended across the table; yellow lies at front-right. Three bottles still need disposal. Check: Planner refused the rotation; neither arm moved, so there is no new physical evidence. Expect: Retract left laterally toward its own workspace to enable a downward orientation. Verify: Measured position should move left while bottles remain unchanged. Risk: Extended orientation may still constrain planning; shorten the relocation if refused. Lesson: The requested 45-degree orientation was unreachable at the extended left-arm pose; relocate before retrying.",
+      "targets": {
+        "left_x": -0.12,
+        "left_y": -0.22
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 170,
+        "start": 150
+      },
+      "left_wrist": {
+        "end": 170,
+        "start": 150
+      },
+      "right_wrist": {
+        "end": 170,
+        "start": 150
+      }
+    },
+    "control_end": 159,
+    "control_start": 139,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 10,
+    "public_note": "State: Left is empty and extended across the table; yellow lies at front-right. Three bottles still need disposal. Check: Planner refused the rotation; neither arm moved, so there is no new physical evidence. Expect: Retract left laterally toward its own workspace to enable a downward orientation. Verify: Measured position should move left while bottles remain unchanged. Risk: Extended orientation may still constrain planning; shorten the relocation if refused. Lesson: The requested 45-degree orientation was unreachable at the extended left-arm pose; relocate before retrying.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left is clear in its own workspace; yellow is settled on its side. Three bottles remain outside the bin. Check: Relocation reached the target accurately without visible object disturbance. Expect: Rotate toward a downward grasp from this less extended pose. Verify: Pitch should decrease while the hand stays above the table. Risk: Rotation may truncate or fail; inspect measured pose before further rotation. Lesson: Translation back into the left workspace succeeded after the extended-pose rotation refusal.",
+      "targets": {
+        "left_pitch_deg": 35,
+        "left_roll_deg": 0,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 191,
+        "start": 171
+      },
+      "left_wrist": {
+        "end": 191,
+        "start": 171
+      },
+      "right_wrist": {
+        "end": 191,
+        "start": 171
+      }
+    },
+    "control_end": 179,
+    "control_start": 159,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 11,
+    "public_note": "State: Left is clear in its own workspace; yellow is settled on its side. Three bottles remain outside the bin. Check: Relocation reached the target accurately without visible object disturbance. Expect: Rotate toward a downward grasp from this less extended pose. Verify: Pitch should decrease while the hand stays above the table. Risk: Rotation may truncate or fail; inspect measured pose before further rotation. Lesson: Translation back into the left workspace succeeded after the extended-pose rotation refusal.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left hand is clear and empty; yellow lies diagonally on the table. Three bottles still require disposal. Check: Rotation reached 35 degrees accurately with no object movement. Expect: Complete downward orientation and align jaw closure across yellow's long axis for a body grasp. Verify: Downward wrist view and measured angles should confirm readiness before translation. Risk: Combined rotation may truncate; continue only from measured pose. Lesson: Rotation is feasible after retracting the left arm into its own workspace.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_yaw_deg": 55
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 210,
+        "start": 192
+      },
+      "left_wrist": {
+        "end": 210,
+        "start": 192
+      },
+      "right_wrist": {
+        "end": 210,
+        "start": 192
+      }
+    },
+    "control_end": 197,
+    "control_start": 179,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "State: Left hand is clear and empty; yellow lies diagonally on the table. Three bottles still require disposal. Check: Rotation reached 35 degrees accurately with no object movement. Expect: Complete downward orientation and align jaw closure across yellow's long axis for a body grasp. Verify: Downward wrist view and measured angles should confirm readiness before translation. Risk: Combined rotation may truncate; continue only from measured pose. Lesson: Rotation is feasible after retracting the left arm into its own workspace.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left is downward-oriented with open jaws; yellow is visible lying diagonally. Three bottles remain to discard. Check: Orientation reached within 0.2 degrees; no bottle disturbance. Expect: Move above yellow's estimated body center with clearance, not yet close. Verify: Wrist view should center yellow between the jaws; correct RGB alignment before descent. Risk: Position estimate may miss the body; maintain height until aligned. Lesson: The overhead view now exposes yellow's long axis and supports a cross-body grasp.",
+      "targets": {
+        "left_x": 0.18,
+        "left_y": -0.3,
+        "left_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 224,
+        "start": 211
+      },
+      "left_wrist": {
+        "end": 224,
+        "start": 211
+      },
+      "right_wrist": {
+        "end": 224,
+        "start": 211
+      }
+    },
+    "control_end": 210,
+    "control_start": 197,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 13,
+    "public_note": "State: Left is downward-oriented with open jaws; yellow is visible lying diagonally. Three bottles remain to discard. Check: Orientation reached within 0.2 degrees; no bottle disturbance. Expect: Move above yellow's estimated body center with clearance, not yet close. Verify: Wrist view should center yellow between the jaws; correct RGB alignment before descent. Risk: Position estimate may miss the body; maintain height until aligned. Lesson: The overhead view now exposes yellow's long axis and supports a cross-body grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow lies on the right/front; left is empty in a downward receiving pose. Three bottles remain outside the bin. Check: Left overhead reach was refused with no motion or new object evidence. Expect: Raise the right hand clear to prepare a local pickup and handover instead of extending left farther. Verify: Right hand should rise without touching the pale or white bottle. Risk: Nearby bottle clearance; inspect after lifting before rotating. Lesson: Both an extended rotation and this downward left reach were refused; use the right arm for the right-side bottles.",
+      "targets": {
+        "right_z": 1.08
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 224,
+        "start": 211
+      },
+      "left_wrist": {
+        "end": 224,
+        "start": 211
+      },
+      "right_wrist": {
+        "end": 224,
+        "start": 211
+      }
+    },
+    "control_end": 210,
+    "control_start": 197,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "State: Yellow lies on the right/front; left is empty in a downward receiving pose. Three bottles remain outside the bin. Check: Left overhead reach was refused with no motion or new object evidence. Expect: Raise the right hand clear to prepare a local pickup and handover instead of extending left farther. Verify: Right hand should rise without touching the pale or white bottle. Risk: Nearby bottle clearance; inspect after lifting before rotating. Lesson: Both an extended rotation and this downward left reach were refused; use the right arm for the right-side bottles.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right hand is elevated and empty, clear of the remaining bottles. Left awaits a reachable transfer. Check: Right lift reached accurately and bottles stayed stationary. Expect: Begin a split downward rotation for picking up yellow. Verify: Pitch should approach 45 degrees with no object contact. Risk: Rotation paths can drift or truncate; check the measured endpoint. Lesson: Right vertical clearance was achieved without disturbing nearby bottles.",
+      "targets": {
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 245,
+        "start": 225
+      },
+      "left_wrist": {
+        "end": 245,
+        "start": 225
+      },
+      "right_wrist": {
+        "end": 245,
+        "start": 225
+      }
+    },
+    "control_end": 230,
+    "control_start": 210,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 14,
+    "public_note": "State: Right hand is elevated and empty, clear of the remaining bottles. Left awaits a reachable transfer. Check: Right lift reached accurately and bottles stayed stationary. Expect: Begin a split downward rotation for picking up yellow. Verify: Pitch should approach 45 degrees with no object contact. Risk: Rotation paths can drift or truncate; check the measured endpoint. Lesson: Right vertical clearance was achieved without disturbing nearby bottles.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right is midway through its downward rotation; yellow remains lying at front-right. Three disposals remain. Check: First rotation reached 45 degrees accurately without object motion. Expect: Finish downward orientation with jaw closure aligned across yellow. Verify: Measured near-zero pitch and an overhead bottle view should permit safe positioning. Risk: Rotation may truncate; do not descend before checking alignment. Lesson: Split rotation is working in the right arm's local workspace.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_yaw_deg": 55
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 266,
+        "start": 246
+      },
+      "left_wrist": {
+        "end": 266,
+        "start": 246
+      },
+      "right_wrist": {
+        "end": 266,
+        "start": 246
+      }
+    },
+    "control_end": 250,
+    "control_start": 230,
+    "feedback": "Accepted: the original plan contains 26 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 15,
+    "public_note": "State: Right is midway through its downward rotation; yellow remains lying at front-right. Three disposals remain. Check: First rotation reached 45 degrees accurately without object motion. Expect: Finish downward orientation with jaw closure aligned across yellow. Verify: Measured near-zero pitch and an overhead bottle view should permit safe positioning. Risk: Rotation may truncate; do not descend before checking alignment. Lesson: Split rotation is working in the right arm's local workspace.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaws are nearly downward and open; yellow remains settled. Pink is in the bin with remaining three bottles on table. Check: Rotation prefix left 21 mm and 10 degrees of error; no contact occurred. Expect: Translate above yellow with ample clearance using the current orientation. Verify: Yellow should center in the right wrist view before the final descent. Risk: RGB estimate is uncertain; adjust overhead rather than sweeping at bottle height. Lesson: Keep orientation and translation separate near uncertain reaches.",
+      "targets": {
+        "right_x": 0.18,
+        "right_y": -0.3,
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 287,
+        "start": 267
+      },
+      "left_wrist": {
+        "end": 287,
+        "start": 267
+      },
+      "right_wrist": {
+        "end": 287,
+        "start": 267
+      }
+    },
+    "control_end": 270,
+    "control_start": 250,
+    "feedback": "Accepted: the original plan contains 30 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 16,
+    "public_note": "State: Right jaws are nearly downward and open; yellow remains settled. Pink is in the bin with remaining three bottles on table. Check: Rotation prefix left 21 mm and 10 degrees of error; no contact occurred. Expect: Translate above yellow with ample clearance using the current orientation. Verify: Yellow should center in the right wrist view before the final descent. Risk: RGB estimate is uncertain; adjust overhead rather than sweeping at bottle height. Lesson: Keep orientation and translation separate near uncertain reaches.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is visible beneath and left of the right wrist center; jaws remain open and clear. Three disposals remain. Check: Translation executed a prefix and stopped 71 mm short without moving yellow. Expect: Finish the short overhead approach and correct the small residual orientation error. Verify: Yellow body should approach the space between jaws while remaining untouched. Risk: Descent alignment is not yet established; inspect before lowering to grasp height. Lesson: This elevated approach has not disturbed the lying bottle.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_roll_deg": 0,
+        "right_x": 0.18,
+        "right_y": -0.3,
+        "right_yaw_deg": 55,
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 294,
+        "start": 288
+      },
+      "left_wrist": {
+        "end": 294,
+        "start": 288
+      },
+      "right_wrist": {
+        "end": 294,
+        "start": 288
+      }
+    },
+    "control_end": 276,
+    "control_start": 270,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "State: Yellow is visible beneath and left of the right wrist center; jaws remain open and clear. Three disposals remain. Check: Translation executed a prefix and stopped 71 mm short without moving yellow. Expect: Finish the short overhead approach and correct the small residual orientation error. Verify: Yellow body should approach the space between jaws while remaining untouched. Risk: Descent alignment is not yet established; inspect before lowering to grasp height. Lesson: This elevated approach has not disturbed the lying bottle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is centered laterally under the open right jaws, lying lengthwise through their gap. No grasp yet. Check: Overhead approach landed within 1 mm and did not displace yellow. Expect: Lower toward the body while retaining clearance above its estimated top. Verify: Wrist and head views should show jaws straddling the body without rolling it; inspect before the final grasp descent. Risk: Estimated bottle height is uncertain; use a smaller final correction near contact. Lesson: The overhead alignment avoids the earlier lateral tipping mechanism.",
+      "targets": {
+        "right_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 302,
+        "start": 295
+      },
+      "left_wrist": {
+        "end": 302,
+        "start": 295
+      },
+      "right_wrist": {
+        "end": 302,
+        "start": 295
+      }
+    },
+    "control_end": 283,
+    "control_start": 276,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "State: Yellow is centered laterally under the open right jaws, lying lengthwise through their gap. No grasp yet. Check: Overhead approach landed within 1 mm and did not displace yellow. Expect: Lower toward the body while retaining clearance above its estimated top. Verify: Wrist and head views should show jaws straddling the body without rolling it; inspect before the final grasp descent. Risk: Estimated bottle height is uncertain; use a smaller final correction near contact. Lesson: The overhead alignment avoids the earlier lateral tipping mechanism.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open right jaws straddle yellow in the overhead view; bottle remains on the table. Check: Descent reached 0.8404 accurately without visible rolling. Expect: Lower another 3 cm to approach the upper body for a controlled grasp. Verify: Jaws should remain on either side with no bottle translation; inspect before closing. Risk: Near-contact height uncertainty; subsequent correction must be only millimetres if needed. Lesson: Current lateral alignment has remained stable through descent.",
+      "targets": {
+        "right_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 306,
+        "start": 303
+      },
+      "left_wrist": {
+        "end": 306,
+        "start": 303
+      },
+      "right_wrist": {
+        "end": 306,
+        "start": 303
+      }
+    },
+    "control_end": 286,
+    "control_start": 283,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "State: Open right jaws straddle yellow in the overhead view; bottle remains on the table. Check: Descent reached 0.8404 accurately without visible rolling. Expect: Lower another 3 cm to approach the upper body for a controlled grasp. Verify: Jaws should remain on either side with no bottle translation; inspect before closing. Risk: Near-contact height uncertainty; subsequent correction must be only millimetres if needed. Lesson: Current lateral alignment has remained stable through descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaws straddle yellow's body near its upper surface; grasp remains unverified. Check: Descent landed within 1 mm with yellow stationary. Expect: Close around the body for a provisional grasp. Verify: Contact should stop closure at a nonzero opening; a later lift must show retention. Risk: Jaws may be too high and squeeze over the body; if closure is empty, reopen and lower a few millimetres. Lesson: Overhead descent preserved the bottle position unlike the earlier lateral approach.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 313,
+        "start": 307
+      },
+      "left_wrist": {
+        "end": 313,
+        "start": 307
+      },
+      "right_wrist": {
+        "end": 313,
+        "start": 307
+      }
+    },
+    "control_end": 292,
+    "control_start": 286,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 20,
+    "public_note": "State: Right jaws straddle yellow's body near its upper surface; grasp remains unverified. Check: Descent landed within 1 mm with yellow stationary. Expect: Close around the body for a provisional grasp. Verify: Contact should stop closure at a nonzero opening; a later lift must show retention. Risk: Jaws may be too high and squeeze over the body; if closure is empty, reopen and lower a few millimetres. Lesson: Overhead descent preserved the bottle position unlike the earlier lateral approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaws contact yellow at opening 0.38; retention is not yet established. Check: Closure visibly contacted both sides without major bottle movement. Expect: Lift 5 cm to test and clear yellow from the table. Verify: Yellow must rise with the jaws and maintain its relative pose; a stationary or falling bottle contradicts retention. Risk: Shallow purchase may slip; lower and deepen the grasp if needed. Lesson: Closure established body contact, but only a lift can validate this grasp.",
+      "targets": {
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 319,
+        "start": 314
+      },
+      "left_wrist": {
+        "end": 319,
+        "start": 314
+      },
+      "right_wrist": {
+        "end": 319,
+        "start": 314
+      }
+    },
+    "control_end": 297,
+    "control_start": 292,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "State: Right jaws contact yellow at opening 0.38; retention is not yet established. Check: Closure visibly contacted both sides without major bottle movement. Expect: Lift 5 cm to test and clear yellow from the table. Verify: Yellow must rise with the jaws and maintain its relative pose; a stationary or falling bottle contradicts retention. Risk: Shallow purchase may slip; lower and deepen the grasp if needed. Lesson: Closure established body contact, but only a lift can validate this grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is back on the table and right jaws have closed fully; retention failed. Check: Lift reached its target but the bottle rolled and slipped rather than following securely. Expect: Reopen to prepare a deeper grasp at the bottle mid-height. Verify: Jaws should open clear of yellow without moving it further. Risk: Bottle has changed angle; recheck alignment before lowering. Lesson: The 0.811 m grasp was too shallow to retain this lying bottle; grasp lower on its sides.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 326,
+        "start": 320
+      },
+      "left_wrist": {
+        "end": 326,
+        "start": 320
+      },
+      "right_wrist": {
+        "end": 326,
+        "start": 320
+      }
+    },
+    "control_end": 303,
+    "control_start": 297,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 22,
+    "public_note": "State: Yellow is back on the table and right jaws have closed fully; retention failed. Check: Lift reached its target but the bottle rolled and slipped rather than following securely. Expect: Reopen to prepare a deeper grasp at the bottle mid-height. Verify: Jaws should open clear of yellow without moving it further. Risk: Bottle has changed angle; recheck alignment before lowering. Lesson: The 0.811 m grasp was too shallow to retain this lying bottle; grasp lower on its sides.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaws are open above the shifted yellow body. Three bottles remain outside the bin. Check: Reopening completed without further visible rolling. Expect: Descend to a deeper side-grasp height while retaining the current lateral alignment. Verify: Jaws should flank the body near its middle height; no rolling or table contact should occur. Risk: Near-contact uncertainty; use millimetre corrections below this endpoint before closure. Lesson: The previous high-side contact slipped during lifting, so this attempt changes grasp depth.",
+      "targets": {
+        "right_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 333,
+        "start": 327
+      },
+      "left_wrist": {
+        "end": 333,
+        "start": 327
+      },
+      "right_wrist": {
+        "end": 333,
+        "start": 327
+      }
+    },
+    "control_end": 309,
+    "control_start": 303,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "State: Right jaws are open above the shifted yellow body. Three bottles remain outside the bin. Check: Reopening completed without further visible rolling. Expect: Descend to a deeper side-grasp height while retaining the current lateral alignment. Verify: Jaws should flank the body near its middle height; no rolling or table contact should occur. Risk: Near-contact uncertainty; use millimetre corrections below this endpoint before closure. Lesson: The previous high-side contact slipped during lifting, so this attempt changes grasp depth.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow remains between the open right jaws, though slight rolling occurred on descent. Check: Right reached 0.8005 m; the bottle shifted slightly rather than remaining perfectly stationary. Expect: Lower 5 mm and close around deeper body sides to improve retention. Verify: A nonzero opening and bilateral contact should precede a separate lift test; closure alone is insufficient. Risk: Off-center contact could roll it again; reopen and realign if contact is asymmetric. Lesson: The upper grasp slipped; deeper side contact is the current changed approach.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 341,
+        "start": 334
+      },
+      "left_wrist": {
+        "end": 341,
+        "start": 334
+      },
+      "right_wrist": {
+        "end": 341,
+        "start": 334
+      }
+    },
+    "control_end": 316,
+    "control_start": 309,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "State: Yellow remains between the open right jaws, though slight rolling occurred on descent. Check: Right reached 0.8005 m; the bottle shifted slightly rather than remaining perfectly stationary. Expect: Lower 5 mm and close around deeper body sides to improve retention. Verify: A nonzero opening and bilateral contact should precede a separate lift test; closure alone is insufficient. Risk: Off-center contact could roll it again; reopen and realign if contact is asymmetric. Lesson: The upper grasp slipped; deeper side contact is the current changed approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaws contact yellow at opening 0.47 with a deeper grasp; retention remains unverified. Check: The 5 mm correction and closure executed accurately with bilateral body contact. Expect: Lift yellow clear of the table to test this revised grasp. Verify: Bottle should follow upward with stable jaw-relative position and nonzero opening; slipping or closure to zero means failure. Risk: Rounded body may still slip; inspect before transport. Lesson: Deeper closure produces a wider contact opening than the failed shallow grasp.",
+      "targets": {
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 347,
+        "start": 342
+      },
+      "left_wrist": {
+        "end": 347,
+        "start": 342
+      },
+      "right_wrist": {
+        "end": 347,
+        "start": 342
+      }
+    },
+    "control_end": 321,
+    "control_start": 316,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "State: Right jaws contact yellow at opening 0.47 with a deeper grasp; retention remains unverified. Check: The 5 mm correction and closure executed accurately with bilateral body contact. Expect: Lift yellow clear of the table to test this revised grasp. Verify: Bottle should follow upward with stable jaw-relative position and nonzero opening; slipping or closure to zero means failure. Risk: Rounded body may still slip; inspect before transport. Lesson: Deeper closure produces a wider contact opening than the failed shallow grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is visibly suspended in the right grasp; pink is in the bin and two other bottles remain on the table. Check: Revised lift succeeded within 1 mm with opening 0.46 and the bottle following. Expect: Carry yellow toward the shared central workspace for left-hand access to its exposed end. Verify: Bottle should remain fixed in the right jaws and clear the table; inspect the transfer pose before moving left. Risk: Transport may truncate or slip; keep right closed and recheck retention. Lesson: The deeper 0.795 m grasp retained yellow through the lift.",
+      "targets": {
+        "right_x": 0.02,
+        "right_y": -0.1,
+        "right_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 368,
+        "start": 348
+      },
+      "left_wrist": {
+        "end": 368,
+        "start": 348
+      },
+      "right_wrist": {
+        "end": 368,
+        "start": 348
+      }
+    },
+    "control_end": 341,
+    "control_start": 321,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 26,
+    "public_note": "State: Yellow is visibly suspended in the right grasp; pink is in the bin and two other bottles remain on the table. Check: Revised lift succeeded within 1 mm with opening 0.46 and the bottle following. Expect: Carry yellow toward the shared central workspace for left-hand access to its exposed end. Verify: Bottle should remain fixed in the right jaws and clear the table; inspect the transfer pose before moving left. Risk: Transport may truncate or slip; keep right closed and recheck retention. Lesson: The deeper 0.795 m grasp retained yellow through the lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow remains held in right; transfer and two later pickups remain. Check: Combined central reach was refused; neither arm moved and retention has no new test. Expect: Move forward and slightly up within the right workspace before translating toward center. Verify: Bottle should follow with unchanged grasp; actual pose will guide the next segment. Risk: Planner reach limits; split translation rather than retrying the same refused target. Lesson: The direct central transfer target was unreachable from this pose.",
+      "targets": {
+        "right_y": -0.1,
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 368,
+        "start": 348
+      },
+      "left_wrist": {
+        "end": 368,
+        "start": 348
+      },
+      "right_wrist": {
+        "end": 368,
+        "start": 348
+      }
+    },
+    "control_end": 341,
+    "control_start": 321,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 26,
+    "public_note": "State: Yellow remains held in right; transfer and two later pickups remain. Check: Combined central reach was refused; neither arm moved and retention has no new test. Expect: Move forward and slightly up within the right workspace before translating toward center. Verify: Bottle should follow with unchanged grasp; actual pose will guide the next segment. Risk: Planner reach limits; split translation rather than retrying the same refused target. Lesson: The direct central transfer target was unreachable from this pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow remains securely held above the table in right; left is open for transfer. Check: Forward/up segment reached accurately and retained the bottle. Expect: Shift right hand toward center to expose yellow's left end to the left gripper. Verify: Bottle should translate with the hand without approaching either idle jaw too closely. Risk: Central reach may still be constrained; if refused, use a supported central placement rather than forcing the pose. Lesson: Splitting the transfer motion enabled the forward segment that the combined reach could not execute.",
+      "targets": {
+        "right_x": 0.04
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 384,
+        "start": 369
+      },
+      "left_wrist": {
+        "end": 384,
+        "start": 369
+      },
+      "right_wrist": {
+        "end": 384,
+        "start": 369
+      }
+    },
+    "control_end": 356,
+    "control_start": 341,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "State: Yellow remains securely held above the table in right; left is open for transfer. Check: Forward/up segment reached accurately and retained the bottle. Expect: Shift right hand toward center to expose yellow's left end to the left gripper. Verify: Bottle should translate with the hand without approaching either idle jaw too closely. Risk: Central reach may still be constrained; if refused, use a supported central placement rather than forcing the pose. Lesson: Splitting the transfer motion enabled the forward segment that the combined reach could not execute.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is retained centrally, but right jaws occupy its left-side body and constrain direct left access. Two other bottles remain on table. Check: Central translation reached accurately with retention. Expect: Lower yellow toward the table for a supported transfer, avoiding a blind overlapping-jaw handover. Verify: Bottle should approach the tabletop without slipping; inspect before the final few millimetres and release. Risk: Bottle may roll at contact; keep right closed until supported. Lesson: The central pose is reachable in separate translation segments; the exposed-end geometry favors a supported transfer.",
+      "targets": {
+        "right_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 401,
+        "start": 385
+      },
+      "left_wrist": {
+        "end": 401,
+        "start": 385
+      },
+      "right_wrist": {
+        "end": 401,
+        "start": 385
+      }
+    },
+    "control_end": 372,
+    "control_start": 356,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "State: Yellow is retained centrally, but right jaws occupy its left-side body and constrain direct left access. Two other bottles remain on table. Check: Central translation reached accurately with retention. Expect: Lower yellow toward the table for a supported transfer, avoiding a blind overlapping-jaw handover. Verify: Bottle should approach the tabletop without slipping; inspect before the final few millimetres and release. Risk: Bottle may roll at contact; keep right closed until supported. Lesson: The central pose is reachable in separate translation segments; the exposed-end geometry favors a supported transfer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is held just above the central tabletop; supported transfer remains incomplete. Check: Lowering reached 0.8101 accurately with the bottle retained. Expect: Lower 5 mm toward support without releasing. Verify: Bottle should approach or contact the table without tilting; then release can be considered. Risk: Contact height is estimated; keep increments small. Lesson: Yellow remained retained throughout the central transport and lowering.",
+      "targets": {
+        "right_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 403,
+        "start": 402
+      },
+      "left_wrist": {
+        "end": 403,
+        "start": 402
+      },
+      "right_wrist": {
+        "end": 403,
+        "start": 402
+      }
+    },
+    "control_end": 373,
+    "control_start": 372,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "State: Yellow is held just above the central tabletop; supported transfer remains incomplete. Check: Lowering reached 0.8101 accurately with the bottle retained. Expect: Lower 5 mm toward support without releasing. Verify: Bottle should approach or contact the table without tilting; then release can be considered. Risk: Contact height is estimated; keep increments small. Lesson: Yellow remained retained throughout the central transport and lowering.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is at the central tabletop in the right grasp; left pickup is still needed. Check: Small lowering reached within 1 mm and the bottle did not visibly tilt. Expect: Release yellow onto the nearby table support for left-arm retrieval. Verify: Yellow should remain lying centrally as right jaws open; rolling would require a new position estimate. Risk: A small residual drop may roll the bottle; observe before approaching left. Lesson: Supported transfer avoids overlapping grippers but requires verifying the new resting pose.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 408,
+        "start": 404
+      },
+      "left_wrist": {
+        "end": 408,
+        "start": 404
+      },
+      "right_wrist": {
+        "end": 408,
+        "start": 404
+      }
+    },
+    "control_end": 377,
+    "control_start": 373,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 30,
+    "public_note": "State: Yellow is at the central tabletop in the right grasp; left pickup is still needed. Check: Small lowering reached within 1 mm and the bottle did not visibly tilt. Expect: Release yellow onto the nearby table support for left-arm retrieval. Verify: Yellow should remain lying centrally as right jaws open; rolling would require a new position estimate. Risk: A small residual drop may roll the bottle; observe before approaching left. Lesson: Supported transfer avoids overlapping grippers but requires verifying the new resting pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is released on the central table; right jaws are open and left retrieval remains. Check: Release completed with only slight settling, not a bin placement. Expect: Lift the empty right hand vertically clear before moving it aside. Verify: Yellow should remain on the table while right rises empty. Risk: Jaw edges could catch the bottle; vertical withdrawal minimizes sweeping contact. Lesson: Central release left yellow accessible for a supported arm-to-arm transfer.",
+      "targets": {
+        "right_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 418,
+        "start": 409
+      },
+      "left_wrist": {
+        "end": 418,
+        "start": 409
+      },
+      "right_wrist": {
+        "end": 418,
+        "start": 409
+      }
+    },
+    "control_end": 386,
+    "control_start": 377,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 31,
+    "public_note": "State: Yellow is released on the central table; right jaws are open and left retrieval remains. Check: Release completed with only slight settling, not a bin placement. Expect: Lift the empty right hand vertically clear before moving it aside. Verify: Yellow should remain on the table while right rises empty. Risk: Jaw edges could catch the bottle; vertical withdrawal minimizes sweeping contact. Lesson: Central release left yellow accessible for a supported arm-to-arm transfer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow remains released centrally beneath the open right jaws. Check: The 0.94 m withdrawal was refused; no motion executed and bottle state is unchanged. Expect: Use a shorter vertical withdrawal to clear the bottle within the feasible height range. Verify: Right should rise empty while yellow stays supported. Risk: Central high poses are constrained; move rightward only after vertical clearance. Lesson: At this central extension, 0.94 m is unreachable despite the earlier 0.92 m transport pose.",
+      "targets": {
+        "right_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 418,
+        "start": 409
+      },
+      "left_wrist": {
+        "end": 418,
+        "start": 409
+      },
+      "right_wrist": {
+        "end": 418,
+        "start": 409
+      }
+    },
+    "control_end": 386,
+    "control_start": 377,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "State: Yellow remains released centrally beneath the open right jaws. Check: The 0.94 m withdrawal was refused; no motion executed and bottle state is unchanged. Expect: Use a shorter vertical withdrawal to clear the bottle within the feasible height range. Verify: Right should rise empty while yellow stays supported. Risk: Central high poses are constrained; move rightward only after vertical clearance. Lesson: At this central extension, 0.94 m is unreachable despite the earlier 0.92 m transport pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow rests centrally and right is clear above it; left pickup remains. Check: Shorter withdrawal reached accurately and yellow stayed supported. Expect: Move right aside into its own workspace to free the left approach. Verify: Yellow should stay still and the hands should become well separated. Risk: Remaining pale bottle is to the right; keep elevated while moving aside. Lesson: The shorter central withdrawal succeeded where the higher target was refused.",
+      "targets": {
+        "right_x": 0.28,
+        "right_z": 0.98
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 431,
+        "start": 419
+      },
+      "left_wrist": {
+        "end": 431,
+        "start": 419
+      },
+      "right_wrist": {
+        "end": 431,
+        "start": 419
+      }
+    },
+    "control_end": 398,
+    "control_start": 386,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "State: Yellow rests centrally and right is clear above it; left pickup remains. Check: Shorter withdrawal reached accurately and yellow stayed supported. Expect: Move right aside into its own workspace to free the left approach. Verify: Yellow should stay still and the hands should become well separated. Risk: Remaining pale bottle is to the right; keep elevated while moving aside. Lesson: The shorter central withdrawal succeeded where the higher target was refused.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is settled centrally with right withdrawn; left is open and downward-oriented. Three disposals remain. Check: Right moved aside accurately without disturbing yellow. Expect: Bring left above the known central grasp location for retrieval. Verify: Yellow body should center in the left wrist view with clearance before descent. Risk: Left reach may be constrained; this lower central approach avoids the previously refused far-right reach. Lesson: Supported transfer has moved yellow into the shared workspace without requiring jaw overlap.",
+      "targets": {
+        "left_x": 0.04,
+        "left_y": -0.1,
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 448,
+        "start": 432
+      },
+      "left_wrist": {
+        "end": 448,
+        "start": 432
+      },
+      "right_wrist": {
+        "end": 448,
+        "start": 432
+      }
+    },
+    "control_end": 414,
+    "control_start": 398,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 33,
+    "public_note": "State: Yellow is settled centrally with right withdrawn; left is open and downward-oriented. Three disposals remain. Check: Right moved aside accurately without disturbing yellow. Expect: Bring left above the known central grasp location for retrieval. Verify: Yellow body should center in the left wrist view with clearance before descent. Risk: Left reach may be constrained; this lower central approach avoids the previously refused far-right reach. Lesson: Supported transfer has moved yellow into the shared workspace without requiring jaw overlap.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow remains centrally supported; left approach is still pending. Check: The proposed left overhead target was refused; no motion executed. Expect: Move to a shorter, lower central approach nearer the left base before refining alignment. Verify: Left should enter a clear overhead position and show yellow more centrally. Risk: Workspace limits may persist; a successful intermediate pose will guide reachable refinement. Lesson: The exact right release coordinate is not automatically reachable by the left arm at overhead height.",
+      "targets": {
+        "left_x": -0.02,
+        "left_y": -0.15,
+        "left_z": 0.87
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 448,
+        "start": 432
+      },
+      "left_wrist": {
+        "end": 448,
+        "start": 432
+      },
+      "right_wrist": {
+        "end": 448,
+        "start": 432
+      }
+    },
+    "control_end": 414,
+    "control_start": 398,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "State: Yellow remains centrally supported; left approach is still pending. Check: The proposed left overhead target was refused; no motion executed. Expect: Move to a shorter, lower central approach nearer the left base before refining alignment. Verify: Left should enter a clear overhead position and show yellow more centrally. Risk: Workspace limits may persist; a successful intermediate pose will guide reachable refinement. Lesson: The exact right release coordinate is not automatically reachable by the left arm at overhead height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left is above and left of yellow with open jaws; retrieval remains incomplete. Check: Shorter approach reached accurately, exposing yellow to the right of the wrist center. Expect: Shift over its body while descending only to a clear pregrasp height. Verify: Yellow should center between jaws without displacement; inspect before final millimetre descent. Risk: Reach constraints and side contact; stop if the target is refused or yellow rolls. Lesson: A lower, shorter left approach is reachable and provides useful alignment evidence.",
+      "targets": {
+        "left_x": 0.04,
+        "left_y": -0.1,
+        "left_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 463,
+        "start": 449
+      },
+      "left_wrist": {
+        "end": 463,
+        "start": 449
+      },
+      "right_wrist": {
+        "end": 463,
+        "start": 449
+      }
+    },
+    "control_end": 428,
+    "control_start": 414,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "State: Left is above and left of yellow with open jaws; retrieval remains incomplete. Check: Shorter approach reached accurately, exposing yellow to the right of the wrist center. Expect: Shift over its body while descending only to a clear pregrasp height. Verify: Yellow should center between jaws without displacement; inspect before final millimetre descent. Risk: Reach constraints and side contact; stop if the target is refused or yellow rolls. Lesson: A lower, shorter left approach is reachable and provides useful alignment evidence.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is centered between open left jaws on the central table. Check: Alignment reached accurately without bottle movement. Expect: Lower to near body-side height for the transfer pickup. Verify: Jaws should remain symmetric around yellow; inspect before a final small descent and closure. Risk: A shallow grasp previously slipped; do not close above the body. Lesson: The lower central left pose is reachable and correctly aligned.",
+      "targets": {
+        "left_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 470,
+        "start": 464
+      },
+      "left_wrist": {
+        "end": 470,
+        "start": 464
+      },
+      "right_wrist": {
+        "end": 470,
+        "start": 464
+      }
+    },
+    "control_end": 434,
+    "control_start": 428,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "State: Yellow is centered between open left jaws on the central table. Check: Alignment reached accurately without bottle movement. Expect: Lower to near body-side height for the transfer pickup. Verify: Jaws should remain symmetric around yellow; inspect before a final small descent and closure. Risk: A shallow grasp previously slipped; do not close above the body. Lesson: The lower central left pose is reachable and correctly aligned.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left jaws flank yellow centrally; right is clear. Transfer pickup is not yet verified. Check: Descent reached 0.8003 m without visible bottle movement. Expect: Lower 5 mm and close at the depth that retained yellow in the right hand. Verify: Bilateral contact and nonzero opening should occur, followed by a separate lift test. Risk: Bottle geometry may differ after settling; reopen if closure is empty or pushes it away. Lesson: A 0.795 m side grasp previously retained this bottle.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 478,
+        "start": 471
+      },
+      "left_wrist": {
+        "end": 478,
+        "start": 471
+      },
+      "right_wrist": {
+        "end": 478,
+        "start": 471
+      }
+    },
+    "control_end": 441,
+    "control_start": 434,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 36,
+    "public_note": "State: Left jaws flank yellow centrally; right is clear. Transfer pickup is not yet verified. Check: Descent reached 0.8003 m without visible bottle movement. Expect: Lower 5 mm and close at the depth that retained yellow in the right hand. Verify: Bilateral contact and nonzero opening should occur, followed by a separate lift test. Risk: Bottle geometry may differ after settling; reopen if closure is empty or pushes it away. Lesson: A 0.795 m side grasp previously retained this bottle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left jaws contact yellow at opening 0.45; supported transfer requires a retained lift. Check: Final descent and closure reached accurately with bilateral contact. Expect: Lift 3.5 cm within the known reachable central height to test retention. Verify: Yellow should rise with left while right stays clear; slipping or full closure would contradict success. Risk: Central extension limits higher lifts; retract only after this clearance test. Lesson: Left achieved similar contact to the previously successful right grasp.",
+      "targets": {
+        "left_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 485,
+        "start": 479
+      },
+      "left_wrist": {
+        "end": 485,
+        "start": 479
+      },
+      "right_wrist": {
+        "end": 485,
+        "start": 479
+      }
+    },
+    "control_end": 447,
+    "control_start": 441,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "State: Left jaws contact yellow at opening 0.45; supported transfer requires a retained lift. Check: Final descent and closure reached accurately with bilateral contact. Expect: Lift 3.5 cm within the known reachable central height to test retention. Verify: Yellow should rise with left while right stays clear; slipping or full closure would contradict success. Risk: Central extension limits higher lifts; retract only after this clearance test. Lesson: Left achieved similar contact to the previously successful right grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is retained above the table by left, completing the supported transfer; two other bottles remain on table. Check: Lift reached accurately and yellow followed with stable opening 0.45. Expect: Retract left toward the bin side while increasing bottle clearance. Verify: Yellow should remain fixed between jaws and clear the table. Risk: Long transport may truncate; inspect actual endpoint before further travel. Lesson: The supported right-to-left transfer succeeded with a deeper body grasp.",
+      "targets": {
+        "left_x": -0.22,
+        "left_y": -0.15,
+        "left_z": 0.93
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 506,
+        "start": 486
+      },
+      "left_wrist": {
+        "end": 506,
+        "start": 486
+      },
+      "right_wrist": {
+        "end": 506,
+        "start": 486
+      }
+    },
+    "control_end": 467,
+    "control_start": 447,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "State: Yellow is retained above the table by left, completing the supported transfer; two other bottles remain on table. Check: Lift reached accurately and yellow followed with stable opening 0.45. Expect: Retract left toward the bin side while increasing bottle clearance. Verify: Yellow should remain fixed between jaws and clear the table. Risk: Long transport may truncate; inspect actual endpoint before further travel. Lesson: The supported right-to-left transfer succeeded with a deeper body grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is retained by left near the bin side; pink is already inside and two bottles remain on table. Check: Retraction reached accurately and retained yellow. Expect: Carry yellow fully over the bin opening at current clearance. Verify: Entire bottle should project inside the rim before release, with stable grasp. Risk: The cap extends toward the table; ensure it clears the rim rather than releasing at the edge. Lesson: The left body grasp has survived transport from the shared workspace.",
+      "targets": {
+        "left_x": -0.49,
+        "left_y": -0.1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 523,
+        "start": 507
+      },
+      "left_wrist": {
+        "end": 523,
+        "start": 507
+      },
+      "right_wrist": {
+        "end": 523,
+        "start": 507
+      }
+    },
+    "control_end": 483,
+    "control_start": 467,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "State: Yellow is retained by left near the bin side; pink is already inside and two bottles remain on table. Check: Retraction reached accurately and retained yellow. Expect: Carry yellow fully over the bin opening at current clearance. Verify: Entire bottle should project inside the rim before release, with stable grasp. Risk: The cap extends toward the table; ensure it clears the rim rather than releasing at the edge. Lesson: The left body grasp has survived transport from the shared workspace.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is held over the bin opening, clear of the table; pink is inside and two bottles remain outside. Check: Bin transport reached accurately with retention. Expect: Open left to drop yellow into the bin. Verify: Yellow should descend below the rim and remain inside, with empty open jaws; disappearance alone is not final confirmation. Risk: Bottle could strike the rim; inspect the landing before claiming the second disposal. Lesson: The supported transfer and left transport delivered yellow over the bin.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 528,
+        "start": 524
+      },
+      "left_wrist": {
+        "end": 528,
+        "start": 524
+      },
+      "right_wrist": {
+        "end": 528,
+        "start": 524
+      }
+    },
+    "control_end": 487,
+    "control_start": 483,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 40,
+    "public_note": "State: Yellow is held over the bin opening, clear of the table; pink is inside and two bottles remain outside. Check: Bin transport reached accurately with retention. Expect: Open left to drop yellow into the bin. Verify: Yellow should descend below the rim and remain inside, with empty open jaws; disappearance alone is not final confirmation. Risk: Bottle could strike the rim; inspect the landing before claiming the second disposal. Lesson: The supported transfer and left transport delivered yellow over the bin.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is falling into the bin after release; settled containment needs checking. Pale and white bottles remain on table. Check: Left opened and yellow visibly descended clear of the jaws. Expect: Align right jaw closure across the lying pale bottle for the next pickup while yellow settles. Verify: Right orientation should reach 90 degrees; next bin view should show yellow below the rim. Risk: Pale grasp alignment is estimated; inspect before lowering. Lesson: Yellow release produced downward entry into the bin, pending settled confirmation.",
+      "targets": {
+        "right_yaw_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 542,
+        "start": 529
+      },
+      "left_wrist": {
+        "end": 542,
+        "start": 529
+      },
+      "right_wrist": {
+        "end": 542,
+        "start": 529
+      }
+    },
+    "control_end": 500,
+    "control_start": 487,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 41,
+    "public_note": "State: Yellow is falling into the bin after release; settled containment needs checking. Pale and white bottles remain on table. Check: Left opened and yellow visibly descended clear of the jaws. Expect: Align right jaw closure across the lying pale bottle for the next pickup while yellow settles. Verify: Right orientation should reach 90 degrees; next bin view should show yellow below the rim. Risk: Pale grasp alignment is estimated; inspect before lowering. Lesson: Yellow release produced downward entry into the bin, pending settled confirmation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow is visible below the bin rim, supporting the second disposal; pale and white remain. Right is open over pale. Check: Yaw reached 90 degrees and yellow settled into the bin. Expect: Approach pale's body from above at estimated center and pregrasp height. Verify: Pale should center between jaws without moving; inspect final depth before closing. Risk: White is nearby; keep the grasp on pale's body away from its cap and white. Lesson: The yellow supported transfer ended with visible containment in the bin.",
+      "targets": {
+        "right_x": 0.26,
+        "right_y": -0.13,
+        "right_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 561,
+        "start": 543
+      },
+      "left_wrist": {
+        "end": 561,
+        "start": 543
+      },
+      "right_wrist": {
+        "end": 561,
+        "start": 543
+      }
+    },
+    "control_end": 518,
+    "control_start": 500,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "State: Yellow is visible below the bin rim, supporting the second disposal; pale and white remain. Right is open over pale. Check: Yaw reached 90 degrees and yellow settled into the bin. Expect: Approach pale's body from above at estimated center and pregrasp height. Verify: Pale should center between jaws without moving; inspect final depth before closing. Risk: White is nearby; keep the grasp on pale's body away from its cap and white. Lesson: The yellow supported transfer ended with visible containment in the bin.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale is between open jaws but the approach is near its base rather than body center. Two bottles remain outside the bin. Check: Approach landed accurately; wrist view reveals longitudinal misalignment. Expect: Shift 2.5 cm toward the body at clear height and lower 1 cm. Verify: Broad body should occupy the jaw gap without rolling. Risk: Near top-surface contact; inspect before smaller final depth changes. Lesson: Wrist evidence refines the pale grasp toward its broad body rather than the estimated base location.",
+      "targets": {
+        "right_x": 0.285,
+        "right_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 564,
+        "start": 562
+      },
+      "left_wrist": {
+        "end": 564,
+        "start": 562
+      },
+      "right_wrist": {
+        "end": 564,
+        "start": 562
+      }
+    },
+    "control_end": 520,
+    "control_start": 518,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 43,
+    "public_note": "State: Pale is between open jaws but the approach is near its base rather than body center. Two bottles remain outside the bin. Check: Approach landed accurately; wrist view reveals longitudinal misalignment. Expect: Shift 2.5 cm toward the body at clear height and lower 1 cm. Verify: Broad body should occupy the jaw gap without rolling. Risk: Near top-surface contact; inspect before smaller final depth changes. Lesson: Wrist evidence refines the pale grasp toward its broad body rather than the estimated base location.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale body lies between open right jaws; no contact grasp yet. Check: Longitudinal correction landed within 2 mm and body alignment improved without rolling. Expect: Lower toward side-contact height. Verify: Jaws should remain outside the body edges; inspect before the final millimetre correction. Risk: Bottle top height is uncertain; use small further steps near contact. Lesson: Body alignment improved by shifting along the bottle axis.",
+      "targets": {
+        "right_z": 0.815
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 567,
+        "start": 565
+      },
+      "left_wrist": {
+        "end": 567,
+        "start": 565
+      },
+      "right_wrist": {
+        "end": 567,
+        "start": 565
+      }
+    },
+    "control_end": 522,
+    "control_start": 520,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 44,
+    "public_note": "State: Pale body lies between open right jaws; no contact grasp yet. Check: Longitudinal correction landed within 2 mm and body alignment improved without rolling. Expect: Lower toward side-contact height. Verify: Jaws should remain outside the body edges; inspect before the final millimetre correction. Risk: Bottle top height is uncertain; use small further steps near contact. Lesson: Body alignment improved by shifting along the bottle axis.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaws flank pale's broad body near grasp height; two disposals remain. Check: Descent landed within 1 mm without displacement. Expect: Lower 5 mm and close to establish side contact. Verify: Nonzero opening with bilateral contact should occur; a separate lift must verify retention. Risk: Shallow contact may slip as with yellow; deepen only if the lift fails. Lesson: Prior yellow attempts showed why contact must be tested by lifting.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.811
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 575,
+        "start": 568
+      },
+      "left_wrist": {
+        "end": 575,
+        "start": 568
+      },
+      "right_wrist": {
+        "end": 575,
+        "start": 568
+      }
+    },
+    "control_end": 529,
+    "control_start": 522,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "State: Right jaws flank pale's broad body near grasp height; two disposals remain. Check: Descent landed within 1 mm without displacement. Expect: Lower 5 mm and close to establish side contact. Verify: Nonzero opening with bilateral contact should occur; a separate lift must verify retention. Risk: Shallow contact may slip as with yellow; deepen only if the lift fails. Lesson: Prior yellow attempts showed why contact must be tested by lifting.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale is contacted by right jaws at opening 0.58; retention remains unverified. Check: Closure reached the body without major displacement. Expect: Lift pale 5 cm clear of the tabletop. Verify: Bottle must follow with stable jaw-relative position and nonzero opening. Risk: Grasp is near the base and could pivot; lower and reposition if slipping occurs. Lesson: Contact is established but transport readiness requires this lift test.",
+      "targets": {
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 580,
+        "start": 576
+      },
+      "left_wrist": {
+        "end": 580,
+        "start": 576
+      },
+      "right_wrist": {
+        "end": 580,
+        "start": 576
+      }
+    },
+    "control_end": 533,
+    "control_start": 529,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "State: Pale is contacted by right jaws at opening 0.58; retention remains unverified. Check: Closure reached the body without major displacement. Expect: Lift pale 5 cm clear of the tabletop. Verify: Bottle must follow with stable jaw-relative position and nonzero opening. Risk: Grasp is near the base and could pivot; lower and reposition if slipping occurs. Lesson: Contact is established but transport readiness requires this lift test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale has lifted in right but tilted cap-down; pink and yellow are inside the bin, white remains on table. Check: Lift reached within 1 mm with opening 0.57 and bottle following, though its angle changed. Expect: Carry pale to the shared workspace for a supported transfer, keeping the cap above the table. Verify: Bottle should remain retained and clear; inspect its tilt before lowering. Risk: Base-biased grasp may pivot further; stop transport if the bottle slides. Lesson: Pale is retained, but its near-base grasp allows more pivoting than yellow's body grasp.",
+      "targets": {
+        "right_x": 0.04,
+        "right_y": -0.18,
+        "right_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 596,
+        "start": 581
+      },
+      "left_wrist": {
+        "end": 596,
+        "start": 581
+      },
+      "right_wrist": {
+        "end": 596,
+        "start": 581
+      }
+    },
+    "control_end": 548,
+    "control_start": 533,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "State: Pale has lifted in right but tilted cap-down; pink and yellow are inside the bin, white remains on table. Check: Lift reached within 1 mm with opening 0.57 and bottle following, though its angle changed. Expect: Carry pale to the shared workspace for a supported transfer, keeping the cap above the table. Verify: Bottle should remain retained and clear; inspect its tilt before lowering. Risk: Base-biased grasp may pivot further; stop transport if the bottle slides. Lesson: Pale is retained, but its near-base grasp allows more pivoting than yellow's body grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale is held centrally with a slight cap-down tilt; white remains untouched. Check: Central transport reached accurately and retained pale. Expect: Lower toward table support for transfer to left. Verify: Cap and body should approach support without a large pivot; inspect before final lowering. Risk: Extended cap may touch before jaws reach nominal body height; use small corrections near contact. Lesson: Pale's grasp retained it through central transport despite its tilted pose.",
+      "targets": {
+        "right_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 601,
+        "start": 597
+      },
+      "left_wrist": {
+        "end": 601,
+        "start": 597
+      },
+      "right_wrist": {
+        "end": 601,
+        "start": 597
+      }
+    },
+    "control_end": 552,
+    "control_start": 548,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "State: Pale is held centrally with a slight cap-down tilt; white remains untouched. Check: Central transport reached accurately and retained pale. Expect: Lower toward table support for transfer to left. Verify: Cap and body should approach support without a large pivot; inspect before final lowering. Risk: Extended cap may touch before jaws reach nominal body height; use small corrections near contact. Lesson: Pale's grasp retained it through central transport despite its tilted pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale has flattened near the central tabletop while still held, suggesting support contact. Two bottles are in the bin; pale and white remain. Check: Lowering reached within 1 mm and pale rotated toward horizontal rather than retaining its earlier tilt. Expect: Release pale onto the table for left retrieval. Verify: It should remain supported as jaws open, not fall or roll away. Risk: Support is inferred from pose change; inspect its resting position after release. Lesson: Pale's cap contacted support during lowering and the bottle flattened.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 605,
+        "start": 602
+      },
+      "left_wrist": {
+        "end": 605,
+        "start": 602
+      },
+      "right_wrist": {
+        "end": 605,
+        "start": 602
+      }
+    },
+    "control_end": 555,
+    "control_start": 552,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 49,
+    "public_note": "State: Pale has flattened near the central tabletop while still held, suggesting support contact. Two bottles are in the bin; pale and white remain. Check: Lowering reached within 1 mm and pale rotated toward horizontal rather than retaining its earlier tilt. Expect: Release pale onto the table for left retrieval. Verify: It should remain supported as jaws open, not fall or roll away. Risk: Support is inferred from pose change; inspect its resting position after release. Lesson: Pale's cap contacted support during lowering and the bottle flattened.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale rests centrally after release; right remains above it and left must retrieve it. Check: Jaws opened and pale settled without rolling away. Expect: Withdraw right vertically to clear the supported bottle. Verify: Right should rise empty while pale stays still. Risk: Jaw snagging; retain vertical withdrawal before moving laterally. Lesson: Central release produced a stable supported pale-bottle pose.",
+      "targets": {
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 614,
+        "start": 606
+      },
+      "left_wrist": {
+        "end": 614,
+        "start": 606
+      },
+      "right_wrist": {
+        "end": 614,
+        "start": 606
+      }
+    },
+    "control_end": 563,
+    "control_start": 555,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "State: Pale rests centrally after release; right remains above it and left must retrieve it. Check: Jaws opened and pale settled without rolling away. Expect: Withdraw right vertically to clear the supported bottle. Verify: Right should rise empty while pale stays still. Risk: Jaw snagging; retain vertical withdrawal before moving laterally. Lesson: Central release produced a stable supported pale-bottle pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale rests centrally and right has cleared it; left is empty over the bin. Two disposals remain. Check: Right withdrawal reached accurately and pale stayed supported. Expect: Move right aside and left to a separated staging pose, freeing the central pickup corridor. Verify: Both hands should remain separated and pale stationary; inspect actual endpoints. Risk: Coupled planning can refuse both; these staging targets remain on their respective sides. Lesson: Vertical withdrawal left pale undisturbed for transfer.",
+      "targets": {
+        "left_x": -0.18,
+        "left_y": -0.18,
+        "right_x": 0.28
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 634,
+        "start": 615
+      },
+      "left_wrist": {
+        "end": 634,
+        "start": 615
+      },
+      "right_wrist": {
+        "end": 634,
+        "start": 615
+      }
+    },
+    "control_end": 582,
+    "control_start": 563,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "State: Pale rests centrally and right has cleared it; left is empty over the bin. Two disposals remain. Check: Right withdrawal reached accurately and pale stayed supported. Expect: Move right aside and left to a separated staging pose, freeing the central pickup corridor. Verify: Both hands should remain separated and pale stationary; inspect actual endpoints. Risk: Coupled planning can refuse both; these staging targets remain on their respective sides. Lesson: Vertical withdrawal left pale undisturbed for transfer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Hands are separated and pale rests centrally; left pickup remains. Check: Both staging moves reached accurately without disturbing bottles. Expect: Align left jaws across pale's long axis for retrieval. Verify: Measured yaw should reach 90 degrees with no contact. Risk: No material contact risk at this clear staging pose. Lesson: Supported transfer staging has kept the bottle stable and the hands separated.",
+      "targets": {
+        "left_yaw_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 648,
+        "start": 635
+      },
+      "left_wrist": {
+        "end": 648,
+        "start": 635
+      },
+      "right_wrist": {
+        "end": 648,
+        "start": 635
+      }
+    },
+    "control_end": 595,
+    "control_start": 582,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "State: Hands are separated and pale rests centrally; left pickup remains. Check: Both staging moves reached accurately without disturbing bottles. Expect: Align left jaws across pale's long axis for retrieval. Verify: Measured yaw should reach 90 degrees with no contact. Risk: No material contact risk at this clear staging pose. Lesson: Supported transfer staging has kept the bottle stable and the hands separated.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left is aligned across pale, which rests centrally; white still remains on the right. Check: Yaw reached accurately without contact. Expect: Move above pale's body at a low pregrasp height within the shared workspace. Verify: Body should center between jaws with no displacement before final descent. Risk: Extended left reach may be refused; lower central approaches previously worked better than high ones. Lesson: The table-supported transfer offers a known stable pickup location.",
+      "targets": {
+        "left_x": 0.065,
+        "left_z": 0.845
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 663,
+        "start": 649
+      },
+      "left_wrist": {
+        "end": 663,
+        "start": 649
+      },
+      "right_wrist": {
+        "end": 663,
+        "start": 649
+      }
+    },
+    "control_end": 609,
+    "control_start": 595,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 53,
+    "public_note": "State: Left is aligned across pale, which rests centrally; white still remains on the right. Check: Yaw reached accurately without contact. Expect: Move above pale's body at a low pregrasp height within the shared workspace. Verify: Body should center between jaws with no displacement before final descent. Risk: Extended left reach may be refused; lower central approaches previously worked better than high ones. Lesson: The table-supported transfer offers a known stable pickup location.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale body is centered between open left jaws; retrieval remains unverified. Check: Approach reached accurately without displacement. Expect: Descend to near the successful right grasp height. Verify: Body should remain centered and stationary as jaws reach its sides. Risk: Near-contact height uncertainty; use a final few-millimetre correction before closing. Lesson: This left alignment is closer to the body center than the earlier right base-biased grasp.",
+      "targets": {
+        "left_z": 0.815
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 667,
+        "start": 664
+      },
+      "left_wrist": {
+        "end": 667,
+        "start": 664
+      },
+      "right_wrist": {
+        "end": 667,
+        "start": 664
+      }
+    },
+    "control_end": 612,
+    "control_start": 609,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "State: Pale body is centered between open left jaws; retrieval remains unverified. Check: Approach reached accurately without displacement. Expect: Descend to near the successful right grasp height. Verify: Body should remain centered and stationary as jaws reach its sides. Risk: Near-contact height uncertainty; use a final few-millimetre correction before closing. Lesson: This left alignment is closer to the body center than the earlier right base-biased grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left jaws straddle pale's body; two disposals remain and neither arm has returned to origin. Check: Descent reached within 1 mm without bottle motion. Expect: Lower 5 mm and close at the previously successful pale grasp height. Verify: Contact should stop closure at nonzero opening; retention needs a separate lift. Risk: Shallow contact or asymmetry could slip; inspect before transport. Lesson: The right hand retained pale from this height, providing a useful but not conclusive depth reference.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.811
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 675,
+        "start": 668
+      },
+      "left_wrist": {
+        "end": 675,
+        "start": 668
+      },
+      "right_wrist": {
+        "end": 675,
+        "start": 668
+      }
+    },
+    "control_end": 619,
+    "control_start": 612,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 55,
+    "public_note": "State: Left jaws straddle pale's body; two disposals remain and neither arm has returned to origin. Check: Descent reached within 1 mm without bottle motion. Expect: Lower 5 mm and close at the previously successful pale grasp height. Verify: Contact should stop closure at nonzero opening; retention needs a separate lift. Risk: Shallow contact or asymmetry could slip; inspect before transport. Lesson: The right hand retained pale from this height, providing a useful but not conclusive depth reference.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left contacts pale at opening 0.56; retention remains unverified. Check: Closure achieved bilateral body contact with no major displacement. Expect: Lift pale clear to complete the supported transfer. Verify: Pale should follow left with a stable opening and visible tabletop clearance. Risk: Slip or pivot; lower and regrasp if the bottle fails to follow. Lesson: The centered left body contact appears less base-biased, but the lift must validate it.",
+      "targets": {
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 682,
+        "start": 676
+      },
+      "left_wrist": {
+        "end": 682,
+        "start": 676
+      },
+      "right_wrist": {
+        "end": 682,
+        "start": 676
+      }
+    },
+    "control_end": 625,
+    "control_start": 619,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 56,
+    "public_note": "State: Left contacts pale at opening 0.56; retention remains unverified. Check: Closure achieved bilateral body contact with no major displacement. Expect: Lift pale clear to complete the supported transfer. Verify: Pale should follow left with a stable opening and visible tabletop clearance. Risk: Slip or pivot; lower and regrasp if the bottle fails to follow. Lesson: The centered left body contact appears less base-biased, but the lift must validate it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale is suspended in left with stable body contact; white is the only bottle still on table. Two bottles are already inside the bin. Check: Lift reached within 1 mm and pale followed without substantial pivot. Expect: Retract toward the bin side with increased clearance. Verify: Pale should stay fixed in the jaws and clear the tabletop. Risk: Transport may truncate; inspect actual endpoint before bin approach. Lesson: The centered left grasp retained pale through the lift, completing the supported transfer.",
+      "targets": {
+        "left_x": -0.22,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 698,
+        "start": 683
+      },
+      "left_wrist": {
+        "end": 698,
+        "start": 683
+      },
+      "right_wrist": {
+        "end": 698,
+        "start": 683
+      }
+    },
+    "control_end": 640,
+    "control_start": 625,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 57,
+    "public_note": "State: Pale is suspended in left with stable body contact; white is the only bottle still on table. Two bottles are already inside the bin. Check: Lift reached within 1 mm and pale followed without substantial pivot. Expect: Retract toward the bin side with increased clearance. Verify: Pale should stay fixed in the jaws and clear the tabletop. Risk: Transport may truncate; inspect actual endpoint before bin approach. Lesson: The centered left grasp retained pale through the lift, completing the supported transfer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale remains retained near the bin side; white still needs disposal and origin return is unmet. Check: Retraction reached accurately with stable retention. Expect: Carry pale fully over the bin, allowing for its cap extending toward positive x. Verify: Entire bottle should clear the table edge and project inside the bin before release. Risk: Cap could remain over the rim if the hand stops short; inspect actual arrival. Lesson: Pale's centered left grasp has survived lateral transport.",
+      "targets": {
+        "left_x": -0.52,
+        "left_y": -0.1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 718,
+        "start": 699
+      },
+      "left_wrist": {
+        "end": 718,
+        "start": 699
+      },
+      "right_wrist": {
+        "end": 718,
+        "start": 699
+      }
+    },
+    "control_end": 659,
+    "control_start": 640,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 58,
+    "public_note": "State: Pale remains retained near the bin side; white still needs disposal and origin return is unmet. Check: Retraction reached accurately with stable retention. Expect: Carry pale fully over the bin, allowing for its cap extending toward positive x. Verify: Entire bottle should clear the table edge and project inside the bin before release. Risk: Cap could remain over the rim if the hand stops short; inspect actual arrival. Lesson: Pale's centered left grasp has survived lateral transport.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale is held over the bin opening; pink and yellow are inside. White remains outside and origin return is unmet. Check: Bin approach reached accurately and retained pale, with its cap clear of the table edge. Expect: Release pale into the bin for the third disposal. Verify: Bottle should descend below the rim and remain contained with left jaws open. Risk: Rim contact during falling; inspect landing rather than treating release as completion. Lesson: Supported transfer delivered pale over the bin with a retained left grasp.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 722,
+        "start": 719
+      },
+      "left_wrist": {
+        "end": 722,
+        "start": 719
+      },
+      "right_wrist": {
+        "end": 722,
+        "start": 719
+      }
+    },
+    "control_end": 662,
+    "control_start": 659,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 59,
+    "public_note": "State: Pale is held over the bin opening; pink and yellow are inside. White remains outside and origin return is unmet. Check: Bin approach reached accurately and retained pale, with its cap clear of the table edge. Expect: Release pale into the bin for the third disposal. Verify: Bottle should descend below the rim and remain contained with left jaws open. Risk: Rim contact during falling; inspect landing rather than treating release as completion. Lesson: Supported transfer delivered pale over the bin with a retained left grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pale is falling into the bin; its settled containment is pending. White remains on the table, and full completion including return is unmet. Check: Left release executed and pale visibly descended out of the jaws. Expect: Withdraw the empty left hand toward its starting position while pale settles, clearing the bin view. Verify: Pale should appear below the rim inside the bin and left should be empty; a rim-supported bottle would contradict containment. Risk: Only 38 environment steps remain, insufficient for the previously required pickup-transfer-discard sequence; preserve current placements. Lesson: Three releases have entered the bin opening, but pale still needs settled visual confirmation.",
+      "targets": {
+        "left_x": -0.3,
+        "left_y": -0.2,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 743,
+        "start": 723
+      },
+      "left_wrist": {
+        "end": 743,
+        "start": 723
+      },
+      "right_wrist": {
+        "end": 743,
+        "start": 723
+      }
+    },
+    "control_end": 682,
+    "control_start": 662,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 60,
+    "public_note": "State: Pale is falling into the bin; its settled containment is pending. White remains on the table, and full completion including return is unmet. Check: Left release executed and pale visibly descended out of the jaws. Expect: Withdraw the empty left hand toward its starting position while pale settles, clearing the bin view. Verify: Pale should appear below the rim inside the bin and left should be empty; a rim-supported bottle would contradict containment. Risk: Only 38 environment steps remain, insufficient for the previously required pickup-transfer-discard sequence; preserve current placements. Lesson: Three releases have entered the bin opening, but pale still needs settled visual confirmation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "For this layout, use the right arm on right-side bottles from the outset, grasp lying bottles deeply around their body centers, and stage transfers lower and closer to the left workspace. Reserve motion budget for the final bottle and return.",
+      "reason": "State: Pink and yellow were observed inside the bin. Pale was released into its opening, but its settled position is now occluded. White remains on the table; origin orientations are not restored. Check: Left withdrawal reached its positional target with empty open jaws; it did not provide settled confirmation of pale. Expect: End the episode with partial progress because 18 remaining environment steps cannot complete the remaining pickup, transfer, discard and return. Verify: White disposal, pale's settled containment and full origin return remain unmet or unverified; there is no next observation. Risk: Further rushed manipulation could disturb achieved placements; stop with both grippers open. Lesson: Deep body grasps and supported transfers worked, but repeated reach planning and regrasping exhausted the motion budget."
+    },
+    "cameras": {
+      "head": {
+        "end": 745,
+        "start": 744
+      },
+      "left_wrist": {
+        "end": 745,
+        "start": 744
+      },
+      "right_wrist": {
+        "end": 745,
+        "start": 744
+      }
+    },
+    "control_end": 683,
+    "control_start": 682,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 61,
+    "public_note": "State: Pink and yellow were observed inside the bin. Pale was released into its opening, but its settled position is now occluded. White remains on the table; origin orientations are not restored. Check: Left withdrawal reached its positional target with empty open jaws; it did not provide settled confirmation of pale. Expect: End the episode with partial progress because 18 remaining environment steps cannot complete the remaining pickup, transfer, discard and return. Verify: White disposal, pale's settled containment and full origin return remain unmet or unverified; there is no next observation. Risk: Further rushed manipulation could disturb achieved placements; stop with both grippers open. Lesson: Deep body grasps and supported transfers worked, but repeated reach planning and regrasping exhausted the motion budget.",
+    "tool": "give_up"
+  }
+]

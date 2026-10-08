@@ -1,0 +1,141 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Stack the three blocks with different textures.",
+      "note": "The blocks are separate and both arms are at their starting positions. Use the matching task instruction to begin.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 16,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 16,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 16,
+        "start": 1
+      }
+    },
+    "control_end": 15,
+    "control_start": 0,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 0,
+    "public_note": "The blocks are separate and both arms are at their starting positions. Use the matching task instruction to begin.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Stack the three blocks with different textures.",
+      "note": "Both grippers remain open near their starting positions. Continue the matching instruction to allow the approach to begin.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 32,
+        "start": 17
+      },
+      "left_wrist": {
+        "end": 32,
+        "start": 17
+      },
+      "right_wrist": {
+        "end": 32,
+        "start": 17
+      }
+    },
+    "control_end": 30,
+    "control_start": 15,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 1,
+    "public_note": "Both grippers remain open near their starting positions. Continue the matching instruction to allow the approach to begin.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Stack the three blocks with different textures. Pick up the red block and place it on the wooden block.",
+      "note": "The whole-task instruction has produced no visible approach. Specify the first two-block placement and inspect whether motion begins.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 48,
+        "start": 33
+      },
+      "left_wrist": {
+        "end": 48,
+        "start": 33
+      },
+      "right_wrist": {
+        "end": 48,
+        "start": 33
+      }
+    },
+    "control_end": 45,
+    "control_start": 30,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 2,
+    "public_note": "The whole-task instruction has produced no visible approach. Specify the first two-block placement and inspect whether motion begins.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the light-colored textured block with the left hand and place it on the wooden block. Stack the three blocks with different textures.",
+      "note": "All three blocks remain on the table. Try a concrete operation on the clearly visible left block to test whether the policy initiates manipulation.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 64,
+        "start": 49
+      },
+      "left_wrist": {
+        "end": 64,
+        "start": 49
+      },
+      "right_wrist": {
+        "end": 64,
+        "start": 49
+      }
+    },
+    "control_end": 60,
+    "control_start": 45,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 3,
+    "public_note": "All three blocks remain on the table. Try a concrete operation on the clearly visible left block to test whether the policy initiates manipulation.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "The exact training instruction and two concrete first-placement variants produced no visible progress over 60 controls. No block was grasped or stacked.",
+      "reason": "The available policy repeatedly leaves both arms at their starting positions without approaching or moving any block."
+    },
+    "cameras": {
+      "head": {
+        "end": 66,
+        "start": 65
+      },
+      "left_wrist": {
+        "end": 66,
+        "start": 65
+      },
+      "right_wrist": {
+        "end": 66,
+        "start": 65
+      }
+    },
+    "control_end": 61,
+    "control_start": 60,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 4,
+    "public_note": "The available policy repeatedly leaves both arms at their starting positions without approaching or moving any block.",
+    "tool": "give_up"
+  }
+]

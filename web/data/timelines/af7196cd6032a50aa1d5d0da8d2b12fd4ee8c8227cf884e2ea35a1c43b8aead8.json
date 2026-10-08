@@ -1,0 +1,1002 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The blocks are on the right side. Turn the right gripper downward to approach them from above.",
+      "targets": {
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 21,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 21,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 21,
+        "start": 1
+      }
+    },
+    "control_end": 20,
+    "control_start": 0,
+    "feedback": "Accepted: the original plan contains 31 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 0,
+    "public_note": "The blocks are on the right side. Turn the right gripper downward to approach them from above.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Finish the downward orientation before locating the grasp precisely.",
+      "targets": {
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 30,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 30,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 30,
+        "start": 22
+      }
+    },
+    "control_end": 28,
+    "control_start": 20,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "Finish the downward orientation before locating the grasp precisely.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the dark block from above, using the wrist image to refine its position before closing.",
+      "targets": {
+        "right_x": 0.282,
+        "right_y": -0.12,
+        "right_z": 0.855
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 38,
+        "start": 31
+      },
+      "left_wrist": {
+        "end": 38,
+        "start": 31
+      },
+      "right_wrist": {
+        "end": 38,
+        "start": 31
+      }
+    },
+    "control_end": 35,
+    "control_start": 28,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "Approach the dark block from above, using the wrist image to refine its position before closing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The dark block is centered laterally. Lower to just above its top and inspect alignment.",
+      "targets": {
+        "right_x": 0.28,
+        "right_z": 0.813
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 43,
+        "start": 39
+      },
+      "left_wrist": {
+        "end": 43,
+        "start": 39
+      },
+      "right_wrist": {
+        "end": 43,
+        "start": 39
+      }
+    },
+    "control_end": 39,
+    "control_start": 35,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "The dark block is centered laterally. Lower to just above its top and inspect alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The head view shows the dark block behind the current grasp point. Shift back while remaining above it.",
+      "targets": {
+        "right_y": -0.22
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 53,
+        "start": 44
+      },
+      "left_wrist": {
+        "end": 53,
+        "start": 44
+      },
+      "right_wrist": {
+        "end": 53,
+        "start": 44
+      }
+    },
+    "control_end": 48,
+    "control_start": 39,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "The head view shows the dark block behind the current grasp point. Shift back while remaining above it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Use the observed image displacement to bring the dark block between the jaw tips, while keeping clearance.",
+      "targets": {
+        "right_y": -0.15,
+        "right_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 60,
+        "start": 54
+      },
+      "left_wrist": {
+        "end": 60,
+        "start": 54
+      },
+      "right_wrist": {
+        "end": 60,
+        "start": 54
+      }
+    },
+    "control_end": 54,
+    "control_start": 48,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "Use the observed image displacement to bring the dark block between the jaw tips, while keeping clearance.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The dark block is between the open jaws in the wrist view. Lower toward its mid-height before grasping.",
+      "targets": {
+        "right_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 63,
+        "start": 61
+      },
+      "left_wrist": {
+        "end": 63,
+        "start": 61
+      },
+      "right_wrist": {
+        "end": 63,
+        "start": 61
+      }
+    },
+    "control_end": 56,
+    "control_start": 54,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "The dark block is between the open jaws in the wrist view. Lower toward its mid-height before grasping.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Close on the dark block and check whether it is captured before lifting.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 70,
+        "start": 64
+      },
+      "left_wrist": {
+        "end": 70,
+        "start": 64
+      },
+      "right_wrist": {
+        "end": 70,
+        "start": 64
+      }
+    },
+    "control_end": 62,
+    "control_start": 56,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 7,
+    "public_note": "Close on the dark block and check whether it is captured before lifting.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws closed fully without capturing the block. Reopen and raise slightly to correct the fore-aft alignment.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.812
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 79,
+        "start": 71
+      },
+      "left_wrist": {
+        "end": 79,
+        "start": 71
+      },
+      "right_wrist": {
+        "end": 79,
+        "start": 71
+      }
+    },
+    "control_end": 70,
+    "control_start": 62,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "The jaws closed fully without capturing the block. Reopen and raise slightly to correct the fore-aft alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Correct the grasp 3 cm toward the dark block's rearward position before descending again.",
+      "targets": {
+        "right_y": -0.18
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 83,
+        "start": 80
+      },
+      "left_wrist": {
+        "end": 83,
+        "start": 80
+      },
+      "right_wrist": {
+        "end": 83,
+        "start": 80
+      }
+    },
+    "control_end": 73,
+    "control_start": 70,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "Correct the grasp 3 cm toward the dark block's rearward position before descending again.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower at the corrected alignment to straddle the dark block.",
+      "targets": {
+        "right_z": 0.791
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 86,
+        "start": 84
+      },
+      "left_wrist": {
+        "end": 86,
+        "start": 84
+      },
+      "right_wrist": {
+        "end": 86,
+        "start": 84
+      }
+    },
+    "control_end": 75,
+    "control_start": 73,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "Lower at the corrected alignment to straddle the dark block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Close the jaws at the corrected dark-block position.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 93,
+        "start": 87
+      },
+      "left_wrist": {
+        "end": 93,
+        "start": 87
+      },
+      "right_wrist": {
+        "end": 93,
+        "start": 87
+      }
+    },
+    "control_end": 81,
+    "control_start": 75,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 11,
+    "public_note": "Close the jaws at the corrected dark-block position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws stopped on the dark block. Lift it clear of the table before carrying it to the purple base block.",
+      "targets": {
+        "right_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 102,
+        "start": 94
+      },
+      "left_wrist": {
+        "end": 102,
+        "start": 94
+      },
+      "right_wrist": {
+        "end": 102,
+        "start": 94
+      }
+    },
+    "control_end": 89,
+    "control_start": 81,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "The jaws stopped on the dark block. Lift it clear of the table before carrying it to the purple base block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Carry the dark block above the purple block, which will remain as the stack foundation.",
+      "targets": {
+        "right_x": 0.19,
+        "right_y": -0.085
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 114,
+        "start": 103
+      },
+      "left_wrist": {
+        "end": 114,
+        "start": 103
+      },
+      "right_wrist": {
+        "end": 114,
+        "start": 103
+      }
+    },
+    "control_end": 100,
+    "control_start": 89,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "Carry the dark block above the purple block, which will remain as the stack foundation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The purple base is nearly centered under the carried block. Lower toward it, stopping above contact for another alignment check.",
+      "targets": {
+        "right_x": 0.193,
+        "right_z": 0.838
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 119,
+        "start": 115
+      },
+      "left_wrist": {
+        "end": 119,
+        "start": 115
+      },
+      "right_wrist": {
+        "end": 119,
+        "start": 115
+      }
+    },
+    "control_end": 104,
+    "control_start": 100,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "The purple base is nearly centered under the carried block. Lower toward it, stopping above contact for another alignment check.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The blocks remain centered. Reduce the remaining vertical gap before the final gentle seating motion.",
+      "targets": {
+        "right_z": 0.829
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 121,
+        "start": 120
+      },
+      "left_wrist": {
+        "end": 121,
+        "start": 120
+      },
+      "right_wrist": {
+        "end": 121,
+        "start": 120
+      }
+    },
+    "control_end": 105,
+    "control_start": 104,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "The blocks remain centered. Reduce the remaining vertical gap before the final gentle seating motion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower another four millimetres toward the purple support.",
+      "targets": {
+        "right_z": 0.826
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 123,
+        "start": 122
+      },
+      "left_wrist": {
+        "end": 123,
+        "start": 122
+      },
+      "right_wrist": {
+        "end": 123,
+        "start": 122
+      }
+    },
+    "control_end": 106,
+    "control_start": 105,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 16,
+    "public_note": "Lower another four millimetres toward the purple support.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The dark block appears seated on the purple block. Open the jaws to leave the two-block stack supported.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 128,
+        "start": 124
+      },
+      "left_wrist": {
+        "end": 128,
+        "start": 124
+      },
+      "right_wrist": {
+        "end": 128,
+        "start": 124
+      }
+    },
+    "control_end": 110,
+    "control_start": 106,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 17,
+    "public_note": "The dark block appears seated on the purple block. Open the jaws to leave the two-block stack supported.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The two-block stack remains upright after release. Raise the open hand clear before approaching the wooden block.",
+      "targets": {
+        "right_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 134,
+        "start": 129
+      },
+      "left_wrist": {
+        "end": 134,
+        "start": 129
+      },
+      "right_wrist": {
+        "end": 134,
+        "start": 129
+      }
+    },
+    "control_end": 115,
+    "control_start": 110,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "The two-block stack remains upright after release. Raise the open hand clear before approaching the wooden block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move above the wooden block, keeping the hand high enough to clear the existing stack.",
+      "targets": {
+        "right_x": 0.243,
+        "right_y": -0.06
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 138,
+        "start": 135
+      },
+      "left_wrist": {
+        "end": 138,
+        "start": 135
+      },
+      "right_wrist": {
+        "end": 138,
+        "start": 135
+      }
+    },
+    "control_end": 118,
+    "control_start": 115,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "Move above the wooden block, keeping the hand high enough to clear the existing stack.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Center over the wooden block and descend to a safe pre-grasp height.",
+      "targets": {
+        "right_x": 0.252,
+        "right_z": 0.816
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 146,
+        "start": 139
+      },
+      "left_wrist": {
+        "end": 146,
+        "start": 139
+      },
+      "right_wrist": {
+        "end": 146,
+        "start": 139
+      }
+    },
+    "control_end": 125,
+    "control_start": 118,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "Center over the wooden block and descend to a safe pre-grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Refine the wooden block alignment with a small rearward correction before the final descent.",
+      "targets": {
+        "right_x": 0.254,
+        "right_y": -0.073
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 149,
+        "start": 147
+      },
+      "left_wrist": {
+        "end": 149,
+        "start": 147
+      },
+      "right_wrist": {
+        "end": 149,
+        "start": 147
+      }
+    },
+    "control_end": 127,
+    "control_start": 125,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "Refine the wooden block alignment with a small rearward correction before the final descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the centered gripper to the wooden block's grasp height.",
+      "targets": {
+        "right_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 152,
+        "start": 150
+      },
+      "left_wrist": {
+        "end": 152,
+        "start": 150
+      },
+      "right_wrist": {
+        "end": 152,
+        "start": 150
+      }
+    },
+    "control_end": 129,
+    "control_start": 127,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 22,
+    "public_note": "Lower the centered gripper to the wooden block's grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Close around the wooden block, now centered between the jaws.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 159,
+        "start": 153
+      },
+      "left_wrist": {
+        "end": 159,
+        "start": 153
+      },
+      "right_wrist": {
+        "end": 159,
+        "start": 153
+      }
+    },
+    "control_end": 135,
+    "control_start": 129,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 23,
+    "public_note": "Close around the wooden block, now centered between the jaws.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wooden block is captured. Lift clear so the supporting stack can be inspected before the final placement.",
+      "targets": {
+        "right_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 170,
+        "start": 160
+      },
+      "left_wrist": {
+        "end": 170,
+        "start": 160
+      },
+      "right_wrist": {
+        "end": 170,
+        "start": 160
+      }
+    },
+    "control_end": 145,
+    "control_start": 135,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "The wooden block is captured. Lift clear so the supporting stack can be inspected before the final placement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The dark block remains over the purple base but has shifted slightly rearward. Position the wooden block above its current center.",
+      "targets": {
+        "right_x": 0.196,
+        "right_y": -0.099
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 175,
+        "start": 171
+      },
+      "left_wrist": {
+        "end": 175,
+        "start": 171
+      },
+      "right_wrist": {
+        "end": 175,
+        "start": 171
+      }
+    },
+    "control_end": 149,
+    "control_start": 145,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "The dark block remains over the purple base but has shifted slightly rearward. Position the wooden block above its current center.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wooden block is centered over the dark block. Lower to just above the expected top-stack contact height.",
+      "targets": {
+        "right_z": 0.877
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 180,
+        "start": 176
+      },
+      "left_wrist": {
+        "end": 180,
+        "start": 176
+      },
+      "right_wrist": {
+        "end": 180,
+        "start": 176
+      }
+    },
+    "control_end": 153,
+    "control_start": 149,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "The wooden block is centered over the dark block. Lower to just above the expected top-stack contact height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Bring the wooden block closer to the dark support with a short vertical motion.",
+      "targets": {
+        "right_z": 0.871
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 182,
+        "start": 181
+      },
+      "left_wrist": {
+        "end": 182,
+        "start": 181
+      },
+      "right_wrist": {
+        "end": 182,
+        "start": 181
+      }
+    },
+    "control_end": 154,
+    "control_start": 153,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "Bring the wooden block closer to the dark support with a short vertical motion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower four millimetres for a gentle final approach to the support.",
+      "targets": {
+        "right_z": 0.867
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 184,
+        "start": 183
+      },
+      "left_wrist": {
+        "end": 184,
+        "start": 183
+      },
+      "right_wrist": {
+        "end": 184,
+        "start": 183
+      }
+    },
+    "control_end": 155,
+    "control_start": 154,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "Lower four millimetres for a gentle final approach to the support.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Release the wooden block at the expected top of the two-block stack, then check stability.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 189,
+        "start": 185
+      },
+      "left_wrist": {
+        "end": 189,
+        "start": 185
+      },
+      "right_wrist": {
+        "end": 189,
+        "start": 185
+      }
+    },
+    "control_end": 159,
+    "control_start": 155,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 29,
+    "public_note": "Release the wooden block at the expected top of the two-block stack, then check stability.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The three blocks remain stacked after release. Raise the open hand vertically clear of the pile.",
+      "targets": {
+        "right_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 198,
+        "start": 190
+      },
+      "left_wrist": {
+        "end": 198,
+        "start": 190
+      },
+      "right_wrist": {
+        "end": 198,
+        "start": 190
+      }
+    },
+    "control_end": 167,
+    "control_start": 159,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "The three blocks remain stacked after release. Raise the open hand vertically clear of the pile.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The pile is stable. Return the right grasp point to its starting position before restoring its orientation.",
+      "targets": {
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 213,
+        "start": 199
+      },
+      "left_wrist": {
+        "end": 213,
+        "start": 199
+      },
+      "right_wrist": {
+        "end": 213,
+        "start": 199
+      }
+    },
+    "control_end": 181,
+    "control_start": 167,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "The pile is stable. Return the right grasp point to its starting position before restoring its orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Restore the starting wrist orientation in stages, away from the completed stack.",
+      "targets": {
+        "right_pitch_deg": 45,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 229,
+        "start": 214
+      },
+      "left_wrist": {
+        "end": 229,
+        "start": 214
+      },
+      "right_wrist": {
+        "end": 229,
+        "start": 214
+      }
+    },
+    "control_end": 196,
+    "control_start": 181,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "Restore the starting wrist orientation in stages, away from the completed stack.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "All three blocks are standing in one pile. Finish returning the right wrist to its original orientation; the left arm is already home.",
+      "targets": {
+        "right_pitch_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 239,
+        "start": 230
+      },
+      "left_wrist": {
+        "end": 239,
+        "start": 230
+      },
+      "right_wrist": {
+        "end": 239,
+        "start": 230
+      }
+    },
+    "control_end": 205,
+    "control_start": 196,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "All three blocks are standing in one pile. Finish returning the right wrist to its original orientation; the left arm is already home.",
+    "tool": "move_eef"
+  }
+]

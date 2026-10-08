@@ -1,0 +1,421 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad, push the keyboard into the frame, put the figurine on the stand, place the alarm clock on the drawer, then open the drawer and put all remaining miscellaneous items inside.",
+      "note": "All four target objects are visible in their initial positions. Begin with the requested mouse placement and inspect progress after a short execution.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 16,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 16,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 16,
+        "start": 1
+      }
+    },
+    "control_end": 15,
+    "control_start": 0,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 0,
+    "public_note": "All four target objects are visible in their initial positions. Begin with the requested mouse placement and inspect progress after a short execution.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad.",
+      "note": "The mouse remains beside the pad and the left arm moved toward the figurine. Use the mouse-placement clause alone to preserve the requested order.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 32,
+        "start": 17
+      },
+      "left_wrist": {
+        "end": 32,
+        "start": 17
+      },
+      "right_wrist": {
+        "end": 32,
+        "start": 17
+      }
+    },
+    "control_end": 30,
+    "control_start": 15,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 1,
+    "public_note": "The mouse remains beside the pad and the left arm moved toward the figurine. Use the mouse-placement clause alone to preserve the requested order.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad.",
+      "note": "The right arm has not yet approached the mouse; the figurine remains on the table. Continue the focused instruction to observe whether the policy redirects.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 48,
+        "start": 33
+      },
+      "left_wrist": {
+        "end": 48,
+        "start": 33
+      },
+      "right_wrist": {
+        "end": 48,
+        "start": 33
+      }
+    },
+    "control_end": 45,
+    "control_start": 30,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 2,
+    "public_note": "The right arm has not yet approached the mouse; the figurine remains on the table. Continue the focused instruction to observe whether the policy redirects.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the mouse and place it on the mouse pad, then push the keyboard into the frame.",
+      "note": "The mouse and keyboard remain unmoved, while the left gripper is near the figurine. Explicit mouse pickup wording may redirect the policy toward the required first object.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 64,
+        "start": 49
+      },
+      "left_wrist": {
+        "end": 64,
+        "start": 49
+      },
+      "right_wrist": {
+        "end": 64,
+        "start": 49
+      }
+    },
+    "control_end": 60,
+    "control_start": 45,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 3,
+    "public_note": "The mouse and keyboard remain unmoved, while the left gripper is near the figurine. Explicit mouse pickup wording may redirect the policy toward the required first object.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad, push the keyboard into the frame, put the figurine on the stand, place the alarm clock on the drawer, then open the drawer and put all remaining miscellaneous items inside.",
+      "note": "The left gripper appears to have lifted the figurine despite the mouse-first instruction. Restore the complete goal and inspect where the held object moves.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 80,
+        "start": 65
+      },
+      "left_wrist": {
+        "end": 80,
+        "start": 65
+      },
+      "right_wrist": {
+        "end": 80,
+        "start": 65
+      }
+    },
+    "control_end": 75,
+    "control_start": 60,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 4,
+    "public_note": "The left gripper appears to have lifted the figurine despite the mouse-first instruction. Restore the complete goal and inspect where the held object moves.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad, push the keyboard into the frame, put the figurine on the stand, place the alarm clock on the drawer, then open the drawer and put all remaining miscellaneous items inside.",
+      "note": "The figurine is tipped and the clock has shifted near the left gripper. A shorter execution allows earlier inspection around these objects.",
+      "steps": 8
+    },
+    "cameras": {
+      "head": {
+        "end": 89,
+        "start": 81
+      },
+      "left_wrist": {
+        "end": 89,
+        "start": 81
+      },
+      "right_wrist": {
+        "end": 89,
+        "start": 81
+      }
+    },
+    "control_end": 83,
+    "control_start": 75,
+    "feedback": "Executing up to 8 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 5,
+    "public_note": "The figurine is tipped and the clock has shifted near the left gripper. A shorter execution allows earlier inspection around these objects.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the mouse with the right hand and place the mouse on the mouse pad.",
+      "note": "The left arm remains above the tipped figurine and clock, while the right arm is near the untouched mouse. Test explicit hand selection for the required first placement.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 105,
+        "start": 90
+      },
+      "left_wrist": {
+        "end": 105,
+        "start": 90
+      },
+      "right_wrist": {
+        "end": 105,
+        "start": 90
+      }
+    },
+    "control_end": 98,
+    "control_start": 83,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 6,
+    "public_note": "The left arm remains above the tipped figurine and clock, while the right arm is near the untouched mouse. Test explicit hand selection for the required first placement.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad, push the keyboard into the frame, put the figurine on the stand, place the alarm clock on the drawer, then open the drawer and put all remaining miscellaneous items inside.",
+      "note": "No target placement is complete and the left arm is still moving near the stand. Continue the full goal to inspect whether the policy recovers from the misplaced figurine.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 121,
+        "start": 106
+      },
+      "left_wrist": {
+        "end": 121,
+        "start": 106
+      },
+      "right_wrist": {
+        "end": 121,
+        "start": 106
+      }
+    },
+    "control_end": 113,
+    "control_start": 98,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 7,
+    "public_note": "No target placement is complete and the left arm is still moving near the stand. Continue the full goal to inspect whether the policy recovers from the misplaced figurine.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad, push the keyboard into the frame, put the figurine on the stand, place the alarm clock on the drawer, then open the drawer and put all remaining miscellaneous items inside.",
+      "note": "The left gripper has begun opening near the stand, but the figurine remains tipped on the table. Continue and inspect whether the arm retreats and resumes useful work.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 137,
+        "start": 122
+      },
+      "left_wrist": {
+        "end": 137,
+        "start": 122
+      },
+      "right_wrist": {
+        "end": 137,
+        "start": 122
+      }
+    },
+    "control_end": 128,
+    "control_start": 113,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 8,
+    "public_note": "The left gripper has begun opening near the stand, but the figurine remains tipped on the table. Continue and inspect whether the arm retreats and resumes useful work.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad, push the keyboard into the frame, put the figurine on the stand, place the alarm clock on the drawer, then open the drawer and put all remaining miscellaneous items inside.",
+      "note": "The left arm is withdrawing with an open gripper. No successful placement is visible; continue the goal and inspect its next approach.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 153,
+        "start": 138
+      },
+      "left_wrist": {
+        "end": 153,
+        "start": 138
+      },
+      "right_wrist": {
+        "end": 153,
+        "start": 138
+      }
+    },
+    "control_end": 143,
+    "control_start": 128,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 9,
+    "public_note": "The left arm is withdrawing with an open gripper. No successful placement is visible; continue the goal and inspect its next approach.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad, push the keyboard into the frame, put the figurine on the stand, place the alarm clock on the drawer, then open the drawer and put all remaining miscellaneous items inside.",
+      "note": "The open left gripper is above the fallen figurine beside the clock. Continue briefly to assess the apparent recovery attempt; the mouse remains unplaced.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 169,
+        "start": 154
+      },
+      "left_wrist": {
+        "end": 169,
+        "start": 154
+      },
+      "right_wrist": {
+        "end": 169,
+        "start": 154
+      }
+    },
+    "control_end": 158,
+    "control_start": 143,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 10,
+    "public_note": "The open left gripper is above the fallen figurine beside the clock. Continue briefly to assess the apparent recovery attempt; the mouse remains unplaced.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad, push the keyboard into the frame, put the figurine on the stand, place the alarm clock on the drawer, then open the drawer and put all remaining miscellaneous items inside.",
+      "note": "The figurine is between the left fingers but remains table-supported. Continue to verify actual pickup rather than inferring a grasp from closure.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 185,
+        "start": 170
+      },
+      "left_wrist": {
+        "end": 185,
+        "start": 170
+      },
+      "right_wrist": {
+        "end": 185,
+        "start": 170
+      }
+    },
+    "control_end": 173,
+    "control_start": 158,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 11,
+    "public_note": "The figurine is between the left fingers but remains table-supported. Continue to verify actual pickup rather than inferring a grasp from closure.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad.",
+      "note": "The attempted figurine grasp failed and all targets remain unplaced. Retry the first required operation as the left arm withdraws.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 201,
+        "start": 186
+      },
+      "left_wrist": {
+        "end": 201,
+        "start": 186
+      },
+      "right_wrist": {
+        "end": 201,
+        "start": 186
+      }
+    },
+    "control_end": 188,
+    "control_start": 173,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 12,
+    "public_note": "The attempted figurine grasp failed and all targets remain unplaced. Retry the first required operation as the left arm withdraws.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Place the mouse on the mouse pad.",
+      "note": "The left gripper has opened, but the right arm has not moved toward the mouse. Continue the same first-placement instruction to test whether the policy transitions.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 217,
+        "start": 202
+      },
+      "left_wrist": {
+        "end": 217,
+        "start": 202
+      },
+      "right_wrist": {
+        "end": 217,
+        "start": 202
+      }
+    },
+    "control_end": 203,
+    "control_start": 188,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 13,
+    "public_note": "The left gripper has opened, but the right arm has not moved toward the mouse. Continue the same first-placement instruction to test whether the policy transitions.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "The initial figurine pickup tipped the figurine and displaced the clock. Subsequent attempts failed to recover it, while the mouse and keyboard remained untouched. Gripper closure did not produce a reliable grasp, and repeated instructions did not redirect the policy to the required first operation.",
+      "reason": "The available policy repeatedly manipulates the figurine area instead of the requested mouse, despite full-goal, focused-clause, and explicit right-hand instructions. No target placement has succeeded."
+    },
+    "cameras": {
+      "head": {
+        "end": 219,
+        "start": 218
+      },
+      "left_wrist": {
+        "end": 219,
+        "start": 218
+      },
+      "right_wrist": {
+        "end": 219,
+        "start": 218
+      }
+    },
+    "control_end": 204,
+    "control_start": 203,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 14,
+    "public_note": "The available policy repeatedly manipulates the figurine area instead of the requested mouse, despite full-goal, focused-clause, and explicit right-hand instructions. No target placement has succeeded.",
+    "tool": "give_up"
+  }
+]

@@ -1,0 +1,3017 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will build the supporting layers first, starting with the two lower supports. Turning the left gripper downward prepares an upright block grasp.",
+      "targets": {
+        "left_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 21,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 21,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 21,
+        "start": 1
+      }
+    },
+    "control_end": 20,
+    "control_start": 0,
+    "feedback": "Accepted: the original plan contains 31 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 0,
+    "public_note": "I will build the supporting layers first, starting with the two lower supports. Turning the left gripper downward prepares an upright block grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The first rotation stopped short. I am finishing the downward orientation while approaching above the near-left white support.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": -0.2,
+        "left_y": -0.1,
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 39,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 39,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 39,
+        "start": 22
+      }
+    },
+    "control_end": 37,
+    "control_start": 20,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "The first rotation stopped short. I am finishing the downward orientation while approaching above the near-left white support.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist view shows the near-left support slightly left of the gripper centre. I am aligning over its top and lowering to a pre-grasp height.",
+      "targets": {
+        "left_x": -0.225,
+        "left_y": -0.12,
+        "left_z": 0.835
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 47,
+        "start": 40
+      },
+      "left_wrist": {
+        "end": 47,
+        "start": 40
+      },
+      "right_wrist": {
+        "end": 47,
+        "start": 40
+      }
+    },
+    "control_end": 44,
+    "control_start": 37,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "The wrist view shows the near-left support slightly left of the gripper centre. I am aligning over its top and lowering to a pre-grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The support is nearly centred between the jaws. I am lowering alongside it while keeping its upright orientation unchanged.",
+      "targets": {
+        "left_x": -0.232,
+        "left_z": 0.802
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 51,
+        "start": 48
+      },
+      "left_wrist": {
+        "end": 51,
+        "start": 48
+      },
+      "right_wrist": {
+        "end": 51,
+        "start": 48
+      }
+    },
+    "control_end": 47,
+    "control_start": 44,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "The support is nearly centred between the jaws. I am lowering alongside it while keeping its upright orientation unchanged.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The block is aligned between the open fingers at grasp height. I am closing the jaws before testing a lift.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 58,
+        "start": 52
+      },
+      "left_wrist": {
+        "end": 58,
+        "start": 52
+      },
+      "right_wrist": {
+        "end": 58,
+        "start": 52
+      }
+    },
+    "control_end": 53,
+    "control_start": 47,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 4,
+    "public_note": "The block is aligned between the open fingers at grasp height. I am closing the jaws before testing a lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The fingers closed fully without engaging the support, so the grasp was too high. I am opening them and lowering toward the block's sides.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.782
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 67,
+        "start": 59
+      },
+      "left_wrist": {
+        "end": 67,
+        "start": 59
+      },
+      "right_wrist": {
+        "end": 67,
+        "start": 59
+      }
+    },
+    "control_end": 61,
+    "control_start": 53,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "The fingers closed fully without engaging the support, so the grasp was too high. I am opening them and lowering toward the block's sides.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "At this lower height the support is still toward the near side of the wrist view. I am making a small lateral alignment correction before closing again.",
+      "targets": {
+        "left_y": -0.125
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 69,
+        "start": 68
+      },
+      "left_wrist": {
+        "end": 69,
+        "start": 68
+      },
+      "right_wrist": {
+        "end": 69,
+        "start": 68
+      }
+    },
+    "control_end": 62,
+    "control_start": 61,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "At this lower height the support is still toward the near side of the wrist view. I am making a small lateral alignment correction before closing again.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The block remains offset from the finger tips. I am lifting clear so I can correct the approach without pushing it across the table.",
+      "targets": {
+        "left_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 74,
+        "start": 70
+      },
+      "left_wrist": {
+        "end": 74,
+        "start": 70
+      },
+      "right_wrist": {
+        "end": 74,
+        "start": 70
+      }
+    },
+    "control_end": 66,
+    "control_start": 62,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "The block remains offset from the finger tips. I am lifting clear so I can correct the approach without pushing it across the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "With the fingers clear, I am shifting toward the near side to align the grasp point with the support rather than its far edge.",
+      "targets": {
+        "left_y": -0.16
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 79,
+        "start": 75
+      },
+      "left_wrist": {
+        "end": 79,
+        "start": 75
+      },
+      "right_wrist": {
+        "end": 79,
+        "start": 75
+      }
+    },
+    "control_end": 70,
+    "control_start": 66,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "With the fingers clear, I am shifting toward the near side to align the grasp point with the support rather than its far edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The support is now centred under the grasp approach. I am lowering the open fingers to engage its side faces.",
+      "targets": {
+        "left_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 83,
+        "start": 80
+      },
+      "left_wrist": {
+        "end": 83,
+        "start": 80
+      },
+      "right_wrist": {
+        "end": 83,
+        "start": 80
+      }
+    },
+    "control_end": 73,
+    "control_start": 70,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "The support is now centred under the grasp approach. I am lowering the open fingers to engage its side faces.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The open fingers now straddle the white support. I am closing to secure it for the lower layer.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 90,
+        "start": 84
+      },
+      "left_wrist": {
+        "end": 90,
+        "start": 84
+      },
+      "right_wrist": {
+        "end": 90,
+        "start": 84
+      }
+    },
+    "control_end": 79,
+    "control_start": 73,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 10,
+    "public_note": "The open fingers now straddle the white support. I am closing to secure it for the lower layer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws stopped on the block rather than closing empty. I am lifting it clear before moving to the first lower-support position.",
+      "targets": {
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 99,
+        "start": 91
+      },
+      "left_wrist": {
+        "end": 99,
+        "start": 91
+      },
+      "right_wrist": {
+        "end": 99,
+        "start": 91
+      }
+    },
+    "control_end": 87,
+    "control_start": 79,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "The jaws stopped on the block rather than closing empty. I am lifting it clear before moving to the first lower-support position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The support lifted securely. I am carrying it to the left side of a centred lower layer, leaving space for the matching right support.",
+      "targets": {
+        "left_x": -0.1,
+        "left_y": -0.08
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 115,
+        "start": 100
+      },
+      "left_wrist": {
+        "end": 115,
+        "start": 100
+      },
+      "right_wrist": {
+        "end": 115,
+        "start": 100
+      }
+    },
+    "control_end": 102,
+    "control_start": 87,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "The support lifted securely. I am carrying it to the left side of a centred lower layer, leaving space for the matching right support.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The block is above its lower-layer position with clear space beneath it. I am lowering to just above the table before the final gentle set-down.",
+      "targets": {
+        "left_z": 0.806
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 124,
+        "start": 116
+      },
+      "left_wrist": {
+        "end": 124,
+        "start": 116
+      },
+      "right_wrist": {
+        "end": 124,
+        "start": 116
+      }
+    },
+    "control_end": 110,
+    "control_start": 102,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "The block is above its lower-layer position with clear space beneath it. I am lowering to just above the table before the final gentle set-down.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The support is just above the table. I am lowering five millimetres for a controlled set-down.",
+      "targets": {
+        "left_z": 0.801
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 126,
+        "start": 125
+      },
+      "left_wrist": {
+        "end": 126,
+        "start": 125
+      },
+      "right_wrist": {
+        "end": 126,
+        "start": 125
+      }
+    },
+    "control_end": 111,
+    "control_start": 110,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "The support is just above the table. I am lowering five millimetres for a controlled set-down.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am completing the last five millimetres of descent and releasing the first support upright on the table.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.7965
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 132,
+        "start": 127
+      },
+      "left_wrist": {
+        "end": 132,
+        "start": 127
+      },
+      "right_wrist": {
+        "end": 132,
+        "start": 127
+      }
+    },
+    "control_end": 116,
+    "control_start": 111,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "I am completing the last five millimetres of descent and releasing the first support upright on the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The first support remains upright after release. I am withdrawing the left hand and beginning to turn the right hand downward for the matching support.",
+      "targets": {
+        "left_z": 0.9,
+        "right_pitch_deg": 30
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 153,
+        "start": 133
+      },
+      "left_wrist": {
+        "end": 153,
+        "start": 133
+      },
+      "right_wrist": {
+        "end": 153,
+        "start": 133
+      }
+    },
+    "control_end": 136,
+    "control_start": 116,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 16,
+    "public_note": "The first support remains upright after release. I am withdrawing the left hand and beginning to turn the right hand downward for the matching support.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am approaching above the outer-right white support and completing the downward orientation.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_x": 0.28,
+        "right_y": -0.06,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 174,
+        "start": 154
+      },
+      "left_wrist": {
+        "end": 174,
+        "start": 154
+      },
+      "right_wrist": {
+        "end": 174,
+        "start": 154
+      }
+    },
+    "control_end": 156,
+    "control_start": 136,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 17,
+    "public_note": "I am approaching above the outer-right white support and completing the downward orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist view puts the support slightly right of the gripper centre. I am correcting that offset while descending to its side-grasp height.",
+      "targets": {
+        "right_x": 0.305,
+        "right_z": 0.801
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 179,
+        "start": 175
+      },
+      "left_wrist": {
+        "end": 179,
+        "start": 175
+      },
+      "right_wrist": {
+        "end": 179,
+        "start": 175
+      }
+    },
+    "control_end": 160,
+    "control_start": 156,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "The wrist view puts the support slightly right of the gripper centre. I am correcting that offset while descending to its side-grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The right support is centred between the fingers at grasp height. I am closing the jaws to pick it up.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 186,
+        "start": 180
+      },
+      "left_wrist": {
+        "end": 186,
+        "start": 180
+      },
+      "right_wrist": {
+        "end": 186,
+        "start": 180
+      }
+    },
+    "control_end": 166,
+    "control_start": 160,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 19,
+    "public_note": "The right support is centred between the fingers at grasp height. I am closing the jaws to pick it up.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The right jaws have secured the support. I am lifting it clear of the table before transferring it beside the first support.",
+      "targets": {
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 195,
+        "start": 187
+      },
+      "left_wrist": {
+        "end": 195,
+        "start": 187
+      },
+      "right_wrist": {
+        "end": 195,
+        "start": 187
+      }
+    },
+    "control_end": 174,
+    "control_start": 166,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "The right jaws have secured the support. I am lifting it clear of the table before transferring it beside the first support.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The second support is securely lifted. I am moving it to the matching right-side position for the lower board.",
+      "targets": {
+        "right_x": 0.1,
+        "right_y": -0.08
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 207,
+        "start": 196
+      },
+      "left_wrist": {
+        "end": 207,
+        "start": 196
+      },
+      "right_wrist": {
+        "end": 207,
+        "start": 196
+      }
+    },
+    "control_end": 185,
+    "control_start": 174,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "The second support is securely lifted. I am moving it to the matching right-side position for the lower board.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The second support is aligned opposite the first. I am lowering it to about a centimetre above its table resting height.",
+      "targets": {
+        "right_z": 0.812
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 217,
+        "start": 208
+      },
+      "left_wrist": {
+        "end": 217,
+        "start": 208
+      },
+      "right_wrist": {
+        "end": 217,
+        "start": 208
+      }
+    },
+    "control_end": 194,
+    "control_start": 185,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 22,
+    "public_note": "The second support is aligned opposite the first. I am lowering it to about a centimetre above its table resting height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am lowering the second support five millimetres, keeping it level beside the first.",
+      "targets": {
+        "right_z": 0.807
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 219,
+        "start": 218
+      },
+      "left_wrist": {
+        "end": 219,
+        "start": 218
+      },
+      "right_wrist": {
+        "end": 219,
+        "start": 218
+      }
+    },
+    "control_end": 195,
+    "control_start": 194,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "I am lowering the second support five millimetres, keeping it level beside the first.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am lowering the final five millimetres and releasing the second lower support upright.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.8025
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 225,
+        "start": 220
+      },
+      "left_wrist": {
+        "end": 225,
+        "start": 220
+      },
+      "right_wrist": {
+        "end": 225,
+        "start": 220
+      }
+    },
+    "control_end": 200,
+    "control_start": 195,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "I am lowering the final five millimetres and releasing the second lower support upright.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Both lower supports are standing. I am clearing the right hand and approaching the long board with the left jaws turning to grip across its short dimension.",
+      "targets": {
+        "left_x": 0,
+        "left_y": -0.23,
+        "left_yaw_deg": 60,
+        "right_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 246,
+        "start": 226
+      },
+      "left_wrist": {
+        "end": 246,
+        "start": 226
+      },
+      "right_wrist": {
+        "end": 246,
+        "start": 226
+      }
+    },
+    "control_end": 220,
+    "control_start": 200,
+    "feedback": "Accepted: the original plan contains 30 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 25,
+    "public_note": "Both lower supports are standing. I am clearing the right hand and approaching the long board with the left jaws turning to grip across its short dimension.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The previous approach stopped short. I am completing the board-centred approach and rotating the jaws across its width.",
+      "targets": {
+        "left_x": 0,
+        "left_y": -0.23,
+        "left_yaw_deg": 90,
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 265,
+        "start": 247
+      },
+      "left_wrist": {
+        "end": 265,
+        "start": 247
+      },
+      "right_wrist": {
+        "end": 265,
+        "start": 247
+      }
+    },
+    "control_end": 238,
+    "control_start": 220,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "The previous approach stopped short. I am completing the board-centred approach and rotating the jaws across its width.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The long board lies slightly beyond the current grasp centre. I am aligning across its width and lowering close to its top surface.",
+      "targets": {
+        "left_y": -0.2,
+        "left_z": 0.791
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 270,
+        "start": 266
+      },
+      "left_wrist": {
+        "end": 270,
+        "start": 266
+      },
+      "right_wrist": {
+        "end": 270,
+        "start": 266
+      }
+    },
+    "control_end": 242,
+    "control_start": 238,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "The long board lies slightly beyond the current grasp centre. I am aligning across its width and lowering close to its top surface.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is centred across the open jaws. I am lowering toward the thin board's edge before the final small grasp descent.",
+      "targets": {
+        "left_z": 0.783
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 272,
+        "start": 271
+      },
+      "left_wrist": {
+        "end": 272,
+        "start": 271
+      },
+      "right_wrist": {
+        "end": 272,
+        "start": 271
+      }
+    },
+    "control_end": 243,
+    "control_start": 242,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "The board is centred across the open jaws. I am lowering toward the thin board's edge before the final small grasp descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am lowering five millimetres so the jaw centres overlap the thin board rather than closing above it.",
+      "targets": {
+        "left_z": 0.779
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 274,
+        "start": 273
+      },
+      "left_wrist": {
+        "end": 274,
+        "start": 273
+      },
+      "right_wrist": {
+        "end": 274,
+        "start": 273
+      }
+    },
+    "control_end": 244,
+    "control_start": 243,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "I am lowering five millimetres so the jaw centres overlap the thin board rather than closing above it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws are aligned across the long board. I am making the final small descent and closing on its edges.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.775
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 282,
+        "start": 275
+      },
+      "left_wrist": {
+        "end": 282,
+        "start": 275
+      },
+      "right_wrist": {
+        "end": 282,
+        "start": 275
+      }
+    },
+    "control_end": 251,
+    "control_start": 244,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "The jaws are aligned across the long board. I am making the final small descent and closing on its edges.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is held across its width. I am lifting it level and moving the idle right hand aside to clear the placement path.",
+      "targets": {
+        "left_z": 0.875,
+        "right_x": 0.3
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 293,
+        "start": 283
+      },
+      "left_wrist": {
+        "end": 293,
+        "start": 283
+      },
+      "right_wrist": {
+        "end": 293,
+        "start": 283
+      }
+    },
+    "control_end": 261,
+    "control_start": 251,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "The board is held across its width. I am lifting it level and moving the idle right hand aside to clear the placement path.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The long board lifted level. I am moving it directly over the two lower supports, centred between them.",
+      "targets": {
+        "left_y": -0.08
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 300,
+        "start": 294
+      },
+      "left_wrist": {
+        "end": 300,
+        "start": 294
+      },
+      "right_wrist": {
+        "end": 300,
+        "start": 294
+      }
+    },
+    "control_end": 267,
+    "control_start": 261,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 32,
+    "public_note": "The long board lifted level. I am moving it directly over the two lower supports, centred between them.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The direct placement approach was unreachable and neither arm moved. I am taking a lower intermediate approach toward the supports while keeping the board clear.",
+      "targets": {
+        "left_y": -0.13,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 300,
+        "start": 294
+      },
+      "left_wrist": {
+        "end": 300,
+        "start": 294
+      },
+      "right_wrist": {
+        "end": 300,
+        "start": 294
+      }
+    },
+    "control_end": 267,
+    "control_start": 261,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "The direct placement approach was unreachable and neither arm moved. I am taking a lower intermediate approach toward the supports while keeping the board clear.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The intermediate approach succeeded. I am bringing the level board over the support centres at a lower, more reachable height.",
+      "targets": {
+        "left_y": -0.08,
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 310,
+        "start": 301
+      },
+      "left_wrist": {
+        "end": 310,
+        "start": 301
+      },
+      "right_wrist": {
+        "end": 310,
+        "start": 301
+      }
+    },
+    "control_end": 276,
+    "control_start": 267,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "The intermediate approach succeeded. I am bringing the level board over the support centres at a lower, more reachable height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is centred over both supports and close to their tops. I am lowering five millimetres to approach contact gently.",
+      "targets": {
+        "left_z": 0.835
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 312,
+        "start": 311
+      },
+      "left_wrist": {
+        "end": 312,
+        "start": 311
+      },
+      "right_wrist": {
+        "end": 312,
+        "start": 311
+      }
+    },
+    "control_end": 277,
+    "control_start": 276,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "The board is centred over both supports and close to their tops. I am lowering five millimetres to approach contact gently.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is level and centred across the two upright supports. I am releasing it to settle onto the completed lower layer.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 316,
+        "start": 313
+      },
+      "left_wrist": {
+        "end": 316,
+        "start": 313
+      },
+      "right_wrist": {
+        "end": 316,
+        "start": 313
+      }
+    },
+    "control_end": 280,
+    "control_start": 277,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 35,
+    "public_note": "The board is level and centred across the two upright supports. I am releasing it to settle onto the completed lower layer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lower board has settled level after release. I am withdrawing toward the remaining left support to prepare the next layer.",
+      "targets": {
+        "left_x": -0.17,
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 328,
+        "start": 317
+      },
+      "left_wrist": {
+        "end": 328,
+        "start": 317
+      },
+      "right_wrist": {
+        "end": 328,
+        "start": 317
+      }
+    },
+    "control_end": 291,
+    "control_start": 280,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 36,
+    "public_note": "The lower board has settled level after release. I am withdrawing toward the remaining left support to prepare the next layer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The remaining left block is partly behind the board's end. I am approaching its exposed rear portion with the jaws turning to grasp its sides without disturbing the lower layer.",
+      "targets": {
+        "left_y": -0.025,
+        "left_yaw_deg": 30
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 349,
+        "start": 329
+      },
+      "left_wrist": {
+        "end": 349,
+        "start": 329
+      },
+      "right_wrist": {
+        "end": 349,
+        "start": 329
+      }
+    },
+    "control_end": 311,
+    "control_start": 291,
+    "feedback": "Accepted: the original plan contains 22 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 37,
+    "public_note": "The remaining left block is partly behind the board's end. I am approaching its exposed rear portion with the jaws turning to grasp its sides without disturbing the lower layer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The rear portion of the unused block is visible behind the board. I am aligning the jaws and descending above that exposed portion.",
+      "targets": {
+        "left_yaw_deg": 0,
+        "left_z": 0.827
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 361,
+        "start": 350
+      },
+      "left_wrist": {
+        "end": 361,
+        "start": 350
+      },
+      "right_wrist": {
+        "end": 361,
+        "start": 350
+      }
+    },
+    "control_end": 322,
+    "control_start": 311,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "The rear portion of the unused block is visible behind the board. I am aligning the jaws and descending above that exposed portion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am positioning the fingers around the exposed rear edge of the unused block, staying behind the board so the completed layer remains undisturbed.",
+      "targets": {
+        "left_y": -0.038,
+        "left_z": 0.807
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 366,
+        "start": 362
+      },
+      "left_wrist": {
+        "end": 366,
+        "start": 362
+      },
+      "right_wrist": {
+        "end": 366,
+        "start": 362
+      }
+    },
+    "control_end": 326,
+    "control_start": 322,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "I am positioning the fingers around the exposed rear edge of the unused block, staying behind the board so the completed layer remains undisturbed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The exposed block edge is between the fingers while the board stays in front of them. I am lowering a few millimetres and closing on the block.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.803
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 374,
+        "start": 367
+      },
+      "left_wrist": {
+        "end": 374,
+        "start": 367
+      },
+      "right_wrist": {
+        "end": 374,
+        "start": 367
+      }
+    },
+    "control_end": 333,
+    "control_start": 326,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 40,
+    "public_note": "The exposed block edge is between the fingers while the board stays in front of them. I am lowering a few millimetres and closing on the block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws closed empty at the block's rear corner. I am reopening before a lower, more centred grasp attempt.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 381,
+        "start": 375
+      },
+      "left_wrist": {
+        "end": 381,
+        "start": 375
+      },
+      "right_wrist": {
+        "end": 381,
+        "start": 375
+      }
+    },
+    "control_end": 339,
+    "control_start": 333,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 41,
+    "public_note": "The jaws closed empty at the block's rear corner. I am reopening before a lower, more centred grasp attempt.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am moving a few millimetres toward the block and downward to engage more than its rear corner, while keeping clear of the board edge.",
+      "targets": {
+        "left_y": -0.043,
+        "left_z": 0.799
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 384,
+        "start": 382
+      },
+      "left_wrist": {
+        "end": 384,
+        "start": 382
+      },
+      "right_wrist": {
+        "end": 384,
+        "start": 382
+      }
+    },
+    "control_end": 341,
+    "control_start": 339,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "I am moving a few millimetres toward the block and downward to engage more than its rear corner, while keeping clear of the board edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am making another small correction onto the exposed block sides, then closing at the lower grasp height.",
+      "targets": {
+        "left_gripper": 0,
+        "left_y": -0.048,
+        "left_z": 0.794
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 393,
+        "start": 385
+      },
+      "left_wrist": {
+        "end": 393,
+        "start": 385
+      },
+      "right_wrist": {
+        "end": 393,
+        "start": 385
+      }
+    },
+    "control_end": 349,
+    "control_start": 341,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 43,
+    "public_note": "I am making another small correction onto the exposed block sides, then closing at the lower grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The rear-edge grasp is not securing the block and is shifting it. I am withdrawing and preparing to move the board slightly forward so the remaining supports can be accessed cleanly.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.89,
+        "right_yaw_deg": 60
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 414,
+        "start": 394
+      },
+      "left_wrist": {
+        "end": 414,
+        "start": 394
+      },
+      "right_wrist": {
+        "end": 414,
+        "start": 394
+      }
+    },
+    "control_end": 369,
+    "control_start": 349,
+    "feedback": "Accepted: the original plan contains 27 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 44,
+    "public_note": "The rear-edge grasp is not securing the block and is shifting it. I am withdrawing and preparing to move the board slightly forward so the remaining supports can be accessed cleanly.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am approaching the board near its centre to shift it forward off the unused blocks, while reopening the withdrawn left hand.",
+      "targets": {
+        "left_gripper": 1,
+        "right_x": 0.04,
+        "right_y": -0.09,
+        "right_yaw_deg": 90,
+        "right_z": 0.845
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 434,
+        "start": 415
+      },
+      "left_wrist": {
+        "end": 434,
+        "start": 415
+      },
+      "right_wrist": {
+        "end": 434,
+        "start": 415
+      }
+    },
+    "control_end": 388,
+    "control_start": 369,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "I am approaching the board near its centre to shift it forward off the unused blocks, while reopening the withdrawn left hand.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The right jaws are centred across the board. I am descending toward its edges for a controlled regrasp.",
+      "targets": {
+        "right_z": 0.827
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 437,
+        "start": 435
+      },
+      "left_wrist": {
+        "end": 437,
+        "start": 435
+      },
+      "right_wrist": {
+        "end": 437,
+        "start": 435
+      }
+    },
+    "control_end": 390,
+    "control_start": 388,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "The right jaws are centred across the board. I am descending toward its edges for a controlled regrasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am lowering a few millimetres and closing across the board to lift it clear of the partially covered blocks.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.824
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 445,
+        "start": 438
+      },
+      "left_wrist": {
+        "end": 445,
+        "start": 438
+      },
+      "right_wrist": {
+        "end": 445,
+        "start": 438
+      }
+    },
+    "control_end": 397,
+    "control_start": 390,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "I am lowering a few millimetres and closing across the board to lift it clear of the partially covered blocks.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is secured. I am lifting it a short distance clear of the supports before shifting it forward.",
+      "targets": {
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 449,
+        "start": 446
+      },
+      "left_wrist": {
+        "end": 449,
+        "start": 446
+      },
+      "right_wrist": {
+        "end": 449,
+        "start": 446
+      }
+    },
+    "control_end": 400,
+    "control_start": 397,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "The board is secured. I am lifting it a short distance clear of the supports before shifting it forward.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am shifting the raised board toward the near side, retaining overlap with the two lower supports while uncovering the unused blocks behind it.",
+      "targets": {
+        "right_y": -0.125
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 455,
+        "start": 450
+      },
+      "left_wrist": {
+        "end": 455,
+        "start": 450
+      },
+      "right_wrist": {
+        "end": 455,
+        "start": 450
+      }
+    },
+    "control_end": 405,
+    "control_start": 400,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 49,
+    "public_note": "I am shifting the raised board toward the near side, retaining overlap with the two lower supports while uncovering the unused blocks behind it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is held clear, exposing the remaining left block. I am approaching that block with the jaws aligned to its rotated sides.",
+      "targets": {
+        "left_x": -0.175,
+        "left_y": -0.085,
+        "left_yaw_deg": 40,
+        "left_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 471,
+        "start": 456
+      },
+      "left_wrist": {
+        "end": 471,
+        "start": 456
+      },
+      "right_wrist": {
+        "end": 471,
+        "start": 456
+      }
+    },
+    "control_end": 420,
+    "control_start": 405,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "The board is held clear, exposing the remaining left block. I am approaching that block with the jaws aligned to its rotated sides.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "With the board held away, the whole block is visible. I am centring the jaws over it and descending to the grasp height.",
+      "targets": {
+        "left_x": -0.18,
+        "left_y": -0.1,
+        "left_z": 0.799
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 475,
+        "start": 472
+      },
+      "left_wrist": {
+        "end": 475,
+        "start": 472
+      },
+      "right_wrist": {
+        "end": 475,
+        "start": 472
+      }
+    },
+    "control_end": 423,
+    "control_start": 420,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "With the board held away, the whole block is visible. I am centring the jaws over it and descending to the grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The exposed block is now centred between the fingers. I am closing the jaws while the right hand holds the board clear.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 482,
+        "start": 476
+      },
+      "left_wrist": {
+        "end": 482,
+        "start": 476
+      },
+      "right_wrist": {
+        "end": 482,
+        "start": 476
+      }
+    },
+    "control_end": 429,
+    "control_start": 423,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 52,
+    "public_note": "The exposed block is now centred between the fingers. I am closing the jaws while the right hand holds the board clear.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The left jaws have secured the block. I am lifting it clear so the board can be returned onto its two lower supports.",
+      "targets": {
+        "left_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 492,
+        "start": 483
+      },
+      "left_wrist": {
+        "end": 492,
+        "start": 483
+      },
+      "right_wrist": {
+        "end": 492,
+        "start": 483
+      }
+    },
+    "control_end": 438,
+    "control_start": 429,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 53,
+    "public_note": "The left jaws have secured the block. I am lifting it clear so the board can be returned onto its two lower supports.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The block is lifted, but its clearance nudged the held board slightly out of alignment. I am re-centring and straightening the board above the lower supports.",
+      "targets": {
+        "right_y": -0.1,
+        "right_yaw_deg": 100
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 498,
+        "start": 493
+      },
+      "left_wrist": {
+        "end": 498,
+        "start": 493
+      },
+      "right_wrist": {
+        "end": 498,
+        "start": 493
+      }
+    },
+    "control_end": 443,
+    "control_start": 438,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "The block is lifted, but its clearance nudged the held board slightly out of alignment. I am re-centring and straightening the board above the lower supports.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is back above the support pair. I am lowering it and making a small final straightening correction before release.",
+      "targets": {
+        "right_yaw_deg": 104,
+        "right_z": 0.829
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 501,
+        "start": 499
+      },
+      "left_wrist": {
+        "end": 501,
+        "start": 499
+      },
+      "right_wrist": {
+        "end": 501,
+        "start": 499
+      }
+    },
+    "control_end": 445,
+    "control_start": 443,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 55,
+    "public_note": "The board is back above the support pair. I am lowering it and making a small final straightening correction before release.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board has reached support contact, with a small residual position error. I am releasing it rather than pressing further into the lower supports.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 505,
+        "start": 502
+      },
+      "left_wrist": {
+        "end": 505,
+        "start": 502
+      },
+      "right_wrist": {
+        "end": 505,
+        "start": 502
+      }
+    },
+    "control_end": 448,
+    "control_start": 445,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 56,
+    "public_note": "The board has reached support contact, with a small residual position error. I am releasing it rather than pressing further into the lower supports.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is released on the lower supports. I am withdrawing the right hand to make room for placing the held block on the next layer.",
+      "targets": {
+        "right_x": 0.28,
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 518,
+        "start": 506
+      },
+      "left_wrist": {
+        "end": 518,
+        "start": 506
+      },
+      "right_wrist": {
+        "end": 518,
+        "start": 506
+      }
+    },
+    "control_end": 460,
+    "control_start": 448,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 57,
+    "public_note": "The board is released on the lower supports. I am withdrawing the right hand to make room for placing the held block on the next layer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board slipped off the supports during withdrawal, while the blocks remain upright. I am returning to regrasp and restore the lower board; the left hand will keep its block clear.",
+      "targets": {
+        "right_x": 0.03,
+        "right_y": -0.16,
+        "right_yaw_deg": 98,
+        "right_z": 0.815
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 535,
+        "start": 519
+      },
+      "left_wrist": {
+        "end": 535,
+        "start": 519
+      },
+      "right_wrist": {
+        "end": 535,
+        "start": 519
+      }
+    },
+    "control_end": 476,
+    "control_start": 460,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 58,
+    "public_note": "The board slipped off the supports during withdrawal, while the blocks remain upright. I am returning to regrasp and restore the lower board; the left hand will keep its block clear.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board has settled flat on the table. I am correcting the grasp centre across its width and lowering toward its edges.",
+      "targets": {
+        "right_y": -0.179,
+        "right_z": 0.789
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 540,
+        "start": 536
+      },
+      "left_wrist": {
+        "end": 540,
+        "start": 536
+      },
+      "right_wrist": {
+        "end": 540,
+        "start": 536
+      }
+    },
+    "control_end": 480,
+    "control_start": 476,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 59,
+    "public_note": "The board has settled flat on the table. I am correcting the grasp centre across its width and lowering toward its edges.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is centred across the fingers. I am lowering in small increments near its thin edge.",
+      "targets": {
+        "right_z": 0.784
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 542,
+        "start": 541
+      },
+      "left_wrist": {
+        "end": 542,
+        "start": 541
+      },
+      "right_wrist": {
+        "end": 542,
+        "start": 541
+      }
+    },
+    "control_end": 481,
+    "control_start": 480,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 60,
+    "public_note": "The board is centred across the fingers. I am lowering in small increments near its thin edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am making the final small descent and regrasping the long board across its edges.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.7795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 550,
+        "start": 543
+      },
+      "left_wrist": {
+        "end": 550,
+        "start": 543
+      },
+      "right_wrist": {
+        "end": 550,
+        "start": 543
+      }
+    },
+    "control_end": 488,
+    "control_start": 481,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 61,
+    "public_note": "I am making the final small descent and regrasping the long board across its edges.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is gripped again. I am lifting it level and moving the held block farther aside so it cannot contact the board during placement.",
+      "targets": {
+        "left_x": -0.27,
+        "right_z": 0.855
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 557,
+        "start": 551
+      },
+      "left_wrist": {
+        "end": 557,
+        "start": 551
+      },
+      "right_wrist": {
+        "end": 557,
+        "start": 551
+      }
+    },
+    "control_end": 494,
+    "control_start": 488,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 62,
+    "public_note": "The board is gripped again. I am lifting it level and moving the held block farther aside so it cannot contact the board during placement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is level and the left block is clear. I am centring it over the lower supports and aligning its long edge with their span.",
+      "targets": {
+        "right_y": -0.085,
+        "right_yaw_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 570,
+        "start": 558
+      },
+      "left_wrist": {
+        "end": 570,
+        "start": 558
+      },
+      "right_wrist": {
+        "end": 570,
+        "start": 558
+      }
+    },
+    "control_end": 506,
+    "control_start": 494,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 63,
+    "public_note": "The board is level and the left block is clear. I am centring it over the lower supports and aligning its long edge with their span.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is centred over the lower supports. I am lowering to just above their tops, keeping the board level.",
+      "targets": {
+        "right_z": 0.829
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 574,
+        "start": 571
+      },
+      "left_wrist": {
+        "end": 574,
+        "start": 571
+      },
+      "right_wrist": {
+        "end": 574,
+        "start": 571
+      }
+    },
+    "control_end": 509,
+    "control_start": 506,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 64,
+    "public_note": "The board is centred over the lower supports. I am lowering to just above their tops, keeping the board level.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is close to the supports. I am lowering five millimetres for a gentle set-down.",
+      "targets": {
+        "right_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 576,
+        "start": 575
+      },
+      "left_wrist": {
+        "end": 576,
+        "start": 575
+      },
+      "right_wrist": {
+        "end": 576,
+        "start": 575
+      }
+    },
+    "control_end": 510,
+    "control_start": 509,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 65,
+    "public_note": "The board is close to the supports. I am lowering five millimetres for a gentle set-down.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am lowering the final few millimetres and releasing the board onto the supports. The next withdrawal will be straight upward to avoid dragging it.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.821
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 581,
+        "start": 577
+      },
+      "left_wrist": {
+        "end": 581,
+        "start": 577
+      },
+      "right_wrist": {
+        "end": 581,
+        "start": 577
+      }
+    },
+    "control_end": 514,
+    "control_start": 510,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 66,
+    "public_note": "I am lowering the final few millimetres and releasing the board onto the supports. The next withdrawal will be straight upward to avoid dragging it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is released and level. I am lifting the open right fingers straight up to clear it without lateral contact.",
+      "targets": {
+        "right_z": 0.865
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 587,
+        "start": 582
+      },
+      "left_wrist": {
+        "end": 587,
+        "start": 582
+      },
+      "right_wrist": {
+        "end": 587,
+        "start": 582
+      }
+    },
+    "control_end": 519,
+    "control_start": 514,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 67,
+    "public_note": "The board is released and level. I am lifting the open right fingers straight up to clear it without lateral contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board stayed stable after the vertical withdrawal. I am moving the right hand aside and bringing the held block over the left half of the next layer.",
+      "targets": {
+        "left_x": -0.08,
+        "left_y": -0.085,
+        "left_z": 0.885,
+        "right_x": 0.28
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 602,
+        "start": 588
+      },
+      "left_wrist": {
+        "end": 602,
+        "start": 588
+      },
+      "right_wrist": {
+        "end": 602,
+        "start": 588
+      }
+    },
+    "control_end": 533,
+    "control_start": 519,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 68,
+    "public_note": "The board stayed stable after the vertical withdrawal. I am moving the right hand aside and bringing the held block over the left half of the next layer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The held block is above the left middle-support position. I am lowering toward the board while turning the idle right jaws for the remaining block.",
+      "targets": {
+        "left_z": 0.863,
+        "right_yaw_deg": 30
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 623,
+        "start": 603
+      },
+      "left_wrist": {
+        "end": 623,
+        "start": 603
+      },
+      "right_wrist": {
+        "end": 623,
+        "start": 603
+      }
+    },
+    "control_end": 553,
+    "control_start": 533,
+    "feedback": "Accepted: the original plan contains 22 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 69,
+    "public_note": "The held block is above the left middle-support position. I am lowering toward the board while turning the idle right jaws for the remaining block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am lowering the left middle support closer to the board and positioning the right hand above the final white block.",
+      "targets": {
+        "left_z": 0.855,
+        "right_x": 0.19,
+        "right_y": -0.035,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 639,
+        "start": 624
+      },
+      "left_wrist": {
+        "end": 639,
+        "start": 624
+      },
+      "right_wrist": {
+        "end": 639,
+        "start": 624
+      }
+    },
+    "control_end": 568,
+    "control_start": 553,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 70,
+    "public_note": "I am lowering the left middle support closer to the board and positioning the right hand above the final white block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The left block has reached the board, so I am releasing it. The right hand is descending onto the exposed portion of the remaining block, aligned to its sides.",
+      "targets": {
+        "left_gripper": 1,
+        "right_x": 0.2,
+        "right_y": -0.035,
+        "right_yaw_deg": -15,
+        "right_z": 0.804
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 649,
+        "start": 640
+      },
+      "left_wrist": {
+        "end": 649,
+        "start": 640
+      },
+      "right_wrist": {
+        "end": 649,
+        "start": 640
+      }
+    },
+    "control_end": 577,
+    "control_start": 568,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 71,
+    "public_note": "The left block has reached the board, so I am releasing it. The right hand is descending onto the exposed portion of the remaining block, aligned to its sides.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The left middle support remains on the board. I am withdrawing its gripper vertically and closing the right jaws around the remaining white block.",
+      "targets": {
+        "left_z": 0.91,
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 664,
+        "start": 650
+      },
+      "left_wrist": {
+        "end": 664,
+        "start": 650
+      },
+      "right_wrist": {
+        "end": 664,
+        "start": 650
+      }
+    },
+    "control_end": 591,
+    "control_start": 577,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 72,
+    "public_note": "The left middle support remains on the board. I am withdrawing its gripper vertically and closing the right jaws around the remaining white block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The right jaws have secured the final white block. I am lifting it clear of the board edge before moving it into the middle layer.",
+      "targets": {
+        "right_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 677,
+        "start": 665
+      },
+      "left_wrist": {
+        "end": 677,
+        "start": 665
+      },
+      "right_wrist": {
+        "end": 677,
+        "start": 665
+      }
+    },
+    "control_end": 603,
+    "control_start": 591,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 73,
+    "public_note": "The right jaws have secured the final white block. I am lifting it clear of the board edge before moving it into the middle layer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The final block is lifted, and the lower board remains supported despite a small shift. I am bringing the block over the right middle-layer position and clearing the left hand.",
+      "targets": {
+        "left_x": -0.23,
+        "right_x": 0.075,
+        "right_y": -0.085,
+        "right_z": 0.885
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 688,
+        "start": 678
+      },
+      "left_wrist": {
+        "end": 688,
+        "start": 678
+      },
+      "right_wrist": {
+        "end": 688,
+        "start": 678
+      }
+    },
+    "control_end": 613,
+    "control_start": 603,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 74,
+    "public_note": "The final block is lifted, and the lower board remains supported despite a small shift. I am bringing the block over the right middle-layer position and clearing the left hand.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The carried block caught the board edge and shifted the layer. I am lifting vertically to separate them before attempting any further placement.",
+      "targets": {
+        "right_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 695,
+        "start": 689
+      },
+      "left_wrist": {
+        "end": 695,
+        "start": 689
+      },
+      "right_wrist": {
+        "end": 695,
+        "start": 689
+      }
+    },
+    "control_end": 619,
+    "control_start": 613,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 75,
+    "public_note": "The carried block caught the board edge and shifted the layer. I am lifting vertically to separate them before attempting any further placement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The larger vertical clearance target was unreachable. I am trying a smaller upward lift to free the block from the board edge.",
+      "targets": {
+        "right_z": 0.915
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 695,
+        "start": 689
+      },
+      "left_wrist": {
+        "end": 695,
+        "start": 689
+      },
+      "right_wrist": {
+        "end": 695,
+        "start": 689
+      }
+    },
+    "control_end": 619,
+    "control_start": 613,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 75,
+    "public_note": "The larger vertical clearance target was unreachable. I am trying a smaller upward lift to free the block from the board edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The carried block is now clear. I am approaching the shifted board near its centre to restore it across both lower supports.",
+      "targets": {
+        "left_x": -0.13,
+        "left_y": -0.085,
+        "left_yaw_deg": 90,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 716,
+        "start": 696
+      },
+      "left_wrist": {
+        "end": 716,
+        "start": 696
+      },
+      "right_wrist": {
+        "end": 716,
+        "start": 696
+      }
+    },
+    "control_end": 639,
+    "control_start": 619,
+    "feedback": "Accepted: the original plan contains 23 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 76,
+    "public_note": "The carried block is now clear. I am approaching the shifted board near its centre to restore it across both lower supports.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The shifted board lies toward the near side of the grasp centre. I am aligning across its width and descending for a careful regrasp.",
+      "targets": {
+        "left_y": -0.11,
+        "left_z": 0.823
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 722,
+        "start": 717
+      },
+      "left_wrist": {
+        "end": 722,
+        "start": 717
+      },
+      "right_wrist": {
+        "end": 722,
+        "start": 717
+      }
+    },
+    "control_end": 644,
+    "control_start": 639,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 77,
+    "public_note": "The shifted board lies toward the near side of the grasp centre. I am aligning across its width and descending for a careful regrasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws are aligned across the displaced board. I am lowering a few millimetres and securing it for re-centring.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.8185
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 730,
+        "start": 723
+      },
+      "left_wrist": {
+        "end": 730,
+        "start": 723
+      },
+      "right_wrist": {
+        "end": 730,
+        "start": 723
+      }
+    },
+    "control_end": 651,
+    "control_start": 644,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 78,
+    "public_note": "The jaws are aligned across the displaced board. I am lowering a few millimetres and securing it for re-centring.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is secured. I am lifting it clear of the lower supports and moving the held right block aside to avoid further contact.",
+      "targets": {
+        "left_z": 0.85,
+        "right_x": 0.25
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 743,
+        "start": 731
+      },
+      "left_wrist": {
+        "end": 743,
+        "start": 731
+      },
+      "right_wrist": {
+        "end": 743,
+        "start": 731
+      }
+    },
+    "control_end": 663,
+    "control_start": 651,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 79,
+    "public_note": "The board is secured. I am lifting it clear of the lower supports and moving the held right block aside to avoid further contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "With the right block clear, I am carrying the board back over the two lower supports, keeping the block already on it balanced.",
+      "targets": {
+        "left_x": 0,
+        "left_y": -0.08
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 763,
+        "start": 744
+      },
+      "left_wrist": {
+        "end": 763,
+        "start": 744
+      },
+      "right_wrist": {
+        "end": 763,
+        "start": 744
+      }
+    },
+    "control_end": 682,
+    "control_start": 663,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 80,
+    "public_note": "With the right block clear, I am carrying the board back over the two lower supports, keeping the block already on it balanced.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is back over the supports. I am lowering and correcting its slight rotation so it spans them evenly.",
+      "targets": {
+        "left_yaw_deg": 81,
+        "left_z": 0.828
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 769,
+        "start": 764
+      },
+      "left_wrist": {
+        "end": 769,
+        "start": 764
+      },
+      "right_wrist": {
+        "end": 769,
+        "start": 764
+      }
+    },
+    "control_end": 687,
+    "control_start": 682,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 81,
+    "public_note": "The board is back over the supports. I am lowering and correcting its slight rotation so it spans them evenly.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is supported again. I am completing a small descent and releasing it without further lateral adjustment.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.823
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 774,
+        "start": 770
+      },
+      "left_wrist": {
+        "end": 774,
+        "start": 770
+      },
+      "right_wrist": {
+        "end": 774,
+        "start": 770
+      }
+    },
+    "control_end": 691,
+    "control_start": 687,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 82,
+    "public_note": "The board is supported again. I am completing a small descent and releasing it without further lateral adjustment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board has settled back on its supports. I am clearing the open left fingers vertically before placing the remaining middle block.",
+      "targets": {
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 781,
+        "start": 775
+      },
+      "left_wrist": {
+        "end": 781,
+        "start": 775
+      },
+      "right_wrist": {
+        "end": 781,
+        "start": 775
+      }
+    },
+    "control_end": 697,
+    "control_start": 691,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 83,
+    "public_note": "The board has settled back on its supports. I am clearing the open left fingers vertically before placing the remaining middle block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am clearing the left hand away from the board and bringing the remaining block over the middle layer at a safe carrying height.",
+      "targets": {
+        "left_y": -0.2,
+        "left_z": 0.9,
+        "right_x": 0.08,
+        "right_y": -0.09
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 796,
+        "start": 782
+      },
+      "left_wrist": {
+        "end": 796,
+        "start": 782
+      },
+      "right_wrist": {
+        "end": 796,
+        "start": 782
+      }
+    },
+    "control_end": 711,
+    "control_start": 697,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 84,
+    "public_note": "I am clearing the left hand away from the board and bringing the remaining block over the middle layer at a safe carrying height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board has shifted again and the central view is blocked. I am moving both hands aside, keeping the held block elevated, to inspect the remaining stable supports.",
+      "targets": {
+        "left_x": -0.25,
+        "right_x": 0.3
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 811,
+        "start": 797
+      },
+      "left_wrist": {
+        "end": 811,
+        "start": 797
+      },
+      "right_wrist": {
+        "end": 811,
+        "start": 797
+      }
+    },
+    "control_end": 725,
+    "control_start": 711,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 85,
+    "public_note": "The board has shifted again and the central view is blocked. I am moving both hands aside, keeping the held block elevated, to inspect the remaining stable supports.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The supports remain upright, but the long board is now on the table behind them. I am approaching its left-central section to restore the lower layer.",
+      "targets": {
+        "left_x": -0.09,
+        "left_y": 0.015,
+        "left_yaw_deg": 110,
+        "left_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 829,
+        "start": 812
+      },
+      "left_wrist": {
+        "end": 829,
+        "start": 812
+      },
+      "right_wrist": {
+        "end": 829,
+        "start": 812
+      }
+    },
+    "control_end": 742,
+    "control_start": 725,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 86,
+    "public_note": "The supports remain upright, but the long board is now on the table behind them. I am approaching its left-central section to restore the lower layer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The central approach was unreachable. I am approaching nearer the board's left end, where the left arm has more reach margin.",
+      "targets": {
+        "left_x": -0.18,
+        "left_y": -0.01,
+        "left_yaw_deg": 110,
+        "left_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 829,
+        "start": 812
+      },
+      "left_wrist": {
+        "end": 829,
+        "start": 812
+      },
+      "right_wrist": {
+        "end": 829,
+        "start": 812
+      }
+    },
+    "control_end": 742,
+    "control_start": 725,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 86,
+    "public_note": "The central approach was unreachable. I am approaching nearer the board's left end, where the left arm has more reach margin.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The long board is aligned across the left jaws. I am lowering toward its edge while bringing the held right block down toward a safe table set-down.",
+      "targets": {
+        "left_z": 0.787,
+        "right_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 837,
+        "start": 830
+      },
+      "left_wrist": {
+        "end": 837,
+        "start": 830
+      },
+      "right_wrist": {
+        "end": 837,
+        "start": 830
+      }
+    },
+    "control_end": 749,
+    "control_start": 742,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 87,
+    "public_note": "The long board is aligned across the left jaws. I am lowering toward its edge while bringing the held right block down toward a safe table set-down.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The right block has reached table contact, so I am releasing it. I am also lowering the left jaws a few millimetres onto the board's edge.",
+      "targets": {
+        "left_z": 0.782,
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 843,
+        "start": 838
+      },
+      "left_wrist": {
+        "end": 843,
+        "start": 838
+      },
+      "right_wrist": {
+        "end": 843,
+        "start": 838
+      }
+    },
+    "control_end": 754,
+    "control_start": 749,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 88,
+    "public_note": "The right block has reached table contact, so I am releasing it. I am also lowering the left jaws a few millimetres onto the board's edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am securing the long board at its thin edge and withdrawing the empty right hand vertically from the released block.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.7775,
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 858,
+        "start": 844
+      },
+      "left_wrist": {
+        "end": 858,
+        "start": 844
+      },
+      "right_wrist": {
+        "end": 858,
+        "start": 844
+      }
+    },
+    "control_end": 768,
+    "control_start": 754,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 89,
+    "public_note": "I am securing the long board at its thin edge and withdrawing the empty right hand vertically from the released block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is secured near its left end. I am lifting it clear while beginning to return the idle right arm toward its starting pose.",
+      "targets": {
+        "left_z": 0.855,
+        "right_pitch_deg": 55,
+        "right_y": -0.202,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 879,
+        "start": 859
+      },
+      "left_wrist": {
+        "end": 879,
+        "start": 859
+      },
+      "right_wrist": {
+        "end": 879,
+        "start": 859
+      }
+    },
+    "control_end": 788,
+    "control_start": 768,
+    "feedback": "Accepted: the original plan contains 28 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 90,
+    "public_note": "The board is secured near its left end. I am lifting it clear while beginning to return the idle right arm toward its starting pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is clear of the table. I am aligning it across the two lower supports and completing the right arm's return to its starting pose.",
+      "targets": {
+        "left_x": -0.16,
+        "left_y": -0.08,
+        "left_yaw_deg": 90,
+        "left_z": 0.84,
+        "right_pitch_deg": 90,
+        "right_y": -0.202,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 897,
+        "start": 880
+      },
+      "left_wrist": {
+        "end": 897,
+        "start": 880
+      },
+      "right_wrist": {
+        "end": 897,
+        "start": 880
+      }
+    },
+    "control_end": 805,
+    "control_start": 788,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 91,
+    "public_note": "The board is clear of the table. I am aligning it across the two lower supports and completing the right arm's return to its starting pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is over the support pair, though the right support shifted slightly. I am making a small downward and near-side correction to seat the board across both.",
+      "targets": {
+        "left_y": -0.085,
+        "left_z": 0.831
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 900,
+        "start": 898
+      },
+      "left_wrist": {
+        "end": 900,
+        "start": 898
+      },
+      "right_wrist": {
+        "end": 900,
+        "start": 898
+      }
+    },
+    "control_end": 807,
+    "control_start": 805,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 92,
+    "public_note": "The board is over the support pair, though the right support shifted slightly. I am making a small downward and near-side correction to seat the board across both.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am lowering the board a final few millimetres and releasing it across the two supports.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.827
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 905,
+        "start": 901
+      },
+      "left_wrist": {
+        "end": 905,
+        "start": 901
+      },
+      "right_wrist": {
+        "end": 905,
+        "start": 901
+      }
+    },
+    "control_end": 811,
+    "control_start": 807,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 93,
+    "public_note": "I am lowering the board a final few millimetres and releasing it across the two supports.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board is released across the supports. I am withdrawing the open left gripper straight upward before returning the arm home.",
+      "targets": {
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 915,
+        "start": 906
+      },
+      "left_wrist": {
+        "end": 915,
+        "start": 906
+      },
+      "right_wrist": {
+        "end": 915,
+        "start": 906
+      }
+    },
+    "control_end": 820,
+    "control_start": 811,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 94,
+    "public_note": "The board is released across the supports. I am withdrawing the open left gripper straight upward before returning the arm home.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The board remains across the lower supports after withdrawal. I am returning the left arm toward its starting position and rotating its wrist in stages.",
+      "targets": {
+        "left_pitch_deg": 45,
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_yaw_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 936,
+        "start": 916
+      },
+      "left_wrist": {
+        "end": 936,
+        "start": 916
+      },
+      "right_wrist": {
+        "end": 936,
+        "start": 916
+      }
+    },
+    "control_end": 840,
+    "control_start": 820,
+    "feedback": "Accepted: the original plan contains 25 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 95,
+    "public_note": "The board remains across the lower supports after withdrawal. I am returning the left arm toward its starting position and rotating its wrist in stages.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am completing the left arm's return to its starting pose with the gripper open. The full tower remains incomplete.",
+      "targets": {
+        "left_pitch_deg": 90,
+        "left_roll_deg": 0,
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_yaw_deg": 0,
+        "left_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 938,
+        "start": 937
+      },
+      "left_wrist": {
+        "end": 938,
+        "start": 937
+      },
+      "right_wrist": {
+        "end": 938,
+        "start": 937
+      }
+    },
+    "control_end": 841,
+    "control_start": 840,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 96,
+    "public_note": "I am completing the left arm's return to its starting pose with the gripper open. The full tower remains incomplete.",
+    "tool": "move_eef"
+  }
+]

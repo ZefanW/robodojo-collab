@@ -1,0 +1,1688 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Three upright bowls are separate; none is grasped. All-three stable stacking and arm return remain unmet. Check: No previous action. Expect: Turn the left gripper downward for a rim grasp while leaving bowls untouched. Verify: Measured pitch should approach zero and bowls remain upright. Risk: Rotation could bring fingers near the table; watch clearance and raise if needed. Lesson: None established yet.",
+      "targets": {
+        "left_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 21,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 21,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 21,
+        "start": 1
+      }
+    },
+    "control_end": 20,
+    "control_start": 0,
+    "feedback": "Accepted: the original plan contains 31 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 0,
+    "public_note": "State: Three upright bowls are separate; none is grasped. All-three stable stacking and arm return remain unmet. Check: No previous action. Expect: Turn the left gripper downward for a rim grasp while leaving bowls untouched. Verify: Measured pitch should approach zero and bowls remain upright. Risk: Rotation could bring fingers near the table; watch clearance and raise if needed. Lesson: None established yet.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Bowls remain separate and upright; plan to transfer left bowl onto center bowl. Check: Rotation executed only a prefix, reaching 24.1 degrees; no object moved. Expect: Finish downward orientation and approach above the left bowl's near rim, still at clearance height. Verify: Check actual pose and rim alignment in wrist image. Risk: Estimated bowl position may be offset; correct visually before descent. Lesson: Motions longer than 20 control steps require explicit continuation.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": -0.24,
+        "left_y": -0.075
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 42,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 42,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 42,
+        "start": 22
+      }
+    },
+    "control_end": 40,
+    "control_start": 20,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 1,
+    "public_note": "State: Bowls remain separate and upright; plan to transfer left bowl onto center bowl. Check: Rotation executed only a prefix, reaching 24.1 degrees; no object moved. Expect: Finish downward orientation and approach above the left bowl's near rim, still at clearance height. Verify: Check actual pose and rim alignment in wrist image. Risk: Estimated bowl position may be offset; correct visually before descent. Lesson: Motions longer than 20 control steps require explicit continuation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left bowl is visible below the open downward gripper; no stack yet. Check: Previous target was reached within 0 mm and 0 degrees; bowl stayed stationary. Expect: Approach its right rim from above for an off-center grasp that leaves the bowl bottom clear. Verify: Wrist view should place the right rim between the jaws with vertical clearance. Risk: RGB position estimate is uncertain; stop above the rim and refine before closing. Lesson: The downward wrist view provides useful rim alignment.",
+      "targets": {
+        "left_x": -0.225,
+        "left_y": 0.015,
+        "left_z": 0.865
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 58,
+        "start": 43
+      },
+      "left_wrist": {
+        "end": 58,
+        "start": 43
+      },
+      "right_wrist": {
+        "end": 58,
+        "start": 43
+      }
+    },
+    "control_end": 55,
+    "control_start": 40,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "State: Left bowl is visible below the open downward gripper; no stack yet. Check: Previous target was reached within 0 mm and 0 degrees; bowl stayed stationary. Expect: Approach its right rim from above for an off-center grasp that leaves the bowl bottom clear. Verify: Wrist view should place the right rim between the jaws with vertical clearance. Risk: RGB position estimate is uncertain; stop above the rim and refine before closing. Lesson: The downward wrist view provides useful rim alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open jaws are above the left bowl's right rim; all bowls remain separate. Check: Approach reached its target; wrist view now shows the rim near the jaw midpoint. Expect: Lower toward rim height while preserving lateral alignment. Verify: Rim should enter the jaw depth without bowl displacement. Risk: Height estimate could be low; inspect contact and use millimetre corrections next. Lesson: Current lateral offset places the right rim near the grasp line.",
+      "targets": {
+        "left_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 67,
+        "start": 59
+      },
+      "left_wrist": {
+        "end": 67,
+        "start": 59
+      },
+      "right_wrist": {
+        "end": 67,
+        "start": 59
+      }
+    },
+    "control_end": 63,
+    "control_start": 55,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "State: Open jaws are above the left bowl's right rim; all bowls remain separate. Check: Approach reached its target; wrist view now shows the rim near the jaw midpoint. Expect: Lower toward rim height while preserving lateral alignment. Verify: Rim should enter the jaw depth without bowl displacement. Risk: Height estimate could be low; inspect contact and use millimetre corrections next. Lesson: Current lateral offset places the right rim near the grasp line.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left bowl remains upright below the open gripper; rim engagement is still unverified. Check: The 40 mm descent reached its target without visible bowl movement. Expect: Bring jaw centers closer to the rim for capture. Verify: Look for rim overlap with jaw tips while the bowl stays seated. Risk: Inner finger may contact the bowl; stop descent if displacement appears. Lesson: Descent changes wrist perspective substantially, so arrival alone does not establish engagement.",
+      "targets": {
+        "left_z": 0.809
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 70,
+        "start": 68
+      },
+      "left_wrist": {
+        "end": 70,
+        "start": 68
+      },
+      "right_wrist": {
+        "end": 70,
+        "start": 68
+      }
+    },
+    "control_end": 65,
+    "control_start": 63,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "State: Left bowl remains upright below the open gripper; rim engagement is still unverified. Check: The 40 mm descent reached its target without visible bowl movement. Expect: Bring jaw centers closer to the rim for capture. Verify: Look for rim overlap with jaw tips while the bowl stays seated. Risk: Inner finger may contact the bowl; stop descent if displacement appears. Lesson: Descent changes wrist perspective substantially, so arrival alone does not establish engagement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: The bowl is still separate; head view suggests the jaws are slightly behind its right rim. Check: Descent landed within 1 mm without moving the bowl, but rim capture remains uncertain. Expect: Shift toward the near side while slightly raising to refine right-rim alignment. Verify: Head view should show jaws overlapping the rim rather than behind it. Risk: A finger may brush the rim; if the bowl moves, raise and reassess. Lesson: Use head and wrist views jointly because the close wrist view crops the grasp region.",
+      "targets": {
+        "left_y": -0.015,
+        "left_z": 0.815
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 77,
+        "start": 71
+      },
+      "left_wrist": {
+        "end": 77,
+        "start": 71
+      },
+      "right_wrist": {
+        "end": 77,
+        "start": 71
+      }
+    },
+    "control_end": 71,
+    "control_start": 65,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "State: The bowl is still separate; head view suggests the jaws are slightly behind its right rim. Check: Descent landed within 1 mm without moving the bowl, but rim capture remains uncertain. Expect: Shift toward the near side while slightly raising to refine right-rim alignment. Verify: Head view should show jaws overlapping the rim rather than behind it. Risk: A finger may brush the rim; if the bowl moves, raise and reassess. Lesson: Use head and wrist views jointly because the close wrist view crops the grasp region.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left bowl shifted slightly toward the near side but remains upright; jaws may now straddle its right rim. Check: Robot reached target, but bowl movement contradicts a contact-free adjustment. Expect: Close in place to test rim capture without further sweeping. Verify: A nonzero jaw gap may indicate contact; only a later lift with bowl following will verify retention. Risk: Closure may push rather than grip; reopen and reposition if the bowl escapes. Lesson: At this height lateral motion can contact the bowl; avoid further large sweeps.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 84,
+        "start": 78
+      },
+      "left_wrist": {
+        "end": 84,
+        "start": 78
+      },
+      "right_wrist": {
+        "end": 84,
+        "start": 78
+      }
+    },
+    "control_end": 77,
+    "control_start": 71,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 6,
+    "public_note": "State: Left bowl shifted slightly toward the near side but remains upright; jaws may now straddle its right rim. Check: Robot reached target, but bowl movement contradicts a contact-free adjustment. Expect: Close in place to test rim capture without further sweeping. Verify: A nonzero jaw gap may indicate contact; only a later lift with bowl following will verify retention. Risk: Closure may push rather than grip; reopen and reposition if the bowl escapes. Lesson: At this height lateral motion can contact the bowl; avoid further large sweeps.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Closed jaws appear empty above the bowl; no retained grasp or stack is verified. Check: Closure reached zero and bowl shifted slightly rather than being visibly captured. Expect: Raise and reopen for a new approach, exposing the bowl safely. Verify: Bowl should stay on the table as the empty jaws rise. Risk: If unexpectedly retained, opening could drop it a short distance; watch its upright state. Lesson: This approach was too far behind the bowl for rim capture; change alignment rather than repeat closure.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.855
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 95,
+        "start": 85
+      },
+      "left_wrist": {
+        "end": 95,
+        "start": 85
+      },
+      "right_wrist": {
+        "end": 95,
+        "start": 85
+      }
+    },
+    "control_end": 87,
+    "control_start": 77,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "State: Closed jaws appear empty above the bowl; no retained grasp or stack is verified. Check: Closure reached zero and bowl shifted slightly rather than being visibly captured. Expect: Raise and reopen for a new approach, exposing the bowl safely. Verify: Bowl should stay on the table as the empty jaws rise. Risk: If unexpectedly retained, opening could drop it a short distance; watch its upright state. Lesson: This approach was too far behind the bowl for rim capture; change alignment rather than repeat closure.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left bowl stayed on the table after withdrawal, confirming the failed grasp. All stacking remains unmet. Check: Raise and reopen completed accurately; no bowl followed. Expect: Move above the right-side rim nearer the robot, correcting the previous rearward miss. Verify: Bowl rim should shift toward the jaw capture line in the wrist view. Risk: Clearance is limited; watch for bowl motion and raise further if needed. Lesson: The previous closure was empty; a substantial approach correction is warranted.",
+      "targets": {
+        "left_y": -0.075
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 105,
+        "start": 96
+      },
+      "left_wrist": {
+        "end": 105,
+        "start": 96
+      },
+      "right_wrist": {
+        "end": 105,
+        "start": 96
+      }
+    },
+    "control_end": 96,
+    "control_start": 87,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "State: Left bowl stayed on the table after withdrawal, confirming the failed grasp. All stacking remains unmet. Check: Raise and reopen completed accurately; no bowl followed. Expect: Move above the right-side rim nearer the robot, correcting the previous rearward miss. Verify: Bowl rim should shift toward the jaw capture line in the wrist view. Risk: Clearance is limited; watch for bowl motion and raise further if needed. Lesson: The previous closure was empty; a substantial approach correction is warranted.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right rim of the left bowl is now near the jaw line; no grasp yet. Check: The corrected approach reached target with the bowl stationary. Expect: Descend above the aligned rim, preparing a cautious final capture. Verify: Bowl should remain stationary and rim stay between jaws. Risk: Inner jaw could hit the interior; reduce subsequent descent to millimetres. Lesson: Moving toward negative y corrected the previous rearward alignment.",
+      "targets": {
+        "left_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 109,
+        "start": 106
+      },
+      "left_wrist": {
+        "end": 109,
+        "start": 106
+      },
+      "right_wrist": {
+        "end": 109,
+        "start": 106
+      }
+    },
+    "control_end": 99,
+    "control_start": 96,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "State: Right rim of the left bowl is now near the jaw line; no grasp yet. Check: The corrected approach reached target with the bowl stationary. Expect: Descend above the aligned rim, preparing a cautious final capture. Verify: Bowl should remain stationary and rim stay between jaws. Risk: Inner jaw could hit the interior; reduce subsequent descent to millimetres. Lesson: Moving toward negative y corrected the previous rearward alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open jaws straddle the projected right rim; retention and stacking remain unmet. Check: Descent landed within 1 mm, with no visible bowl displacement. Expect: Lower 9 mm toward rim engagement. Verify: Rim overlap should increase without tipping or sliding. Risk: Contact may start here; stop if bowl moves and use smaller corrections. Lesson: Corrected y alignment has remained stable through descent.",
+      "targets": {
+        "left_z": 0.817
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 111,
+        "start": 110
+      },
+      "left_wrist": {
+        "end": 111,
+        "start": 110
+      },
+      "right_wrist": {
+        "end": 111,
+        "start": 110
+      }
+    },
+    "control_end": 100,
+    "control_start": 99,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "State: Open jaws straddle the projected right rim; retention and stacking remain unmet. Check: Descent landed within 1 mm, with no visible bowl displacement. Expect: Lower 9 mm toward rim engagement. Verify: Rim overlap should increase without tipping or sliding. Risk: Contact may start here; stop if bowl moves and use smaller corrections. Lesson: Corrected y alignment has remained stable through descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left bowl remains upright with its rim between the open jaws in projection. Check: Small descent reached within 1 mm without visible disturbance. Expect: Lower another 5 mm and close around the rim. Verify: Check jaw separation and then test whether the bowl follows a lift; closure alone is insufficient. Risk: A shallow grasp may slip; reopen and lower slightly if the lift fails. Lesson: Small vertical approaches have avoided the sliding caused by lateral contact.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.813
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 119,
+        "start": 112
+      },
+      "left_wrist": {
+        "end": 119,
+        "start": 112
+      },
+      "right_wrist": {
+        "end": 119,
+        "start": 112
+      }
+    },
+    "control_end": 107,
+    "control_start": 100,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "State: Left bowl remains upright with its rim between the open jaws in projection. Check: Small descent reached within 1 mm without visible disturbance. Expect: Lower another 5 mm and close around the rim. Verify: Check jaw separation and then test whether the bowl follows a lift; closure alone is insufficient. Risk: A shallow grasp may slip; reopen and lower slightly if the lift fails. Lesson: Small vertical approaches have avoided the sliding caused by lateral contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaws visibly pinch the left bowl's right rim, with a small remaining gap; retention needs testing. Check: Closure engaged the rim and shifted the bowl slightly, unlike the earlier empty closure. Expect: Lift bowl clear of the table while maintaining upright orientation. Verify: Bowl should rise with the jaws and keep its relative rim position; staying on the table or slipping contradicts retention. Risk: Rim grip could slip or tilt; lower immediately if unstable. Lesson: The corrected near-side approach produced visible rim engagement.",
+      "targets": {
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 124,
+        "start": 120
+      },
+      "left_wrist": {
+        "end": 124,
+        "start": 120
+      },
+      "right_wrist": {
+        "end": 124,
+        "start": 120
+      }
+    },
+    "control_end": 111,
+    "control_start": 107,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "State: Jaws visibly pinch the left bowl's right rim, with a small remaining gap; retention needs testing. Check: Closure engaged the rim and shifted the bowl slightly, unlike the earlier empty closure. Expect: Lift bowl clear of the table while maintaining upright orientation. Verify: Bowl should rise with the jaws and keep its relative rim position; staying on the table or slipping contradicts retention. Risk: Rim grip could slip or tilt; lower immediately if unstable. Lesson: The corrected near-side approach produced visible rim engagement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Bowl followed the lift but tilted steeply instead of staying upright; no stack achieved. Check: Robot rose as commanded; retained contact exists, but the shallow rim grip allows rotation. Expect: Lower toward table support to recover upright seating before regrasping deeper. Verify: Bowl should regain a supported upright posture; continued suspension or tipping would contradict recovery. Risk: Edge-first table contact may tip it; observe before opening. Lesson: This shallow right-rim pinch retains contact but does not preserve bowl orientation.",
+      "targets": {
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 128,
+        "start": 125
+      },
+      "left_wrist": {
+        "end": 128,
+        "start": 125
+      },
+      "right_wrist": {
+        "end": 128,
+        "start": 125
+      }
+    },
+    "control_end": 114,
+    "control_start": 111,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "State: Bowl followed the lift but tilted steeply instead of staying upright; no stack achieved. Check: Robot rose as commanded; retained contact exists, but the shallow rim grip allows rotation. Expect: Lower toward table support to recover upright seating before regrasping deeper. Verify: Bowl should regain a supported upright posture; continued suspension or tipping would contradict recovery. Risk: Edge-first table contact may tip it; observe before opening. Lesson: This shallow right-rim pinch retains contact but does not preserve bowl orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Bowl has returned toward upright table support, still pinched at its rim. Check: Lowering reached within 2 mm and reversed the steep tilt. Expect: Partially reopen to let the bowl settle and enable deeper engagement. Verify: Bowl should stay upright on the table after release. Risk: Residual tilt could cause rocking; wait for supported posture before descending. Lesson: Table support restored upright posture after the shallow grasp tilted.",
+      "targets": {
+        "left_gripper": 0.45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 132,
+        "start": 129
+      },
+      "left_wrist": {
+        "end": 132,
+        "start": 129
+      },
+      "right_wrist": {
+        "end": 132,
+        "start": 129
+      }
+    },
+    "control_end": 117,
+    "control_start": 114,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 14,
+    "public_note": "State: Bowl has returned toward upright table support, still pinched at its rim. Check: Lowering reached within 2 mm and reversed the steep tilt. Expect: Partially reopen to let the bowl settle and enable deeper engagement. Verify: Bowl should stay upright on the table after release. Risk: Residual tilt could cause rocking; wait for supported posture before descending. Lesson: Table support restored upright posture after the shallow grasp tilted.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Bowl is released and upright, with partially open jaws around the right rim. Check: Opening completed without tipping. Expect: Lower 5 mm for a deeper rim purchase. Verify: Bowl should remain seated while jaw tips extend farther around the wall. Risk: Interior contact could push it; halt if displacement appears. Lesson: A deeper purchase is needed than the prior shallow pinch.",
+      "targets": {
+        "left_z": 0.817
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 134,
+        "start": 133
+      },
+      "left_wrist": {
+        "end": 134,
+        "start": 133
+      },
+      "right_wrist": {
+        "end": 134,
+        "start": 133
+      }
+    },
+    "control_end": 118,
+    "control_start": 117,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "State: Bowl is released and upright, with partially open jaws around the right rim. Check: Opening completed without tipping. Expect: Lower 5 mm for a deeper rim purchase. Verify: Bowl should remain seated while jaw tips extend farther around the wall. Risk: Interior contact could push it; halt if displacement appears. Lesson: A deeper purchase is needed than the prior shallow pinch.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Bowl remains upright within the partially open rim approach. Check: The 5 mm descent landed within 1 mm without bowl movement. Expect: Add 5 mm of insertion depth before regrasping. Verify: Rim should stay between jaws and bowl remain seated. Risk: Wall contact may shift the bowl; stop if seen. Lesson: Small open-jaw descents preserve this alignment.",
+      "targets": {
+        "left_z": 0.812
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 136,
+        "start": 135
+      },
+      "left_wrist": {
+        "end": 136,
+        "start": 135
+      },
+      "right_wrist": {
+        "end": 136,
+        "start": 135
+      }
+    },
+    "control_end": 119,
+    "control_start": 118,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 16,
+    "public_note": "State: Bowl remains upright within the partially open rim approach. Check: The 5 mm descent landed within 1 mm without bowl movement. Expect: Add 5 mm of insertion depth before regrasping. Verify: Rim should stay between jaws and bowl remain seated. Risk: Wall contact may shift the bowl; stop if seen. Lesson: Small open-jaw descents preserve this alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open jaws remain aligned around the right rim; no stack yet. Check: Another 5 mm descent caused no visible disturbance. Expect: Lower 5 mm and close for a deeper wall grip than the prior attempt. Verify: Inspect rim capture, then test lift stability separately. Risk: Closing on the sloped wall can rotate the bowl; return to support if tilt recurs. Lesson: The previous high rim pinch tilted; this attempt increases engagement depth.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.807
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 141,
+        "start": 137
+      },
+      "left_wrist": {
+        "end": 141,
+        "start": 137
+      },
+      "right_wrist": {
+        "end": 141,
+        "start": 137
+      }
+    },
+    "control_end": 123,
+    "control_start": 119,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "State: Open jaws remain aligned around the right rim; no stack yet. Check: Another 5 mm descent caused no visible disturbance. Expect: Lower 5 mm and close for a deeper wall grip than the prior attempt. Verify: Inspect rim capture, then test lift stability separately. Risk: Closing on the sloped wall can rotate the bowl; return to support if tilt recurs. Lesson: The previous high rim pinch tilted; this attempt increases engagement depth.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Deeper rim grip is visibly engaged; retained upright lifting is unresolved. Check: Closure stopped at a small gap with the rim between jaws and bowl still upright. Expect: Lift 28 mm to test whether the deeper purchase limits tilt. Verify: Bowl must rise with the hand and remain approximately upright; rotation would show the grip still pivots. Risk: Slippage or tilt; lower back to support if either appears. Lesson: Visible rim capture is established, but stable carrying requires a lift test.",
+      "targets": {
+        "left_z": 0.835
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 145,
+        "start": 142
+      },
+      "left_wrist": {
+        "end": 145,
+        "start": 142
+      },
+      "right_wrist": {
+        "end": 145,
+        "start": 142
+      }
+    },
+    "control_end": 126,
+    "control_start": 123,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "State: Deeper rim grip is visibly engaged; retained upright lifting is unresolved. Check: Closure stopped at a small gap with the rim between jaws and bowl still upright. Expect: Lift 28 mm to test whether the deeper purchase limits tilt. Verify: Bowl must rise with the hand and remain approximately upright; rotation would show the grip still pivots. Risk: Slippage or tilt; lower back to support if either appears. Lesson: Visible rim capture is established, but stable carrying requires a lift test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Bowl remains caught at the rim but has begun tilting; upright placement remains unresolved. Check: Lift reached within 1 mm; deeper purchase still allows some rotation. Expect: Raise into clear space to assess the settled carrying orientation before transfer; this does not establish upright stacking. Verify: Bowl should remain attached and clear the table; inspect tilt and relative movement. Risk: Further pivot or slip; if unstable, lower to table rather than translate. Lesson: Straight-down right-rim pinches permit bowl pivoting even with added depth; placement must account for that.",
+      "targets": {
+        "left_z": 0.925
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 155,
+        "start": 146
+      },
+      "left_wrist": {
+        "end": 155,
+        "start": 146
+      },
+      "right_wrist": {
+        "end": 155,
+        "start": 146
+      }
+    },
+    "control_end": 135,
+    "control_start": 126,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "State: Bowl remains caught at the rim but has begun tilting; upright placement remains unresolved. Check: Lift reached within 1 mm; deeper purchase still allows some rotation. Expect: Raise into clear space to assess the settled carrying orientation before transfer; this does not establish upright stacking. Verify: Bowl should remain attached and clear the table; inspect tilt and relative movement. Risk: Further pivot or slip; if unstable, lower to table rather than translate. Lesson: Straight-down right-rim pinches permit bowl pivoting even with added depth; placement must account for that.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left bowl is airborne and retained with a modest settled tilt; center bowl remains upright on the table. Check: Raise reached target and bowl followed without further obvious rotation. Expect: Carry halfway toward the center bowl at clearance height. Verify: Bowl should translate with the gripper while retaining its relative orientation. Risk: Rim slippage during transport; stop and lower if relative motion appears. Lesson: The grip has retained the bowl through the higher lift, though upright seating is still unverified.",
+      "targets": {
+        "left_x": -0.085,
+        "left_y": -0.1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 164,
+        "start": 156
+      },
+      "left_wrist": {
+        "end": 164,
+        "start": 156
+      },
+      "right_wrist": {
+        "end": 164,
+        "start": 156
+      }
+    },
+    "control_end": 143,
+    "control_start": 135,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "State: Left bowl is airborne and retained with a modest settled tilt; center bowl remains upright on the table. Check: Raise reached target and bowl followed without further obvious rotation. Expect: Carry halfway toward the center bowl at clearance height. Verify: Bowl should translate with the gripper while retaining its relative orientation. Risk: Rim slippage during transport; stop and lower if relative motion appears. Lesson: The grip has retained the bowl through the higher lift, though upright seating is still unverified.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Bowl remains retained during transport; center bowl is the intended table-supported base. Check: Halfway translation reached within 1 mm with the bowl following. Expect: Position carried bowl above the center bowl using the rim-to-center offset. Verify: Head and wrist views should show overlapping bowl centers before descent. Risk: Estimated alignment may be off; refine at height rather than descend onto an edge. Lesson: The rim grip has survived lateral transport with a stable relative pose.",
+      "targets": {
+        "left_x": 0.075,
+        "left_y": -0.13
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 171,
+        "start": 165
+      },
+      "left_wrist": {
+        "end": 171,
+        "start": 165
+      },
+      "right_wrist": {
+        "end": 171,
+        "start": 165
+      }
+    },
+    "control_end": 149,
+    "control_start": 143,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 21,
+    "public_note": "State: Bowl remains retained during transport; center bowl is the intended table-supported base. Check: Halfway translation reached within 1 mm with the bowl following. Expect: Position carried bowl above the center bowl using the rim-to-center offset. Verify: Head and wrist views should show overlapping bowl centers before descent. Risk: Estimated alignment may be off; refine at height rather than descend onto an edge. Lesson: The rim grip has survived lateral transport with a stable relative pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Bowl remains held halfway to the center bowl; stacking is still unmet. Check: Planner rejected the previous target, so no motion or new object evidence occurred. Expect: Use a nearer, lower waypoint toward the base bowl while retaining clearance. Verify: Confirm actual arrival and that the bowl remains attached, then reassess overlap. Risk: Reachability and bowl clearance constrain this waypoint; split further if refused. Lesson: The high cross-body target was unreachable; choose a closer, lower approach.",
+      "targets": {
+        "left_x": 0.035,
+        "left_y": -0.15,
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 171,
+        "start": 165
+      },
+      "left_wrist": {
+        "end": 171,
+        "start": 165
+      },
+      "right_wrist": {
+        "end": 171,
+        "start": 165
+      }
+    },
+    "control_end": 149,
+    "control_start": 143,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "State: Bowl remains held halfway to the center bowl; stacking is still unmet. Check: Planner rejected the previous target, so no motion or new object evidence occurred. Expect: Use a nearer, lower waypoint toward the base bowl while retaining clearance. Verify: Confirm actual arrival and that the bowl remains attached, then reassess overlap. Risk: Reachability and bowl clearance constrain this waypoint; split further if refused. Lesson: The high cross-body target was unreachable; choose a closer, lower approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Carried bowl overlaps the base bowl's left side but is not centered or seated. Check: Lower waypoint reached within 2 mm, with the bowl retained. Expect: Shift right and slightly forward to align bowl centers while staying above the base. Verify: Head view should show closer concentric alignment; assess lower-edge clearance before descent. Risk: Near reach limit or rim collision; if refused, use a lower or more rearward waypoint. Lesson: Lowering the cross-body approach restored reachability.",
+      "targets": {
+        "left_x": 0.085,
+        "left_y": -0.125,
+        "left_z": 0.875
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 179,
+        "start": 172
+      },
+      "left_wrist": {
+        "end": 179,
+        "start": 172
+      },
+      "right_wrist": {
+        "end": 179,
+        "start": 172
+      }
+    },
+    "control_end": 156,
+    "control_start": 149,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 22,
+    "public_note": "State: Carried bowl overlaps the base bowl's left side but is not centered or seated. Check: Lower waypoint reached within 2 mm, with the bowl retained. Expect: Shift right and slightly forward to align bowl centers while staying above the base. Verify: Head view should show closer concentric alignment; assess lower-edge clearance before descent. Risk: Near reach limit or rim collision; if refused, use a lower or more rearward waypoint. Lesson: Lowering the cross-body approach restored reachability.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Carried bowl is still left of the base center; nesting remains unverified. Check: The forward-right target was refused and neither arm moved. Expect: Try a lower, purely rightward approach without increasing forward reach. Verify: Confirm planner execution and bowl overlap, stopping before contact. Risk: The tilted bowl may approach the base rim closely; next corrections must be millimetric if contact is near. Lesson: Forward cross-body reach is constrained here; avoid combining extra forward reach with rightward travel.",
+      "targets": {
+        "left_x": 0.075,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 179,
+        "start": 172
+      },
+      "left_wrist": {
+        "end": 179,
+        "start": 172
+      },
+      "right_wrist": {
+        "end": 179,
+        "start": 172
+      }
+    },
+    "control_end": 156,
+    "control_start": 149,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 22,
+    "public_note": "State: Carried bowl is still left of the base center; nesting remains unverified. Check: The forward-right target was refused and neither arm moved. Expect: Try a lower, purely rightward approach without increasing forward reach. Verify: Confirm planner execution and bowl overlap, stopping before contact. Risk: The tilted bowl may approach the base rim closely; next corrections must be millimetric if contact is near. Lesson: Forward cross-body reach is constrained here; avoid combining extra forward reach with rightward travel.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Carried bowl substantially overlaps the base bowl, with a slight left offset and tilt; stable nesting is unresolved. Check: Lower rightward move reached within 1 mm and brought bowls together without visible base displacement. Expect: Lower 5 mm to seek gentle support inside the base bowl. Verify: Look for the upper bowl settling more upright while the base stays on the table. Risk: Edge-on-edge contact could prevent nesting; raise slightly and realign if the base shifts. Lesson: The lower rearward approach is reachable and provides substantial bowl overlap.",
+      "targets": {
+        "left_z": 0.845
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 184,
+        "start": 180
+      },
+      "left_wrist": {
+        "end": 184,
+        "start": 180
+      },
+      "right_wrist": {
+        "end": 184,
+        "start": 180
+      }
+    },
+    "control_end": 160,
+    "control_start": 156,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "State: Carried bowl substantially overlaps the base bowl, with a slight left offset and tilt; stable nesting is unresolved. Check: Lower rightward move reached within 1 mm and brought bowls together without visible base displacement. Expect: Lower 5 mm to seek gentle support inside the base bowl. Verify: Look for the upper bowl settling more upright while the base stays on the table. Risk: Edge-on-edge contact could prevent nesting; raise slightly and realign if the base shifts. Lesson: The lower rearward approach is reachable and provides substantial bowl overlap.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Two bowl rims now appear nearly concentric, but support and upright nesting are not yet proven. Check: Small descent reached within 1 mm; upper bowl settled toward the base rather than visibly tipping away. Expect: Open jaws to let the upper bowl seat freely in the lower bowl. Verify: Both bowls should remain upright and nested after release and later withdrawal. Risk: Misaligned rims could leave the upper bowl perched; inspect before claiming partial credit. Lesson: Gentle lowering improved concentric seating despite the tilted carry.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 191,
+        "start": 185
+      },
+      "left_wrist": {
+        "end": 191,
+        "start": 185
+      },
+      "right_wrist": {
+        "end": 191,
+        "start": 185
+      }
+    },
+    "control_end": 166,
+    "control_start": 160,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 24,
+    "public_note": "State: Two bowl rims now appear nearly concentric, but support and upright nesting are not yet proven. Check: Small descent reached within 1 mm; upper bowl settled toward the base rather than visibly tipping away. Expect: Open jaws to let the upper bowl seat freely in the lower bowl. Verify: Both bowls should remain upright and nested after release and later withdrawal. Risk: Misaligned rims could leave the upper bowl perched; inspect before claiming partial credit. Lesson: Gentle lowering improved concentric seating despite the tilted carry.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Two bowls appear upright and nested with gripper open; third bowl remains separate. Full completion still requires third placement and origin return. Check: Release completed and upper bowl settled concentrically. Expect: Withdraw vertically to test independent stack stability. Verify: Bowls should remain nested on the table as jaws rise clear. Risk: Finger may catch the upper rim; stop if either bowl follows. Lesson: Release allowed the tilted carried bowl to settle into the base.",
+      "targets": {
+        "left_z": 0.865
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 195,
+        "start": 192
+      },
+      "left_wrist": {
+        "end": 195,
+        "start": 192
+      },
+      "right_wrist": {
+        "end": 195,
+        "start": 192
+      }
+    },
+    "control_end": 169,
+    "control_start": 166,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 25,
+    "public_note": "State: Two bowls appear upright and nested with gripper open; third bowl remains separate. Full completion still requires third placement and origin return. Check: Release completed and upper bowl settled concentrically. Expect: Withdraw vertically to test independent stack stability. Verify: Bowls should remain nested on the table as jaws rise clear. Risk: Finger may catch the upper rim; stop if either bowl follows. Lesson: Release allowed the tilted carried bowl to settle into the base.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Two bowls remain apparently nested with open jaws nearby; independent stability needs withdrawal. Check: Vertical retreat was refused; no physical motion or new stack evidence occurred. Expect: Retract 5 mm toward the arm and rise 5 mm to escape the reach limit gently. Verify: Confirm actual motion with bowls stationary. Risk: Nearby rim contact; use small increments and stop if bowls move. Lesson: This placement pose is at a reach boundary, so pure upward retreat is not available.",
+      "targets": {
+        "left_x": 0.07,
+        "left_y": -0.154,
+        "left_z": 0.851
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 195,
+        "start": 192
+      },
+      "left_wrist": {
+        "end": 195,
+        "start": 192
+      },
+      "right_wrist": {
+        "end": 195,
+        "start": 192
+      }
+    },
+    "control_end": 169,
+    "control_start": 166,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "State: Two bowls remain apparently nested with open jaws nearby; independent stability needs withdrawal. Check: Vertical retreat was refused; no physical motion or new stack evidence occurred. Expect: Retract 5 mm toward the arm and rise 5 mm to escape the reach limit gently. Verify: Confirm actual motion with bowls stationary. Risk: Nearby rim contact; use small increments and stop if bowls move. Lesson: This placement pose is at a reach boundary, so pure upward retreat is not available.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Two bowls remain upright and nested after the small retreat; third bowl and arm return remain outstanding. Check: Retracting and rising 5 mm succeeded without bowl movement. Expect: Withdraw into free space, clearing the stack for the right arm. Verify: Stack should stay stationary and both rims remain nested with no gripper support. Risk: Reachability; retracting toward the base should improve it, but split if refused. Lesson: A short inward retreat resolved the upward reach-boundary refusal.",
+      "targets": {
+        "left_x": -0.04,
+        "left_y": -0.21,
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 211,
+        "start": 196
+      },
+      "left_wrist": {
+        "end": 211,
+        "start": 196
+      },
+      "right_wrist": {
+        "end": 211,
+        "start": 196
+      }
+    },
+    "control_end": 184,
+    "control_start": 169,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "State: Two bowls remain upright and nested after the small retreat; third bowl and arm return remain outstanding. Check: Retracting and rising 5 mm succeeded without bowl movement. Expect: Withdraw into free space, clearing the stack for the right arm. Verify: Stack should stay stationary and both rims remain nested with no gripper support. Risk: Reachability; retracting toward the base should improve it, but split if refused. Lesson: A short inward retreat resolved the upward reach-boundary refusal.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Two bowls remain nested independently; rightmost bowl is still separate. Check: Withdrawal completed and stack stayed on the table, supporting the two-bowl condition. Expect: Return left hand toward its starting position, clearing the workspace. Verify: Check measured position and unchanged stack. Risk: Long move may be truncated; continue from actual feedback. Lesson: The released two-bowl stack remained stable after withdrawal.",
+      "targets": {
+        "left_x": -0.2996,
+        "left_y": -0.2022
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 229,
+        "start": 212
+      },
+      "left_wrist": {
+        "end": 229,
+        "start": 212
+      },
+      "right_wrist": {
+        "end": 229,
+        "start": 212
+      }
+    },
+    "control_end": 201,
+    "control_start": 184,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "State: Two bowls remain nested independently; rightmost bowl is still separate. Check: Withdrawal completed and stack stayed on the table, supporting the two-bowl condition. Expect: Return left hand toward its starting position, clearing the workspace. Verify: Check measured position and unchanged stack. Risk: Long move may be truncated; continue from actual feedback. Lesson: The released two-bowl stack remained stable after withdrawal.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Two bowls are upright and nested; third remains separate. Left hand is back at its starting position but not orientation. Check: Left translation completed accurately with stack unchanged. Expect: Begin restoring left orientation while turning right gripper downward for the third bowl. Verify: Both pitches should approach 45 degrees with no object contact. Risk: Coupled planning may refuse either target; separate if needed. Lesson: Returning the idle arm now preserves completion budget and clears the work area.",
+      "targets": {
+        "left_pitch_deg": 45,
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 246,
+        "start": 230
+      },
+      "left_wrist": {
+        "end": 246,
+        "start": 230
+      },
+      "right_wrist": {
+        "end": 246,
+        "start": 230
+      }
+    },
+    "control_end": 217,
+    "control_start": 201,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "State: Two bowls are upright and nested; third remains separate. Left hand is back at its starting position but not orientation. Check: Left translation completed accurately with stack unchanged. Expect: Begin restoring left orientation while turning right gripper downward for the third bowl. Verify: Both pitches should approach 45 degrees with no object contact. Risk: Coupled planning may refuse either target; separate if needed. Lesson: Returning the idle arm now preserves completion budget and clears the work area.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Two-bowl stack is stable; third bowl still needs transfer. Check: Both rotations reached 45 degrees without contact. Expect: Finish left origin orientation and right downward grasp orientation. Verify: Left should be within origin tolerances and right ready for an overhead rim approach. Risk: No nearby object contact is expected; check execution before reaching. Lesson: Split 45-degree rotations execute reliably in this free-space pose.",
+      "targets": {
+        "left_pitch_deg": 90,
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 263,
+        "start": 247
+      },
+      "left_wrist": {
+        "end": 263,
+        "start": 247
+      },
+      "right_wrist": {
+        "end": 263,
+        "start": 247
+      }
+    },
+    "control_end": 233,
+    "control_start": 217,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "State: Two-bowl stack is stable; third bowl still needs transfer. Check: Both rotations reached 45 degrees without contact. Expect: Finish left origin orientation and right downward grasp orientation. Verify: Left should be within origin tolerances and right ready for an overhead rim approach. Risk: No nearby object contact is expected; check execution before reaching. Lesson: Split 45-degree rotations execute reliably in this free-space pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left arm is within its origin tolerances; two bowls are nested and third is separate. Check: Both rotations completed accurately, leaving right gripper downward. Expect: Approach above the third bowl's right rim for the same rim-transfer strategy. Verify: Wrist view should show the rim near the jaw line with clearance. Risk: RGB position estimate may be offset; refine before final descent. Lesson: Rim carrying followed by supported release successfully nested the first transferred bowl.",
+      "targets": {
+        "right_x": 0.28,
+        "right_y": -0.025,
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 279,
+        "start": 264
+      },
+      "left_wrist": {
+        "end": 279,
+        "start": 264
+      },
+      "right_wrist": {
+        "end": 279,
+        "start": 264
+      }
+    },
+    "control_end": 248,
+    "control_start": 233,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "State: Left arm is within its origin tolerances; two bowls are nested and third is separate. Check: Both rotations completed accurately, leaving right gripper downward. Expect: Approach above the third bowl's right rim for the same rim-transfer strategy. Verify: Wrist view should show the rim near the jaw line with clearance. Risk: RGB position estimate may be offset; refine before final descent. Lesson: Rim carrying followed by supported release successfully nested the first transferred bowl.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Third bowl is upright under the open right gripper; its right rim is slightly right of the jaw midpoint. Check: Approach reached target without bowl movement. Expect: Shift 20 mm right and descend to a pregrasp height, centering the rim rather than the bowl. Verify: Rim should lie near the jaw midpoint with no displacement. Risk: Inner finger may contact the bowl during descent; inspect before moving lower. Lesson: Off-center right-rim capture leaves the bowl bottom clear for nesting.",
+      "targets": {
+        "right_x": 0.3,
+        "right_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 283,
+        "start": 280
+      },
+      "left_wrist": {
+        "end": 283,
+        "start": 280
+      },
+      "right_wrist": {
+        "end": 283,
+        "start": 280
+      }
+    },
+    "control_end": 251,
+    "control_start": 248,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "State: Third bowl is upright under the open right gripper; its right rim is slightly right of the jaw midpoint. Check: Approach reached target without bowl movement. Expect: Shift 20 mm right and descend to a pregrasp height, centering the rim rather than the bowl. Verify: Rim should lie near the jaw midpoint with no displacement. Risk: Inner finger may contact the bowl during descent; inspect before moving lower. Lesson: Off-center right-rim capture leaves the bowl bottom clear for nesting.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right rim is aligned near the right gripper midpoint; third bowl is not yet grasped. Check: Rightward descent landed within 2 mm and bowl stayed still. Expect: Lower to near rim-capture height. Verify: Rim should remain between jaws without bowl sliding. Risk: Contact is approaching; use millimetre increments after this descent. Lesson: The wrist view now matches the successful left-arm rim approach.",
+      "targets": {
+        "right_z": 0.818
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 286,
+        "start": 284
+      },
+      "left_wrist": {
+        "end": 286,
+        "start": 284
+      },
+      "right_wrist": {
+        "end": 286,
+        "start": 284
+      }
+    },
+    "control_end": 253,
+    "control_start": 251,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "State: Right rim is aligned near the right gripper midpoint; third bowl is not yet grasped. Check: Rightward descent landed within 2 mm and bowl stayed still. Expect: Lower to near rim-capture height. Verify: Rim should remain between jaws without bowl sliding. Risk: Contact is approaching; use millimetre increments after this descent. Lesson: The wrist view now matches the successful left-arm rim approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Third bowl remains upright and aligned for rim capture. Check: Descent reached within 1 mm with no bowl movement. Expect: Lower 5 mm to improve engagement depth. Verify: Rim should remain between jaws without displacement. Risk: Interior contact; stop descent if the bowl shifts. Lesson: Small final descents preserved the first bowl's alignment.",
+      "targets": {
+        "right_z": 0.813
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 288,
+        "start": 287
+      },
+      "left_wrist": {
+        "end": 288,
+        "start": 287
+      },
+      "right_wrist": {
+        "end": 288,
+        "start": 287
+      }
+    },
+    "control_end": 254,
+    "control_start": 253,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "State: Third bowl remains upright and aligned for rim capture. Check: Descent reached within 1 mm with no bowl movement. Expect: Lower 5 mm to improve engagement depth. Verify: Rim should remain between jaws without displacement. Risk: Interior contact; stop descent if the bowl shifts. Lesson: Small final descents preserved the first bowl's alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Third bowl's right rim remains aligned; two-bowl stack is untouched. Check: Small descent reached within 1 mm without displacement. Expect: Lower 5 mm and close on the rim for transfer. Verify: Look for rim captured between jaws, then test retention by lifting. Risk: Shallow contact may permit tilt; assess before carrying. Lesson: A rim pinch can carry these bowls, but closure alone does not verify retention.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.809
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 296,
+        "start": 289
+      },
+      "left_wrist": {
+        "end": 296,
+        "start": 289
+      },
+      "right_wrist": {
+        "end": 296,
+        "start": 289
+      }
+    },
+    "control_end": 261,
+    "control_start": 254,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "State: Third bowl's right rim remains aligned; two-bowl stack is untouched. Check: Small descent reached within 1 mm without displacement. Expect: Lower 5 mm and close on the rim for transfer. Verify: Look for rim captured between jaws, then test retention by lifting. Risk: Shallow contact may permit tilt; assess before carrying. Lesson: A rim pinch can carry these bowls, but closure alone does not verify retention.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Third bowl's rim is visibly pinched; retained carrying remains unverified. Check: Closure engaged the rim with a small gap and slight bowl adjustment. Expect: Lift to test retention and observe tilt. Verify: Bowl should rise with the jaws without slipping; table-stationary bowl would indicate failure. Risk: Rim pivoting may tilt it; use the observed orientation to plan a supported placement. Lesson: The previous bowl required supported release to become fully upright.",
+      "targets": {
+        "right_z": 0.855
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 301,
+        "start": 297
+      },
+      "left_wrist": {
+        "end": 301,
+        "start": 297
+      },
+      "right_wrist": {
+        "end": 301,
+        "start": 297
+      }
+    },
+    "control_end": 265,
+    "control_start": 261,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "State: Third bowl's rim is visibly pinched; retained carrying remains unverified. Check: Closure engaged the rim with a small gap and slight bowl adjustment. Expect: Lift to test retention and observe tilt. Verify: Bowl should rise with the jaws without slipping; table-stationary bowl would indicate failure. Risk: Rim pivoting may tilt it; use the observed orientation to plan a supported placement. Lesson: The previous bowl required supported release to become fully upright.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Third bowl followed the lift and is retained with some tilt; two-bowl stack remains stable. Check: Lift reached within 1 mm and bowl rose with jaws. Expect: Raise to safe transfer clearance above the existing stack. Verify: Bowl should remain attached with a stable relative pose and clear the table. Risk: Further slipping or pivoting; pause transfer if relative orientation changes substantially. Lesson: The right-arm rim grasp reproduces the retained carrying contact seen on the first transfer.",
+      "targets": {
+        "right_z": 0.925
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 313,
+        "start": 302
+      },
+      "left_wrist": {
+        "end": 313,
+        "start": 302
+      },
+      "right_wrist": {
+        "end": 313,
+        "start": 302
+      }
+    },
+    "control_end": 276,
+    "control_start": 265,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 36,
+    "public_note": "State: Third bowl followed the lift and is retained with some tilt; two-bowl stack remains stable. Check: Lift reached within 1 mm and bowl rose with jaws. Expect: Raise to safe transfer clearance above the existing stack. Verify: Bowl should remain attached with a stable relative pose and clear the table. Risk: Further slipping or pivoting; pause transfer if relative orientation changes substantially. Lesson: The right-arm rim grasp reproduces the retained carrying contact seen on the first transfer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Third bowl is airborne and retained; existing two-bowl stack and left origin return remain intact. Check: Clearance lift reached target with bowl attached and settled orientation. Expect: Carry over the stack using the right-rim offset, without descending yet. Verify: Bowl centers should overlap in the cameras and no lower bowls should move. Risk: Reach or alignment error; inspect actual pose and refine before descent. Lesson: Rim carrying has remained stable after initial pivoting, while final upright seating requires support and release.",
+      "targets": {
+        "right_x": 0.09,
+        "right_y": -0.14
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 326,
+        "start": 314
+      },
+      "left_wrist": {
+        "end": 326,
+        "start": 314
+      },
+      "right_wrist": {
+        "end": 326,
+        "start": 314
+      }
+    },
+    "control_end": 288,
+    "control_start": 276,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "State: Third bowl is airborne and retained; existing two-bowl stack and left origin return remain intact. Check: Clearance lift reached target with bowl attached and settled orientation. Expect: Carry over the stack using the right-rim offset, without descending yet. Verify: Bowl centers should overlap in the cameras and no lower bowls should move. Risk: Reach or alignment error; inspect actual pose and refine before descent. Lesson: Rim carrying has remained stable after initial pivoting, while final upright seating requires support and release.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Third bowl is above and substantially aligned with the two-bowl stack, still held and tilted. Check: Transfer reached target accurately; lower stack stayed stationary. Expect: Descend toward the upper bowl while retaining clearance for final seating. Verify: Bowl overlap should remain centered and no lower bowl should slide. Risk: Tilted lower edge may contact first; switch to millimetre descents near contact. Lesson: The right-rim offset places the carried bowl over the stack at this pose.",
+      "targets": {
+        "right_z": 0.885
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 332,
+        "start": 327
+      },
+      "left_wrist": {
+        "end": 332,
+        "start": 327
+      },
+      "right_wrist": {
+        "end": 332,
+        "start": 327
+      }
+    },
+    "control_end": 293,
+    "control_start": 288,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "State: Third bowl is above and substantially aligned with the two-bowl stack, still held and tilted. Check: Transfer reached target accurately; lower stack stayed stationary. Expect: Descend toward the upper bowl while retaining clearance for final seating. Verify: Bowl overlap should remain centered and no lower bowl should slide. Risk: Tilted lower edge may contact first; switch to millimetre descents near contact. Lesson: The right-rim offset places the carried bowl over the stack at this pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Third bowl overlaps the stack but remains tilted and held; independent upright seating is unresolved. Check: Descent reached target; the carried bowl changed tilt near the lower rims, suggesting contact. Expect: Lower 5 mm to let its bottom settle into the upper bowl. Verify: Look for reduced tilt and stationary lower bowls. Risk: Rim-on-rim wedging; if tilt worsens or base shifts, raise and realign. Lesson: Near-contact lowering changes bowl orientation, so small steps are needed.",
+      "targets": {
+        "right_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 334,
+        "start": 333
+      },
+      "left_wrist": {
+        "end": 334,
+        "start": 333
+      },
+      "right_wrist": {
+        "end": 334,
+        "start": 333
+      }
+    },
+    "control_end": 294,
+    "control_start": 293,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "State: Third bowl overlaps the stack but remains tilted and held; independent upright seating is unresolved. Check: Descent reached target; the carried bowl changed tilt near the lower rims, suggesting contact. Expect: Lower 5 mm to let its bottom settle into the upper bowl. Verify: Look for reduced tilt and stationary lower bowls. Risk: Rim-on-rim wedging; if tilt worsens or base shifts, raise and realign. Lesson: Near-contact lowering changes bowl orientation, so small steps are needed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Third bowl is centered over and contacting the stack but remains tilted by the rim grip. Check: The 5 mm descent reached within 1 mm; lower bowls stayed in place and overlap remained strong. Expect: Release the rim so gravity can seat the third bowl upright, as on the first placement. Verify: All three rims should become nested with the bottom bowl on the table; later withdrawal must confirm independent stability. Risk: A perched bowl may remain tilted or slide; inspect before retreating or declaring completion. Lesson: Releasing the previous centered rim-held bowl allowed upright nesting.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 341,
+        "start": 335
+      },
+      "left_wrist": {
+        "end": 341,
+        "start": 335
+      },
+      "right_wrist": {
+        "end": 341,
+        "start": 335
+      }
+    },
+    "control_end": 300,
+    "control_start": 294,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 40,
+    "public_note": "State: Third bowl is centered over and contacting the stack but remains tilted by the rim grip. Check: The 5 mm descent reached within 1 mm; lower bowls stayed in place and overlap remained strong. Expect: Release the rim so gravity can seat the third bowl upright, as on the first placement. Verify: All three rims should become nested with the bottom bowl on the table; later withdrawal must confirm independent stability. Risk: A perched bowl may remain tilted or slide; inspect before retreating or declaring completion. Lesson: Releasing the previous centered rim-held bowl allowed upright nesting.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Third bowl is released over the stack but still appears tilted; all-three upright seating remains unverified. Check: Gripper opened fully; top bowl has not yet clearly become concentric. Expect: Withdraw vertically to remove possible finger interference and allow settling. Verify: Top bowl should remain with the stack and settle upright; persistent tilt would require correction. Risk: A jaw may still touch the rim; watch for bowl following and stop if it does. Lesson: Release alone does not guarantee nesting; this third bowl needs a clear post-withdrawal check.",
+      "targets": {
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 347,
+        "start": 342
+      },
+      "left_wrist": {
+        "end": 347,
+        "start": 342
+      },
+      "right_wrist": {
+        "end": 347,
+        "start": 342
+      }
+    },
+    "control_end": 305,
+    "control_start": 300,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 41,
+    "public_note": "State: Third bowl is released over the stack but still appears tilted; all-three upright seating remains unverified. Check: Gripper opened fully; top bowl has not yet clearly become concentric. Expect: Withdraw vertically to remove possible finger interference and allow settling. Verify: Top bowl should remain with the stack and settle upright; persistent tilt would require correction. Risk: A jaw may still touch the rim; watch for bowl following and stop if it does. Lesson: Release alone does not guarantee nesting; this third bowl needs a clear post-withdrawal check.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Top bowl remains perched and tilted after withdrawal, so all-three upright stacking is unmet; lower pair remains nested. Check: Hand rose accurately and no bowl followed, confirming release but not correct seating. Expect: Reapproach its right rim to correct the lateral offset rather than repeat release unchanged. Verify: Rim should return near the open jaw line without moving the lower stack. Risk: Regrasp may disturb the nested pair; keep final approach small. Lesson: The third bowl's persistent tilt shows its initial alignment was insufficient despite substantial overlap.",
+      "targets": {
+        "right_z": 0.885
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 352,
+        "start": 348
+      },
+      "left_wrist": {
+        "end": 352,
+        "start": 348
+      },
+      "right_wrist": {
+        "end": 352,
+        "start": 348
+      }
+    },
+    "control_end": 309,
+    "control_start": 305,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "State: Top bowl remains perched and tilted after withdrawal, so all-three upright stacking is unmet; lower pair remains nested. Check: Hand rose accurately and no bowl followed, confirming release but not correct seating. Expect: Reapproach its right rim to correct the lateral offset rather than repeat release unchanged. Verify: Rim should return near the open jaw line without moving the lower stack. Risk: Regrasp may disturb the nested pair; keep final approach small. Lesson: The third bowl's persistent tilt shows its initial alignment was insufficient despite substantial overlap.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Top bowl is perched with its right rim near the jaws; lower pair is stable. Check: Reapproach reached within 1 mm without moving bowls. Expect: Lower 5 mm and recapture only the upper rim for a small alignment correction. Verify: Rim contact should be visible; lower bowls must remain stationary. Risk: Capturing multiple rims or pushing the stack; stop if the lower pair moves. Lesson: Persistent tilt requires repositioning, not an unchanged release.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.881
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 360,
+        "start": 353
+      },
+      "left_wrist": {
+        "end": 360,
+        "start": 353
+      },
+      "right_wrist": {
+        "end": 360,
+        "start": 353
+      }
+    },
+    "control_end": 316,
+    "control_start": 309,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 43,
+    "public_note": "State: Top bowl is perched with its right rim near the jaws; lower pair is stable. Check: Reapproach reached within 1 mm without moving bowls. Expect: Lower 5 mm and recapture only the upper rim for a small alignment correction. Verify: Rim contact should be visible; lower bowls must remain stationary. Risk: Capturing multiple rims or pushing the stack; stop if the lower pair moves. Lesson: Persistent tilt requires repositioning, not an unchanged release.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Top bowl remains tilted; closed jaws appear just inside its right rim rather than securely around it. Check: Closure reached zero without clear rim retention or bowl movement. Expect: Reopen for a small outward alignment correction before regrasp. Verify: Bowl should stay supported while the jaw gap opens. Risk: Repeated empty closure would add no evidence; change lateral alignment next. Lesson: The released top bowl shifted its rim relative to the previous carrying grasp.",
+      "targets": {
+        "right_gripper": 0.5
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 364,
+        "start": 361
+      },
+      "left_wrist": {
+        "end": 364,
+        "start": 361
+      },
+      "right_wrist": {
+        "end": 364,
+        "start": 361
+      }
+    },
+    "control_end": 319,
+    "control_start": 316,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 44,
+    "public_note": "State: Top bowl remains tilted; closed jaws appear just inside its right rim rather than securely around it. Check: Closure reached zero without clear rim retention or bowl movement. Expect: Reopen for a small outward alignment correction before regrasp. Verify: Bowl should stay supported while the jaw gap opens. Risk: Repeated empty closure would add no evidence; change lateral alignment next. Lesson: The released top bowl shifted its rim relative to the previous carrying grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Top bowl remains perched; jaws are partially open beside its right rim. Check: Reopening did not move the stack. Expect: Shift 5 mm outward and lower 5 mm to straddle the actual rim. Verify: Rim should lie between both fingertips rather than outside the closed grasp line. Risk: Contact may shift the perched bowl; inspect before closure. Lesson: Regrasp alignment must use the released rim position, not the old carrying pose.",
+      "targets": {
+        "right_x": 0.095,
+        "right_z": 0.876
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 366,
+        "start": 365
+      },
+      "left_wrist": {
+        "end": 366,
+        "start": 365
+      },
+      "right_wrist": {
+        "end": 366,
+        "start": 365
+      }
+    },
+    "control_end": 320,
+    "control_start": 319,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "State: Top bowl remains perched; jaws are partially open beside its right rim. Check: Reopening did not move the stack. Expect: Shift 5 mm outward and lower 5 mm to straddle the actual rim. Verify: Rim should lie between both fingertips rather than outside the closed grasp line. Risk: Contact may shift the perched bowl; inspect before closure. Lesson: Regrasp alignment must use the released rim position, not the old carrying pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Top rim is now between the partially open fingertips; top bowl remains tilted. Check: Outward/downward correction reached within 1 mm without disturbing the lower pair. Expect: Lower 5 mm and close to engage the upper rim. Verify: Inspect rim contact and test with a small correction before assuming retention. Risk: Empty or multiple-rim grasp; reopen if the contact evidence is inconsistent. Lesson: The outward correction aligned the released rim more closely with the jaw center.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.872
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 371,
+        "start": 367
+      },
+      "left_wrist": {
+        "end": 371,
+        "start": 367
+      },
+      "right_wrist": {
+        "end": 371,
+        "start": 367
+      }
+    },
+    "control_end": 324,
+    "control_start": 320,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "State: Top rim is now between the partially open fingertips; top bowl remains tilted. Check: Outward/downward correction reached within 1 mm without disturbing the lower pair. Expect: Lower 5 mm and close to engage the upper rim. Verify: Inspect rim contact and test with a small correction before assuming retention. Risk: Empty or multiple-rim grasp; reopen if the contact evidence is inconsistent. Lesson: The outward correction aligned the released rim more closely with the jaw center.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Upper rim is visibly between closed jaws; top bowl is still tilted above the nested pair. Check: Closure changed the top bowl's pose and engaged its rim without moving the lower pair. Expect: Move 5 mm left and down to guide the top bowl toward concentric seating. Verify: Top bowl should follow and become less offset while lower bowls remain stationary. Risk: Contact could drag the whole stack; stop if lower rims move. Lesson: The lower outward regrasp produced visible upper-rim engagement.",
+      "targets": {
+        "right_x": 0.089,
+        "right_z": 0.867
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 373,
+        "start": 372
+      },
+      "left_wrist": {
+        "end": 373,
+        "start": 372
+      },
+      "right_wrist": {
+        "end": 373,
+        "start": 372
+      }
+    },
+    "control_end": 325,
+    "control_start": 324,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "State: Upper rim is visibly between closed jaws; top bowl is still tilted above the nested pair. Check: Closure changed the top bowl's pose and engaged its rim without moving the lower pair. Expect: Move 5 mm left and down to guide the top bowl toward concentric seating. Verify: Top bowl should follow and become less offset while lower bowls remain stationary. Risk: Contact could drag the whole stack; stop if lower rims move. Lesson: The lower outward regrasp produced visible upper-rim engagement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Upper bowl is closer to concentric seating but still held; upright independent stability remains unverified. Check: Left/down correction reached within 1 mm and reduced visible offset; no large lower-stack displacement occurred. Expect: Lower 5 mm to allow the elevated rim to settle. Verify: Rim spacing should become more even without base movement. Risk: Pushing against a wedged rim could move the base; stop and release if resistance is suggested by pose error or stack motion. Lesson: Small leftward correction improved the top bowl's alignment.",
+      "targets": {
+        "right_z": 0.863
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 375,
+        "start": 374
+      },
+      "left_wrist": {
+        "end": 375,
+        "start": 374
+      },
+      "right_wrist": {
+        "end": 375,
+        "start": 374
+      }
+    },
+    "control_end": 326,
+    "control_start": 325,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "State: Upper bowl is closer to concentric seating but still held; upright independent stability remains unverified. Check: Left/down correction reached within 1 mm and reduced visible offset; no large lower-stack displacement occurred. Expect: Lower 5 mm to allow the elevated rim to settle. Verify: Rim spacing should become more even without base movement. Risk: Pushing against a wedged rim could move the base; stop and release if resistance is suggested by pose error or stack motion. Lesson: Small leftward correction improved the top bowl's alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Top bowl is now more closely aligned after a lower regrasp and small seating corrections; independent upright nesting remains unverified. Check: Final 5 mm descent reached within 1 mm and rim spacing narrowed. Expect: Open jaws so the corrected bowl can settle freely. Verify: All three rims should form a stable upright nested stack after release and withdrawal. Risk: Persistent tilt would indicate remaining misalignment; inspect rather than infer success from opening. Lesson: The corrected placement is lower and more concentric than the first release.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 382,
+        "start": 376
+      },
+      "left_wrist": {
+        "end": 382,
+        "start": 376
+      },
+      "right_wrist": {
+        "end": 382,
+        "start": 376
+      }
+    },
+    "control_end": 332,
+    "control_start": 326,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 49,
+    "public_note": "State: Top bowl is now more closely aligned after a lower regrasp and small seating corrections; independent upright nesting remains unverified. Check: Final 5 mm descent reached within 1 mm and rim spacing narrowed. Expect: Open jaws so the corrected bowl can settle freely. Verify: All three rims should form a stable upright nested stack after release and withdrawal. Risk: Persistent tilt would indicate remaining misalignment; inspect rather than infer success from opening. Lesson: The corrected placement is lower and more concentric than the first release.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Three bowls now appear nested with closely aligned rims; right gripper is open, but post-withdrawal stability and right origin return remain. Check: Release completed and top bowl settled flatter than before. Expect: Raise clear of the stack to verify independent support. Verify: All bowls should stay upright together on the table without following the jaws. Risk: Rim snagging; stop if any bowl rises or tilts with the hand. Lesson: Lowering and shifting the regrasped top bowl improved its released seating.",
+      "targets": {
+        "right_z": 0.925
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 390,
+        "start": 383
+      },
+      "left_wrist": {
+        "end": 390,
+        "start": 383
+      },
+      "right_wrist": {
+        "end": 390,
+        "start": 383
+      }
+    },
+    "control_end": 339,
+    "control_start": 332,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "State: Three bowls now appear nested with closely aligned rims; right gripper is open, but post-withdrawal stability and right origin return remain. Check: Release completed and top bowl settled flatter than before. Expect: Raise clear of the stack to verify independent support. Verify: All bowls should stay upright together on the table without following the jaws. Risk: Rim snagging; stop if any bowl rises or tilts with the hand. Lesson: Lowering and shifting the regrasped top bowl improved its released seating.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Three bowls remain together after withdrawal, with bottom supported on the table; top seating appears improved but slight tilt is still visually uncertain. Right origin return remains incomplete. Check: Raise reached target and no bowl followed. Expect: Return right hand to its starting position, leaving the stack undisturbed and revealing it clearly. Verify: Stack should remain stationary; measured right position should match origin before orientation restoration. Risk: No material contact risk in this clear retreat; inspect stack from the unobstructed head view. Lesson: The corrected three-bowl placement remains independent of the gripper after withdrawal.",
+      "targets": {
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 404,
+        "start": 391
+      },
+      "left_wrist": {
+        "end": 404,
+        "start": 391
+      },
+      "right_wrist": {
+        "end": 404,
+        "start": 391
+      }
+    },
+    "control_end": 352,
+    "control_start": 339,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "State: Three bowls remain together after withdrawal, with bottom supported on the table; top seating appears improved but slight tilt is still visually uncertain. Right origin return remains incomplete. Check: Raise reached target and no bowl followed. Expect: Return right hand to its starting position, leaving the stack undisturbed and revealing it clearly. Verify: Stack should remain stationary; measured right position should match origin before orientation restoration. Risk: No material contact risk in this clear retreat; inspect stack from the unobstructed head view. Lesson: The corrected three-bowl placement remains independent of the gripper after withdrawal.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Three bowls remain stacked without gripper support; top bowl has a slight visible lean whose acceptability is unverified. Both arm positions are at origin, but right orientation is not. Check: Right translation reached origin and stack stayed stationary. Expect: Restore half the right wrist rotation in free space. Verify: Pitch should reach 45 degrees with stack unchanged. Risk: No material contact risk at this cleared pose. Lesson: The stack remains stable during arm retreat; stability alone does not establish the upright criterion.",
+      "targets": {
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 420,
+        "start": 405
+      },
+      "left_wrist": {
+        "end": 420,
+        "start": 405
+      },
+      "right_wrist": {
+        "end": 420,
+        "start": 405
+      }
+    },
+    "control_end": 367,
+    "control_start": 352,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "State: Three bowls remain stacked without gripper support; top bowl has a slight visible lean whose acceptability is unverified. Both arm positions are at origin, but right orientation is not. Check: Right translation reached origin and stack stayed stationary. Expect: Restore half the right wrist rotation in free space. Verify: Pitch should reach 45 degrees with stack unchanged. Risk: No material contact risk at this cleared pose. Lesson: The stack remains stable during arm retreat; stability alone does not establish the upright criterion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Three bowls remain together on the table with both grippers open; slight top-bowl lean remains visually uncertain. Right wrist orientation is the remaining origin-return condition. Check: Rotation reached 45 degrees and the stack stayed stationary. Expect: Complete right wrist return to its starting orientation without disturbing the bowls. Verify: Both arms should be within origin tolerances; inspect any completion feedback and retain upright uncertainty if none is supplied. Risk: No material contact risk in this free-space rotation. Lesson: The corrected stack has remained independently stable throughout retreat and wrist restoration.",
+      "targets": {
+        "right_pitch_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 430,
+        "start": 421
+      },
+      "left_wrist": {
+        "end": 430,
+        "start": 421
+      },
+      "right_wrist": {
+        "end": 430,
+        "start": 421
+      }
+    },
+    "control_end": 376,
+    "control_start": 367,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 53,
+    "public_note": "State: Three bowls remain together on the table with both grippers open; slight top-bowl lean remains visually uncertain. Right wrist orientation is the remaining origin-return condition. Check: Rotation reached 45 degrees and the stack stayed stationary. Expect: Complete right wrist return to its starting orientation without disturbing the bowls. Verify: Both arms should be within origin tolerances; inspect any completion feedback and retain upright uncertainty if none is supplied. Risk: No material contact risk in this free-space rotation. Lesson: The corrected stack has remained independently stable throughout retreat and wrist restoration.",
+    "tool": "move_eef"
+  }
+]

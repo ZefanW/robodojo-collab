@@ -1,0 +1,2477 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will use a top-down grasp for the mouse, then place it on the pad to its right.",
+      "targets": {
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 21,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 21,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 21,
+        "start": 1
+      }
+    },
+    "control_end": 20,
+    "control_start": 0,
+    "feedback": "Accepted: the original plan contains 31 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 0,
+    "public_note": "I will use a top-down grasp for the mouse, then place it on the pad to its right.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist has not finished rotating. I will finish the rotation while approaching above the mouse.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_x": 0.25,
+        "right_y": 0.0,
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 42,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 42,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 42,
+        "start": 22
+      }
+    },
+    "control_end": 40,
+    "control_start": 20,
+    "feedback": "Accepted: the original plan contains 27 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 1,
+    "public_note": "The wrist has not finished rotating. I will finish the rotation while approaching above the mouse.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The mouse is right of the wrist center. I will center the open jaws above it and lower to a pre-grasp height.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_x": 0.32,
+        "right_y": 0.015,
+        "right_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 48,
+        "start": 43
+      },
+      "left_wrist": {
+        "end": 48,
+        "start": 43
+      },
+      "right_wrist": {
+        "end": 48,
+        "start": 43
+      }
+    },
+    "control_end": 45,
+    "control_start": 40,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "The mouse is right of the wrist center. I will center the open jaws above it and lower to a pre-grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will align with the mouse body and descend just above grasp height.",
+      "targets": {
+        "right_x": 0.338,
+        "right_y": -0.018,
+        "right_z": 0.802
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 58,
+        "start": 49
+      },
+      "left_wrist": {
+        "end": 58,
+        "start": 49
+      },
+      "right_wrist": {
+        "end": 58,
+        "start": 49
+      }
+    },
+    "control_end": 54,
+    "control_start": 45,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "I will align with the mouse body and descend just above grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The mouse is centered between the jaws. I will lower slightly and close around its sides.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.787
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 67,
+        "start": 59
+      },
+      "left_wrist": {
+        "end": 67,
+        "start": 59
+      },
+      "right_wrist": {
+        "end": 67,
+        "start": 59
+      }
+    },
+    "control_end": 62,
+    "control_start": 54,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "The mouse is centered between the jaws. I will lower slightly and close around its sides.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws have closed against the mouse. I will lift to confirm that it is held before translating to the pad.",
+      "targets": {
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 73,
+        "start": 68
+      },
+      "left_wrist": {
+        "end": 73,
+        "start": 68
+      },
+      "right_wrist": {
+        "end": 73,
+        "start": 68
+      }
+    },
+    "control_end": 67,
+    "control_start": 62,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "The jaws have closed against the mouse. I will lift to confirm that it is held before translating to the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The mouse lifted with the jaws. I will carry it over the center of the mouse pad.",
+      "targets": {
+        "right_x": 0.475,
+        "right_y": 0.025
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 83,
+        "start": 74
+      },
+      "left_wrist": {
+        "end": 83,
+        "start": 74
+      },
+      "right_wrist": {
+        "end": 83,
+        "start": 74
+      }
+    },
+    "control_end": 76,
+    "control_start": 67,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 6,
+    "public_note": "The mouse lifted with the jaws. I will carry it over the center of the mouse pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The full lateral placement was refused. I will move halfway toward the pad first.",
+      "targets": {
+        "right_x": 0.415,
+        "right_y": 0.005
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 83,
+        "start": 74
+      },
+      "left_wrist": {
+        "end": 83,
+        "start": 74
+      },
+      "right_wrist": {
+        "end": 83,
+        "start": 74
+      }
+    },
+    "control_end": 76,
+    "control_start": 67,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "The full lateral placement was refused. I will move halfway toward the pad first.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The mouse slipped from the shallow front grasp. I will reopen and approach the middle of its body for a deeper side grasp.",
+      "targets": {
+        "right_gripper": 1,
+        "right_x": 0.328,
+        "right_y": -0.045,
+        "right_z": 0.815
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 104,
+        "start": 84
+      },
+      "left_wrist": {
+        "end": 104,
+        "start": 84
+      },
+      "right_wrist": {
+        "end": 104,
+        "start": 84
+      }
+    },
+    "control_end": 96,
+    "control_start": 76,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 7,
+    "public_note": "The mouse slipped from the shallow front grasp. I will reopen and approach the middle of its body for a deeper side grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The mouse is now ahead of the open jaws. I will shift forward to center its broad middle between the fingertips.",
+      "targets": {
+        "right_x": 0.344,
+        "right_y": 0.0,
+        "right_z": 0.802
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 111,
+        "start": 105
+      },
+      "left_wrist": {
+        "end": 111,
+        "start": 105
+      },
+      "right_wrist": {
+        "end": 111,
+        "start": 105
+      }
+    },
+    "control_end": 102,
+    "control_start": 96,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "The mouse is now ahead of the open jaws. I will shift forward to center its broad middle between the fingertips.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The broad center of the mouse is between the jaws now. I will lower to its sides and close.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.783
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 120,
+        "start": 112
+      },
+      "left_wrist": {
+        "end": 120,
+        "start": 112
+      },
+      "right_wrist": {
+        "end": 120,
+        "start": 112
+      }
+    },
+    "control_end": 110,
+    "control_start": 102,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "The broad center of the mouse is between the jaws now. I will lower to its sides and close.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws are contacting the mouse at its middle. I will lift it a short distance while keeping the grasp level.",
+      "targets": {
+        "right_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 125,
+        "start": 121
+      },
+      "left_wrist": {
+        "end": 125,
+        "start": 121
+      },
+      "right_wrist": {
+        "end": 125,
+        "start": 121
+      }
+    },
+    "control_end": 114,
+    "control_start": 110,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "The jaws are contacting the mouse at its middle. I will lift it a short distance while keeping the grasp level.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The mouse is securely held this time. I will translate sideways over the near portion of the pad.",
+      "targets": {
+        "right_x": 0.43
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 130,
+        "start": 126
+      },
+      "left_wrist": {
+        "end": 130,
+        "start": 126
+      },
+      "right_wrist": {
+        "end": 130,
+        "start": 126
+      }
+    },
+    "control_end": 118,
+    "control_start": 114,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "The mouse is securely held this time. I will translate sideways over the near portion of the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The mouse still overhangs the left edge of the pad. I will shift it slightly inward while approaching placement height.",
+      "targets": {
+        "right_x": 0.465,
+        "right_z": 0.807
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 133,
+        "start": 131
+      },
+      "left_wrist": {
+        "end": 133,
+        "start": 131
+      },
+      "right_wrist": {
+        "end": 133,
+        "start": 131
+      }
+    },
+    "control_end": 120,
+    "control_start": 118,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "The mouse still overhangs the left edge of the pad. I will shift it slightly inward while approaching placement height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The mouse is fully over the pad. I will lower it close to the surface before releasing.",
+      "targets": {
+        "right_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 136,
+        "start": 134
+      },
+      "left_wrist": {
+        "end": 136,
+        "start": 134
+      },
+      "right_wrist": {
+        "end": 136,
+        "start": 134
+      }
+    },
+    "control_end": 122,
+    "control_start": 120,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "The mouse is fully over the pad. I will lower it close to the surface before releasing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The mouse is resting on the pad. I will open the gripper to leave it in place.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 140,
+        "start": 137
+      },
+      "left_wrist": {
+        "end": 140,
+        "start": 137
+      },
+      "right_wrist": {
+        "end": 140,
+        "start": 137
+      }
+    },
+    "control_end": 125,
+    "control_start": 122,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 14,
+    "public_note": "The mouse is resting on the pad. I will open the gripper to leave it in place.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The mouse remains on the pad with the gripper open. I will lift clear before moving to the keyboard.",
+      "targets": {
+        "right_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 145,
+        "start": 141
+      },
+      "left_wrist": {
+        "end": 145,
+        "start": 141
+      },
+      "right_wrist": {
+        "end": 145,
+        "start": 141
+      }
+    },
+    "control_end": 129,
+    "control_start": 125,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 15,
+    "public_note": "The mouse remains on the pad with the gripper open. I will lift clear before moving to the keyboard.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The straight lift was refused at this lateral reach. I will retreat inward and upward away from the mouse.",
+      "targets": {
+        "right_x": 0.4,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 145,
+        "start": 141
+      },
+      "left_wrist": {
+        "end": 145,
+        "start": 141
+      },
+      "right_wrist": {
+        "end": 145,
+        "start": 141
+      }
+    },
+    "control_end": 129,
+    "control_start": 125,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "The straight lift was refused at this lateral reach. I will retreat inward and upward away from the mouse.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will approach the front edge of the keyboard from above, ready to push it toward the outlined frame.",
+      "targets": {
+        "right_x": 0.06,
+        "right_y": -0.29,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 166,
+        "start": 146
+      },
+      "left_wrist": {
+        "end": 166,
+        "start": 146
+      },
+      "right_wrist": {
+        "end": 166,
+        "start": 146
+      }
+    },
+    "control_end": 149,
+    "control_start": 129,
+    "feedback": "Accepted: the original plan contains 25 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 16,
+    "public_note": "I will approach the front edge of the keyboard from above, ready to push it toward the outlined frame.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The keyboard front edge is ahead of the hand. I will lower the closed jaws behind that edge to use them as a pusher.",
+      "targets": {
+        "right_gripper": 0,
+        "right_x": 0.02,
+        "right_y": -0.25,
+        "right_z": 0.784
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 178,
+        "start": 167
+      },
+      "left_wrist": {
+        "end": 178,
+        "start": 167
+      },
+      "right_wrist": {
+        "end": 178,
+        "start": 167
+      }
+    },
+    "control_end": 160,
+    "control_start": 149,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "The keyboard front edge is ahead of the hand. I will lower the closed jaws behind that edge to use them as a pusher.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The closed fingertips are just behind the keyboard edge. I will advance a few millimetres to establish contact.",
+      "targets": {
+        "right_y": -0.242
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 180,
+        "start": 179
+      },
+      "left_wrist": {
+        "end": 180,
+        "start": 179
+      },
+      "right_wrist": {
+        "end": 180,
+        "start": 179
+      }
+    },
+    "control_end": 161,
+    "control_start": 160,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "The closed fingertips are just behind the keyboard edge. I will advance a few millimetres to establish contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The fingertips have reached the keyboard. I will begin a slow forward push and check that it slides squarely.",
+      "targets": {
+        "right_y": -0.237
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 182,
+        "start": 181
+      },
+      "left_wrist": {
+        "end": 182,
+        "start": 181
+      },
+      "right_wrist": {
+        "end": 182,
+        "start": 181
+      }
+    },
+    "control_end": 162,
+    "control_start": 161,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "The fingertips have reached the keyboard. I will begin a slow forward push and check that it slides squarely.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The fingertips are passing over the keyboard lip rather than pushing it. I will back off and lower to engage the front edge.",
+      "targets": {
+        "right_y": -0.25,
+        "right_z": 0.773
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 185,
+        "start": 183
+      },
+      "left_wrist": {
+        "end": 185,
+        "start": 183
+      },
+      "right_wrist": {
+        "end": 185,
+        "start": 183
+      }
+    },
+    "control_end": 164,
+    "control_start": 162,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "The fingertips are passing over the keyboard lip rather than pushing it. I will back off and lower to engage the front edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lowered fingertips now meet the keyboard lip. I will apply a small forward push at this height.",
+      "targets": {
+        "right_y": -0.241,
+        "right_z": 0.773
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 187,
+        "start": 186
+      },
+      "left_wrist": {
+        "end": 187,
+        "start": 186
+      },
+      "right_wrist": {
+        "end": 187,
+        "start": 186
+      }
+    },
+    "control_end": 165,
+    "control_start": 164,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "The lowered fingertips now meet the keyboard lip. I will apply a small forward push at this height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The keyboard has begun sliding but turned slightly. I will keep the push small and shift toward its center.",
+      "targets": {
+        "right_x": 0.022,
+        "right_y": -0.233
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 189,
+        "start": 188
+      },
+      "left_wrist": {
+        "end": 189,
+        "start": 188
+      },
+      "right_wrist": {
+        "end": 189,
+        "start": 188
+      }
+    },
+    "control_end": 166,
+    "control_start": 165,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 22,
+    "public_note": "The keyboard has begun sliding but turned slightly. I will keep the push small and shift toward its center.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will clear the keyboard temporarily and prepare the left hand to grasp the clock from above.",
+      "targets": {
+        "left_pitch_deg": 30,
+        "right_gripper": 1,
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 210,
+        "start": 190
+      },
+      "left_wrist": {
+        "end": 210,
+        "start": 190
+      },
+      "right_wrist": {
+        "end": 210,
+        "start": 190
+      }
+    },
+    "control_end": 186,
+    "control_start": 166,
+    "feedback": "Accepted: the original plan contains 27 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 23,
+    "public_note": "I will clear the keyboard temporarily and prepare the left hand to grasp the clock from above.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is to the left of the outlined frame. I will move the left hand above it before finishing the downward wrist rotation.",
+      "targets": {
+        "left_x": -0.15,
+        "left_y": 0.07,
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 231,
+        "start": 211
+      },
+      "left_wrist": {
+        "end": 231,
+        "start": 211
+      },
+      "right_wrist": {
+        "end": 231,
+        "start": 211
+      }
+    },
+    "control_end": 206,
+    "control_start": 186,
+    "feedback": "Accepted: the original plan contains 24 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 24,
+    "public_note": "The clock is to the left of the outlined frame. I will move the left hand above it before finishing the downward wrist rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is visible below the wrist. I will finish rotating straight down so I can align the grasp accurately.",
+      "targets": {
+        "left_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 243,
+        "start": 232
+      },
+      "left_wrist": {
+        "end": 243,
+        "start": 232
+      },
+      "right_wrist": {
+        "end": 243,
+        "start": 232
+      }
+    },
+    "control_end": 217,
+    "control_start": 206,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 25,
+    "public_note": "The clock is visible below the wrist. I will finish rotating straight down so I can align the grasp accurately.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The downward rotation is unreachable at the forward pose. I will move back above the clock body before rotating.",
+      "targets": {
+        "left_y": -0.025,
+        "left_z": 0.865
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 243,
+        "start": 232
+      },
+      "left_wrist": {
+        "end": 243,
+        "start": 232
+      },
+      "right_wrist": {
+        "end": 243,
+        "start": 232
+      }
+    },
+    "control_end": 217,
+    "control_start": 206,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "The downward rotation is unreachable at the forward pose. I will move back above the clock body before rotating.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The hand is now closer to its base above the clock. I will rotate to a straight-down grasp.",
+      "targets": {
+        "left_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 263,
+        "start": 244
+      },
+      "left_wrist": {
+        "end": 263,
+        "start": 244
+      },
+      "right_wrist": {
+        "end": 263,
+        "start": 244
+      }
+    },
+    "control_end": 236,
+    "control_start": 217,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "The hand is now closer to its base above the clock. I will rotate to a straight-down grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is ahead and slightly right of the grasp center. I will align above its case before lowering along its sides.",
+      "targets": {
+        "left_x": -0.142,
+        "left_y": 0.012,
+        "left_z": 0.846
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 276,
+        "start": 264
+      },
+      "left_wrist": {
+        "end": 276,
+        "start": 264
+      },
+      "right_wrist": {
+        "end": 276,
+        "start": 264
+      }
+    },
+    "control_end": 248,
+    "control_start": 236,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "The clock is ahead and slightly right of the grasp center. I will align above its case before lowering along its sides.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock case is centered in the open jaws. I will lower a centimetre to engage its upper sides.",
+      "targets": {
+        "left_z": 0.834
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 283,
+        "start": 277
+      },
+      "left_wrist": {
+        "end": 283,
+        "start": 277
+      },
+      "right_wrist": {
+        "end": 283,
+        "start": 277
+      }
+    },
+    "control_end": 254,
+    "control_start": 248,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "The clock case is centered in the open jaws. I will lower a centimetre to engage its upper sides.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The fingertips overlap the clock's side walls. I will close around the case without moving the arm.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 290,
+        "start": 284
+      },
+      "left_wrist": {
+        "end": 290,
+        "start": 284
+      },
+      "right_wrist": {
+        "end": 290,
+        "start": 284
+      }
+    },
+    "control_end": 260,
+    "control_start": 254,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 29,
+    "public_note": "The fingertips overlap the clock's side walls. I will close around the case without moving the arm.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The gripper has closed on the clock case. I will lift it while retreating slightly to avoid the forward reach limit.",
+      "targets": {
+        "left_y": -0.025,
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 294,
+        "start": 291
+      },
+      "left_wrist": {
+        "end": 294,
+        "start": 291
+      },
+      "right_wrist": {
+        "end": 294,
+        "start": 291
+      }
+    },
+    "control_end": 263,
+    "control_start": 260,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "The gripper has closed on the clock case. I will lift it while retreating slightly to avoid the forward reach limit.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock slipped down from the upper-edge grasp. I will reopen and return above it for a lower grip on the case.",
+      "targets": {
+        "left_gripper": 1,
+        "left_y": 0.008,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 305,
+        "start": 295
+      },
+      "left_wrist": {
+        "end": 305,
+        "start": 295
+      },
+      "right_wrist": {
+        "end": 305,
+        "start": 295
+      }
+    },
+    "control_end": 273,
+    "control_start": 263,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "The clock slipped down from the upper-edge grasp. I will reopen and return above it for a lower grip on the case.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws have not fully opened yet. I will finish opening before lowering beside the clock.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 309,
+        "start": 306
+      },
+      "left_wrist": {
+        "end": 309,
+        "start": 306
+      },
+      "right_wrist": {
+        "end": 309,
+        "start": 306
+      }
+    },
+    "control_end": 276,
+    "control_start": 273,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 32,
+    "public_note": "The jaws have not fully opened yet. I will finish opening before lowering beside the clock.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will center the grasp farther into the clock case and lower to a more secure side contact.",
+      "targets": {
+        "left_gripper": 1,
+        "left_y": 0.022,
+        "left_z": 0.824
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 313,
+        "start": 310
+      },
+      "left_wrist": {
+        "end": 313,
+        "start": 310
+      },
+      "right_wrist": {
+        "end": 313,
+        "start": 310
+      }
+    },
+    "control_end": 279,
+    "control_start": 276,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 1 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "I will center the grasp farther into the clock case and lower to a more secure side contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws now straddle the middle depth of the clock case. I will close at this lower height for a firmer hold.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.819
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 324,
+        "start": 314
+      },
+      "left_wrist": {
+        "end": 324,
+        "start": 314
+      },
+      "right_wrist": {
+        "end": 324,
+        "start": 314
+      }
+    },
+    "control_end": 289,
+    "control_start": 279,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "The jaws now straddle the middle depth of the clock case. I will close at this lower height for a firmer hold.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws closed behind the clock and nudged it sideways. I will reopen above it and realign with the center of the case.",
+      "targets": {
+        "left_gripper": 1,
+        "left_y": -0.01,
+        "left_z": 0.855
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 337,
+        "start": 325
+      },
+      "left_wrist": {
+        "end": 337,
+        "start": 325
+      },
+      "right_wrist": {
+        "end": 337,
+        "start": 325
+      }
+    },
+    "control_end": 301,
+    "control_start": 289,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "The jaws closed behind the clock and nudged it sideways. I will reopen above it and realign with the center of the case.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is rotated but still upright. I will align the open jaws across its central sides rather than the rear corner.",
+      "targets": {
+        "left_x": -0.13,
+        "left_y": -0.035,
+        "left_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 345,
+        "start": 338
+      },
+      "left_wrist": {
+        "end": 345,
+        "start": 338
+      },
+      "right_wrist": {
+        "end": 345,
+        "start": 338
+      }
+    },
+    "control_end": 308,
+    "control_start": 301,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 36,
+    "public_note": "The clock is rotated but still upright. I will align the open jaws across its central sides rather than the rear corner.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock's central cross-section is now between the fingertips. I will close and test this grasp.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 352,
+        "start": 346
+      },
+      "left_wrist": {
+        "end": 352,
+        "start": 346
+      },
+      "right_wrist": {
+        "end": 352,
+        "start": 346
+      }
+    },
+    "control_end": 314,
+    "control_start": 308,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 37,
+    "public_note": "The clock's central cross-section is now between the fingertips. I will close and test this grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws have closed against the rotated clock. I will lift slowly and check that the case follows.",
+      "targets": {
+        "left_y": -0.07,
+        "left_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 357,
+        "start": 353
+      },
+      "left_wrist": {
+        "end": 357,
+        "start": 353
+      },
+      "right_wrist": {
+        "end": 357,
+        "start": 353
+      }
+    },
+    "control_end": 318,
+    "control_start": 314,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "The jaws have closed against the rotated clock. I will lift slowly and check that the case follows.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is too broad for the current jaw direction and slipped again. I will rotate the jaws to grasp across its narrower depth.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0,
+        "left_yaw_deg": 60
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 378,
+        "start": 358
+      },
+      "left_wrist": {
+        "end": 378,
+        "start": 358
+      },
+      "right_wrist": {
+        "end": 378,
+        "start": 358
+      }
+    },
+    "control_end": 338,
+    "control_start": 318,
+    "feedback": "Accepted: the original plan contains 27 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 39,
+    "public_note": "The clock is too broad for the current jaw direction and slipped again. I will rotate the jaws to grasp across its narrower depth.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The idle right arm crowds the clock workspace. I will withdraw it toward its starting position so it cannot knock the clock during grasping.",
+      "targets": {
+        "right_gripper": 1,
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 399,
+        "start": 379
+      },
+      "left_wrist": {
+        "end": 399,
+        "start": 379
+      },
+      "right_wrist": {
+        "end": 399,
+        "start": 379
+      }
+    },
+    "control_end": 358,
+    "control_start": 338,
+    "feedback": "Accepted: the original plan contains 25 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 40,
+    "public_note": "The idle right arm crowds the clock workspace. I will withdraw it toward its starting position so it cannot knock the clock during grasping.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock now stands with its narrow edge across world x. With the right arm clear, I will reopen and align the jaws across that narrow edge.",
+      "targets": {
+        "left_gripper": 1,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 420,
+        "start": 400
+      },
+      "left_wrist": {
+        "end": 420,
+        "start": 400
+      },
+      "right_wrist": {
+        "end": 420,
+        "start": 400
+      }
+    },
+    "control_end": 378,
+    "control_start": 358,
+    "feedback": "Accepted: the original plan contains 27 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 41,
+    "public_note": "The clock now stands with its narrow edge across world x. With the right arm clear, I will reopen and align the jaws across that narrow edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will center above the clock's narrow edge with fully open jaws before the final descent.",
+      "targets": {
+        "left_gripper": 1,
+        "left_x": -0.108,
+        "left_y": -0.01,
+        "left_z": 0.842
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 431,
+        "start": 421
+      },
+      "left_wrist": {
+        "end": 431,
+        "start": 421
+      },
+      "right_wrist": {
+        "end": 431,
+        "start": 421
+      }
+    },
+    "control_end": 388,
+    "control_start": 378,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "I will center above the clock's narrow edge with fully open jaws before the final descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The narrow case lies slightly behind the fingertips. I will shift back to its middle and lower beside it.",
+      "targets": {
+        "left_y": -0.035,
+        "left_z": 0.822
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 442,
+        "start": 432
+      },
+      "left_wrist": {
+        "end": 442,
+        "start": 432
+      },
+      "right_wrist": {
+        "end": 442,
+        "start": 432
+      }
+    },
+    "control_end": 398,
+    "control_start": 388,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 43,
+    "public_note": "The narrow case lies slightly behind the fingertips. I will shift back to its middle and lower beside it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock's narrow sides are centered between the open jaws. I will close around them.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 449,
+        "start": 443
+      },
+      "left_wrist": {
+        "end": 449,
+        "start": 443
+      },
+      "right_wrist": {
+        "end": 449,
+        "start": 443
+      }
+    },
+    "control_end": 404,
+    "control_start": 398,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 44,
+    "public_note": "The clock's narrow sides are centered between the open jaws. I will close around them.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws are holding the clock across its narrow depth. I will lift and retreat to gain clearance for moving onto the drawer.",
+      "targets": {
+        "left_y": -0.1,
+        "left_z": 0.93
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 456,
+        "start": 450
+      },
+      "left_wrist": {
+        "end": 456,
+        "start": 450
+      },
+      "right_wrist": {
+        "end": 456,
+        "start": 450
+      }
+    },
+    "control_end": 410,
+    "control_start": 404,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "The jaws are holding the clock across its narrow depth. I will lift and retreat to gain clearance for moving onto the drawer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is lifted and retained. I will move inward over the left workspace and raise it above the drawer top.",
+      "targets": {
+        "left_x": -0.3,
+        "left_y": -0.12,
+        "left_z": 1.08
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 477,
+        "start": 457
+      },
+      "left_wrist": {
+        "end": 477,
+        "start": 457
+      },
+      "right_wrist": {
+        "end": 477,
+        "start": 457
+      }
+    },
+    "control_end": 430,
+    "control_start": 410,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 46,
+    "public_note": "The clock is lifted and retained. I will move inward over the left workspace and raise it above the drawer top.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The combined high move was refused. I will first bring the clock closer to the arm base with a smaller lift.",
+      "targets": {
+        "left_x": -0.25,
+        "left_y": -0.15,
+        "left_z": 0.98
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 477,
+        "start": 457
+      },
+      "left_wrist": {
+        "end": 477,
+        "start": 457
+      },
+      "right_wrist": {
+        "end": 477,
+        "start": 457
+      }
+    },
+    "control_end": 430,
+    "control_start": 410,
+    "feedback": "Accepted: the original plan contains 119 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 46,
+    "public_note": "The combined high move was refused. I will first bring the clock closer to the arm base with a smaller lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The planner executed only the beginning of a long repositioning path; the clock remains held. I will continue toward the same closer, higher pose.",
+      "targets": {
+        "left_x": -0.25,
+        "left_y": -0.15,
+        "left_z": 0.98
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 498,
+        "start": 478
+      },
+      "left_wrist": {
+        "end": 498,
+        "start": 478
+      },
+      "right_wrist": {
+        "end": 498,
+        "start": 478
+      }
+    },
+    "control_end": 450,
+    "control_start": 430,
+    "feedback": "Accepted: the original plan contains 114 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 47,
+    "public_note": "The planner executed only the beginning of a long repositioning path; the clock remains held. I will continue toward the same closer, higher pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The long path is taking a wide detour. I will use a short lateral correction from the measured pose while retaining the clock.",
+      "targets": {
+        "left_x": 0.0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 519,
+        "start": 499
+      },
+      "left_wrist": {
+        "end": 519,
+        "start": 499
+      },
+      "right_wrist": {
+        "end": 519,
+        "start": 499
+      }
+    },
+    "control_end": 470,
+    "control_start": 450,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 48,
+    "public_note": "The long path is taking a wide detour. I will use a short lateral correction from the measured pose while retaining the clock.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The short correction is unreachable in this arm configuration. I will continue the accepted repositioning path toward the left side.",
+      "targets": {
+        "left_x": -0.25,
+        "left_y": -0.15,
+        "left_z": 0.98
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 519,
+        "start": 499
+      },
+      "left_wrist": {
+        "end": 519,
+        "start": 499
+      },
+      "right_wrist": {
+        "end": 519,
+        "start": 499
+      }
+    },
+    "control_end": 470,
+    "control_start": 450,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 48,
+    "public_note": "The short correction is unreachable in this arm configuration. I will continue the accepted repositioning path toward the left side.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The arm is in a constrained straight-down configuration. I will tilt the held clock to free the wrist before moving left.",
+      "targets": {
+        "left_pitch_deg": 40
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 519,
+        "start": 499
+      },
+      "left_wrist": {
+        "end": 519,
+        "start": 499
+      },
+      "right_wrist": {
+        "end": 519,
+        "start": 499
+      }
+    },
+    "control_end": 470,
+    "control_start": 450,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "The arm is in a constrained straight-down configuration. I will tilt the held clock to free the wrist before moving left.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist is tilted and the clock is still held. I will move it back toward the drawer side with clearance above the table.",
+      "targets": {
+        "left_x": -0.25,
+        "left_y": -0.15,
+        "left_z": 1.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 540,
+        "start": 520
+      },
+      "left_wrist": {
+        "end": 540,
+        "start": 520
+      },
+      "right_wrist": {
+        "end": 540,
+        "start": 520
+      }
+    },
+    "control_end": 490,
+    "control_start": 470,
+    "feedback": "Accepted: the original plan contains 152 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 49,
+    "public_note": "The wrist is tilted and the clock is still held. I will move it back toward the drawer side with clearance above the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The accepted path is moving the clock toward the left side. I will continue toward the same clearance pose.",
+      "targets": {
+        "left_x": -0.25,
+        "left_y": -0.15,
+        "left_z": 1.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 543,
+        "start": 541
+      },
+      "left_wrist": {
+        "end": 543,
+        "start": 541
+      },
+      "right_wrist": {
+        "end": 543,
+        "start": 541
+      }
+    },
+    "control_end": 492,
+    "control_start": 490,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 50,
+    "public_note": "The accepted path is moving the clock toward the left side. I will continue toward the same clearance pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The longer path was refused on replanning. I will use an intermediate leftward pose and straighten the jaw yaw.",
+      "targets": {
+        "left_x": -0.12,
+        "left_y": -0.15,
+        "left_yaw_deg": 0,
+        "left_z": 0.99
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 543,
+        "start": 541
+      },
+      "left_wrist": {
+        "end": 543,
+        "start": 541
+      },
+      "right_wrist": {
+        "end": 543,
+        "start": 541
+      }
+    },
+    "control_end": 492,
+    "control_start": 490,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 50,
+    "public_note": "The longer path was refused on replanning. I will use an intermediate leftward pose and straighten the jaw yaw.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will tilt the wrist farther toward its starting orientation to escape the constrained elbow configuration while retaining the clock.",
+      "targets": {
+        "left_pitch_deg": 80
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 543,
+        "start": 541
+      },
+      "left_wrist": {
+        "end": 543,
+        "start": 541
+      },
+      "right_wrist": {
+        "end": 543,
+        "start": 541
+      }
+    },
+    "control_end": 492,
+    "control_start": 490,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 50,
+    "public_note": "I will tilt the wrist farther toward its starting orientation to escape the constrained elbow configuration while retaining the clock.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will try a very short inward and upward move from the measured pose rather than another large repositioning.",
+      "targets": {
+        "left_x": 0.025,
+        "left_z": 0.98
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 543,
+        "start": 541
+      },
+      "left_wrist": {
+        "end": 543,
+        "start": 541
+      },
+      "right_wrist": {
+        "end": 543,
+        "start": 541
+      }
+    },
+    "control_end": 492,
+    "control_start": 490,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "I will try a very short inward and upward move from the measured pose rather than another large repositioning.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The short move made progress while retaining the clock. I will continue leftward and upward in a modest increment.",
+      "targets": {
+        "left_x": -0.02,
+        "left_z": 1.015
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 547,
+        "start": 544
+      },
+      "left_wrist": {
+        "end": 547,
+        "start": 544
+      },
+      "right_wrist": {
+        "end": 547,
+        "start": 544
+      }
+    },
+    "control_end": 495,
+    "control_start": 492,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "The short move made progress while retaining the clock. I will continue leftward and upward in a modest increment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock has cleared the keyboard. I will keep translating left above the table toward the drawer.",
+      "targets": {
+        "left_x": -0.09,
+        "left_z": 1.07
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 553,
+        "start": 548
+      },
+      "left_wrist": {
+        "end": 553,
+        "start": 548
+      },
+      "right_wrist": {
+        "end": 553,
+        "start": 548
+      }
+    },
+    "control_end": 500,
+    "control_start": 495,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "The clock has cleared the keyboard. I will keep translating left above the table toward the drawer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is clear of surrounding objects. I will carry it farther left at drawer-top clearance.",
+      "targets": {
+        "left_x": -0.22,
+        "left_z": 1.12
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 567,
+        "start": 554
+      },
+      "left_wrist": {
+        "end": 567,
+        "start": 554
+      },
+      "right_wrist": {
+        "end": 567,
+        "start": 554
+      }
+    },
+    "control_end": 513,
+    "control_start": 500,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 53,
+    "public_note": "The clock is clear of surrounding objects. I will carry it farther left at drawer-top clearance.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is above drawer height. I will carry it over the drawer's top tray before lowering.",
+      "targets": {
+        "left_x": -0.4,
+        "left_y": 0.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 585,
+        "start": 568
+      },
+      "left_wrist": {
+        "end": 585,
+        "start": 568
+      },
+      "right_wrist": {
+        "end": 585,
+        "start": 568
+      }
+    },
+    "control_end": 530,
+    "control_start": 513,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "The clock is above drawer height. I will carry it over the drawer's top tray before lowering.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is over the drawer tray. I will rotate partway toward upright before lowering it onto the top.",
+      "targets": {
+        "left_pitch_deg": 35
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 598,
+        "start": 586
+      },
+      "left_wrist": {
+        "end": 598,
+        "start": 586
+      },
+      "right_wrist": {
+        "end": 598,
+        "start": 586
+      }
+    },
+    "control_end": 542,
+    "control_start": 530,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 55,
+    "public_note": "The clock is over the drawer tray. I will rotate partway toward upright before lowering it onto the top.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist cannot rotate at this reach. I will lower the retained clock toward the tray while keeping its current orientation.",
+      "targets": {
+        "left_z": 1.095
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 598,
+        "start": 586
+      },
+      "left_wrist": {
+        "end": 598,
+        "start": 586
+      },
+      "right_wrist": {
+        "end": 598,
+        "start": 586
+      }
+    },
+    "control_end": 542,
+    "control_start": 530,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 55,
+    "public_note": "The wrist cannot rotate at this reach. I will lower the retained clock toward the tray while keeping its current orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is close to the drawer top. I will lower a small amount and inspect the remaining clearance.",
+      "targets": {
+        "left_z": 1.08
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 601,
+        "start": 599
+      },
+      "left_wrist": {
+        "end": 601,
+        "start": 599
+      },
+      "right_wrist": {
+        "end": 601,
+        "start": 599
+      }
+    },
+    "control_end": 544,
+    "control_start": 542,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 56,
+    "public_note": "The clock is close to the drawer top. I will lower a small amount and inspect the remaining clearance.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock has reached the drawer top. I will release it onto the tray.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 606,
+        "start": 602
+      },
+      "left_wrist": {
+        "end": 606,
+        "start": 602
+      },
+      "right_wrist": {
+        "end": 606,
+        "start": 602
+      }
+    },
+    "control_end": 548,
+    "control_start": 544,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 57,
+    "public_note": "The clock has reached the drawer top. I will release it onto the tray.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock slipped over the front lip rather than remaining on the tray. I will clear the drawer edge to inspect where it settles before retrying.",
+      "targets": {
+        "left_y": -0.06,
+        "left_z": 1.13
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 613,
+        "start": 607
+      },
+      "left_wrist": {
+        "end": 613,
+        "start": 607
+      },
+      "right_wrist": {
+        "end": 613,
+        "start": 607
+      }
+    },
+    "control_end": 554,
+    "control_start": 548,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 58,
+    "public_note": "The clock slipped over the front lip rather than remaining on the tray. I will clear the drawer edge to inspect where it settles before retrying.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock has settled on the table in front of the drawer. I will approach it from a closer pose for a controlled retry.",
+      "targets": {
+        "left_x": -0.35,
+        "left_y": -0.17,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 634,
+        "start": 614
+      },
+      "left_wrist": {
+        "end": 634,
+        "start": 614
+      },
+      "right_wrist": {
+        "end": 634,
+        "start": 614
+      }
+    },
+    "control_end": 574,
+    "control_start": 554,
+    "feedback": "Accepted: the original plan contains 129 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 59,
+    "public_note": "The clock has settled on the table in front of the drawer. I will approach it from a closer pose for a controlled retry.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The long approach again began with a detour. I will lower in place away from the drawer before making smaller approaches.",
+      "targets": {
+        "left_z": 1.05
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 647,
+        "start": 635
+      },
+      "left_wrist": {
+        "end": 647,
+        "start": 635
+      },
+      "right_wrist": {
+        "end": 647,
+        "start": 635
+      }
+    },
+    "control_end": 586,
+    "control_start": 574,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 60,
+    "public_note": "The long approach again began with a detour. I will lower in place away from the drawer before making smaller approaches.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will bring the left wrist toward a downward grasp from this closer position, preparing to recover the clock from the table.",
+      "targets": {
+        "left_pitch_deg": 35,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 665,
+        "start": 648
+      },
+      "left_wrist": {
+        "end": 665,
+        "start": 648
+      },
+      "right_wrist": {
+        "end": 665,
+        "start": 648
+      }
+    },
+    "control_end": 603,
+    "control_start": 586,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 61,
+    "public_note": "I will bring the left wrist toward a downward grasp from this closer position, preparing to recover the clock from the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is now lying face-up beside the drawer. I will approach above its case for a simpler narrow-side grasp.",
+      "targets": {
+        "left_x": -0.3,
+        "left_y": 0.04,
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 681,
+        "start": 666
+      },
+      "left_wrist": {
+        "end": 681,
+        "start": 666
+      },
+      "right_wrist": {
+        "end": 681,
+        "start": 666
+      }
+    },
+    "control_end": 618,
+    "control_start": 603,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 62,
+    "public_note": "The clock is now lying face-up beside the drawer. I will approach above its case for a simpler narrow-side grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clock is visible directly below the wrist. I will rotate straight down to grasp it without catching the drawer front.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 692,
+        "start": 682
+      },
+      "left_wrist": {
+        "end": 692,
+        "start": 682
+      },
+      "right_wrist": {
+        "end": 692,
+        "start": 682
+      }
+    },
+    "control_end": 628,
+    "control_start": 618,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 63,
+    "public_note": "The clock is visible directly below the wrist. I will rotate straight down to grasp it without catching the drawer front.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist rotation was refused near the drawer. I will move back into free space before trying the downward approach.",
+      "targets": {
+        "left_y": -0.04,
+        "left_z": 0.87
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 692,
+        "start": 682
+      },
+      "left_wrist": {
+        "end": 692,
+        "start": 682
+      },
+      "right_wrist": {
+        "end": 692,
+        "start": 682
+      }
+    },
+    "control_end": 628,
+    "control_start": 618,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 63,
+    "public_note": "The wrist rotation was refused near the drawer. I will move back into free space before trying the downward approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The left arm remains constrained and is crowding loose items. I will return both wrists toward their starting poses to reset the approach safely.",
+      "targets": {
+        "left_pitch_deg": 90,
+        "left_roll_deg": 0,
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_yaw_deg": 0,
+        "left_z": 0.9215,
+        "right_pitch_deg": 90,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 707,
+        "start": 693
+      },
+      "left_wrist": {
+        "end": 707,
+        "start": 693
+      },
+      "right_wrist": {
+        "end": 707,
+        "start": 693
+      }
+    },
+    "control_end": 642,
+    "control_start": 628,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 64,
+    "public_note": "The left arm remains constrained and is crowding loose items. I will return both wrists toward their starting poses to reset the approach safely.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The combined home motion was refused. I will rotate only the left wrist toward its original horizontal orientation first.",
+      "targets": {
+        "left_pitch_deg": 85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 707,
+        "start": 693
+      },
+      "left_wrist": {
+        "end": 707,
+        "start": 693
+      },
+      "right_wrist": {
+        "end": 707,
+        "start": 693
+      }
+    },
+    "control_end": 642,
+    "control_start": 628,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 64,
+    "public_note": "The combined home motion was refused. I will rotate only the left wrist toward its original horizontal orientation first.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will raise the empty left hand away from the loose objects before attempting any further repositioning.",
+      "targets": {
+        "left_z": 1.05
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 707,
+        "start": 693
+      },
+      "left_wrist": {
+        "end": 707,
+        "start": 693
+      },
+      "right_wrist": {
+        "end": 707,
+        "start": 693
+      }
+    },
+    "control_end": 642,
+    "control_start": 628,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 64,
+    "public_note": "I will raise the empty left hand away from the loose objects before attempting any further repositioning.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The empty hand is now clear of the table and drawer. I will rotate downward at this higher clearance pose.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 728,
+        "start": 708
+      },
+      "left_wrist": {
+        "end": 728,
+        "start": 708
+      },
+      "right_wrist": {
+        "end": 728,
+        "start": 708
+      }
+    },
+    "control_end": 662,
+    "control_start": 642,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 65,
+    "public_note": "The empty hand is now clear of the table and drawer. I will rotate downward at this higher clearance pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist still cannot rotate in the forward configuration. I will retreat horizontally toward the starting location while maintaining clearance.",
+      "targets": {
+        "left_y": -0.2022
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 728,
+        "start": 708
+      },
+      "left_wrist": {
+        "end": 728,
+        "start": 708
+      },
+      "right_wrist": {
+        "end": 728,
+        "start": 708
+      }
+    },
+    "control_end": 662,
+    "control_start": 642,
+    "feedback": "Accepted: the original plan contains 127 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 65,
+    "public_note": "The wrist still cannot rotate in the forward configuration. I will retreat horizontally toward the starting location while maintaining clearance.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The arm has gained clearance from the drawer. I will try returning the left hand to its full original pose from this less constrained position.",
+      "targets": {
+        "left_pitch_deg": 90,
+        "left_roll_deg": 0,
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_yaw_deg": 0,
+        "left_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 730,
+        "start": 729
+      },
+      "left_wrist": {
+        "end": 730,
+        "start": 729
+      },
+      "right_wrist": {
+        "end": 730,
+        "start": 729
+      }
+    },
+    "control_end": 663,
+    "control_start": 662,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 66,
+    "public_note": "The arm has gained clearance from the drawer. I will try returning the left hand to its full original pose from this less constrained position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "The clock needed a narrow-depth grasp from the start and placement farther inside the drawer top. I should have cleared the idle arm earlier and avoided long replanned paths that swept through the figurine.",
+      "reason": "The mouse is on its pad, but I cannot reliably complete the remaining placements with the arm trapped in repeated unreachable configurations and the remaining call budget."
+    },
+    "cameras": {
+      "head": {
+        "end": 730,
+        "start": 729
+      },
+      "left_wrist": {
+        "end": 730,
+        "start": 729
+      },
+      "right_wrist": {
+        "end": 730,
+        "start": 729
+      }
+    },
+    "control_end": 663,
+    "control_start": 662,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 66,
+    "public_note": "The mouse is on its pad, but I cannot reliably complete the remaining placements with the arm trapped in repeated unreachable configurations and the remaining call budget.",
+    "tool": "give_up"
+  }
+]

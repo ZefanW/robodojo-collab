@@ -1,0 +1,169 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Push the T-shaped block to align it precisely with the gray T-shaped pad.",
+      "note": "The block is offset and rotated relative to the pad. Begin with the matching task instruction and inspect the approach.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 16,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 16,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 16,
+        "start": 1
+      }
+    },
+    "control_end": 15,
+    "control_start": 0,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 0,
+    "public_note": "The block is offset and rotated relative to the pad. Begin with the matching task instruction and inspect the approach.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Push the T-shaped block to align it precisely with the gray T-shaped pad.",
+      "note": "Both arms remain near their starting positions and the block is unchanged. Allow another short execution to begin the approach.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 32,
+        "start": 17
+      },
+      "left_wrist": {
+        "end": 32,
+        "start": 17
+      },
+      "right_wrist": {
+        "end": 32,
+        "start": 17
+      }
+    },
+    "control_end": 30,
+    "control_start": 15,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 1,
+    "public_note": "Both arms remain near their starting positions and the block is unchanged. Allow another short execution to begin the approach.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Push the blue T-shaped block to align it precisely with the gray T-shaped pad.",
+      "note": "The block and arms remain unchanged after two executions. Adding the visible block color may help identify the target; inspect for actual motion next.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 48,
+        "start": 33
+      },
+      "left_wrist": {
+        "end": 48,
+        "start": 33
+      },
+      "right_wrist": {
+        "end": 48,
+        "start": 33
+      }
+    },
+    "control_end": 45,
+    "control_start": 30,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 2,
+    "public_note": "The block and arms remain unchanged after two executions. Adding the visible block color may help identify the target; inspect for actual motion next.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "With the right hand, push the blue T-shaped block along the table to align it precisely with the gray T-shaped pad. Do not lift the block.",
+      "note": "No meaningful motion is visible after three executions. This grounded variation tests whether specifying the hand and table-supported push initiates action.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 64,
+        "start": 49
+      },
+      "left_wrist": {
+        "end": 64,
+        "start": 49
+      },
+      "right_wrist": {
+        "end": 64,
+        "start": 49
+      }
+    },
+    "control_end": 60,
+    "control_start": 45,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 3,
+    "public_note": "No meaningful motion is visible after three executions. This grounded variation tests whether specifying the hand and table-supported push initiates action.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Push the T-shaped block onto the gray T-shaped pad.",
+      "note": "The scene remains unchanged after repeated attempts. A concise object-operation instruction tests whether the policy can initiate the push.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 80,
+        "start": 65
+      },
+      "left_wrist": {
+        "end": 80,
+        "start": 65
+      },
+      "right_wrist": {
+        "end": 80,
+        "start": 65
+      }
+    },
+    "control_end": 75,
+    "control_start": 60,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 4,
+    "public_note": "The scene remains unchanged after repeated attempts. A concise object-operation instruction tests whether the policy can initiate the push.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "The exact training instruction and grounded wording variations all produced negligible motion over 75 controls. The block remains offset and rotated from the pad; no successful push occurred.",
+      "reason": "Repeated VLA executions leave both arms near their starting positions and the T-shaped block untouched, so alignment cannot be achieved with the available control."
+    },
+    "cameras": {
+      "head": {
+        "end": 82,
+        "start": 81
+      },
+      "left_wrist": {
+        "end": 82,
+        "start": 81
+      },
+      "right_wrist": {
+        "end": 82,
+        "start": 81
+      }
+    },
+    "control_end": 76,
+    "control_start": 75,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 5,
+    "public_note": "Repeated VLA executions leave both arms near their starting positions and the T-shaped block untouched, so alignment cannot be achieved with the available control.",
+    "tool": "give_up"
+  }
+]

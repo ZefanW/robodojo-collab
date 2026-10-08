@@ -1,0 +1,169 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Stack the three bowls together.",
+      "note": "The three bowls are upright and separate. Use the matching trained instruction to begin reaching.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 16,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 16,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 16,
+        "start": 1
+      }
+    },
+    "control_end": 15,
+    "control_start": 0,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 0,
+    "public_note": "The three bowls are upright and separate. Use the matching trained instruction to begin reaching.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Stack the three bowls together.",
+      "note": "No bowl has moved yet. Continue the trained task instruction to allow the initial reach.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 32,
+        "start": 17
+      },
+      "left_wrist": {
+        "end": 32,
+        "start": 17
+      },
+      "right_wrist": {
+        "end": 32,
+        "start": 17
+      }
+    },
+    "control_end": 30,
+    "control_start": 15,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 1,
+    "public_note": "No bowl has moved yet. Continue the trained task instruction to allow the initial reach.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the left bowl and place it into the front right bowl. Stack the three bowls together.",
+      "note": "The whole-task instruction has produced no visible progress. Try specifying the first bowl placement and observe whether a reach begins.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 48,
+        "start": 33
+      },
+      "left_wrist": {
+        "end": 48,
+        "start": 33
+      },
+      "right_wrist": {
+        "end": 48,
+        "start": 33
+      }
+    },
+    "control_end": 45,
+    "control_start": 30,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 2,
+    "public_note": "The whole-task instruction has produced no visible progress. Try specifying the first bowl placement and observe whether a reach begins.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the left bowl.",
+      "note": "Neither the task instruction nor a specific placement initiated a visible reach. Test a simple pickup before continuing the stack.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 64,
+        "start": 49
+      },
+      "left_wrist": {
+        "end": 64,
+        "start": 49
+      },
+      "right_wrist": {
+        "end": 64,
+        "start": 49
+      }
+    },
+    "control_end": 60,
+    "control_start": 45,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 3,
+    "public_note": "Neither the task instruction nor a specific placement initiated a visible reach. Test a simple pickup before continuing the stack.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Stack the three bowls together.",
+      "note": "The simpler pickup also produced no visible action. Retry the exact trained instruction to check whether the policy can begin.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 80,
+        "start": 65
+      },
+      "left_wrist": {
+        "end": 80,
+        "start": 65
+      },
+      "right_wrist": {
+        "end": 80,
+        "start": 65
+      }
+    },
+    "control_end": 75,
+    "control_start": 60,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 4,
+    "public_note": "The simpler pickup also produced no visible action. Retry the exact trained instruction to check whether the policy can begin.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "Five executions tested the exact trained stacking instruction and concrete placement and pickup instructions. All bowls stayed in their initial positions, with no grasp or stacking progress.",
+      "reason": "Repeated VLA executions produce no meaningful arm movement or bowl manipulation, so I cannot complete the stack with the available control interface."
+    },
+    "cameras": {
+      "head": {
+        "end": 82,
+        "start": 81
+      },
+      "left_wrist": {
+        "end": 82,
+        "start": 81
+      },
+      "right_wrist": {
+        "end": 82,
+        "start": 81
+      }
+    },
+    "control_end": 76,
+    "control_start": 75,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 5,
+    "public_note": "Repeated VLA executions produce no meaningful arm movement or bowl manipulation, so I cannot complete the stack with the available control interface.",
+    "tool": "give_up"
+  }
+]

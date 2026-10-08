@@ -1,0 +1,225 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Complete the equation 8 ÷ 2 = 4 by picking up the division operator and placing it on the empty pad between 8 and 2, then return the robot arm to its starting pose.",
+      "note": "The empty pad needs the division operator, visible as the rightmost operator piece. Begin its pickup and inspect progress.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 16,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 16,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 16,
+        "start": 1
+      }
+    },
+    "control_end": 15,
+    "control_start": 0,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 0,
+    "public_note": "The empty pad needs the division operator, visible as the rightmost operator piece. Begin its pickup and inspect progress.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the division operator, the rightmost black circular piece marked ÷, and place it on the empty pad between 8 and 2 to complete 8 ÷ 2 = 4. Then return the robot arm to its starting pose.",
+      "note": "The hand is near the unrelated orange 3. Specify the division piece by its appearance and location to redirect pickup.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 32,
+        "start": 17
+      },
+      "left_wrist": {
+        "end": 32,
+        "start": 17
+      },
+      "right_wrist": {
+        "end": 32,
+        "start": 17
+      }
+    },
+    "control_end": 30,
+    "control_start": 15,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 1,
+    "public_note": "The hand is near the unrelated orange 3. Specify the division piece by its appearance and location to redirect pickup.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the black division operator with the right hand and place it on the empty pad between 8 and 2. Then return the robot arms to their starting poses.",
+      "note": "The left hand continues toward the wrong item. Request the right hand to pick up the division operator on its side of the table.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 48,
+        "start": 33
+      },
+      "left_wrist": {
+        "end": 48,
+        "start": 33
+      },
+      "right_wrist": {
+        "end": 48,
+        "start": 33
+      }
+    },
+    "control_end": 45,
+    "control_start": 30,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 2,
+    "public_note": "The left hand continues toward the wrong item. Request the right hand to pick up the division operator on its side of the table.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Complete the equation by selecting the correct missing number or operator and placing it on the pad, then reset the robot arm.",
+      "note": "The division piece is still on the table and the left hand has closed beside 3 without lifting it. Try the original task wording.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 64,
+        "start": 49
+      },
+      "left_wrist": {
+        "end": 64,
+        "start": 49
+      },
+      "right_wrist": {
+        "end": 64,
+        "start": 49
+      }
+    },
+    "control_end": 60,
+    "control_start": 45,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 3,
+    "public_note": "The division piece is still on the table and the left hand has closed beside 3 without lifting it. Try the original task wording.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Complete the equation by selecting the correct missing number or operator and placing it on the pad, then reset the robot arm.",
+      "note": "No placement has occurred. Continue briefly with the original wording to see whether the policy leaves the incorrect target.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 80,
+        "start": 65
+      },
+      "left_wrist": {
+        "end": 80,
+        "start": 65
+      },
+      "right_wrist": {
+        "end": 80,
+        "start": 65
+      }
+    },
+    "control_end": 75,
+    "control_start": 60,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 4,
+    "public_note": "No placement has occurred. Continue briefly with the original wording to see whether the policy leaves the incorrect target.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Return the robot arm to its starting pose.",
+      "note": "Repeated predictions have left the hand beside the wrong piece without a grasp. Attempt a reset to recover before selecting the division operator.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 96,
+        "start": 81
+      },
+      "left_wrist": {
+        "end": 96,
+        "start": 81
+      },
+      "right_wrist": {
+        "end": 96,
+        "start": 81
+      }
+    },
+    "control_end": 90,
+    "control_start": 75,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 5,
+    "public_note": "Repeated predictions have left the hand beside the wrong piece without a grasp. Attempt a reset to recover before selecting the division operator.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the division sign and place it on the pad.",
+      "note": "The arm remains at the incorrect digit despite a reset request. Try a concise object-operation instruction targeting only the required piece.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 112,
+        "start": 97
+      },
+      "left_wrist": {
+        "end": 112,
+        "start": 97
+      },
+      "right_wrist": {
+        "end": 112,
+        "start": 97
+      }
+    },
+    "control_end": 105,
+    "control_start": 90,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 6,
+    "public_note": "The arm remains at the incorrect digit despite a reset request. Try a concise object-operation instruction targeting only the required piece.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "The equation requires division: 8 ÷ 2 = 4. Explicit piece descriptions, a right-hand request, original task wording, a reset request, and a concise pickup instruction all failed to produce progress toward that piece.",
+      "reason": "The policy repeatedly targets the unrelated 3 and does not approach the required division operator or reset the arm. The answer pad remains empty."
+    },
+    "cameras": {
+      "head": {
+        "end": 114,
+        "start": 113
+      },
+      "left_wrist": {
+        "end": 114,
+        "start": 113
+      },
+      "right_wrist": {
+        "end": 114,
+        "start": 113
+      }
+    },
+    "control_end": 106,
+    "control_start": 105,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 7,
+    "public_note": "The policy repeatedly targets the unrelated 3 and does not approach the required division operator or reset the arm. The answer pad remains empty.",
+    "tool": "give_up"
+  }
+]

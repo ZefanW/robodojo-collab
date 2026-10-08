@@ -1,0 +1,2980 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The blue T needs translation leftward and rotation to match the gray pad. I will orient the right hand downward as a closed pushing tool, without lifting the block.",
+      "targets": {
+        "right_gripper": 0,
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 21,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 21,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 21,
+        "start": 1
+      }
+    },
+    "control_end": 20,
+    "control_start": 0,
+    "feedback": "Accepted: the original plan contains 37 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 0,
+    "public_note": "The blue T needs translation leftward and rotation to match the gray pad. I will orient the right hand downward as a closed pushing tool, without lifting the block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The rotation stopped at 24 degrees; finish the downward orientation and close the pushing jaws before approaching the T.",
+      "targets": {
+        "right_gripper": 0,
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 36,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 36,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 36,
+        "start": 22
+      }
+    },
+    "control_end": 34,
+    "control_start": 20,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "The rotation stopped at 24 degrees; finish the downward orientation and close the pushing jaws before approaching the T.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach above the blue T's right side, staying clear of its top, to establish a more precise pushing position.",
+      "targets": {
+        "right_x": 0.2,
+        "right_y": -0.15,
+        "right_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 44,
+        "start": 37
+      },
+      "left_wrist": {
+        "end": 44,
+        "start": 37
+      },
+      "right_wrist": {
+        "end": 44,
+        "start": 37
+      }
+    },
+    "control_end": 41,
+    "control_start": 34,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "Approach above the blue T's right side, staying clear of its top, to establish a more precise pushing position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The measured blue footprint spans head-image pixels 397–442. Move to the near side of its projecting stem to rotate it toward the pad before translating it.",
+      "targets": {
+        "right_x": 0.205,
+        "right_y": -0.225,
+        "right_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 54,
+        "start": 45
+      },
+      "left_wrist": {
+        "end": 54,
+        "start": 45
+      },
+      "right_wrist": {
+        "end": 54,
+        "start": 45
+      }
+    },
+    "control_end": 50,
+    "control_start": 41,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "The measured blue footprint spans head-image pixels 397–442. Move to the near side of its projecting stem to rotate it toward the pad before translating it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist view shows clear space in front of the closed jaws. Lower beside the stem's outer half so the next short forward pushes contact its side rather than its top.",
+      "targets": {
+        "right_x": 0.225,
+        "right_z": 0.78
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 57,
+        "start": 55
+      },
+      "left_wrist": {
+        "end": 57,
+        "start": 55
+      },
+      "right_wrist": {
+        "end": 57,
+        "start": 55
+      }
+    },
+    "control_end": 52,
+    "control_start": 50,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "The wrist view shows clear space in front of the closed jaws. Lower beside the stem's outer half so the next short forward pushes contact its side rather than its top.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The stem edge is just ahead of the jaws. Advance five millimetres to approach contact gently.",
+      "targets": {
+        "right_y": -0.22
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 59,
+        "start": 58
+      },
+      "left_wrist": {
+        "end": 59,
+        "start": 58
+      },
+      "right_wrist": {
+        "end": 59,
+        "start": 58
+      }
+    },
+    "control_end": 53,
+    "control_start": 52,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "The stem edge is just ahead of the jaws. Advance five millimetres to approach contact gently.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The gap is shrinking without block movement; advance another five millimetres toward the stem side.",
+      "targets": {
+        "right_y": -0.2155
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 61,
+        "start": 60
+      },
+      "left_wrist": {
+        "end": 61,
+        "start": 60
+      },
+      "right_wrist": {
+        "end": 61,
+        "start": 60
+      }
+    },
+    "control_end": 54,
+    "control_start": 53,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "The gap is shrinking without block movement; advance another five millimetres toward the stem side.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws are meeting the stem edge. Continue a five-millimetre push and inspect the resulting rotation.",
+      "targets": {
+        "right_y": -0.2111
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 63,
+        "start": 62
+      },
+      "left_wrist": {
+        "end": 63,
+        "start": 62
+      },
+      "right_wrist": {
+        "end": 63,
+        "start": 62
+      }
+    },
+    "control_end": 55,
+    "control_start": 54,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "The jaws are meeting the stem edge. Continue a five-millimetre push and inspect the resulting rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The stem has begun rotating in the desired direction while remaining flat. Continue the controlled five-millimetre forward push.",
+      "targets": {
+        "right_y": -0.2067
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 65,
+        "start": 64
+      },
+      "left_wrist": {
+        "end": 65,
+        "start": 64
+      },
+      "right_wrist": {
+        "end": 65,
+        "start": 64
+      }
+    },
+    "control_end": 56,
+    "control_start": 55,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "The stem has begun rotating in the desired direction while remaining flat. Continue the controlled five-millimetre forward push.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The T is rotating steadily toward the pad's angle. Maintain side contact with another five-millimetre push.",
+      "targets": {
+        "right_y": -0.2023
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 67,
+        "start": 66
+      },
+      "left_wrist": {
+        "end": 67,
+        "start": 66
+      },
+      "right_wrist": {
+        "end": 67,
+        "start": 66
+      }
+    },
+    "control_end": 57,
+    "control_start": 56,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "The T is rotating steadily toward the pad's angle. Maintain side contact with another five-millimetre push.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the small forward push; the stem is nearing horizontal in the wrist image but still needs more rotation.",
+      "targets": {
+        "right_y": -0.1979
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 69,
+        "start": 68
+      },
+      "left_wrist": {
+        "end": 69,
+        "start": 68
+      },
+      "right_wrist": {
+        "end": 69,
+        "start": 68
+      }
+    },
+    "control_end": 58,
+    "control_start": 57,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "Continue the small forward push; the stem is nearing horizontal in the wrist image but still needs more rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Keep rotating the T with a five-millimetre side push while it stays on the table.",
+      "targets": {
+        "right_y": -0.1935
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 71,
+        "start": 70
+      },
+      "left_wrist": {
+        "end": 71,
+        "start": 70
+      },
+      "right_wrist": {
+        "end": 71,
+        "start": 70
+      }
+    },
+    "control_end": 59,
+    "control_start": 58,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "Keep rotating the T with a five-millimetre side push while it stays on the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The stem is now nearly horizontal; push five millimetres farther to turn it toward the pad's upward-right direction.",
+      "targets": {
+        "right_y": -0.1891
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 73,
+        "start": 72
+      },
+      "left_wrist": {
+        "end": 73,
+        "start": 72
+      },
+      "right_wrist": {
+        "end": 73,
+        "start": 72
+      }
+    },
+    "control_end": 60,
+    "control_start": 59,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "The stem is now nearly horizontal; push five millimetres farther to turn it toward the pad's upward-right direction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the gentle rotational push in a five-millimetre increment.",
+      "targets": {
+        "right_y": -0.1847
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 75,
+        "start": 74
+      },
+      "left_wrist": {
+        "end": 75,
+        "start": 74
+      },
+      "right_wrist": {
+        "end": 75,
+        "start": 74
+      }
+    },
+    "control_end": 61,
+    "control_start": 60,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "Continue the gentle rotational push in a five-millimetre increment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The block continues rotating flat against the table. Advance another five millimetres before checking its angle again.",
+      "targets": {
+        "right_y": -0.1803
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 77,
+        "start": 76
+      },
+      "left_wrist": {
+        "end": 77,
+        "start": 76
+      },
+      "right_wrist": {
+        "end": 77,
+        "start": 76
+      }
+    },
+    "control_end": 62,
+    "control_start": 61,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "The block continues rotating flat against the table. Advance another five millimetres before checking its angle again.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The stem is turning toward the pad's diagonal but has not reached it. Continue with a five-millimetre push.",
+      "targets": {
+        "right_y": -0.1759
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 79,
+        "start": 78
+      },
+      "left_wrist": {
+        "end": 79,
+        "start": 78
+      },
+      "right_wrist": {
+        "end": 79,
+        "start": 78
+      }
+    },
+    "control_end": 63,
+    "control_start": 62,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "The stem is turning toward the pad's diagonal but has not reached it. Continue with a five-millimetre push.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue a five-millimetre forward push to bring the T closer to the pad's angle.",
+      "targets": {
+        "right_y": -0.1715
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 81,
+        "start": 80
+      },
+      "left_wrist": {
+        "end": 81,
+        "start": 80
+      },
+      "right_wrist": {
+        "end": 81,
+        "start": 80
+      }
+    },
+    "control_end": 64,
+    "control_start": 63,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 16,
+    "public_note": "Continue a five-millimetre forward push to bring the T closer to the pad's angle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The visible blue stem is approaching the gray stem's diagonal. Apply one more small rotational push before reassessing.",
+      "targets": {
+        "right_y": -0.1671
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 83,
+        "start": 82
+      },
+      "left_wrist": {
+        "end": 83,
+        "start": 82
+      },
+      "right_wrist": {
+        "end": 83,
+        "start": 82
+      }
+    },
+    "control_end": 65,
+    "control_start": 64,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "The visible blue stem is approaching the gray stem's diagonal. Apply one more small rotational push before reassessing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Use a four-millimetre final rotational nudge; the stem now appears close to the target angle.",
+      "targets": {
+        "right_y": -0.1637
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 85,
+        "start": 84
+      },
+      "left_wrist": {
+        "end": 85,
+        "start": 84
+      },
+      "right_wrist": {
+        "end": 85,
+        "start": 84
+      }
+    },
+    "control_end": 66,
+    "control_start": 65,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "Use a four-millimetre final rotational nudge; the stem now appears close to the target angle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Withdraw from side contact and raise the empty hand to inspect the full T and reposition for translation onto the pad.",
+      "targets": {
+        "right_y": -0.1702,
+        "right_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 91,
+        "start": 86
+      },
+      "left_wrist": {
+        "end": 91,
+        "start": 86
+      },
+      "right_wrist": {
+        "end": 91,
+        "start": 86
+      }
+    },
+    "control_end": 71,
+    "control_start": 66,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "Withdraw from side contact and raise the empty hand to inspect the full T and reposition for translation onto the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Image measurements predict roughly 10.5 cm left and 8.8 cm toward the robot to reach the pad. Reposition beyond the stem tip to push along that direction.",
+      "targets": {
+        "right_x": 0.254,
+        "right_y": -0.106,
+        "right_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 97,
+        "start": 92
+      },
+      "left_wrist": {
+        "end": 97,
+        "start": 92
+      },
+      "right_wrist": {
+        "end": 97,
+        "start": 92
+      }
+    },
+    "control_end": 76,
+    "control_start": 71,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "Image measurements predict roughly 10.5 cm left and 8.8 cm toward the robot to reach the pad. Reposition beyond the stem tip to push along that direction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The stem tip is below-left of the jaws with clear space beside it. Lower the closed pusher outside that tip and approach diagonally.",
+      "targets": {
+        "right_x": 0.244,
+        "right_y": -0.118,
+        "right_z": 0.781
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 100,
+        "start": 98
+      },
+      "left_wrist": {
+        "end": 100,
+        "start": 98
+      },
+      "right_wrist": {
+        "end": 100,
+        "start": 98
+      }
+    },
+    "control_end": 78,
+    "control_start": 76,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "The stem tip is below-left of the jaws with clear space beside it. Lower the closed pusher outside that tip and approach diagonally.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the stem tip with a small diagonal motion, four millimetres left and three toward the robot.",
+      "targets": {
+        "right_x": 0.2404,
+        "right_y": -0.1203
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 102,
+        "start": 101
+      },
+      "left_wrist": {
+        "end": 102,
+        "start": 101
+      },
+      "right_wrist": {
+        "end": 102,
+        "start": 101
+      }
+    },
+    "control_end": 79,
+    "control_start": 78,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 22,
+    "public_note": "Approach the stem tip with a small diagonal motion, four millimetres left and three toward the robot.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the five-millimetre diagonal approach to the stem tip, monitoring for block motion.",
+      "targets": {
+        "right_x": 0.2367,
+        "right_y": -0.1229
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 104,
+        "start": 103
+      },
+      "left_wrist": {
+        "end": 104,
+        "start": 103
+      },
+      "right_wrist": {
+        "end": 104,
+        "start": 103
+      }
+    },
+    "control_end": 80,
+    "control_start": 79,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "Continue the five-millimetre diagonal approach to the stem tip, monitoring for block motion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The stem tip is nearly touching the closed pusher. Advance another small diagonal increment toward the pad.",
+      "targets": {
+        "right_x": 0.2331,
+        "right_y": -0.1256
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 106,
+        "start": 105
+      },
+      "left_wrist": {
+        "end": 106,
+        "start": 105
+      },
+      "right_wrist": {
+        "end": 106,
+        "start": 105
+      }
+    },
+    "control_end": 81,
+    "control_start": 80,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "The stem tip is nearly touching the closed pusher. Advance another small diagonal increment toward the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Advance four millimetres left and three back to establish gentle contact at the stem tip.",
+      "targets": {
+        "right_x": 0.2294,
+        "right_y": -0.1283
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 108,
+        "start": 107
+      },
+      "left_wrist": {
+        "end": 108,
+        "start": 107
+      },
+      "right_wrist": {
+        "end": 108,
+        "start": 107
+      }
+    },
+    "control_end": 82,
+    "control_start": 81,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "Advance four millimetres left and three back to establish gentle contact at the stem tip.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The blue T has begun translating with the pusher. Continue the same small diagonal push toward the gray pad.",
+      "targets": {
+        "right_x": 0.2258,
+        "right_y": -0.131
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 110,
+        "start": 109
+      },
+      "left_wrist": {
+        "end": 110,
+        "start": 109
+      },
+      "right_wrist": {
+        "end": 110,
+        "start": 109
+      }
+    },
+    "control_end": 83,
+    "control_start": 82,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "The blue T has begun translating with the pusher. Continue the same small diagonal push toward the gray pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Maintain tip contact and continue the five-millimetre diagonal translation toward the pad.",
+      "targets": {
+        "right_x": 0.2221,
+        "right_y": -0.1337
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 112,
+        "start": 111
+      },
+      "left_wrist": {
+        "end": 112,
+        "start": 111
+      },
+      "right_wrist": {
+        "end": 112,
+        "start": 111
+      }
+    },
+    "control_end": 84,
+    "control_start": 83,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "Maintain tip contact and continue the five-millimetre diagonal translation toward the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The T is sliding toward the pad without appreciable rotation. Continue the same small diagonal push.",
+      "targets": {
+        "right_x": 0.2185,
+        "right_y": -0.1364
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 114,
+        "start": 113
+      },
+      "left_wrist": {
+        "end": 114,
+        "start": 113
+      },
+      "right_wrist": {
+        "end": 114,
+        "start": 113
+      }
+    },
+    "control_end": 85,
+    "control_start": 84,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "The T is sliding toward the pad without appreciable rotation. Continue the same small diagonal push.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue sliding the T diagonally toward the pad in a five-millimetre increment, keeping it flat.",
+      "targets": {
+        "right_x": 0.2149,
+        "right_y": -0.1391
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 116,
+        "start": 115
+      },
+      "left_wrist": {
+        "end": 116,
+        "start": 115
+      },
+      "right_wrist": {
+        "end": 116,
+        "start": 115
+      }
+    },
+    "control_end": 86,
+    "control_start": 85,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "Continue sliding the T diagonally toward the pad in a five-millimetre increment, keeping it flat.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Maintain the stable tip push, moving four millimetres left and three toward the robot.",
+      "targets": {
+        "right_x": 0.2113,
+        "right_y": -0.1418
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 118,
+        "start": 117
+      },
+      "left_wrist": {
+        "end": 118,
+        "start": 117
+      },
+      "right_wrist": {
+        "end": 118,
+        "start": 117
+      }
+    },
+    "control_end": 87,
+    "control_start": 86,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "Maintain the stable tip push, moving four millimetres left and three toward the robot.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The push remains stable and the pad is still several centimetres away. Continue with a small five-millimetre left, four-millimetre backward increment.",
+      "targets": {
+        "right_x": 0.2067,
+        "right_y": -0.1455
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 120,
+        "start": 119
+      },
+      "left_wrist": {
+        "end": 120,
+        "start": 119
+      },
+      "right_wrist": {
+        "end": 120,
+        "start": 119
+      }
+    },
+    "control_end": 88,
+    "control_start": 87,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "The push remains stable and the pad is still several centimetres away. Continue with a small five-millimetre left, four-millimetre backward increment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the stable diagonal slide toward the pad with a small, checked increment.",
+      "targets": {
+        "right_x": 0.2022,
+        "right_y": -0.149
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 122,
+        "start": 121
+      },
+      "left_wrist": {
+        "end": 122,
+        "start": 121
+      },
+      "right_wrist": {
+        "end": 122,
+        "start": 121
+      }
+    },
+    "control_end": 89,
+    "control_start": 88,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "Continue the stable diagonal slide toward the pad with a small, checked increment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The blue T is getting closer while holding its angle. Continue the small diagonal push toward the gray footprint.",
+      "targets": {
+        "right_x": 0.1977,
+        "right_y": -0.1526
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 124,
+        "start": 123
+      },
+      "left_wrist": {
+        "end": 124,
+        "start": 123
+      },
+      "right_wrist": {
+        "end": 124,
+        "start": 123
+      }
+    },
+    "control_end": 90,
+    "control_start": 89,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "The blue T is getting closer while holding its angle. Continue the small diagonal push toward the gray footprint.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Maintain the flat sliding contact and advance another small diagonal increment toward the pad.",
+      "targets": {
+        "right_x": 0.1932,
+        "right_y": -0.1561
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 126,
+        "start": 125
+      },
+      "left_wrist": {
+        "end": 126,
+        "start": 125
+      },
+      "right_wrist": {
+        "end": 126,
+        "start": 125
+      }
+    },
+    "control_end": 91,
+    "control_start": 90,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "Maintain the flat sliding contact and advance another small diagonal increment toward the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The blue T is slightly more rotated than the pad. Bias this small push toward the robot to begin correcting that angle while translating.",
+      "targets": {
+        "right_x": 0.1897,
+        "right_y": -0.1607
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 128,
+        "start": 127
+      },
+      "left_wrist": {
+        "end": 128,
+        "start": 127
+      },
+      "right_wrist": {
+        "end": 128,
+        "start": 127
+      }
+    },
+    "control_end": 92,
+    "control_start": 91,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "The blue T is slightly more rotated than the pad. Bias this small push toward the robot to begin correcting that angle while translating.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the small backward-biased diagonal push to reduce the angular mismatch and close the remaining position gap.",
+      "targets": {
+        "right_x": 0.1861,
+        "right_y": -0.1651
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 130,
+        "start": 129
+      },
+      "left_wrist": {
+        "end": 130,
+        "start": 129
+      },
+      "right_wrist": {
+        "end": 130,
+        "start": 129
+      }
+    },
+    "control_end": 93,
+    "control_start": 92,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 36,
+    "public_note": "Continue the small backward-biased diagonal push to reduce the angular mismatch and close the remaining position gap.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the small diagonal correction; the T remains flat and is approaching the pad's stem.",
+      "targets": {
+        "right_x": 0.1825,
+        "right_y": -0.1695
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 132,
+        "start": 131
+      },
+      "left_wrist": {
+        "end": 132,
+        "start": 131
+      },
+      "right_wrist": {
+        "end": 132,
+        "start": 131
+      }
+    },
+    "control_end": 94,
+    "control_start": 93,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "Continue the small diagonal correction; the T remains flat and is approaching the pad's stem.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the small backward-left push, reducing both the positional gap and the slight excess rotation.",
+      "targets": {
+        "right_x": 0.1789,
+        "right_y": -0.1739
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 134,
+        "start": 133
+      },
+      "left_wrist": {
+        "end": 134,
+        "start": 133
+      },
+      "right_wrist": {
+        "end": 134,
+        "start": 133
+      }
+    },
+    "control_end": 95,
+    "control_start": 94,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "Continue the small backward-left push, reducing both the positional gap and the slight excess rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Measured image motion confirms steady progress. The remaining error is now mostly leftward, so reduce the backward component of the next small push.",
+      "targets": {
+        "right_x": 0.1743,
+        "right_y": -0.1758
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 136,
+        "start": 135
+      },
+      "left_wrist": {
+        "end": 136,
+        "start": 135
+      },
+      "right_wrist": {
+        "end": 136,
+        "start": 135
+      }
+    },
+    "control_end": 96,
+    "control_start": 95,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "Measured image motion confirms steady progress. The remaining error is now mostly leftward, so reduce the backward component of the next small push.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the small leftward-biased push toward the pad, checking that the T keeps its current angle.",
+      "targets": {
+        "right_x": 0.1698,
+        "right_y": -0.178
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 138,
+        "start": 137
+      },
+      "left_wrist": {
+        "end": 138,
+        "start": 137
+      },
+      "right_wrist": {
+        "end": 138,
+        "start": 137
+      }
+    },
+    "control_end": 97,
+    "control_start": 96,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 40,
+    "public_note": "Continue the small leftward-biased push toward the pad, checking that the T keeps its current angle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue sliding left and slightly backward in a small increment; the pad remains visible beside the block.",
+      "targets": {
+        "right_x": 0.1653,
+        "right_y": -0.1802
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 140,
+        "start": 139
+      },
+      "left_wrist": {
+        "end": 140,
+        "start": 139
+      },
+      "right_wrist": {
+        "end": 140,
+        "start": 139
+      }
+    },
+    "control_end": 98,
+    "control_start": 97,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 41,
+    "public_note": "Continue sliding left and slightly backward in a small increment; the pad remains visible beside the block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Keep the block sliding flat toward the pad with another small leftward-biased push.",
+      "targets": {
+        "right_x": 0.1608,
+        "right_y": -0.1824
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 142,
+        "start": 141
+      },
+      "left_wrist": {
+        "end": 142,
+        "start": 141
+      },
+      "right_wrist": {
+        "end": 142,
+        "start": 141
+      }
+    },
+    "control_end": 99,
+    "control_start": 98,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "Keep the block sliding flat toward the pad with another small leftward-biased push.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The blue T is partially over the pad's stem. Continue the small leftward-biased slide, leaving final alignment corrections for a clearer view.",
+      "targets": {
+        "right_x": 0.1563,
+        "right_y": -0.1846
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 144,
+        "start": 143
+      },
+      "left_wrist": {
+        "end": 144,
+        "start": 143
+      },
+      "right_wrist": {
+        "end": 144,
+        "start": 143
+      }
+    },
+    "control_end": 100,
+    "control_start": 99,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 43,
+    "public_note": "The blue T is partially over the pad's stem. Continue the small leftward-biased slide, leaving final alignment corrections for a clearer view.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the controlled leftward slide with a small backward component, keeping the block on the table.",
+      "targets": {
+        "right_x": 0.1518,
+        "right_y": -0.1868
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 146,
+        "start": 145
+      },
+      "left_wrist": {
+        "end": 146,
+        "start": 145
+      },
+      "right_wrist": {
+        "end": 146,
+        "start": 145
+      }
+    },
+    "control_end": 101,
+    "control_start": 100,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 44,
+    "public_note": "Continue the controlled leftward slide with a small backward component, keeping the block on the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The crossbars now appear nearly parallel. Continue a small diagonal translation to bring them together.",
+      "targets": {
+        "right_x": 0.1473,
+        "right_y": -0.189
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 148,
+        "start": 147
+      },
+      "left_wrist": {
+        "end": 148,
+        "start": 147
+      },
+      "right_wrist": {
+        "end": 148,
+        "start": 147
+      }
+    },
+    "control_end": 102,
+    "control_start": 101,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "The crossbars now appear nearly parallel. Continue a small diagonal translation to bring them together.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the small leftward-backward push, closing the remaining crossbar offset.",
+      "targets": {
+        "right_x": 0.1428,
+        "right_y": -0.1912
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 150,
+        "start": 149
+      },
+      "left_wrist": {
+        "end": 150,
+        "start": 149
+      },
+      "right_wrist": {
+        "end": 150,
+        "start": 149
+      }
+    },
+    "control_end": 103,
+    "control_start": 102,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "Continue the small leftward-backward push, closing the remaining crossbar offset.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The pad is increasingly underneath the T. Reduce backward travel slightly and continue a five-millimetre leftward correction.",
+      "targets": {
+        "right_x": 0.1383,
+        "right_y": -0.1929
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 152,
+        "start": 151
+      },
+      "left_wrist": {
+        "end": 152,
+        "start": 151
+      },
+      "right_wrist": {
+        "end": 152,
+        "start": 151
+      }
+    },
+    "control_end": 104,
+    "control_start": 103,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "The pad is increasingly underneath the T. Reduce backward travel slightly and continue a five-millimetre leftward correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Most remaining error is lateral. Push five millimetres left and only one millimetre backward to avoid overshooting the pad in y.",
+      "targets": {
+        "right_x": 0.1338,
+        "right_y": -0.1936
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 154,
+        "start": 153
+      },
+      "left_wrist": {
+        "end": 154,
+        "start": 153
+      },
+      "right_wrist": {
+        "end": 154,
+        "start": 153
+      }
+    },
+    "control_end": 105,
+    "control_start": 104,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "Most remaining error is lateral. Push five millimetres left and only one millimetre backward to avoid overshooting the pad in y.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The remaining visible offset is predominantly leftward. Make a five-millimetre lateral push without further backward motion.",
+      "targets": {
+        "right_x": 0.1293
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 156,
+        "start": 155
+      },
+      "left_wrist": {
+        "end": 156,
+        "start": 155
+      },
+      "right_wrist": {
+        "end": 156,
+        "start": 155
+      }
+    },
+    "control_end": 106,
+    "control_start": 105,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 49,
+    "public_note": "The remaining visible offset is predominantly leftward. Make a five-millimetre lateral push without further backward motion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue a five-millimetre lateral push to close the remaining left-right offset without adding backward error.",
+      "targets": {
+        "right_x": 0.1248
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 158,
+        "start": 157
+      },
+      "left_wrist": {
+        "end": 158,
+        "start": 157
+      },
+      "right_wrist": {
+        "end": 158,
+        "start": 157
+      }
+    },
+    "control_end": 107,
+    "control_start": 106,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "Continue a five-millimetre lateral push to close the remaining left-right offset without adding backward error.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Apply one more small lateral push, then inspect the full footprint before final alignment corrections.",
+      "targets": {
+        "right_x": 0.1203
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 160,
+        "start": 159
+      },
+      "left_wrist": {
+        "end": 160,
+        "start": 159
+      },
+      "right_wrist": {
+        "end": 160,
+        "start": 159
+      }
+    },
+    "control_end": 108,
+    "control_start": 107,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "Apply one more small lateral push, then inspect the full footprint before final alignment corrections.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Raise and withdraw the empty pusher to expose both outlines for precise final position and angle measurements.",
+      "targets": {
+        "right_x": 0.1268,
+        "right_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 169,
+        "start": 161
+      },
+      "left_wrist": {
+        "end": 169,
+        "start": 161
+      },
+      "right_wrist": {
+        "end": 169,
+        "start": 161
+      }
+    },
+    "control_end": 116,
+    "control_start": 108,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "Raise and withdraw the empty pusher to expose both outlines for precise final position and angle measurements.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The unobstructed view shows the blue T is slightly too far toward the robot and over-rotated. Reposition below its crossbar to push forward and rotate it clockwise into the pad.",
+      "targets": {
+        "right_x": 0.07,
+        "right_y": -0.285,
+        "right_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 178,
+        "start": 170
+      },
+      "left_wrist": {
+        "end": 178,
+        "start": 170
+      },
+      "right_wrist": {
+        "end": 178,
+        "start": 170
+      }
+    },
+    "control_end": 124,
+    "control_start": 116,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 53,
+    "public_note": "The unobstructed view shows the blue T is slightly too far toward the robot and over-rotated. Reposition below its crossbar to push forward and rotate it clockwise into the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lower crossbar corner is directly ahead with a small gap. Lower beside it for a gentle forward-left alignment push.",
+      "targets": {
+        "right_z": 0.783
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 181,
+        "start": 179
+      },
+      "left_wrist": {
+        "end": 181,
+        "start": 179
+      },
+      "right_wrist": {
+        "end": 181,
+        "start": 179
+      }
+    },
+    "control_end": 126,
+    "control_start": 124,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "The lower crossbar corner is directly ahead with a small gap. Lower beside it for a gentle forward-left alignment push.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Nudge the lower crossbar corner three millimetres left and forward to reduce the offset and excess rotation.",
+      "targets": {
+        "right_x": 0.0664,
+        "right_y": -0.2817
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 183,
+        "start": 182
+      },
+      "left_wrist": {
+        "end": 183,
+        "start": 182
+      },
+      "right_wrist": {
+        "end": 183,
+        "start": 182
+      }
+    },
+    "control_end": 127,
+    "control_start": 126,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 55,
+    "public_note": "Nudge the lower crossbar corner three millimetres left and forward to reduce the offset and excess rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The first nudge contacted the wrong side of the corner. Back away and shift right so the next push meets the crossbar's short end face and drives it left-forward.",
+      "targets": {
+        "right_x": 0.085,
+        "right_y": -0.293
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 186,
+        "start": 184
+      },
+      "left_wrist": {
+        "end": 186,
+        "start": 184
+      },
+      "right_wrist": {
+        "end": 186,
+        "start": 184
+      }
+    },
+    "control_end": 129,
+    "control_start": 127,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 56,
+    "public_note": "The first nudge contacted the wrong side of the corner. Back away and shift right so the next push meets the crossbar's short end face and drives it left-forward.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Shift toward the short end face while still clear of the block, positioning the pusher to drive left-forward rather than lift or catch the corner.",
+      "targets": {
+        "right_x": 0.092,
+        "right_y": -0.2884
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 188,
+        "start": 187
+      },
+      "left_wrist": {
+        "end": 188,
+        "start": 187
+      },
+      "right_wrist": {
+        "end": 188,
+        "start": 187
+      }
+    },
+    "control_end": 130,
+    "control_start": 129,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 57,
+    "public_note": "Shift toward the short end face while still clear of the block, positioning the pusher to drive left-forward rather than lift or catch the corner.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Advance five millimetres toward the exposed short end of the crossbar, closing the remaining gap gently.",
+      "targets": {
+        "right_y": -0.2838
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 190,
+        "start": 189
+      },
+      "left_wrist": {
+        "end": 190,
+        "start": 189
+      },
+      "right_wrist": {
+        "end": 190,
+        "start": 189
+      }
+    },
+    "control_end": 131,
+    "control_start": 130,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 58,
+    "public_note": "Advance five millimetres toward the exposed short end of the crossbar, closing the remaining gap gently.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue a five-millimetre forward approach to the crossbar's short face; the visible gap is now small.",
+      "targets": {
+        "right_y": -0.2794
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 192,
+        "start": 191
+      },
+      "left_wrist": {
+        "end": 192,
+        "start": 191
+      },
+      "right_wrist": {
+        "end": 192,
+        "start": 191
+      }
+    },
+    "control_end": 132,
+    "control_start": 131,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 59,
+    "public_note": "Continue a five-millimetre forward approach to the crossbar's short face; the visible gap is now small.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Advance four millimetres to establish contact on the short crossbar face, then reassess its response.",
+      "targets": {
+        "right_y": -0.276
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 194,
+        "start": 193
+      },
+      "left_wrist": {
+        "end": 194,
+        "start": 193
+      },
+      "right_wrist": {
+        "end": 194,
+        "start": 193
+      }
+    },
+    "control_end": 133,
+    "control_start": 132,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 60,
+    "public_note": "Advance four millimetres to establish contact on the short crossbar face, then reassess its response.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The short crossbar face is now at the jaws. Push three millimetres left-forward to move it toward the exposed gray outline.",
+      "targets": {
+        "right_x": 0.0879,
+        "right_y": -0.2735
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 196,
+        "start": 195
+      },
+      "left_wrist": {
+        "end": 196,
+        "start": 195
+      },
+      "right_wrist": {
+        "end": 196,
+        "start": 195
+      }
+    },
+    "control_end": 134,
+    "control_start": 133,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 61,
+    "public_note": "The short crossbar face is now at the jaws. Push three millimetres left-forward to move it toward the exposed gray outline.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The crossbar is moving toward the pad and rotating clockwise as intended. Continue the three-millimetre left-forward correction.",
+      "targets": {
+        "right_x": 0.0852,
+        "right_y": -0.2709
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 198,
+        "start": 197
+      },
+      "left_wrist": {
+        "end": 198,
+        "start": 197
+      },
+      "right_wrist": {
+        "end": 198,
+        "start": 197
+      }
+    },
+    "control_end": 135,
+    "control_start": 134,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 62,
+    "public_note": "The crossbar is moving toward the pad and rotating clockwise as intended. Continue the three-millimetre left-forward correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the small left-forward nudge; the visible gray edges show that additional clockwise correction is still needed.",
+      "targets": {
+        "right_x": 0.0825,
+        "right_y": -0.2683
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 200,
+        "start": 199
+      },
+      "left_wrist": {
+        "end": 200,
+        "start": 199
+      },
+      "right_wrist": {
+        "end": 200,
+        "start": 199
+      }
+    },
+    "control_end": 136,
+    "control_start": 135,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 63,
+    "public_note": "Continue the small left-forward nudge; the visible gray edges show that additional clockwise correction is still needed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the three-millimetre left-forward correction while monitoring the gray margin and keeping the T flat.",
+      "targets": {
+        "right_x": 0.0798,
+        "right_y": -0.2657
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 202,
+        "start": 201
+      },
+      "left_wrist": {
+        "end": 202,
+        "start": 201
+      },
+      "right_wrist": {
+        "end": 202,
+        "start": 201
+      }
+    },
+    "control_end": 137,
+    "control_start": 136,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 64,
+    "public_note": "Continue the three-millimetre left-forward correction while monitoring the gray margin and keeping the T flat.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The crossbar edges are becoming more parallel. Continue another three-millimetre left-forward nudge.",
+      "targets": {
+        "right_x": 0.0771,
+        "right_y": -0.2631
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 204,
+        "start": 203
+      },
+      "left_wrist": {
+        "end": 204,
+        "start": 203
+      },
+      "right_wrist": {
+        "end": 204,
+        "start": 203
+      }
+    },
+    "control_end": 138,
+    "control_start": 137,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 65,
+    "public_note": "The crossbar edges are becoming more parallel. Continue another three-millimetre left-forward nudge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the fine left-forward adjustment; the remaining angular mismatch is visibly shrinking.",
+      "targets": {
+        "right_x": 0.0744,
+        "right_y": -0.2605
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 206,
+        "start": 205
+      },
+      "left_wrist": {
+        "end": 206,
+        "start": 205
+      },
+      "right_wrist": {
+        "end": 206,
+        "start": 205
+      }
+    },
+    "control_end": 139,
+    "control_start": 138,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 66,
+    "public_note": "Continue the fine left-forward adjustment; the remaining angular mismatch is visibly shrinking.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Use a smaller two-and-a-half-millimetre left-forward nudge as the crossbar approaches the pad's orientation.",
+      "targets": {
+        "right_x": 0.0722,
+        "right_y": -0.2584
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 208,
+        "start": 207
+      },
+      "left_wrist": {
+        "end": 208,
+        "start": 207
+      },
+      "right_wrist": {
+        "end": 208,
+        "start": 207
+      }
+    },
+    "control_end": 140,
+    "control_start": 139,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 67,
+    "public_note": "Use a smaller two-and-a-half-millimetre left-forward nudge as the crossbar approaches the pad's orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The crossbar edges now appear nearly parallel. Withdraw and raise the empty hand to measure the remaining translation without obscuring the pad.",
+      "targets": {
+        "right_y": -0.2647,
+        "right_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 218,
+        "start": 209
+      },
+      "left_wrist": {
+        "end": 218,
+        "start": 209
+      },
+      "right_wrist": {
+        "end": 218,
+        "start": 209
+      }
+    },
+    "control_end": 149,
+    "control_start": 140,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 68,
+    "public_note": "The crossbar edges now appear nearly parallel. Withdraw and raise the empty hand to measure the remaining translation without obscuring the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move the raised hand aside for an unobstructed head view and a wrist view of both complete T outlines before the final translation.",
+      "targets": {
+        "right_x": 0.16,
+        "right_y": -0.17
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 228,
+        "start": 219
+      },
+      "left_wrist": {
+        "end": 228,
+        "start": 219
+      },
+      "right_wrist": {
+        "end": 228,
+        "start": 219
+      }
+    },
+    "control_end": 158,
+    "control_start": 149,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 69,
+    "public_note": "Move the raised hand aside for an unobstructed head view and a wrist view of both complete T outlines before the final translation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The outlines now have nearly matching angles; the block needs roughly 8 mm left and 25 mm toward the robot. Reposition above its far-side edge near the center for a mostly backward translation.",
+      "targets": {
+        "right_x": 0.064,
+        "right_y": -0.174,
+        "right_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 235,
+        "start": 229
+      },
+      "left_wrist": {
+        "end": 235,
+        "start": 229
+      },
+      "right_wrist": {
+        "end": 235,
+        "start": 229
+      }
+    },
+    "control_end": 164,
+    "control_start": 158,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 70,
+    "public_note": "The outlines now have nearly matching angles; the block needs roughly 8 mm left and 25 mm toward the robot. Reposition above its far-side edge near the center for a mostly backward translation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The far-side edge is visible below the jaws with clear approach space. Lower the closed pusher beside it without touching the block's top.",
+      "targets": {
+        "right_z": 0.783
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 238,
+        "start": 236
+      },
+      "left_wrist": {
+        "end": 238,
+        "start": 236
+      },
+      "right_wrist": {
+        "end": 238,
+        "start": 236
+      }
+    },
+    "control_end": 166,
+    "control_start": 164,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 71,
+    "public_note": "The far-side edge is visible below the jaws with clear approach space. Lower the closed pusher beside it without touching the block's top.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the far-side edge five millimetres toward the robot, keeping the jaws beside the T rather than above it.",
+      "targets": {
+        "right_y": -0.1786
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 240,
+        "start": 239
+      },
+      "left_wrist": {
+        "end": 240,
+        "start": 239
+      },
+      "right_wrist": {
+        "end": 240,
+        "start": 239
+      }
+    },
+    "control_end": 167,
+    "control_start": 166,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 72,
+    "public_note": "Approach the far-side edge five millimetres toward the robot, keeping the jaws beside the T rather than above it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the five-millimetre backward approach until the far-side edge meets the closed pusher.",
+      "targets": {
+        "right_y": -0.1831
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 242,
+        "start": 241
+      },
+      "left_wrist": {
+        "end": 242,
+        "start": 241
+      },
+      "right_wrist": {
+        "end": 242,
+        "start": 241
+      }
+    },
+    "control_end": 168,
+    "control_start": 167,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 73,
+    "public_note": "Continue the five-millimetre backward approach until the far-side edge meets the closed pusher.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Advance another five millimetres backward, watching for the block to begin sliding onto the remaining exposed pad.",
+      "targets": {
+        "right_y": -0.1876
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 244,
+        "start": 243
+      },
+      "left_wrist": {
+        "end": 244,
+        "start": 243
+      },
+      "right_wrist": {
+        "end": 244,
+        "start": 243
+      }
+    },
+    "control_end": 169,
+    "control_start": 168,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 74,
+    "public_note": "Advance another five millimetres backward, watching for the block to begin sliding onto the remaining exposed pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue a five-millimetre backward approach at side-contact height; the upper stem edge is now close to the pushing surface.",
+      "targets": {
+        "right_y": -0.1921
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 246,
+        "start": 245
+      },
+      "left_wrist": {
+        "end": 246,
+        "start": 245
+      },
+      "right_wrist": {
+        "end": 246,
+        "start": 245
+      }
+    },
+    "control_end": 170,
+    "control_start": 169,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 75,
+    "public_note": "Continue a five-millimetre backward approach at side-contact height; the upper stem edge is now close to the pushing surface.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Make another five-millimetre backward increment to engage the far-side stem edge and begin the final translation.",
+      "targets": {
+        "right_y": -0.1966
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 248,
+        "start": 247
+      },
+      "left_wrist": {
+        "end": 248,
+        "start": 247
+      },
+      "right_wrist": {
+        "end": 248,
+        "start": 247
+      }
+    },
+    "control_end": 171,
+    "control_start": 170,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 76,
+    "public_note": "Make another five-millimetre backward increment to engage the far-side stem edge and begin the final translation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The far-side edge has reached the pusher. Begin a gentle four-millimetre backward push with one millimetre of leftward correction.",
+      "targets": {
+        "right_x": 0.063,
+        "right_y": -0.2
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 250,
+        "start": 249
+      },
+      "left_wrist": {
+        "end": 250,
+        "start": 249
+      },
+      "right_wrist": {
+        "end": 250,
+        "start": 249
+      }
+    },
+    "control_end": 172,
+    "control_start": 171,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 77,
+    "public_note": "The far-side edge has reached the pusher. Begin a gentle four-millimetre backward push with one millimetre of leftward correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The block is sliding backward with the hand while keeping its angle. Continue a four-millimetre backward, one-millimetre left correction.",
+      "targets": {
+        "right_x": 0.062,
+        "right_y": -0.2036
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 252,
+        "start": 251
+      },
+      "left_wrist": {
+        "end": 252,
+        "start": 251
+      },
+      "right_wrist": {
+        "end": 252,
+        "start": 251
+      }
+    },
+    "control_end": 173,
+    "control_start": 172,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 78,
+    "public_note": "The block is sliding backward with the hand while keeping its angle. Continue a four-millimetre backward, one-millimetre left correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the fine backward-left slide; the exposed gray strip beneath the crossbar is getting smaller.",
+      "targets": {
+        "right_x": 0.061,
+        "right_y": -0.2072
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 254,
+        "start": 253
+      },
+      "left_wrist": {
+        "end": 254,
+        "start": 253
+      },
+      "right_wrist": {
+        "end": 254,
+        "start": 253
+      }
+    },
+    "control_end": 174,
+    "control_start": 173,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 79,
+    "public_note": "Continue the fine backward-left slide; the exposed gray strip beneath the crossbar is getting smaller.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The block is beginning a slight angular drift. Bias the next four-millimetre backward push one millimetre right to keep the stem aligned.",
+      "targets": {
+        "right_x": 0.0621,
+        "right_y": -0.2108
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 256,
+        "start": 255
+      },
+      "left_wrist": {
+        "end": 256,
+        "start": 255
+      },
+      "right_wrist": {
+        "end": 256,
+        "start": 255
+      }
+    },
+    "control_end": 175,
+    "control_start": 174,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 80,
+    "public_note": "The block is beginning a slight angular drift. Bias the next four-millimetre backward push one millimetre right to keep the stem aligned.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Make a small backward-right correction to finish closing the y gap while countering the slight rotational drift.",
+      "targets": {
+        "right_x": 0.0649,
+        "right_y": -0.2144
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 258,
+        "start": 257
+      },
+      "left_wrist": {
+        "end": 258,
+        "start": 257
+      },
+      "right_wrist": {
+        "end": 258,
+        "start": 257
+      }
+    },
+    "control_end": 176,
+    "control_start": 175,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 81,
+    "public_note": "Make a small backward-right correction to finish closing the y gap while countering the slight rotational drift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Withdraw and raise the empty pusher to inspect the final fit before returning the arm home.",
+      "targets": {
+        "right_y": -0.208,
+        "right_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 268,
+        "start": 259
+      },
+      "left_wrist": {
+        "end": 268,
+        "start": 259
+      },
+      "right_wrist": {
+        "end": 268,
+        "start": 259
+      }
+    },
+    "control_end": 185,
+    "control_start": 176,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 82,
+    "public_note": "Withdraw and raise the empty pusher to inspect the final fit before returning the arm home.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The clear view reveals excess rotation despite the translation. Approach the crossbar's lower-right end for a mostly leftward push that corrects the angle with minimal forward travel.",
+      "targets": {
+        "right_x": 0.1,
+        "right_y": -0.274,
+        "right_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 282,
+        "start": 269
+      },
+      "left_wrist": {
+        "end": 282,
+        "start": 269
+      },
+      "right_wrist": {
+        "end": 282,
+        "start": 269
+      }
+    },
+    "control_end": 198,
+    "control_start": 185,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 83,
+    "public_note": "The clear view reveals excess rotation despite the translation. Approach the crossbar's lower-right end for a mostly leftward push that corrects the angle with minimal forward travel.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower beside the crossbar's short end, staying outside its top, and close the lateral gap by three millimetres.",
+      "targets": {
+        "right_x": 0.0969,
+        "right_z": 0.783
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 285,
+        "start": 283
+      },
+      "left_wrist": {
+        "end": 285,
+        "start": 283
+      },
+      "right_wrist": {
+        "end": 285,
+        "start": 283
+      }
+    },
+    "control_end": 200,
+    "control_start": 198,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 84,
+    "public_note": "Lower beside the crossbar's short end, staying outside its top, and close the lateral gap by three millimetres.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Push the crossbar end five millimetres left and one forward to correct rotation without repeating the earlier large forward displacement.",
+      "targets": {
+        "right_x": 0.0921,
+        "right_y": -0.2731
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 287,
+        "start": 286
+      },
+      "left_wrist": {
+        "end": 287,
+        "start": 286
+      },
+      "right_wrist": {
+        "end": 287,
+        "start": 286
+      }
+    },
+    "control_end": 201,
+    "control_start": 200,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 85,
+    "public_note": "Push the crossbar end five millimetres left and one forward to correct rotation without repeating the earlier large forward displacement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The mostly lateral push is rotating the T correctly. Repeat the five-millimetre left, one-millimetre forward correction.",
+      "targets": {
+        "right_x": 0.0875,
+        "right_y": -0.2722
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 289,
+        "start": 288
+      },
+      "left_wrist": {
+        "end": 289,
+        "start": 288
+      },
+      "right_wrist": {
+        "end": 289,
+        "start": 288
+      }
+    },
+    "control_end": 202,
+    "control_start": 201,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 86,
+    "public_note": "The mostly lateral push is rotating the T correctly. Repeat the five-millimetre left, one-millimetre forward correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Reduce the lateral increment to four millimetres as the crossbar nears the target angle.",
+      "targets": {
+        "right_x": 0.084,
+        "right_y": -0.2714
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 291,
+        "start": 290
+      },
+      "left_wrist": {
+        "end": 291,
+        "start": 290
+      },
+      "right_wrist": {
+        "end": 291,
+        "start": 290
+      }
+    },
+    "control_end": 203,
+    "control_start": 202,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 87,
+    "public_note": "Reduce the lateral increment to four millimetres as the crossbar nears the target angle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Apply another four-millimetre leftward, one-millimetre forward nudge to bring the crossbar edges into parallel alignment.",
+      "targets": {
+        "right_x": 0.0804,
+        "right_y": -0.2706
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 293,
+        "start": 292
+      },
+      "left_wrist": {
+        "end": 293,
+        "start": 292
+      },
+      "right_wrist": {
+        "end": 293,
+        "start": 292
+      }
+    },
+    "control_end": 204,
+    "control_start": 203,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 88,
+    "public_note": "Apply another four-millimetre leftward, one-millimetre forward nudge to bring the crossbar edges into parallel alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The visible edges now look nearly parallel and the pad is mostly covered. Withdraw and lift the empty hand for a final unobstructed check.",
+      "targets": {
+        "right_x": 0.09,
+        "right_y": -0.276,
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 304,
+        "start": 294
+      },
+      "left_wrist": {
+        "end": 304,
+        "start": 294
+      },
+      "right_wrist": {
+        "end": 304,
+        "start": 294
+      }
+    },
+    "control_end": 214,
+    "control_start": 204,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 89,
+    "public_note": "The visible edges now look nearly parallel and the pad is mostly covered. Withdraw and lift the empty hand for a final unobstructed check.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The T is nearly covering the pad with matching orientation. Move the empty right hand back to its starting position, exposing the complete fit for verification.",
+      "targets": {
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 323,
+        "start": 305
+      },
+      "left_wrist": {
+        "end": 323,
+        "start": 305
+      },
+      "right_wrist": {
+        "end": 323,
+        "start": 305
+      }
+    },
+    "control_end": 232,
+    "control_start": 214,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 90,
+    "public_note": "The T is nearly covering the pad with matching orientation. Move the empty right hand back to its starting position, exposing the complete fit for verification.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The T now closely covers the gray pad and its orientation matches. Begin restoring the right wrist's starting orientation without disturbing the placement.",
+      "targets": {
+        "right_pitch_deg": 45,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 339,
+        "start": 324
+      },
+      "left_wrist": {
+        "end": 339,
+        "start": 324
+      },
+      "right_wrist": {
+        "end": 339,
+        "start": 324
+      }
+    },
+    "control_end": 247,
+    "control_start": 232,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 91,
+    "public_note": "The T now closely covers the gray pad and its orientation matches. Begin restoring the right wrist's starting orientation without disturbing the placement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Finish restoring the right arm's initial wrist orientation and open gripper. The left arm remains at its original pose and the T is left aligned on the pad.",
+      "targets": {
+        "right_gripper": 1,
+        "right_pitch_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 360,
+        "start": 340
+      },
+      "left_wrist": {
+        "end": 360,
+        "start": 340
+      },
+      "right_wrist": {
+        "end": 360,
+        "start": 340
+      }
+    },
+    "control_end": 267,
+    "control_start": 247,
+    "feedback": "Accepted: the original plan contains 22 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 92,
+    "public_note": "Finish restoring the right arm's initial wrist orientation and open gripper. The left arm remains at its original pose and the T is left aligned on the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Both arms are back at their starting poses. Complete the last small gripper-opening remainder while leaving the aligned T undisturbed.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 362,
+        "start": 361
+      },
+      "left_wrist": {
+        "end": 362,
+        "start": 361
+      },
+      "right_wrist": {
+        "end": 362,
+        "start": 361
+      }
+    },
+    "control_end": 268,
+    "control_start": 267,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The last 1 move the gripper, once the arm has arrived.",
+    "policy_step": 93,
+    "public_note": "Both arms are back at their starting poses. Complete the last small gripper-opening remainder while leaving the aligned T undisturbed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The T remains closely aligned with the pad and both arms are home. Hold the final pose without disturbing the block.",
+      "targets": {
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 364,
+        "start": 363
+      },
+      "left_wrist": {
+        "end": 364,
+        "start": 363
+      },
+      "right_wrist": {
+        "end": 364,
+        "start": 363
+      }
+    },
+    "control_end": 269,
+    "control_start": 268,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 94,
+    "public_note": "The T remains closely aligned with the pad and both arms are home. Hold the final pose without disturbing the block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Maintain the completed home pose and leave the closely aligned T undisturbed.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 366,
+        "start": 365
+      },
+      "left_wrist": {
+        "end": 366,
+        "start": 365
+      },
+      "right_wrist": {
+        "end": 366,
+        "start": 365
+      }
+    },
+    "control_end": 270,
+    "control_start": 269,
+    "feedback": "Accepted: playing 1 waypoints (0.0s).",
+    "policy_step": 95,
+    "public_note": "Maintain the completed home pose and leave the closely aligned T undisturbed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Hold both arms at home; the T and pad remain stationary and closely aligned.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 368,
+        "start": 367
+      },
+      "left_wrist": {
+        "end": 368,
+        "start": 367
+      },
+      "right_wrist": {
+        "end": 368,
+        "start": 367
+      }
+    },
+    "control_end": 271,
+    "control_start": 270,
+    "feedback": "Accepted: playing 1 waypoints (0.0s).",
+    "policy_step": 96,
+    "public_note": "Hold both arms at home; the T and pad remain stationary and closely aligned.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Preserve the final placement and home poses; no further contact is needed.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 370,
+        "start": 369
+      },
+      "left_wrist": {
+        "end": 370,
+        "start": 369
+      },
+      "right_wrist": {
+        "end": 370,
+        "start": 369
+      }
+    },
+    "control_end": 272,
+    "control_start": 271,
+    "feedback": "Accepted: playing 1 waypoints (0.0s).",
+    "policy_step": 97,
+    "public_note": "Preserve the final placement and home poses; no further contact is needed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Keep the aligned block undisturbed and both arms at their starting poses.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 372,
+        "start": 371
+      },
+      "left_wrist": {
+        "end": 372,
+        "start": 371
+      },
+      "right_wrist": {
+        "end": 372,
+        "start": 371
+      }
+    },
+    "control_end": 273,
+    "control_start": 272,
+    "feedback": "Accepted: playing 1 waypoints (0.0s).",
+    "policy_step": 98,
+    "public_note": "Keep the aligned block undisturbed and both arms at their starting poses.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Maintain the final placement and both home poses without further object contact.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 374,
+        "start": 373
+      },
+      "left_wrist": {
+        "end": 374,
+        "start": 373
+      },
+      "right_wrist": {
+        "end": 374,
+        "start": 373
+      }
+    },
+    "control_end": 274,
+    "control_start": 273,
+    "feedback": "Accepted: playing 1 waypoints (0.0s).",
+    "policy_step": 99,
+    "public_note": "Maintain the final placement and both home poses without further object contact.",
+    "tool": "move_eef"
+  }
+]

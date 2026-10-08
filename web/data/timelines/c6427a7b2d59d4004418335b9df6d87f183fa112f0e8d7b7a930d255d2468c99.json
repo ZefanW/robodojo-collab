@@ -1,0 +1,169 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pour the liquid from the bottle into the cup.",
+      "note": "The bottle and cup are upright on the table. Begin the learned pouring sequence and inspect the approach.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 16,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 16,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 16,
+        "start": 1
+      }
+    },
+    "control_end": 15,
+    "control_start": 0,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 0,
+    "public_note": "The bottle and cup are upright on the table. Begin the learned pouring sequence and inspect the approach.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pour the liquid from the bottle into the cup.",
+      "note": "Both objects remain on the table and the arms are near their starting positions. Repeat the task instruction to allow the approach to begin.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 32,
+        "start": 17
+      },
+      "left_wrist": {
+        "end": 32,
+        "start": 17
+      },
+      "right_wrist": {
+        "end": 32,
+        "start": 17
+      }
+    },
+    "control_end": 30,
+    "control_start": 15,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 1,
+    "public_note": "Both objects remain on the table and the arms are near their starting positions. Repeat the task instruction to allow the approach to begin.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the bottle and pour the liquid from the bottle into the cup.",
+      "note": "Repeated whole-task instructions have not produced an approach. Explicitly request bottle pickup while preserving the pouring goal.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 48,
+        "start": 33
+      },
+      "left_wrist": {
+        "end": 48,
+        "start": 33
+      },
+      "right_wrist": {
+        "end": 48,
+        "start": 33
+      }
+    },
+    "control_end": 45,
+    "control_start": 30,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 2,
+    "public_note": "Repeated whole-task instructions have not produced an approach. Explicitly request bottle pickup while preserving the pouring goal.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the red bottle to the right of the cup, then pour the liquid from the bottle into the cup.",
+      "note": "No meaningful arm or object movement is visible. Add the bottle's visible color and relation to the cup to clarify the pickup target.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 64,
+        "start": 49
+      },
+      "left_wrist": {
+        "end": 64,
+        "start": 49
+      },
+      "right_wrist": {
+        "end": 64,
+        "start": 49
+      }
+    },
+    "control_end": 60,
+    "control_start": 45,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 3,
+    "public_note": "No meaningful arm or object movement is visible. Add the bottle's visible color and relation to the cup to clarify the pickup target.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the bottle.",
+      "note": "The bottle remains untouched after both the exact pouring instruction and target clarification. Test the immediate pickup subtask alone.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 80,
+        "start": 65
+      },
+      "left_wrist": {
+        "end": 80,
+        "start": 65
+      },
+      "right_wrist": {
+        "end": 80,
+        "start": 65
+      }
+    },
+    "control_end": 75,
+    "control_start": 60,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 4,
+    "public_note": "The bottle remains untouched after both the exact pouring instruction and target clarification. Test the immediate pickup subtask alone.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "The exact training sentence, explicit pickup-and-pour wording, visual target clarification, and pickup-only instruction all left the objects untouched and both arms near their starting positions.",
+      "reason": "The available manipulation policy repeatedly produces no meaningful movement toward the bottle, preventing pickup and pouring."
+    },
+    "cameras": {
+      "head": {
+        "end": 82,
+        "start": 81
+      },
+      "left_wrist": {
+        "end": 82,
+        "start": 81
+      },
+      "right_wrist": {
+        "end": 82,
+        "start": 81
+      }
+    },
+    "control_end": 76,
+    "control_start": 75,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 5,
+    "public_note": "The available manipulation policy repeatedly produces no meaningful movement toward the bottle, preventing pickup and pouring.",
+    "tool": "give_up"
+  }
+]

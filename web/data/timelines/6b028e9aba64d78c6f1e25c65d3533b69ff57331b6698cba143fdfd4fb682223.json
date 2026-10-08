@@ -1,0 +1,2997 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I see two cars, two watches, and two wooden lions. I will sort the cars into the white left basket first, starting with the yellow car.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_z": 1.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 21,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 21,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 21,
+        "start": 1
+      }
+    },
+    "control_end": 20,
+    "control_start": 0,
+    "feedback": "Accepted: the original plan contains 40 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 0,
+    "public_note": "I see two cars, two watches, and two wooden lions. I will sort the cars into the white left basket first, starting with the yellow car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The first motion stopped halfway through its rotation. I continue to a downward pregrasp above the yellow car.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": -0.25,
+        "left_y": -0.2,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 37,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 37,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 37,
+        "start": 22
+      }
+    },
+    "control_end": 35,
+    "control_start": 20,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "The first motion stopped halfway through its rotation. I continue to a downward pregrasp above the yellow car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist view shows the yellow car forward of the current grasp point. I move forward and descend to refine alignment.",
+      "targets": {
+        "left_y": -0.09,
+        "left_z": 0.865
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 46,
+        "start": 38
+      },
+      "left_wrist": {
+        "end": 46,
+        "start": 38
+      },
+      "right_wrist": {
+        "end": 46,
+        "start": 38
+      }
+    },
+    "control_end": 43,
+    "control_start": 35,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "The wrist view shows the yellow car forward of the current grasp point. I move forward and descend to refine alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The yellow car is centered between the jaws in the wrist image. I lower toward its body before closing.",
+      "targets": {
+        "left_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 52,
+        "start": 47
+      },
+      "left_wrist": {
+        "end": 52,
+        "start": 47
+      },
+      "right_wrist": {
+        "end": 52,
+        "start": 47
+      }
+    },
+    "control_end": 48,
+    "control_start": 43,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "The yellow car is centered between the jaws in the wrist image. I lower toward its body before closing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The close view shows the car behind the fingertips rather than inside them. I back up while raising slightly to avoid contacting the lion.",
+      "targets": {
+        "left_y": -0.24,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 65,
+        "start": 53
+      },
+      "left_wrist": {
+        "end": 65,
+        "start": 53
+      },
+      "right_wrist": {
+        "end": 65,
+        "start": 53
+      }
+    },
+    "control_end": 60,
+    "control_start": 48,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "The close view shows the car behind the fingertips rather than inside them. I back up while raising slightly to avoid contacting the lion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The head view now places the jaws over the yellow car. I descend at this corrected table position.",
+      "targets": {
+        "left_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 71,
+        "start": 66
+      },
+      "left_wrist": {
+        "end": 71,
+        "start": 66
+      },
+      "right_wrist": {
+        "end": 71,
+        "start": 66
+      }
+    },
+    "control_end": 65,
+    "control_start": 60,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "The head view now places the jaws over the yellow car. I descend at this corrected table position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws straddle the yellow car at body height. I make the final small descent and close.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 79,
+        "start": 72
+      },
+      "left_wrist": {
+        "end": 79,
+        "start": 72
+      },
+      "right_wrist": {
+        "end": 79,
+        "start": 72
+      }
+    },
+    "control_end": 72,
+    "control_start": 65,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "The jaws straddle the yellow car at body height. I make the final small descent and close.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The gripper closed fully without capturing the car. I reopen and lift slightly for a forward alignment correction.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.835
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 90,
+        "start": 80
+      },
+      "left_wrist": {
+        "end": 90,
+        "start": 80
+      },
+      "right_wrist": {
+        "end": 90,
+        "start": 80
+      }
+    },
+    "control_end": 82,
+    "control_start": 72,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "The gripper closed fully without capturing the car. I reopen and lift slightly for a forward alignment correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I shift forward six centimetres to bring the car into the jaw center rather than ahead of the tips.",
+      "targets": {
+        "left_y": -0.18
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 96,
+        "start": 91
+      },
+      "left_wrist": {
+        "end": 96,
+        "start": 91
+      },
+      "right_wrist": {
+        "end": 96,
+        "start": 91
+      }
+    },
+    "control_end": 87,
+    "control_start": 82,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "I shift forward six centimetres to bring the car into the jaw center rather than ahead of the tips.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The car is now nearly aligned with the fingertips. I advance slightly and lower to its sidewalls.",
+      "targets": {
+        "left_y": -0.165,
+        "left_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 100,
+        "start": 97
+      },
+      "left_wrist": {
+        "end": 100,
+        "start": 97
+      },
+      "right_wrist": {
+        "end": 100,
+        "start": 97
+      }
+    },
+    "control_end": 90,
+    "control_start": 87,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "The car is now nearly aligned with the fingertips. I advance slightly and lower to its sidewalls.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The car body lies between the open jaws. I close after a small final descent.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.797
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 108,
+        "start": 101
+      },
+      "left_wrist": {
+        "end": 108,
+        "start": 101
+      },
+      "right_wrist": {
+        "end": 108,
+        "start": 101
+      }
+    },
+    "control_end": 97,
+    "control_start": 90,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "The car body lies between the open jaws. I close after a small final descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws are stopped against the car, indicating a grasp. I lift it clear of the table and basket rim.",
+      "targets": {
+        "left_z": 0.98
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 125,
+        "start": 109
+      },
+      "left_wrist": {
+        "end": 125,
+        "start": 109
+      },
+      "right_wrist": {
+        "end": 125,
+        "start": 109
+      }
+    },
+    "control_end": 113,
+    "control_start": 97,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "The jaws are stopped against the car, indicating a grasp. I lift it clear of the table and basket rim.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The car slipped because the grasp caught an edge. I reposition backward toward the car center and reopen.",
+      "targets": {
+        "left_gripper": 1,
+        "left_y": -0.19,
+        "left_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 146,
+        "start": 126
+      },
+      "left_wrist": {
+        "end": 146,
+        "start": 126
+      },
+      "right_wrist": {
+        "end": 146,
+        "start": 126
+      }
+    },
+    "control_end": 133,
+    "control_start": 113,
+    "feedback": "Accepted: the original plan contains 22 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 12,
+    "public_note": "The car slipped because the grasp caught an edge. I reposition backward toward the car center and reopen.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I lower onto the middle of the car, with the jaws aligned behind the previous edge grasp, and close firmly.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.785
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 157,
+        "start": 147
+      },
+      "left_wrist": {
+        "end": 157,
+        "start": 147
+      },
+      "right_wrist": {
+        "end": 157,
+        "start": 147
+      }
+    },
+    "control_end": 143,
+    "control_start": 133,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "I lower onto the middle of the car, with the jaws aligned behind the previous edge grasp, and close firmly.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The gripper now holds a wider section of the car. I lift vertically to verify retention.",
+      "targets": {
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 171,
+        "start": 158
+      },
+      "left_wrist": {
+        "end": 171,
+        "start": 158
+      },
+      "right_wrist": {
+        "end": 171,
+        "start": 158
+      }
+    },
+    "control_end": 156,
+    "control_start": 143,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "The gripper now holds a wider section of the car. I lift vertically to verify retention.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The yellow car is securely lifted. I carry it above the white left basket.",
+      "targets": {
+        "left_x": -0.27,
+        "left_y": 0.12,
+        "left_z": 0.98
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 181,
+        "start": 172
+      },
+      "left_wrist": {
+        "end": 181,
+        "start": 172
+      },
+      "right_wrist": {
+        "end": 181,
+        "start": 172
+      }
+    },
+    "control_end": 165,
+    "control_start": 156,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 15,
+    "public_note": "The yellow car is securely lifted. I carry it above the white left basket.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The full basket reach was refused. I move forward in a shorter segment at the current carrying height.",
+      "targets": {
+        "left_y": 0.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 181,
+        "start": 172
+      },
+      "left_wrist": {
+        "end": 181,
+        "start": 172
+      },
+      "right_wrist": {
+        "end": 181,
+        "start": 172
+      }
+    },
+    "control_end": 165,
+    "control_start": 156,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 15,
+    "public_note": "The full basket reach was refused. I move forward in a shorter segment at the current carrying height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I shorten the reach further and lower the carrying height while keeping the car above the table.",
+      "targets": {
+        "left_y": -0.08,
+        "left_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 181,
+        "start": 172
+      },
+      "left_wrist": {
+        "end": 181,
+        "start": 172
+      },
+      "right_wrist": {
+        "end": 181,
+        "start": 172
+      }
+    },
+    "control_end": 165,
+    "control_start": 156,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "I shorten the reach further and lower the carrying height while keeping the car above the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I tilt the held car forward to make the basket reach feasible while keeping it above the rim.",
+      "targets": {
+        "left_pitch_deg": 40
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 202,
+        "start": 182
+      },
+      "left_wrist": {
+        "end": 202,
+        "start": 182
+      },
+      "right_wrist": {
+        "end": 202,
+        "start": 182
+      }
+    },
+    "control_end": 185,
+    "control_start": 165,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 16,
+    "public_note": "I tilt the held car forward to make the basket reach feasible while keeping it above the rim.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "With the wrist tilted, I advance the car above the interior of the left basket.",
+      "targets": {
+        "left_y": 0.11,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 223,
+        "start": 203
+      },
+      "left_wrist": {
+        "end": 223,
+        "start": 203
+      },
+      "right_wrist": {
+        "end": 223,
+        "start": 203
+      }
+    },
+    "control_end": 205,
+    "control_start": 185,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 17,
+    "public_note": "With the wrist tilted, I advance the car above the interior of the left basket.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The car fell during the carry after tilting. I will regrasp it with the wrist already tilted, avoiding rotation of the loaded grasp.",
+      "targets": {
+        "left_gripper": 1,
+        "left_y": -0.09,
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 244,
+        "start": 224
+      },
+      "left_wrist": {
+        "end": 244,
+        "start": 224
+      },
+      "right_wrist": {
+        "end": 244,
+        "start": 224
+      }
+    },
+    "control_end": 225,
+    "control_start": 205,
+    "feedback": "Accepted: the original plan contains 33 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 18,
+    "public_note": "The car fell during the carry after tilting. I will regrasp it with the wrist already tilted, avoiding rotation of the loaded grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I finish the approach and open the jaws above the overturned yellow car.",
+      "targets": {
+        "left_gripper": 1,
+        "left_y": -0.09,
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 255,
+        "start": 245
+      },
+      "left_wrist": {
+        "end": 255,
+        "start": 245
+      },
+      "right_wrist": {
+        "end": 255,
+        "start": 245
+      }
+    },
+    "control_end": 235,
+    "control_start": 225,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "I finish the approach and open the jaws above the overturned yellow car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I lower the tilted jaws around the car body and close without changing wrist orientation.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 265,
+        "start": 256
+      },
+      "left_wrist": {
+        "end": 265,
+        "start": 256
+      },
+      "right_wrist": {
+        "end": 265,
+        "start": 256
+      }
+    },
+    "control_end": 244,
+    "control_start": 235,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "I lower the tilted jaws around the car body and close without changing wrist orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I lift the car with the tilted wrist held fixed to test this grasp.",
+      "targets": {
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 278,
+        "start": 266
+      },
+      "left_wrist": {
+        "end": 278,
+        "start": 266
+      },
+      "right_wrist": {
+        "end": 278,
+        "start": 266
+      }
+    },
+    "control_end": 256,
+    "control_start": 244,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "I lift the car with the tilted wrist held fixed to test this grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The tilted grasp also slipped. I switch to a deeper straight-down grasp on the car's exposed underside.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": 0,
+        "left_x": -0.22,
+        "left_y": -0.075,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 299,
+        "start": 279
+      },
+      "left_wrist": {
+        "end": 299,
+        "start": 279
+      },
+      "right_wrist": {
+        "end": 299,
+        "start": 279
+      }
+    },
+    "control_end": 276,
+    "control_start": 256,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 22,
+    "public_note": "The tilted grasp also slipped. I switch to a deeper straight-down grasp on the car's exposed underside.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The underside is slightly left of the grasp axis. I center over it and descend before the final grasp.",
+      "targets": {
+        "left_x": -0.235,
+        "left_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 305,
+        "start": 300
+      },
+      "left_wrist": {
+        "end": 305,
+        "start": 300
+      },
+      "right_wrist": {
+        "end": 305,
+        "start": 300
+      }
+    },
+    "control_end": 281,
+    "control_start": 276,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "The underside is slightly left of the grasp axis. I center over it and descend before the final grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "At close range the car is behind the jaw center. I correct backward to place the jaws around its middle.",
+      "targets": {
+        "left_y": -0.11,
+        "left_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 310,
+        "start": 306
+      },
+      "left_wrist": {
+        "end": 310,
+        "start": 306
+      },
+      "right_wrist": {
+        "end": 310,
+        "start": 306
+      }
+    },
+    "control_end": 285,
+    "control_start": 281,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "At close range the car is behind the jaw center. I correct backward to place the jaws around its middle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The car underside is now centered across the jaw tips. I close at this corrected position.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 317,
+        "start": 311
+      },
+      "left_wrist": {
+        "end": 317,
+        "start": 311
+      },
+      "right_wrist": {
+        "end": 317,
+        "start": 311
+      }
+    },
+    "control_end": 291,
+    "control_start": 285,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 25,
+    "public_note": "The car underside is now centered across the jaw tips. I close at this corrected position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I lift a short distance to check whether the underside grasp holds before attempting transport.",
+      "targets": {
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 324,
+        "start": 318
+      },
+      "left_wrist": {
+        "end": 324,
+        "start": 318
+      },
+      "right_wrist": {
+        "end": 324,
+        "start": 318
+      }
+    },
+    "control_end": 297,
+    "control_start": 291,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "I lift a short distance to check whether the underside grasp holds before attempting transport.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I leave the unstable car temporarily and sort the black watch next. Its thin strap needs a table-level grasp.",
+      "targets": {
+        "left_gripper": 1,
+        "left_x": -0.13,
+        "left_y": -0.17,
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 339,
+        "start": 325
+      },
+      "left_wrist": {
+        "end": 339,
+        "start": 325
+      },
+      "right_wrist": {
+        "end": 339,
+        "start": 325
+      }
+    },
+    "control_end": 311,
+    "control_start": 297,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "I leave the unstable car temporarily and sort the black watch next. Its thin strap needs a table-level grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I align the watch strap with the closing line and lower to just above table contact.",
+      "targets": {
+        "left_y": -0.155,
+        "left_z": 0.78
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 343,
+        "start": 340
+      },
+      "left_wrist": {
+        "end": 343,
+        "start": 340
+      },
+      "right_wrist": {
+        "end": 343,
+        "start": 340
+      }
+    },
+    "control_end": 314,
+    "control_start": 311,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "I align the watch strap with the closing line and lower to just above table contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The upper watch strap crosses the jaw line. I lower the final few millimetres and close around it.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.7725
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 351,
+        "start": 344
+      },
+      "left_wrist": {
+        "end": 351,
+        "start": 344
+      },
+      "right_wrist": {
+        "end": 351,
+        "start": 344
+      }
+    },
+    "control_end": 321,
+    "control_start": 314,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "The upper watch strap crosses the jaw line. I lower the final few millimetres and close around it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws have stopped on the watch strap. I lift it vertically before moving toward the middle basket.",
+      "targets": {
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 362,
+        "start": 352
+      },
+      "left_wrist": {
+        "end": 362,
+        "start": 352
+      },
+      "right_wrist": {
+        "end": 362,
+        "start": 352
+      }
+    },
+    "control_end": 331,
+    "control_start": 321,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "The jaws have stopped on the watch strap. I lift it vertically before moving toward the middle basket.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The watch is retained securely. I tilt the wrist for the forward basket reach.",
+      "targets": {
+        "left_pitch_deg": 40
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 379,
+        "start": 363
+      },
+      "left_wrist": {
+        "end": 379,
+        "start": 363
+      },
+      "right_wrist": {
+        "end": 379,
+        "start": 363
+      }
+    },
+    "control_end": 347,
+    "control_start": 331,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "The watch is retained securely. I tilt the wrist for the forward basket reach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I carry the watch above the blue middle basket, keeping its dangling strap clear of the rim.",
+      "targets": {
+        "left_x": 0,
+        "left_y": 0.075,
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 400,
+        "start": 380
+      },
+      "left_wrist": {
+        "end": 400,
+        "start": 380
+      },
+      "right_wrist": {
+        "end": 400,
+        "start": 380
+      }
+    },
+    "control_end": 367,
+    "control_start": 347,
+    "feedback": "Accepted: the original plan contains 37 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 32,
+    "public_note": "I carry the watch above the blue middle basket, keeping its dangling strap clear of the rim.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The watch remains held and is approaching the basket. I finish centering it over the interior.",
+      "targets": {
+        "left_x": 0,
+        "left_y": 0.075,
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 417,
+        "start": 401
+      },
+      "left_wrist": {
+        "end": 417,
+        "start": 401
+      },
+      "right_wrist": {
+        "end": 417,
+        "start": 401
+      }
+    },
+    "control_end": 383,
+    "control_start": 367,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "The watch remains held and is approaching the basket. I finish centering it over the interior.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The watch is centered over the blue basket. I open the gripper to release it inside.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 422,
+        "start": 418
+      },
+      "left_wrist": {
+        "end": 422,
+        "start": 418
+      },
+      "right_wrist": {
+        "end": 422,
+        "start": 418
+      }
+    },
+    "control_end": 387,
+    "control_start": 383,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 34,
+    "public_note": "The watch is centered over the blue basket. I open the gripper to release it inside.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The black watch is inside the middle basket. I withdraw toward the brown watch on the table.",
+      "targets": {
+        "left_x": -0.03,
+        "left_y": -0.065,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 443,
+        "start": 423
+      },
+      "left_wrist": {
+        "end": 443,
+        "start": 423
+      },
+      "right_wrist": {
+        "end": 443,
+        "start": 423
+      }
+    },
+    "control_end": 407,
+    "control_start": 387,
+    "feedback": "Accepted: the original plan contains 28 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 35,
+    "public_note": "The black watch is inside the middle basket. I withdraw toward the brown watch on the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I complete the retreat and turn straight down above the brown watch for a table-level strap grasp.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": -0.03,
+        "left_y": -0.065,
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 461,
+        "start": 444
+      },
+      "left_wrist": {
+        "end": 461,
+        "start": 444
+      },
+      "right_wrist": {
+        "end": 461,
+        "start": 444
+      }
+    },
+    "control_end": 424,
+    "control_start": 407,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 36,
+    "public_note": "I complete the retreat and turn straight down above the brown watch for a table-level strap grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The brown watch is centered laterally. I lower to inspect the strap alignment near the table.",
+      "targets": {
+        "left_z": 0.78
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 466,
+        "start": 462
+      },
+      "left_wrist": {
+        "end": 466,
+        "start": 462
+      },
+      "right_wrist": {
+        "end": 466,
+        "start": 462
+      }
+    },
+    "control_end": 428,
+    "control_start": 424,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "The brown watch is centered laterally. I lower to inspect the strap alignment near the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist camera is against the basket's front wall, so the approach is too far forward. I back the jaws toward the watch while holding height.",
+      "targets": {
+        "left_y": -0.1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 472,
+        "start": 467
+      },
+      "left_wrist": {
+        "end": 472,
+        "start": 467
+      },
+      "right_wrist": {
+        "end": 472,
+        "start": 467
+      }
+    },
+    "control_end": 433,
+    "control_start": 428,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "The wrist camera is against the basket's front wall, so the approach is too far forward. I back the jaws toward the watch while holding height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The brown watch's sides cross the jaw line. I lower the remaining millimetres and close.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.7725
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 480,
+        "start": 473
+      },
+      "left_wrist": {
+        "end": 480,
+        "start": 473
+      },
+      "right_wrist": {
+        "end": 480,
+        "start": 473
+      }
+    },
+    "control_end": 440,
+    "control_start": 433,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "The brown watch's sides cross the jaw line. I lower the remaining millimetres and close.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I lift the brown watch vertically, keeping the strap clamped.",
+      "targets": {
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 493,
+        "start": 481
+      },
+      "left_wrist": {
+        "end": 493,
+        "start": 481
+      },
+      "right_wrist": {
+        "end": 493,
+        "start": 481
+      }
+    },
+    "control_end": 452,
+    "control_start": 440,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 40,
+    "public_note": "I lift the brown watch vertically, keeping the strap clamped.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The brown watch is securely lifted. I tilt for the middle basket reach.",
+      "targets": {
+        "left_pitch_deg": 40
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 514,
+        "start": 494
+      },
+      "left_wrist": {
+        "end": 514,
+        "start": 494
+      },
+      "right_wrist": {
+        "end": 514,
+        "start": 494
+      }
+    },
+    "control_end": 472,
+    "control_start": 452,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 41,
+    "public_note": "The brown watch is securely lifted. I tilt for the middle basket reach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I transport the brown watch over the middle basket beside the black watch.",
+      "targets": {
+        "left_x": 0,
+        "left_y": 0.06,
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 535,
+        "start": 515
+      },
+      "left_wrist": {
+        "end": 535,
+        "start": 515
+      },
+      "right_wrist": {
+        "end": 535,
+        "start": 515
+      }
+    },
+    "control_end": 492,
+    "control_start": 472,
+    "feedback": "Accepted: the original plan contains 22 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 42,
+    "public_note": "I transport the brown watch over the middle basket beside the black watch.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Both watches will be in their assigned middle basket. I release the brown watch.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 539,
+        "start": 536
+      },
+      "left_wrist": {
+        "end": 539,
+        "start": 536
+      },
+      "right_wrist": {
+        "end": 539,
+        "start": 536
+      }
+    },
+    "control_end": 495,
+    "control_start": 492,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 43,
+    "public_note": "Both watches will be in their assigned middle basket. I release the brown watch.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Both watches are now in the blue basket. I withdraw toward the green car for the left basket.",
+      "targets": {
+        "left_x": 0.06,
+        "left_y": -0.19,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 559,
+        "start": 540
+      },
+      "left_wrist": {
+        "end": 559,
+        "start": 540
+      },
+      "right_wrist": {
+        "end": 559,
+        "start": 540
+      }
+    },
+    "control_end": 514,
+    "control_start": 495,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 44,
+    "public_note": "Both watches are now in the blue basket. I withdraw toward the green car for the left basket.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The green car is nearly centered under the tilted jaws. I descend while correcting slightly backward.",
+      "targets": {
+        "left_y": -0.205,
+        "left_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 565,
+        "start": 560
+      },
+      "left_wrist": {
+        "end": 565,
+        "start": 560
+      },
+      "right_wrist": {
+        "end": 565,
+        "start": 560
+      }
+    },
+    "control_end": 519,
+    "control_start": 514,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "The green car is nearly centered under the tilted jaws. I descend while correcting slightly backward.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaw line crosses the car's cabin. I lower to the sidewalls and close for a deeper grip.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.78
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 574,
+        "start": 566
+      },
+      "left_wrist": {
+        "end": 574,
+        "start": 566
+      },
+      "right_wrist": {
+        "end": 574,
+        "start": 566
+      }
+    },
+    "control_end": 527,
+    "control_start": 519,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "The jaw line crosses the car's cabin. I lower to the sidewalls and close for a deeper grip.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Closing caught the car's nose instead of its center. I reopen and raise slightly to reposition over the cabin.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 583,
+        "start": 575
+      },
+      "left_wrist": {
+        "end": 583,
+        "start": 575
+      },
+      "right_wrist": {
+        "end": 583,
+        "start": 575
+      }
+    },
+    "control_end": 535,
+    "control_start": 527,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The last 5 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "Closing caught the car's nose instead of its center. I reopen and raise slightly to reposition over the cabin.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I advance over the cabin rather than the nose, keeping the tilted wrist fixed.",
+      "targets": {
+        "left_y": -0.155,
+        "left_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 588,
+        "start": 584
+      },
+      "left_wrist": {
+        "end": 588,
+        "start": 584
+      },
+      "right_wrist": {
+        "end": 588,
+        "start": 584
+      }
+    },
+    "control_end": 539,
+    "control_start": 535,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "I advance over the cabin rather than the nose, keeping the tilted wrist fixed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaw line now crosses the central body rather than the nose. I make the final descent and clamp the car.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.78
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 596,
+        "start": 589
+      },
+      "left_wrist": {
+        "end": 596,
+        "start": 589
+      },
+      "right_wrist": {
+        "end": 596,
+        "start": 589
+      }
+    },
+    "control_end": 546,
+    "control_start": 539,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 49,
+    "public_note": "The jaw line now crosses the central body rather than the nose. I make the final descent and clamp the car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The green car is clamped along its middle. I lift without changing orientation.",
+      "targets": {
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 610,
+        "start": 597
+      },
+      "left_wrist": {
+        "end": 610,
+        "start": 597
+      },
+      "right_wrist": {
+        "end": 610,
+        "start": 597
+      }
+    },
+    "control_end": 559,
+    "control_start": 546,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "The green car is clamped along its middle. I lift without changing orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I switch to the right wooden lion while leaving the cars for another attempt. I approach it with a downward right-hand grasp.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_x": 0.35,
+        "right_y": -0.1,
+        "right_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 631,
+        "start": 611
+      },
+      "left_wrist": {
+        "end": 631,
+        "start": 611
+      },
+      "right_wrist": {
+        "end": 631,
+        "start": 611
+      }
+    },
+    "control_end": 579,
+    "control_start": 559,
+    "feedback": "Accepted: the original plan contains 38 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 51,
+    "public_note": "I switch to the right wooden lion while leaving the cars for another attempt. I approach it with a downward right-hand grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I finish turning downward and center the right jaws above the lion.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_x": 0.35,
+        "right_y": -0.1,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 650,
+        "start": 632
+      },
+      "left_wrist": {
+        "end": 650,
+        "start": 632
+      },
+      "right_wrist": {
+        "end": 650,
+        "start": 632
+      }
+    },
+    "control_end": 597,
+    "control_start": 579,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "I finish turning downward and center the right jaws above the lion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lion is centered between the right jaws. I lower around its body for a stable grasp.",
+      "targets": {
+        "right_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 655,
+        "start": 651
+      },
+      "left_wrist": {
+        "end": 655,
+        "start": 651
+      },
+      "right_wrist": {
+        "end": 655,
+        "start": 651
+      }
+    },
+    "control_end": 601,
+    "control_start": 597,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 53,
+    "public_note": "The lion is centered between the right jaws. I lower around its body for a stable grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lion's body crosses the jaw line. I descend a few millimetres and close around it.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.798
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 663,
+        "start": 656
+      },
+      "left_wrist": {
+        "end": 663,
+        "start": 656
+      },
+      "right_wrist": {
+        "end": 663,
+        "start": 656
+      }
+    },
+    "control_end": 608,
+    "control_start": 601,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "The lion's body crosses the jaw line. I descend a few millimetres and close around it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws are clamped around the lion's torso. I lift it clear of the table.",
+      "targets": {
+        "right_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 673,
+        "start": 664
+      },
+      "left_wrist": {
+        "end": 673,
+        "start": 664
+      },
+      "right_wrist": {
+        "end": 673,
+        "start": 664
+      }
+    },
+    "control_end": 617,
+    "control_start": 608,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 55,
+    "public_note": "The jaws are clamped around the lion's torso. I lift it clear of the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lion is securely lifted. I tilt the right wrist for the red basket reach.",
+      "targets": {
+        "right_pitch_deg": 40
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 693,
+        "start": 674
+      },
+      "left_wrist": {
+        "end": 693,
+        "start": 674
+      },
+      "right_wrist": {
+        "end": 693,
+        "start": 674
+      }
+    },
+    "control_end": 636,
+    "control_start": 617,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 56,
+    "public_note": "The lion is securely lifted. I tilt the right wrist for the red basket reach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I carry the lion above the red right basket, centered away from its walls.",
+      "targets": {
+        "right_x": 0.27,
+        "right_y": 0.065,
+        "right_z": 0.93
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 709,
+        "start": 694
+      },
+      "left_wrist": {
+        "end": 709,
+        "start": 694
+      },
+      "right_wrist": {
+        "end": 709,
+        "start": 694
+      }
+    },
+    "control_end": 651,
+    "control_start": 636,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 57,
+    "public_note": "I carry the lion above the red right basket, centered away from its walls.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lion is over the red basket interior. I open the jaws and release it.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 715,
+        "start": 710
+      },
+      "left_wrist": {
+        "end": 715,
+        "start": 710
+      },
+      "right_wrist": {
+        "end": 715,
+        "start": 710
+      }
+    },
+    "control_end": 656,
+    "control_start": 651,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 5 move the gripper, once the arm has arrived.",
+    "policy_step": 58,
+    "public_note": "The lion is over the red basket interior. I open the jaws and release it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The first lion is in the red basket. I bring the left hand back to the remaining lion near the yellow car.",
+      "targets": {
+        "left_gripper": 1,
+        "left_x": -0.28,
+        "left_y": -0.15,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 736,
+        "start": 716
+      },
+      "left_wrist": {
+        "end": 736,
+        "start": 716
+      },
+      "right_wrist": {
+        "end": 736,
+        "start": 716
+      }
+    },
+    "control_end": 676,
+    "control_start": 656,
+    "feedback": "Accepted: the original plan contains 32 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 59,
+    "public_note": "The first lion is in the red basket. I bring the left hand back to the remaining lion near the yellow car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I finish centering over the remaining lion and turn down to grasp its torso.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": 0,
+        "left_x": -0.28,
+        "left_y": -0.15,
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 757,
+        "start": 737
+      },
+      "left_wrist": {
+        "end": 757,
+        "start": 737
+      },
+      "right_wrist": {
+        "end": 757,
+        "start": 737
+      }
+    },
+    "control_end": 696,
+    "control_start": 676,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 60,
+    "public_note": "I finish centering over the remaining lion and turn down to grasp its torso.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I lower and slightly advance to center the jaws on the lion's torso rather than the mane.",
+      "targets": {
+        "left_y": -0.14,
+        "left_z": 0.803
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 761,
+        "start": 758
+      },
+      "left_wrist": {
+        "end": 761,
+        "start": 758
+      },
+      "right_wrist": {
+        "end": 761,
+        "start": 758
+      }
+    },
+    "control_end": 699,
+    "control_start": 696,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 61,
+    "public_note": "I lower and slightly advance to center the jaws on the lion's torso rather than the mane.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The torso is aligned between the jaw tips. I close after a final small descent.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.798
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 769,
+        "start": 762
+      },
+      "left_wrist": {
+        "end": 769,
+        "start": 762
+      },
+      "right_wrist": {
+        "end": 769,
+        "start": 762
+      }
+    },
+    "control_end": 706,
+    "control_start": 699,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 62,
+    "public_note": "The torso is aligned between the jaw tips. I close after a final small descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I lift the remaining lion vertically, separating it from the nearby car.",
+      "targets": {
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 780,
+        "start": 770
+      },
+      "left_wrist": {
+        "end": 780,
+        "start": 770
+      },
+      "right_wrist": {
+        "end": 780,
+        "start": 770
+      }
+    },
+    "control_end": 716,
+    "control_start": 706,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 63,
+    "public_note": "I lift the remaining lion vertically, separating it from the nearby car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lion is held securely. I carry it laterally through clear space toward the right basket.",
+      "targets": {
+        "left_x": 0.02,
+        "left_y": -0.2
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 798,
+        "start": 781
+      },
+      "left_wrist": {
+        "end": 798,
+        "start": 781
+      },
+      "right_wrist": {
+        "end": 798,
+        "start": 781
+      }
+    },
+    "control_end": 733,
+    "control_start": 716,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 64,
+    "public_note": "The lion is held securely. I carry it laterally through clear space toward the right basket.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I tilt the secure lion grasp to extend the left hand toward the right basket.",
+      "targets": {
+        "left_pitch_deg": 55
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 818,
+        "start": 799
+      },
+      "left_wrist": {
+        "end": 818,
+        "start": 799
+      },
+      "right_wrist": {
+        "end": 818,
+        "start": 799
+      }
+    },
+    "control_end": 752,
+    "control_start": 733,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 65,
+    "public_note": "I tilt the secure lion grasp to extend the left hand toward the right basket.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I move the held lion over the front interior of the right basket, avoiding the parked right hand.",
+      "targets": {
+        "left_x": 0.25,
+        "left_y": 0.025,
+        "left_z": 0.93
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 831,
+        "start": 819
+      },
+      "left_wrist": {
+        "end": 831,
+        "start": 819
+      },
+      "right_wrist": {
+        "end": 831,
+        "start": 819
+      }
+    },
+    "control_end": 764,
+    "control_start": 752,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 66,
+    "public_note": "I move the held lion over the front interior of the right basket, avoiding the parked right hand.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The cross-table reach was refused. I bring the lion to a central transfer position where the right hand can pick it up.",
+      "targets": {
+        "left_x": 0.15,
+        "left_y": -0.2,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 831,
+        "start": 819
+      },
+      "left_wrist": {
+        "end": 831,
+        "start": 819
+      },
+      "right_wrist": {
+        "end": 831,
+        "start": 819
+      }
+    },
+    "control_end": 764,
+    "control_start": 752,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 66,
+    "public_note": "The cross-table reach was refused. I bring the lion to a central transfer position where the right hand can pick it up.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I lower the lion to the central table transfer area, keeping the grasp until it is supported.",
+      "targets": {
+        "left_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 836,
+        "start": 832
+      },
+      "left_wrist": {
+        "end": 836,
+        "start": 832
+      },
+      "right_wrist": {
+        "end": 836,
+        "start": 832
+      }
+    },
+    "control_end": 768,
+    "control_start": 764,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 67,
+    "public_note": "I lower the lion to the central table transfer area, keeping the grasp until it is supported.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lion has reached the table transfer area. I release it so the right hand can take over.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 841,
+        "start": 837
+      },
+      "left_wrist": {
+        "end": 841,
+        "start": 837
+      },
+      "right_wrist": {
+        "end": 841,
+        "start": 837
+      }
+    },
+    "control_end": 772,
+    "control_start": 768,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 68,
+    "public_note": "The lion has reached the table transfer area. I release it so the right hand can take over.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I clear the transfer area with the left hand so the right arm can approach the lion safely.",
+      "targets": {
+        "left_x": -0.25,
+        "left_y": -0.2,
+        "left_z": 0.93
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 862,
+        "start": 842
+      },
+      "left_wrist": {
+        "end": 862,
+        "start": 842
+      },
+      "right_wrist": {
+        "end": 862,
+        "start": 842
+      }
+    },
+    "control_end": 792,
+    "control_start": 772,
+    "feedback": "Accepted: the original plan contains 34 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 69,
+    "public_note": "I clear the transfer area with the left hand so the right arm can approach the lion safely.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The transfer lion is visible on the central table. I approach it with the right hand pointed downward.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_x": 0.17,
+        "right_y": -0.17,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 875,
+        "start": 863
+      },
+      "left_wrist": {
+        "end": 875,
+        "start": 863
+      },
+      "right_wrist": {
+        "end": 875,
+        "start": 863
+      }
+    },
+    "control_end": 804,
+    "control_start": 792,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 70,
+    "public_note": "The transfer lion is visible on the central table. I approach it with the right hand pointed downward.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I advance slightly and lower the right jaws around the transfer lion's torso.",
+      "targets": {
+        "right_y": -0.16,
+        "right_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 880,
+        "start": 876
+      },
+      "left_wrist": {
+        "end": 880,
+        "start": 876
+      },
+      "right_wrist": {
+        "end": 880,
+        "start": 876
+      }
+    },
+    "control_end": 808,
+    "control_start": 804,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 71,
+    "public_note": "I advance slightly and lower the right jaws around the transfer lion's torso.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The torso crosses the jaw line. I close after the final small descent.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.798
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 888,
+        "start": 881
+      },
+      "left_wrist": {
+        "end": 888,
+        "start": 881
+      },
+      "right_wrist": {
+        "end": 888,
+        "start": 881
+      }
+    },
+    "control_end": 815,
+    "control_start": 808,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 72,
+    "public_note": "The torso crosses the jaw line. I close after the final small descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I lift the transfer lion with the right hand, keeping its torso clamped.",
+      "targets": {
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 899,
+        "start": 889
+      },
+      "left_wrist": {
+        "end": 899,
+        "start": 889
+      },
+      "right_wrist": {
+        "end": 899,
+        "start": 889
+      }
+    },
+    "control_end": 825,
+    "control_start": 815,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 73,
+    "public_note": "I lift the transfer lion with the right hand, keeping its torso clamped.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lion remains securely held. I tilt the wrist to reach its assigned red basket.",
+      "targets": {
+        "right_pitch_deg": 40
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 916,
+        "start": 900
+      },
+      "left_wrist": {
+        "end": 916,
+        "start": 900
+      },
+      "right_wrist": {
+        "end": 916,
+        "start": 900
+      }
+    },
+    "control_end": 841,
+    "control_start": 825,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 74,
+    "public_note": "The lion remains securely held. I tilt the wrist to reach its assigned red basket.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I carry the second lion above the red basket beside the first.",
+      "targets": {
+        "right_x": 0.29,
+        "right_y": 0.06,
+        "right_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 931,
+        "start": 917
+      },
+      "left_wrist": {
+        "end": 931,
+        "start": 917
+      },
+      "right_wrist": {
+        "end": 931,
+        "start": 917
+      }
+    },
+    "control_end": 855,
+    "control_start": 841,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 75,
+    "public_note": "I carry the second lion above the red basket beside the first.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The second lion is centered over the red basket. I release it to complete the wooden-toy category.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 937,
+        "start": 932
+      },
+      "left_wrist": {
+        "end": 937,
+        "start": 932
+      },
+      "right_wrist": {
+        "end": 937,
+        "start": 932
+      }
+    },
+    "control_end": 860,
+    "control_start": 855,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 5 move the gripper, once the arm has arrived.",
+    "policy_step": 76,
+    "public_note": "The second lion is centered over the red basket. I release it to complete the wooden-toy category.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Both watches and lions are sorted. I return to the yellow car for a centered, deeper grasp.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": -0.27,
+        "left_y": -0.1,
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 953,
+        "start": 938
+      },
+      "left_wrist": {
+        "end": 953,
+        "start": 938
+      },
+      "right_wrist": {
+        "end": 953,
+        "start": 938
+      }
+    },
+    "control_end": 875,
+    "control_start": 860,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 77,
+    "public_note": "Both watches and lions are sorted. I return to the yellow car for a centered, deeper grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The car's center is forward and slightly left of the jaws. I correct over the cabin and lower to its sides.",
+      "targets": {
+        "left_x": -0.285,
+        "left_y": -0.075,
+        "left_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 957,
+        "start": 954
+      },
+      "left_wrist": {
+        "end": 957,
+        "start": 954
+      },
+      "right_wrist": {
+        "end": 957,
+        "start": 954
+      }
+    },
+    "control_end": 878,
+    "control_start": 875,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 78,
+    "public_note": "The car's center is forward and slightly left of the jaws. I correct over the cabin and lower to its sides.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I adjust backward slightly to the car's middle and close at sidewall height.",
+      "targets": {
+        "left_gripper": 0,
+        "left_y": -0.085,
+        "left_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 966,
+        "start": 958
+      },
+      "left_wrist": {
+        "end": 966,
+        "start": 958
+      },
+      "right_wrist": {
+        "end": 966,
+        "start": 958
+      }
+    },
+    "control_end": 886,
+    "control_start": 878,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 79,
+    "public_note": "I adjust backward slightly to the car's middle and close at sidewall height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws surround the car's body. I lift it vertically to verify this centered grasp.",
+      "targets": {
+        "left_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 977,
+        "start": 967
+      },
+      "left_wrist": {
+        "end": 977,
+        "start": 967
+      },
+      "right_wrist": {
+        "end": 977,
+        "start": 967
+      }
+    },
+    "control_end": 896,
+    "control_start": 886,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 80,
+    "public_note": "The jaws surround the car's body. I lift it vertically to verify this centered grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The centered car grasp holds securely. I tilt carefully for the short reach into the left basket.",
+      "targets": {
+        "left_pitch_deg": 40
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 998,
+        "start": 978
+      },
+      "left_wrist": {
+        "end": 998,
+        "start": 978
+      },
+      "right_wrist": {
+        "end": 998,
+        "start": 978
+      }
+    },
+    "control_end": 916,
+    "control_start": 896,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 81,
+    "public_note": "The centered car grasp holds securely. I tilt carefully for the short reach into the left basket.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The yellow car remains held after tilting. I carry it over the white left basket.",
+      "targets": {
+        "left_x": -0.27,
+        "left_y": 0.065,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1014,
+        "start": 999
+      },
+      "left_wrist": {
+        "end": 1014,
+        "start": 999
+      },
+      "right_wrist": {
+        "end": 1014,
+        "start": 999
+      }
+    },
+    "control_end": 931,
+    "control_start": 916,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 82,
+    "public_note": "The yellow car remains held after tilting. I carry it over the white left basket.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The yellow car is centered above the white basket. I release it inside.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1019,
+        "start": 1015
+      },
+      "left_wrist": {
+        "end": 1019,
+        "start": 1015
+      },
+      "right_wrist": {
+        "end": 1019,
+        "start": 1015
+      }
+    },
+    "control_end": 935,
+    "control_start": 931,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 83,
+    "public_note": "The yellow car is centered above the white basket. I release it inside.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Only the green car remains unsorted. I withdraw toward its new overturned position on the table.",
+      "targets": {
+        "left_x": 0.08,
+        "left_y": -0.29,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1040,
+        "start": 1020
+      },
+      "left_wrist": {
+        "end": 1040,
+        "start": 1020
+      },
+      "right_wrist": {
+        "end": 1040,
+        "start": 1020
+      }
+    },
+    "control_end": 955,
+    "control_start": 935,
+    "feedback": "Accepted: the original plan contains 28 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 84,
+    "public_note": "Only the green car remains unsorted. I withdraw toward its new overturned position on the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I finish the approach and turn straight down over the green car's underside.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": 0.08,
+        "left_y": -0.29,
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1053,
+        "start": 1041
+      },
+      "left_wrist": {
+        "end": 1053,
+        "start": 1041
+      },
+      "right_wrist": {
+        "end": 1053,
+        "start": 1041
+      }
+    },
+    "control_end": 967,
+    "control_start": 955,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 85,
+    "public_note": "I finish the approach and turn straight down over the green car's underside.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The green car is forward of the jaw line. I advance over its center and lower toward the sidewalls.",
+      "targets": {
+        "left_y": -0.24,
+        "left_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1057,
+        "start": 1054
+      },
+      "left_wrist": {
+        "end": 1057,
+        "start": 1054
+      },
+      "right_wrist": {
+        "end": 1057,
+        "start": 1054
+      }
+    },
+    "control_end": 970,
+    "control_start": 967,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 86,
+    "public_note": "The green car is forward of the jaw line. I advance over its center and lower toward the sidewalls.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I rotate the jaws across the green car's narrow width for a stable central grasp, with a small backward correction.",
+      "targets": {
+        "left_y": -0.247,
+        "left_yaw_deg": 60,
+        "left_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1078,
+        "start": 1058
+      },
+      "left_wrist": {
+        "end": 1078,
+        "start": 1058
+      },
+      "right_wrist": {
+        "end": 1078,
+        "start": 1058
+      }
+    },
+    "control_end": 990,
+    "control_start": 970,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 87,
+    "public_note": "I rotate the jaws across the green car's narrow width for a stable central grasp, with a small backward correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws are aligned across the car's width. I lower the final centimetre and clamp its body.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.78
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1086,
+        "start": 1079
+      },
+      "left_wrist": {
+        "end": 1086,
+        "start": 1079
+      },
+      "right_wrist": {
+        "end": 1086,
+        "start": 1079
+      }
+    },
+    "control_end": 997,
+    "control_start": 990,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 88,
+    "public_note": "The jaws are aligned across the car's width. I lower the final centimetre and clamp its body.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The green car is clamped across its width. I lift it vertically to clear the table.",
+      "targets": {
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1102,
+        "start": 1087
+      },
+      "left_wrist": {
+        "end": 1102,
+        "start": 1087
+      },
+      "right_wrist": {
+        "end": 1102,
+        "start": 1087
+      }
+    },
+    "control_end": 1012,
+    "control_start": 997,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 89,
+    "public_note": "The green car is clamped across its width. I lift it vertically to clear the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The green car is securely lifted. I carry it toward the left basket while tilting for the forward reach.",
+      "targets": {
+        "left_pitch_deg": 40,
+        "left_x": -0.25,
+        "left_y": -0.08
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1122,
+        "start": 1103
+      },
+      "left_wrist": {
+        "end": 1122,
+        "start": 1103
+      },
+      "right_wrist": {
+        "end": 1122,
+        "start": 1103
+      }
+    },
+    "control_end": 1031,
+    "control_start": 1012,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 90,
+    "public_note": "The green car is securely lifted. I carry it toward the left basket while tilting for the forward reach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The car has shifted in the grasp near the basket rim. I advance it over the white basket interior before releasing.",
+      "targets": {
+        "left_y": 0.065,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1133,
+        "start": 1123
+      },
+      "left_wrist": {
+        "end": 1133,
+        "start": 1123
+      },
+      "right_wrist": {
+        "end": 1133,
+        "start": 1123
+      }
+    },
+    "control_end": 1041,
+    "control_start": 1031,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 91,
+    "public_note": "The car has shifted in the grasp near the basket rim. I advance it over the white basket interior before releasing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The higher reach was refused. I use a shorter, lower advance to bring the car across the basket rim.",
+      "targets": {
+        "left_y": 0.025,
+        "left_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1133,
+        "start": 1123
+      },
+      "left_wrist": {
+        "end": 1133,
+        "start": 1123
+      },
+      "right_wrist": {
+        "end": 1133,
+        "start": 1123
+      }
+    },
+    "control_end": 1041,
+    "control_start": 1031,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 91,
+    "public_note": "The higher reach was refused. I use a shorter, lower advance to bring the car across the basket rim.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The green car slipped outside the basket. With limited motion budget remaining, I reset the left arm while preserving the sorted watches, lions, and yellow car.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": 90,
+        "left_roll_deg": 0,
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_yaw_deg": 0,
+        "left_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1154,
+        "start": 1134
+      },
+      "left_wrist": {
+        "end": 1154,
+        "start": 1134
+      },
+      "right_wrist": {
+        "end": 1154,
+        "start": 1134
+      }
+    },
+    "control_end": 1061,
+    "control_start": 1041,
+    "feedback": "Accepted: the original plan contains 139 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 92,
+    "public_note": "The green car slipped outside the basket. With limited motion budget remaining, I reset the left arm while preserving the sorted watches, lions, and yellow car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The combined reset took a long detour. I first return both grasp points to their starting positions, holding their current orientations.",
+      "targets": {
+        "left_gripper": 1,
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_z": 0.9215,
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1175,
+        "start": 1155
+      },
+      "left_wrist": {
+        "end": 1175,
+        "start": 1155
+      },
+      "right_wrist": {
+        "end": 1175,
+        "start": 1155
+      }
+    },
+    "control_end": 1081,
+    "control_start": 1061,
+    "feedback": "Accepted: the original plan contains 27 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 93,
+    "public_note": "The combined reset took a long detour. I first return both grasp points to their starting positions, holding their current orientations.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Both arms are back at their starting positions. I restore their starting orientations and open the left gripper; the green car remains unsorted outside the left basket.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": 90,
+        "left_roll_deg": 0,
+        "left_yaw_deg": 0,
+        "right_pitch_deg": 90,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1195,
+        "start": 1176
+      },
+      "left_wrist": {
+        "end": 1195,
+        "start": 1176
+      },
+      "right_wrist": {
+        "end": 1195,
+        "start": 1176
+      }
+    },
+    "control_end": 1100,
+    "control_start": 1081,
+    "feedback": "Accepted: the original plan contains 142 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 94,
+    "public_note": "Both arms are back at their starting positions. I restore their starting orientations and open the left gripper; the green car remains unsorted outside the left basket.",
+    "tool": "move_eef"
+  }
+]

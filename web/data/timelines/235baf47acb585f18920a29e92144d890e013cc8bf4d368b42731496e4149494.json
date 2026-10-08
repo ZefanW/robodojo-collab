@@ -1,0 +1,169 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Fold the clothes neatly.",
+      "note": "The shirt is spread flat between the arms. Use the trained folding instruction to begin approaching the sleeves.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 16,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 16,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 16,
+        "start": 1
+      }
+    },
+    "control_end": 15,
+    "control_start": 0,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 0,
+    "public_note": "The shirt is spread flat between the arms. Use the trained folding instruction to begin approaching the sleeves.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Fold the clothes neatly.",
+      "note": "The arms remain near their starting positions and the shirt is unchanged. Continue the trained task instruction to allow the approach to develop.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 32,
+        "start": 17
+      },
+      "left_wrist": {
+        "end": 32,
+        "start": 17
+      },
+      "right_wrist": {
+        "end": 32,
+        "start": 17
+      }
+    },
+    "control_end": 30,
+    "control_start": 15,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 1,
+    "public_note": "The arms remain near their starting positions and the shirt is unchanged. Continue the trained task instruction to allow the approach to develop.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Fold the clothes neatly. Fold both sleeves inward across the chest.",
+      "note": "The shirt and arms remain essentially unchanged after two predictions. Specify the first cloth operation and inspect whether this produces an approach.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 48,
+        "start": 33
+      },
+      "left_wrist": {
+        "end": 48,
+        "start": 33
+      },
+      "right_wrist": {
+        "end": 48,
+        "start": 33
+      }
+    },
+    "control_end": 45,
+    "control_start": 30,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 2,
+    "public_note": "The shirt and arms remain essentially unchanged after two predictions. Specify the first cloth operation and inspect whether this produces an approach.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Pick up the sleeves of the white shirt and fold them inward across the chest. Fold the clothes neatly.",
+      "note": "Neither arm has approached the shirt. A concrete pickup instruction tests whether the policy can begin manipulating the cloth.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 64,
+        "start": 49
+      },
+      "left_wrist": {
+        "end": 64,
+        "start": 49
+      },
+      "right_wrist": {
+        "end": 64,
+        "start": 49
+      }
+    },
+    "control_end": 60,
+    "control_start": 45,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 3,
+    "public_note": "Neither arm has approached the shirt. A concrete pickup instruction tests whether the policy can begin manipulating the cloth.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "instruction": "Fold the clothes neatly. Pick up the left sleeve of the white shirt and place it across the chest.",
+      "note": "Repeated predictions have left both arms near their starting positions. Try a single sleeve operation to initiate folding.",
+      "steps": 15
+    },
+    "cameras": {
+      "head": {
+        "end": 80,
+        "start": 65
+      },
+      "left_wrist": {
+        "end": 80,
+        "start": 65
+      },
+      "right_wrist": {
+        "end": 80,
+        "start": 65
+      }
+    },
+    "control_end": 75,
+    "control_start": 60,
+    "feedback": "Executing up to 15 native VLA controls. Observe the actual result next; this is not a success claim.",
+    "policy_step": 4,
+    "public_note": "Repeated predictions have left both arms near their starting positions. Try a single sleeve operation to initiate folding.",
+    "tool": "run_vla"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "The exact trained instruction and concrete sleeve-fold instructions produced no meaningful movement over five executions. Both sleeves and the hem remain unfolded.",
+      "reason": "The available policy repeatedly leaves both arms near their starting poses without contacting the shirt, so I cannot complete the folds."
+    },
+    "cameras": {
+      "head": {
+        "end": 82,
+        "start": 81
+      },
+      "left_wrist": {
+        "end": 82,
+        "start": 81
+      },
+      "right_wrist": {
+        "end": 82,
+        "start": 81
+      }
+    },
+    "control_end": 76,
+    "control_start": 75,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 5,
+    "public_note": "The available policy repeatedly leaves both arms near their starting poses without contacting the shirt, so I cannot complete the folds.",
+    "tool": "give_up"
+  }
+]

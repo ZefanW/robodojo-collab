@@ -1,0 +1,674 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The purple T is right of and behind the gray target, with a different orientation. I will prepare a downward tool for controlled sliding without lifting.",
+      "targets": {
+        "right_gripper": 0,
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 21,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 21,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 21,
+        "start": 1
+      }
+    },
+    "control_end": 20,
+    "control_start": 0,
+    "feedback": "Accepted: the original plan contains 22 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 0,
+    "public_note": "The purple T is right of and behind the gray target, with a different orientation. I will prepare a downward tool for controlled sliding without lifting.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am moving above the T and finishing the downward orientation to get a useful overhead view.",
+      "targets": {
+        "right_gripper": 1,
+        "right_pitch_deg": 0,
+        "right_x": 0.065,
+        "right_y": -0.065
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 42,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 42,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 42,
+        "start": 22
+      }
+    },
+    "control_end": 40,
+    "control_start": 20,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 1,
+    "public_note": "I am moving above the T and finishing the downward orientation to get a useful overhead view.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The combined move was refused. I will first translate at the current orientation.",
+      "targets": {
+        "right_x": 0.065,
+        "right_y": -0.065
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 42,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 42,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 42,
+        "start": 22
+      }
+    },
+    "control_end": 40,
+    "control_start": 20,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "The combined move was refused. I will first translate at the current orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The hand is above the block now. I will point it straight down and open the jaws.",
+      "targets": {
+        "right_gripper": 1,
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 56,
+        "start": 43
+      },
+      "left_wrist": {
+        "end": 56,
+        "start": 43
+      },
+      "right_wrist": {
+        "end": 56,
+        "start": 43
+      }
+    },
+    "control_end": 53,
+    "control_start": 40,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 2,
+    "public_note": "The hand is above the block now. I will point it straight down and open the jaws.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Straight down is unreachable at this height. I will lower in free space before trying the rotation again.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 56,
+        "start": 43
+      },
+      "left_wrist": {
+        "end": 56,
+        "start": 43
+      },
+      "right_wrist": {
+        "end": 56,
+        "start": 43
+      }
+    },
+    "control_end": 53,
+    "control_start": 40,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "Straight down is unreachable at this height. I will lower in free space before trying the rotation again.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "At this lower height I will orient the jaws vertically while staying clear of the block.",
+      "targets": {
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 77,
+        "start": 57
+      },
+      "left_wrist": {
+        "end": 77,
+        "start": 57
+      },
+      "right_wrist": {
+        "end": 77,
+        "start": 57
+      }
+    },
+    "control_end": 73,
+    "control_start": 53,
+    "feedback": "Accepted: the original plan contains 24 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 3,
+    "public_note": "At this lower height I will orient the jaws vertically while staying clear of the block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will align the jaws across the narrow stem and approach above it, keeping the block on the table.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_x": 0.073,
+        "right_y": -0.078,
+        "right_yaw_deg": 35,
+        "right_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 91,
+        "start": 78
+      },
+      "left_wrist": {
+        "end": 91,
+        "start": 78
+      },
+      "right_wrist": {
+        "end": 91,
+        "start": 78
+      }
+    },
+    "control_end": 86,
+    "control_start": 73,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "I will align the jaws across the narrow stem and approach above it, keeping the block on the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist view shows the stem left of the jaw midpoint. I will center the open jaws over it and descend to just above contact.",
+      "targets": {
+        "right_x": 0.058,
+        "right_y": -0.088,
+        "right_z": 0.785
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 94,
+        "start": 92
+      },
+      "left_wrist": {
+        "end": 94,
+        "start": 92
+      },
+      "right_wrist": {
+        "end": 94,
+        "start": 92
+      }
+    },
+    "control_end": 88,
+    "control_start": 86,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "The wrist view shows the stem left of the jaw midpoint. I will center the open jaws over it and descend to just above contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I am shifting toward the stem, away from the wide crossbar, before closing at table height.",
+      "targets": {
+        "right_x": 0.063,
+        "right_y": -0.103,
+        "right_z": 0.781
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 98,
+        "start": 95
+      },
+      "left_wrist": {
+        "end": 98,
+        "start": 95
+      },
+      "right_wrist": {
+        "end": 98,
+        "start": 95
+      }
+    },
+    "control_end": 91,
+    "control_start": 88,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "I am shifting toward the stem, away from the wide crossbar, before closing at table height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The stem is centered between the jaws. I will descend four millimetres to engage its sides without lifting.",
+      "targets": {
+        "right_z": 0.777
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 100,
+        "start": 99
+      },
+      "left_wrist": {
+        "end": 100,
+        "start": 99
+      },
+      "right_wrist": {
+        "end": 100,
+        "start": 99
+      }
+    },
+    "control_end": 92,
+    "control_start": 91,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "The stem is centered between the jaws. I will descend four millimetres to engage its sides without lifting.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will close around the stem at the existing height to guide a sliding rotation, without raising the T.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 107,
+        "start": 101
+      },
+      "left_wrist": {
+        "end": 107,
+        "start": 101
+      },
+      "right_wrist": {
+        "end": 107,
+        "start": 101
+      }
+    },
+    "control_end": 98,
+    "control_start": 92,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 8,
+    "public_note": "I will close around the stem at the existing height to guide a sliding rotation, without raising the T.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws have contacted the crossbar. I will test a small in-plane rotation while maintaining the block's resting height.",
+      "targets": {
+        "right_yaw_deg": 40
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 110,
+        "start": 108
+      },
+      "left_wrist": {
+        "end": 110,
+        "start": 108
+      },
+      "right_wrist": {
+        "end": 110,
+        "start": 108
+      }
+    },
+    "control_end": 100,
+    "control_start": 98,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "The jaws have contacted the crossbar. I will test a small in-plane rotation while maintaining the block's resting height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The T follows the jaws without lifting. I will continue a small sliding turn toward the pad.",
+      "targets": {
+        "right_x": 0.058,
+        "right_y": -0.105,
+        "right_yaw_deg": 48
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 114,
+        "start": 111
+      },
+      "left_wrist": {
+        "end": 114,
+        "start": 111
+      },
+      "right_wrist": {
+        "end": 114,
+        "start": 111
+      }
+    },
+    "control_end": 103,
+    "control_start": 100,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "The T follows the jaws without lifting. I will continue a small sliding turn toward the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The block remains flat and follows the controlled sliding turn. I will advance it toward the target across the clear tabletop.",
+      "targets": {
+        "right_x": 0.028,
+        "right_y": -0.125,
+        "right_yaw_deg": 56
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 117,
+        "start": 115
+      },
+      "left_wrist": {
+        "end": 117,
+        "start": 115
+      },
+      "right_wrist": {
+        "end": 117,
+        "start": 115
+      }
+    },
+    "control_end": 105,
+    "control_start": 103,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "The block remains flat and follows the controlled sliding turn. I will advance it toward the target across the clear tabletop.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The sliding motion is stable. I will continue leftward and forward, preserving the table-contact height.",
+      "targets": {
+        "right_x": -0.002,
+        "right_y": -0.145,
+        "right_yaw_deg": 64
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 120,
+        "start": 118
+      },
+      "left_wrist": {
+        "end": 120,
+        "start": 118
+      },
+      "right_wrist": {
+        "end": 120,
+        "start": 118
+      }
+    },
+    "control_end": 107,
+    "control_start": 105,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "The sliding motion is stable. I will continue leftward and forward, preserving the table-contact height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The T is moving toward the pad and remains flat. I will continue the same controlled slide and incremental turn.",
+      "targets": {
+        "right_x": -0.032,
+        "right_y": -0.165,
+        "right_yaw_deg": 72
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 123,
+        "start": 121
+      },
+      "left_wrist": {
+        "end": 123,
+        "start": 121
+      },
+      "right_wrist": {
+        "end": 123,
+        "start": 121
+      }
+    },
+    "control_end": 109,
+    "control_start": 107,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "The T is moving toward the pad and remains flat. I will continue the same controlled slide and incremental turn.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will continue sliding toward the gray T, keeping the same height and turning gradually.",
+      "targets": {
+        "right_x": -0.062,
+        "right_y": -0.185,
+        "right_yaw_deg": 80
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 126,
+        "start": 124
+      },
+      "left_wrist": {
+        "end": 126,
+        "start": 124
+      },
+      "right_wrist": {
+        "end": 126,
+        "start": 124
+      }
+    },
+    "control_end": 111,
+    "control_start": 109,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "I will continue sliding toward the gray T, keeping the same height and turning gradually.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The path remains clear. I will continue the flat slide and incremental rotation toward the pad.",
+      "targets": {
+        "right_x": -0.092,
+        "right_y": -0.205,
+        "right_yaw_deg": 88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 130,
+        "start": 127
+      },
+      "left_wrist": {
+        "end": 130,
+        "start": 127
+      },
+      "right_wrist": {
+        "end": 130,
+        "start": 127
+      }
+    },
+    "control_end": 114,
+    "control_start": 111,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "The path remains clear. I will continue the flat slide and incremental rotation toward the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The crossbar is still to the right of the target. I will slide closer and continue rotating toward the target's diagonal orientation.",
+      "targets": {
+        "right_x": -0.122,
+        "right_y": -0.22,
+        "right_yaw_deg": 96
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 135,
+        "start": 131
+      },
+      "left_wrist": {
+        "end": 135,
+        "start": 131
+      },
+      "right_wrist": {
+        "end": 135,
+        "start": 131
+      }
+    },
+    "control_end": 118,
+    "control_start": 114,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 16,
+    "public_note": "The crossbar is still to the right of the target. I will slide closer and continue rotating toward the target's diagonal orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "I will continue sliding the block closer while incrementally aligning its stem with the gray stem.",
+      "targets": {
+        "right_x": -0.15,
+        "right_y": -0.235,
+        "right_yaw_deg": 104
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 141,
+        "start": 136
+      },
+      "left_wrist": {
+        "end": 141,
+        "start": 136
+      },
+      "right_wrist": {
+        "end": 141,
+        "start": 136
+      }
+    },
+    "control_end": 123,
+    "control_start": 118,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "I will continue sliding the block closer while incrementally aligning its stem with the gray stem.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The gray pad is entering the wrist view. I will continue the slide and small turn, slowing as the shapes approach.",
+      "targets": {
+        "right_x": -0.175,
+        "right_y": -0.25,
+        "right_yaw_deg": 112
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 151,
+        "start": 142
+      },
+      "left_wrist": {
+        "end": 151,
+        "start": 142
+      },
+      "right_wrist": {
+        "end": 151,
+        "start": 142
+      }
+    },
+    "control_end": 132,
+    "control_start": 123,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "The gray pad is entering the wrist view. I will continue the slide and small turn, slowing as the shapes approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The right arm is approaching the idle left hand and its last motion stopped short. I will move the left hand clear before continuing.",
+      "targets": {
+        "left_y": -0.32,
+        "left_z": 1.0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 158,
+        "start": 152
+      },
+      "left_wrist": {
+        "end": 158,
+        "start": 152
+      },
+      "right_wrist": {
+        "end": 158,
+        "start": 152
+      }
+    },
+    "control_end": 138,
+    "control_start": 132,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "The right arm is approaching the idle left hand and its last motion stopped short. I will move the left hand clear before continuing.",
+    "tool": "move_eef"
+  }
+]

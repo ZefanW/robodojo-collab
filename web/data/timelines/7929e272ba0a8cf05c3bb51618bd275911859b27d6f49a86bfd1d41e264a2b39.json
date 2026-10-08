@@ -1,0 +1,2190 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blocks are left red, middle blue, right green; cups stand in front. None covered; must cover left to right then uncover red, green, blue and return both arms. Check: Initial observation, no prior action. Expect: Begin rotating left hand toward downward cup grasp without moving objects. Verify: Pitch approaches 45 degrees and cups remain upright. Risk: Rotation may approach cup; check clearance before descending. Lesson: Color mapping is red-blue-green from left to right.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 17,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 17,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 17,
+        "start": 1
+      }
+    },
+    "control_end": 16,
+    "control_start": 0,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 0,
+    "public_note": "State: Blocks are left red, middle blue, right green; cups stand in front. None covered; must cover left to right then uncover red, green, blue and return both arms. Check: Initial observation, no prior action. Expect: Begin rotating left hand toward downward cup grasp without moving objects. Verify: Pitch approaches 45 degrees and cups remain upright. Risk: Rotation may approach cup; check clearance before descending. Lesson: Color mapping is red-blue-green from left to right.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: All blocks remain exposed; left cup is first target, with red behind it. Check: Left rotation landed exactly; objects unchanged. Expect: Downward open jaws above estimated left cup location, clear of its top. Verify: Wrist view should center cup between jaws; displacement would contradict clearance. Risk: RGB position estimate may be offset; correct before descent. Lesson: Retain left red, center blue, right green mapping.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": -0.18,
+        "left_y": -0.2
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 36,
+        "start": 18
+      },
+      "left_wrist": {
+        "end": 36,
+        "start": 18
+      },
+      "right_wrist": {
+        "end": 36,
+        "start": 18
+      }
+    },
+    "control_end": 34,
+    "control_start": 16,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "State: All blocks remain exposed; left cup is first target, with red behind it. Check: Left rotation landed exactly; objects unchanged. Expect: Downward open jaws above estimated left cup location, clear of its top. Verify: Wrist view should center cup between jaws; displacement would contradict clearance. Risk: RGB position estimate may be offset; correct before descent. Lesson: Retain left red, center blue, right green mapping.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left cup remains on table and red remains exposed; no cover completed. Check: Approach landed exactly; wrist shows cup slightly left of view center, with no object displacement. Expect: Lower open jaws toward cup top for closer alignment. Verify: Cup should remain between open jaws without tipping. Risk: Cup position and height are estimates; stop above contact and reassess. Lesson: Downward wrist view provides cup alignment evidence.",
+      "targets": {
+        "left_z": 0.845
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 44,
+        "start": 37
+      },
+      "left_wrist": {
+        "end": 44,
+        "start": 37
+      },
+      "right_wrist": {
+        "end": 44,
+        "start": 37
+      }
+    },
+    "control_end": 41,
+    "control_start": 34,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "State: Left cup remains on table and red remains exposed; no cover completed. Check: Approach landed exactly; wrist shows cup slightly left of view center, with no object displacement. Expect: Lower open jaws toward cup top for closer alignment. Verify: Cup should remain between open jaws without tipping. Risk: Cup position and height are estimates; stop above contact and reassess. Lesson: Downward wrist view provides cup alignment evidence.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left cup is offset from jaws; all blocks still exposed. Check: Descent landed within 1 mm without visible contact. Expect: Lateral adjustment centers jaws over cup's closed top, retaining height. Verify: Cup top should move toward wrist center and remain stationary on table. Risk: Image-to-world estimate is uncertain; reassess alignment before closing. Lesson: Current approach is rightward and behind the left cup in wrist projection.",
+      "targets": {
+        "left_x": -0.2,
+        "left_y": -0.24
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 49,
+        "start": 45
+      },
+      "left_wrist": {
+        "end": 49,
+        "start": 45
+      },
+      "right_wrist": {
+        "end": 49,
+        "start": 45
+      }
+    },
+    "control_end": 45,
+    "control_start": 41,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "State: Left cup is offset from jaws; all blocks still exposed. Check: Descent landed within 1 mm without visible contact. Expect: Lateral adjustment centers jaws over cup's closed top, retaining height. Verify: Cup top should move toward wrist center and remain stationary on table. Risk: Image-to-world estimate is uncertain; reassess alignment before closing. Lesson: Current approach is rightward and behind the left cup in wrist projection.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Cup is laterally centered beneath left hand, with red still uncovered. Check: Adjustment landed within 1 mm; cup remained fixed and centered horizontally. Expect: Open jaws descend to cup upper sidewall height without moving it. Verify: Jaws should flank the cup; any tilt or shift indicates contact. Risk: Vertical clearance is estimated; subsequent contact corrections will be millimetric. Lesson: Left cup lateral center is approximately x=-0.20.",
+      "targets": {
+        "left_z": 0.815
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 53,
+        "start": 50
+      },
+      "left_wrist": {
+        "end": 53,
+        "start": 50
+      },
+      "right_wrist": {
+        "end": 53,
+        "start": 50
+      }
+    },
+    "control_end": 48,
+    "control_start": 45,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "State: Cup is laterally centered beneath left hand, with red still uncovered. Check: Adjustment landed within 1 mm; cup remained fixed and centered horizontally. Expect: Open jaws descend to cup upper sidewall height without moving it. Verify: Jaws should flank the cup; any tilt or shift indicates contact. Risk: Vertical clearance is estimated; subsequent contact corrections will be millimetric. Lesson: Left cup lateral center is approximately x=-0.20.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open jaws flank left cup near upper wall; red-blue-green remain exposed. Check: Descent reached 0.8161 m without visible displacement. Expect: Close jaws on cup for transport, leaving its bottom opening clear. Verify: Partial jaw closure suggests contact, but retained grasp requires a lift test. Risk: Off-center contact could tip cup; reopen if it shifts. Lesson: Cup remained stable during this approach.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 60,
+        "start": 54
+      },
+      "left_wrist": {
+        "end": 60,
+        "start": 54
+      },
+      "right_wrist": {
+        "end": 60,
+        "start": 54
+      }
+    },
+    "control_end": 54,
+    "control_start": 48,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 5,
+    "public_note": "State: Open jaws flank left cup near upper wall; red-blue-green remain exposed. Check: Descent reached 0.8161 m without visible displacement. Expect: Close jaws on cup for transport, leaving its bottom opening clear. Verify: Partial jaw closure suggests contact, but retained grasp requires a lift test. Risk: Off-center contact could tip cup; reopen if it shifts. Lesson: Cup remained stable during this approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left jaws contact cup at 0.52 opening; grasp retention unverified and no block covered. Check: Closure stopped against cup without visible tipping. Expect: A 6 mm lift tests whether cup follows while keeping near-table motion small. Verify: Cup bottom should rise with hand and wrist-relative cup position remain fixed; stationary cup contradicts grasp. Risk: Slippage; lower and regrasp if cup does not follow. Lesson: Closure established contact, not yet retention.",
+      "targets": {
+        "left_z": 0.822
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 62,
+        "start": 61
+      },
+      "left_wrist": {
+        "end": 62,
+        "start": 61
+      },
+      "right_wrist": {
+        "end": 62,
+        "start": 61
+      }
+    },
+    "control_end": 55,
+    "control_start": 54,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "State: Left jaws contact cup at 0.52 opening; grasp retention unverified and no block covered. Check: Closure stopped against cup without visible tipping. Expect: A 6 mm lift tests whether cup follows while keeping near-table motion small. Verify: Cup bottom should rise with hand and wrist-relative cup position remain fixed; stationary cup contradicts grasp. Risk: Slippage; lower and regrasp if cup does not follow. Lesson: Closure established contact, not yet retention.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Cup followed initial lift with fixed wrist-relative position; all blocks remain exposed. Check: Hand rose 5 mm and cup rose correspondingly, supporting retention. Expect: Raise cup vertically to clear red block before translation. Verify: Visible table gap increases while cup stays upright between jaws. Risk: Slip during lift; stop transport if cup-relative position changes. Lesson: This upper-wall grasp retained the cup during the short lift.",
+      "targets": {
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 68,
+        "start": 63
+      },
+      "left_wrist": {
+        "end": 68,
+        "start": 63
+      },
+      "right_wrist": {
+        "end": 68,
+        "start": 63
+      }
+    },
+    "control_end": 60,
+    "control_start": 55,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "State: Cup followed initial lift with fixed wrist-relative position; all blocks remain exposed. Check: Hand rose 5 mm and cup rose correspondingly, supporting retention. Expect: Raise cup vertically to clear red block before translation. Verify: Visible table gap increases while cup stays upright between jaws. Risk: Slip during lift; stop transport if cup-relative position changes. Lesson: This upper-wall grasp retained the cup during the short lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left cup is retained above table; red is first covering target, then blue then green. Check: Lift landed within 1 mm and cup followed without visible tilt. Expect: Translate cup over estimated red location while its rim clears the block. Verify: Head view should place cup above red's prior position; retention should persist. Risk: RGB alignment error could make rim strike red on descent; inspect before lowering. Lesson: Cup retention is supported by two vertical motions.",
+      "targets": {
+        "left_x": -0.18,
+        "left_y": -0.1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 81,
+        "start": 69
+      },
+      "left_wrist": {
+        "end": 81,
+        "start": 69
+      },
+      "right_wrist": {
+        "end": 81,
+        "start": 69
+      }
+    },
+    "control_end": 72,
+    "control_start": 60,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "State: Left cup is retained above table; red is first covering target, then blue then green. Check: Lift landed within 1 mm and cup followed without visible tilt. Expect: Translate cup over estimated red location while its rim clears the block. Verify: Head view should place cup above red's prior position; retention should persist. Risk: RGB alignment error could make rim strike red on descent; inspect before lowering. Lesson: Cup retention is supported by two vertical motions.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Held cup is above red's estimated position; red remains visible below rim. Check: Translation landed exactly and cup stayed retained; head alignment appears close. Expect: Lower rim toward red with roughly centimetre clearance above block top. Verify: Red should enter cup opening without lateral movement or cup tilt. Risk: Rim misalignment; pause and adjust if red shifts. Lesson: Transport preserved the cup orientation and grasp.",
+      "targets": {
+        "left_z": 0.845
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 85,
+        "start": 82
+      },
+      "left_wrist": {
+        "end": 85,
+        "start": 82
+      },
+      "right_wrist": {
+        "end": 85,
+        "start": 82
+      }
+    },
+    "control_end": 75,
+    "control_start": 72,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "State: Held cup is above red's estimated position; red remains visible below rim. Check: Translation landed exactly and cup stayed retained; head alignment appears close. Expect: Lower rim toward red with roughly centimetre clearance above block top. Verify: Red should enter cup opening without lateral movement or cup tilt. Risk: Rim misalignment; pause and adjust if red shifts. Lesson: Transport preserved the cup orientation and grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Cup rim is approaching red; red still partly visible and covering remains unverified. Check: Descent landed within 1 mm; no visible red displacement or cup tilt. Expect: Lower 5 mm to begin enclosing red while monitoring rim clearance. Verify: Red visibility should decrease without lateral shift; cup should remain upright. Risk: Off-center rim contact could push red; stop lowering if it moves. Lesson: Slow descent is warranted as the carried rim approaches the block.",
+      "targets": {
+        "left_z": 0.841
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 87,
+        "start": 86
+      },
+      "left_wrist": {
+        "end": 87,
+        "start": 86
+      },
+      "right_wrist": {
+        "end": 87,
+        "start": 86
+      }
+    },
+    "control_end": 76,
+    "control_start": 75,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "State: Cup rim is approaching red; red still partly visible and covering remains unverified. Check: Descent landed within 1 mm; no visible red displacement or cup tilt. Expect: Lower 5 mm to begin enclosing red while monitoring rim clearance. Verify: Red visibility should decrease without lateral shift; cup should remain upright. Risk: Off-center rim contact could push red; stop lowering if it moves. Lesson: Slow descent is warranted as the carried rim approaches the block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red remains partly visible under the approaching cup; blue and green remain untouched. Check: The 5 mm descent landed within 1 mm with no visible object shift. Expect: Another 5 mm descent advances enclosure without lateral motion. Verify: Rim lowers around red and cup stays upright; red displacement would contradict alignment. Risk: Rim contact remains possible; raise and recenter if red moves. Lesson: Small vertical steps have preserved alignment so far, but covering is not yet verified.",
+      "targets": {
+        "left_z": 0.836
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 89,
+        "start": 88
+      },
+      "left_wrist": {
+        "end": 89,
+        "start": 88
+      },
+      "right_wrist": {
+        "end": 89,
+        "start": 88
+      }
+    },
+    "control_end": 77,
+    "control_start": 76,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "State: Red remains partly visible under the approaching cup; blue and green remain untouched. Check: The 5 mm descent landed within 1 mm with no visible object shift. Expect: Another 5 mm descent advances enclosure without lateral motion. Verify: Rim lowers around red and cup stays upright; red displacement would contradict alignment. Risk: Rim contact remains possible; raise and recenter if red moves. Lesson: Small vertical steps have preserved alignment so far, but covering is not yet verified.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Covering red is unverified; cup shifted slightly relative to wrist near red. Check: Requested descent stopped 2 mm high with 0.3-degree error and cup image changed, suggesting rim contact rather than clean enclosure. Expect: Lift 15 mm to disengage before recentering; red should remain in place. Verify: Cup regains clearance without lifting or pushing red. Risk: Cup may have slipped; inspect orientation and grip before translating. Lesson: The initial red alignment was not clear enough for continued descent.",
+      "targets": {
+        "left_z": 0.853
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 92,
+        "start": 90
+      },
+      "left_wrist": {
+        "end": 92,
+        "start": 90
+      },
+      "right_wrist": {
+        "end": 92,
+        "start": 90
+      }
+    },
+    "control_end": 79,
+    "control_start": 77,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "State: Covering red is unverified; cup shifted slightly relative to wrist near red. Check: Requested descent stopped 2 mm high with 0.3-degree error and cup image changed, suggesting rim contact rather than clean enclosure. Expect: Lift 15 mm to disengage before recentering; red should remain in place. Verify: Cup regains clearance without lifting or pushing red. Risk: Cup may have slipped; inspect orientation and grip before translating. Lesson: The initial red alignment was not clear enough for continued descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Cup is lifted clear again; red remains exposed and stationary. Check: Lift reached within 1 mm and cup followed; slight grasp-relative shift persists but cup remains upright. Expect: Move cup 10 mm left and 25 mm toward robot to better align opening over red, based on head-view offset. Verify: Cup rim should center over red before another descent. Risk: Estimated correction could overshoot; inspect head alignment before lowering. Lesson: Earlier contact indicates the cup was too far behind or lateral to red.",
+      "targets": {
+        "left_x": -0.19,
+        "left_y": -0.124
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 96,
+        "start": 93
+      },
+      "left_wrist": {
+        "end": 96,
+        "start": 93
+      },
+      "right_wrist": {
+        "end": 96,
+        "start": 93
+      }
+    },
+    "control_end": 82,
+    "control_start": 79,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "State: Cup is lifted clear again; red remains exposed and stationary. Check: Lift reached within 1 mm and cup followed; slight grasp-relative shift persists but cup remains upright. Expect: Move cup 10 mm left and 25 mm toward robot to better align opening over red, based on head-view offset. Verify: Cup rim should center over red before another descent. Risk: Estimated correction could overshoot; inspect head alignment before lowering. Lesson: Earlier contact indicates the cup was too far behind or lateral to red.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Cup now appears centered above red; covering is still unverified. Blue and green remain exposed. Check: Reposition landed within 1 mm, cup followed, and red did not visibly move. Expect: Lower to the previous contact height with improved alignment, allowing red into the opening. Verify: Red should disappear beneath the rim without cup tilt or increased arrival error. Risk: Residual misalignment could contact red; lift again if resistance or displacement appears. Lesson: Repositioning brought the cup and red into closer head-view alignment.",
+      "targets": {
+        "left_z": 0.836
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 99,
+        "start": 97
+      },
+      "left_wrist": {
+        "end": 99,
+        "start": 97
+      },
+      "right_wrist": {
+        "end": 99,
+        "start": 97
+      }
+    },
+    "control_end": 84,
+    "control_start": 82,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "State: Cup now appears centered above red; covering is still unverified. Blue and green remain exposed. Check: Reposition landed within 1 mm, cup followed, and red did not visibly move. Expect: Lower to the previous contact height with improved alignment, allowing red into the opening. Verify: Red should disappear beneath the rim without cup tilt or increased arrival error. Risk: Residual misalignment could contact red; lift again if resistance or displacement appears. Lesson: Repositioning brought the cup and red into closer head-view alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red is almost occluded beneath the held cup; seating and covering remain unverified. Check: Improved-alignment descent landed within 1 mm without the earlier tilt or wrist-relative shift. Expect: Lower another 5 mm around red toward table seating. Verify: Red becomes fully hidden while cup remains upright and follows the hand. Risk: Rim contact or slip; lift if arrival error grows or cup shifts. Lesson: Corrected alignment allowed descent past the earlier contact height.",
+      "targets": {
+        "left_z": 0.832
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 101,
+        "start": 100
+      },
+      "left_wrist": {
+        "end": 101,
+        "start": 100
+      },
+      "right_wrist": {
+        "end": 101,
+        "start": 100
+      }
+    },
+    "control_end": 85,
+    "control_start": 84,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "State: Red is almost occluded beneath the held cup; seating and covering remain unverified. Check: Improved-alignment descent landed within 1 mm without the earlier tilt or wrist-relative shift. Expect: Lower another 5 mm around red toward table seating. Verify: Red becomes fully hidden while cup remains upright and follows the hand. Risk: Rim contact or slip; lift if arrival error grows or cup shifts. Lesson: Corrected alignment allowed descent past the earlier contact height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red is hidden and cup appears upright over its location, but support and complete enclosure remain uncertain. Check: Hand descended within 1 mm; cup rotated relative to jaws, consistent with contact or settling rather than rigid retention. Expect: Opening jaws lets cup settle independently around red without further downward force. Verify: Cup should remain upright on table with red hidden after release; tipping or exposed red would contradict placement. Risk: Cup could be resting on red rather than enclosing it; inspect its seated height before proceeding. Lesson: Near placement, cup-relative rotation means commanded hand motion is not reliable evidence of cup motion.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 105,
+        "start": 102
+      },
+      "left_wrist": {
+        "end": 105,
+        "start": 102
+      },
+      "right_wrist": {
+        "end": 105,
+        "start": 102
+      }
+    },
+    "control_end": 88,
+    "control_start": 85,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 16,
+    "public_note": "State: Red is hidden and cup appears upright over its location, but support and complete enclosure remain uncertain. Check: Hand descended within 1 mm; cup rotated relative to jaws, consistent with contact or settling rather than rigid retention. Expect: Opening jaws lets cup settle independently around red without further downward force. Verify: Cup should remain upright on table with red hidden after release; tipping or exposed red would contradict placement. Risk: Cup could be resting on red rather than enclosing it; inspect its seated height before proceeding. Lesson: Near placement, cup-relative rotation means commanded hand motion is not reliable evidence of cup motion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Released cup hides red at the left position; stable seating remains to be checked before covering center blue. Check: Jaws opened fully and cup settled slightly independently; no red displacement visible. Expect: Withdraw empty hand vertically to expose placement and clear travel to center cup. Verify: Left cup should remain upright with red hidden after hand withdrawal; movement with hand or tipping contradicts stable placement. Risk: Jaw brushing could disturb cup; monitor separation. Lesson: Release allowed independent settling, but withdrawal is needed to assess stability.",
+      "targets": {
+        "left_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 112,
+        "start": 106
+      },
+      "left_wrist": {
+        "end": 112,
+        "start": 106
+      },
+      "right_wrist": {
+        "end": 112,
+        "start": 106
+      }
+    },
+    "control_end": 94,
+    "control_start": 88,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "State: Released cup hides red at the left position; stable seating remains to be checked before covering center blue. Check: Jaws opened fully and cup settled slightly independently; no red displacement visible. Expect: Withdraw empty hand vertically to expose placement and clear travel to center cup. Verify: Left cup should remain upright with red hidden after hand withdrawal; movement with hand or tipping contradicts stable placement. Risk: Jaw brushing could disturb cup; monitor separation. Lesson: Release allowed independent settling, but withdrawal is needed to assess stability.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left cup remains upright independently with red hidden, supporting first covering completion. Center blue is next; right green remains exposed. Check: Withdrawal landed within 1 mm and left cup stayed fixed on table. Expect: Move empty open hand above center cup at safe height without disturbing covered red. Verify: Center cup should appear beneath jaws and left cup remain stationary. Risk: Reach feasibility and RGB alignment; inspect before descent if planner accepts. Lesson: Corrected placement remained stable after release and withdrawal; retain red-left, blue-center, green-right mapping.",
+      "targets": {
+        "left_x": 0,
+        "left_y": -0.24
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 126,
+        "start": 113
+      },
+      "left_wrist": {
+        "end": 126,
+        "start": 113
+      },
+      "right_wrist": {
+        "end": 126,
+        "start": 113
+      }
+    },
+    "control_end": 107,
+    "control_start": 94,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "State: Left cup remains upright independently with red hidden, supporting first covering completion. Center blue is next; right green remains exposed. Check: Withdrawal landed within 1 mm and left cup stayed fixed on table. Expect: Move empty open hand above center cup at safe height without disturbing covered red. Verify: Center cup should appear beneath jaws and left cup remain stationary. Risk: Reach feasibility and RGB alignment; inspect before descent if planner accepts. Lesson: Corrected placement remained stable after release and withdrawal; retain red-left, blue-center, green-right mapping.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open left hand is above center cup; left red remains covered, while center blue and right green still need covering in that order. Check: Translation landed exactly; center cup is horizontally centered in wrist view and objects stayed fixed. Expect: Descend above the center cup's upper wall, preparing the same downward grasp used on the left cup. Verify: Open jaws should flank the cup without shifting or tilting it. Risk: Height and fore-aft alignment remain estimated; inspect before final descent and closure. Lesson: The first cup was retained using an upper-wall grasp near z=0.816; placement required separate alignment correction.",
+      "targets": {
+        "left_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 133,
+        "start": 127
+      },
+      "left_wrist": {
+        "end": 133,
+        "start": 127
+      },
+      "right_wrist": {
+        "end": 133,
+        "start": 127
+      }
+    },
+    "control_end": 113,
+    "control_start": 107,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "State: Open left hand is above center cup; left red remains covered, while center blue and right green still need covering in that order. Check: Translation landed exactly; center cup is horizontally centered in wrist view and objects stayed fixed. Expect: Descend above the center cup's upper wall, preparing the same downward grasp used on the left cup. Verify: Open jaws should flank the cup without shifting or tilting it. Risk: Height and fore-aft alignment remain estimated; inspect before final descent and closure. Lesson: The first cup was retained using an upper-wall grasp near z=0.816; placement required separate alignment correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Center cup is aligned between open jaws; left red remains covered. Center blue must be covered next, then right green. Check: Descent landed within 1 mm without visible cup displacement. Expect: Lower 5 mm toward upper-wall grasp height while keeping cup stationary. Verify: Jaws should continue to flank cup without tilt or lateral shift. Risk: Premature contact could disturb cup; halt descent if it shifts. Lesson: The previous cup grasp succeeded near z=0.816, but this cup still needs its own contact and retention checks.",
+      "targets": {
+        "left_z": 0.821
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 135,
+        "start": 134
+      },
+      "left_wrist": {
+        "end": 135,
+        "start": 134
+      },
+      "right_wrist": {
+        "end": 135,
+        "start": 134
+      }
+    },
+    "control_end": 114,
+    "control_start": 113,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "State: Center cup is aligned between open jaws; left red remains covered. Center blue must be covered next, then right green. Check: Descent landed within 1 mm without visible cup displacement. Expect: Lower 5 mm toward upper-wall grasp height while keeping cup stationary. Verify: Jaws should continue to flank cup without tilt or lateral shift. Risk: Premature contact could disturb cup; halt descent if it shifts. Lesson: The previous cup grasp succeeded near z=0.816, but this cup still needs its own contact and retention checks.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Center cup remains between open jaws; red is covered, blue and green await covering. Check: Last descent landed within 1 mm without visible cup movement. Expect: Lower 5 mm and close around the center cup's upper wall, leaving its opening clear. Verify: Jaw contact without tipping supports grasp acquisition; a later lift must verify retention. Risk: Uneven closure could tilt the cup; reopen and realign if it shifts. Lesson: Upper-wall contact retained the first cup, but this grasp is not yet verified.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.817
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 143,
+        "start": 136
+      },
+      "left_wrist": {
+        "end": 143,
+        "start": 136
+      },
+      "right_wrist": {
+        "end": 143,
+        "start": 136
+      }
+    },
+    "control_end": 121,
+    "control_start": 114,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "State: Center cup remains between open jaws; red is covered, blue and green await covering. Check: Last descent landed within 1 mm without visible cup movement. Expect: Lower 5 mm and close around the center cup's upper wall, leaving its opening clear. Verify: Jaw contact without tipping supports grasp acquisition; a later lift must verify retention. Risk: Uneven closure could tilt the cup; reopen and realign if it shifts. Lesson: Upper-wall contact retained the first cup, but this grasp is not yet verified.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaws contact center cup at 0.52 opening; retention remains unverified. Red is covered; blue must be covered next. Check: Final descent landed exactly and closure caused no visible tipping. Expect: Lift 6 mm to test whether center cup follows the hand. Verify: Cup should rise while maintaining its wrist-relative position; a stationary cup would indicate failed retention. Risk: Slippage; lower and regrasp if cup does not follow. Lesson: Closure confirms contact, not a retained grasp.",
+      "targets": {
+        "left_z": 0.823
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 145,
+        "start": 144
+      },
+      "left_wrist": {
+        "end": 145,
+        "start": 144
+      },
+      "right_wrist": {
+        "end": 145,
+        "start": 144
+      }
+    },
+    "control_end": 122,
+    "control_start": 121,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 22,
+    "public_note": "State: Jaws contact center cup at 0.52 opening; retention remains unverified. Red is covered; blue must be covered next. Check: Final descent landed exactly and closure caused no visible tipping. Expect: Lift 6 mm to test whether center cup follows the hand. Verify: Cup should rise while maintaining its wrist-relative position; a stationary cup would indicate failed retention. Risk: Slippage; lower and regrasp if cup does not follow. Lesson: Closure confirms contact, not a retained grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Center cup followed the short lift; red remains covered, and blue is next. Check: Hand rose about 5 mm and cup stayed fixed relative to jaws, supporting retention. Expect: Raise cup vertically until its rim clears blue for transport. Verify: Cup should rise above table without slipping or tilting. Risk: Retention could fail during lift; stop translation if cup shifts relative to jaws. Lesson: The upper-wall grasp also retained the center cup during its initial lift.",
+      "targets": {
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 151,
+        "start": 146
+      },
+      "left_wrist": {
+        "end": 151,
+        "start": 146
+      },
+      "right_wrist": {
+        "end": 151,
+        "start": 146
+      }
+    },
+    "control_end": 127,
+    "control_start": 122,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "State: Center cup followed the short lift; red remains covered, and blue is next. Check: Hand rose about 5 mm and cup stayed fixed relative to jaws, supporting retention. Expect: Raise cup vertically until its rim clears blue for transport. Verify: Cup should rise above table without slipping or tilting. Risk: Retention could fail during lift; stop translation if cup shifts relative to jaws. Lesson: The upper-wall grasp also retained the center cup during its initial lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Center cup is retained above table; red remains covered. Blue must be covered second, then right green. Check: Lift landed within 1 mm and cup followed without visible slipping. Expect: Translate cup above blue using the fore-aft alignment that enabled the red placement. Verify: Head view should show the cup centered above blue's remembered position, with red's cover undisturbed. Risk: Alignment does not transfer perfectly between cups; inspect before descent and correct any visible offset. Lesson: Red placement required a target nearer y=-0.124 than the initial y=-0.10 estimate.",
+      "targets": {
+        "left_y": -0.124
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 164,
+        "start": 152
+      },
+      "left_wrist": {
+        "end": 164,
+        "start": 152
+      },
+      "right_wrist": {
+        "end": 164,
+        "start": 152
+      }
+    },
+    "control_end": 139,
+    "control_start": 127,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "State: Center cup is retained above table; red remains covered. Blue must be covered second, then right green. Check: Lift landed within 1 mm and cup followed without visible slipping. Expect: Translate cup above blue using the fore-aft alignment that enabled the red placement. Verify: Head view should show the cup centered above blue's remembered position, with red's cover undisturbed. Risk: Alignment does not transfer perfectly between cups; inspect before descent and correct any visible offset. Lesson: Red placement required a target nearer y=-0.124 than the initial y=-0.10 estimate.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Held center cup appears aligned above blue; red remains covered and green exposed. Check: Translation landed exactly with cup retained and other objects unchanged. Expect: Lower cup toward blue, stopping near rim-to-block clearance for inspection. Verify: Blue should enter the opening without shifting or tilting the cup. Risk: Residual fore-aft error could cause rim contact; stop and recenter if cup-relative position changes. Lesson: The corrected red-placement fore-aft target also gives close visual alignment over blue.",
+      "targets": {
+        "left_z": 0.843
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 170,
+        "start": 165
+      },
+      "left_wrist": {
+        "end": 170,
+        "start": 165
+      },
+      "right_wrist": {
+        "end": 170,
+        "start": 165
+      }
+    },
+    "control_end": 144,
+    "control_start": 139,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "State: Held center cup appears aligned above blue; red remains covered and green exposed. Check: Translation landed exactly with cup retained and other objects unchanged. Expect: Lower cup toward blue, stopping near rim-to-block clearance for inspection. Verify: Blue should enter the opening without shifting or tilting the cup. Risk: Residual fore-aft error could cause rim contact; stop and recenter if cup-relative position changes. Lesson: The corrected red-placement fore-aft target also gives close visual alignment over blue.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue is partly visible beneath the held center cup; red stays covered and green exposed. Check: Descent landed exactly with cup retained and no visible block movement. Expect: Lower 5 mm to enclose blue further. Verify: Blue visibility should decrease without cup tilt or lateral displacement; seating remains unverified. Risk: Rim contact could shift blue; lift and recenter if the cup slips or arrival error grows. Lesson: Center alignment has allowed descent without the earlier red-placement contact.",
+      "targets": {
+        "left_z": 0.838
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 172,
+        "start": 171
+      },
+      "left_wrist": {
+        "end": 172,
+        "start": 171
+      },
+      "right_wrist": {
+        "end": 172,
+        "start": 171
+      }
+    },
+    "control_end": 145,
+    "control_start": 144,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "State: Blue is partly visible beneath the held center cup; red stays covered and green exposed. Check: Descent landed exactly with cup retained and no visible block movement. Expect: Lower 5 mm to enclose blue further. Verify: Blue visibility should decrease without cup tilt or lateral displacement; seating remains unverified. Risk: Rim contact could shift blue; lift and recenter if the cup slips or arrival error grows. Lesson: Center alignment has allowed descent without the earlier red-placement contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue is nearly hidden beneath center cup; stable covering remains unverified. Red remains covered, green exposed. Check: Previous descent landed within 1 mm without visible lateral movement. Expect: Lower another 5 mm toward seating around blue. Verify: Blue should become hidden while cup remains upright; increased error or cup rotation would indicate contact. Risk: Rim interference; stop downward motion if cup shifts and reassess before release. Lesson: Center cup has maintained alignment during incremental descent.",
+      "targets": {
+        "left_z": 0.834
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 174,
+        "start": 173
+      },
+      "left_wrist": {
+        "end": 174,
+        "start": 173
+      },
+      "right_wrist": {
+        "end": 174,
+        "start": 173
+      }
+    },
+    "control_end": 146,
+    "control_start": 145,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "State: Blue is nearly hidden beneath center cup; stable covering remains unverified. Red remains covered, green exposed. Check: Previous descent landed within 1 mm without visible lateral movement. Expect: Lower another 5 mm toward seating around blue. Verify: Blue should become hidden while cup remains upright; increased error or cup rotation would indicate contact. Risk: Rim interference; stop downward motion if cup shifts and reassess before release. Lesson: Center cup has maintained alignment during incremental descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Center cup hides blue but independent seating remains unverified; red stays covered, green exposed. Check: Descent landed within 1 mm with no visible tipping. Expect: Release center cup to settle around blue, completing the second covering if stable. Verify: Cup should remain upright with blue hidden after release and subsequent withdrawal. Risk: Cup may perch on blue; inspect seated height and stability before proceeding. Lesson: Release and withdrawal established stable placement for the first cup; occlusion alone was insufficient.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 178,
+        "start": 175
+      },
+      "left_wrist": {
+        "end": 178,
+        "start": 175
+      },
+      "right_wrist": {
+        "end": 178,
+        "start": 175
+      }
+    },
+    "control_end": 149,
+    "control_start": 146,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 28,
+    "public_note": "State: Center cup hides blue but independent seating remains unverified; red stays covered, green exposed. Check: Descent landed within 1 mm with no visible tipping. Expect: Release center cup to settle around blue, completing the second covering if stable. Verify: Cup should remain upright with blue hidden after release and subsequent withdrawal. Risk: Cup may perch on blue; inspect seated height and stability before proceeding. Lesson: Release and withdrawal established stable placement for the first cup; occlusion alone was insufficient.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red and blue are hidden under released cups; center cup stability needs withdrawal verification. Green is next. Check: Left jaws opened and center cup settled independently, remaining upright. Expect: Withdraw left hand while beginning right downward-grasp preparation, leaving both covers undisturbed. Verify: Center cup remains upright and stationary; right pitch reaches 45 degrees without object contact. Risk: Withdrawal could brush center cup; stop if it follows or tips. Lesson: Center cup settled on release, but release alone does not establish stable covering.",
+      "targets": {
+        "left_z": 0.9,
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 195,
+        "start": 179
+      },
+      "left_wrist": {
+        "end": 195,
+        "start": 179
+      },
+      "right_wrist": {
+        "end": 195,
+        "start": 179
+      }
+    },
+    "control_end": 165,
+    "control_start": 149,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "State: Red and blue are hidden under released cups; center cup stability needs withdrawal verification. Green is next. Check: Left jaws opened and center cup settled independently, remaining upright. Expect: Withdraw left hand while beginning right downward-grasp preparation, leaving both covers undisturbed. Verify: Center cup remains upright and stationary; right pitch reaches 45 degrees without object contact. Risk: Withdrawal could brush center cup; stop if it follows or tips. Lesson: Center cup settled on release, but release alone does not establish stable covering.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left red and center blue remain covered after withdrawal; right green must be covered third before any uncovering. Check: Both motions landed exactly; center cup stayed upright and stationary. Expect: Position downward open right jaws above right cup, clear of its top. Verify: Wrist view should center the cup while both placed covers remain undisturbed. Risk: Position is estimated from RGB; inspect before descending. Lesson: Both completed placements remained stable after release and withdrawal.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_x": 0.2,
+        "right_y": -0.24
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 211,
+        "start": 196
+      },
+      "left_wrist": {
+        "end": 211,
+        "start": 196
+      },
+      "right_wrist": {
+        "end": 211,
+        "start": 196
+      }
+    },
+    "control_end": 180,
+    "control_start": 165,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "State: Left red and center blue remain covered after withdrawal; right green must be covered third before any uncovering. Check: Both motions landed exactly; center cup stayed upright and stationary. Expect: Position downward open right jaws above right cup, clear of its top. Verify: Wrist view should center the cup while both placed covers remain undisturbed. Risk: Position is estimated from RGB; inspect before descending. Lesson: Both completed placements remained stable after release and withdrawal.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right cup is centered beneath open jaws; red and blue remain covered, green awaits the third covering. Check: Right approach landed exactly without object changes. Expect: Descend toward upper-wall grasp height with open jaws. Verify: Cup should remain centered and stationary between jaws. Risk: Contact could tilt cup; inspect before final small descent. Lesson: Upper-wall grasps near z=0.817 retained the first two cups.",
+      "targets": {
+        "right_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 220,
+        "start": 212
+      },
+      "left_wrist": {
+        "end": 220,
+        "start": 212
+      },
+      "right_wrist": {
+        "end": 220,
+        "start": 212
+      }
+    },
+    "control_end": 188,
+    "control_start": 180,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "State: Right cup is centered beneath open jaws; red and blue remain covered, green awaits the third covering. Check: Right approach landed exactly without object changes. Expect: Descend toward upper-wall grasp height with open jaws. Verify: Cup should remain centered and stationary between jaws. Risk: Contact could tilt cup; inspect before final small descent. Lesson: Upper-wall grasps near z=0.817 retained the first two cups.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right cup remains centered between open jaws; red and blue are covered, green still awaits covering. Check: Descent landed exactly without visible object displacement. Expect: Lower 5 mm toward upper-wall contact height. Verify: Cup stays stationary and upright between jaws; any shift contradicts a clear approach. Risk: Premature jaw contact; stop and realign if cup tilts. Lesson: Small final descents preserved alignment for the previous cup grasps.",
+      "targets": {
+        "right_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 222,
+        "start": 221
+      },
+      "left_wrist": {
+        "end": 222,
+        "start": 221
+      },
+      "right_wrist": {
+        "end": 222,
+        "start": 221
+      }
+    },
+    "control_end": 189,
+    "control_start": 188,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "State: Right cup remains centered between open jaws; red and blue are covered, green still awaits covering. Check: Descent landed exactly without visible object displacement. Expect: Lower 5 mm toward upper-wall contact height. Verify: Cup stays stationary and upright between jaws; any shift contradicts a clear approach. Risk: Premature jaw contact; stop and realign if cup tilts. Lesson: Small final descents preserved alignment for the previous cup grasps.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right cup is aligned for grasp; red and blue remain covered. Green must be covered before uncovering begins. Check: Descent landed within 1 mm without visible cup movement. Expect: Lower 4 mm and close on the upper wall, keeping the cup opening unobstructed. Verify: Jaw contact without tipping supports acquisition; a lift must confirm retention. Risk: Uneven contact could tilt cup; reopen if it shifts. Lesson: This grasp height retained the first two cups, but right-cup retention remains unverified.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.817
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 230,
+        "start": 223
+      },
+      "left_wrist": {
+        "end": 230,
+        "start": 223
+      },
+      "right_wrist": {
+        "end": 230,
+        "start": 223
+      }
+    },
+    "control_end": 196,
+    "control_start": 189,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "State: Right cup is aligned for grasp; red and blue remain covered. Green must be covered before uncovering begins. Check: Descent landed within 1 mm without visible cup movement. Expect: Lower 4 mm and close on the upper wall, keeping the cup opening unobstructed. Verify: Jaw contact without tipping supports acquisition; a lift must confirm retention. Risk: Uneven contact could tilt cup; reopen if it shifts. Lesson: This grasp height retained the first two cups, but right-cup retention remains unverified.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaws contact the cup at 0.52 opening; retention is unverified. Red and blue remain covered; green is next. Check: Descent landed exactly and closure caused no visible tipping. Expect: Lift 6 mm to test cup retention before transport. Verify: Cup should rise with the hand and remain fixed relative to jaws; a stationary cup contradicts retention. Risk: Slippage; lower and regrasp if the cup does not follow. Lesson: Contact alone did not establish retention for the previous cups; short lifts provided that evidence.",
+      "targets": {
+        "right_z": 0.823
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 232,
+        "start": 231
+      },
+      "left_wrist": {
+        "end": 232,
+        "start": 231
+      },
+      "right_wrist": {
+        "end": 232,
+        "start": 231
+      }
+    },
+    "control_end": 197,
+    "control_start": 196,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "State: Right jaws contact the cup at 0.52 opening; retention is unverified. Red and blue remain covered; green is next. Check: Descent landed exactly and closure caused no visible tipping. Expect: Lift 6 mm to test cup retention before transport. Verify: Cup should rise with the hand and remain fixed relative to jaws; a stationary cup contradicts retention. Risk: Slippage; lower and regrasp if the cup does not follow. Lesson: Contact alone did not establish retention for the previous cups; short lifts provided that evidence.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right cup followed the short lift; red and blue remain covered, and green must be covered third. Check: Hand rose 5 mm and cup maintained its wrist-relative position, supporting retention. Expect: Raise cup vertically until its rim clears green for transport. Verify: Cup should rise with the hand without slipping or tilting; the other covers should remain fixed. Risk: Slippage during lift; stop transport if cup position changes relative to jaws. Lesson: The upper-wall grasp retained this cup during the short lift, as with the previous two.",
+      "targets": {
+        "right_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 238,
+        "start": 233
+      },
+      "left_wrist": {
+        "end": 238,
+        "start": 233
+      },
+      "right_wrist": {
+        "end": 238,
+        "start": 233
+      }
+    },
+    "control_end": 202,
+    "control_start": 197,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "State: Right cup followed the short lift; red and blue remain covered, and green must be covered third. Check: Hand rose 5 mm and cup maintained its wrist-relative position, supporting retention. Expect: Raise cup vertically until its rim clears green for transport. Verify: Cup should rise with the hand without slipping or tilting; the other covers should remain fixed. Risk: Slippage during lift; stop transport if cup position changes relative to jaws. Lesson: The upper-wall grasp retained this cup during the short lift, as with the previous two.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right cup is retained above table; red and blue are covered. Green must be covered third before uncovering red, green, then blue. Check: Lift landed within 1 mm and cup followed without visible slip. Expect: Translate cup above green using the mirrored left placement alignment. Verify: Cup opening should align over green in head view while other covers stay fixed. Risk: Mirrored alignment is approximate; inspect before lowering and correct any offset. Lesson: The earlier placements support y near -0.124 as an approach estimate, not proof of alignment.",
+      "targets": {
+        "right_x": 0.19,
+        "right_y": -0.124
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 249,
+        "start": 239
+      },
+      "left_wrist": {
+        "end": 249,
+        "start": 239
+      },
+      "right_wrist": {
+        "end": 249,
+        "start": 239
+      }
+    },
+    "control_end": 212,
+    "control_start": 202,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 36,
+    "public_note": "State: Right cup is retained above table; red and blue are covered. Green must be covered third before uncovering red, green, then blue. Check: Lift landed within 1 mm and cup followed without visible slip. Expect: Translate cup above green using the mirrored left placement alignment. Verify: Cup opening should align over green in head view while other covers stay fixed. Risk: Mirrored alignment is approximate; inspect before lowering and correct any offset. Lesson: The earlier placements support y near -0.124 as an approach estimate, not proof of alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right cup appears aligned above green; red and blue remain covered. Third covering is not yet complete. Check: Translation landed exactly with cup retained and green stationary. Expect: Lower cup toward green, stopping near rim clearance for inspection. Verify: Green should enter the opening without lateral movement or cup tilt. Risk: Estimated alignment may cause rim contact; stop and recenter if the cup shifts. Lesson: Prior placements support this approach height, but green enclosure still needs direct verification.",
+      "targets": {
+        "right_z": 0.843
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 253,
+        "start": 250
+      },
+      "left_wrist": {
+        "end": 253,
+        "start": 250
+      },
+      "right_wrist": {
+        "end": 253,
+        "start": 250
+      }
+    },
+    "control_end": 215,
+    "control_start": 212,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "State: Right cup appears aligned above green; red and blue remain covered. Third covering is not yet complete. Check: Translation landed exactly with cup retained and green stationary. Expect: Lower cup toward green, stopping near rim clearance for inspection. Verify: Green should enter the opening without lateral movement or cup tilt. Risk: Estimated alignment may cause rim contact; stop and recenter if the cup shifts. Lesson: Prior placements support this approach height, but green enclosure still needs direct verification.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green remains partly visible beneath held cup; red and blue are covered. Check: Descent landed within 1 mm with cup retained and no visible green movement. Expect: Lower 5 mm to advance enclosure. Verify: Green visibility decreases without cup tilt or block displacement; seating remains unverified. Risk: Rim contact could push green; lift and recenter if it shifts. Lesson: Current alignment has preserved cup retention during descent.",
+      "targets": {
+        "right_z": 0.839
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 255,
+        "start": 254
+      },
+      "left_wrist": {
+        "end": 255,
+        "start": 254
+      },
+      "right_wrist": {
+        "end": 255,
+        "start": 254
+      }
+    },
+    "control_end": 216,
+    "control_start": 215,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "State: Green remains partly visible beneath held cup; red and blue are covered. Check: Descent landed within 1 mm with cup retained and no visible green movement. Expect: Lower 5 mm to advance enclosure. Verify: Green visibility decreases without cup tilt or block displacement; seating remains unverified. Risk: Rim contact could push green; lift and recenter if it shifts. Lesson: Current alignment has preserved cup retention during descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green is almost hidden, but cup seating remains unverified; other two covers are stable. Check: Last descent ended 2 mm high with slight rotation and cup-relative change, suggesting contact or settling. Expect: A limited 4 mm descent tests whether cup settles upright around green without lateral force. Verify: Cup should straighten with green stationary; growing error or lateral displacement would require lifting and recentering. Risk: Rim interference; do not continue pressing if contact persists. Lesson: Cup-relative changes near placement require checking support rather than assuming rigid motion.",
+      "targets": {
+        "right_z": 0.836
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 257,
+        "start": 256
+      },
+      "left_wrist": {
+        "end": 257,
+        "start": 256
+      },
+      "right_wrist": {
+        "end": 257,
+        "start": 256
+      }
+    },
+    "control_end": 217,
+    "control_start": 216,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "State: Green is almost hidden, but cup seating remains unverified; other two covers are stable. Check: Last descent ended 2 mm high with slight rotation and cup-relative change, suggesting contact or settling. Expect: A limited 4 mm descent tests whether cup settles upright around green without lateral force. Verify: Cup should straighten with green stationary; growing error or lateral displacement would require lifting and recentering. Risk: Rim interference; do not continue pressing if contact persists. Lesson: Cup-relative changes near placement require checking support rather than assuming rigid motion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green is hidden beneath right cup; independent seating is unverified. Red and blue remain covered. Check: Small descent landed within 1 mm and cup straightened somewhat without visible green displacement. Expect: Release cup to settle around green without further downward pressure. Verify: Cup should remain upright with green hidden; withdrawal must confirm stability before uncovering red first. Risk: Cup could perch on green; inspect height and tilt after release. Lesson: Independent settling after release helped establish the earlier placements.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 261,
+        "start": 258
+      },
+      "left_wrist": {
+        "end": 261,
+        "start": 258
+      },
+      "right_wrist": {
+        "end": 261,
+        "start": 258
+      }
+    },
+    "control_end": 220,
+    "control_start": 217,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 40,
+    "public_note": "State: Green is hidden beneath right cup; independent seating is unverified. Red and blue remain covered. Check: Small descent landed within 1 mm and cup straightened somewhat without visible green displacement. Expect: Release cup to settle around green without further downward pressure. Verify: Cup should remain upright with green hidden; withdrawal must confirm stability before uncovering red first. Risk: Cup could perch on green; inspect height and tilt after release. Lesson: Independent settling after release helped establish the earlier placements.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: All three colors are hidden beneath released cups, placed left to right; right cup stability remains to verify. Next uncovering must be red, then green, then blue. Check: Right jaws opened and cup settled independently without exposing green. Expect: Withdraw right hand and position empty left hand above red's cover, without lifting any cup yet. Verify: Right cover remains upright and stationary; left hand approaches red cover with clearance. Risk: Withdrawal could brush right cup; stop if it tips or follows. Lesson: Release plus withdrawal, not occlusion alone, supports stable covering.",
+      "targets": {
+        "left_x": -0.18,
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 278,
+        "start": 262
+      },
+      "left_wrist": {
+        "end": 278,
+        "start": 262
+      },
+      "right_wrist": {
+        "end": 278,
+        "start": 262
+      }
+    },
+    "control_end": 236,
+    "control_start": 220,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 41,
+    "public_note": "State: All three colors are hidden beneath released cups, placed left to right; right cup stability remains to verify. Next uncovering must be red, then green, then blue. Check: Right jaws opened and cup settled independently without exposing green. Expect: Withdraw right hand and position empty left hand above red's cover, without lifting any cup yet. Verify: Right cover remains upright and stationary; left hand approaches red cover with clearance. Risk: Withdrawal could brush right cup; stop if it tips or follows. Lesson: Release plus withdrawal, not occlusion alone, supports stable covering.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: All blocks remain hidden after left-to-right placement; right cup settled further during withdrawal, so its exact seating is uncertain. Red's left cover is first to remove; green and blue must stay covered. Check: Both hands arrived exactly; right cup stayed on table but changed tilt/position slightly, without exposing green. Expect: Lower open left jaws toward red cover's upper wall without lifting it yet. Verify: Left cup remains stationary between jaws, and other covers stay in place. Risk: Left cover may sit higher than original cups; inspect before closing. Lesson: Settled cover poses differ from their original grasp poses and require fresh alignment.",
+      "targets": {
+        "left_z": 0.843
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 284,
+        "start": 279
+      },
+      "left_wrist": {
+        "end": 284,
+        "start": 279
+      },
+      "right_wrist": {
+        "end": 284,
+        "start": 279
+      }
+    },
+    "control_end": 241,
+    "control_start": 236,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "State: All blocks remain hidden after left-to-right placement; right cup settled further during withdrawal, so its exact seating is uncertain. Red's left cover is first to remove; green and blue must stay covered. Check: Both hands arrived exactly; right cup stayed on table but changed tilt/position slightly, without exposing green. Expect: Lower open left jaws toward red cover's upper wall without lifting it yet. Verify: Left cup remains stationary between jaws, and other covers stay in place. Risk: Left cover may sit higher than original cups; inspect before closing. Lesson: Settled cover poses differ from their original grasp poses and require fresh alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left cover remains over red, offset forward in wrist view; green and blue stay covered. Check: Descent landed within 1 mm, cup stationary. Expect: Align open jaws nearer the left cover's upper-wall center while lowering to grasp height. Verify: Cup should center between jaws without displacement. Risk: Fresh pose estimate could be off; inspect before closure and use small corrections near contact. Lesson: The released left cover's pose differs from the carried pose.",
+      "targets": {
+        "left_y": -0.105,
+        "left_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 287,
+        "start": 285
+      },
+      "left_wrist": {
+        "end": 287,
+        "start": 285
+      },
+      "right_wrist": {
+        "end": 287,
+        "start": 285
+      }
+    },
+    "control_end": 243,
+    "control_start": 241,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 43,
+    "public_note": "State: Left cover remains over red, offset forward in wrist view; green and blue stay covered. Check: Descent landed within 1 mm, cup stationary. Expect: Align open jaws nearer the left cover's upper-wall center while lowering to grasp height. Verify: Cup should center between jaws without displacement. Risk: Fresh pose estimate could be off; inspect before closure and use small corrections near contact. Lesson: The released left cover's pose differs from the carried pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left jaws flank red's cover; all three blocks remain hidden. Red must be uncovered first. Check: Alignment move landed within 2 mm, with no visible cover displacement. Expect: Close on left cover's upper wall for removal. Verify: Contact should stop closure without tipping; retention and red exposure require a lift. Risk: Off-center grip could slip; reopen if cup shifts substantially. Lesson: Fresh visual alignment accounts for settled cup poses.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 294,
+        "start": 288
+      },
+      "left_wrist": {
+        "end": 294,
+        "start": 288
+      },
+      "right_wrist": {
+        "end": 294,
+        "start": 288
+      }
+    },
+    "control_end": 249,
+    "control_start": 243,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 44,
+    "public_note": "State: Left jaws flank red's cover; all three blocks remain hidden. Red must be uncovered first. Check: Alignment move landed within 2 mm, with no visible cover displacement. Expect: Close on left cover's upper wall for removal. Verify: Contact should stop closure without tipping; retention and red exposure require a lift. Risk: Off-center grip could slip; reopen if cup shifts substantially. Lesson: Fresh visual alignment accounts for settled cup poses.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left jaws contact red's cover at 0.55 opening; retention unverified. Green and blue remain covered. Check: Closure shifted the cup slightly between jaws but did not expose red. Expect: Lift 5 mm to test retention and begin red-first removal. Verify: Cup follows hand while the other covers stay fixed; stationary cup indicates failed grasp. Risk: Slippage or contact with red; lift vertically and reassess if cup tilts. Lesson: Settled cover required a new grasp rather than reusing the original pose.",
+      "targets": {
+        "left_z": 0.837
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 296,
+        "start": 295
+      },
+      "left_wrist": {
+        "end": 296,
+        "start": 295
+      },
+      "right_wrist": {
+        "end": 296,
+        "start": 295
+      }
+    },
+    "control_end": 250,
+    "control_start": 249,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "State: Left jaws contact red's cover at 0.55 opening; retention unverified. Green and blue remain covered. Check: Closure shifted the cup slightly between jaws but did not expose red. Expect: Lift 5 mm to test retention and begin red-first removal. Verify: Cup follows hand while the other covers stay fixed; stationary cup indicates failed grasp. Risk: Slippage or contact with red; lift vertically and reassess if cup tilts. Lesson: Settled cover required a new grasp rather than reusing the original pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red's cover remains between left jaws; red exposure is not yet verified. Green and blue remain covered. Check: Hand rose 5 mm, with slight cup settling and jaw opening changing to 0.52; retention is plausible but not conclusive. Expect: Lift vertically clear of red to reveal it first while leaving other covers untouched. Verify: Red should become visible on the table and cup rise with hand; cup remaining behind or red rising would contradict clean removal. Risk: Slip or block snagging; stop lateral transport until separation is visible. Lesson: A short lift with settling requires further visual confirmation of retention.",
+      "targets": {
+        "left_z": 0.895
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 302,
+        "start": 297
+      },
+      "left_wrist": {
+        "end": 302,
+        "start": 297
+      },
+      "right_wrist": {
+        "end": 302,
+        "start": 297
+      }
+    },
+    "control_end": 255,
+    "control_start": 250,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "State: Red's cover remains between left jaws; red exposure is not yet verified. Green and blue remain covered. Check: Hand rose 5 mm, with slight cup settling and jaw opening changing to 0.52; retention is plausible but not conclusive. Expect: Lift vertically clear of red to reveal it first while leaving other covers untouched. Verify: Red should become visible on the table and cup rise with hand; cup remaining behind or red rising would contradict clean removal. Risk: Slip or block snagging; stop lateral transport until separation is visible. Lesson: A short lift with settling requires further visual confirmation of retention.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red is visibly exposed first; green and blue remain covered. Left hand retains red's cup. Next uncover green, then blue; both arms must eventually return. Check: Lift landed within 1 mm, cup followed, and red stayed on table. Expect: Transport removed cup toward clear table space in front of red for parking. Verify: Red remains exposed and cup stays retained, clear of other covers. Risk: Cup rim could brush red if clearance is insufficient; monitor separation and raise if needed. Lesson: Vertical removal exposed red without moving its block or other covers.",
+      "targets": {
+        "left_y": -0.28
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 316,
+        "start": 303
+      },
+      "left_wrist": {
+        "end": 316,
+        "start": 303
+      },
+      "right_wrist": {
+        "end": 316,
+        "start": 303
+      }
+    },
+    "control_end": 268,
+    "control_start": 255,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "State: Red is visibly exposed first; green and blue remain covered. Left hand retains red's cup. Next uncover green, then blue; both arms must eventually return. Check: Lift landed within 1 mm, cup followed, and red stayed on table. Expect: Transport removed cup toward clear table space in front of red for parking. Verify: Red remains exposed and cup stays retained, clear of other covers. Risk: Cup rim could brush red if clearance is insufficient; monitor separation and raise if needed. Lesson: Vertical removal exposed red without moving its block or other covers.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red remains exposed; its cup is held over clear foreground space. Green and blue remain covered; green is next. Check: Left transport landed exactly with cup retained and red unmoved. Expect: Lower left cup near table for parking while open right jaws approach green's cover without lifting it. Verify: Left rim approaches table upright; right cover stays fixed between open jaws. Risk: Cup heights are estimated; inspect both before final contact or closure. Lesson: Removed cup can be parked in front without disturbing the remaining covers.",
+      "targets": {
+        "left_z": 0.839,
+        "right_z": 0.843
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 322,
+        "start": 317
+      },
+      "left_wrist": {
+        "end": 322,
+        "start": 317
+      },
+      "right_wrist": {
+        "end": 322,
+        "start": 317
+      }
+    },
+    "control_end": 273,
+    "control_start": 268,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "State: Red remains exposed; its cup is held over clear foreground space. Green and blue remain covered; green is next. Check: Left transport landed exactly with cup retained and red unmoved. Expect: Lower left cup near table for parking while open right jaws approach green's cover without lifting it. Verify: Left rim approaches table upright; right cover stays fixed between open jaws. Risk: Cup heights are estimated; inspect both before final contact or closure. Lesson: Removed cup can be parked in front without disturbing the remaining covers.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red is exposed; its cup is near its parking surface. Green's cover remains beneath open right jaws; blue stays covered. Check: Both descents landed within 1 mm with no visible object displacement. Expect: Lower left cup 5 mm toward support and right jaws toward green-cover grasp height. Verify: Left cup stays upright; green cover remains stationary between jaws. Risk: Near-table contact on left; stop lowering if cup shifts or arrival error increases. Lesson: Green's settled cover is lower than red's previous grasp pose and needs its own approach.",
+      "targets": {
+        "left_z": 0.835,
+        "right_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 325,
+        "start": 323
+      },
+      "left_wrist": {
+        "end": 325,
+        "start": 323
+      },
+      "right_wrist": {
+        "end": 325,
+        "start": 323
+      }
+    },
+    "control_end": 275,
+    "control_start": 273,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 49,
+    "public_note": "State: Red is exposed; its cup is near its parking surface. Green's cover remains beneath open right jaws; blue stays covered. Check: Both descents landed within 1 mm with no visible object displacement. Expect: Lower left cup 5 mm toward support and right jaws toward green-cover grasp height. Verify: Left cup stays upright; green cover remains stationary between jaws. Risk: Near-table contact on left; stop lowering if cup shifts or arrival error increases. Lesson: Green's settled cover is lower than red's previous grasp pose and needs its own approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red is exposed; its cup is at foreground parking height. Green remains covered, with its cup slightly forward of right-jaw center; blue stays covered. Check: Both motions landed within 1 mm; left cup shows possible table contact, right cup stayed fixed. Expect: Release parked left cup and make a 5 mm right alignment correction with 4 mm descent. Verify: Left cup remains upright independently; right jaws align without shifting green's cover. Risk: Right contact could tip cover; stop corrections if it moves. Lesson: Near-contact alignment needs millimetric adjustments based on the settled cup.",
+      "targets": {
+        "left_gripper": 1,
+        "right_y": -0.128,
+        "right_z": 0.822
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 330,
+        "start": 326
+      },
+      "left_wrist": {
+        "end": 330,
+        "start": 326
+      },
+      "right_wrist": {
+        "end": 330,
+        "start": 326
+      }
+    },
+    "control_end": 279,
+    "control_start": 275,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "State: Red is exposed; its cup is at foreground parking height. Green remains covered, with its cup slightly forward of right-jaw center; blue stays covered. Check: Both motions landed within 1 mm; left cup shows possible table contact, right cup stayed fixed. Expect: Release parked left cup and make a 5 mm right alignment correction with 4 mm descent. Verify: Left cup remains upright independently; right jaws align without shifting green's cover. Risk: Right contact could tip cover; stop corrections if it moves. Lesson: Near-contact alignment needs millimetric adjustments based on the settled cup.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red remains exposed, its cup released in foreground; green and blue remain covered. Check: Right correction landed exactly; left cup settled independently with some tilt. Expect: Withdraw empty left hand and move right jaws 5 mm toward green cover's center and 4 mm lower. Verify: Parked cup stays on table; green cover stays fixed and centered between right jaws. Risk: Right jaw contact could disturb cover; stop if it shifts. Lesson: Released cups settle away from their held poses, so fresh alignment is necessary.",
+      "targets": {
+        "left_z": 0.9,
+        "right_y": -0.133,
+        "right_z": 0.818
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 337,
+        "start": 331
+      },
+      "left_wrist": {
+        "end": 337,
+        "start": 331
+      },
+      "right_wrist": {
+        "end": 337,
+        "start": 331
+      }
+    },
+    "control_end": 285,
+    "control_start": 279,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "State: Red remains exposed, its cup released in foreground; green and blue remain covered. Check: Right correction landed exactly; left cup settled independently with some tilt. Expect: Withdraw empty left hand and move right jaws 5 mm toward green cover's center and 4 mm lower. Verify: Parked cup stays on table; green cover stays fixed and centered between right jaws. Risk: Right jaw contact could disturb cover; stop if it shifts. Lesson: Released cups settle away from their held poses, so fresh alignment is necessary.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red is exposed with its cup parked; green's cover is between open right jaws and blue remains covered. Check: Both motions arrived within 1 mm; parked cup stayed on table and green cover did not move. Expect: Shift right jaws 5 mm toward cup center and close for green-second removal. Verify: Closure should contact cup without tipping; lift must establish retention and green exposure. Risk: Off-center grip may slip; reopen if closure displaces cup substantially. Lesson: Small alignment changes preserved the covered block while approaching.",
+      "targets": {
+        "right_gripper": 0,
+        "right_y": -0.138
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 345,
+        "start": 338
+      },
+      "left_wrist": {
+        "end": 345,
+        "start": 338
+      },
+      "right_wrist": {
+        "end": 345,
+        "start": 338
+      }
+    },
+    "control_end": 292,
+    "control_start": 285,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "State: Red is exposed with its cup parked; green's cover is between open right jaws and blue remains covered. Check: Both motions arrived within 1 mm; parked cup stayed on table and green cover did not move. Expect: Shift right jaws 5 mm toward cup center and close for green-second removal. Verify: Closure should contact cup without tipping; lift must establish retention and green exposure. Risk: Off-center grip may slip; reopen if closure displaces cup substantially. Lesson: Small alignment changes preserved the covered block while approaching.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaws contact green's cover; red is exposed and blue remains covered. Green-second removal remains unverified. Check: Alignment landed exactly; closure reached 0.53 and centered cup slightly without exposing green. Expect: Lift 6 mm vertically to test retention. Verify: Cup follows hand while blue cover stays fixed; cup remaining on table contradicts retention. Risk: Cup could snag green or slip; inspect before a larger lift. Lesson: Closure contact needs a lift test before assuming retained removal.",
+      "targets": {
+        "right_z": 0.824
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 347,
+        "start": 346
+      },
+      "left_wrist": {
+        "end": 347,
+        "start": 346
+      },
+      "right_wrist": {
+        "end": 347,
+        "start": 346
+      }
+    },
+    "control_end": 293,
+    "control_start": 292,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 53,
+    "public_note": "State: Right jaws contact green's cover; red is exposed and blue remains covered. Green-second removal remains unverified. Check: Alignment landed exactly; closure reached 0.53 and centered cup slightly without exposing green. Expect: Lift 6 mm vertically to test retention. Verify: Cup follows hand while blue cover stays fixed; cup remaining on table contradicts retention. Risk: Cup could snag green or slip; inspect before a larger lift. Lesson: Closure contact needs a lift test before assuming retained removal.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green's cover followed the short lift; red is exposed and blue remains covered. Green exposure is not yet verified. Check: Hand rose 5 mm and cup stayed fixed relative to jaws, supporting retention. Expect: Lift vertically clear of green to uncover it second. Verify: Green becomes visible on table while blue stays covered and red stays exposed. Risk: Cup could snag green; stop lateral transport until block separation is visible. Lesson: The short lift supports retention of green's cover.",
+      "targets": {
+        "right_z": 0.895
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 354,
+        "start": 348
+      },
+      "left_wrist": {
+        "end": 354,
+        "start": 348
+      },
+      "right_wrist": {
+        "end": 354,
+        "start": 348
+      }
+    },
+    "control_end": 299,
+    "control_start": 293,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "State: Green's cover followed the short lift; red is exposed and blue remains covered. Green exposure is not yet verified. Check: Hand rose 5 mm and cup stayed fixed relative to jaws, supporting retention. Expect: Lift vertically clear of green to uncover it second. Verify: Green becomes visible on table while blue stays covered and red stays exposed. Risk: Cup could snag green; stop lateral transport until block separation is visible. Lesson: The short lift supports retention of green's cover.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green is now visible after red, while blue remains covered; right hand retains green's cup. Blue must be uncovered last, then arms returned. Check: Lift landed within 1 mm and green stayed on table. Expect: Move green's cup toward clear foreground parking space and open left hand above blue's cover. Verify: Red and green remain exposed, blue stays covered, and held cup remains clear of blocks. Risk: Carried rim could brush green; inspect separation during transport. Lesson: Vertical lifting exposed green without disturbing blue's cover.",
+      "targets": {
+        "left_x": 0,
+        "left_y": -0.124,
+        "right_y": -0.28
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 375,
+        "start": 355
+      },
+      "left_wrist": {
+        "end": 375,
+        "start": 355
+      },
+      "right_wrist": {
+        "end": 375,
+        "start": 355
+      }
+    },
+    "control_end": 319,
+    "control_start": 299,
+    "feedback": "Accepted: the original plan contains 27 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 55,
+    "public_note": "State: Green is now visible after red, while blue remains covered; right hand retains green's cup. Blue must be uncovered last, then arms returned. Check: Lift landed within 1 mm and green stayed on table. Expect: Move green's cup toward clear foreground parking space and open left hand above blue's cover. Verify: Red and green remain exposed, blue stays covered, and held cup remains clear of blocks. Risk: Carried rim could brush green; inspect separation during transport. Lesson: Vertical lifting exposed green without disturbing blue's cover.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red and green are exposed in order; blue remains covered. Right cup is retained over foreground space. Check: Previous plan executed only 20 of 27 steps; left stopped 30 mm and right 18 mm short, with no queued continuation. Objects remained correctly separated. Expect: Finish alignment and approach blue's cover with open left jaws while lowering right cup toward parking. Verify: Blue cover remains fixed; right cup stays upright near table, and measured arrivals resolve the truncated motion. Risk: Cup/table clearance is estimated; inspect before release or further descent. Lesson: Truncated plans require new commands from measured poses, not assumptions of arrival.",
+      "targets": {
+        "left_x": -0.004,
+        "left_y": -0.124,
+        "left_z": 0.843,
+        "right_y": -0.28,
+        "right_z": 0.835
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 382,
+        "start": 376
+      },
+      "left_wrist": {
+        "end": 382,
+        "start": 376
+      },
+      "right_wrist": {
+        "end": 382,
+        "start": 376
+      }
+    },
+    "control_end": 325,
+    "control_start": 319,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 56,
+    "public_note": "State: Red and green are exposed in order; blue remains covered. Right cup is retained over foreground space. Check: Previous plan executed only 20 of 27 steps; left stopped 30 mm and right 18 mm short, with no queued continuation. Objects remained correctly separated. Expect: Finish alignment and approach blue's cover with open left jaws while lowering right cup toward parking. Verify: Blue cover remains fixed; right cup stays upright near table, and measured arrivals resolve the truncated motion. Risk: Cup/table clearance is estimated; inspect before release or further descent. Lesson: Truncated plans require new commands from measured poses, not assumptions of arrival.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red and green remain exposed; blue's cover is centered beneath open left jaws. Right cup is retained near parking surface. Check: Both approaches landed within 1 mm, with cups and blocks undisturbed. Expect: Lower left jaws toward blue-cover grasp height and right cup 5 mm toward table. Verify: Blue cover remains stationary; right cup remains upright without increased arrival error. Risk: Near-table rim contact on right; pause if cup shifts. Lesson: Actual settled cover heights differ, so approaches remain visually checked.",
+      "targets": {
+        "left_z": 0.83,
+        "right_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 385,
+        "start": 383
+      },
+      "left_wrist": {
+        "end": 385,
+        "start": 383
+      },
+      "right_wrist": {
+        "end": 385,
+        "start": 383
+      }
+    },
+    "control_end": 327,
+    "control_start": 325,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 57,
+    "public_note": "State: Red and green remain exposed; blue's cover is centered beneath open left jaws. Right cup is retained near parking surface. Check: Both approaches landed within 1 mm, with cups and blocks undisturbed. Expect: Lower left jaws toward blue-cover grasp height and right cup 5 mm toward table. Verify: Blue cover remains stationary; right cup remains upright without increased arrival error. Risk: Near-table rim contact on right; pause if cup shifts. Lesson: Actual settled cover heights differ, so approaches remain visually checked.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red and green are exposed; blue remains covered beneath open left jaws. Right cup is near its parking surface. Check: Both descents landed within 1 mm without visible object shifts. Expect: Lower both hands 5 mm, approaching left grasp height and right table support. Verify: Blue cover stays centered and stationary; right cup remains upright without resistance. Risk: Contact near table; stop descent if cup shifts or arrival error grows. Lesson: Incremental final approach preserves opportunities to detect contact.",
+      "targets": {
+        "left_z": 0.826,
+        "right_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 387,
+        "start": 386
+      },
+      "left_wrist": {
+        "end": 387,
+        "start": 386
+      },
+      "right_wrist": {
+        "end": 387,
+        "start": 386
+      }
+    },
+    "control_end": 328,
+    "control_start": 327,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 58,
+    "public_note": "State: Red and green are exposed; blue remains covered beneath open left jaws. Right cup is near its parking surface. Check: Both descents landed within 1 mm without visible object shifts. Expect: Lower both hands 5 mm, approaching left grasp height and right table support. Verify: Blue cover stays centered and stationary; right cup remains upright without resistance. Risk: Contact near table; stop descent if cup shifts or arrival error grows. Lesson: Incremental final approach preserves opportunities to detect contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Red and green remain exposed in order; blue's cover is aligned between left jaws. Right cup is near table in clear parking space. Check: Both descents landed within 1 mm without cup displacement. Expect: Lower each hand about 5 mm, grasp blue's cover, and release parked green cup. Verify: Left closure establishes contact only; subsequent lift must reveal blue. Right cup should settle independently without tipping. Risk: Blue-cover grip could slip or parked cup could tilt; inspect before lifting or withdrawing. Lesson: Retention and stable placement require observations beyond gripper commands.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.822,
+        "right_gripper": 1,
+        "right_z": 0.821
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 395,
+        "start": 388
+      },
+      "left_wrist": {
+        "end": 395,
+        "start": 388
+      },
+      "right_wrist": {
+        "end": 395,
+        "start": 388
+      }
+    },
+    "control_end": 335,
+    "control_start": 328,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 59,
+    "public_note": "State: Red and green remain exposed in order; blue's cover is aligned between left jaws. Right cup is near table in clear parking space. Check: Both descents landed within 1 mm without cup displacement. Expect: Lower each hand about 5 mm, grasp blue's cover, and release parked green cup. Verify: Left closure establishes contact only; subsequent lift must reveal blue. Right cup should settle independently without tipping. Risk: Blue-cover grip could slip or parked cup could tilt; inspect before lifting or withdrawing. Lesson: Retention and stable placement require observations beyond gripper commands.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left jaws contact blue's cover; red and green are exposed, and the right cup is released in foreground. Blue-last removal and arm return remain. Check: Both targets landed exactly; left closure reached 0.52, right cup settled independently. Expect: Lift blue cover 6 mm to test retention and withdraw empty right hand. Verify: Left cup follows the small lift; right cup remains on table without following its hand. Risk: Blue cover may snag or slip; inspect before larger removal. Lesson: Gripper closure alone does not verify retention, and release alone does not verify stable parking.",
+      "targets": {
+        "left_z": 0.828,
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 403,
+        "start": 396
+      },
+      "left_wrist": {
+        "end": 403,
+        "start": 396
+      },
+      "right_wrist": {
+        "end": 403,
+        "start": 396
+      }
+    },
+    "control_end": 342,
+    "control_start": 335,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 60,
+    "public_note": "State: Left jaws contact blue's cover; red and green are exposed, and the right cup is released in foreground. Blue-last removal and arm return remain. Check: Both targets landed exactly; left closure reached 0.52, right cup settled independently. Expect: Lift blue cover 6 mm to test retention and withdraw empty right hand. Verify: Left cup follows the small lift; right cup remains on table without following its hand. Risk: Blue cover may snag or slip; inspect before larger removal. Lesson: Gripper closure alone does not verify retention, and release alone does not verify stable parking.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue's cover followed the test lift; red and green remain exposed, and both removed cups are parked. Blue-last exposure and arm return remain unverified. Check: Both motions landed exactly; left cup stayed fixed relative to jaws and right cup remained on table. Expect: Lift vertically to expose blue last without moving its block. Verify: Blue becomes visible on table with red and green still exposed; cup rises independently. Risk: Block snagging or slip; confirm separation before lateral transport. Lesson: Short-lift evidence supports retention of blue's cover.",
+      "targets": {
+        "left_z": 0.895
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 412,
+        "start": 404
+      },
+      "left_wrist": {
+        "end": 412,
+        "start": 404
+      },
+      "right_wrist": {
+        "end": 412,
+        "start": 404
+      }
+    },
+    "control_end": 350,
+    "control_start": 342,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 61,
+    "public_note": "State: Blue's cover followed the test lift; red and green remain exposed, and both removed cups are parked. Blue-last exposure and arm return remain unverified. Check: Both motions landed exactly; left cup stayed fixed relative to jaws and right cup remained on table. Expect: Lift vertically to expose blue last without moving its block. Verify: Blue becomes visible on table with red and green still exposed; cup rises independently. Risk: Block snagging or slip; confirm separation before lateral transport. Lesson: Short-lift evidence supports retention of blue's cover.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue is visibly exposed last, after red and green; all three blocks are on table. Left hand retains the final cup. Cup parking, valid final orientation, and arm return remain. Check: Lift landed exactly and blue stayed on table while cup rose. Expect: Move final cup into clear center foreground parking space, preserving block exposure. Verify: All blocks remain exposed and cup stays retained clear of other parked cups. Risk: Cup rim could brush blue if clearance is insufficient; monitor separation before lowering. Lesson: Vertical removals preserved the red-green-blue uncovering order.",
+      "targets": {
+        "left_y": -0.28
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 429,
+        "start": 413
+      },
+      "left_wrist": {
+        "end": 429,
+        "start": 413
+      },
+      "right_wrist": {
+        "end": 429,
+        "start": 413
+      }
+    },
+    "control_end": 366,
+    "control_start": 350,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 62,
+    "public_note": "State: Blue is visibly exposed last, after red and green; all three blocks are on table. Left hand retains the final cup. Cup parking, valid final orientation, and arm return remain. Check: Lift landed exactly and blue stayed on table while cup rose. Expect: Move final cup into clear center foreground parking space, preserving block exposure. Verify: All blocks remain exposed and cup stays retained clear of other parked cups. Risk: Cup rim could brush blue if clearance is insufficient; monitor separation before lowering. Lesson: Vertical removals preserved the red-green-blue uncovering order.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: All blocks were exposed in red-green-blue order; final cup is held over center foreground. Parking and both-arm return remain. Check: Translation landed exactly with cup retained and parked cups unchanged; arm occlusion now hides some blocks. Expect: Lower final cup near table, clear of blocks and other cups. Verify: Cup stays upright with rim approaching table; no lateral movement of nearby objects. Risk: Estimated rim height; inspect before final small descent and release. Lesson: Transport retained the final cup without disturbing the parked cups.",
+      "targets": {
+        "left_z": 0.835
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 435,
+        "start": 430
+      },
+      "left_wrist": {
+        "end": 435,
+        "start": 430
+      },
+      "right_wrist": {
+        "end": 435,
+        "start": 430
+      }
+    },
+    "control_end": 371,
+    "control_start": 366,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 63,
+    "public_note": "State: All blocks were exposed in red-green-blue order; final cup is held over center foreground. Parking and both-arm return remain. Check: Translation landed exactly with cup retained and parked cups unchanged; arm occlusion now hides some blocks. Expect: Lower final cup near table, clear of blocks and other cups. Verify: Cup stays upright with rim approaching table; no lateral movement of nearby objects. Risk: Estimated rim height; inspect before final small descent and release. Lesson: Transport retained the final cup without disturbing the parked cups.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Sequence is visually completed; final cup remains held near parking surface. Both-arm return and final cup stability remain. Check: Left descent landed within 1 mm with cup retained. Expect: Lower final cup 5 mm and move empty right hand to its starting position, retaining downward orientation for now. Verify: Left cup stays upright; right position reaches origin without disturbing objects. Risk: Table contact on left; stop lowering if cup shifts. Lesson: Return translation and rotation can be separated to reduce planning difficulty.",
+      "targets": {
+        "left_z": 0.831,
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 448,
+        "start": 436
+      },
+      "left_wrist": {
+        "end": 448,
+        "start": 436
+      },
+      "right_wrist": {
+        "end": 448,
+        "start": 436
+      }
+    },
+    "control_end": 383,
+    "control_start": 371,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 64,
+    "public_note": "State: Sequence is visually completed; final cup remains held near parking surface. Both-arm return and final cup stability remain. Check: Left descent landed within 1 mm with cup retained. Expect: Lower final cup 5 mm and move empty right hand to its starting position, retaining downward orientation for now. Verify: Left cup stays upright; right position reaches origin without disturbing objects. Risk: Table contact on left; stop lowering if cup shifts. Lesson: Return translation and rotation can be separated to reduce planning difficulty.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Final cup is held near table; right position is at origin but orientation still needs return. Sequence remains completed in observed order. Check: Both targets landed exactly and objects stayed fixed. Expect: Lower cup 5 mm toward support and rotate empty right wrist halfway toward its starting pitch. Verify: Cup remains upright; right pitch reaches 45 degrees without object contact. Risk: Left rim nearing table; stop if arrival error or cup displacement indicates contact. Lesson: Right return translation succeeded independently of rotation.",
+      "targets": {
+        "left_z": 0.826,
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 464,
+        "start": 449
+      },
+      "left_wrist": {
+        "end": 464,
+        "start": 449
+      },
+      "right_wrist": {
+        "end": 464,
+        "start": 449
+      }
+    },
+    "control_end": 398,
+    "control_start": 383,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 65,
+    "public_note": "State: Final cup is held near table; right position is at origin but orientation still needs return. Sequence remains completed in observed order. Check: Both targets landed exactly and objects stayed fixed. Expect: Lower cup 5 mm toward support and rotate empty right wrist halfway toward its starting pitch. Verify: Cup remains upright; right pitch reaches 45 degrees without object contact. Risk: Left rim nearing table; stop if arrival error or cup displacement indicates contact. Lesson: Right return translation succeeded independently of rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Final cup remains held just above parking surface; right arm is at starting position with pitch halfway returned. Final cup stability and left return remain. Check: Both last targets landed exactly with no object shift. Expect: Lower cup 5 mm and release for independent support; finish right orientation return. Verify: Cup stays upright after release and right pose matches its origin; withdrawal must verify cup stability. Risk: Cup may settle with tilt; inspect before leaving the scene. Lesson: Split right-wrist rotation has executed accurately so far.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.821,
+        "right_pitch_deg": 90,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 484,
+        "start": 465
+      },
+      "left_wrist": {
+        "end": 484,
+        "start": 465
+      },
+      "right_wrist": {
+        "end": 484,
+        "start": 465
+      }
+    },
+    "control_end": 417,
+    "control_start": 398,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 66,
+    "public_note": "State: Final cup remains held just above parking surface; right arm is at starting position with pitch halfway returned. Final cup stability and left return remain. Check: Both last targets landed exactly with no object shift. Expect: Lower cup 5 mm and release for independent support; finish right orientation return. Verify: Cup stays upright after release and right pose matches its origin; withdrawal must verify cup stability. Risk: Cup may settle with tilt; inspect before leaving the scene. Lesson: Split right-wrist rotation has executed accurately so far.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Final cup is released; right arm has returned to its starting pose. Left withdrawal, return, and final scene verification remain. Check: Both targets landed exactly; final cup settled slightly without obvious tipping. Expect: Raise empty left hand to clear cups and reveal all blocks. Verify: Final cup stays on table and all three blocks remain exposed; cup following hand would contradict release. Risk: Open jaws might brush cup; monitor separation before lateral return. Lesson: Right return is verified by measured pose; final cup stability still needs withdrawal evidence.",
+      "targets": {
+        "left_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 494,
+        "start": 485
+      },
+      "left_wrist": {
+        "end": 494,
+        "start": 485
+      },
+      "right_wrist": {
+        "end": 494,
+        "start": 485
+      }
+    },
+    "control_end": 426,
+    "control_start": 417,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 67,
+    "public_note": "State: Final cup is released; right arm has returned to its starting pose. Left withdrawal, return, and final scene verification remain. Check: Both targets landed exactly; final cup settled slightly without obvious tipping. Expect: Raise empty left hand to clear cups and reveal all blocks. Verify: Final cup stays on table and all three blocks remain exposed; cup following hand would contradict release. Risk: Open jaws might brush cup; monitor separation before lateral return. Lesson: Right return is verified by measured pose; final cup stability still needs withdrawal evidence.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Three cups are parked independently; uncovering order was red, green, blue. Right arm is at origin; left return and unobstructed final verification remain. Check: Withdrawal landed exactly and final cup stayed on table; left arm still obscures blue. Expect: Move empty left hand partway toward origin, clearing the block row. Verify: All blocks should become visible and parked cups remain fixed. Risk: Long return may truncate; check measured arrival before the next segment. Lesson: Final cup remained independently supported after withdrawal.",
+      "targets": {
+        "left_x": -0.16,
+        "left_y": -0.2022
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 506,
+        "start": 495
+      },
+      "left_wrist": {
+        "end": 506,
+        "start": 495
+      },
+      "right_wrist": {
+        "end": 506,
+        "start": 495
+      }
+    },
+    "control_end": 437,
+    "control_start": 426,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 68,
+    "public_note": "State: Three cups are parked independently; uncovering order was red, green, blue. Right arm is at origin; left return and unobstructed final verification remain. Check: Withdrawal landed exactly and final cup stayed on table; left arm still obscures blue. Expect: Move empty left hand partway toward origin, clearing the block row. Verify: All blocks should become visible and parked cups remain fixed. Risk: Long return may truncate; check measured arrival before the next segment. Lesson: Final cup remained independently supported after withdrawal.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: All three blocks are visibly exposed, cups parked clear of them; observed sequence was cover left-to-right, uncover red-green-blue. Right arm is returned; left orientation remains outside return tolerance. Check: Left translation landed exactly and cleared the view; objects stayed fixed. Expect: Finish left translation to starting position before rotating. Verify: Left position matches origin and scene remains unchanged. Risk: No material contact risk is visible at this clearance; check planner arrival. Lesson: Segmented return has preserved the completed object arrangement.",
+      "targets": {
+        "left_x": -0.2996
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 518,
+        "start": 507
+      },
+      "left_wrist": {
+        "end": 518,
+        "start": 507
+      },
+      "right_wrist": {
+        "end": 518,
+        "start": 507
+      }
+    },
+    "control_end": 448,
+    "control_start": 437,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 69,
+    "public_note": "State: All three blocks are visibly exposed, cups parked clear of them; observed sequence was cover left-to-right, uncover red-green-blue. Right arm is returned; left orientation remains outside return tolerance. Check: Left translation landed exactly and cleared the view; objects stayed fixed. Expect: Finish left translation to starting position before rotating. Verify: Left position matches origin and scene remains unchanged. Risk: No material contact risk is visible at this clearance; check planner arrival. Lesson: Segmented return has preserved the completed object arrangement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blocks remain exposed and cups parked clear; right arm and left position are returned. Left orientation is the remaining measured return condition. Check: Left translation landed exactly without object changes. Expect: Rotate empty left wrist halfway toward starting pitch, leaving the scene unchanged. Verify: Pitch reaches 45 degrees and no cup or block moves. Risk: No material contact risk is visible; verify rotation arrival before the final segment. Lesson: Separating translation and rotation has produced accurate return motions.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 534,
+        "start": 519
+      },
+      "left_wrist": {
+        "end": 534,
+        "start": 519
+      },
+      "right_wrist": {
+        "end": 534,
+        "start": 519
+      }
+    },
+    "control_end": 463,
+    "control_start": 448,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 70,
+    "public_note": "State: Blocks remain exposed and cups parked clear; right arm and left position are returned. Left orientation is the remaining measured return condition. Check: Left translation landed exactly without object changes. Expect: Rotate empty left wrist halfway toward starting pitch, leaving the scene unchanged. Verify: Pitch reaches 45 degrees and no cup or block moves. Risk: No material contact risk is visible; verify rotation arrival before the final segment. Lesson: Separating translation and rotation has produced accurate return motions.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: All blocks are exposed after the observed red-green-blue uncovering sequence; cups remain parked clear. Only left orientation remains outside origin tolerance. Check: Previous rotation landed exactly, with objects unchanged. Expect: Finish left orientation return, bringing both arms within required starting-pose tolerances. Verify: Next measured poses should confirm both returns and images should show unchanged exposed blocks and stable cups; no official success signal is yet available. Risk: No material contact risk is visible at this pose. Lesson: Split rotations and measured arrival checks preserved the final arrangement during return.",
+      "targets": {
+        "left_pitch_deg": 90,
+        "left_roll_deg": 0,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 551,
+        "start": 535
+      },
+      "left_wrist": {
+        "end": 551,
+        "start": 535
+      },
+      "right_wrist": {
+        "end": 551,
+        "start": 535
+      }
+    },
+    "control_end": 479,
+    "control_start": 463,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 71,
+    "public_note": "State: All blocks are exposed after the observed red-green-blue uncovering sequence; cups remain parked clear. Only left orientation remains outside origin tolerance. Check: Previous rotation landed exactly, with objects unchanged. Expect: Finish left orientation return, bringing both arms within required starting-pose tolerances. Verify: Next measured poses should confirm both returns and images should show unchanged exposed blocks and stable cups; no official success signal is yet available. Risk: No material contact risk is visible at this pose. Lesson: Split rotations and measured arrival checks preserved the final arrangement during return.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Both arms are within origin tolerances; all blocks are exposed and cups are parked. Observed covering was left-to-right and uncovering red-green-blue; official completion remains unconfirmed. Check: Empty-target proposal failed validation; no physical action occurred and no new evidence was gained. Expect: Correct the remaining 0.4 mm left height difference while preserving the arrangement. Verify: Next state should show origin height and unchanged blocks and cups. Risk: No material contact risk at this clearance. Lesson: A hold command requires a valid named target; an empty target map is rejected.",
+      "targets": {
+        "left_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 553,
+        "start": 552
+      },
+      "left_wrist": {
+        "end": 553,
+        "start": 552
+      },
+      "right_wrist": {
+        "end": 553,
+        "start": 552
+      }
+    },
+    "control_end": 480,
+    "control_start": 479,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 72,
+    "public_note": "State: Both arms are within origin tolerances; all blocks are exposed and cups are parked. Observed covering was left-to-right and uncovering red-green-blue; official completion remains unconfirmed. Check: Empty-target proposal failed validation; no physical action occurred and no new evidence was gained. Expect: Correct the remaining 0.4 mm left height difference while preserving the arrangement. Verify: Next state should show origin height and unchanged blocks and cups. Risk: No material contact risk at this clearance. Lesson: A hold command requires a valid named target; an empty target map is rejected.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "Upper-wall grasps retained the cups; fresh alignment after settling and vertical removal preserved the requested uncovering order. No further corrective action is supported by the final observation.",
+      "reason": "State: Observed sequence is complete: covered left-to-right, uncovered red-green-blue, cups parked, both arms returned. Official success remains unverified. Check: Final height correction landed exactly; objects remained stable. Expect: End the episode without further manipulation. Verify: No visible goal condition remains unmet, but scoring and exact cup-orientation validity are unconfirmed; no further observation follows. Risk: Repeating the sequence could invalidate ordering, so preserve the arrangement. Lesson: Visual sequence evidence and measured arm return support completion but cannot establish hidden scoring results."
+    },
+    "cameras": {
+      "head": {
+        "end": 555,
+        "start": 554
+      },
+      "left_wrist": {
+        "end": 555,
+        "start": 554
+      },
+      "right_wrist": {
+        "end": 555,
+        "start": 554
+      }
+    },
+    "control_end": 481,
+    "control_start": 480,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 73,
+    "public_note": "State: Observed sequence is complete: covered left-to-right, uncovered red-green-blue, cups parked, both arms returned. Official success remains unverified. Check: Final height correction landed exactly; objects remained stable. Expect: End the episode without further manipulation. Verify: No visible goal condition remains unmet, but scoring and exact cup-orientation validity are unconfirmed; no further observation follows. Risk: Repeating the sequence could invalidate ordering, so preserve the arrangement. Lesson: Visual sequence evidence and measured arm return support completion but cannot establish hidden scoring results.",
+    "tool": "give_up"
+  }
+]
