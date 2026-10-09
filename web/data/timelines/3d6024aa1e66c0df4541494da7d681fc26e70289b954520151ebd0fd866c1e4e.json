@@ -1,0 +1,2653 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue T is right and behind the gray pad with a different angle; precise planar alignment, no lifting, and arm return remain required. Check: No prior action. Expect: Close and partly turn the right tool in free space for a pushing approach. Verify: Next state should show the turn without block displacement. Risk: Rotation near objects; keep current elevated position and stop if contact appears. Lesson: None yet.",
+      "targets": {
+        "right_gripper": 0,
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 23,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 23,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 23,
+        "start": 1
+      }
+    },
+    "control_end": 22,
+    "control_start": 0,
+    "feedback": "Accepted: playing 22 waypoints (0.9s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 0,
+    "public_note": "State: Blue T is right and behind the gray pad with a different angle; precise planar alignment, no lifting, and arm return remain required. Check: No prior action. Expect: Close and partly turn the right tool in free space for a pushing approach. Verify: Next state should show the turn without block displacement. Risk: Rotation near objects; keep current elevated position and stop if contact appears. Lesson: None yet.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T remains separate from pad; all completion conditions remain pending. Check: Right tool reached 45 degrees exactly; block unchanged. Expect: Finish turning straight down to permit lateral pushing with closed jaws. Verify: Tool reaches zero pitch and block stays still. Risk: Tool sweep, mitigated by elevated pose. Lesson: The first free-space turn caused no visible object motion.",
+      "targets": {
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 39,
+        "start": 24
+      },
+      "left_wrist": {
+        "end": 39,
+        "start": 24
+      },
+      "right_wrist": {
+        "end": 39,
+        "start": 24
+      }
+    },
+    "control_end": 37,
+    "control_start": 22,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "State: T remains separate from pad; all completion conditions remain pending. Check: Right tool reached 45 degrees exactly; block unchanged. Expect: Finish turning straight down to permit lateral pushing with closed jaws. Verify: Tool reaches zero pitch and block stays still. Risk: Tool sweep, mitigated by elevated pose. Lesson: The first free-space turn caused no visible object motion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Block still offset and rotated from pad; right tool is closed and downward, not holding anything. Check: Zero-pitch turn landed with no object change. Expect: Approach above the block's right side using RGB-estimated coordinates, without contact. Verify: Wrist view should place the block beside the jaw and clarify the remaining lateral gap. Risk: Coordinate estimate could put tool over block; stop descent above its surface and reassess. Lesson: Downward wrist view exposes the T outline for approach correction.",
+      "targets": {
+        "right_x": 0.205,
+        "right_y": -0.105,
+        "right_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 49,
+        "start": 40
+      },
+      "left_wrist": {
+        "end": 49,
+        "start": 40
+      },
+      "right_wrist": {
+        "end": 49,
+        "start": 40
+      }
+    },
+    "control_end": 46,
+    "control_start": 37,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "State: Block still offset and rotated from pad; right tool is closed and downward, not holding anything. Check: Zero-pitch turn landed with no object change. Expect: Approach above the block's right side using RGB-estimated coordinates, without contact. Verify: Wrist view should place the block beside the jaw and clarify the remaining lateral gap. Risk: Coordinate estimate could put tool over block; stop descent above its surface and reassess. Lesson: Downward wrist view exposes the T outline for approach correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Wrist now sees blue T partly below the closed jaws; pad is lower-left. Alignment and reset are pending. Check: Approach landed within 1 mm and block stayed still; jaws obscure the intended contact region. Expect: Shift to the right of the stem and lower to a near-surface staging height, revealing an outside pushing approach. Verify: Blue edge should lie left of jaws, with no translation yet. Risk: Uncertain edge position; lateral clearance precedes further descent. Lesson: Initial estimated approach was above the T rather than clearly beside it.",
+      "targets": {
+        "right_x": 0.255,
+        "right_y": -0.145,
+        "right_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 57,
+        "start": 50
+      },
+      "left_wrist": {
+        "end": 57,
+        "start": 50
+      },
+      "right_wrist": {
+        "end": 57,
+        "start": 50
+      }
+    },
+    "control_end": 53,
+    "control_start": 46,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "State: Wrist now sees blue T partly below the closed jaws; pad is lower-left. Alignment and reset are pending. Check: Approach landed within 1 mm and block stayed still; jaws obscure the intended contact region. Expect: Shift to the right of the stem and lower to a near-surface staging height, revealing an outside pushing approach. Verify: Blue edge should lie left of jaws, with no translation yet. Risk: Uncertain edge position; lateral clearance precedes further descent. Lesson: Initial estimated approach was above the T rather than clearly beside it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue stem end lies left of the right jaws; no contact or alignment yet. Check: Staging pose landed accurately and T is unchanged. Expect: Lower outside the T to a height suitable for planar side contact, without grasping or lifting. Verify: Tool descends while T remains flat and stationary. Risk: Table proximity; use a short descent and inspect before lateral motion. Lesson: Rightward staging exposed the stem's free end.",
+      "targets": {
+        "right_z": 0.778
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 59,
+        "start": 58
+      },
+      "left_wrist": {
+        "end": 59,
+        "start": 58
+      },
+      "right_wrist": {
+        "end": 59,
+        "start": 58
+      }
+    },
+    "control_end": 54,
+    "control_start": 53,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "State: Blue stem end lies left of the right jaws; no contact or alignment yet. Check: Staging pose landed accurately and T is unchanged. Expect: Lower outside the T to a height suitable for planar side contact, without grasping or lifting. Verify: Tool descends while T remains flat and stationary. Risk: Table proximity; use a short descent and inspect before lateral motion. Lesson: Rightward staging exposed the stem's free end.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tool is at pushing height but appears behind the stem end; T remains separate from pad. Check: Descent landed 1 mm high with no visible block movement. Expect: Move along the clear right side toward the stem-end row before pushing left. Verify: Wrist should show the stem end beside rather than forward of the contact point. Risk: Side-edge collision if clearance is overestimated; inspect and switch to millimetre corrections near contact. Lesson: Lowering alone did not contact the block.",
+      "targets": {
+        "right_y": -0.18
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 63,
+        "start": 60
+      },
+      "left_wrist": {
+        "end": 63,
+        "start": 60
+      },
+      "right_wrist": {
+        "end": 63,
+        "start": 60
+      }
+    },
+    "control_end": 57,
+    "control_start": 54,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "State: Tool is at pushing height but appears behind the stem end; T remains separate from pad. Check: Descent landed 1 mm high with no visible block movement. Expect: Move along the clear right side toward the stem-end row before pushing left. Verify: Wrist should show the stem end beside rather than forward of the contact point. Risk: Side-edge collision if clearance is overestimated; inspect and switch to millimetre corrections near contact. Lesson: Lowering alone did not contact the block.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Closed jaws are adjacent to the blue stem end; pad remains left-front and rotated relative to it. Check: Side approach landed within 1 mm without moving T. Expect: A 5 mm leftward probe should close the remaining gap or begin planar contact. Verify: Look for blue movement relative to the fixed pad, not merely wrist-image motion. Risk: Off-centre contact may rotate T; use observed rotation to choose the next push. Lesson: The clear right-side approach preserved the block pose.",
+      "targets": {
+        "right_x": 0.2495
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 65,
+        "start": 64
+      },
+      "left_wrist": {
+        "end": 65,
+        "start": 64
+      },
+      "right_wrist": {
+        "end": 65,
+        "start": 64
+      }
+    },
+    "control_end": 58,
+    "control_start": 57,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "State: Closed jaws are adjacent to the blue stem end; pad remains left-front and rotated relative to it. Check: Side approach landed within 1 mm without moving T. Expect: A 5 mm leftward probe should close the remaining gap or begin planar contact. Verify: Look for blue movement relative to the fixed pad, not merely wrist-image motion. Risk: Off-centre contact may rotate T; use observed rotation to choose the next push. Lesson: The clear right-side approach preserved the block pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Stem tip is partly occluded next to jaws; no verified T motion yet. Check: Probe landed accurately but head view shows unchanged T. Expect: A further 5 mm left and 3 mm forward probe should establish side contact nearer the stem centre. Verify: Fixed-camera T displacement or rotation will identify actual contact. Risk: Contact may be tangential; if no motion emerges, change contact view or height rather than assume engagement. Lesson: First 5 mm probe did not visibly engage.",
+      "targets": {
+        "right_x": 0.245,
+        "right_y": -0.182
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 67,
+        "start": 66
+      },
+      "left_wrist": {
+        "end": 67,
+        "start": 66
+      },
+      "right_wrist": {
+        "end": 67,
+        "start": 66
+      }
+    },
+    "control_end": 59,
+    "control_start": 58,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "State: Stem tip is partly occluded next to jaws; no verified T motion yet. Check: Probe landed accurately but head view shows unchanged T. Expect: A further 5 mm left and 3 mm forward probe should establish side contact nearer the stem centre. Verify: Fixed-camera T displacement or rotation will identify actual contact. Risk: Contact may be tangential; if no motion emerges, change contact view or height rather than assume engagement. Lesson: First 5 mm probe did not visibly engage.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Block still stationary beside tool; side contact remains unverified and alignment unmet. Check: Second lateral probe executed within 1 mm but did not visibly move T. Expect: Lower 4.5 mm to improve overlap with the thin block side before another push. Verify: State should show lower jaws while T remains on table; subsequent translation must establish engagement. Risk: Table interference; stop lowering if arrival stalls. Lesson: Current-height lateral probes have not established contact, so change height rather than repeat blindly.",
+      "targets": {
+        "right_z": 0.775
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 69,
+        "start": 68
+      },
+      "left_wrist": {
+        "end": 69,
+        "start": 68
+      },
+      "right_wrist": {
+        "end": 69,
+        "start": 68
+      }
+    },
+    "control_end": 60,
+    "control_start": 59,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "State: Block still stationary beside tool; side contact remains unverified and alignment unmet. Check: Second lateral probe executed within 1 mm but did not visibly move T. Expect: Lower 4.5 mm to improve overlap with the thin block side before another push. Verify: State should show lower jaws while T remains on table; subsequent translation must establish engagement. Risk: Table interference; stop lowering if arrival stalls. Lesson: Current-height lateral probes have not established contact, so change height rather than repeat blindly.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tool is now at low side-contact height; T remains offset and rotated. Check: Lowering reached within 1 mm without disturbing T. Expect: A 5 mm leftward probe at the new height should approach or engage the stem end. Verify: Head-view movement relative to gray pad confirms engagement; unchanged outline means remaining gap. Risk: Unwanted rotation from end contact; retain small motion and reassess. Lesson: Height correction was possible without visible lifting or displacement.",
+      "targets": {
+        "right_x": 0.2404
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 71,
+        "start": 70
+      },
+      "left_wrist": {
+        "end": 71,
+        "start": 70
+      },
+      "right_wrist": {
+        "end": 71,
+        "start": 70
+      }
+    },
+    "control_end": 61,
+    "control_start": 60,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "State: Tool is now at low side-contact height; T remains offset and rotated. Check: Lowering reached within 1 mm without disturbing T. Expect: A 5 mm leftward probe at the new height should approach or engage the stem end. Verify: Head-view movement relative to gray pad confirms engagement; unchanged outline means remaining gap. Risk: Unwanted rotation from end contact; retain small motion and reassess. Lesson: Height correction was possible without visible lifting or displacement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaws obscure the candidate contact; T is not aligned and engagement is uncertain. Check: Low probe executed, but no definite fixed-view progress is visible. Expect: Reposition idle left arm above the near side to obtain an independent contact view; right arm holds still. Verify: Left camera should reveal more of the work region after subsequent aiming. Risk: Arm interference; left target stays elevated and left of the right tool. Lesson: Repeated close probes are ambiguous under wrist occlusion; change viewpoint before further pushing.",
+      "targets": {
+        "left_x": 0.03,
+        "left_y": -0.3,
+        "left_z": 0.96
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 108,
+        "start": 72
+      },
+      "left_wrist": {
+        "end": 108,
+        "start": 72
+      },
+      "right_wrist": {
+        "end": 108,
+        "start": 72
+      }
+    },
+    "control_end": 97,
+    "control_start": 61,
+    "feedback": "Accepted: playing 36 waypoints (1.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "State: Right jaws obscure the candidate contact; T is not aligned and engagement is uncertain. Check: Low probe executed, but no definite fixed-view progress is visible. Expect: Reposition idle left arm above the near side to obtain an independent contact view; right arm holds still. Verify: Left camera should reveal more of the work region after subsequent aiming. Risk: Arm interference; left target stays elevated and left of the right tool. Lesson: Repeated close probes are ambiguous under wrist occlusion; change viewpoint before further pushing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Idle arm is elevated near centre, still looking beyond the task; right tool and T stay stationary. Check: Left translation missed by 61 mm and 5.5 degrees, so use measured pose rather than assumed arrival. Expect: Tilt left wrist downward to expose the pad and right contact region. Verify: Left image should include both T shapes and tool tip. Risk: Rotation can sweep fingers; current elevation provides clearance, but inspect execution. Lesson: Left cross-body translation did not reach its full target; camera aiming must use actual pose.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 119,
+        "start": 109
+      },
+      "left_wrist": {
+        "end": 119,
+        "start": 109
+      },
+      "right_wrist": {
+        "end": 119,
+        "start": 109
+      }
+    },
+    "control_end": 107,
+    "control_start": 97,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 11,
+    "public_note": "State: Idle arm is elevated near centre, still looking beyond the task; right tool and T stay stationary. Check: Left translation missed by 61 mm and 5.5 degrees, so use measured pose rather than assumed arrival. Expect: Tilt left wrist downward to expose the pad and right contact region. Verify: Left image should include both T shapes and tool tip. Risk: Rotation can sweep fingers; current elevation provides clearance, but inspect execution. Lesson: Left cross-body translation did not reach its full target; camera aiming must use actual pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Contact remains obscured and alignment unmet. Check: Left wrist tilt was refused; neither arm moved and no new object evidence was gained. Expect: Bring left arm closer to its own side to permit a downward observation pose. Verify: Measured translation and a shifted camera view should confirm execution. Risk: Another reach refusal; target is closer to left base than previous pose. Lesson: A 45-degree tilt at the cross-body pose was unreachable; change position first.",
+      "targets": {
+        "left_x": -0.12,
+        "left_y": -0.2
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 119,
+        "start": 109
+      },
+      "left_wrist": {
+        "end": 119,
+        "start": 109
+      },
+      "right_wrist": {
+        "end": 119,
+        "start": 109
+      }
+    },
+    "control_end": 107,
+    "control_start": 97,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "State: Contact remains obscured and alignment unmet. Check: Left wrist tilt was refused; neither arm moved and no new object evidence was gained. Expect: Bring left arm closer to its own side to permit a downward observation pose. Verify: Measured translation and a shifted camera view should confirm execution. Risk: Another reach refusal; target is closer to left base than previous pose. Lesson: A 45-degree tilt at the cross-body pose was unreachable; change position first.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left arm is now nearer its own base; T still separate from pad and right contact uncertain. Check: Revised translation landed exactly, with no object change. Expect: Downward tilt now supplies an independent view for contact planning. Verify: Task objects should enter the left image, or failed execution will require a different observation strategy. Risk: Reachability still uncertain; only one orientation dimension changes. Lesson: Moving back toward the left base restored accurate translation.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 159,
+        "start": 120
+      },
+      "left_wrist": {
+        "end": 159,
+        "start": 120
+      },
+      "right_wrist": {
+        "end": 159,
+        "start": 120
+      }
+    },
+    "control_end": 146,
+    "control_start": 107,
+    "feedback": "Accepted: playing 39 waypoints (1.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "State: Left arm is now nearer its own base; T still separate from pad and right contact uncertain. Check: Revised translation landed exactly, with no object change. Expect: Downward tilt now supplies an independent view for contact planning. Verify: Task objects should enter the left image, or failed execution will require a different observation strategy. Risk: Reachability still uncertain; only one orientation dimension changes. Lesson: Moving back toward the left base restored accurate translation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left camera sees the pad at its right edge but not the blue contact; alignment remains pending. Check: Tilt succeeded exactly, unlike the cross-body attempt. Expect: Shift elevated camera right and slightly nearer to centre both T shapes in its view. Verify: Left view should reveal blue stem and right jaw relationship. Risk: Cross-body reach or arm proximity; keep elevated and move only the observer. Lesson: At the more lateral pose, the 45-degree viewing tilt is executable.",
+      "targets": {
+        "left_x": 0.1,
+        "left_y": -0.27
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 182,
+        "start": 160
+      },
+      "left_wrist": {
+        "end": 182,
+        "start": 160
+      },
+      "right_wrist": {
+        "end": 182,
+        "start": 160
+      }
+    },
+    "control_end": 168,
+    "control_start": 146,
+    "feedback": "Accepted: playing 22 waypoints (0.9s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "State: Left camera sees the pad at its right edge but not the blue contact; alignment remains pending. Check: Tilt succeeded exactly, unlike the cross-body attempt. Expect: Shift elevated camera right and slightly nearer to centre both T shapes in its view. Verify: Left view should reveal blue stem and right jaw relationship. Risk: Cross-body reach or arm proximity; keep elevated and move only the observer. Lesson: At the more lateral pose, the 45-degree viewing tilt is executable.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Independent left view reveals the stem end just forward-left of the right jaw; pad requires leftward translation and counterclockwise planar rotation. Check: Observer move landed accurately and exposed both shapes; prior probes did not align them. Expect: Shift 5 mm forward and 3 mm left to engage the end rather than pass behind it. Verify: Left view should show contact and any T motion relative to pad. Risk: Wrong-side contact could rotate away from target; reverse approach if that occurs. Lesson: Independent view clarifies that the jaw was behind the stem end, not securely pushing it.",
+      "targets": {
+        "right_x": 0.2378,
+        "right_y": -0.1866
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 184,
+        "start": 183
+      },
+      "left_wrist": {
+        "end": 184,
+        "start": 183
+      },
+      "right_wrist": {
+        "end": 184,
+        "start": 183
+      }
+    },
+    "control_end": 169,
+    "control_start": 168,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "State: Independent left view reveals the stem end just forward-left of the right jaw; pad requires leftward translation and counterclockwise planar rotation. Check: Observer move landed accurately and exposed both shapes; prior probes did not align them. Expect: Shift 5 mm forward and 3 mm left to engage the end rather than pass behind it. Verify: Left view should show contact and any T motion relative to pad. Risk: Wrong-side contact could rotate away from target; reverse approach if that occurs. Lesson: Independent view clarifies that the jaw was behind the stem end, not securely pushing it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T has visibly rotated slightly away from pad angle after contact; alignment remains unmet. Check: Probe executed and left view shows blue stem turning clockwise, confirming contact on its rear side. Expect: Withdraw rightward to disengage before approaching the forward side for opposite torque. Verify: Jaw separates while T stays flat; continued rotation would indicate lingering contact. Risk: Dragging along edge; move outward only and monitor. Lesson: This rear-side contact produces the wrong rotation; switch to the forward side of the stem.",
+      "targets": {
+        "right_x": 0.255
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 187,
+        "start": 185
+      },
+      "left_wrist": {
+        "end": 187,
+        "start": 185
+      },
+      "right_wrist": {
+        "end": 187,
+        "start": 185
+      }
+    },
+    "control_end": 171,
+    "control_start": 169,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "State: T has visibly rotated slightly away from pad angle after contact; alignment remains unmet. Check: Probe executed and left view shows blue stem turning clockwise, confirming contact on its rear side. Expect: Withdraw rightward to disengage before approaching the forward side for opposite torque. Verify: Jaw separates while T stays flat; continued rotation would indicate lingering contact. Risk: Dragging along edge; move outward only and monitor. Lesson: This rear-side contact produces the wrong rotation; switch to the forward side of the stem.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaw is separated to the right; blue T remains flat and angularly mismatched. Check: Withdrawal landed within 1 mm and revealed the free stem end without carrying T. Expect: Travel along the clear right side to the forward side of the stem, preparing a +y rotational push. Verify: Left view should show jaws forward of the blue endpoint with no T movement. Risk: Passing too close to endpoint; rightward clearance is visible and next inward approach will be short. Lesson: Rightward withdrawal disengaged the rear-side contact.",
+      "targets": {
+        "right_y": -0.245
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 193,
+        "start": 188
+      },
+      "left_wrist": {
+        "end": 193,
+        "start": 188
+      },
+      "right_wrist": {
+        "end": 193,
+        "start": 188
+      }
+    },
+    "control_end": 176,
+    "control_start": 171,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 16,
+    "public_note": "State: Right jaw is separated to the right; blue T remains flat and angularly mismatched. Check: Withdrawal landed within 1 mm and revealed the free stem end without carrying T. Expect: Travel along the clear right side to the forward side of the stem, preparing a +y rotational push. Verify: Left view should show jaws forward of the blue endpoint with no T movement. Risk: Passing too close to endpoint; rightward clearance is visible and next inward approach will be short. Lesson: Rightward withdrawal disengaged the rear-side contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tool is visibly forward-right of stem end; T and pad remain separated. Check: Forward traverse reached within 1 mm and T stayed stationary. Expect: Move left through the clear foreground to line up below the outer stem for a +y push. Verify: Left view should show jaw under the blue stem, without displacement yet. Risk: Overshooting laterally could contact the crossbar; target the free stem region and retain forward clearance. Lesson: The forward-side route is clear and did not disturb T.",
+      "targets": {
+        "right_x": 0.214
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 198,
+        "start": 194
+      },
+      "left_wrist": {
+        "end": 198,
+        "start": 194
+      },
+      "right_wrist": {
+        "end": 198,
+        "start": 194
+      }
+    },
+    "control_end": 180,
+    "control_start": 176,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "State: Tool is visibly forward-right of stem end; T and pad remain separated. Check: Forward traverse reached within 1 mm and T stayed stationary. Expect: Move left through the clear foreground to line up below the outer stem for a +y push. Verify: Left view should show jaw under the blue stem, without displacement yet. Risk: Overshooting laterally could contact the crossbar; target the free stem region and retain forward clearance. Lesson: The forward-side route is clear and did not disturb T.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Wrist shows outer stem ahead of jaw with visible clearance; orientation still wrong. Check: Leftward staging landed within 1 mm without object motion. Expect: Advance 15 mm through the visible gap toward the forward stem edge, then inspect before contact pushing. Verify: Gap should narrow without lift; any rotation indicates earlier contact than estimated. Risk: RGB gap estimate; shorten subsequent moves to millimetres as contact nears. Lesson: The new approach places the free stem ahead of the pushing jaw.",
+      "targets": {
+        "right_y": -0.229
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 201,
+        "start": 199
+      },
+      "left_wrist": {
+        "end": 201,
+        "start": 199
+      },
+      "right_wrist": {
+        "end": 201,
+        "start": 199
+      }
+    },
+    "control_end": 182,
+    "control_start": 180,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "State: Wrist shows outer stem ahead of jaw with visible clearance; orientation still wrong. Check: Leftward staging landed within 1 mm without object motion. Expect: Advance 15 mm through the visible gap toward the forward stem edge, then inspect before contact pushing. Verify: Gap should narrow without lift; any rotation indicates earlier contact than estimated. Risk: RGB gap estimate; shorten subsequent moves to millimetres as contact nears. Lesson: The new approach places the free stem ahead of the pushing jaw.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaw is just forward of the stem edge; T remains outside target. Check: Advance reached within 1 mm and narrowed gap, with no clear T rotation yet. Expect: A 5 mm +y motion should establish forward-edge contact and start counterclockwise rotation. Verify: Left view should show stem turning toward pad angle while block remains flat. Risk: Pure translation or edge slip; adjust contact laterally if rotation fails. Lesson: Wrist now exposes the exact approaching edge rather than an occluded rear contact.",
+      "targets": {
+        "right_y": -0.225
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 203,
+        "start": 202
+      },
+      "left_wrist": {
+        "end": 203,
+        "start": 202
+      },
+      "right_wrist": {
+        "end": 203,
+        "start": 202
+      }
+    },
+    "control_end": 183,
+    "control_start": 182,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "State: Jaw is just forward of the stem edge; T remains outside target. Check: Advance reached within 1 mm and narrowed gap, with no clear T rotation yet. Expect: A 5 mm +y motion should establish forward-edge contact and start counterclockwise rotation. Verify: Left view should show stem turning toward pad angle while block remains flat. Risk: Pure translation or edge slip; adjust contact laterally if rotation fails. Lesson: Wrist now exposes the exact approaching edge rather than an occluded rear contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Stem edge now overlaps the jaw-tip projection but physical engagement remains uncertain; target alignment is unmet. Check: Last 5 mm advance executed; blue outline relative to pad is nearly unchanged. Expect: Another 5 mm forward-edge approach should resolve remaining contact gap. Verify: Independent view must show actual rotation or translation to confirm pushing. Risk: Occlusion can mimic contact; if still unchanged, reassess point projection rather than claim progress. Lesson: Image overlap alone has not proved physical contact.",
+      "targets": {
+        "right_y": -0.2206
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 205,
+        "start": 204
+      },
+      "left_wrist": {
+        "end": 205,
+        "start": 204
+      },
+      "right_wrist": {
+        "end": 205,
+        "start": 204
+      }
+    },
+    "control_end": 184,
+    "control_start": 183,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "State: Stem edge now overlaps the jaw-tip projection but physical engagement remains uncertain; target alignment is unmet. Check: Last 5 mm advance executed; blue outline relative to pad is nearly unchanged. Expect: Another 5 mm forward-edge approach should resolve remaining contact gap. Verify: Independent view must show actual rotation or translation to confirm pushing. Risk: Occlusion can mimic contact; if still unchanged, reassess point projection rather than claim progress. Lesson: Image overlap alone has not proved physical contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue stem has begun turning toward the pad orientation, still far from target position. Check: Last advance reached within 1 mm; wrist outline became less steep and left view crossbar shifted, supporting actual planar rotation. Expect: Continue +y with 2 mm left bias to rotate and start translating toward pad. Verify: T angle should continue approaching gray angle without rising. Risk: Contact sliding outward may lose torque; track edge position and re-centre if needed. Lesson: Forward-side +y contact produces the desired rotation, unlike rear-side contact.",
+      "targets": {
+        "right_x": 0.2124,
+        "right_y": -0.2162
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 207,
+        "start": 206
+      },
+      "left_wrist": {
+        "end": 207,
+        "start": 206
+      },
+      "right_wrist": {
+        "end": 207,
+        "start": 206
+      }
+    },
+    "control_end": 185,
+    "control_start": 184,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "State: Blue stem has begun turning toward the pad orientation, still far from target position. Check: Last advance reached within 1 mm; wrist outline became less steep and left view crossbar shifted, supporting actual planar rotation. Expect: Continue +y with 2 mm left bias to rotate and start translating toward pad. Verify: T angle should continue approaching gray angle without rising. Risk: Contact sliding outward may lose torque; track edge position and re-centre if needed. Lesson: Forward-side +y contact produces the desired rotation, unlike rear-side contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T is rotating toward gray angle but remains well right of pad; no lifting observed. Check: Small diagonal push landed within 1 mm and stem slope decreased as predicted. Expect: Repeat this short verified contact direction to continue rotation and left translation. Verify: Blue stem becomes more horizontal in wrist view and shifts left relative to pad. Risk: Rotation may alter contact leverage; reassess each short push. Lesson: Forward-edge +y with slight -x bias gives controlled desired rotation here.",
+      "targets": {
+        "right_x": 0.2106,
+        "right_y": -0.2118
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 209,
+        "start": 208
+      },
+      "left_wrist": {
+        "end": 209,
+        "start": 208
+      },
+      "right_wrist": {
+        "end": 209,
+        "start": 208
+      }
+    },
+    "control_end": 186,
+    "control_start": 185,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 22,
+    "public_note": "State: T is rotating toward gray angle but remains well right of pad; no lifting observed. Check: Small diagonal push landed within 1 mm and stem slope decreased as predicted. Expect: Repeat this short verified contact direction to continue rotation and left translation. Verify: Blue stem becomes more horizontal in wrist view and shifts left relative to pad. Risk: Rotation may alter contact leverage; reassess each short push. Lesson: Forward-edge +y with slight -x bias gives controlled desired rotation here.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Rotation is progressing but blue and gray still differ substantially in angle and position. Check: Previous push landed within 1 mm and again reduced stem slope. Expect: Continue a 5 mm +y, 2 mm -x contact push while maintaining height. Verify: Further planar rotation toward pad, without vertical separation. Risk: Increasingly central contact could reduce torque; change contact if rotation stalls. Lesson: This contact direction has produced repeatable incremental rotation.",
+      "targets": {
+        "right_x": 0.2088,
+        "right_y": -0.2074
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 211,
+        "start": 210
+      },
+      "left_wrist": {
+        "end": 211,
+        "start": 210
+      },
+      "right_wrist": {
+        "end": 211,
+        "start": 210
+      }
+    },
+    "control_end": 187,
+    "control_start": 186,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "State: Rotation is progressing but blue and gray still differ substantially in angle and position. Check: Previous push landed within 1 mm and again reduced stem slope. Expect: Continue a 5 mm +y, 2 mm -x contact push while maintaining height. Verify: Further planar rotation toward pad, without vertical separation. Risk: Increasingly central contact could reduce torque; change contact if rotation stalls. Lesson: This contact direction has produced repeatable incremental rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T remains flat, rotating toward target but still right and behind it. Check: Last short push landed within 1 mm and continued desired rotation. Expect: Another small diagonal push advances angular correction. Verify: Blue crossbar should become more parallel to gray crossbar; unchanged angle would indicate slipping. Risk: Torque changes as T turns; maintain short increments and inspect. Lesson: Controlled forward-edge pushing remains effective at this orientation.",
+      "targets": {
+        "right_x": 0.207,
+        "right_y": -0.203
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 213,
+        "start": 212
+      },
+      "left_wrist": {
+        "end": 213,
+        "start": 212
+      },
+      "right_wrist": {
+        "end": 213,
+        "start": 212
+      }
+    },
+    "control_end": 188,
+    "control_start": 187,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "State: T remains flat, rotating toward target but still right and behind it. Check: Last short push landed within 1 mm and continued desired rotation. Expect: Another small diagonal push advances angular correction. Verify: Blue crossbar should become more parallel to gray crossbar; unchanged angle would indicate slipping. Risk: Torque changes as T turns; maintain short increments and inspect. Lesson: Controlled forward-edge pushing remains effective at this orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue stem is nearing horizontal, still not parallel to gray stem; substantial positional offset remains. Check: Robot reached last target within 1 mm and T rotated incrementally without visible lift. Expect: Continue short +y/-x push to reduce angular error. Verify: Blue crossbar tilt should approach gray crossbar tilt. Risk: Contact loss as edge rotates; use wrist edge continuity and object motion to detect it. Lesson: Repeated small pushes are yielding new verified rotation, not merely commanded movement.",
+      "targets": {
+        "right_x": 0.2051,
+        "right_y": -0.1986
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 215,
+        "start": 214
+      },
+      "left_wrist": {
+        "end": 215,
+        "start": 214
+      },
+      "right_wrist": {
+        "end": 215,
+        "start": 214
+      }
+    },
+    "control_end": 189,
+    "control_start": 188,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "State: Blue stem is nearing horizontal, still not parallel to gray stem; substantial positional offset remains. Check: Robot reached last target within 1 mm and T rotated incrementally without visible lift. Expect: Continue short +y/-x push to reduce angular error. Verify: Blue crossbar tilt should approach gray crossbar tilt. Risk: Contact loss as edge rotates; use wrist edge continuity and object motion to detect it. Lesson: Repeated small pushes are yielding new verified rotation, not merely commanded movement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Angular error continues decreasing, but placement and arm return remain unmet. Check: Last push reached within 1 mm and blue stem slope flattened further. Expect: A 6 mm forward and 2 mm left push continues controlled rotation. Verify: Stem should pass toward horizontal while staying on table. Risk: Contact leverage shifts; stop this direction once pad angle is reached. Lesson: Forward-edge contact remains effective through the current rotation range.",
+      "targets": {
+        "right_x": 0.2033,
+        "right_y": -0.1932
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 217,
+        "start": 216
+      },
+      "left_wrist": {
+        "end": 217,
+        "start": 216
+      },
+      "right_wrist": {
+        "end": 217,
+        "start": 216
+      }
+    },
+    "control_end": 190,
+    "control_start": 189,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "State: Angular error continues decreasing, but placement and arm return remain unmet. Check: Last push reached within 1 mm and blue stem slope flattened further. Expect: A 6 mm forward and 2 mm left push continues controlled rotation. Verify: Stem should pass toward horizontal while staying on table. Risk: Contact leverage shifts; stop this direction once pad angle is reached. Lesson: Forward-edge contact remains effective through the current rotation range.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue stem is nearly horizontal; gray stem still angles farther counterclockwise. Position remains offset. Check: Last motion landed within 1 mm and rotated T as expected. Expect: Continue 6 mm +y and 2 mm -x to advance angular correction without lifting. Verify: Wrist stem should begin angling upward-right and left view crossbar approach gray tilt. Risk: Overrotation later; compare to pad after each increment. Lesson: Small planar pushes provide predictable angular progress here.",
+      "targets": {
+        "right_x": 0.2014,
+        "right_y": -0.1879
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 219,
+        "start": 218
+      },
+      "left_wrist": {
+        "end": 219,
+        "start": 218
+      },
+      "right_wrist": {
+        "end": 219,
+        "start": 218
+      }
+    },
+    "control_end": 191,
+    "control_start": 190,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "State: Blue stem is nearly horizontal; gray stem still angles farther counterclockwise. Position remains offset. Check: Last motion landed within 1 mm and rotated T as expected. Expect: Continue 6 mm +y and 2 mm -x to advance angular correction without lifting. Verify: Wrist stem should begin angling upward-right and left view crossbar approach gray tilt. Risk: Overrotation later; compare to pad after each increment. Lesson: Small planar pushes provide predictable angular progress here.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Stem is now approximately horizontal; target requires further counterclockwise rotation and left-front translation. Check: Last push executed within 1 mm and produced visible rotation, with block remaining flat. Expect: Continue short diagonal contact motion toward the target angle. Verify: Blue stem should slope upward-right while crossbar tilts toward gray crossbar. Risk: Translation away in y accompanies rotation; correct position after angular adjustment. Lesson: Current push trades some y translation for useful rotation.",
+      "targets": {
+        "right_x": 0.1996,
+        "right_y": -0.1826
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 221,
+        "start": 220
+      },
+      "left_wrist": {
+        "end": 221,
+        "start": 220
+      },
+      "right_wrist": {
+        "end": 221,
+        "start": 220
+      }
+    },
+    "control_end": 192,
+    "control_start": 191,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "State: Stem is now approximately horizontal; target requires further counterclockwise rotation and left-front translation. Check: Last push executed within 1 mm and produced visible rotation, with block remaining flat. Expect: Continue short diagonal contact motion toward the target angle. Verify: Blue stem should slope upward-right while crossbar tilts toward gray crossbar. Risk: Translation away in y accompanies rotation; correct position after angular adjustment. Lesson: Current push trades some y translation for useful rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue angle is improving slowly; substantial target offset remains. Check: Last push landed within 1 mm but produced less rotation and more translation. Expect: Add 2 mm right bias while pushing 6 mm +y to retain leverage toward the outer stem. Verify: Angular change should increase relative to translation. Risk: Slipping off the free end; inspect wrist contact and retreat if edge is lost. Lesson: As contact migrated inward, rotation per push decreased; move contact outward slightly.",
+      "targets": {
+        "right_x": 0.2018,
+        "right_y": -0.1773
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 223,
+        "start": 222
+      },
+      "left_wrist": {
+        "end": 223,
+        "start": 222
+      },
+      "right_wrist": {
+        "end": 223,
+        "start": 222
+      }
+    },
+    "control_end": 193,
+    "control_start": 192,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "State: Blue angle is improving slowly; substantial target offset remains. Check: Last push landed within 1 mm but produced less rotation and more translation. Expect: Add 2 mm right bias while pushing 6 mm +y to retain leverage toward the outer stem. Verify: Angular change should increase relative to translation. Risk: Slipping off the free end; inspect wrist contact and retreat if edge is lost. Lesson: As contact migrated inward, rotation per push decreased; move contact outward slightly.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T is translating more than rotating and remains angularly mismatched. Check: Outward-biased push executed but did not improve rotation; stem is almost horizontal again. Expect: Withdraw 15 mm forward to reset contact farther along the stem. Verify: Gap opens and T stays stationary. Risk: Losing the existing useful contact is intentional; reapproach at outer stem after clearance. Lesson: Small outward bias while loaded did not restore torque; a full contact reset is needed.",
+      "targets": {
+        "right_y": -0.193
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 226,
+        "start": 224
+      },
+      "left_wrist": {
+        "end": 226,
+        "start": 224
+      },
+      "right_wrist": {
+        "end": 226,
+        "start": 224
+      }
+    },
+    "control_end": 195,
+    "control_start": 193,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "State: T is translating more than rotating and remains angularly mismatched. Check: Outward-biased push executed but did not improve rotation; stem is almost horizontal again. Expect: Withdraw 15 mm forward to reset contact farther along the stem. Verify: Gap opens and T stays stationary. Risk: Losing the existing useful contact is intentional; reapproach at outer stem after clearance. Lesson: Small outward bias while loaded did not restore torque; a full contact reset is needed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Gap is visible ahead of right jaw; T remains far from pad. Check: Retreat executed within 1 mm, though blue pose shifted slightly during settling, so previous contact response was not purely rotational. Expect: Shift 31 mm right through the open gap to place the jaw near the outer stem end for greater torque. Verify: Stem end should centre above the jaw in wrist image without new contact. Risk: Edge proximity; keep y withdrawn and inspect before advancing. Lesson: Unloaded relocation is preferable to sliding the contact outward under load.",
+      "targets": {
+        "right_x": 0.232
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 230,
+        "start": 227
+      },
+      "left_wrist": {
+        "end": 230,
+        "start": 227
+      },
+      "right_wrist": {
+        "end": 230,
+        "start": 227
+      }
+    },
+    "control_end": 198,
+    "control_start": 195,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "State: Gap is visible ahead of right jaw; T remains far from pad. Check: Retreat executed within 1 mm, though blue pose shifted slightly during settling, so previous contact response was not purely rotational. Expect: Shift 31 mm right through the open gap to place the jaw near the outer stem end for greater torque. Verify: Stem end should centre above the jaw in wrist image without new contact. Risk: Edge proximity; keep y withdrawn and inspect before advancing. Lesson: Unloaded relocation is preferable to sliding the contact outward under load.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaw is now forward of the free stem endpoint with a visible gap. Check: Outward relocation executed within 1 mm and provided a more distal contact line. Expect: Advance through about 15 mm of clearance toward endpoint; actual contact timing is uncertain. Verify: Gap closes and any blue rotation is seen relative to fixed gray pad. Risk: Slipping past the end; if blue remains left of contact, shift a few millimetres inward. Lesson: Reset moved the pushing line outward along the stem.",
+      "targets": {
+        "right_y": -0.177
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 233,
+        "start": 231
+      },
+      "left_wrist": {
+        "end": 233,
+        "start": 231
+      },
+      "right_wrist": {
+        "end": 233,
+        "start": 231
+      }
+    },
+    "control_end": 200,
+    "control_start": 198,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "State: Jaw is now forward of the free stem endpoint with a visible gap. Check: Outward relocation executed within 1 mm and provided a more distal contact line. Expect: Advance through about 15 mm of clearance toward endpoint; actual contact timing is uncertain. Verify: Gap closes and any blue rotation is seen relative to fixed gray pad. Risk: Slipping past the end; if blue remains left of contact, shift a few millimetres inward. Lesson: Reset moved the pushing line outward along the stem.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaw is just forward-right of stem endpoint; T still needs rotation and translation. Check: Approach landed within 1 mm and narrowed gap without clear object movement. Expect: Move 5 mm +y and 3 mm inward to establish distal-edge contact. Verify: Blue stem should rotate counterclockwise relative to pad while remaining flat. Risk: End slip; inward bias keeps contact on the stem. Lesson: The distal approach now exposes a small measurable visual gap.",
+      "targets": {
+        "right_x": 0.2279,
+        "right_y": -0.1729
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 235,
+        "start": 234
+      },
+      "left_wrist": {
+        "end": 235,
+        "start": 234
+      },
+      "right_wrist": {
+        "end": 235,
+        "start": 234
+      }
+    },
+    "control_end": 201,
+    "control_start": 200,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "State: Jaw is just forward-right of stem endpoint; T still needs rotation and translation. Check: Approach landed within 1 mm and narrowed gap without clear object movement. Expect: Move 5 mm +y and 3 mm inward to establish distal-edge contact. Verify: Blue stem should rotate counterclockwise relative to pad while remaining flat. Risk: End slip; inward bias keeps contact on the stem. Lesson: The distal approach now exposes a small measurable visual gap.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Distal stem edge reaches jaw projection; contact not yet proven. Check: Last approach landed within 1 mm with little object motion. Expect: A 5 mm +y probe at the outer stem should start desired rotation. Verify: Blue endpoint moves around crossbar rather than only following the camera. Risk: End slip remains possible; shift inward if motion is absent. Lesson: Contact must be confirmed by object motion, not edge overlap.",
+      "targets": {
+        "right_y": -0.1685
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 237,
+        "start": 236
+      },
+      "left_wrist": {
+        "end": 237,
+        "start": 236
+      },
+      "right_wrist": {
+        "end": 237,
+        "start": 236
+      }
+    },
+    "control_end": 202,
+    "control_start": 201,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "State: Distal stem edge reaches jaw projection; contact not yet proven. Check: Last approach landed within 1 mm with little object motion. Expect: A 5 mm +y probe at the outer stem should start desired rotation. Verify: Blue endpoint moves around crossbar rather than only following the camera. Risk: End slip remains possible; shift inward if motion is absent. Lesson: Contact must be confirmed by object motion, not edge overlap.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Distal contact has started counterclockwise rotation; position and reset remain unmet. Check: Probe reached within 1 mm and stem slope reduced relative to fixed pad. Expect: Continue 6 mm +y with 2 mm inward bias to retain end contact and increase rotation. Verify: Stem angles upward-right, crossbar stays near its current location. Risk: Sliding off endpoint; follow its inward arc with small -x adjustments. Lesson: Distal forward-side contact restores desired torque.",
+      "targets": {
+        "right_x": 0.2261,
+        "right_y": -0.1631
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 239,
+        "start": 238
+      },
+      "left_wrist": {
+        "end": 239,
+        "start": 238
+      },
+      "right_wrist": {
+        "end": 239,
+        "start": 238
+      }
+    },
+    "control_end": 203,
+    "control_start": 202,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "State: Distal contact has started counterclockwise rotation; position and reset remain unmet. Check: Probe reached within 1 mm and stem slope reduced relative to fixed pad. Expect: Continue 6 mm +y with 2 mm inward bias to retain end contact and increase rotation. Verify: Stem angles upward-right, crossbar stays near its current location. Risk: Sliding off endpoint; follow its inward arc with small -x adjustments. Lesson: Distal forward-side contact restores desired torque.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T is rotating correctly at distal contact, still far from pad. Check: Last push landed within 1 mm and increased upward-right stem angle. Expect: Continue short arc-following push to reduce angular mismatch. Verify: Blue crossbar increasingly parallels gray crossbar without lift. Risk: Endpoint shifts inward during rotation; maintain small inward bias. Lesson: Distal contact gives clearer rotation with less whole-block translation.",
+      "targets": {
+        "right_x": 0.2242,
+        "right_y": -0.1578
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 241,
+        "start": 240
+      },
+      "left_wrist": {
+        "end": 241,
+        "start": 240
+      },
+      "right_wrist": {
+        "end": 241,
+        "start": 240
+      }
+    },
+    "control_end": 204,
+    "control_start": 203,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 36,
+    "public_note": "State: T is rotating correctly at distal contact, still far from pad. Check: Last push landed within 1 mm and increased upward-right stem angle. Expect: Continue short arc-following push to reduce angular mismatch. Verify: Blue crossbar increasingly parallels gray crossbar without lift. Risk: Endpoint shifts inward during rotation; maintain small inward bias. Lesson: Distal contact gives clearer rotation with less whole-block translation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue angle is closer but not yet parallel to gray; planar position and return remain pending. Check: Last push executed within 1 mm and produced further counterclockwise rotation. Expect: Another small distal push continues angular correction. Verify: Compare crossbar tilts in left image, retaining uncertainty where the hand occludes stem. Risk: Overrotation as target nears; reduce increments once outlines are parallel. Lesson: Distal arc-following contact remains effective.",
+      "targets": {
+        "right_x": 0.2223,
+        "right_y": -0.1525
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 243,
+        "start": 242
+      },
+      "left_wrist": {
+        "end": 243,
+        "start": 242
+      },
+      "right_wrist": {
+        "end": 243,
+        "start": 242
+      }
+    },
+    "control_end": 205,
+    "control_start": 204,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "State: Blue angle is closer but not yet parallel to gray; planar position and return remain pending. Check: Last push executed within 1 mm and produced further counterclockwise rotation. Expect: Another small distal push continues angular correction. Verify: Compare crossbar tilts in left image, retaining uncertainty where the hand occludes stem. Risk: Overrotation as target nears; reduce increments once outlines are parallel. Lesson: Distal arc-following contact remains effective.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue crossbar now nearly approaches gray tilt, though a visible angular gap and large xy offset remain. Check: Last push reached within 1 mm and rotated T toward target. Expect: Reduce forward increment to 5 mm with 2 mm inward follow to approach matching angle. Verify: Left-view stem and crossbar should become more parallel to pad. Risk: Angular overshoot; next comparison determines whether to stop rotation. Lesson: Distal contact has reduced angular error enough to warrant finer adjustment.",
+      "targets": {
+        "right_x": 0.2204,
+        "right_y": -0.1482
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 245,
+        "start": 244
+      },
+      "left_wrist": {
+        "end": 245,
+        "start": 244
+      },
+      "right_wrist": {
+        "end": 245,
+        "start": 244
+      }
+    },
+    "control_end": 206,
+    "control_start": 205,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "State: Blue crossbar now nearly approaches gray tilt, though a visible angular gap and large xy offset remain. Check: Last push reached within 1 mm and rotated T toward target. Expect: Reduce forward increment to 5 mm with 2 mm inward follow to approach matching angle. Verify: Left-view stem and crossbar should become more parallel to pad. Risk: Angular overshoot; next comparison determines whether to stop rotation. Lesson: Distal contact has reduced angular error enough to warrant finer adjustment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue and gray crossbar tilts now look approximately parallel; large xy offset remains and exact angle is unverified. Check: Last short push landed within 1 mm and brought the visible tilts close. Expect: Withdraw forward-right to disengage rotational contact and prepare an end-on translation push. Verify: T should remain flat and retain angle as jaw separates. Risk: Residual contact may rotate it; inspect settled outline before choosing end-on approach. Lesson: Distal forward-edge pushing can bring the T near the pad angle without grasping.",
+      "targets": {
+        "right_x": 0.248,
+        "right_y": -0.155
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 248,
+        "start": 246
+      },
+      "left_wrist": {
+        "end": 248,
+        "start": 246
+      },
+      "right_wrist": {
+        "end": 248,
+        "start": 246
+      }
+    },
+    "control_end": 208,
+    "control_start": 206,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "State: Blue and gray crossbar tilts now look approximately parallel; large xy offset remains and exact angle is unverified. Check: Last short push landed within 1 mm and brought the visible tilts close. Expect: Withdraw forward-right to disengage rotational contact and prepare an end-on translation push. Verify: T should remain flat and retain angle as jaw separates. Risk: Residual contact may rotate it; inspect settled outline before choosing end-on approach. Lesson: Distal forward-edge pushing can bring the T near the pad angle without grasping.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue T is approximately angle-matched but still right and behind pad; no retained grasp or lift. Check: Withdrawal landed 2 mm short and revealed a stable, nearly parallel outline. Expect: Move along the clear right side to align behind the stem endpoint for a left-front end-on push. Verify: Wrist should show endpoint left of jaw at roughly matching contact row. Risk: End collision during traverse; existing lateral gap provides clearance, then use short inward probes. Lesson: Near-target orientation persisted after disengaging rotational contact.",
+      "targets": {
+        "right_y": -0.119
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 253,
+        "start": 249
+      },
+      "left_wrist": {
+        "end": 253,
+        "start": 249
+      },
+      "right_wrist": {
+        "end": 253,
+        "start": 249
+      }
+    },
+    "control_end": 212,
+    "control_start": 208,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 40,
+    "public_note": "State: Blue T is approximately angle-matched but still right and behind pad; no retained grasp or lift. Check: Withdrawal landed 2 mm short and revealed a stable, nearly parallel outline. Expect: Move along the clear right side to align behind the stem endpoint for a left-front end-on push. Verify: Wrist should show endpoint left of jaw at roughly matching contact row. Risk: End collision during traverse; existing lateral gap provides clearance, then use short inward probes. Lesson: Near-target orientation persisted after disengaging rotational contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaw is outside the stem end, with both shapes nearly parallel but separated. Check: Right-side traverse landed within 1 mm; T stayed stationary. Expect: Approach diagonally left-front through the visible endpoint gap to prepare axial translation. Verify: Gap narrows without appreciable angle change; actual contact is still to be confirmed. Risk: Off-axis end contact could rotate T; keep subsequent pushes small and compare crossbars. Lesson: Right-side staging preserves angle and gives a clear endpoint approach.",
+      "targets": {
+        "right_x": 0.233,
+        "right_y": -0.126
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 255,
+        "start": 254
+      },
+      "left_wrist": {
+        "end": 255,
+        "start": 254
+      },
+      "right_wrist": {
+        "end": 255,
+        "start": 254
+      }
+    },
+    "control_end": 213,
+    "control_start": 212,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 41,
+    "public_note": "State: Right jaw is outside the stem end, with both shapes nearly parallel but separated. Check: Right-side traverse landed within 1 mm; T stayed stationary. Expect: Approach diagonally left-front through the visible endpoint gap to prepare axial translation. Verify: Gap narrows without appreciable angle change; actual contact is still to be confirmed. Risk: Off-axis end contact could rotate T; keep subsequent pushes small and compare crossbars. Lesson: Right-side staging preserves angle and gives a clear endpoint approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaw is close to stem endpoint; placement remains far from pad despite approximate angular match. Check: Diagonal approach landed within 1 mm without visible T movement. Expect: A 5 mm left, 2.5 mm forward probe should engage endpoint near its axis. Verify: Blue T moves left-front relative to pad with little angle change. Risk: Corner contact induces torque; adjust y contact if angle drifts. Lesson: Endpoint clearance is now small enough for millimetre probes.",
+      "targets": {
+        "right_x": 0.2292,
+        "right_y": -0.1278
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 257,
+        "start": 256
+      },
+      "left_wrist": {
+        "end": 257,
+        "start": 256
+      },
+      "right_wrist": {
+        "end": 257,
+        "start": 256
+      }
+    },
+    "control_end": 214,
+    "control_start": 213,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "State: Jaw is close to stem endpoint; placement remains far from pad despite approximate angular match. Check: Diagonal approach landed within 1 mm without visible T movement. Expect: A 5 mm left, 2.5 mm forward probe should engage endpoint near its axis. Verify: Blue T moves left-front relative to pad with little angle change. Risk: Corner contact induces torque; adjust y contact if angle drifts. Lesson: Endpoint clearance is now small enough for millimetre probes.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Endpoint remains just left of jaw; no verified translation yet. Check: Last probe executed within 1 mm and reduced gap without clear block movement. Expect: Another 5 mm left and 2.5 mm forward should establish axial contact. Verify: Left camera must show T translating relative to gray pad; jaw movement alone is insufficient. Risk: Corner-induced rotation; adjust approach if crossbar tilt changes. Lesson: Current end-on approach has preserved angular alignment while closing the gap.",
+      "targets": {
+        "right_x": 0.2248,
+        "right_y": -0.13
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 259,
+        "start": 258
+      },
+      "left_wrist": {
+        "end": 259,
+        "start": 258
+      },
+      "right_wrist": {
+        "end": 259,
+        "start": 258
+      }
+    },
+    "control_end": 215,
+    "control_start": 214,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 43,
+    "public_note": "State: Endpoint remains just left of jaw; no verified translation yet. Check: Last probe executed within 1 mm and reduced gap without clear block movement. Expect: Another 5 mm left and 2.5 mm forward should establish axial contact. Verify: Left camera must show T translating relative to gray pad; jaw movement alone is insufficient. Risk: Corner-induced rotation; adjust approach if crossbar tilt changes. Lesson: Current end-on approach has preserved angular alignment while closing the gap.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: End contact translated T left but also rotated it clockwise, losing some angle match. Check: Last probe landed within 1 mm and blue crossbar moved left with reduced tilt. Expect: Push 5 mm purely left to reduce the excessive forward torque while continuing translation. Verify: T moves toward pad and angle stabilizes or turns slightly back toward gray tilt. Risk: Further angular drift; change contact direction based on next outline. Lesson: The initial left-front end push had too much clockwise effect; reduce its -y component.",
+      "targets": {
+        "right_x": 0.2202
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 261,
+        "start": 260
+      },
+      "left_wrist": {
+        "end": 261,
+        "start": 260
+      },
+      "right_wrist": {
+        "end": 261,
+        "start": 260
+      }
+    },
+    "control_end": 216,
+    "control_start": 215,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 44,
+    "public_note": "State: End contact translated T left but also rotated it clockwise, losing some angle match. Check: Last probe landed within 1 mm and blue crossbar moved left with reduced tilt. Expect: Push 5 mm purely left to reduce the excessive forward torque while continuing translation. Verify: T moves toward pad and angle stabilizes or turns slightly back toward gray tilt. Risk: Further angular drift; change contact direction based on next outline. Lesson: The initial left-front end push had too much clockwise effect; reduce its -y component.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T is moving left toward pad but angle continues drifting clockwise; y offset remains large. Check: Pure-left push executed accurately yet did not fully stabilize angle. Expect: Add 3 mm +y to the 5 mm left push to counter clockwise drift at the endpoint. Verify: Crossbar tilt should recover toward gray while translation continues. Risk: Excessive counterrotation; adjust based on measured visual trend. Lesson: Pure -x at this corner still rotates clockwise, so endpoint force needs a +y component.",
+      "targets": {
+        "right_x": 0.2157,
+        "right_y": -0.1268
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 263,
+        "start": 262
+      },
+      "left_wrist": {
+        "end": 263,
+        "start": 262
+      },
+      "right_wrist": {
+        "end": 263,
+        "start": 262
+      }
+    },
+    "control_end": 217,
+    "control_start": 216,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "State: T is moving left toward pad but angle continues drifting clockwise; y offset remains large. Check: Pure-left push executed accurately yet did not fully stabilize angle. Expect: Add 3 mm +y to the 5 mm left push to counter clockwise drift at the endpoint. Verify: Crossbar tilt should recover toward gray while translation continues. Risk: Excessive counterrotation; adjust based on measured visual trend. Lesson: Pure -x at this corner still rotates clockwise, so endpoint force needs a +y component.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: End pushes reduced x offset but angular drift persists and large forward translation is still needed. Check: +y-biased push executed but did not restore target angle; continued same contact is ineffective. Expect: Disengage rightward and raise empty closed tool to relocate behind the crossbar for a forward push. Verify: T remains on table and stationary as tool clears it. Risk: Accidental dragging during clearance; outward separation accompanies lift, with no grasp commanded. Lesson: End-corner pushing is poor for preserving angle here; use a different face for the remaining translation.",
+      "targets": {
+        "right_x": 0.24,
+        "right_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 268,
+        "start": 264
+      },
+      "left_wrist": {
+        "end": 268,
+        "start": 264
+      },
+      "right_wrist": {
+        "end": 268,
+        "start": 264
+      }
+    },
+    "control_end": 221,
+    "control_start": 217,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "State: End pushes reduced x offset but angular drift persists and large forward translation is still needed. Check: +y-biased push executed but did not restore target angle; continued same contact is ineffective. Expect: Disengage rightward and raise empty closed tool to relocate behind the crossbar for a forward push. Verify: T remains on table and stationary as tool clears it. Risk: Accidental dragging during clearance; outward separation accompanies lift, with no grasp commanded. Lesson: End-corner pushing is poor for preserving angle here; use a different face for the remaining translation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Empty tool is clear; T remains on table with residual angle and xy error. Check: Clearance landed within 1 mm and no block lift is visible. Expect: Move above the rear side of crossbar using RGB-estimated coordinates for a new forward-pushing approach. Verify: Wrist should show crossbar forward of jaws, not beneath them. Risk: Coordinate uncertainty; stay elevated until edge clearance is visible. Lesson: Tool disengagement left T on the table; new-face pushing can proceed without a grasp.",
+      "targets": {
+        "right_x": 0.15,
+        "right_y": -0.085
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 276,
+        "start": 269
+      },
+      "left_wrist": {
+        "end": 276,
+        "start": 269
+      },
+      "right_wrist": {
+        "end": 276,
+        "start": 269
+      }
+    },
+    "control_end": 228,
+    "control_start": 221,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "State: Empty tool is clear; T remains on table with residual angle and xy error. Check: Clearance landed within 1 mm and no block lift is visible. Expect: Move above the rear side of crossbar using RGB-estimated coordinates for a new forward-pushing approach. Verify: Wrist should show crossbar forward of jaws, not beneath them. Risk: Coordinate uncertainty; stay elevated until edge clearance is visible. Lesson: Tool disengagement left T on the table; new-face pushing can proceed without a grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tool is above the rear side of T; forward translation and angle correction remain required. Check: Rear staging landed accurately with block unchanged. Expect: Lower toward side-contact height outside the rear edge, stopping above table before final adjustment. Verify: Left view should retain a visible gap between jaw and blue rear edge. Risk: Estimated clearance; if tool overlies block, stop descent and move rearward. Lesson: Independent left view exposes this rear approach clearly.",
+      "targets": {
+        "right_z": 0.787
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 280,
+        "start": 277
+      },
+      "left_wrist": {
+        "end": 280,
+        "start": 277
+      },
+      "right_wrist": {
+        "end": 280,
+        "start": 277
+      }
+    },
+    "control_end": 231,
+    "control_start": 228,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "State: Tool is above the rear side of T; forward translation and angle correction remain required. Check: Rear staging landed accurately with block unchanged. Expect: Lower toward side-contact height outside the rear edge, stopping above table before final adjustment. Verify: Left view should retain a visible gap between jaw and blue rear edge. Risk: Estimated clearance; if tool overlies block, stop descent and move rearward. Lesson: Independent left view exposes this rear approach clearly.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Rear edge is visible forward-left of jaw; T still needs substantial forward-left displacement. Check: Descent landed 2 mm high with no T motion. Expect: Shift 20 mm left into line with crossbar rear tip and lower to pushing height outside it. Verify: Left view should show jaw behind crossbar tip with a remaining gap. Risk: Table proximity; stop at established low height and inspect before contact. Lesson: Rear approach is laterally right of crossbar, so correct alignment before pushing.",
+      "targets": {
+        "right_x": 0.13,
+        "right_z": 0.777
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 282,
+        "start": 281
+      },
+      "left_wrist": {
+        "end": 282,
+        "start": 281
+      },
+      "right_wrist": {
+        "end": 282,
+        "start": 281
+      }
+    },
+    "control_end": 232,
+    "control_start": 231,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 49,
+    "public_note": "State: Rear edge is visible forward-left of jaw; T still needs substantial forward-left displacement. Check: Descent landed 2 mm high with no T motion. Expect: Shift 20 mm left into line with crossbar rear tip and lower to pushing height outside it. Verify: Left view should show jaw behind crossbar tip with a remaining gap. Risk: Table proximity; stop at established low height and inspect before contact. Lesson: Rear approach is laterally right of crossbar, so correct alignment before pushing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Low jaw is behind the crossbar tip with visible clearance; alignment remains incomplete. Check: Lateral descent landed 3 mm away, so current measured position is used. Expect: Advance 15 mm forward and finish lowering slightly to approach the rear tip. Verify: Gap should narrow, with any T motion checked in left view. Risk: Contact may begin before full travel; next steps will be only a few millimetres. Lesson: Crossbar-tip approach is now visibly aligned laterally.",
+      "targets": {
+        "right_y": -0.1,
+        "right_z": 0.7755
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 285,
+        "start": 283
+      },
+      "left_wrist": {
+        "end": 285,
+        "start": 283
+      },
+      "right_wrist": {
+        "end": 285,
+        "start": 283
+      }
+    },
+    "control_end": 234,
+    "control_start": 232,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "State: Low jaw is behind the crossbar tip with visible clearance; alignment remains incomplete. Check: Lateral descent landed 3 mm away, so current measured position is used. Expect: Advance 15 mm forward and finish lowering slightly to approach the rear tip. Verify: Gap should narrow, with any T motion checked in left view. Risk: Contact may begin before full travel; next steps will be only a few millimetres. Lesson: Crossbar-tip approach is now visibly aligned laterally.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaw is a few millimetres behind crossbar tip; T remains forward-right of no target overlap. Check: Approach landed within 1 mm and left a small visible gap. Expect: A 5 mm -y probe should establish rear contact, starting forward motion and potentially useful counterclockwise rotation. Verify: Left view shows T moving toward gray pad while flat. Risk: Off-centre tip contact may rotate too much; use small corrections after engagement. Lesson: Rear-tip clearance is now directly visible in the observer camera.",
+      "targets": {
+        "right_y": -0.1041
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 287,
+        "start": 286
+      },
+      "left_wrist": {
+        "end": 287,
+        "start": 286
+      },
+      "right_wrist": {
+        "end": 287,
+        "start": 286
+      }
+    },
+    "control_end": 235,
+    "control_start": 234,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "State: Jaw is a few millimetres behind crossbar tip; T remains forward-right of no target overlap. Check: Approach landed within 1 mm and left a small visible gap. Expect: A 5 mm -y probe should establish rear contact, starting forward motion and potentially useful counterclockwise rotation. Verify: Left view shows T moving toward gray pad while flat. Risk: Off-centre tip contact may rotate too much; use small corrections after engagement. Lesson: Rear-tip clearance is now directly visible in the observer camera.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Rear-tip gap is nearly closed; T remains right and behind pad. Check: Prior probe landed within 1 mm but no definite object movement occurred. Expect: Advance 6 mm forward with 2 mm left bias to engage tip near its centre. Verify: Blue outline shifts toward pad relative to observer view. Risk: Lateral bias may create rotation; use that feedback to tune translation. Lesson: Previous rear probe narrowed clearance but did not yet establish pushing.",
+      "targets": {
+        "right_x": 0.13,
+        "right_y": -0.1096
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 289,
+        "start": 288
+      },
+      "left_wrist": {
+        "end": 289,
+        "start": 288
+      },
+      "right_wrist": {
+        "end": 289,
+        "start": 288
+      }
+    },
+    "control_end": 236,
+    "control_start": 235,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "State: Rear-tip gap is nearly closed; T remains right and behind pad. Check: Prior probe landed within 1 mm but no definite object movement occurred. Expect: Advance 6 mm forward with 2 mm left bias to engage tip near its centre. Verify: Blue outline shifts toward pad relative to observer view. Risk: Lateral bias may create rotation; use that feedback to tune translation. Lesson: Previous rear probe narrowed clearance but did not yet establish pushing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Rear jaw now appears at the crossbar tip; object motion still unverified. Check: Last probe landed within 1 mm and closed the visible gap. Expect: A 6 mm forward, 2 mm left push should move the T toward pad and reveal rear-contact response. Verify: Independent left view shows blue displacement relative to fixed gray outline. Risk: Tip slips sideways; if contact fails, change x alignment rather than repeat blindly. Lesson: Rear-tip contact can now be tested with a short motion.",
+      "targets": {
+        "right_x": 0.1281,
+        "right_y": -0.115
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 291,
+        "start": 290
+      },
+      "left_wrist": {
+        "end": 291,
+        "start": 290
+      },
+      "right_wrist": {
+        "end": 291,
+        "start": 290
+      }
+    },
+    "control_end": 237,
+    "control_start": 236,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 53,
+    "public_note": "State: Rear jaw now appears at the crossbar tip; object motion still unverified. Check: Last probe landed within 1 mm and closed the visible gap. Expect: A 6 mm forward, 2 mm left push should move the T toward pad and reveal rear-contact response. Verify: Independent left view shows blue displacement relative to fixed gray outline. Risk: Tip slips sideways; if contact fails, change x alignment rather than repeat blindly. Lesson: Rear-tip contact can now be tested with a short motion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Rear contact moved T forward and rotated it toward gray angle; xy offset remains substantial. Check: Last push landed within 1 mm and produced verified planar progress. Expect: Continue 6 mm forward with 3 mm left bias to combine translation toward pad with angular correction. Verify: Blue crossbar moves down-left in observer view and approaches gray tilt. Risk: Rotation can overshoot; tune bias once angles match. Lesson: Rear-crossbar contact provides both useful forward translation and counterclockwise correction.",
+      "targets": {
+        "right_x": 0.1252,
+        "right_y": -0.1203
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 293,
+        "start": 292
+      },
+      "left_wrist": {
+        "end": 293,
+        "start": 292
+      },
+      "right_wrist": {
+        "end": 293,
+        "start": 292
+      }
+    },
+    "control_end": 238,
+    "control_start": 237,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "State: Rear contact moved T forward and rotated it toward gray angle; xy offset remains substantial. Check: Last push landed within 1 mm and produced verified planar progress. Expect: Continue 6 mm forward with 3 mm left bias to combine translation toward pad with angular correction. Verify: Blue crossbar moves down-left in observer view and approaches gray tilt. Risk: Rotation can overshoot; tune bias once angles match. Lesson: Rear-crossbar contact provides both useful forward translation and counterclockwise correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T angle again looks close to pad, but rear-tip contact couples translation to rotation and xy offset remains large. Check: Last push executed and moved T forward while increasing tilt. Expect: Withdraw rearward and raise empty tool to prepare a broader two-jaw guided planar push around the stem, without lifting the block. Verify: T remains on table as jaws clear. Risk: Further rear-tip pushing would overrotate; disengage now. Lesson: Rear-tip contact corrects angle but is unsuitable for long angle-preserving translation.",
+      "targets": {
+        "right_y": -0.0997,
+        "right_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 299,
+        "start": 294
+      },
+      "left_wrist": {
+        "end": 299,
+        "start": 294
+      },
+      "right_wrist": {
+        "end": 299,
+        "start": 294
+      }
+    },
+    "control_end": 243,
+    "control_start": 238,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 55,
+    "public_note": "State: T angle again looks close to pad, but rear-tip contact couples translation to rotation and xy offset remains large. Check: Last push executed and moved T forward while increasing tilt. Expect: Withdraw rearward and raise empty tool to prepare a broader two-jaw guided planar push around the stem, without lifting the block. Verify: T remains on table as jaws clear. Risk: Further rear-tip pushing would overrotate; disengage now. Lesson: Rear-tip contact corrects angle but is unsuitable for long angle-preserving translation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T settled with some additional rotation; precise pose and return remain unmet. Check: Withdrawal reached within 1 mm, but T continued rotating slightly, so prior angle estimate was premature. Expect: Open and rotate elevated jaws across the stem for a two-sided planar guide, never raising T. Verify: Tool rotates clear of stationary block. Risk: Misaligned jaws could twist T on descent; inspect alignment before closing. Lesson: Allow settling after pushes before judging angle; single-point contacts have caused substantial drift.",
+      "targets": {
+        "right_gripper": 1,
+        "right_yaw_deg": -60
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 328,
+        "start": 300
+      },
+      "left_wrist": {
+        "end": 328,
+        "start": 300
+      },
+      "right_wrist": {
+        "end": 328,
+        "start": 300
+      }
+    },
+    "control_end": 271,
+    "control_start": 243,
+    "feedback": "Accepted: playing 28 waypoints (1.1s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 56,
+    "public_note": "State: T settled with some additional rotation; precise pose and return remain unmet. Check: Withdrawal reached within 1 mm, but T continued rotating slightly, so prior angle estimate was premature. Expect: Open and rotate elevated jaws across the stem for a two-sided planar guide, never raising T. Verify: Tool rotates clear of stationary block. Risk: Misaligned jaws could twist T on descent; inspect alignment before closing. Lesson: Allow settling after pushes before judging angle; single-point contacts have caused substantial drift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open jaws are oriented across the stem, elevated and empty; T remains off pad. Check: Rotation landed exactly with no T motion. Expect: Centre open jaws above the middle of the stem for a table-level guided slide. Verify: Stem should appear between jaws with crossbar clear. Risk: RGB centring error; remain elevated and correct before descent. Lesson: Two-sided contact may constrain the angular drift seen in single-point pushes; this is not yet verified.",
+      "targets": {
+        "right_x": 0.167,
+        "right_y": -0.153
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 336,
+        "start": 329
+      },
+      "left_wrist": {
+        "end": 336,
+        "start": 329
+      },
+      "right_wrist": {
+        "end": 336,
+        "start": 329
+      }
+    },
+    "control_end": 278,
+    "control_start": 271,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 57,
+    "public_note": "State: Open jaws are oriented across the stem, elevated and empty; T remains off pad. Check: Rotation landed exactly with no T motion. Expect: Centre open jaws above the middle of the stem for a table-level guided slide. Verify: Stem should appear between jaws with crossbar clear. Risk: RGB centring error; remain elevated and correct before descent. Lesson: Two-sided contact may constrain the angular drift seen in single-point pushes; this is not yet verified.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Stem is centred laterally between open jaws and crossbar is visible; table-level contact remains unverified. Check: Above-stem move landed accurately without object displacement. Expect: Lower open jaws around the stem, stopping short of final table height. Verify: Left view should show jaws straddling blue rather than landing on it, with block unmoved. Risk: Jaw overlap with crossbar; stop if T shifts during descent and recenter. Lesson: Rotated wrist view confirms the stem is aligned with the jaw gap.",
+      "targets": {
+        "right_z": 0.786
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 340,
+        "start": 337
+      },
+      "left_wrist": {
+        "end": 340,
+        "start": 337
+      },
+      "right_wrist": {
+        "end": 340,
+        "start": 337
+      }
+    },
+    "control_end": 281,
+    "control_start": 278,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 58,
+    "public_note": "State: Stem is centred laterally between open jaws and crossbar is visible; table-level contact remains unverified. Check: Above-stem move landed accurately without object displacement. Expect: Lower open jaws around the stem, stopping short of final table height. Verify: Left view should show jaws straddling blue rather than landing on it, with block unmoved. Risk: Jaw overlap with crossbar; stop if T shifts during descent and recenter. Lesson: Rotated wrist view confirms the stem is aligned with the jaw gap.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open jaws straddle the stem and T remains flat; xy and angle still differ from pad. Check: Descent landed 2 mm high without moving T. Expect: Lower another 10 mm to table-level side engagement, keeping jaws open. Verify: Block remains stationary and fingers sit alongside it rather than above. Risk: Table contact; measured height will determine whether further descent is needed. Lesson: Open-jaw descent has not disturbed the T.",
+      "targets": {
+        "right_z": 0.7775
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 342,
+        "start": 341
+      },
+      "left_wrist": {
+        "end": 342,
+        "start": 341
+      },
+      "right_wrist": {
+        "end": 342,
+        "start": 341
+      }
+    },
+    "control_end": 282,
+    "control_start": 281,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 59,
+    "public_note": "State: Open jaws straddle the stem and T remains flat; xy and angle still differ from pad. Check: Descent landed 2 mm high without moving T. Expect: Lower another 10 mm to table-level side engagement, keeping jaws open. Verify: Block remains stationary and fingers sit alongside it rather than above. Risk: Table contact; measured height will determine whether further descent is needed. Lesson: Open-jaw descent has not disturbed the T.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Stem is centred in open jaws near table height; no lift is permitted and alignment remains unmet. Check: Descent landed 1 mm high without T motion. Expect: Lower 4 mm and close around stem only to constrain planar sliding, with no upward motion afterward. Verify: Closure should stop against blue sides; retained contact must be tested by a small table-level translation. Risk: Pinching could tilt T; inspect flatness and reopen if it rises. Lesson: The stem is accessible between jaws without disturbing the crossbar.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.7745
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 350,
+        "start": 343
+      },
+      "left_wrist": {
+        "end": 350,
+        "start": 343
+      },
+      "right_wrist": {
+        "end": 350,
+        "start": 343
+      }
+    },
+    "control_end": 289,
+    "control_start": 282,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 60,
+    "public_note": "State: Stem is centred in open jaws near table height; no lift is permitted and alignment remains unmet. Check: Descent landed 1 mm high without T motion. Expect: Lower 4 mm and close around stem only to constrain planar sliding, with no upward motion afterward. Verify: Closure should stop against blue sides; retained contact must be tested by a small table-level translation. Risk: Pinching could tilt T; inspect flatness and reopen if it rises. Lesson: The stem is accessible between jaws without disturbing the crossbar.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaws stopped at 0.16 around stem; block appears flat, but guided contact is not yet verified. Check: Closure landed at requested height and slightly centred T; closure alone does not prove control. Expect: Slide 5 mm left and 4 mm forward at unchanged height toward pad. Verify: T follows both components without rising or changing angle significantly. Risk: Pinch could lift or slip; reopen if flatness is lost. Lesson: Two-sided closure engaged the stem at table height, pending motion verification.",
+      "targets": {
+        "right_x": 0.1614,
+        "right_y": -0.1567
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 352,
+        "start": 351
+      },
+      "left_wrist": {
+        "end": 352,
+        "start": 351
+      },
+      "right_wrist": {
+        "end": 352,
+        "start": 351
+      }
+    },
+    "control_end": 290,
+    "control_start": 289,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 61,
+    "public_note": "State: Jaws stopped at 0.16 around stem; block appears flat, but guided contact is not yet verified. Check: Closure landed at requested height and slightly centred T; closure alone does not prove control. Expect: Slide 5 mm left and 4 mm forward at unchanged height toward pad. Verify: T follows both components without rising or changing angle significantly. Risk: Pinch could lift or slip; reopen if flatness is lost. Lesson: Two-sided closure engaged the stem at table height, pending motion verification.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T followed the table-level slide with stable jaw relation; target remains left-front and slightly different in angle. Check: Probe landed within 1 mm, blue moved toward pad without visible lift or angular drift. Expect: Slide 6 mm left and 5 mm forward while turning 2 degrees toward gray angle. Verify: Offset decreases and block stays flat with controlled orientation. Risk: Table friction can cause slip; monitor stem position between jaws. Lesson: Two-sided table-level guidance preserved orientation better than single-point pushes in this test.",
+      "targets": {
+        "right_x": 0.1558,
+        "right_y": -0.1613,
+        "right_yaw_deg": -62
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 355,
+        "start": 353
+      },
+      "left_wrist": {
+        "end": 355,
+        "start": 353
+      },
+      "right_wrist": {
+        "end": 355,
+        "start": 353
+      }
+    },
+    "control_end": 292,
+    "control_start": 290,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 62,
+    "public_note": "State: T followed the table-level slide with stable jaw relation; target remains left-front and slightly different in angle. Check: Probe landed within 1 mm, blue moved toward pad without visible lift or angular drift. Expect: Slide 6 mm left and 5 mm forward while turning 2 degrees toward gray angle. Verify: Offset decreases and block stays flat with controlled orientation. Risk: Table friction can cause slip; monitor stem position between jaws. Lesson: Two-sided table-level guidance preserved orientation better than single-point pushes in this test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Guided T is moving toward pad while flat; precise overlap and reset remain pending. Check: Last slide landed within 1 mm and 0.2 degrees; T followed without visible slip. Expect: Continue 6 mm left, 5 mm forward and a small clockwise correction toward gray tilt. Verify: Observer view shows reduced gap and more parallel crossbars. Risk: Angular overshoot; stop turning when tilts agree. Lesson: Two-sided guidance has maintained repeatable planar control over two short slides.",
+      "targets": {
+        "right_x": 0.1501,
+        "right_y": -0.166,
+        "right_yaw_deg": -64
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 358,
+        "start": 356
+      },
+      "left_wrist": {
+        "end": 358,
+        "start": 356
+      },
+      "right_wrist": {
+        "end": 358,
+        "start": 356
+      }
+    },
+    "control_end": 294,
+    "control_start": 292,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 63,
+    "public_note": "State: Guided T is moving toward pad while flat; precise overlap and reset remain pending. Check: Last slide landed within 1 mm and 0.2 degrees; T followed without visible slip. Expect: Continue 6 mm left, 5 mm forward and a small clockwise correction toward gray tilt. Verify: Observer view shows reduced gap and more parallel crossbars. Risk: Angular overshoot; stop turning when tilts agree. Lesson: Two-sided guidance has maintained repeatable planar control over two short slides.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T remains guided flat toward gray pad; crossbars are approaching parallel but position is still offset. Check: Previous slide and turn landed within 1 mm and 0.2 degrees with stable contact. Expect: Continue short left-front slide and 2-degree clockwise correction. Verify: Gap decreases and crossbar tilt matches more closely. Risk: Pad edge may later interfere; keep table height unchanged and inspect for tipping. Lesson: Guided planar motion is preserving predictable T-to-tool alignment.",
+      "targets": {
+        "right_x": 0.1444,
+        "right_y": -0.1707,
+        "right_yaw_deg": -66
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 361,
+        "start": 359
+      },
+      "left_wrist": {
+        "end": 361,
+        "start": 359
+      },
+      "right_wrist": {
+        "end": 361,
+        "start": 359
+      }
+    },
+    "control_end": 296,
+    "control_start": 294,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 64,
+    "public_note": "State: T remains guided flat toward gray pad; crossbars are approaching parallel but position is still offset. Check: Previous slide and turn landed within 1 mm and 0.2 degrees with stable contact. Expect: Continue short left-front slide and 2-degree clockwise correction. Verify: Gap decreases and crossbar tilt matches more closely. Risk: Pad edge may later interfere; keep table height unchanged and inspect for tipping. Lesson: Guided planar motion is preserving predictable T-to-tool alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Crossbars now look approximately parallel; T remains right and behind pad. Check: Last slide and turn executed accurately with stable table-level contact. Expect: Hold angle and slide 6 mm left, 5 mm forward toward overlap. Verify: Crossbar offset decreases without tilt change or lifting. Risk: Pad-edge contact as overlap begins; inspect block flatness each increment. Lesson: Current guided orientation appears close to gray pad, so stop rotating and translate.",
+      "targets": {
+        "right_x": 0.1387,
+        "right_y": -0.1754
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 363,
+        "start": 362
+      },
+      "left_wrist": {
+        "end": 363,
+        "start": 362
+      },
+      "right_wrist": {
+        "end": 363,
+        "start": 362
+      }
+    },
+    "control_end": 297,
+    "control_start": 296,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 65,
+    "public_note": "State: Crossbars now look approximately parallel; T remains right and behind pad. Check: Last slide and turn executed accurately with stable table-level contact. Expect: Hold angle and slide 6 mm left, 5 mm forward toward overlap. Verify: Crossbar offset decreases without tilt change or lifting. Risk: Pad-edge contact as overlap begins; inspect block flatness each increment. Lesson: Current guided orientation appears close to gray pad, so stop rotating and translate.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T is approaching pad with nearly parallel crossbars; exact overlap and arm reset remain unmet. Check: Slide landed within 1 mm; T followed flat with stable orientation. Expect: Continue 6 mm left and 5 mm forward at unchanged height. Verify: Visible blue-gray offset decreases, with no slipping or tipping. Risk: Approaching pad edge; stop if block tilts or contact relation changes. Lesson: Guided sliding is reducing positional error without the earlier angular drift.",
+      "targets": {
+        "right_x": 0.1333,
+        "right_y": -0.1799
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 365,
+        "start": 364
+      },
+      "left_wrist": {
+        "end": 365,
+        "start": 364
+      },
+      "right_wrist": {
+        "end": 365,
+        "start": 364
+      }
+    },
+    "control_end": 298,
+    "control_start": 297,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 66,
+    "public_note": "State: T is approaching pad with nearly parallel crossbars; exact overlap and arm reset remain unmet. Check: Slide landed within 1 mm; T followed flat with stable orientation. Expect: Continue 6 mm left and 5 mm forward at unchanged height. Verify: Visible blue-gray offset decreases, with no slipping or tipping. Risk: Approaching pad edge; stop if block tilts or contact relation changes. Lesson: Guided sliding is reducing positional error without the earlier angular drift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue crossbar is nearing gray stem region, still offset right-back; orientation appears stable. Check: Last slide reached within 1 mm and moved T without visible lift. Expect: Continue a 6 mm left, 5 mm forward planar slide. Verify: Offset shrinks while T remains flat and fixed relative to jaws. Risk: Pad-edge interaction; pause if the crossbar tips. Lesson: Table-level two-sided guidance continues to preserve angle during translation.",
+      "targets": {
+        "right_x": 0.1279,
+        "right_y": -0.1844
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 367,
+        "start": 366
+      },
+      "left_wrist": {
+        "end": 367,
+        "start": 366
+      },
+      "right_wrist": {
+        "end": 367,
+        "start": 366
+      }
+    },
+    "control_end": 299,
+    "control_start": 298,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 67,
+    "public_note": "State: Blue crossbar is nearing gray stem region, still offset right-back; orientation appears stable. Check: Last slide reached within 1 mm and moved T without visible lift. Expect: Continue a 6 mm left, 5 mm forward planar slide. Verify: Offset shrinks while T remains flat and fixed relative to jaws. Risk: Pad-edge interaction; pause if the crossbar tips. Lesson: Table-level two-sided guidance continues to preserve angle during translation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T is partly over the pad's stem region but crossbars are not aligned; reset remains pending. Check: Last slide landed within 1 mm with stable contact and no visible tipping. Expect: Another short left-front slide reduces both positional errors. Verify: Blue crossbar approaches gray crossbar, maintaining parallel edges. Risk: Pad edge may catch; inspect flatness rather than infer it from commanded height. Lesson: Partial pad overlap has not visibly disrupted the guided slide.",
+      "targets": {
+        "right_x": 0.1225,
+        "right_y": -0.1889
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 369,
+        "start": 368
+      },
+      "left_wrist": {
+        "end": 369,
+        "start": 368
+      },
+      "right_wrist": {
+        "end": 369,
+        "start": 368
+      }
+    },
+    "control_end": 300,
+    "control_start": 299,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 68,
+    "public_note": "State: T is partly over the pad's stem region but crossbars are not aligned; reset remains pending. Check: Last slide landed within 1 mm with stable contact and no visible tipping. Expect: Another short left-front slide reduces both positional errors. Verify: Blue crossbar approaches gray crossbar, maintaining parallel edges. Risk: Pad edge may catch; inspect flatness rather than infer it from commanded height. Lesson: Partial pad overlap has not visibly disrupted the guided slide.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue crossbar remains right-back of gray crossbar, with roughly parallel edges; completion and reset are unverified. Check: Previous slide executed within 1 mm and T followed flat. Expect: Continue 6 mm left and 5 mm forward at fixed height and angle. Verify: Visible crossbar offset decreases without slip or lift. Risk: Pad contact could tip the block; stop if edge height changes. Lesson: Guided sliding continues to reduce offset with stable orientation.",
+      "targets": {
+        "right_x": 0.1171,
+        "right_y": -0.1934
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 371,
+        "start": 370
+      },
+      "left_wrist": {
+        "end": 371,
+        "start": 370
+      },
+      "right_wrist": {
+        "end": 371,
+        "start": 370
+      }
+    },
+    "control_end": 301,
+    "control_start": 300,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 69,
+    "public_note": "State: Blue crossbar remains right-back of gray crossbar, with roughly parallel edges; completion and reset are unverified. Check: Previous slide executed within 1 mm and T followed flat. Expect: Continue 6 mm left and 5 mm forward at fixed height and angle. Verify: Visible crossbar offset decreases without slip or lift. Risk: Pad contact could tip the block; stop if edge height changes. Lesson: Guided sliding continues to reduce offset with stable orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T remains guided near pad but not aligned; observer arm is close to working arm. Check: Last right slide missed by 2 mm and idle left pose shifted 2 mm, suggesting possible arm interference rather than normal free travel. Expect: Move observer leftward away from work, preserving right contact and beginning its return route. Verify: Left separates, right and T remain stationary, head view clears. Risk: Inter-arm contact during retreat; move only idle arm outward. Lesson: Observer placement now interferes with the working path; clear it before further sliding.",
+      "targets": {
+        "left_x": -0.12,
+        "left_y": -0.2
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 394,
+        "start": 372
+      },
+      "left_wrist": {
+        "end": 394,
+        "start": 372
+      },
+      "right_wrist": {
+        "end": 394,
+        "start": 372
+      }
+    },
+    "control_end": 323,
+    "control_start": 301,
+    "feedback": "Accepted: playing 22 waypoints (0.9s). The next observation reports how close the grasp point landed.",
+    "policy_step": 70,
+    "public_note": "State: T remains guided near pad but not aligned; observer arm is close to working arm. Check: Last right slide missed by 2 mm and idle left pose shifted 2 mm, suggesting possible arm interference rather than normal free travel. Expect: Move observer leftward away from work, preserving right contact and beginning its return route. Verify: Left separates, right and T remain stationary, head view clears. Risk: Inter-arm contact during retreat; move only idle arm outward. Lesson: Observer placement now interferes with the working path; clear it before further sliding.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Head view now shows blue crossbar right-back of gray by several centimetres; angle looks close. Check: Observer retreat landed exactly, leaving T and right contact unchanged and clearing interference. Expect: Slide 6 mm left and forward at fixed height toward pad. Verify: Head-view crossbar separation decreases while wrist relation remains stable. Risk: Pad edge or residual arm interference; inspect arrival and flatness. Lesson: Moving observer aside restored a clear working path and fixed head view.",
+      "targets": {
+        "right_x": 0.1127,
+        "right_y": -0.1978
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 396,
+        "start": 395
+      },
+      "left_wrist": {
+        "end": 396,
+        "start": 395
+      },
+      "right_wrist": {
+        "end": 396,
+        "start": 395
+      }
+    },
+    "control_end": 324,
+    "control_start": 323,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 71,
+    "public_note": "State: Head view now shows blue crossbar right-back of gray by several centimetres; angle looks close. Check: Observer retreat landed exactly, leaving T and right contact unchanged and clearing interference. Expect: Slide 6 mm left and forward at fixed height toward pad. Verify: Head-view crossbar separation decreases while wrist relation remains stable. Risk: Pad edge or residual arm interference; inspect arrival and flatness. Lesson: Moving observer aside restored a clear working path and fixed head view.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T is closer to pad but crossbars remain offset; no lift observed and return is pending. Check: Slide landed within 1 mm after observer clearance; T followed with stable angle. Expect: Continue a 6 mm left-front slide. Verify: Head-view blue-gray separation decreases and wrist shows no slip. Risk: Pad-edge catching; inspect for tipping and stop if it occurs. Lesson: Accurate guided motion resumed once observer was moved aside.",
+      "targets": {
+        "right_x": 0.1072,
+        "right_y": -0.2032
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 398,
+        "start": 397
+      },
+      "left_wrist": {
+        "end": 398,
+        "start": 397
+      },
+      "right_wrist": {
+        "end": 398,
+        "start": 397
+      }
+    },
+    "control_end": 325,
+    "control_start": 324,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 72,
+    "public_note": "State: T is closer to pad but crossbars remain offset; no lift observed and return is pending. Check: Slide landed within 1 mm after observer clearance; T followed with stable angle. Expect: Continue a 6 mm left-front slide. Verify: Head-view blue-gray separation decreases and wrist shows no slip. Risk: Pad-edge catching; inspect for tipping and stop if it occurs. Lesson: Accurate guided motion resumed once observer was moved aside.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue crossbar remains right-back of gray with decreasing separation; full overlap and return remain unmet. Check: Last slide landed within 1 mm and T followed without visible tipping. Expect: Continue 6 mm left and forward, holding height and orientation. Verify: Head view shows further reduction in offset, wrist relation stays fixed. Risk: Pad boundary contact; monitor for any rise or slip. Lesson: Guided planar translation remains reliable at this stage.",
+      "targets": {
+        "right_x": 0.1018,
+        "right_y": -0.2086
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 400,
+        "start": 399
+      },
+      "left_wrist": {
+        "end": 400,
+        "start": 399
+      },
+      "right_wrist": {
+        "end": 400,
+        "start": 399
+      }
+    },
+    "control_end": 326,
+    "control_start": 325,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 73,
+    "public_note": "State: Blue crossbar remains right-back of gray with decreasing separation; full overlap and return remain unmet. Check: Last slide landed within 1 mm and T followed without visible tipping. Expect: Continue 6 mm left and forward, holding height and orientation. Verify: Head view shows further reduction in offset, wrist relation stays fixed. Risk: Pad boundary contact; monitor for any rise or slip. Lesson: Guided planar translation remains reliable at this stage.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Crossbar separation is now a few centimetres; angle appears close and T remains guided at table height. Check: Last slide landed within 1 mm with no visible slip or lift. Expect: Continue short left-front slide toward overlap. Verify: Gray exposed area beneath and left of blue decreases. Risk: Near-pad contact may alter height; inspect rather than assume flatness. Lesson: Fixed-height guidance is maintaining stable pose through partial overlap.",
+      "targets": {
+        "right_x": 0.0964,
+        "right_y": -0.214
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 402,
+        "start": 401
+      },
+      "left_wrist": {
+        "end": 402,
+        "start": 401
+      },
+      "right_wrist": {
+        "end": 402,
+        "start": 401
+      }
+    },
+    "control_end": 327,
+    "control_start": 326,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 74,
+    "public_note": "State: Crossbar separation is now a few centimetres; angle appears close and T remains guided at table height. Check: Last slide landed within 1 mm with no visible slip or lift. Expect: Continue short left-front slide toward overlap. Verify: Gray exposed area beneath and left of blue decreases. Risk: Near-pad contact may alter height; inspect rather than assume flatness. Lesson: Fixed-height guidance is maintaining stable pose through partial overlap.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue still projects right-back of gray; precise placement and both-arm return remain pending. Check: Last slide landed within 1 mm and retained stable flat contact. Expect: Slide another 6 mm left and 5 mm forward, holding angle. Verify: Exposed gray border shrinks and no tipping occurs. Risk: Overshoot as overlap increases; reassess border after this increment. Lesson: Guided sliding continues to reduce both visible offsets.",
+      "targets": {
+        "right_x": 0.091,
+        "right_y": -0.2184
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 404,
+        "start": 403
+      },
+      "left_wrist": {
+        "end": 404,
+        "start": 403
+      },
+      "right_wrist": {
+        "end": 404,
+        "start": 403
+      }
+    },
+    "control_end": 328,
+    "control_start": 327,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 75,
+    "public_note": "State: Blue still projects right-back of gray; precise placement and both-arm return remain pending. Check: Last slide landed within 1 mm and retained stable flat contact. Expect: Slide another 6 mm left and 5 mm forward, holding angle. Verify: Exposed gray border shrinks and no tipping occurs. Risk: Overshoot as overlap increases; reassess border after this increment. Lesson: Guided sliding continues to reduce both visible offsets.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T overlaps more of pad but gray crossbar remains exposed left-front. Check: Previous slide landed within 1 mm, preserving orientation and flatness. Expect: Continue 6 mm left and 5 mm forward to reduce remaining border. Verify: Head view should show nearer crossbar coincidence, without wrist slip. Risk: Overshoot near target; shorten next move if borders nearly coincide. Lesson: Stable guided contact supports incremental placement correction.",
+      "targets": {
+        "right_x": 0.0856,
+        "right_y": -0.2229
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 406,
+        "start": 405
+      },
+      "left_wrist": {
+        "end": 406,
+        "start": 405
+      },
+      "right_wrist": {
+        "end": 406,
+        "start": 405
+      }
+    },
+    "control_end": 329,
+    "control_start": 328,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 76,
+    "public_note": "State: T overlaps more of pad but gray crossbar remains exposed left-front. Check: Previous slide landed within 1 mm, preserving orientation and flatness. Expect: Continue 6 mm left and 5 mm forward to reduce remaining border. Verify: Head view should show nearer crossbar coincidence, without wrist slip. Risk: Overshoot near target; shorten next move if borders nearly coincide. Lesson: Stable guided contact supports incremental placement correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Gray crossbar remains narrowly exposed left-front; angle is close but exact fit is not verified. Check: Last slide landed within 1 mm and retained stable flat contact. Expect: Reduce increment to 5 mm left and 4 mm forward to approach coincidence. Verify: Gray border should narrow without appearing on the opposite side. Risk: Overshoot; inspect before another correction. Lesson: Placement is near enough to use finer translation increments.",
+      "targets": {
+        "right_x": 0.0812,
+        "right_y": -0.2264
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 408,
+        "start": 407
+      },
+      "left_wrist": {
+        "end": 408,
+        "start": 407
+      },
+      "right_wrist": {
+        "end": 408,
+        "start": 407
+      }
+    },
+    "control_end": 330,
+    "control_start": 329,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 77,
+    "public_note": "State: Gray crossbar remains narrowly exposed left-front; angle is close but exact fit is not verified. Check: Last slide landed within 1 mm and retained stable flat contact. Expect: Reduce increment to 5 mm left and 4 mm forward to approach coincidence. Verify: Gray border should narrow without appearing on the opposite side. Risk: Overshoot; inspect before another correction. Lesson: Placement is near enough to use finer translation increments.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Blue is nearly over gray but a small left-front border remains visible; exact angle and release stability remain unverified. Check: Fine slide landed within 1 mm with stable contact. Expect: Move 4 mm left and forward to reduce remaining offset. Verify: Head-view borders approach coincidence without crossing past target. Risk: Millimetre overshoot and occlusion; inspect again before release. Lesson: Smaller guided corrections are appropriate near the pad outline.",
+      "targets": {
+        "right_x": 0.0777,
+        "right_y": -0.23
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 410,
+        "start": 409
+      },
+      "left_wrist": {
+        "end": 410,
+        "start": 409
+      },
+      "right_wrist": {
+        "end": 410,
+        "start": 409
+      }
+    },
+    "control_end": 331,
+    "control_start": 330,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 78,
+    "public_note": "State: Blue is nearly over gray but a small left-front border remains visible; exact angle and release stability remain unverified. Check: Fine slide landed within 1 mm with stable contact. Expect: Move 4 mm left and forward to reduce remaining offset. Verify: Head-view borders approach coincidence without crossing past target. Risk: Millimetre overshoot and occlusion; inspect again before release. Lesson: Smaller guided corrections are appropriate near the pad outline.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Small right-back offset remains in head view; T is still constrained at table level and reset is pending. Check: Last 4 mm slide landed within 1 mm and reduced border exposure. Expect: Another 4 mm left-front correction approaches the pad centre. Verify: Blue and gray crossbar endpoints should nearly coincide; opposite border exposure would indicate overshoot. Risk: Occluded stem prevents full fit verification; release and clear tool once visible crossbar aligns. Lesson: Head-view crossbar endpoints provide the remaining positional cue.",
+      "targets": {
+        "right_x": 0.0741,
+        "right_y": -0.2336
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 412,
+        "start": 411
+      },
+      "left_wrist": {
+        "end": 412,
+        "start": 411
+      },
+      "right_wrist": {
+        "end": 412,
+        "start": 411
+      }
+    },
+    "control_end": 332,
+    "control_start": 331,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 79,
+    "public_note": "State: Small right-back offset remains in head view; T is still constrained at table level and reset is pending. Check: Last 4 mm slide landed within 1 mm and reduced border exposure. Expect: Another 4 mm left-front correction approaches the pad centre. Verify: Blue and gray crossbar endpoints should nearly coincide; opposite border exposure would indicate overshoot. Risk: Occluded stem prevents full fit verification; release and clear tool once visible crossbar aligns. Lesson: Head-view crossbar endpoints provide the remaining positional cue.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T appears nearly coincident with pad, but hand occlusion prevents precise full-outline verification; both arms still need return. Check: Fine slide landed within 1 mm and gray is now only narrowly exposed. Expect: Open jaws at unchanged height, leaving T resting on pad without lifting. Verify: T remains stationary and flat after release; opening alone does not prove correct fit. Risk: Release may shift T; inspect before clearing the tool. Lesson: Guided sliding brought the outlines close; final placement needs an unobstructed released view.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 418,
+        "start": 413
+      },
+      "left_wrist": {
+        "end": 418,
+        "start": 413
+      },
+      "right_wrist": {
+        "end": 418,
+        "start": 413
+      }
+    },
+    "control_end": 337,
+    "control_start": 332,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 5 move the gripper, once the arm has arrived.",
+    "policy_step": 80,
+    "public_note": "State: T appears nearly coincident with pad, but hand occlusion prevents precise full-outline verification; both arms still need return. Check: Fine slide landed within 1 mm and gray is now only narrowly exposed. Expect: Open jaws at unchanged height, leaving T resting on pad without lifting. Verify: T remains stationary and flat after release; opening alone does not prove correct fit. Risk: Release may shift T; inspect before clearing the tool. Lesson: Guided sliding brought the outlines close; final placement needs an unobstructed released view.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Released T shifted slightly, exposing gray behind the stem; exact alignment is not yet confirmed. Check: Jaws opened fully at fixed height, but block settled forward relative to pad rather than remaining perfectly still. Expect: Raise empty open tool to expose both complete outlines without moving T. Verify: Block stays on table and unobstructed views reveal residual xy and angle error. Risk: Finger snag on crossbar; open gap is visible, and any T rise requires immediate stop. Lesson: Release changed the settled pose, so pre-release alignment was not final evidence.",
+      "targets": {
+        "right_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 424,
+        "start": 419
+      },
+      "left_wrist": {
+        "end": 424,
+        "start": 419
+      },
+      "right_wrist": {
+        "end": 424,
+        "start": 419
+      }
+    },
+    "control_end": 342,
+    "control_start": 337,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 81,
+    "public_note": "State: Released T shifted slightly, exposing gray behind the stem; exact alignment is not yet confirmed. Check: Jaws opened fully at fixed height, but block settled forward relative to pad rather than remaining perfectly still. Expect: Raise empty open tool to expose both complete outlines without moving T. Verify: Block stays on table and unobstructed views reveal residual xy and angle error. Risk: Finger snag on crossbar; open gap is visible, and any T rise requires immediate stop. Lesson: Release changed the settled pose, so pre-release alignment was not final evidence.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Released T rests over pad with similar orientation; a narrow gray border remains, so exact scoring tolerance is unknown. Both arms must return. Check: Empty-tool rise landed within 1 mm and T stayed on table; full outline is now visible. Expect: Return right position in free space, leaving T undisturbed and improving head view. Verify: Right position approaches origin while T remains over pad; orientation return is still required. Risk: Large free-space reach may be refused; split if needed. Lesson: Released T stayed on the pad when the open tool cleared it; no carried lift occurred.",
+      "targets": {
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 442,
+        "start": 425
+      },
+      "left_wrist": {
+        "end": 442,
+        "start": 425
+      },
+      "right_wrist": {
+        "end": 442,
+        "start": 425
+      }
+    },
+    "control_end": 359,
+    "control_start": 342,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 82,
+    "public_note": "State: Released T rests over pad with similar orientation; a narrow gray border remains, so exact scoring tolerance is unknown. Both arms must return. Check: Empty-tool rise landed within 1 mm and T stayed on table; full outline is now visible. Expect: Return right position in free space, leaving T undisturbed and improving head view. Verify: Right position approaches origin while T remains over pad; orientation return is still required. Risk: Large free-space reach may be refused; split if needed. Lesson: Released T stayed on the pad when the open tool cleared it; no carried lift occurred.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Unobstructed head view shows blue T closely covering gray pad; precise tolerance remains unverified. Right position is home, but both orientations and left position need return. Check: Right translation landed exactly and T stayed still. Expect: Partly restore right yaw in free space. Verify: Yaw approaches -30 degrees without object movement. Risk: Wrist rotation reachability; split rotations as needed. Lesson: T retained its released placement during arm withdrawal.",
+      "targets": {
+        "right_yaw_deg": -30
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 456,
+        "start": 443
+      },
+      "left_wrist": {
+        "end": 456,
+        "start": 443
+      },
+      "right_wrist": {
+        "end": 456,
+        "start": 443
+      }
+    },
+    "control_end": 372,
+    "control_start": 359,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 83,
+    "public_note": "State: Unobstructed head view shows blue T closely covering gray pad; precise tolerance remains unverified. Right position is home, but both orientations and left position need return. Check: Right translation landed exactly and T stayed still. Expect: Partly restore right yaw in free space. Verify: Yaw approaches -30 degrees without object movement. Risk: Wrist rotation reachability; split rotations as needed. Lesson: T retained its released placement during arm withdrawal.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: T remains closely over pad; right position is home, orientation reset incomplete. Check: Yaw step landed exactly without object change. Expect: Restore yaw and half of right pitch in free space. Verify: Right reaches zero yaw and 45-degree pitch while T stays fixed. Risk: Combined rotation could be refused; split further if needed. Lesson: Free-space return rotations have not disturbed placement.",
+      "targets": {
+        "right_pitch_deg": 45,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 472,
+        "start": 457
+      },
+      "left_wrist": {
+        "end": 472,
+        "start": 457
+      },
+      "right_wrist": {
+        "end": 472,
+        "start": 457
+      }
+    },
+    "control_end": 387,
+    "control_start": 372,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 84,
+    "public_note": "State: T remains closely over pad; right position is home, orientation reset incomplete. Check: Yaw step landed exactly without object change. Expect: Restore yaw and half of right pitch in free space. Verify: Right reaches zero yaw and 45-degree pitch while T stays fixed. Risk: Combined rotation could be refused; split further if needed. Lesson: Free-space return rotations have not disturbed placement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Released T stays over pad; right arm needs its final pitch return and left arm still needs reset. Check: Right combined rotation landed exactly, no object change. Expect: Restore right starting pitch, completing its return. Verify: Right pose is within origin tolerances while T remains fixed. Risk: Free-space tool sweep; no nearby contact is evident. Lesson: Placement is stable during right-arm return.",
+      "targets": {
+        "right_pitch_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 489,
+        "start": 473
+      },
+      "left_wrist": {
+        "end": 489,
+        "start": 473
+      },
+      "right_wrist": {
+        "end": 489,
+        "start": 473
+      }
+    },
+    "control_end": 403,
+    "control_start": 387,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 85,
+    "public_note": "State: Released T stays over pad; right arm needs its final pitch return and left arm still needs reset. Check: Right combined rotation landed exactly, no object change. Expect: Restore right starting pitch, completing its return. Verify: Right pose is within origin tolerances while T remains fixed. Risk: Free-space tool sweep; no nearby contact is evident. Lesson: Placement is stable during right-arm return.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right arm has returned to origin; T remains closely over pad. Left position and orientation return remain required, and exact placement tolerance is unverified. Check: Right final pitch landed exactly with T unchanged. Expect: Return left position in free space before restoring its pitch. Verify: Left reaches starting position and T remains stationary. Risk: Reachability during return; position and orientation are separated to reduce planner difficulty. Lesson: Released placement remained stable through the complete right-arm return.",
+      "targets": {
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 509,
+        "start": 490
+      },
+      "left_wrist": {
+        "end": 509,
+        "start": 490
+      },
+      "right_wrist": {
+        "end": 509,
+        "start": 490
+      }
+    },
+    "control_end": 422,
+    "control_start": 403,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 86,
+    "public_note": "State: Right arm has returned to origin; T remains closely over pad. Left position and orientation return remain required, and exact placement tolerance is unverified. Check: Right final pitch landed exactly with T unchanged. Expect: Return left position in free space before restoring its pitch. Verify: Left reaches starting position and T remains stationary. Risk: Reachability during return; position and orientation are separated to reduce planner difficulty. Lesson: Released placement remained stable through the complete right-arm return.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Both arm positions are home; left orientation is the remaining reset condition. Released T closely covers the pad with no observed carried lift; exact scoring tolerance remains unknown. Check: Left positional return landed exactly and T stayed stationary. Expect: Restore left starting orientation, completing both-arm return while leaving placement unchanged. Verify: Both measured poses should satisfy origin tolerances and T remain over pad; only environment feedback can confirm official success. Risk: Free-space rotation has no evident object contact risk. Lesson: Two-sided table-level guidance achieved stable near-pad placement after single-point pushes caused angular drift.",
+      "targets": {
+        "left_pitch_deg": 90,
+        "left_roll_deg": 0,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 519,
+        "start": 510
+      },
+      "left_wrist": {
+        "end": 519,
+        "start": 510
+      },
+      "right_wrist": {
+        "end": 519,
+        "start": 510
+      }
+    },
+    "control_end": 431,
+    "control_start": 422,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 87,
+    "public_note": "State: Both arm positions are home; left orientation is the remaining reset condition. Released T closely covers the pad with no observed carried lift; exact scoring tolerance remains unknown. Check: Left positional return landed exactly and T stayed stationary. Expect: Restore left starting orientation, completing both-arm return while leaving placement unchanged. Verify: Both measured poses should satisfy origin tolerances and T remain over pad; only environment feedback can confirm official success. Risk: Free-space rotation has no evident object contact risk. Lesson: Two-sided table-level guidance achieved stable near-pad placement after single-point pushes caused angular drift.",
+    "tool": "move_eef"
+  }
+]

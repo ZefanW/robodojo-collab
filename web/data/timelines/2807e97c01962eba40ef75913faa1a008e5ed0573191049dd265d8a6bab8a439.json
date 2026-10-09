@@ -1,0 +1,2767 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse is beside the empty pad; all placements remain unverified. Both grippers are open. Check: No previous action. Expect: Tilt the right tool toward a downward mouse grasp without moving its grasp point. Verify: Next state should show the tilt and provide a clearer approach view; mouse should remain stationary. Risk: Wrist sweep could approach nearby objects; stop or raise if clearance shrinks. Lesson: None established yet.",
+      "targets": {
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 17,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 17,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 17,
+        "start": 1
+      }
+    },
+    "control_end": 16,
+    "control_start": 0,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 0,
+    "public_note": "State: Mouse is beside the empty pad; all placements remain unverified. Both grippers are open. Check: No previous action. Expect: Tilt the right tool toward a downward mouse grasp without moving its grasp point. Verify: Next state should show the tilt and provide a clearer approach view; mouse should remain stationary. Risk: Wrist sweep could approach nearby objects; stop or raise if clearance shrinks. Lesson: None established yet.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse remains left of its pad, ungrasped. Check: Prior tilt landed exactly; no object movement observed. Expect: Finish downward orientation and advance toward the mouse at safe height. Verify: Mouse should appear near the jaw center in the wrist view; placement remains pending. Risk: Estimated mouse position may be offset; correct from the next view before descending. Lesson: The first incremental wrist rotation executed accurately.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_y": -0.07
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 45,
+        "start": 18
+      },
+      "left_wrist": {
+        "end": 45,
+        "start": 18
+      },
+      "right_wrist": {
+        "end": 45,
+        "start": 18
+      }
+    },
+    "control_end": 43,
+    "control_start": 16,
+    "feedback": "Accepted: playing 27 waypoints (1.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "State: Mouse remains left of its pad, ungrasped. Check: Prior tilt landed exactly; no object movement observed. Expect: Finish downward orientation and advance toward the mouse at safe height. Verify: Mouse should appear near the jaw center in the wrist view; placement remains pending. Risk: Estimated mouse position may be offset; correct from the next view before descending. Lesson: The first incremental wrist rotation executed accurately.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse is visible but offset from the downward open jaws; no item is organized yet. Check: Right arm reached the prior pose exactly; mouse stayed on the table. Expect: Shift toward the estimated mouse center and descend to a pregrasp height. Verify: Next wrist image should show the mouse between the jaws with clearance before closure. Risk: RGB position estimates may be inaccurate; use the next view to correct rather than close blindly. Lesson: Incremental orientation changes have landed accurately.",
+      "targets": {
+        "right_x": 0.265,
+        "right_y": 0.005,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 53,
+        "start": 46
+      },
+      "left_wrist": {
+        "end": 53,
+        "start": 46
+      },
+      "right_wrist": {
+        "end": 53,
+        "start": 46
+      }
+    },
+    "control_end": 50,
+    "control_start": 43,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "State: Mouse is visible but offset from the downward open jaws; no item is organized yet. Check: Right arm reached the prior pose exactly; mouse stayed on the table. Expect: Shift toward the estimated mouse center and descend to a pregrasp height. Verify: Next wrist image should show the mouse between the jaws with clearance before closure. Risk: RGB position estimates may be inaccurate; use the next view to correct rather than close blindly. Lesson: Incremental orientation changes have landed accurately.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse remains on the table, now visibly right of the jaw gap. Check: Pose landed within 1 mm, but lateral alignment worsened; the prior image-to-world lateral interpretation was wrong. Expect: Move in positive x to center the mouse and lower while still above it. Verify: Mouse should move into the wrist-view jaw gap without being displaced. Risk: A finger may contact the mouse if alignment remains off; stop descent and correct laterally if seen. Lesson: In this downward wrist view, positive world x moves the grasp toward image-right objects.",
+      "targets": {
+        "right_x": 0.325,
+        "right_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 57,
+        "start": 54
+      },
+      "left_wrist": {
+        "end": 57,
+        "start": 54
+      },
+      "right_wrist": {
+        "end": 57,
+        "start": 54
+      }
+    },
+    "control_end": 53,
+    "control_start": 50,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "State: Mouse remains on the table, now visibly right of the jaw gap. Check: Pose landed within 1 mm, but lateral alignment worsened; the prior image-to-world lateral interpretation was wrong. Expect: Move in positive x to center the mouse and lower while still above it. Verify: Mouse should move into the wrist-view jaw gap without being displaced. Risk: A finger may contact the mouse if alignment remains off; stop descent and correct laterally if seen. Lesson: In this downward wrist view, positive world x moves the grasp toward image-right objects.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse is nearly centered laterally between the open jaws; grasp and placement remain pending. Check: Positive-x correction improved alignment; arrival was 3 mm short, with no visible object movement. Expect: Center more closely and lower to near the mouse sidewalls. Verify: Jaws should straddle the mouse rather than rest on its top. Risk: Height and fore-aft alignment remain estimated; inspect before closing and use millimetre corrections near contact. Lesson: Positive x corrected the lateral error in this view.",
+      "targets": {
+        "right_x": 0.335,
+        "right_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 61,
+        "start": 58
+      },
+      "left_wrist": {
+        "end": 61,
+        "start": 58
+      },
+      "right_wrist": {
+        "end": 61,
+        "start": 58
+      }
+    },
+    "control_end": 56,
+    "control_start": 53,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "State: Mouse is nearly centered laterally between the open jaws; grasp and placement remain pending. Check: Positive-x correction improved alignment; arrival was 3 mm short, with no visible object movement. Expect: Center more closely and lower to near the mouse sidewalls. Verify: Jaws should straddle the mouse rather than rest on its top. Risk: Height and fore-aft alignment remain estimated; inspect before closing and use millimetre corrections near contact. Lesson: Positive x corrected the lateral error in this view.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse is laterally centered but appears behind the jaw tips; no grasp established. Check: Descent landed within 1 mm, while the mouse moved toward the wrist-image bottom rather than into the contact region. Expect: Move rearward at the current height to align the jaws with the mouse body. Verify: Mouse should shift upward between the jaw tips without sliding on the table. Risk: Low lateral travel could brush the mouse; if it moves, raise before further alignment. Lesson: Lateral centering alone did not resolve fore-aft alignment; the head view also shows the hand ahead of the mouse.",
+      "targets": {
+        "right_y": -0.055
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 71,
+        "start": 62
+      },
+      "left_wrist": {
+        "end": 71,
+        "start": 62
+      },
+      "right_wrist": {
+        "end": 71,
+        "start": 62
+      }
+    },
+    "control_end": 65,
+    "control_start": 56,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "State: Mouse is laterally centered but appears behind the jaw tips; no grasp established. Check: Descent landed within 1 mm, while the mouse moved toward the wrist-image bottom rather than into the contact region. Expect: Move rearward at the current height to align the jaws with the mouse body. Verify: Mouse should shift upward between the jaw tips without sliding on the table. Risk: Low lateral travel could brush the mouse; if it moves, raise before further alignment. Lesson: Lateral centering alone did not resolve fore-aft alignment; the head view also shows the hand ahead of the mouse.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse body is now centered between the open jaws, still resting on the table. Check: Rearward motion reached its target and improved fore-aft alignment without visible mouse displacement. Expect: Lower 5 mm to engage the sidewalls more securely before closure. Verify: Jaws should remain beside the body, with no mouse tilt or slide. Risk: Table or shell contact; stop descending if either appears. Lesson: Rearward travel brought the mouse into the jaw region in this downward view.",
+      "targets": {
+        "right_z": 0.796
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 73,
+        "start": 72
+      },
+      "left_wrist": {
+        "end": 73,
+        "start": 72
+      },
+      "right_wrist": {
+        "end": 73,
+        "start": 72
+      }
+    },
+    "control_end": 66,
+    "control_start": 65,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "State: Mouse body is now centered between the open jaws, still resting on the table. Check: Rearward motion reached its target and improved fore-aft alignment without visible mouse displacement. Expect: Lower 5 mm to engage the sidewalls more securely before closure. Verify: Jaws should remain beside the body, with no mouse tilt or slide. Risk: Table or shell contact; stop descending if either appears. Lesson: Rearward travel brought the mouse into the jaw region in this downward view.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open jaws straddle the mouse body at low height; retention and pad placement remain unverified. Check: The 5 mm descent landed within 1 mm with no visible displacement. Expect: Close onto the mouse sides without moving the arm. Verify: Jaw contact should be visible; only a subsequent lift with the mouse following will establish retention. Risk: A shallow grasp may slip or push the shell; reopen and lower slightly if closure misses. Lesson: Rearward alignment centered the body without disturbing it.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 80,
+        "start": 74
+      },
+      "left_wrist": {
+        "end": 80,
+        "start": 74
+      },
+      "right_wrist": {
+        "end": 80,
+        "start": 74
+      }
+    },
+    "control_end": 72,
+    "control_start": 66,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 7,
+    "public_note": "State: Open jaws straddle the mouse body at low height; retention and pad placement remain unverified. Check: The 5 mm descent landed within 1 mm with no visible displacement. Expect: Close onto the mouse sides without moving the arm. Verify: Jaw contact should be visible; only a subsequent lift with the mouse following will establish retention. Risk: A shallow grasp may slip or push the shell; reopen and lower slightly if closure misses. Lesson: Rearward alignment centered the body without disturbing it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaws contact both mouse sides and closure stopped at 0.60; retention is not yet proven. Check: Closure shifted the mouse slightly into the jaw center, with no lift yet. Expect: Raise 4 cm to test and establish a transport grasp. Verify: Mouse should rise with the jaws and leave its former table location; remaining on the table would contradict retention. Risk: Mouse may slip from shallow side contact; lower and regrasp if separation appears. Lesson: Closure found the mouse sides, but jaw width alone does not prove a retained grasp.",
+      "targets": {
+        "right_z": 0.837
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 84,
+        "start": 81
+      },
+      "left_wrist": {
+        "end": 84,
+        "start": 81
+      },
+      "right_wrist": {
+        "end": 84,
+        "start": 81
+      }
+    },
+    "control_end": 75,
+    "control_start": 72,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "State: Jaws contact both mouse sides and closure stopped at 0.60; retention is not yet proven. Check: Closure shifted the mouse slightly into the jaw center, with no lift yet. Expect: Raise 4 cm to test and establish a transport grasp. Verify: Mouse should rise with the jaws and leave its former table location; remaining on the table would contradict retention. Risk: Mouse may slip from shallow side contact; lower and regrasp if separation appears. Lesson: Closure found the mouse sides, but jaw width alone does not prove a retained grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse remains near its original table location; retention is doubtful because it shrank and shifted relative to the wrist jaws during lifting. Check: Arm rose 38 mm, but gripper narrowed from 0.60 to 0.30 and the mouse did not clearly follow. Expect: Reopen and lower to a safe reset height for a deeper grasp. Verify: Mouse should settle freely with open jaws above its sides. Risk: Possible partial retention could cause a short drop; keep the reset over its original clear table area. Lesson: The first shallow closure did not establish reliable retention; a deeper side grasp is needed.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 91,
+        "start": 85
+      },
+      "left_wrist": {
+        "end": 91,
+        "start": 85
+      },
+      "right_wrist": {
+        "end": 91,
+        "start": 85
+      }
+    },
+    "control_end": 81,
+    "control_start": 75,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "State: Mouse remains near its original table location; retention is doubtful because it shrank and shifted relative to the wrist jaws during lifting. Check: Arm rose 38 mm, but gripper narrowed from 0.60 to 0.30 and the mouse did not clearly follow. Expect: Reopen and lower to a safe reset height for a deeper grasp. Verify: Mouse should settle freely with open jaws above its sides. Risk: Possible partial retention could cause a short drop; keep the reset over its original clear table area. Lesson: The first shallow closure did not establish reliable retention; a deeper side grasp is needed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse is on the table with jaws reopened; pad placement remains unmet. Check: Reset reached its height and release left the mouse slightly shifted, confirming the earlier grasp was not secure. Expect: Approach a deeper side grasp, slightly farther toward the mouse middle. Verify: Jaw tips should flank the lower sidewalls without tilting the mouse. Risk: Near-table clearance is limited; subsequent descent must be millimetric. Lesson: The shallow 0.797 m grasp slipped during the lift test.",
+      "targets": {
+        "right_y": -0.045,
+        "right_z": 0.786
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 95,
+        "start": 92
+      },
+      "left_wrist": {
+        "end": 95,
+        "start": 92
+      },
+      "right_wrist": {
+        "end": 95,
+        "start": 92
+      }
+    },
+    "control_end": 84,
+    "control_start": 81,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "State: Mouse is on the table with jaws reopened; pad placement remains unmet. Check: Reset reached its height and release left the mouse slightly shifted, confirming the earlier grasp was not secure. Expect: Approach a deeper side grasp, slightly farther toward the mouse middle. Verify: Jaw tips should flank the lower sidewalls without tilting the mouse. Risk: Near-table clearance is limited; subsequent descent must be millimetric. Lesson: The shallow 0.797 m grasp slipped during the lift test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open jaws flank the mouse at a deeper level; retention remains unverified. Check: Approach ended 2 mm high without visible mouse displacement. Expect: Lower another 4.5 mm and close around the lower sides. Verify: Contact should stop closure with the mouse centered; a lift test will still be required. Risk: Low fingers may touch the table; if the mouse tips or jaws fail to engage, reopen rather than drag. Lesson: The earlier higher grasp slipped, motivating lower sidewall contact.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.783
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 103,
+        "start": 96
+      },
+      "left_wrist": {
+        "end": 103,
+        "start": 96
+      },
+      "right_wrist": {
+        "end": 103,
+        "start": 96
+      }
+    },
+    "control_end": 91,
+    "control_start": 84,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "State: Open jaws flank the mouse at a deeper level; retention remains unverified. Check: Approach ended 2 mm high without visible mouse displacement. Expect: Lower another 4.5 mm and close around the lower sides. Verify: Contact should stop closure with the mouse centered; a lift test will still be required. Risk: Low fingers may touch the table; if the mouse tips or jaws fail to engage, reopen rather than drag. Lesson: The earlier higher grasp slipped, motivating lower sidewall contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lower side contact stopped the jaws at 0.63; mouse still needs transport to the pad. Check: Low closure reached the target with the mouse centered, unlike proof of retention. Expect: Lift 4 cm to test the revised grasp. Verify: Mouse should retain its size and position relative to the wrist while separating from the table. Risk: Another slip would require a different grasp or a controlled sliding approach, not repeated shallow lifts. Lesson: Lower contact is now established, but its holding ability remains to be tested.",
+      "targets": {
+        "right_z": 0.823
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 107,
+        "start": 104
+      },
+      "left_wrist": {
+        "end": 107,
+        "start": 104
+      },
+      "right_wrist": {
+        "end": 107,
+        "start": 104
+      }
+    },
+    "control_end": 94,
+    "control_start": 91,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "State: Lower side contact stopped the jaws at 0.63; mouse still needs transport to the pad. Check: Low closure reached the target with the mouse centered, unlike proof of retention. Expect: Lift 4 cm to test the revised grasp. Verify: Mouse should retain its size and position relative to the wrist while separating from the table. Risk: Another slip would require a different grasp or a controlled sliding approach, not repeated shallow lifts. Lesson: Lower contact is now established, but its holding ability remains to be tested.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse is retained above the table; its wrist-relative position and jaw width stayed stable during the lift. Pad placement remains pending. Check: Arm rose 38 mm and mouse followed, supporting the deeper grasp. Expect: Carry the mouse laterally over the pad at current clearance. Verify: Head view should show the mouse above the pad interior, with stable jaw-relative position. Risk: Pad-edge contact if clearance is lower than estimated; raise if the mouse catches or shifts. Lesson: The 0.783 m side grasp retained this mouse during a 38 mm lift, unlike the higher grasp.",
+      "targets": {
+        "right_x": 0.455,
+        "right_y": -0.015
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 117,
+        "start": 108
+      },
+      "left_wrist": {
+        "end": 117,
+        "start": 108
+      },
+      "right_wrist": {
+        "end": 117,
+        "start": 108
+      }
+    },
+    "control_end": 103,
+    "control_start": 94,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "State: Mouse is retained above the table; its wrist-relative position and jaw width stayed stable during the lift. Pad placement remains pending. Check: Arm rose 38 mm and mouse followed, supporting the deeper grasp. Expect: Carry the mouse laterally over the pad at current clearance. Verify: Head view should show the mouse above the pad interior, with stable jaw-relative position. Risk: Pad-edge contact if clearance is lower than estimated; raise if the mouse catches or shifts. Lesson: The 0.783 m side grasp retained this mouse during a 38 mm lift, unlike the higher grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Retained mouse is above the pad interior; release and stable support remain unverified. Check: Transport landed within 1 mm and mouse followed without visible slip. Expect: Lower toward the pad, stopping above estimated contact height. Verify: Mouse should remain within the pad perimeter and approach its surface without tilting. Risk: Pad thickness is estimated; use small final lowering steps if contact is not yet visible. Lesson: The lower side grasp remained stable during lateral transport.",
+      "targets": {
+        "right_z": 0.798
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 120,
+        "start": 118
+      },
+      "left_wrist": {
+        "end": 120,
+        "start": 118
+      },
+      "right_wrist": {
+        "end": 120,
+        "start": 118
+      }
+    },
+    "control_end": 105,
+    "control_start": 103,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "State: Retained mouse is above the pad interior; release and stable support remain unverified. Check: Transport landed within 1 mm and mouse followed without visible slip. Expect: Lower toward the pad, stopping above estimated contact height. Verify: Mouse should remain within the pad perimeter and approach its surface without tilting. Risk: Pad thickness is estimated; use small final lowering steps if contact is not yet visible. Lesson: The lower side grasp remained stable during lateral transport.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse remains held over the pad interior, close to its surface. Check: Descent stopped 2 mm high; no slip or tilt is visible. Expect: Lower 5 mm toward supported placement. Verify: Mouse should approach or contact the pad without lateral movement; support is still uncertain until release and retreat. Risk: Premature surface contact could tilt it; stop lowering if its relation to the jaws changes. Lesson: The current grasp has remained stable throughout transport and descent.",
+      "targets": {
+        "right_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 122,
+        "start": 121
+      },
+      "left_wrist": {
+        "end": 122,
+        "start": 121
+      },
+      "right_wrist": {
+        "end": 122,
+        "start": 121
+      }
+    },
+    "control_end": 106,
+    "control_start": 105,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "State: Mouse remains held over the pad interior, close to its surface. Check: Descent stopped 2 mm high; no slip or tilt is visible. Expect: Lower 5 mm toward supported placement. Verify: Mouse should approach or contact the pad without lateral movement; support is still uncertain until release and retreat. Risk: Premature surface contact could tilt it; stop lowering if its relation to the jaws changes. Lesson: The current grasp has remained stable throughout transport and descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse is aligned within the pad perimeter and near support height; completion awaits release evidence. Check: Last lowering landed within 1 mm with stable mouse alignment. Expect: Lower 4.6 mm and release onto the pad. Verify: Mouse should settle flat inside the pad with open jaws; subsequent retreat must leave it there. Risk: A small residual gap could cause settling or tilt; inspect and correct only if it leaves the pad or rests unstably. Lesson: Deeper side contact enabled stable transport to the pad.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.791
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 127,
+        "start": 123
+      },
+      "left_wrist": {
+        "end": 127,
+        "start": 123
+      },
+      "right_wrist": {
+        "end": 127,
+        "start": 123
+      }
+    },
+    "control_end": 110,
+    "control_start": 106,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 16,
+    "public_note": "State: Mouse is aligned within the pad perimeter and near support height; completion awaits release evidence. Check: Last lowering landed within 1 mm with stable mouse alignment. Expect: Lower 4.6 mm and release onto the pad. Verify: Mouse should settle flat inside the pad with open jaws; subsequent retreat must leave it there. Risk: A small residual gap could cause settling or tilt; inspect and correct only if it leaves the pad or rests unstably. Lesson: Deeper side contact enabled stable transport to the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Released mouse appears flat inside the pad; keyboard, figurine, clock, drawer and miscellaneous storage remain pending. Check: Release executed at the requested height and mouse settled slightly without leaving the pad. Expect: Withdraw vertically to verify independent support and clear the mouse. Verify: Mouse should remain on the pad as the open hand rises; following the hand would contradict release. Risk: Fingers could snag the shell; stop if the mouse lifts. Lesson: The lower grasp transported the mouse successfully, and release left it within the pad boundary.",
+      "targets": {
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 133,
+        "start": 128
+      },
+      "left_wrist": {
+        "end": 133,
+        "start": 128
+      },
+      "right_wrist": {
+        "end": 133,
+        "start": 128
+      }
+    },
+    "control_end": 115,
+    "control_start": 110,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 17,
+    "public_note": "State: Released mouse appears flat inside the pad; keyboard, figurine, clock, drawer and miscellaneous storage remain pending. Check: Release executed at the requested height and mouse settled slightly without leaving the pad. Expect: Withdraw vertically to verify independent support and clear the mouse. Verify: Mouse should remain on the pad as the open hand rises; following the hand would contradict release. Risk: Fingers could snag the shell; stop if the mouse lifts. Lesson: The lower grasp transported the mouse successfully, and release left it within the pad boundary.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse is released within the pad; retreat verification and all other subgoals remain pending. Check: The higher retreat was refused by the planner; neither arm moved, so there is no new physical evidence. Expect: A smaller vertical retreat should clear the mouse within the reachable region. Verify: Mouse should stay supported on the pad while the open jaws rise. Risk: Reachability remains constrained here; if refused again, retreat inward with clearance rather than requesting more height. Lesson: A 0.9 m height at this outer pose was unreachable; smaller nearby targets are preferable.",
+      "targets": {
+        "right_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 133,
+        "start": 128
+      },
+      "left_wrist": {
+        "end": 133,
+        "start": 128
+      },
+      "right_wrist": {
+        "end": 133,
+        "start": 128
+      }
+    },
+    "control_end": 115,
+    "control_start": 110,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "State: Mouse is released within the pad; retreat verification and all other subgoals remain pending. Check: The higher retreat was refused by the planner; neither arm moved, so there is no new physical evidence. Expect: A smaller vertical retreat should clear the mouse within the reachable region. Verify: Mouse should stay supported on the pad while the open jaws rise. Risk: Reachability remains constrained here; if refused again, retreat inward with clearance rather than requesting more height. Lesson: A 0.9 m height at this outer pose was unreachable; smaller nearby targets are preferable.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse stayed flat on the pad after withdrawal, supporting completion of that placement. Keyboard remains in front of its frame; other tasks remain pending. Check: Smaller retreat landed within 1 mm and left the mouse behind. Expect: Move the open right hand above the keyboard front region to inspect a pushing approach. Verify: Wrist view should expose the keyboard edge and frame direction without contact. Risk: Estimated keyboard location may be offset; keep height until its edge is localized. Lesson: Smaller retreat succeeded where the higher outer pose was unreachable.",
+      "targets": {
+        "right_x": 0.04,
+        "right_y": -0.25,
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 160,
+        "start": 134
+      },
+      "left_wrist": {
+        "end": 160,
+        "start": 134
+      },
+      "right_wrist": {
+        "end": 160,
+        "start": 134
+      }
+    },
+    "control_end": 141,
+    "control_start": 115,
+    "feedback": "Accepted: playing 26 waypoints (1.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "State: Mouse stayed flat on the pad after withdrawal, supporting completion of that placement. Keyboard remains in front of its frame; other tasks remain pending. Check: Smaller retreat landed within 1 mm and left the mouse behind. Expect: Move the open right hand above the keyboard front region to inspect a pushing approach. Verify: Wrist view should expose the keyboard edge and frame direction without contact. Risk: Estimated keyboard location may be offset; keep height until its edge is localized. Lesson: Smaller retreat succeeded where the higher outer pose was unreachable.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse placement is verified visually; keyboard front edge is ahead of the right hand and frame is farther forward. Check: Reposition landed exactly with no object contact. Expect: Lower behind the keyboard and close the jaws to form a compact pushing contact. Verify: Fingers should be just above the table and behind, not atop, the keyboard edge. Risk: Edge location is estimated; inspect before advancing to avoid pressing keys or the tabletop. Lesson: The wrist view exposes the front edge clearly from this rear approach.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.781
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 174,
+        "start": 161
+      },
+      "left_wrist": {
+        "end": 174,
+        "start": 161
+      },
+      "right_wrist": {
+        "end": 174,
+        "start": 161
+      }
+    },
+    "control_end": 154,
+    "control_start": 141,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "State: Mouse placement is verified visually; keyboard front edge is ahead of the right hand and frame is farther forward. Check: Reposition landed exactly with no object contact. Expect: Lower behind the keyboard and close the jaws to form a compact pushing contact. Verify: Fingers should be just above the table and behind, not atop, the keyboard edge. Risk: Edge location is estimated; inspect before advancing to avoid pressing keys or the tabletop. Lesson: The wrist view exposes the front edge clearly from this rear approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Closed jaw tips are immediately behind the keyboard front edge; keyboard remains outside its frame. Check: Lowering landed exactly and the edge is now adjacent to the tips, without visible keyboard movement. Expect: Advance 5 mm to establish pushing contact. Verify: Keyboard should begin moving forward without rotating or the jaws climbing onto keys. Risk: Off-center contact may yaw the keyboard; adjust the contact point if asymmetric motion appears. Lesson: The low rear approach reaches the keyboard edge without grasping it.",
+      "targets": {
+        "right_y": -0.245
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 176,
+        "start": 175
+      },
+      "left_wrist": {
+        "end": 176,
+        "start": 175
+      },
+      "right_wrist": {
+        "end": 176,
+        "start": 175
+      }
+    },
+    "control_end": 155,
+    "control_start": 154,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "State: Closed jaw tips are immediately behind the keyboard front edge; keyboard remains outside its frame. Check: Lowering landed exactly and the edge is now adjacent to the tips, without visible keyboard movement. Expect: Advance 5 mm to establish pushing contact. Verify: Keyboard should begin moving forward without rotating or the jaws climbing onto keys. Risk: Off-center contact may yaw the keyboard; adjust the contact point if asymmetric motion appears. Lesson: The low rear approach reaches the keyboard edge without grasping it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaw tips overlap the keyboard edge in the wrist view, but forward keyboard motion is not established. Check: The 5 mm advance landed within 1 mm; the keyboard appears stationary, suggesting contact is too high or not yet effective. Expect: Lower 5 mm to put the pushing surface against the edge rather than above it. Verify: Tips should sit at the front sidewall without depressing or climbing onto keys. Risk: Table clearance is only a few millimetres; do not lower further if contact blocks the motion. Lesson: The initial 0.781 m pushing height did not yet produce visible keyboard translation.",
+      "targets": {
+        "right_z": 0.776
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 178,
+        "start": 177
+      },
+      "left_wrist": {
+        "end": 178,
+        "start": 177
+      },
+      "right_wrist": {
+        "end": 178,
+        "start": 177
+      }
+    },
+    "control_end": 156,
+    "control_start": 155,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "State: Jaw tips overlap the keyboard edge in the wrist view, but forward keyboard motion is not established. Check: The 5 mm advance landed within 1 mm; the keyboard appears stationary, suggesting contact is too high or not yet effective. Expect: Lower 5 mm to put the pushing surface against the edge rather than above it. Verify: Tips should sit at the front sidewall without depressing or climbing onto keys. Risk: Table clearance is only a few millimetres; do not lower further if contact blocks the motion. Lesson: The initial 0.781 m pushing height did not yet produce visible keyboard translation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Keyboard remains outside the frame; downward motion was obstructed near its front lip. Check: Requested lowering ended 5 mm high with slight angular deflection, consistent with contact rather than free descent. Expect: Back away 20 mm to clear the lip before lowering behind it. Verify: A visible gap should open between tips and keyboard, with keyboard stationary. Risk: Dragging against the lip could move it rearward; stop if it follows. Lesson: Lowering at the overlapping edge was blocked, so the approach must reset behind the keyboard.",
+      "targets": {
+        "right_y": -0.265
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 181,
+        "start": 179
+      },
+      "left_wrist": {
+        "end": 181,
+        "start": 179
+      },
+      "right_wrist": {
+        "end": 181,
+        "start": 179
+      }
+    },
+    "control_end": 158,
+    "control_start": 156,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 22,
+    "public_note": "State: Keyboard remains outside the frame; downward motion was obstructed near its front lip. Check: Requested lowering ended 5 mm high with slight angular deflection, consistent with contact rather than free descent. Expect: Back away 20 mm to clear the lip before lowering behind it. Verify: A visible gap should open between tips and keyboard, with keyboard stationary. Risk: Dragging against the lip could move it rearward; stop if it follows. Lesson: Lowering at the overlapping edge was blocked, so the approach must reset behind the keyboard.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tips are now behind the keyboard with a visible gap; keyboard placement remains unmet. Check: Rearward reset landed within 1 mm and cleared the lip without moving the keyboard. Expect: Lower 5 mm into a sidewall pushing height behind the edge. Verify: Hand should descend without the previous deflection, keeping the gap visible. Risk: Table contact may limit descent; respect any height shortfall rather than forcing lower. Lesson: Backing away cleared the obstruction seen at the overlapping lip.",
+      "targets": {
+        "right_z": 0.775
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 183,
+        "start": 182
+      },
+      "left_wrist": {
+        "end": 183,
+        "start": 182
+      },
+      "right_wrist": {
+        "end": 183,
+        "start": 182
+      }
+    },
+    "control_end": 159,
+    "control_start": 158,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "State: Tips are now behind the keyboard with a visible gap; keyboard placement remains unmet. Check: Rearward reset landed within 1 mm and cleared the lip without moving the keyboard. Expect: Lower 5 mm into a sidewall pushing height behind the edge. Verify: Hand should descend without the previous deflection, keeping the gap visible. Risk: Table contact may limit descent; respect any height shortfall rather than forcing lower. Lesson: Backing away cleared the obstruction seen at the overlapping lip.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Closed tips are low and just behind the keyboard; frame placement remains pending. Check: Lowering now landed within 1 mm, confirming the lip was cleared. Expect: Advance 5 mm to close the remaining gap at sidewall height. Verify: Gap should shrink without upward hand deflection or keyboard yaw. Risk: Edge contact may be off-center; watch for rotation and reset the pushing point if needed. Lesson: Lowering behind the lip achieved the intended low pushing height.",
+      "targets": {
+        "right_y": -0.259
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 185,
+        "start": 184
+      },
+      "left_wrist": {
+        "end": 185,
+        "start": 184
+      },
+      "right_wrist": {
+        "end": 185,
+        "start": 184
+      }
+    },
+    "control_end": 160,
+    "control_start": 159,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "State: Closed tips are low and just behind the keyboard; frame placement remains pending. Check: Lowering now landed within 1 mm, confirming the lip was cleared. Expect: Advance 5 mm to close the remaining gap at sidewall height. Verify: Gap should shrink without upward hand deflection or keyboard yaw. Risk: Edge contact may be off-center; watch for rotation and reset the pushing point if needed. Lesson: Lowering behind the lip achieved the intended low pushing height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: A small gap remains between low jaw tips and keyboard edge; mouse remains on its pad. Check: Advance landed within 1 mm and reduced the gap without keyboard movement. Expect: Advance another 5 mm to establish edge contact. Verify: Edge should meet the tips without the arm riding upward; keyboard translation may begin. Risk: Contact could rotate the board if off-center; inspect before a pushing stroke. Lesson: Low rear alignment is approaching the edge without the earlier top contact.",
+      "targets": {
+        "right_y": -0.254
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 187,
+        "start": 186
+      },
+      "left_wrist": {
+        "end": 187,
+        "start": 186
+      },
+      "right_wrist": {
+        "end": 187,
+        "start": 186
+      }
+    },
+    "control_end": 161,
+    "control_start": 160,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "State: A small gap remains between low jaw tips and keyboard edge; mouse remains on its pad. Check: Advance landed within 1 mm and reduced the gap without keyboard movement. Expect: Advance another 5 mm to establish edge contact. Verify: Edge should meet the tips without the arm riding upward; keyboard translation may begin. Risk: Contact could rotate the board if off-center; inspect before a pushing stroke. Lesson: Low rear alignment is approaching the edge without the earlier top contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Low tips are almost touching the keyboard front sidewall; frame placement is still unmet. Check: Last approach reduced the visible gap to a few pixels; keyboard has not yet translated. Expect: A 5.7 mm advance should establish contact and start a small forward push. Verify: Keyboard edge should move with the tips, not pass beneath them, and remain level. Risk: Top contact would again cause height error; retreat if the arm rises or keyboard stays fixed. Lesson: The rear reset has avoided the previous lip obstruction so far.",
+      "targets": {
+        "right_y": -0.249
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 189,
+        "start": 188
+      },
+      "left_wrist": {
+        "end": 189,
+        "start": 188
+      },
+      "right_wrist": {
+        "end": 189,
+        "start": 188
+      }
+    },
+    "control_end": 162,
+    "control_start": 161,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "State: Low tips are almost touching the keyboard front sidewall; frame placement is still unmet. Check: Last approach reduced the visible gap to a few pixels; keyboard has not yet translated. Expect: A 5.7 mm advance should establish contact and start a small forward push. Verify: Keyboard edge should move with the tips, not pass beneath them, and remain level. Risk: Top contact would again cause height error; retreat if the arm rises or keyboard stays fixed. Lesson: The rear reset has avoided the previous lip obstruction so far.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tips meet the keyboard front edge at sidewall height; keyboard remains well short of the frame. Check: Last advance landed within 1 mm without height deflection; a slight forward board shift is possible but not yet clear. Expect: Push another 5.8 mm to test sustained translation. Verify: Board should move forward in the head view while its edge stays against the tips. Risk: Off-center pushing may cause yaw; change to a wider centered contact if rotation appears. Lesson: Low sidewall contact no longer produces the earlier blocked descent.",
+      "targets": {
+        "right_y": -0.244
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 191,
+        "start": 190
+      },
+      "left_wrist": {
+        "end": 191,
+        "start": 190
+      },
+      "right_wrist": {
+        "end": 191,
+        "start": 190
+      }
+    },
+    "control_end": 163,
+    "control_start": 162,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "State: Tips meet the keyboard front edge at sidewall height; keyboard remains well short of the frame. Check: Last advance landed within 1 mm without height deflection; a slight forward board shift is possible but not yet clear. Expect: Push another 5.8 mm to test sustained translation. Verify: Board should move forward in the head view while its edge stays against the tips. Risk: Off-center pushing may cause yaw; change to a wider centered contact if rotation appears. Lesson: Low sidewall contact no longer produces the earlier blocked descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse is organized; keyboard has shifted forward slightly but remains outside the frame. Clock and figurine placements and drawer storage remain pending. Check: The last small push visibly translated the keyboard without obvious yaw, confirming sidewall contact. Expect: Lift clear and open the right hand to leave the keyboard stable while preparing another placement. Verify: Keyboard should remain on the table in its new position as the hand clears. Risk: Edge snagging could lift it; stop if it follows. Lesson: A low rear contact at about 0.776 m produces forward keyboard translation; frame alignment is not yet achieved.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 207,
+        "start": 192
+      },
+      "left_wrist": {
+        "end": 207,
+        "start": 192
+      },
+      "right_wrist": {
+        "end": 207,
+        "start": 192
+      }
+    },
+    "control_end": 178,
+    "control_start": 163,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "State: Mouse is organized; keyboard has shifted forward slightly but remains outside the frame. Clock and figurine placements and drawer storage remain pending. Check: The last small push visibly translated the keyboard without obvious yaw, confirming sidewall contact. Expect: Lift clear and open the right hand to leave the keyboard stable while preparing another placement. Verify: Keyboard should remain on the table in its new position as the hand clears. Risk: Edge snagging could lift it; stop if it follows. Lesson: A low rear contact at about 0.776 m produces forward keyboard translation; frame alignment is not yet achieved.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse remains organized; keyboard is still short of the frame after a small push. Clock remains on the table beside the drawer. Check: Right hand cleared successfully; keyboard stayed on the table and settled slightly farther forward. Expect: Begin turning the left wrist downward to prepare a clock grasp. Verify: Left orientation should reach 45 degrees without disturbing the figurine near that arm. Risk: Nearby figurine may be within the wrist sweep; inspect for contact and raise if needed. Lesson: The keyboard is movable by low sidewall pushing, but its final alignment remains unresolved.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 224,
+        "start": 208
+      },
+      "left_wrist": {
+        "end": 224,
+        "start": 208
+      },
+      "right_wrist": {
+        "end": 224,
+        "start": 208
+      }
+    },
+    "control_end": 194,
+    "control_start": 178,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "State: Mouse remains organized; keyboard is still short of the frame after a small push. Clock remains on the table beside the drawer. Check: Right hand cleared successfully; keyboard stayed on the table and settled slightly farther forward. Expect: Begin turning the left wrist downward to prepare a clock grasp. Verify: Left orientation should reach 45 degrees without disturbing the figurine near that arm. Risk: Nearby figurine may be within the wrist sweep; inspect for contact and raise if needed. Lesson: The keyboard is movable by low sidewall pushing, but its final alignment remains unresolved.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock is on the table left of the keyboard frame; its drawer-top placement remains unmet. Figurine appears adjacent to or partly over the gold stand, with correct seating unverified. Check: Left tilt reached exactly without visible object disturbance. Expect: Move the open left hand above the estimated clock position while retaining clearance. Verify: Clock should become centered in the left wrist view for final downward orientation. Risk: Drawer side and clock may constrain the approach; correct from the next image before descending. Lesson: The initial left wrist tilt cleared nearby objects successfully.",
+      "targets": {
+        "left_x": -0.15,
+        "left_y": 0.015,
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 246,
+        "start": 225
+      },
+      "left_wrist": {
+        "end": 246,
+        "start": 225
+      },
+      "right_wrist": {
+        "end": 246,
+        "start": 225
+      }
+    },
+    "control_end": 215,
+    "control_start": 194,
+    "feedback": "Accepted: playing 21 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "State: Clock is on the table left of the keyboard frame; its drawer-top placement remains unmet. Figurine appears adjacent to or partly over the gold stand, with correct seating unverified. Check: Left tilt reached exactly without visible object disturbance. Expect: Move the open left hand above the estimated clock position while retaining clearance. Verify: Clock should become centered in the left wrist view for final downward orientation. Risk: Drawer side and clock may constrain the approach; correct from the next image before descending. Lesson: The initial left wrist tilt cleared nearby objects successfully.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock is centered laterally below the left wrist; a gray square behind it may be the figurine stand, identity still uncertain. Clock placement remains unmet. Check: Left reposition landed exactly and exposed the clock top without contact. Expect: Finish downward orientation to grasp the clock across its sidewalls while keeping the face clear. Verify: Clock should remain visible between open jaws with sufficient clearance. Risk: Rotation near the drawer side could reduce clearance; inspect before descending. Lesson: The gold platform moves with the figurine visually and should not yet be assumed to be its target stand.",
+      "targets": {
+        "left_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 254,
+        "start": 247
+      },
+      "left_wrist": {
+        "end": 254,
+        "start": 247
+      },
+      "right_wrist": {
+        "end": 254,
+        "start": 247
+      }
+    },
+    "control_end": 222,
+    "control_start": 215,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 31,
+    "public_note": "State: Clock is centered laterally below the left wrist; a gray square behind it may be the figurine stand, identity still uncertain. Clock placement remains unmet. Check: Left reposition landed exactly and exposed the clock top without contact. Expect: Finish downward orientation to grasp the clock across its sidewalls while keeping the face clear. Verify: Clock should remain visible between open jaws with sufficient clearance. Risk: Rotation near the drawer side could reduce clearance; inspect before descending. Lesson: The gold platform moves with the figurine visually and should not yet be assumed to be its target stand.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock is ungrasped; left hand remains tilted at 45 degrees. Check: Downward rotation was refused; neither arm moved and no new object evidence was gained. Expect: Move lower and slightly rearward to a nearer pose before retrying rotation. Verify: Clock should remain undisturbed and the hand should reach the new clearance pose. Risk: Tilted fingers could approach the clock top; stop descent if clearance disappears. Lesson: Straight-down orientation at the high forward left pose was not reachable; separate repositioning from rotation.",
+      "targets": {
+        "left_y": -0.025,
+        "left_z": 0.87
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 254,
+        "start": 247
+      },
+      "left_wrist": {
+        "end": 254,
+        "start": 247
+      },
+      "right_wrist": {
+        "end": 254,
+        "start": 247
+      }
+    },
+    "control_end": 222,
+    "control_start": 215,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "State: Clock is ungrasped; left hand remains tilted at 45 degrees. Check: Downward rotation was refused; neither arm moved and no new object evidence was gained. Expect: Move lower and slightly rearward to a nearer pose before retrying rotation. Verify: Clock should remain undisturbed and the hand should reach the new clearance pose. Risk: Tilted fingers could approach the clock top; stop descent if clearance disappears. Lesson: Straight-down orientation at the high forward left pose was not reachable; separate repositioning from rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock remains upright on the table, centered beneath the open left hand. Check: Reposition reached within 1 mm without visible clock displacement. Expect: Rotate downward at this nearer pose to prepare a vertical side grasp. Verify: Tool should reach zero pitch while clock stays clear of the jaw sweep. Risk: Rotation could graze the clock if clearance is insufficient; back off if contact is observed. Lesson: Lowering and retreating reached a usable clock approach pose after the earlier rotation refusal.",
+      "targets": {
+        "left_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 282,
+        "start": 255
+      },
+      "left_wrist": {
+        "end": 282,
+        "start": 255
+      },
+      "right_wrist": {
+        "end": 282,
+        "start": 255
+      }
+    },
+    "control_end": 249,
+    "control_start": 222,
+    "feedback": "Accepted: playing 27 waypoints (1.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "State: Clock remains upright on the table, centered beneath the open left hand. Check: Reposition reached within 1 mm without visible clock displacement. Expect: Rotate downward at this nearer pose to prepare a vertical side grasp. Verify: Tool should reach zero pitch while clock stays clear of the jaw sweep. Risk: Rotation could graze the clock if clearance is insufficient; back off if contact is observed. Lesson: Lowering and retreating reached a usable clock approach pose after the earlier rotation refusal.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock top is ahead of the downward jaws; clock remains on the table and drawer-top placement is unmet. Check: Rotation reached exactly at the revised pose without moving the clock. Expect: Advance and lower to center the jaws over the clock sidewalls. Verify: Clock top should lie between the jaws with fingers outside its sides. Risk: Clock width may nearly fill the jaw opening; inspect alignment before closing. Lesson: The lower, rearward pose allowed the downward rotation that failed at the high forward pose.",
+      "targets": {
+        "left_x": -0.145,
+        "left_y": 0.015,
+        "left_z": 0.845
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 287,
+        "start": 283
+      },
+      "left_wrist": {
+        "end": 287,
+        "start": 283
+      },
+      "right_wrist": {
+        "end": 287,
+        "start": 283
+      }
+    },
+    "control_end": 253,
+    "control_start": 249,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 33,
+    "public_note": "State: Clock top is ahead of the downward jaws; clock remains on the table and drawer-top placement is unmet. Check: Rotation reached exactly at the revised pose without moving the clock. Expect: Advance and lower to center the jaws over the clock sidewalls. Verify: Clock top should lie between the jaws with fingers outside its sides. Risk: Clock width may nearly fill the jaw opening; inspect alignment before closing. Lesson: The lower, rearward pose allowed the downward rotation that failed at the high forward pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock is still ungrasped ahead of the open left jaws. Check: Combined forward/downward approach was refused; no physical motion or object change occurred. Expect: Lower alone at the known lateral position to improve reachability before advancing. Verify: Height should decrease while the clock stays clear and stationary. Risk: Clock top is nearby; stop if a finger approaches its upper edge. Lesson: The forward downward target is planner-limited, so isolate the height change rather than repeating the combined request.",
+      "targets": {
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 287,
+        "start": 283
+      },
+      "left_wrist": {
+        "end": 287,
+        "start": 283
+      },
+      "right_wrist": {
+        "end": 287,
+        "start": 283
+      }
+    },
+    "control_end": 253,
+    "control_start": 249,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "State: Clock is still ungrasped ahead of the open left jaws. Check: Combined forward/downward approach was refused; no physical motion or object change occurred. Expect: Lower alone at the known lateral position to improve reachability before advancing. Verify: Height should decrease while the clock stays clear and stationary. Risk: Clock top is nearby; stop if a finger approaches its upper edge. Lesson: The forward downward target is planner-limited, so isolate the height change rather than repeating the combined request.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock nearly fills the open jaw gap and is slightly right and forward of center; contact is not established. Check: Lowering alone reached within 1 mm without disturbing it. Expect: Correct alignment by 5 mm laterally and forward at the current height. Verify: Clock sidewalls should become more symmetric relative to the jaws. Risk: The right finger is close to the clock corner; if the clock shifts, raise before correcting further. Lesson: Isolating the height change succeeded after the combined approach was refused.",
+      "targets": {
+        "left_x": -0.145,
+        "left_y": -0.0196
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 290,
+        "start": 288
+      },
+      "left_wrist": {
+        "end": 290,
+        "start": 288
+      },
+      "right_wrist": {
+        "end": 290,
+        "start": 288
+      }
+    },
+    "control_end": 255,
+    "control_start": 253,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "State: Clock nearly fills the open jaw gap and is slightly right and forward of center; contact is not established. Check: Lowering alone reached within 1 mm without disturbing it. Expect: Correct alignment by 5 mm laterally and forward at the current height. Verify: Clock sidewalls should become more symmetric relative to the jaws. Risk: The right finger is close to the clock corner; if the clock shifts, raise before correcting further. Lesson: Isolating the height change succeeded after the combined approach was refused.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock is more centered laterally; jaws remain open near its upper sidewalls. Drawer-top placement and grasp retention remain unmet. Check: Alignment correction landed within 1 mm; the clock shows a slight pose change, so corner contact may have occurred. Expect: Advance 5 mm and lower 4.8 mm to engage both sides more evenly. Verify: Clock should stay upright with jaws outside its body; increasing tilt would contradict a clean approach. Risk: Uneven corner contact could tip it; reopen clearance by lifting if tilt grows. Lesson: Millimetre alignment is necessary because the clock nearly spans the jaw opening.",
+      "targets": {
+        "left_y": -0.0148,
+        "left_z": 0.836
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 292,
+        "start": 291
+      },
+      "left_wrist": {
+        "end": 292,
+        "start": 291
+      },
+      "right_wrist": {
+        "end": 292,
+        "start": 291
+      }
+    },
+    "control_end": 256,
+    "control_start": 255,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "State: Clock is more centered laterally; jaws remain open near its upper sidewalls. Drawer-top placement and grasp retention remain unmet. Check: Alignment correction landed within 1 mm; the clock shows a slight pose change, so corner contact may have occurred. Expect: Advance 5 mm and lower 4.8 mm to engage both sides more evenly. Verify: Clock should stay upright with jaws outside its body; increasing tilt would contradict a clean approach. Risk: Uneven corner contact could tip it; reopen clearance by lifting if tilt grows. Lesson: Millimetre alignment is necessary because the clock nearly spans the jaw opening.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock body is centered between the open jaws near its upper sides; it remains upright on the table. Check: Small advance and descent landed within 1 mm without clear additional tilt. Expect: Close onto both clock sidewalls while leaving its base free for placement. Verify: Jaws should contact symmetrically; retention must be tested by lifting, not inferred from closure. Risk: Upper-side contact could slip; if the clock shifts or tilts, release and choose a deeper contact. Lesson: Incremental alignment brought the clock within the jaw gap without a large disturbance.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 299,
+        "start": 293
+      },
+      "left_wrist": {
+        "end": 299,
+        "start": 293
+      },
+      "right_wrist": {
+        "end": 299,
+        "start": 293
+      }
+    },
+    "control_end": 262,
+    "control_start": 256,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 36,
+    "public_note": "State: Clock body is centered between the open jaws near its upper sides; it remains upright on the table. Check: Small advance and descent landed within 1 mm without clear additional tilt. Expect: Close onto both clock sidewalls while leaving its base free for placement. Verify: Jaws should contact symmetrically; retention must be tested by lifting, not inferred from closure. Risk: Upper-side contact could slip; if the clock shifts or tilts, release and choose a deeper contact. Lesson: Incremental alignment brought the clock within the jaw gap without a large disturbance.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left jaws contact the clock sides at width 0.66; retention and drawer-top placement remain unverified. Check: Closure caused no obvious clock displacement, but that alone does not establish a grasp. Expect: Lift 20 mm to test whether the clock follows. Verify: Clock should keep its wrist-relative size and position while its base separates from the table. Risk: Shallow contact may slip; lower and regrasp if the clock remains behind. Lesson: Side closure is established, but holding ability is still unknown.",
+      "targets": {
+        "left_z": 0.857
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 303,
+        "start": 300
+      },
+      "left_wrist": {
+        "end": 303,
+        "start": 300
+      },
+      "right_wrist": {
+        "end": 303,
+        "start": 300
+      }
+    },
+    "control_end": 265,
+    "control_start": 262,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "State: Left jaws contact the clock sides at width 0.66; retention and drawer-top placement remain unverified. Check: Closure caused no obvious clock displacement, but that alone does not establish a grasp. Expect: Lift 20 mm to test whether the clock follows. Verify: Clock should keep its wrist-relative size and position while its base separates from the table. Risk: Shallow contact may slip; lower and regrasp if the clock remains behind. Lesson: Side closure is established, but holding ability is still unknown.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock tilted and shifted relative to the jaws during lift; retention is unreliable and placement remains unmet. Check: Arm rose 19 mm, but jaw width narrowed to 0.47 and clock changed orientation, indicating slip rather than a stable lift. Expect: Lower over the original table area and release to reset for deeper contact. Verify: Clock should settle on the table with open jaws, not remain hanging. Risk: Tilted settling may move its center; re-localize before regrasping. Lesson: The upper-side clock grasp slipped during a 20 mm lift test, as the earlier shallow mouse grasp did.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 310,
+        "start": 304
+      },
+      "left_wrist": {
+        "end": 310,
+        "start": 304
+      },
+      "right_wrist": {
+        "end": 310,
+        "start": 304
+      }
+    },
+    "control_end": 271,
+    "control_start": 265,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "State: Clock tilted and shifted relative to the jaws during lift; retention is unreliable and placement remains unmet. Check: Arm rose 19 mm, but jaw width narrowed to 0.47 and clock changed orientation, indicating slip rather than a stable lift. Expect: Lower over the original table area and release to reset for deeper contact. Verify: Clock should settle on the table with open jaws, not remain hanging. Risk: Tilted settling may move its center; re-localize before regrasping. Lesson: The upper-side clock grasp slipped during a 20 mm lift test, as the earlier shallow mouse grasp did.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock has settled upright; jaws are only partly reopened at 0.86 and still near its sides. Check: Reset ended 7 mm high with slight angular deflection, so contact limited descent; release was incomplete. Expect: Finish opening and make a 4.8 mm downward correction toward a deeper grasp. Verify: Jaw opening should reach full width and clock remain upright without increasing pose error. Risk: Remaining contact could block descent; lift and realign if the height shortfall persists. Lesson: Resetting a slipped clock requires checking both actual opening and height, not assuming release completed.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.842
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 313,
+        "start": 311
+      },
+      "left_wrist": {
+        "end": 313,
+        "start": 311
+      },
+      "right_wrist": {
+        "end": 313,
+        "start": 311
+      }
+    },
+    "control_end": 273,
+    "control_start": 271,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The last 1 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "State: Clock has settled upright; jaws are only partly reopened at 0.86 and still near its sides. Check: Reset ended 7 mm high with slight angular deflection, so contact limited descent; release was incomplete. Expect: Finish opening and make a 4.8 mm downward correction toward a deeper grasp. Verify: Jaw opening should reach full width and clock remain upright without increasing pose error. Risk: Remaining contact could block descent; lift and realign if the height shortfall persists. Lesson: Resetting a slipped clock requires checking both actual opening and height, not assuming release completed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock is upright with fully open jaws near its front-side corners; secure grasp remains pending. Check: Opening completed and the height correction landed exactly, clearing the previous obstruction. Expect: Move 5 mm forward and down to contact farther along the clock sides rather than its front corners. Verify: Clock should remain centered and upright as the fingers extend beside it. Risk: Corner brushing could rotate the clock; stop and recenter if rotation increases. Lesson: Full opening removed the reset height obstruction; the revised grasp must be deeper and less corner-biased.",
+      "targets": {
+        "left_y": -0.0093,
+        "left_z": 0.837
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 315,
+        "start": 314
+      },
+      "left_wrist": {
+        "end": 315,
+        "start": 314
+      },
+      "right_wrist": {
+        "end": 315,
+        "start": 314
+      }
+    },
+    "control_end": 274,
+    "control_start": 273,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 40,
+    "public_note": "State: Clock is upright with fully open jaws near its front-side corners; secure grasp remains pending. Check: Opening completed and the height correction landed exactly, clearing the previous obstruction. Expect: Move 5 mm forward and down to contact farther along the clock sides rather than its front corners. Verify: Clock should remain centered and upright as the fingers extend beside it. Risk: Corner brushing could rotate the clock; stop and recenter if rotation increases. Lesson: Full opening removed the reset height obstruction; the revised grasp must be deeper and less corner-biased.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open fingers flank more of the clock sidewalls; clock remains upright and ungrasped. Check: The previous 5 mm corrections landed within 1 mm without a large object shift. Expect: Advance and lower another 5 mm to deepen contact before closure. Verify: Sidewalls should remain between the jaws, with no increased tilt or blocked height. Risk: Narrow lateral clearance could cause rubbing; lift and recenter if the clock rotates. Lesson: The revised approach is moving contact away from the slipping front corners.",
+      "targets": {
+        "left_y": -0.0048,
+        "left_z": 0.833
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 317,
+        "start": 316
+      },
+      "left_wrist": {
+        "end": 317,
+        "start": 316
+      },
+      "right_wrist": {
+        "end": 317,
+        "start": 316
+      }
+    },
+    "control_end": 275,
+    "control_start": 274,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 41,
+    "public_note": "State: Open fingers flank more of the clock sidewalls; clock remains upright and ungrasped. Check: The previous 5 mm corrections landed within 1 mm without a large object shift. Expect: Advance and lower another 5 mm to deepen contact before closure. Verify: Sidewalls should remain between the jaws, with no increased tilt or blocked height. Risk: Narrow lateral clearance could cause rubbing; lift and recenter if the clock rotates. Lesson: The revised approach is moving contact away from the slipping front corners.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock sidewalls are between the jaws with contact farther from the front corners; retention remains unverified. Check: Last approach reached within 1 mm and clock stayed upright. Expect: Lower 4.7 mm and close for a deeper side grasp. Verify: Closure should stop symmetrically on the body; a later lift must show the clock following without relative slip. Risk: Clock may rotate under uneven squeeze; reopen if alignment changes substantially. Lesson: The revised grasp is lower and farther along the sides than the failed upper-corner grasp.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.829
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 325,
+        "start": 318
+      },
+      "left_wrist": {
+        "end": 325,
+        "start": 318
+      },
+      "right_wrist": {
+        "end": 325,
+        "start": 318
+      }
+    },
+    "control_end": 282,
+    "control_start": 275,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "State: Clock sidewalls are between the jaws with contact farther from the front corners; retention remains unverified. Check: Last approach reached within 1 mm and clock stayed upright. Expect: Lower 4.7 mm and close for a deeper side grasp. Verify: Closure should stop symmetrically on the body; a later lift must show the clock following without relative slip. Risk: Clock may rotate under uneven squeeze; reopen if alignment changes substantially. Lesson: The revised grasp is lower and farther along the sides than the failed upper-corner grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Deeper clock grasp is closed at 0.70; secure retention and drawer placement remain pending. Check: Closure reached the lower target and contacted both sides, with a small rotation but no fall. Expect: Lift about 21 mm while retreating 10 mm into a more reachable region. Verify: Clock should move with the hand at stable jaw-relative pose; shrinking or sliding would show another failed grasp. Risk: Slip remains possible; keep the test above the clear original table area. Lesson: The revised contact is deeper than the failed grasp, but requires its own retention test.",
+      "targets": {
+        "left_y": -0.015,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 328,
+        "start": 326
+      },
+      "left_wrist": {
+        "end": 328,
+        "start": 326
+      },
+      "right_wrist": {
+        "end": 328,
+        "start": 326
+      }
+    },
+    "control_end": 284,
+    "control_start": 282,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 43,
+    "public_note": "State: Deeper clock grasp is closed at 0.70; secure retention and drawer placement remain pending. Check: Closure reached the lower target and contacted both sides, with a small rotation but no fall. Expect: Lift about 21 mm while retreating 10 mm into a more reachable region. Verify: Clock should move with the hand at stable jaw-relative pose; shrinking or sliding would show another failed grasp. Risk: Slip remains possible; keep the test above the clear original table area. Lesson: The revised contact is deeper than the failed grasp, but requires its own retention test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock followed the short lift with stable wrist-relative pose and jaw width, supporting retention; drawer-top placement remains pending. Check: Test motion landed within 2 mm and the revised grasp did not show the earlier slip. Expect: Raise and retreat in clear space to get the clock above drawer-top height before lateral transport. Verify: Clock should remain fixed between jaws and clear the table and drawer side. Risk: Higher pose may be unreachable or grasp may slip; split the lift if refused and lower if relative motion appears. Lesson: The deeper clock side grasp retained the object during the short lift test.",
+      "targets": {
+        "left_y": -0.1,
+        "left_z": 1.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 337,
+        "start": 329
+      },
+      "left_wrist": {
+        "end": 337,
+        "start": 329
+      },
+      "right_wrist": {
+        "end": 337,
+        "start": 329
+      }
+    },
+    "control_end": 292,
+    "control_start": 284,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 44,
+    "public_note": "State: Clock followed the short lift with stable wrist-relative pose and jaw width, supporting retention; drawer-top placement remains pending. Check: Test motion landed within 2 mm and the revised grasp did not show the earlier slip. Expect: Raise and retreat in clear space to get the clock above drawer-top height before lateral transport. Verify: Clock should remain fixed between jaws and clear the table and drawer side. Risk: Higher pose may be unreachable or grasp may slip; split the lift if refused and lower if relative motion appears. Lesson: The deeper clock side grasp retained the object during the short lift test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock remains held at the last verified low pose; drawer-top placement is pending. Check: Higher lift proposal was refused, so neither robot nor object moved. Expect: Retreat and rise modestly to a nearer intermediate pose before gaining more height. Verify: Clock should follow with stable jaw-relative pose and clear the tabletop. Risk: Reachability is constrained in the downward configuration; if refused, retreat alone before changing height. Lesson: The large high retreat was not reachable; a smaller intermediate move is required.",
+      "targets": {
+        "left_y": -0.09,
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 337,
+        "start": 329
+      },
+      "left_wrist": {
+        "end": 337,
+        "start": 329
+      },
+      "right_wrist": {
+        "end": 337,
+        "start": 329
+      }
+    },
+    "control_end": 292,
+    "control_start": 284,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 44,
+    "public_note": "State: Clock remains held at the last verified low pose; drawer-top placement is pending. Check: Higher lift proposal was refused, so neither robot nor object moved. Expect: Retreat and rise modestly to a nearer intermediate pose before gaining more height. Verify: Clock should follow with stable jaw-relative pose and clear the tabletop. Risk: Reachability is constrained in the downward configuration; if refused, retreat alone before changing height. Lesson: The large high retreat was not reachable; a smaller intermediate move is required.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock is held clear of the table at the nearer pose; drawer-top placement remains unmet. Check: Intermediate retreat landed within 1 mm and clock followed with stable jaw width. Expect: Raise another 8 cm before moving toward the drawer. Verify: Clock should stay retained and gain visible clearance above surrounding objects. Risk: Downward wrist reach may limit height; if refused, change wrist pitch incrementally in clear space rather than repeat the target. Lesson: Breaking the high retreat into a nearer intermediate pose succeeded.",
+      "targets": {
+        "left_z": 0.97
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 351,
+        "start": 338
+      },
+      "left_wrist": {
+        "end": 351,
+        "start": 338
+      },
+      "right_wrist": {
+        "end": 351,
+        "start": 338
+      }
+    },
+    "control_end": 305,
+    "control_start": 292,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "State: Clock is held clear of the table at the nearer pose; drawer-top placement remains unmet. Check: Intermediate retreat landed within 1 mm and clock followed with stable jaw width. Expect: Raise another 8 cm before moving toward the drawer. Verify: Clock should stay retained and gain visible clearance above surrounding objects. Risk: Downward wrist reach may limit height; if refused, change wrist pitch incrementally in clear space rather than repeat the target. Lesson: Breaking the high retreat into a nearer intermediate pose succeeded.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock remains retained after the 8 cm lift; its base is not yet clearly above the drawer top. Check: Height reached within 1 mm with stable clock-to-jaw relation. Expect: Tilt the wrist 30 degrees in clear space to enable a higher carry configuration. Verify: Clock should rotate with the hand without sliding, staying clear of the drawer side. Risk: Rotation changes the clock's lowest edge and grip loading; stop if slip appears. Lesson: The deeper clock grasp remained stable through the larger vertical lift.",
+      "targets": {
+        "left_pitch_deg": 30
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 372,
+        "start": 352
+      },
+      "left_wrist": {
+        "end": 372,
+        "start": 352
+      },
+      "right_wrist": {
+        "end": 372,
+        "start": 352
+      }
+    },
+    "control_end": 325,
+    "control_start": 305,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "State: Clock remains retained after the 8 cm lift; its base is not yet clearly above the drawer top. Check: Height reached within 1 mm with stable clock-to-jaw relation. Expect: Tilt the wrist 30 degrees in clear space to enable a higher carry configuration. Verify: Clock should rotate with the hand without sliding, staying clear of the drawer side. Risk: Rotation changes the clock's lowest edge and grip loading; stop if slip appears. Lesson: The deeper clock grasp remained stable through the larger vertical lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock slipped out during wrist rotation and now rests on the table with its face upward; drawer placement is unmet. Mouse remains organized. Check: Wrist reached 30 degrees, but jaws closed to zero and the clock fell away, contradicting retained rotation. Expect: Return to downward orientation and open for a new grasp of the now flatter clock. Verify: Hand should be open above the table, with the clock stationary below. Risk: Repeating the same side grasp would not address rotation failure; use a different grasp axis and avoid rotating while carrying. Lesson: The clock grasp tolerated translation but failed under a 30-degree wrist tilt.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 400,
+        "start": 373
+      },
+      "left_wrist": {
+        "end": 400,
+        "start": 373
+      },
+      "right_wrist": {
+        "end": 400,
+        "start": 373
+      }
+    },
+    "control_end": 352,
+    "control_start": 325,
+    "feedback": "Accepted: playing 27 waypoints (1.1s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "State: Clock slipped out during wrist rotation and now rests on the table with its face upward; drawer placement is unmet. Mouse remains organized. Check: Wrist reached 30 degrees, but jaws closed to zero and the clock fell away, contradicting retained rotation. Expect: Return to downward orientation and open for a new grasp of the now flatter clock. Verify: Hand should be open above the table, with the clock stationary below. Risk: Repeating the same side grasp would not address rotation failure; use a different grasp axis and avoid rotating while carrying. Lesson: The clock grasp tolerated translation but failed under a 30-degree wrist tilt.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse is organized; clock is resting face-up after the slip. Figurine remains on its gold base away from the gray stand. Check: Left hand reopened and returned downward without further object movement. Expect: Reposition above the figurine to inspect a body grasp that leaves its base free for seating. Verify: Wrist view should show the figurine and base between or near the open jaws without contact. Risk: Figurine's projecting head may be near the approach; maintain clearance and localize before descending. Lesson: Avoid wrist rotation while carrying with the clock's previous side grasp; change subgoal while it rests safely.",
+      "targets": {
+        "left_x": -0.4,
+        "left_y": -0.17,
+        "left_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 424,
+        "start": 401
+      },
+      "left_wrist": {
+        "end": 424,
+        "start": 401
+      },
+      "right_wrist": {
+        "end": 424,
+        "start": 401
+      }
+    },
+    "control_end": 375,
+    "control_start": 352,
+    "feedback": "Accepted: playing 23 waypoints (0.9s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "State: Mouse is organized; clock is resting face-up after the slip. Figurine remains on its gold base away from the gray stand. Check: Left hand reopened and returned downward without further object movement. Expect: Reposition above the figurine to inspect a body grasp that leaves its base free for seating. Verify: Wrist view should show the figurine and base between or near the open jaws without contact. Risk: Figurine's projecting head may be near the approach; maintain clearance and localize before descending. Lesson: Avoid wrist rotation while carrying with the clock's previous side grasp; change subgoal while it rests safely.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine body projects above its gold base and is right of the left jaw center; stand placement remains unmet. Check: Reposition landed exactly and provided a clear body view without contact. Expect: Align over the narrower body and descend toward a grasp that leaves the gold base clear. Verify: Body should lie between open fingers without the head or base being trapped. Risk: The irregular figure could tip if contacted off-center; inspect before closure. Lesson: The wrist view identifies a narrower body region suitable for carrying the base unobstructed.",
+      "targets": {
+        "left_x": -0.375,
+        "left_y": -0.16,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 429,
+        "start": 425
+      },
+      "left_wrist": {
+        "end": 429,
+        "start": 425
+      },
+      "right_wrist": {
+        "end": 429,
+        "start": 425
+      }
+    },
+    "control_end": 379,
+    "control_start": 375,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 49,
+    "public_note": "State: Figurine body projects above its gold base and is right of the left jaw center; stand placement remains unmet. Check: Reposition landed exactly and provided a clear body view without contact. Expect: Align over the narrower body and descend toward a grasp that leaves the gold base clear. Verify: Body should lie between open fingers without the head or base being trapped. Risk: The irregular figure could tip if contacted off-center; inspect before closure. Lesson: The wrist view identifies a narrower body region suitable for carrying the base unobstructed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine body is behind the jaw center while its base is centered laterally; grasp remains pending. Check: Approach landed within 1 mm without visible displacement. Expect: Move rearward and lower toward the narrower body above the base. Verify: Body should enter the jaw contact region while the base remains below and clear. Risk: Projecting head may touch a finger; stop if the figure tilts. Lesson: As with the mouse, wrist-image lateral centering alone does not establish fore-aft grasp alignment.",
+      "targets": {
+        "left_y": -0.19,
+        "left_z": 0.835
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 435,
+        "start": 430
+      },
+      "left_wrist": {
+        "end": 435,
+        "start": 430
+      },
+      "right_wrist": {
+        "end": 435,
+        "start": 430
+      }
+    },
+    "control_end": 384,
+    "control_start": 379,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "State: Figurine body is behind the jaw center while its base is centered laterally; grasp remains pending. Check: Approach landed within 1 mm without visible displacement. Expect: Move rearward and lower toward the narrower body above the base. Verify: Body should enter the jaw contact region while the base remains below and clear. Risk: Projecting head may touch a finger; stop if the figure tilts. Lesson: As with the mouse, wrist-image lateral centering alone does not establish fore-aft grasp alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine tipped during the approach; its gold base is now angled and the body extends rearward. Stand placement remains unmet. Check: Arm reached the target, but object motion contradicted the intended contact-free approach, likely from the projecting head. Expect: Lift clear to stop further tipping and obtain a reset view. Verify: Figurine should settle independently while fingers clear its projection. Risk: A finger may remain hooked around the figure; stop if it follows upward. Lesson: The projecting head obstructs a straight descent at this body approach; change the grasp approach rather than repeat it.",
+      "targets": {
+        "left_z": 0.885
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 440,
+        "start": 436
+      },
+      "left_wrist": {
+        "end": 440,
+        "start": 436
+      },
+      "right_wrist": {
+        "end": 440,
+        "start": 436
+      }
+    },
+    "control_end": 388,
+    "control_start": 384,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "State: Figurine tipped during the approach; its gold base is now angled and the body extends rearward. Stand placement remains unmet. Check: Arm reached the target, but object motion contradicted the intended contact-free approach, likely from the projecting head. Expect: Lift clear to stop further tipping and obtain a reset view. Verify: Figurine should settle independently while fingers clear its projection. Risk: A finger may remain hooked around the figure; stop if it follows upward. Lesson: The projecting head obstructs a straight descent at this body approach; change the grasp approach rather than repeat it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine has settled on its side, exposing a narrow green body behind the gold base. Placement remains unmet. Check: Withdrawal reached within 1 mm and the figure stayed on the table, settling farther onto its side. Expect: Approach the exposed body from above, offset from the head and base. Verify: Narrow green section should appear between the fingers with no new tipping or sliding. Risk: The head still projects rearward; keep the grasp near the exposed stem and inspect before closing. Lesson: The upright body approach was obstructed; the side-resting pose offers a different accessible contact region.",
+      "targets": {
+        "left_x": -0.34,
+        "left_y": -0.215,
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 448,
+        "start": 441
+      },
+      "left_wrist": {
+        "end": 448,
+        "start": 441
+      },
+      "right_wrist": {
+        "end": 448,
+        "start": 441
+      }
+    },
+    "control_end": 395,
+    "control_start": 388,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "State: Figurine has settled on its side, exposing a narrow green body behind the gold base. Placement remains unmet. Check: Withdrawal reached within 1 mm and the figure stayed on the table, settling farther onto its side. Expect: Approach the exposed body from above, offset from the head and base. Verify: Narrow green section should appear between the fingers with no new tipping or sliding. Risk: The head still projects rearward; keep the grasp near the exposed stem and inspect before closing. Lesson: The upright body approach was obstructed; the side-resting pose offers a different accessible contact region.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine slid rearward and rotated; the previous approach contacted it rather than reaching the intended stem. No figurine placement is achieved. Check: Robot reached within 1 mm, but the large object displacement contradicts a clear approach. Expect: Withdraw vertically to stop pushing and re-localize the now fully side-resting figure. Verify: Figure should remain on the table while the hand clears; its full outline should become visible. Risk: Further low translation would shove it again; do not translate until clear. Lesson: The open hand's swept geometry around this irregular figure is larger than the visible jaw gap suggests.",
+      "targets": {
+        "left_z": 0.93
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 458,
+        "start": 449
+      },
+      "left_wrist": {
+        "end": 458,
+        "start": 449
+      },
+      "right_wrist": {
+        "end": 458,
+        "start": 449
+      }
+    },
+    "control_end": 404,
+    "control_start": 395,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 53,
+    "public_note": "State: Figurine slid rearward and rotated; the previous approach contacted it rather than reaching the intended stem. No figurine placement is achieved. Check: Robot reached within 1 mm, but the large object displacement contradicts a clear approach. Expect: Withdraw vertically to stop pushing and re-localize the now fully side-resting figure. Verify: Figure should remain on the table while the hand clears; its full outline should become visible. Risk: Further low translation would shove it again; do not translate until clear. Lesson: The open hand's swept geometry around this irregular figure is larger than the visible jaw gap suggests.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine is fully on its side with the green body exposed rearward of the pot; grasp and stand placement remain pending. Check: Withdrawal cleared the hand, and the figure rolled farther before settling. Expect: Move above the exposed green body from clear height, avoiding the pot. Verify: Body should center beneath the jaw gap without sliding; use the next view before final descent. Risk: Prior estimates missed the object after rolling; if alignment differs, correct while still high. Lesson: Re-localization after settling is essential because the figure rolled substantially during withdrawal.",
+      "targets": {
+        "left_x": -0.335,
+        "left_y": -0.36,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 472,
+        "start": 459
+      },
+      "left_wrist": {
+        "end": 472,
+        "start": 459
+      },
+      "right_wrist": {
+        "end": 472,
+        "start": 459
+      }
+    },
+    "control_end": 417,
+    "control_start": 404,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "State: Figurine is fully on its side with the green body exposed rearward of the pot; grasp and stand placement remain pending. Check: Withdrawal cleared the hand, and the figure rolled farther before settling. Expect: Move above the exposed green body from clear height, avoiding the pot. Verify: Body should center beneath the jaw gap without sliding; use the next view before final descent. Risk: Prior estimates missed the object after rolling; if alignment differs, correct while still high. Lesson: Re-localization after settling is essential because the figure rolled substantially during withdrawal.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Exposed green end is slightly right of the jaw center; pot remains forward and clear of the intended grip. Check: Approach reached exactly; the figure shifted slightly, but its body is now clearly visible. Expect: Center on the green end and descend above its sides. Verify: Fingers should flank the green body without pressing the pot or nearby robot structure. Risk: The body is near the left arm structure; stop if either contact causes displacement. Lesson: The side-resting body is now visible enough for a localized grasp rather than a blind stem approach.",
+      "targets": {
+        "left_x": -0.315,
+        "left_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 478,
+        "start": 473
+      },
+      "left_wrist": {
+        "end": 478,
+        "start": 473
+      },
+      "right_wrist": {
+        "end": 478,
+        "start": 473
+      }
+    },
+    "control_end": 422,
+    "control_start": 417,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 55,
+    "public_note": "State: Exposed green end is slightly right of the jaw center; pot remains forward and clear of the intended grip. Check: Approach reached exactly; the figure shifted slightly, but its body is now clearly visible. Expect: Center on the green end and descend above its sides. Verify: Fingers should flank the green body without pressing the pot or nearby robot structure. Risk: The body is near the left arm structure; stop if either contact causes displacement. Lesson: The side-resting body is now visible enough for a localized grasp rather than a blind stem approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green body lies between the open jaws, with the pot outside the grip region; retention remains unverified. Check: Descent landed within 1 mm and figure stayed in place. Expect: Lower 5.6 mm and close around the green body. Verify: Jaws should stop on the body without pushing it away; a later lift must establish retention. Risk: Branches may produce uneven contact; reopen if the body rolls out. Lesson: This approach reached the exposed body without the earlier large displacement.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 486,
+        "start": 479
+      },
+      "left_wrist": {
+        "end": 486,
+        "start": 479
+      },
+      "right_wrist": {
+        "end": 486,
+        "start": 479
+      }
+    },
+    "control_end": 429,
+    "control_start": 422,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 56,
+    "public_note": "State: Green body lies between the open jaws, with the pot outside the grip region; retention remains unverified. Check: Descent landed within 1 mm and figure stayed in place. Expect: Lower 5.6 mm and close around the green body. Verify: Jaws should stop on the body without pushing it away; a later lift must establish retention. Risk: Branches may produce uneven contact; reopen if the body rolls out. Lesson: This approach reached the exposed body without the earlier large displacement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaws contact the green body at width 0.36; figurine is still side-oriented and stand placement remains unmet. Check: Closure reached its height and drew the body into contact without ejecting it. Expect: Lift 6 cm to test retention and clear the pot from the table. Verify: Entire figurine, including pot, should follow with stable jaw-relative pose. Risk: The pot's offset weight may rotate the grasp; lower if it slips rather than continuing transport. Lesson: The exposed green body provides a narrower contact than the earlier obstructed approach.",
+      "targets": {
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 492,
+        "start": 487
+      },
+      "left_wrist": {
+        "end": 492,
+        "start": 487
+      },
+      "right_wrist": {
+        "end": 492,
+        "start": 487
+      }
+    },
+    "control_end": 434,
+    "control_start": 429,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 57,
+    "public_note": "State: Jaws contact the green body at width 0.36; figurine is still side-oriented and stand placement remains unmet. Check: Closure reached its height and drew the body into contact without ejecting it. Expect: Lift 6 cm to test retention and clear the pot from the table. Verify: Entire figurine, including pot, should follow with stable jaw-relative pose. Risk: The pot's offset weight may rotate the grasp; lower if it slips rather than continuing transport. Lesson: The exposed green body provides a narrower contact than the earlier obstructed approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine stayed on the table as the hand rose; grasp failed and stand placement remains unmet. Check: Lift reached within 1 mm, but jaws narrowed to 0.01 and the body shifted away relative to the camera, showing loss of contact. Expect: Reopen above the body for a lower, sidewall-level grasp. Verify: Jaws should clear the green body without moving it. Risk: Closed tips may still brush a branch; opening should release any residual contact before descent. Lesson: The 0.800 m body grasp was too shallow to retain this side-resting figurine.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 499,
+        "start": 493
+      },
+      "left_wrist": {
+        "end": 499,
+        "start": 493
+      },
+      "right_wrist": {
+        "end": 499,
+        "start": 493
+      }
+    },
+    "control_end": 440,
+    "control_start": 434,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 58,
+    "public_note": "State: Figurine stayed on the table as the hand rose; grasp failed and stand placement remains unmet. Check: Lift reached within 1 mm, but jaws narrowed to 0.01 and the body shifted away relative to the camera, showing loss of contact. Expect: Reopen above the body for a lower, sidewall-level grasp. Verify: Jaws should clear the green body without moving it. Risk: Closed tips may still brush a branch; opening should release any residual contact before descent. Lesson: The 0.800 m body grasp was too shallow to retain this side-resting figurine.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine rests sideways with green end right of center; stand placement remains pending. Check: Opening released residual contact and the figure settled slightly rightward. Expect: Recenter over the green end and descend to a lower side grasp, avoiding the branches. Verify: Green end should lie between the jaws near table height without sliding. Risk: Nearby arm structure limits clearance; stop if descent is blocked or the figure moves. Lesson: The previous grasp slipped at 0.800 m, so this attempt targets lower side contact and the thicker end rather than the branch junction.",
+      "targets": {
+        "left_x": -0.29,
+        "left_y": -0.36,
+        "left_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 506,
+        "start": 500
+      },
+      "left_wrist": {
+        "end": 506,
+        "start": 500
+      },
+      "right_wrist": {
+        "end": 506,
+        "start": 500
+      }
+    },
+    "control_end": 446,
+    "control_start": 440,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 59,
+    "public_note": "State: Figurine rests sideways with green end right of center; stand placement remains pending. Check: Opening released residual contact and the figure settled slightly rightward. Expect: Recenter over the green end and descend to a lower side grasp, avoiding the branches. Verify: Green end should lie between the jaws near table height without sliding. Risk: Nearby arm structure limits clearance; stop if descent is blocked or the figure moves. Lesson: The previous grasp slipped at 0.800 m, so this attempt targets lower side contact and the thicker end rather than the branch junction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine body and branch junction lie inside the jaw opening at lower height; retention remains unverified. Check: Descent landed within 1 mm without a large figure displacement. Expect: Lower 4.5 mm and close around the lower body section. Verify: Jaws should contact the body without squeezing it out; lift evidence is still required. Risk: Branch geometry may skew the grip; release if the figure rolls away. Lesson: Lower approach reached the figure without the previous tipping, but grasp security remains unknown.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.786
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 514,
+        "start": 507
+      },
+      "left_wrist": {
+        "end": 514,
+        "start": 507
+      },
+      "right_wrist": {
+        "end": 514,
+        "start": 507
+      }
+    },
+    "control_end": 453,
+    "control_start": 446,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 60,
+    "public_note": "State: Figurine body and branch junction lie inside the jaw opening at lower height; retention remains unverified. Check: Descent landed within 1 mm without a large figure displacement. Expect: Lower 4.5 mm and close around the lower body section. Verify: Jaws should contact the body without squeezing it out; lift evidence is still required. Risk: Branch geometry may skew the grip; release if the figure rolls away. Lesson: Lower approach reached the figure without the previous tipping, but grasp security remains unknown.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lower closure contacts the figurine at width 0.59; stand placement remains pending. Check: Closure reached the intended height and shifted the body slightly into the jaws. Expect: Lift 6 cm to test this deeper grasp. Verify: Pot and body should rise together with stable jaw-relative geometry; narrowing jaws and a stationary figure would show failure. Risk: Offset pot weight may cause roll; lower if the grasp slips. Lesson: This grasp engages a wider lower body region than the failed shallow closure.",
+      "targets": {
+        "left_z": 0.846
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 520,
+        "start": 515
+      },
+      "left_wrist": {
+        "end": 520,
+        "start": 515
+      },
+      "right_wrist": {
+        "end": 520,
+        "start": 515
+      }
+    },
+    "control_end": 458,
+    "control_start": 453,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 61,
+    "public_note": "State: Lower closure contacts the figurine at width 0.59; stand placement remains pending. Check: Closure reached the intended height and shifted the body slightly into the jaws. Expect: Lift 6 cm to test this deeper grasp. Verify: Pot and body should rise together with stable jaw-relative geometry; narrowing jaws and a stationary figure would show failure. Risk: Offset pot weight may cause roll; lower if the grasp slips. Lesson: This grasp engages a wider lower body region than the failed shallow closure.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine rotated within the jaws during lifting; some contact remains at width 0.36, but stable retention is uncertain. Check: Arm rose 59 mm while the body changed orientation and jaw width decreased, so the grasp settled or slipped. Expect: Move slightly forward and upward away from the nearby arm structure to test whether the whole figure follows. Verify: Pot and body must leave their table location together and remain between the jaws; staying behind contradicts retention. Risk: Continued slip could drop it; keep this test over clear table and lower if it separates. Lesson: The lower grasp still allowed rotation, so transport retention needs direct visual confirmation.",
+      "targets": {
+        "left_y": -0.26,
+        "left_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 530,
+        "start": 521
+      },
+      "left_wrist": {
+        "end": 530,
+        "start": 521
+      },
+      "right_wrist": {
+        "end": 530,
+        "start": 521
+      }
+    },
+    "control_end": 467,
+    "control_start": 458,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 62,
+    "public_note": "State: Figurine rotated within the jaws during lifting; some contact remains at width 0.36, but stable retention is uncertain. Check: Arm rose 59 mm while the body changed orientation and jaw width decreased, so the grasp settled or slipped. Expect: Move slightly forward and upward away from the nearby arm structure to test whether the whole figure follows. Verify: Pot and body must leave their table location together and remain between the jaws; staying behind contradicts retention. Risk: Continued slip could drop it; keep this test over clear table and lower if it separates. Lesson: The lower grasp still allowed rotation, so transport retention needs direct visual confirmation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine slipped free and settled with its pot on the table; green body is now more upright. Stand placement remains unmet. Check: Hand reached the test pose, but jaws closed fully and the figure stayed behind, proving loss of retention. Expect: Open above the pot for a different grasp around the solid pot rather than the slippery branched body. Verify: Pot should be centered below the jaws without contact. Risk: Body may obstruct descent; inspect its relation to both fingers before lowering. Lesson: Two body grasps failed retention; switch to the pot rather than repeat body pinches.",
+      "targets": {
+        "left_gripper": 1,
+        "left_x": -0.335,
+        "left_y": -0.32,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 544,
+        "start": 531
+      },
+      "left_wrist": {
+        "end": 544,
+        "start": 531
+      },
+      "right_wrist": {
+        "end": 544,
+        "start": 531
+      }
+    },
+    "control_end": 480,
+    "control_start": 467,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 63,
+    "public_note": "State: Figurine slipped free and settled with its pot on the table; green body is now more upright. Stand placement remains unmet. Check: Hand reached the test pose, but jaws closed fully and the figure stayed behind, proving loss of retention. Expect: Open above the pot for a different grasp around the solid pot rather than the slippery branched body. Verify: Pot should be centered below the jaws without contact. Risk: Body may obstruct descent; inspect its relation to both fingers before lowering. Lesson: Two body grasps failed retention; switch to the pot rather than repeat body pinches.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pot is centered between open jaws, tilted on the table; figure placement remains unmet. Check: Reposition reached exactly, but the figure rolled slightly, exposing the pot wall clearly. Expect: Descend beside the pot, keeping the projecting green body outside the contact region. Verify: Both jaws should flank the pot wall without tipping it further. Risk: Rim contact may rotate the pot; stop descent if it shifts or height is obstructed. Lesson: Pot-side contact offers a different grasp surface after repeated body-grasp failures.",
+      "targets": {
+        "left_z": 0.812
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 549,
+        "start": 545
+      },
+      "left_wrist": {
+        "end": 549,
+        "start": 545
+      },
+      "right_wrist": {
+        "end": 549,
+        "start": 545
+      }
+    },
+    "control_end": 484,
+    "control_start": 480,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 64,
+    "public_note": "State: Pot is centered between open jaws, tilted on the table; figure placement remains unmet. Check: Reposition reached exactly, but the figure rolled slightly, exposing the pot wall clearly. Expect: Descend beside the pot, keeping the projecting green body outside the contact region. Verify: Both jaws should flank the pot wall without tipping it further. Risk: Rim contact may rotate the pot; stop descent if it shifts or height is obstructed. Lesson: Pot-side contact offers a different grasp surface after repeated body-grasp failures.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Pot wall is behind the jaw tips; no grasp is established. Check: Descent landed within 1 mm, with a small pot shift rather than stable centering. Expect: Correct rearward and downward by about 5 mm to bring the pot wall into the jaw region. Verify: Pot should remain between the fingers without additional rolling. Risk: Rim or stem contact could displace it; stop and lift if rolling resumes. Lesson: The pot grasp also needs fore-aft alignment, not just lateral centering.",
+      "targets": {
+        "left_y": -0.325,
+        "left_z": 0.808
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 551,
+        "start": 550
+      },
+      "left_wrist": {
+        "end": 551,
+        "start": 550
+      },
+      "right_wrist": {
+        "end": 551,
+        "start": 550
+      }
+    },
+    "control_end": 485,
+    "control_start": 484,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 65,
+    "public_note": "State: Pot wall is behind the jaw tips; no grasp is established. Check: Descent landed within 1 mm, with a small pot shift rather than stable centering. Expect: Correct rearward and downward by about 5 mm to bring the pot wall into the jaw region. Verify: Pot should remain between the fingers without additional rolling. Risk: Rim or stem contact could displace it; stop and lift if rolling resumes. Lesson: The pot grasp also needs fore-aft alignment, not just lateral centering.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine remains beside the left arm structure, unorganized; pot approach is obstructed. Mouse is the only verified placement. Check: Small correction ended 7 mm short with angular deflection and no useful object motion, indicating contact blockage. Expect: Lift clear rather than force the obstructed pot approach. Verify: Hand should separate from the figure and nearby structure while the figure stays on the table. Risk: Snagging the stem could move it; inspect during withdrawal. Lesson: This pot approach is blocked near the arm structure; further low corrections here are not productive.",
+      "targets": {
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 561,
+        "start": 552
+      },
+      "left_wrist": {
+        "end": 561,
+        "start": 552
+      },
+      "right_wrist": {
+        "end": 561,
+        "start": 552
+      }
+    },
+    "control_end": 494,
+    "control_start": 485,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 66,
+    "public_note": "State: Figurine remains beside the left arm structure, unorganized; pot approach is obstructed. Mouse is the only verified placement. Check: Small correction ended 7 mm short with angular deflection and no useful object motion, indicating contact blockage. Expect: Lift clear rather than force the obstructed pot approach. Verify: Hand should separate from the figure and nearby structure while the figure stays on the table. Risk: Snagging the stem could move it; inspect during withdrawal. Lesson: This pot approach is blocked near the arm structure; further low corrections here are not productive.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Figurine is safely left on the table; clock remains face-up near its original location, and drawer-top placement is pending. Check: Withdrawal reached exactly and cleared the obstructed figurine approach. Expect: Return above the clock in its new flat orientation for a lower side grasp. Verify: Clock should be centered in the wrist view with open jaws clear of its face. Risk: Forward reach may be planner-limited; use a nearer intermediate pose if refused. Lesson: The figurine approach near the arm structure was obstructed, so switch to the accessible clock rather than force contact.",
+      "targets": {
+        "left_x": -0.15,
+        "left_y": 0.015,
+        "left_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 593,
+        "start": 562
+      },
+      "left_wrist": {
+        "end": 593,
+        "start": 562
+      },
+      "right_wrist": {
+        "end": 593,
+        "start": 562
+      }
+    },
+    "control_end": 525,
+    "control_start": 494,
+    "feedback": "Accepted: playing 31 waypoints (1.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 67,
+    "public_note": "State: Figurine is safely left on the table; clock remains face-up near its original location, and drawer-top placement is pending. Check: Withdrawal reached exactly and cleared the obstructed figurine approach. Expect: Return above the clock in its new flat orientation for a lower side grasp. Verify: Clock should be centered in the wrist view with open jaws clear of its face. Risk: Forward reach may be planner-limited; use a nearer intermediate pose if refused. Lesson: The figurine approach near the arm structure was obstructed, so switch to the accessible clock rather than force contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Face-up clock is left and slightly forward of the open jaw center; placement remains pending. Check: Return reached exactly and the flat clock is clearly visible. Expect: Align with its center and lower toward the sidewalls, avoiding the dial and button. Verify: Both fingers should flank the clock housing without touching its face. Risk: Forward reach and housing corners may limit approach; inspect actual arrival before closure. Lesson: The clock's flat pose exposes a different, lower sidewall grasp than the failed upright grip.",
+      "targets": {
+        "left_x": -0.165,
+        "left_y": 0.03,
+        "left_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 596,
+        "start": 594
+      },
+      "left_wrist": {
+        "end": 596,
+        "start": 594
+      },
+      "right_wrist": {
+        "end": 596,
+        "start": 594
+      }
+    },
+    "control_end": 527,
+    "control_start": 525,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 68,
+    "public_note": "State: Face-up clock is left and slightly forward of the open jaw center; placement remains pending. Check: Return reached exactly and the flat clock is clearly visible. Expect: Align with its center and lower toward the sidewalls, avoiding the dial and button. Verify: Both fingers should flank the clock housing without touching its face. Risk: Forward reach and housing corners may limit approach; inspect actual arrival before closure. Lesson: The clock's flat pose exposes a different, lower sidewall grasp than the failed upright grip.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock is centered nearly between jaws, but descent was blocked near its left housing edge. Check: Approach stopped 17 mm high with angular deflection and rotated the clock, showing contact rather than arrival. Expect: Shift 5 mm left to clear the left finger from the housing corner before further descent. Verify: Housing should fit inside the open gap with reduced corner overlap and no new rotation. Risk: Side rubbing could move the clock; lift if contact persists. Lesson: The flat clock approach contacted a corner; correct lateral clearance before lowering again.",
+      "targets": {
+        "left_x": -0.1673
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 598,
+        "start": 597
+      },
+      "left_wrist": {
+        "end": 598,
+        "start": 597
+      },
+      "right_wrist": {
+        "end": 598,
+        "start": 597
+      }
+    },
+    "control_end": 528,
+    "control_start": 527,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 69,
+    "public_note": "State: Clock is centered nearly between jaws, but descent was blocked near its left housing edge. Check: Approach stopped 17 mm high with angular deflection and rotated the clock, showing contact rather than arrival. Expect: Shift 5 mm left to clear the left finger from the housing corner before further descent. Verify: Housing should fit inside the open gap with reduced corner overlap and no new rotation. Risk: Side rubbing could move the clock; lift if contact persists. Lesson: The flat clock approach contacted a corner; correct lateral clearance before lowering again.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock housing is nearly centered within the open gap; sidewall engagement remains uncertain. Check: Lateral correction landed within 1 mm but clock rotated slightly, confirming continued edge contact. Expect: Lower only 5 mm to test whether the corrected gap clears the housing. Verify: Actual height should follow without increasing angular deflection; otherwise the approach remains obstructed. Risk: Corner pressure could tip the clock; lift and change jaw orientation if lowering is blocked again. Lesson: Lateral correction alone did not fully eliminate housing contact.",
+      "targets": {
+        "left_z": 0.812
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 600,
+        "start": 599
+      },
+      "left_wrist": {
+        "end": 600,
+        "start": 599
+      },
+      "right_wrist": {
+        "end": 600,
+        "start": 599
+      }
+    },
+    "control_end": 529,
+    "control_start": 528,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 70,
+    "public_note": "State: Clock housing is nearly centered within the open gap; sidewall engagement remains uncertain. Check: Lateral correction landed within 1 mm but clock rotated slightly, confirming continued edge contact. Expect: Lower only 5 mm to test whether the corrected gap clears the housing. Verify: Actual height should follow without increasing angular deflection; otherwise the approach remains obstructed. Risk: Corner pressure could tip the clock; lift and change jaw orientation if lowering is blocked again. Lesson: Lateral correction alone did not fully eliminate housing contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock approach is still obstructed at the housing edge; drawer placement remains unmet. Check: Lowering again stopped 5 mm high with angular deflection and no useful progress. Expect: Lift and retreat clear before changing the jaw axis. Verify: Clock should remain on the table and the hand should regain clearance without dragging it. Risk: Residual edge contact could shift the clock; inspect before rotating. Lesson: Repeated lowering at this jaw axis is blocked; a different approach orientation is needed.",
+      "targets": {
+        "left_y": -0.01,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 606,
+        "start": 601
+      },
+      "left_wrist": {
+        "end": 606,
+        "start": 601
+      },
+      "right_wrist": {
+        "end": 606,
+        "start": 601
+      }
+    },
+    "control_end": 534,
+    "control_start": 529,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 71,
+    "public_note": "State: Clock approach is still obstructed at the housing edge; drawer placement remains unmet. Check: Lowering again stopped 5 mm high with angular deflection and no useful progress. Expect: Lift and retreat clear before changing the jaw axis. Verify: Clock should remain on the table and the hand should regain clearance without dragging it. Risk: Residual edge contact could shift the clock; inspect before rotating. Lesson: Repeated lowering at this jaw axis is blocked; a different approach orientation is needed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock remains on the table and the left hand is clear; placement is still pending. Check: Retreat reached within 1 mm without dragging the clock. Expect: Rotate the open jaws halfway toward a perpendicular grasp axis. Verify: Wrist orientation should change with clock stationary and no finger contact. Risk: Large yaw changes can be planner-limited; use this incremental turn before the next rotation. Lesson: The prior jaw axis repeatedly caught a housing corner, so change orientation in clearance.",
+      "targets": {
+        "left_yaw_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 623,
+        "start": 607
+      },
+      "left_wrist": {
+        "end": 623,
+        "start": 607
+      },
+      "right_wrist": {
+        "end": 623,
+        "start": 607
+      }
+    },
+    "control_end": 550,
+    "control_start": 534,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 72,
+    "public_note": "State: Clock remains on the table and the left hand is clear; placement is still pending. Check: Retreat reached within 1 mm without dragging the clock. Expect: Rotate the open jaws halfway toward a perpendicular grasp axis. Verify: Wrist orientation should change with clock stationary and no finger contact. Risk: Large yaw changes can be planner-limited; use this incremental turn before the next rotation. Lesson: The prior jaw axis repeatedly caught a housing corner, so change orientation in clearance.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock is stationary below the open hand; alternate-axis grasp remains in preparation. Check: First 45-degree yaw landed exactly without object contact. Expect: Complete the perpendicular jaw orientation for gripping the other housing dimension. Verify: Jaws should reach 90 degrees while clock stays fixed. Risk: Wrist reach may constrain the turn; if refused, retain the clear pose and reposition before retrying. Lesson: Incremental yaw rotation is executing accurately in this clearance pose.",
+      "targets": {
+        "left_yaw_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 640,
+        "start": 624
+      },
+      "left_wrist": {
+        "end": 640,
+        "start": 624
+      },
+      "right_wrist": {
+        "end": 640,
+        "start": 624
+      }
+    },
+    "control_end": 566,
+    "control_start": 550,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 73,
+    "public_note": "State: Clock is stationary below the open hand; alternate-axis grasp remains in preparation. Check: First 45-degree yaw landed exactly without object contact. Expect: Complete the perpendicular jaw orientation for gripping the other housing dimension. Verify: Jaws should reach 90 degrees while clock stays fixed. Risk: Wrist reach may constrain the turn; if refused, retain the clear pose and reposition before retrying. Lesson: Incremental yaw rotation is executing accurately in this clearance pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock is right of center in the rotated wrist view, corresponding to a forward world offset; placement remains pending. Check: Perpendicular yaw reached exactly without contact. Expect: Advance over the clock and lower to a pregrasp height on the alternate axis. Verify: Housing should center between the jaws with clearance on its opposing edges. Risk: Reach or corner contact may obstruct descent; check actual height and avoid forcing a shortfall. Lesson: The alternate jaw axis is available and offers a new approach after repeated corner blockage.",
+      "targets": {
+        "left_y": 0.025,
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 650,
+        "start": 641
+      },
+      "left_wrist": {
+        "end": 650,
+        "start": 641
+      },
+      "right_wrist": {
+        "end": 650,
+        "start": 641
+      }
+    },
+    "control_end": 575,
+    "control_start": 566,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 74,
+    "public_note": "State: Clock is right of center in the rotated wrist view, corresponding to a forward world offset; placement remains pending. Check: Perpendicular yaw reached exactly without contact. Expect: Advance over the clock and lower to a pregrasp height on the alternate axis. Verify: Housing should center between the jaws with clearance on its opposing edges. Risk: Reach or corner contact may obstruct descent; check actual height and avoid forcing a shortfall. Lesson: The alternate jaw axis is available and offers a new approach after repeated corner blockage.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock is centered between the alternate-axis jaws; secure sidewall contact remains pending. Check: Approach reached within 1 mm without the earlier large height shortfall. Expect: Lower 4.7 mm toward the housing sides. Verify: Actual height should follow with clock stationary and fingers outside the face. Risk: Housing contact may begin here; stop if angular deflection or clock rotation appears. Lesson: The perpendicular jaw approach reached its pregrasp pose without the previous blockage.",
+      "targets": {
+        "left_z": 0.815
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 655,
+        "start": 651
+      },
+      "left_wrist": {
+        "end": 655,
+        "start": 651
+      },
+      "right_wrist": {
+        "end": 655,
+        "start": 651
+      }
+    },
+    "control_end": 579,
+    "control_start": 575,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 75,
+    "public_note": "State: Clock is centered between the alternate-axis jaws; secure sidewall contact remains pending. Check: Approach reached within 1 mm without the earlier large height shortfall. Expect: Lower 4.7 mm toward the housing sides. Verify: Actual height should follow with clock stationary and fingers outside the face. Risk: Housing contact may begin here; stop if angular deflection or clock rotation appears. Lesson: The perpendicular jaw approach reached its pregrasp pose without the previous blockage.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Alternate-axis jaws flank the clock housing at the reached low pose; retention and placement remain pending. Check: Small descent reached exactly with no visible clock displacement. Expect: Close around the housing on this new axis. Verify: Jaws should stop against opposing sides; only a lift with stable clock-relative pose will prove retention. Risk: Contact may still be shallow; reopen if the clock is squeezed upward or rolls. Lesson: Changing the jaw axis eliminated the earlier blocked descent at this height.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 662,
+        "start": 656
+      },
+      "left_wrist": {
+        "end": 662,
+        "start": 656
+      },
+      "right_wrist": {
+        "end": 662,
+        "start": 656
+      }
+    },
+    "control_end": 585,
+    "control_start": 579,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 76,
+    "public_note": "State: Alternate-axis jaws flank the clock housing at the reached low pose; retention and placement remain pending. Check: Small descent reached exactly with no visible clock displacement. Expect: Close around the housing on this new axis. Verify: Jaws should stop against opposing sides; only a lift with stable clock-relative pose will prove retention. Risk: Contact may still be shallow; reopen if the clock is squeezed upward or rolls. Lesson: Changing the jaw axis eliminated the earlier blocked descent at this height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock housing is contacted on the alternate axis at width 0.71; secure retention is unverified. Check: Closure centered the clock without obvious tipping. Expect: Lift 4 cm and retreat into a nearer pose to test retention. Verify: Clock should follow with stable size and position relative to jaws while leaving the table. Risk: Shallow contact could slip; lower if the clock separates. Lesson: Alternate-axis closure is established, but its holding ability must be tested independently.",
+      "targets": {
+        "left_y": -0.025,
+        "left_z": 0.855
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 673,
+        "start": 663
+      },
+      "left_wrist": {
+        "end": 673,
+        "start": 663
+      },
+      "right_wrist": {
+        "end": 673,
+        "start": 663
+      }
+    },
+    "control_end": 595,
+    "control_start": 585,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 77,
+    "public_note": "State: Clock housing is contacted on the alternate axis at width 0.71; secure retention is unverified. Check: Closure centered the clock without obvious tipping. Expect: Lift 4 cm and retreat into a nearer pose to test retention. Verify: Clock should follow with stable size and position relative to jaws while leaving the table. Risk: Shallow contact could slip; lower if the clock separates. Lesson: Alternate-axis closure is established, but its holding ability must be tested independently.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock followed the lift and retreat with stable jaw-relative geometry and width, supporting retention. Drawer-top placement remains pending. Check: Test move reached exactly and clock left its prior table position without slipping. Expect: Carry upward and nearer the left base to obtain drawer-top clearance without rotating the grasp. Verify: Clock should remain retained and its lowest edge should rise above the drawer top before lateral crossing. Risk: High pose may be unreachable; split the motion if refused, preserving orientation. Lesson: Alternate-axis clock grasp retained during the 4 cm lift and retreat; avoid the rotation that defeated the earlier grip.",
+      "targets": {
+        "left_x": -0.3,
+        "left_y": -0.15,
+        "left_z": 1.04
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 757,
+        "start": 674
+      },
+      "left_wrist": {
+        "end": 757,
+        "start": 674
+      },
+      "right_wrist": {
+        "end": 757,
+        "start": 674
+      }
+    },
+    "control_end": 678,
+    "control_start": 595,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 78,
+    "public_note": "State: Clock followed the lift and retreat with stable jaw-relative geometry and width, supporting retention. Drawer-top placement remains pending. Check: Test move reached exactly and clock left its prior table position without slipping. Expect: Carry upward and nearer the left base to obtain drawer-top clearance without rotating the grasp. Verify: Clock should remain retained and its lowest edge should rise above the drawer top before lateral crossing. Risk: High pose may be unreachable; split the motion if refused, preserving orientation. Lesson: Alternate-axis clock grasp retained during the 4 cm lift and retreat; avoid the rotation that defeated the earlier grip.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock remains held at the tested low pose; drawer placement is pending. Check: High carry target was refused and neither arm moved; no new retention evidence was gained. Expect: Reach a lower intermediate carry pose nearer the base, keeping the grasp orientation fixed. Verify: Clock should follow stably with clear space around it. Risk: Planner may still reject the combined move; then separate horizontal retreat from lifting. Lesson: The direct 1.04 m carry pose was unreachable; use an intermediate height rather than rotate the held clock.",
+      "targets": {
+        "left_x": -0.3,
+        "left_y": -0.15,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 757,
+        "start": 674
+      },
+      "left_wrist": {
+        "end": 757,
+        "start": 674
+      },
+      "right_wrist": {
+        "end": 757,
+        "start": 674
+      }
+    },
+    "control_end": 678,
+    "control_start": 595,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 78,
+    "public_note": "State: Clock remains held at the tested low pose; drawer placement is pending. Check: High carry target was refused and neither arm moved; no new retention evidence was gained. Expect: Reach a lower intermediate carry pose nearer the base, keeping the grasp orientation fixed. Verify: Clock should follow stably with clear space around it. Risk: Planner may still reject the combined move; then separate horizontal retreat from lifting. Lesson: The direct 1.04 m carry pose was unreachable; use an intermediate height rather than rotate the held clock.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock remains held; drawer-top transport is planner-limited, not physically attempted. Check: Lower intermediate proposal was also refused, leaving both arms unchanged. Expect: Retreat only 55 mm at the current height to a nearer configuration. Verify: Clock should move rearward with the jaws and remain clear of the table. Risk: Combined targets have failed; if this single-axis retreat fails, use a smaller local lift rather than repeat it. Lesson: Two combined carry proposals were unreachable; isolate translation at the known height.",
+      "targets": {
+        "left_y": -0.08
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 757,
+        "start": 674
+      },
+      "left_wrist": {
+        "end": 757,
+        "start": 674
+      },
+      "right_wrist": {
+        "end": 757,
+        "start": 674
+      }
+    },
+    "control_end": 678,
+    "control_start": 595,
+    "feedback": "Accepted: playing 83 waypoints (3.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 78,
+    "public_note": "State: Clock remains held; drawer-top transport is planner-limited, not physically attempted. Check: Lower intermediate proposal was also refused, leaving both arms unchanged. Expect: Retreat only 55 mm at the current height to a nearer configuration. Verify: Clock should move rearward with the jaws and remain clear of the table. Risk: Combined targets have failed; if this single-axis retreat fails, use a smaller local lift rather than repeat it. Lesson: Two combined carry proposals were unreachable; isolate translation at the known height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock was lost during the left retreat and is partly occluded toward the right side; mouse is the only verified organized item. Keyboard, figurine, clock and drawer tasks remain unmet. Check: Left motion took a long joint path, ended 39 mm and 8.9 degrees off target, and jaws closed empty, contradicting stable transport. Expect: Clear the idle right arm toward its starting position to reveal the clock and reduce workspace obstruction. Verify: Head view should expose the clock's resting location while keyboard and mouse remain undisturbed. Risk: Nearby clock location is uncertain; retreat at current clearance and stop if it is contacted. Lesson: Cartesian endpoint proximity did not guarantee a short or retention-safe joint path in the last left-arm configuration.",
+      "targets": {
+        "right_x": 0.3,
+        "right_y": -0.2022,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 777,
+        "start": 758
+      },
+      "left_wrist": {
+        "end": 777,
+        "start": 758
+      },
+      "right_wrist": {
+        "end": 777,
+        "start": 758
+      }
+    },
+    "control_end": 697,
+    "control_start": 678,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 79,
+    "public_note": "State: Clock was lost during the left retreat and is partly occluded toward the right side; mouse is the only verified organized item. Keyboard, figurine, clock and drawer tasks remain unmet. Check: Left motion took a long joint path, ended 39 mm and 8.9 degrees off target, and jaws closed empty, contradicting stable transport. Expect: Clear the idle right arm toward its starting position to reveal the clock and reduce workspace obstruction. Verify: Head view should expose the clock's resting location while keyboard and mouse remain undisturbed. Risk: Nearby clock location is uncertain; retreat at current clearance and stop if it is contacted. Lesson: Cartesian endpoint proximity did not guarantee a short or retention-safe joint path in the last left-arm configuration.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Clock now rests on the table left of the mouse pad, not on the drawer. Mouse remains on its pad; other task conditions are unmet. Check: Right retreat reached exactly and revealed the displaced clock without disturbing it. Expect: Begin restoring the right arm's starting orientation while keeping the organized mouse untouched. Verify: Right pitch should reach 45 degrees with all objects stationary. Risk: Wrist sweep near the pad; stop if mouse contact appears. Lesson: Clearing the idle arm resolved the clock-location uncertainty after the failed left transport.",
+      "targets": {
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 793,
+        "start": 778
+      },
+      "left_wrist": {
+        "end": 793,
+        "start": 778
+      },
+      "right_wrist": {
+        "end": 793,
+        "start": 778
+      }
+    },
+    "control_end": 712,
+    "control_start": 697,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 80,
+    "public_note": "State: Clock now rests on the table left of the mouse pad, not on the drawer. Mouse remains on its pad; other task conditions are unmet. Check: Right retreat reached exactly and revealed the displaced clock without disturbing it. Expect: Begin restoring the right arm's starting orientation while keeping the organized mouse untouched. Verify: Right pitch should reach 45 degrees with all objects stationary. Risk: Wrist sweep near the pad; stop if mouse contact appears. Lesson: Clearing the idle arm resolved the clock-location uncertainty after the failed left transport.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Mouse remains correctly supported on the pad; keyboard, figurine, clock and drawer storage remain unfinished. Check: Right wrist reached 45 degrees exactly without object movement. Expect: Complete the right arm's return to its initial orientation. Verify: State should show approximately 90-degree pitch and zero roll/yaw at the starting position, with objects unchanged. Risk: No nearby contact is indicated during the previous half-turn; inspect for any unexpected object movement. Lesson: Incremental right-arm restoration has executed accurately without disturbing the mouse.",
+      "targets": {
+        "right_pitch_deg": 90,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 810,
+        "start": 794
+      },
+      "left_wrist": {
+        "end": 810,
+        "start": 794
+      },
+      "right_wrist": {
+        "end": 810,
+        "start": 794
+      }
+    },
+    "control_end": 728,
+    "control_start": 712,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 81,
+    "public_note": "State: Mouse remains correctly supported on the pad; keyboard, figurine, clock and drawer storage remain unfinished. Check: Right wrist reached 45 degrees exactly without object movement. Expect: Complete the right arm's return to its initial orientation. Verify: State should show approximately 90-degree pitch and zero roll/yaw at the starting position, with objects unchanged. Risk: No nearby contact is indicated during the previous half-turn; inspect for any unexpected object movement. Lesson: Incremental right-arm restoration has executed accurately without disturbing the mouse.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right arm is back at origin and mouse remains organized. Left hand is empty in a distorted post-slip pose; remaining task placements and storage are unmet. Check: Right restoration landed exactly with objects unchanged. Expect: Return the empty left grasp point toward its starting position and open the jaws, separating position recovery from orientation. Verify: Left position should reach near origin without contacting table objects. Risk: The last left path had a large joint excursion; check actual arrival and avoid assuming a short endpoint move implies a short path. Lesson: Left-arm execution after the branch-changing retreat requires explicit arrival checking.",
+      "targets": {
+        "left_gripper": 1,
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 833,
+        "start": 811
+      },
+      "left_wrist": {
+        "end": 833,
+        "start": 811
+      },
+      "right_wrist": {
+        "end": 833,
+        "start": 811
+      }
+    },
+    "control_end": 750,
+    "control_start": 728,
+    "feedback": "Accepted: playing 22 waypoints (0.9s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 82,
+    "public_note": "State: Right arm is back at origin and mouse remains organized. Left hand is empty in a distorted post-slip pose; remaining task placements and storage are unmet. Check: Right restoration landed exactly with objects unchanged. Expect: Return the empty left grasp point toward its starting position and open the jaws, separating position recovery from orientation. Verify: Left position should reach near origin without contacting table objects. Risk: The last left path had a large joint excursion; check actual arrival and avoid assuming a short endpoint move implies a short path. Lesson: Left-arm execution after the branch-changing retreat requires explicit arrival checking.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Both grasp points are near their starting positions; left orientation remains unrestored. Mouse placement is verified, while all other task subgoals remain unfinished. Check: Left positional return landed within 2 mm and opened fully without object contact. Expect: Reduce left yaw and remove roll in an incremental orientation recovery. Verify: Left state should reach 45-degree yaw and zero roll with objects stationary. Risk: Unusual left joint configuration may cause a long rotation path; check execution before the next turn. Lesson: The empty left arm returned accurately in position despite its previous loaded-path failure.",
+      "targets": {
+        "left_roll_deg": 0,
+        "left_yaw_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 850,
+        "start": 834
+      },
+      "left_wrist": {
+        "end": 850,
+        "start": 834
+      },
+      "right_wrist": {
+        "end": 850,
+        "start": 834
+      }
+    },
+    "control_end": 766,
+    "control_start": 750,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 83,
+    "public_note": "State: Both grasp points are near their starting positions; left orientation remains unrestored. Mouse placement is verified, while all other task subgoals remain unfinished. Check: Left positional return landed within 2 mm and opened fully without object contact. Expect: Reduce left yaw and remove roll in an incremental orientation recovery. Verify: Left state should reach 45-degree yaw and zero roll with objects stationary. Risk: Unusual left joint configuration may cause a long rotation path; check execution before the next turn. Lesson: The empty left arm returned accurately in position despite its previous loaded-path failure.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left yaw partly restored, but pitch and position drifted; right arm is at origin. Only mouse placement is verified. Check: Left rotation ended 42 mm and 9.6 degrees off target despite no object contact, so execution did not hold the grasp point. Expect: Move toward the starting horizontal orientation in another incremental turn. Verify: Left pitch should approach 45 degrees and yaw zero, with no new large position drift. Risk: Configuration limits may prevent accurate orientation recovery; if error persists, stop rather than force repeated corrections. Lesson: Left orientation recovery in this joint configuration is not tracking Cartesian targets accurately.",
+      "targets": {
+        "left_pitch_deg": 45,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 867,
+        "start": 851
+      },
+      "left_wrist": {
+        "end": 867,
+        "start": 851
+      },
+      "right_wrist": {
+        "end": 867,
+        "start": 851
+      }
+    },
+    "control_end": 782,
+    "control_start": 766,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 84,
+    "public_note": "State: Left yaw partly restored, but pitch and position drifted; right arm is at origin. Only mouse placement is verified. Check: Left rotation ended 42 mm and 9.6 degrees off target despite no object contact, so execution did not hold the grasp point. Expect: Move toward the starting horizontal orientation in another incremental turn. Verify: Left pitch should approach 45 degrees and yaw zero, with no new large position drift. Risk: Configuration limits may prevent accurate orientation recovery; if error persists, stop rather than force repeated corrections. Lesson: Left orientation recovery in this joint configuration is not tracking Cartesian targets accurately.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left orientation recovery is now tracking; both hands are empty and near origin. Mouse is organized, but the other placements and drawer storage remain unmet. Check: Last left turn reached exactly with no position drift or object movement. Expect: Complete left return to the starting orientation while preserving the table state. Verify: Both arms should be within the required origin tolerances, with open grippers and mouse still on the pad. Risk: Prior recovery drift warrants checking actual feedback; stop if a large error recurs. Lesson: Moving left pitch toward horizontal restored accurate tracking in the latest incremental turn.",
+      "targets": {
+        "left_pitch_deg": 90,
+        "left_roll_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 900,
+        "start": 868
+      },
+      "left_wrist": {
+        "end": 900,
+        "start": 868
+      },
+      "right_wrist": {
+        "end": 900,
+        "start": 868
+      }
+    },
+    "control_end": 814,
+    "control_start": 782,
+    "feedback": "Accepted: playing 32 waypoints (1.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 85,
+    "public_note": "State: Left orientation recovery is now tracking; both hands are empty and near origin. Mouse is organized, but the other placements and drawer storage remain unmet. Check: Last left turn reached exactly with no position drift or object movement. Expect: Complete left return to the starting orientation while preserving the table state. Verify: Both arms should be within the required origin tolerances, with open grippers and mouse still on the pad. Risk: Prior recovery drift warrants checking actual feedback; stop if a large error recurs. Lesson: Moving left pitch toward horizontal restored accurate tracking in the latest incremental turn.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "For these objects, verify retention after each change in motion type. The low mouse side grasp succeeded; clock rotation and a branch-changing transport lost the clock, while figurine body grasps repeatedly slipped. Change grasp geometry and check actual arrival rather than treating closure or a short lift as sufficient.",
+      "reason": "State: Mouse is verified on its pad with grippers open. Both arms are within origin tolerances. Keyboard remains outside its frame, figurine off its stand, clock off the drawer, and drawer storage unfinished. Check: Final left recovery landed within 1 mm and 0.2 degrees; no additional placement was achieved. Expect: End the incomplete episode after repeated grasp losses and transport failures. Verify: Only mouse placement and arm return are supported; all remaining goal conditions are unmet or unverified. Risk: Further manipulation cannot complete the remaining sequence within the remaining call budget and may disturb the verified placement. Lesson: Successful short lifts did not guarantee retention through rotation or a longer joint path."
+    },
+    "cameras": {
+      "head": {
+        "end": 902,
+        "start": 901
+      },
+      "left_wrist": {
+        "end": 902,
+        "start": 901
+      },
+      "right_wrist": {
+        "end": 902,
+        "start": 901
+      }
+    },
+    "control_end": 815,
+    "control_start": 814,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 86,
+    "public_note": "State: Mouse is verified on its pad with grippers open. Both arms are within origin tolerances. Keyboard remains outside its frame, figurine off its stand, clock off the drawer, and drawer storage unfinished. Check: Final left recovery landed within 1 mm and 0.2 degrees; no additional placement was achieved. Expect: End the incomplete episode after repeated grasp losses and transport failures. Verify: Only mouse placement and arm return are supported; all remaining goal conditions are unmet or unverified. Risk: Further manipulation cannot complete the remaining sequence within the remaining call budget and may disturb the verified placement. Lesson: Successful short lifts did not guarantee retention through rotation or a longer joint path.",
+    "tool": "give_up"
+  }
+]

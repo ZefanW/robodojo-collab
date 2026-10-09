@@ -1,0 +1,2956 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Remembered order is blue phone, green watch, black rectangular device, cream rabbit, gold truck. Demonstration window has reached 600 steps; all five demo objects are in the far-right basket. Our five remain outside the near-left basket; first phone placement is pending. Check: No previous action; both arms stayed at origin throughout supplied watch frames. Expect: Turn left tool halfway toward a downward grasp without contacting objects. Verify: Next state should show pitch near 45 degrees and objects unchanged. Risk: Rotation could be refused; split rotation and inspect clearance before approaching. Lesson: Watch frames establish phone → watch → black device → rabbit → truck.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 641,
+        "start": 625
+      },
+      "left_wrist": {
+        "end": 641,
+        "start": 625
+      },
+      "right_wrist": {
+        "end": 641,
+        "start": 625
+      }
+    },
+    "control_end": 616,
+    "control_start": 600,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "State: Remembered order is blue phone, green watch, black rectangular device, cream rabbit, gold truck. Demonstration window has reached 600 steps; all five demo objects are in the far-right basket. Our five remain outside the near-left basket; first phone placement is pending. Check: No previous action; both arms stayed at origin throughout supplied watch frames. Expect: Turn left tool halfway toward a downward grasp without contacting objects. Verify: Next state should show pitch near 45 degrees and objects unchanged. Risk: Rotation could be refused; split rotation and inspect clearance before approaching. Lesson: Watch frames establish phone → watch → black device → rabbit → truck.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone first remains on table; sequence phone, watch, black device, rabbit, truck. Check: Left rotation reached 45 exactly; objects unchanged. Expect: Complete downward orientation for phone approach. Verify: Pitch zero with no object displacement. Risk: Watch basket clearance; if refused, relocate in free space. Lesson: Split rotation succeeded for this pose.",
+      "targets": {
+        "left_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 657,
+        "start": 642
+      },
+      "left_wrist": {
+        "end": 657,
+        "start": 642
+      },
+      "right_wrist": {
+        "end": 657,
+        "start": 642
+      }
+    },
+    "control_end": 631,
+    "control_start": 616,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "State: Phone first remains on table; sequence phone, watch, black device, rabbit, truck. Check: Left rotation reached 45 exactly; objects unchanged. Expect: Complete downward orientation for phone approach. Verify: Pitch zero with no object displacement. Risk: Watch basket clearance; if refused, relocate in free space. Lesson: Split rotation succeeded for this pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Downward open left hand is above basket area; phone is first target, estimated near x -0.08, y -0.20. Check: Downward rotation landed exactly, no objects moved. Expect: Translate above phone at safe height to refine alignment from wrist image. Verify: Phone should approach wrist-view center; no contact expected. Risk: RGB position estimate may be off; correct using next image before descent. Lesson: Orientation is now established without disturbing the scene.",
+      "targets": {
+        "left_x": -0.08,
+        "left_y": -0.2
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 673,
+        "start": 658
+      },
+      "left_wrist": {
+        "end": 673,
+        "start": 658
+      },
+      "right_wrist": {
+        "end": 673,
+        "start": 658
+      }
+    },
+    "control_end": 646,
+    "control_start": 631,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "State: Downward open left hand is above basket area; phone is first target, estimated near x -0.08, y -0.20. Check: Downward rotation landed exactly, no objects moved. Expect: Translate above phone at safe height to refine alignment from wrist image. Verify: Phone should approach wrist-view center; no contact expected. Risk: RGB position estimate may be off; correct using next image before descent. Lesson: Orientation is now established without disturbing the scene.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone is visible slightly left and forward in wrist view; no grasp yet. Check: Translation landed within 1 mm and left objects unchanged. Expect: Lower toward phone while correcting estimated lateral and forward alignment, stopping above it. Verify: Phone should lie between open jaws with clearance for final descent. Risk: Camera-to-grasp projection remains approximate; stop and correct rather than close if misaligned. Lesson: Wrist view resolves phone position better than the head view here.",
+      "targets": {
+        "left_x": -0.1,
+        "left_y": -0.16,
+        "left_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 681,
+        "start": 674
+      },
+      "left_wrist": {
+        "end": 681,
+        "start": 674
+      },
+      "right_wrist": {
+        "end": 681,
+        "start": 674
+      }
+    },
+    "control_end": 653,
+    "control_start": 646,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "State: Phone is visible slightly left and forward in wrist view; no grasp yet. Check: Translation landed within 1 mm and left objects unchanged. Expect: Lower toward phone while correcting estimated lateral and forward alignment, stopping above it. Verify: Phone should lie between open jaws with clearance for final descent. Risk: Camera-to-grasp projection remains approximate; stop and correct rather than close if misaligned. Lesson: Wrist view resolves phone position better than the head view here.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone is centered laterally between open jaws; height and fore-aft alignment still need confirmation. Check: Approach landed within 1 mm; phone stayed on table. Expect: Lower 34 mm to near phone grasp height without closing. Verify: Next view should show jaws alongside the phone rather than beyond an end. Risk: Premature contact from an incorrect height estimate; use small final corrections if contact is near. Lesson: Current wrist view supports x near -0.10 for this phone.",
+      "targets": {
+        "left_z": 0.797
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 685,
+        "start": 682
+      },
+      "left_wrist": {
+        "end": 685,
+        "start": 682
+      },
+      "right_wrist": {
+        "end": 685,
+        "start": 682
+      }
+    },
+    "control_end": 656,
+    "control_start": 653,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "State: Phone is centered laterally between open jaws; height and fore-aft alignment still need confirmation. Check: Approach landed within 1 mm; phone stayed on table. Expect: Lower 34 mm to near phone grasp height without closing. Verify: Next view should show jaws alongside the phone rather than beyond an end. Risk: Premature contact from an incorrect height estimate; use small final corrections if contact is near. Lesson: Current wrist view supports x near -0.10 for this phone.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone remains outside basket; head view suggests jaws are forward of its center despite lateral alignment. Check: Descent landed 1 mm high with no displacement; fore-aft estimate needs correction. Expect: Shift toward the near side above the phone center while retaining vertical clearance. Verify: Head view should show jaws straddling its middle; wrist phone should move upward. Risk: Low lateral travel could brush phone if height estimate is wrong; stop on visible displacement and reassess. Lesson: Wrist image center alone did not establish grasp-point fore-aft alignment.",
+      "targets": {
+        "left_y": -0.22
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 691,
+        "start": 686
+      },
+      "left_wrist": {
+        "end": 691,
+        "start": 686
+      },
+      "right_wrist": {
+        "end": 691,
+        "start": 686
+      }
+    },
+    "control_end": 661,
+    "control_start": 656,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "State: Phone remains outside basket; head view suggests jaws are forward of its center despite lateral alignment. Check: Descent landed 1 mm high with no displacement; fore-aft estimate needs correction. Expect: Shift toward the near side above the phone center while retaining vertical clearance. Verify: Head view should show jaws straddling its middle; wrist phone should move upward. Risk: Low lateral travel could brush phone if height estimate is wrong; stop on visible displacement and reassess. Lesson: Wrist image center alone did not establish grasp-point fore-aft alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open jaws now overlap phone center in head view; first placement still pending. Check: Fore-aft shift landed within 1 mm; phone did not move. Expect: Lower to just above side-grasp height. Verify: Jaws should bracket phone sides without moving it. Risk: Near contact requires small follow-up changes; raise if phone tilts. Lesson: Combined head and wrist views corrected the earlier forward offset.",
+      "targets": {
+        "left_z": 0.784
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 694,
+        "start": 692
+      },
+      "left_wrist": {
+        "end": 694,
+        "start": 692
+      },
+      "right_wrist": {
+        "end": 694,
+        "start": 692
+      }
+    },
+    "control_end": 663,
+    "control_start": 661,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "State: Open jaws now overlap phone center in head view; first placement still pending. Check: Fore-aft shift landed within 1 mm; phone did not move. Expect: Lower to just above side-grasp height. Verify: Jaws should bracket phone sides without moving it. Risk: Near contact requires small follow-up changes; raise if phone tilts. Lesson: Combined head and wrist views corrected the earlier forward offset.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone lies between jaws; retained grasp not yet established. Check: Descent reached 0.785 with no visible phone displacement. Expect: Lower 5 mm and close around phone sides. Verify: Closure should stop on phone; subsequent lift must show it following to prove retention. Risk: Closing above the phone would miss; reopen and lower slightly if lift fails. Lesson: Alignment has remained stable through descent.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.78
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 702,
+        "start": 695
+      },
+      "left_wrist": {
+        "end": 702,
+        "start": 695
+      },
+      "right_wrist": {
+        "end": 702,
+        "start": 695
+      }
+    },
+    "control_end": 670,
+    "control_start": 663,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "State: Phone lies between jaws; retained grasp not yet established. Check: Descent reached 0.785 with no visible phone displacement. Expect: Lower 5 mm and close around phone sides. Verify: Closure should stop on phone; subsequent lift must show it following to prove retention. Risk: Closing above the phone would miss; reopen and lower slightly if lift fails. Lesson: Alignment has remained stable through descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaws closed against phone at aperture 0.43; grasp retention remains unverified. Check: Final descent landed exactly; phone remains between jaws. Expect: Lift phone 40 mm clear of table to test retention. Verify: Phone must rise with jaws and leave its table location empty. Risk: Slip or empty lift; reopen and realign if phone stays down. Lesson: Closure contacted the phone, but transport requires lift evidence.",
+      "targets": {
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 707,
+        "start": 703
+      },
+      "left_wrist": {
+        "end": 707,
+        "start": 703
+      },
+      "right_wrist": {
+        "end": 707,
+        "start": 703
+      }
+    },
+    "control_end": 674,
+    "control_start": 670,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "State: Jaws closed against phone at aperture 0.43; grasp retention remains unverified. Check: Final descent landed exactly; phone remains between jaws. Expect: Lift phone 40 mm clear of table to test retention. Verify: Phone must rise with jaws and leave its table location empty. Risk: Slip or empty lift; reopen and realign if phone stays down. Lesson: Closure contacted the phone, but transport requires lift evidence.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone followed the lift and remains between jaws; first basket placement pending. Check: Lift reached within 1 mm; wrist-relative phone position stayed stable while table receded. Expect: Raise held phone above basket rim for safe transport. Verify: Phone should remain retained and visibly clear of nearby truck and basket. Risk: Slip during lift; stop transport if phone separates. Lesson: This side grasp retained the phone through a 39 mm lift.",
+      "targets": {
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 718,
+        "start": 708
+      },
+      "left_wrist": {
+        "end": 718,
+        "start": 708
+      },
+      "right_wrist": {
+        "end": 718,
+        "start": 708
+      }
+    },
+    "control_end": 684,
+    "control_start": 674,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "State: Phone followed the lift and remains between jaws; first basket placement pending. Check: Lift reached within 1 mm; wrist-relative phone position stayed stable while table receded. Expect: Raise held phone above basket rim for safe transport. Verify: Phone should remain retained and visibly clear of nearby truck and basket. Risk: Slip during lift; stop transport if phone separates. Lesson: This side grasp retained the phone through a 39 mm lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone securely follows hand at transport height; near-left basket is empty. Check: Raise landed within 1 mm with retained phone. Expect: Carry phone over estimated basket interior, keeping above rim. Verify: Head view should show phone footprint within basket walls before lowering. Risk: Basket coordinate estimate may be imperfect; correct over the opening before release. Lesson: Phone grip remained stable through the higher lift.",
+      "targets": {
+        "left_x": -0.38,
+        "left_y": -0.16
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 739,
+        "start": 719
+      },
+      "left_wrist": {
+        "end": 739,
+        "start": 719
+      },
+      "right_wrist": {
+        "end": 739,
+        "start": 719
+      }
+    },
+    "control_end": 704,
+    "control_start": 684,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "State: Phone securely follows hand at transport height; near-left basket is empty. Check: Raise landed within 1 mm with retained phone. Expect: Carry phone over estimated basket interior, keeping above rim. Verify: Head view should show phone footprint within basket walls before lowering. Risk: Basket coordinate estimate may be imperfect; correct over the opening before release. Lesson: Phone grip remained stable through the higher lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Held phone is over near-left basket interior; release still pending. Check: Transfer landed accurately and retained phone. Expect: Lower phone into the opening while keeping its edges clear of walls. Verify: Phone should remain between jaws inside basket footprint without rim contact. Risk: Wall contact if estimated clearance is wrong; raise and recenter on visible tilt. Lesson: Estimated basket x -0.38, y -0.16 reaches its opening.",
+      "targets": {
+        "left_z": 0.865
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 747,
+        "start": 740
+      },
+      "left_wrist": {
+        "end": 747,
+        "start": 740
+      },
+      "right_wrist": {
+        "end": 747,
+        "start": 740
+      }
+    },
+    "control_end": 711,
+    "control_start": 704,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "State: Held phone is over near-left basket interior; release still pending. Check: Transfer landed accurately and retained phone. Expect: Lower phone into the opening while keeping its edges clear of walls. Verify: Phone should remain between jaws inside basket footprint without rim contact. Risk: Wall contact if estimated clearance is wrong; raise and recenter on visible tilt. Lesson: Estimated basket x -0.38, y -0.16 reaches its opening.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone is held within basket footprint above its floor; first placement awaits release and settling. Check: Lowering landed exactly, with no visible rim interference. Expect: Open jaws so phone settles into policy basket as item one. Verify: Phone should separate from jaws and remain inside basket; later objects must remain outside. Risk: Bounce or snag; inspect before proceeding to watch. Lesson: Basket approach retained clearance at this position.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 752,
+        "start": 748
+      },
+      "left_wrist": {
+        "end": 752,
+        "start": 748
+      },
+      "right_wrist": {
+        "end": 752,
+        "start": 748
+      }
+    },
+    "control_end": 715,
+    "control_start": 711,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 36,
+    "public_note": "State: Phone is held within basket footprint above its floor; first placement awaits release and settling. Check: Lowering landed exactly, with no visible rim interference. Expect: Open jaws so phone settles into policy basket as item one. Verify: Phone should separate from jaws and remain inside basket; later objects must remain outside. Risk: Bounce or snag; inspect before proceeding to watch. Lesson: Basket approach retained clearance at this position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone is visibly released inside policy basket; watch is next, then black device, rabbit, truck. Demo objects remain in their basket. Check: Gripper opened and phone separated onto basket floor, supporting first placement. Expect: Raise empty hand above rim for travel to watch. Verify: Phone should stay in basket while hand rises empty. Risk: Accidental snag on withdrawal; stop if phone follows. Lesson: Release at this basket pose placed the phone inside.",
+      "targets": {
+        "left_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 761,
+        "start": 753
+      },
+      "left_wrist": {
+        "end": 761,
+        "start": 753
+      },
+      "right_wrist": {
+        "end": 761,
+        "start": 753
+      }
+    },
+    "control_end": 723,
+    "control_start": 715,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "State: Phone is visibly released inside policy basket; watch is next, then black device, rabbit, truck. Demo objects remain in their basket. Check: Gripper opened and phone separated onto basket floor, supporting first placement. Expect: Raise empty hand above rim for travel to watch. Verify: Phone should stay in basket while hand rises empty. Risk: Accidental snag on withdrawal; stop if phone follows. Lesson: Release at this basket pose placed the phone inside.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: First phone remains inside basket; watch is second target on right side of table. Check: Empty withdrawal reached target and left phone settled. Expect: Move above estimated watch position at safe height for visual alignment. Verify: Watch should appear under open left hand; all other objects unchanged. Risk: Cross-table reach may be refused; use a nearer waypoint or right arm if necessary. Lesson: Phone remained in basket after withdrawal, confirming first placement.",
+      "targets": {
+        "left_x": 0.24,
+        "left_y": -0.055
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 782,
+        "start": 762
+      },
+      "left_wrist": {
+        "end": 782,
+        "start": 762
+      },
+      "right_wrist": {
+        "end": 782,
+        "start": 762
+      }
+    },
+    "control_end": 743,
+    "control_start": 723,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 38,
+    "public_note": "State: First phone remains inside basket; watch is second target on right side of table. Check: Empty withdrawal reached target and left phone settled. Expect: Move above estimated watch position at safe height for visual alignment. Verify: Watch should appear under open left hand; all other objects unchanged. Risk: Cross-table reach may be refused; use a nearer waypoint or right arm if necessary. Lesson: Phone remained in basket after withdrawal, confirming first placement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains second target; phone placement is intact. Check: Cross-table proposal was refused; neither arm nor objects moved, so no new grasp evidence. Expect: Move to a nearer, lower free-space waypoint toward watch to reduce reach difficulty. Verify: Arrival should place hand left of watch without touching black device. Risk: Reach may still fail; switch to right arm if staged approach cannot reach. Lesson: Direct high reach to x 0.24 was not feasible from the basket pose.",
+      "targets": {
+        "left_x": 0.08,
+        "left_y": -0.08,
+        "left_z": 0.87
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 782,
+        "start": 762
+      },
+      "left_wrist": {
+        "end": 782,
+        "start": 762
+      },
+      "right_wrist": {
+        "end": 782,
+        "start": 762
+      }
+    },
+    "control_end": 743,
+    "control_start": 723,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 38,
+    "public_note": "State: Watch remains second target; phone placement is intact. Check: Cross-table proposal was refused; neither arm nor objects moved, so no new grasp evidence. Expect: Move to a nearer, lower free-space waypoint toward watch to reduce reach difficulty. Verify: Arrival should place hand left of watch without touching black device. Risk: Reach may still fail; switch to right arm if staged approach cannot reach. Lesson: Direct high reach to x 0.24 was not feasible from the basket pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone is placed; watch remains untouched and next in sequence. Check: Lower cross-table waypoint also failed planning with no physical motion. Expect: Return through the previously reached phone transport pose, separating long travel from height changes. Verify: Hand should arrive empty at known free-space waypoint. Risk: Planner may reject even this route; if so use right arm for watch. Lesson: Two combined cross-table proposals failed; reuse a demonstrated feasible pose rather than repeat them.",
+      "targets": {
+        "left_x": -0.1,
+        "left_y": -0.219
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 782,
+        "start": 762
+      },
+      "left_wrist": {
+        "end": 782,
+        "start": 762
+      },
+      "right_wrist": {
+        "end": 782,
+        "start": 762
+      }
+    },
+    "control_end": 743,
+    "control_start": 723,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "State: Phone is placed; watch remains untouched and next in sequence. Check: Lower cross-table waypoint also failed planning with no physical motion. Expect: Return through the previously reached phone transport pose, separating long travel from height changes. Verify: Hand should arrive empty at known free-space waypoint. Risk: Planner may reject even this route; if so use right arm for watch. Lesson: Two combined cross-table proposals failed; reuse a demonstrated feasible pose rather than repeat them.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone placed; watch second lies near right arm. Left hand is clear at known waypoint. Check: Left retreat succeeded exactly; objects unchanged. Expect: Begin orienting right hand downward to grasp watch locally, avoiding failed left cross-reach. Verify: Right pitch should reach 45 with watch undisturbed. Risk: Keep rotation clear of watch; split remaining turn. Lesson: Known left waypoint works, while cross-table watch approach was refused.",
+      "targets": {
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 799,
+        "start": 783
+      },
+      "left_wrist": {
+        "end": 799,
+        "start": 783
+      },
+      "right_wrist": {
+        "end": 799,
+        "start": 783
+      }
+    },
+    "control_end": 759,
+    "control_start": 743,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "State: Phone placed; watch second lies near right arm. Left hand is clear at known waypoint. Check: Left retreat succeeded exactly; objects unchanged. Expect: Begin orienting right hand downward to grasp watch locally, avoiding failed left cross-reach. Verify: Right pitch should reach 45 with watch undisturbed. Risk: Keep rotation clear of watch; split remaining turn. Lesson: Known left waypoint works, while cross-table watch approach was refused.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains second target with right hand open above near-right area. Check: First rotation reached 45 exactly; watch unchanged. Expect: Complete downward orientation for local watch approach. Verify: Right pitch zero and watch still on table. Risk: Rotation planning failure; retain position and use smaller turn if needed. Lesson: Split rotation works at the starting pose.",
+      "targets": {
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 815,
+        "start": 800
+      },
+      "left_wrist": {
+        "end": 815,
+        "start": 800
+      },
+      "right_wrist": {
+        "end": 815,
+        "start": 800
+      }
+    },
+    "control_end": 774,
+    "control_start": 759,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 40,
+    "public_note": "State: Watch remains second target with right hand open above near-right area. Check: First rotation reached 45 exactly; watch unchanged. Expect: Complete downward orientation for local watch approach. Verify: Right pitch zero and watch still on table. Risk: Rotation planning failure; retain position and use smaller turn if needed. Lesson: Split rotation works at the starting pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right hand is downward; watch is next and ungrasped. Check: Rotation landed exactly without object changes. Expect: Approach above estimated watch center, leaving clearance to inspect band geometry. Verify: Watch should become visible between open jaws. Risk: RGB location uncertainty; correct before lowering into contact. Lesson: Phone grasp showed wrist framing changes strongly with height, so use head view too.",
+      "targets": {
+        "right_x": 0.25,
+        "right_y": -0.055,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 828,
+        "start": 816
+      },
+      "left_wrist": {
+        "end": 828,
+        "start": 816
+      },
+      "right_wrist": {
+        "end": 828,
+        "start": 816
+      }
+    },
+    "control_end": 786,
+    "control_start": 774,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 41,
+    "public_note": "State: Right hand is downward; watch is next and ungrasped. Check: Rotation landed exactly without object changes. Expect: Approach above estimated watch center, leaving clearance to inspect band geometry. Verify: Watch should become visible between open jaws. Risk: RGB location uncertainty; correct before lowering into contact. Lesson: Phone grasp showed wrist framing changes strongly with height, so use head view too.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch band is visible to the right of jaw center; no contact yet. Check: Approach landed exactly; image shows x estimate too far left. Expect: Shift 40 mm right and slightly nearward while lowering above the band sides for a pinch across its width. Verify: Band should be centered between jaws with its face clear. Risk: Irregular loop can slip or be pushed; inspect before final closure. Lesson: Wrist view corrects watch x estimate toward 0.29.",
+      "targets": {
+        "right_x": 0.29,
+        "right_y": -0.07,
+        "right_z": 0.814
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 834,
+        "start": 829
+      },
+      "left_wrist": {
+        "end": 834,
+        "start": 829
+      },
+      "right_wrist": {
+        "end": 834,
+        "start": 829
+      }
+    },
+    "control_end": 791,
+    "control_start": 786,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "State: Watch band is visible to the right of jaw center; no contact yet. Check: Approach landed exactly; image shows x estimate too far left. Expect: Shift 40 mm right and slightly nearward while lowering above the band sides for a pinch across its width. Verify: Band should be centered between jaws with its face clear. Risk: Irregular loop can slip or be pushed; inspect before final closure. Lesson: Wrist view corrects watch x estimate toward 0.29.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch loop remains right of wrist center, with band above table. Check: Correction landed within 1 mm; watch did not move. Expect: Center jaws across loop and lower to near grasp height, leaving face unobstructed. Verify: Band sides should lie within jaw span without tilting. Risk: Loop shape makes contact height uncertain; use a small final descent and test lift. Lesson: Watch needs further lateral correction beyond the first estimate.",
+      "targets": {
+        "right_x": 0.31,
+        "right_z": 0.797
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 837,
+        "start": 835
+      },
+      "left_wrist": {
+        "end": 837,
+        "start": 835
+      },
+      "right_wrist": {
+        "end": 837,
+        "start": 835
+      }
+    },
+    "control_end": 793,
+    "control_start": 791,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 43,
+    "public_note": "State: Watch loop remains right of wrist center, with band above table. Check: Correction landed within 1 mm; watch did not move. Expect: Center jaws across loop and lower to near grasp height, leaving face unobstructed. Verify: Band sides should lie within jaw span without tilting. Risk: Loop shape makes contact height uncertain; use a small final descent and test lift. Lesson: Watch needs further lateral correction beyond the first estimate.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch loop is nearly centered between open jaws; second placement pending. Check: Last move landed 2 mm from target and did not disturb watch. Expect: Correct 5 mm laterally, lower 5 mm, and pinch the band sides. Verify: Closure should contact band; only a following lift will establish retention. Risk: Band may deform or slip; reopen and choose a firmer face-side pinch if lift fails. Lesson: Incremental alignment brought the watch within jaw span without pushing it.",
+      "targets": {
+        "right_gripper": 0,
+        "right_x": 0.314,
+        "right_z": 0.793
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 845,
+        "start": 838
+      },
+      "left_wrist": {
+        "end": 845,
+        "start": 838
+      },
+      "right_wrist": {
+        "end": 845,
+        "start": 838
+      }
+    },
+    "control_end": 800,
+    "control_start": 793,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 44,
+    "public_note": "State: Watch loop is nearly centered between open jaws; second placement pending. Check: Last move landed 2 mm from target and did not disturb watch. Expect: Correct 5 mm laterally, lower 5 mm, and pinch the band sides. Verify: Closure should contact band; only a following lift will establish retention. Risk: Band may deform or slip; reopen and choose a firmer face-side pinch if lift fails. Lesson: Incremental alignment brought the watch within jaw span without pushing it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaws pinched a narrow section of watch band and rotated it; retention unknown. Check: Closure reached near zero aperture and watch shifted, so broad side grasp prediction differed. Expect: Lift gently to test whether band section is retained. Verify: Watch must rise with jaws and clear table; otherwise regrasp its face. Risk: Thin-band pinch can slip; inspect before transporting. Lesson: Closing across this loop captured or pushed one band segment rather than holding its full width.",
+      "targets": {
+        "right_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 850,
+        "start": 846
+      },
+      "left_wrist": {
+        "end": 850,
+        "start": 846
+      },
+      "right_wrist": {
+        "end": 850,
+        "start": 846
+      }
+    },
+    "control_end": 804,
+    "control_start": 800,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "State: Jaws pinched a narrow section of watch band and rotated it; retention unknown. Check: Closure reached near zero aperture and watch shifted, so broad side grasp prediction differed. Expect: Lift gently to test whether band section is retained. Verify: Watch must rise with jaws and clear table; otherwise regrasp its face. Risk: Thin-band pinch can slip; inspect before transporting. Lesson: Closing across this loop captured or pushed one band segment rather than holding its full width.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch rose with right jaws and remains retained; phone alone is in basket. Check: Test lift reached within 1 mm and watch stayed fixed relative to jaws. Expect: Carry watch toward central staging space for left-arm transfer, avoiding an extreme right-to-basket reach. Verify: Watch should remain attached over clear table, separated from left hand. Risk: Arm proximity or planning refusal; shorten route if rejected and keep left hand stationary. Lesson: Narrow band pinch retained watch through the test lift.",
+      "targets": {
+        "right_x": 0.0,
+        "right_y": -0.22,
+        "right_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 871,
+        "start": 851
+      },
+      "left_wrist": {
+        "end": 871,
+        "start": 851
+      },
+      "right_wrist": {
+        "end": 871,
+        "start": 851
+      }
+    },
+    "control_end": 824,
+    "control_start": 804,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "State: Watch rose with right jaws and remains retained; phone alone is in basket. Check: Test lift reached within 1 mm and watch stayed fixed relative to jaws. Expect: Carry watch toward central staging space for left-arm transfer, avoiding an extreme right-to-basket reach. Verify: Watch should remain attached over clear table, separated from left hand. Risk: Arm proximity or planning refusal; shorten route if rejected and keep left hand stationary. Lesson: Narrow band pinch retained watch through the test lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch is no longer in right jaws and appears back on right-side table; second placement is unmet. Arms are close together. Check: Transfer ended 29 mm and 4.4 degrees off target, displaced idle left arm slightly, and lost watch retention. Expect: Withdraw empty left hand laterally to clear right-arm recovery path. Verify: Arms should separate while phone stays in basket and watch location becomes observable. Risk: Further arm interference; move only left away, then inspect watch before another grasp. Lesson: The narrow band pinch failed during cross-table transport, and the central route brought arms too close.",
+      "targets": {
+        "left_x": -0.3,
+        "left_y": -0.22
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 887,
+        "start": 872
+      },
+      "left_wrist": {
+        "end": 887,
+        "start": 872
+      },
+      "right_wrist": {
+        "end": 887,
+        "start": 872
+      }
+    },
+    "control_end": 839,
+    "control_start": 824,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "State: Watch is no longer in right jaws and appears back on right-side table; second placement is unmet. Arms are close together. Check: Transfer ended 29 mm and 4.4 degrees off target, displaced idle left arm slightly, and lost watch retention. Expect: Withdraw empty left hand laterally to clear right-arm recovery path. Verify: Arms should separate while phone stays in basket and watch location becomes observable. Risk: Further arm interference; move only left away, then inspect watch before another grasp. Lesson: The narrow band pinch failed during cross-table transport, and the central route brought arms too close.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch is on table near its previous area, partly occluded by right arm; phone remains placed. Check: Left withdrawal landed exactly and cleared arm conflict. Expect: Move right hand back above watch area and open for a more secure regrasp, also revealing its new position. Verify: Watch should appear in wrist view with empty open jaws. Risk: Dropped watch location is approximate; do not descend to contact until visible. Lesson: Clear idle arm before central transport, and replace the unreliable thin-band pinch.",
+      "targets": {
+        "right_gripper": 1,
+        "right_x": 0.22,
+        "right_y": -0.06,
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 907,
+        "start": 888
+      },
+      "left_wrist": {
+        "end": 907,
+        "start": 888
+      },
+      "right_wrist": {
+        "end": 907,
+        "start": 888
+      }
+    },
+    "control_end": 858,
+    "control_start": 839,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "State: Watch is on table near its previous area, partly occluded by right arm; phone remains placed. Check: Left withdrawal landed exactly and cleared arm conflict. Expect: Move right hand back above watch area and open for a more secure regrasp, also revealing its new position. Verify: Watch should appear in wrist view with empty open jaws. Risk: Dropped watch location is approximate; do not descend to contact until visible. Lesson: Clear idle arm before central transport, and replace the unreliable thin-band pinch.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Dropped watch is upright with face on far side and band loop exposed; second placement still pending. Check: Recovery approach landed exactly and revealed new watch location. Expect: Approach loop center lower than prior pinch, aiming to engage both band sides rather than a top edge. Verify: Watch should be centered across jaw span before closure. Risk: Upright loop could tip; use small final descent and inspect. Lesson: Previous thin edge grip failed in transport; a deeper side grasp is needed.",
+      "targets": {
+        "right_x": 0.24,
+        "right_y": -0.02,
+        "right_z": 0.806
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 912,
+        "start": 908
+      },
+      "left_wrist": {
+        "end": 912,
+        "start": 908
+      },
+      "right_wrist": {
+        "end": 912,
+        "start": 908
+      }
+    },
+    "control_end": 862,
+    "control_start": 858,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 49,
+    "public_note": "State: Dropped watch is upright with face on far side and band loop exposed; second placement still pending. Check: Recovery approach landed exactly and revealed new watch location. Expect: Approach loop center lower than prior pinch, aiming to engage both band sides rather than a top edge. Verify: Watch should be centered across jaw span before closure. Risk: Upright loop could tip; use small final descent and inspect. Lesson: Previous thin edge grip failed in transport; a deeper side grasp is needed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch face and loop are visible between jaws, slightly right of center. Check: Approach landed 2 mm high; watch stayed upright. Expect: Center laterally and lower toward thicker face-side band contact. Verify: Jaws should bracket watch rather than pinch only its outer edge. Risk: Contact can tip loop; stop on visible rotation and reassess. Lesson: New pose exposes the watch face for a more substantial grasp.",
+      "targets": {
+        "right_x": 0.247,
+        "right_z": 0.794
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 915,
+        "start": 913
+      },
+      "left_wrist": {
+        "end": 915,
+        "start": 913
+      },
+      "right_wrist": {
+        "end": 915,
+        "start": 913
+      }
+    },
+    "control_end": 864,
+    "control_start": 862,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "State: Watch face and loop are visible between jaws, slightly right of center. Check: Approach landed 2 mm high; watch stayed upright. Expect: Center laterally and lower toward thicker face-side band contact. Verify: Jaws should bracket watch rather than pinch only its outer edge. Risk: Contact can tip loop; stop on visible rotation and reassess. Lesson: New pose exposes the watch face for a more substantial grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch is centered for a deeper grasp; retention not established. Check: Correction landed within 1 mm without moving watch. Expect: Lower 5 mm and close on watch sides. Verify: Nonzero aperture and watch between jaws would support contact, then lift must prove retention. Risk: Another edge pinch may slip; inspect closure geometry before transport. Lesson: This regrasp is lower and more centered than the failed band-edge grasp.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 923,
+        "start": 916
+      },
+      "left_wrist": {
+        "end": 923,
+        "start": 916
+      },
+      "right_wrist": {
+        "end": 923,
+        "start": 916
+      }
+    },
+    "control_end": 871,
+    "control_start": 864,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "State: Watch is centered for a deeper grasp; retention not established. Check: Correction landed within 1 mm without moving watch. Expect: Lower 5 mm and close on watch sides. Verify: Nonzero aperture and watch between jaws would support contact, then lift must prove retention. Risk: Another edge pinch may slip; inspect closure geometry before transport. Lesson: This regrasp is lower and more centered than the failed band-edge grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch spans both jaws at aperture 0.48; second placement pending. Check: Closure contacted both sides without the previous large rotation. Expect: Lift watch clear of table for staging transfer. Verify: Watch should remain centered relative to jaws and leave table location empty. Risk: Slippage remains possible; stop if watch drops. Lesson: Deeper centered closure produced a wider, more substantial contact than the failed edge pinch.",
+      "targets": {
+        "right_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 934,
+        "start": 924
+      },
+      "left_wrist": {
+        "end": 934,
+        "start": 924
+      },
+      "right_wrist": {
+        "end": 934,
+        "start": 924
+      }
+    },
+    "control_end": 881,
+    "control_start": 871,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "State: Watch spans both jaws at aperture 0.48; second placement pending. Check: Closure contacted both sides without the previous large rotation. Expect: Lift watch clear of table for staging transfer. Verify: Watch should remain centered relative to jaws and leave table location empty. Risk: Slippage remains possible; stop if watch drops. Lesson: Deeper centered closure produced a wider, more substantial contact than the failed edge pinch.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch stayed on table after lift; second placement remains unmet. Check: Robot reached height, but aperture closed to zero and watch did not follow, disproving retention. Expect: Reopen and approach 26 mm farther forward to grasp the rigid watch face rather than the near band edge. Verify: Face should align with jaw contact line on descent. Risk: Repeating band contact would fail again; use visibly distinct face-centered grasp. Lesson: Both band-oriented grasps failed retention; switch to rigid face contact.",
+      "targets": {
+        "right_gripper": 1,
+        "right_y": 0.006,
+        "right_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 947,
+        "start": 935
+      },
+      "left_wrist": {
+        "end": 947,
+        "start": 935
+      },
+      "right_wrist": {
+        "end": 947,
+        "start": 935
+      }
+    },
+    "control_end": 893,
+    "control_start": 881,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 53,
+    "public_note": "State: Watch stayed on table after lift; second placement remains unmet. Check: Robot reached height, but aperture closed to zero and watch did not follow, disproving retention. Expect: Reopen and approach 26 mm farther forward to grasp the rigid watch face rather than the near band edge. Verify: Face should align with jaw contact line on descent. Risk: Repeating band contact would fail again; use visibly distinct face-centered grasp. Lesson: Both band-oriented grasps failed retention; switch to rigid face contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Rigid watch face is now aligned near jaw contact line; watch remains outside basket. Check: Forward approach landed exactly with face visible between jaws. Expect: Lower 5 mm and close around face housing instead of loose band. Verify: Housing should remain between jaws at nonzero aperture, followed by a short lift test. Risk: Face may be above or below jaw engagement; inspect and adjust height if closure misses. Lesson: Failed band grasps motivate this distinct face-centered contact.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 955,
+        "start": 948
+      },
+      "left_wrist": {
+        "end": 955,
+        "start": 948
+      },
+      "right_wrist": {
+        "end": 955,
+        "start": 948
+      }
+    },
+    "control_end": 900,
+    "control_start": 893,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "State: Rigid watch face is now aligned near jaw contact line; watch remains outside basket. Check: Forward approach landed exactly with face visible between jaws. Expect: Lower 5 mm and close around face housing instead of loose band. Verify: Housing should remain between jaws at nonzero aperture, followed by a short lift test. Risk: Face may be above or below jaw engagement; inspect and adjust height if closure misses. Lesson: Failed band grasps motivate this distinct face-centered contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains on table beside fully closed jaws; face grasp missed. Check: Motion landed exactly but aperture reached zero and watch shifted rather than being enclosed. Expect: Reopen to permit a lower grasp around housing. Verify: Watch should remain free between opened jaws; inspect its shifted center. Risk: Pushing watch again; adjust only after opening. Lesson: At z 0.800 the face-centered closure did not engage the housing securely.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 962,
+        "start": 956
+      },
+      "left_wrist": {
+        "end": 962,
+        "start": 956
+      },
+      "right_wrist": {
+        "end": 962,
+        "start": 956
+      }
+    },
+    "control_end": 906,
+    "control_start": 900,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 55,
+    "public_note": "State: Watch remains on table beside fully closed jaws; face grasp missed. Check: Motion landed exactly but aperture reached zero and watch shifted rather than being enclosed. Expect: Reopen to permit a lower grasp around housing. Verify: Watch should remain free between opened jaws; inspect its shifted center. Risk: Pushing watch again; adjust only after opening. Lesson: At z 0.800 the face-centered closure did not engage the housing securely.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is slightly right of jaw center; second placement remains pending. Check: Opening freed the watch without further displacement. Expect: Shift 5 mm toward housing and lower 5 mm for deeper engagement. Verify: Housing should stay between open jaws without tipping. Risk: Near-contact pushing; stop if watch shifts and reassess alignment. Lesson: Prior closure at 0.800 missed, so lower contact is needed rather than another identical closure.",
+      "targets": {
+        "right_x": 0.251,
+        "right_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 964,
+        "start": 963
+      },
+      "left_wrist": {
+        "end": 964,
+        "start": 963
+      },
+      "right_wrist": {
+        "end": 964,
+        "start": 963
+      }
+    },
+    "control_end": 907,
+    "control_start": 906,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 56,
+    "public_note": "State: Watch housing is slightly right of jaw center; second placement remains pending. Check: Opening freed the watch without further displacement. Expect: Shift 5 mm toward housing and lower 5 mm for deeper engagement. Verify: Housing should stay between open jaws without tipping. Risk: Near-contact pushing; stop if watch shifts and reassess alignment. Lesson: Prior closure at 0.800 missed, so lower contact is needed rather than another identical closure.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains centered and free; housing grasp is not yet established. Check: Five-millimetre correction landed within 1 mm, no watch motion. Expect: Lower another 5 mm to overlap housing sides more deeply. Verify: Watch should remain stationary with open jaws beside its housing. Risk: Table proximity; continue only in small increments and stop on contact. Lesson: Earlier higher closures failed; current descent is testing a lower engagement height.",
+      "targets": {
+        "right_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 966,
+        "start": 965
+      },
+      "left_wrist": {
+        "end": 966,
+        "start": 965
+      },
+      "right_wrist": {
+        "end": 966,
+        "start": 965
+      }
+    },
+    "control_end": 908,
+    "control_start": 907,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 57,
+    "public_note": "State: Watch remains centered and free; housing grasp is not yet established. Check: Five-millimetre correction landed within 1 mm, no watch motion. Expect: Lower another 5 mm to overlap housing sides more deeply. Verify: Watch should remain stationary with open jaws beside its housing. Risk: Table proximity; continue only in small increments and stop on contact. Lesson: Earlier higher closures failed; current descent is testing a lower engagement height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is between open jaws at a lower engagement height; second placement pending. Check: Descent landed within 1 mm without object movement. Expect: Lower 5 mm and close around housing sides below the previously missed height. Verify: Housing should remain visibly enclosed, and a short lift must confirm retention. Risk: Contact may still be offset; if closure pushes it, change grasp orientation rather than repeat descent. Lesson: Higher contact did not retain this watch; lower housing engagement remains untested.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.786
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 974,
+        "start": 967
+      },
+      "left_wrist": {
+        "end": 974,
+        "start": 967
+      },
+      "right_wrist": {
+        "end": 974,
+        "start": 967
+      }
+    },
+    "control_end": 915,
+    "control_start": 908,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 58,
+    "public_note": "State: Watch housing is between open jaws at a lower engagement height; second placement pending. Check: Descent landed within 1 mm without object movement. Expect: Lower 5 mm and close around housing sides below the previously missed height. Verify: Housing should remain visibly enclosed, and a short lift must confirm retention. Risk: Contact may still be offset; if closure pushes it, change grasp orientation rather than repeat descent. Lesson: Higher contact did not retain this watch; lower housing engagement remains untested.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lower closure again displaced watch and fully closed; retained grasp is unsupported. Check: Robot reached target, but watch tipped instead of being enclosed. Expect: Withdraw and reopen to prepare a rotated grasp across the loop's other axis. Verify: Watch should remain on table, fully visible after withdrawal. Risk: Repeated same-axis pinches are ineffective; rotate in clearance and target its new pose. Lesson: Height changes alone did not solve watch engagement; change jaw axis and approach.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 989,
+        "start": 975
+      },
+      "left_wrist": {
+        "end": 989,
+        "start": 975
+      },
+      "right_wrist": {
+        "end": 989,
+        "start": 975
+      }
+    },
+    "control_end": 929,
+    "control_start": 915,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 59,
+    "public_note": "State: Lower closure again displaced watch and fully closed; retained grasp is unsupported. Check: Robot reached target, but watch tipped instead of being enclosed. Expect: Withdraw and reopen to prepare a rotated grasp across the loop's other axis. Verify: Watch should remain on table, fully visible after withdrawal. Risk: Repeated same-axis pinches are ineffective; rotate in clearance and target its new pose. Lesson: Height changes alone did not solve watch engagement; change jaw axis and approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch rests tilted on table; phone remains the only placed item. Check: Withdrawal succeeded and exposed the whole watch, with no retained grasp. Expect: Rotate jaws toward a different pinch axis in free space. Verify: Orientation should reach 45 degrees without touching watch. Risk: Rotation may be refused at this reach; retreat slightly if needed. Lesson: Same-axis closures pushed or lost watch; a new axis is warranted.",
+      "targets": {
+        "right_yaw_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1008,
+        "start": 990
+      },
+      "left_wrist": {
+        "end": 1008,
+        "start": 990
+      },
+      "right_wrist": {
+        "end": 1008,
+        "start": 990
+      }
+    },
+    "control_end": 947,
+    "control_start": 929,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 60,
+    "public_note": "State: Watch rests tilted on table; phone remains the only placed item. Check: Withdrawal succeeded and exposed the whole watch, with no retained grasp. Expect: Rotate jaws toward a different pinch axis in free space. Verify: Orientation should reach 45 degrees without touching watch. Risk: Rotation may be refused at this reach; retreat slightly if needed. Lesson: Same-axis closures pushed or lost watch; a new axis is warranted.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains tilted on table; jaws now use a 45-degree axis. Check: Rotation landed exactly and left watch unchanged. Expect: Approach its center from the new axis, stopping above final grasp depth. Verify: Housing and band should sit between open jaws without displacement. Risk: Rotated camera complicates alignment; inspect before closing. Lesson: Rotation succeeded, enabling a distinct grasp rather than repeating failed same-axis pinches.",
+      "targets": {
+        "right_x": 0.237,
+        "right_y": -0.015,
+        "right_z": 0.793
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1019,
+        "start": 1009
+      },
+      "left_wrist": {
+        "end": 1019,
+        "start": 1009
+      },
+      "right_wrist": {
+        "end": 1019,
+        "start": 1009
+      }
+    },
+    "control_end": 957,
+    "control_start": 947,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 61,
+    "public_note": "State: Watch remains tilted on table; jaws now use a 45-degree axis. Check: Rotation landed exactly and left watch unchanged. Expect: Approach its center from the new axis, stopping above final grasp depth. Verify: Housing and band should sit between open jaws without displacement. Risk: Rotated camera complicates alignment; inspect before closing. Lesson: Rotation succeeded, enabling a distinct grasp rather than repeating failed same-axis pinches.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing lies between jaws on the new diagonal axis; second placement remains pending. Check: Approach landed exactly without moving watch. Expect: Lower 5 mm and close across housing and band from the changed axis. Verify: Watch should remain enclosed at nonzero aperture; a short lift will test retention. Risk: Another slip or push; inspect contact before transport and change approach if unsuccessful. Lesson: The rotated approach provides a different contact geometry from the failed straight-axis grasps.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.788
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1027,
+        "start": 1020
+      },
+      "left_wrist": {
+        "end": 1027,
+        "start": 1020
+      },
+      "right_wrist": {
+        "end": 1027,
+        "start": 1020
+      }
+    },
+    "control_end": 964,
+    "control_start": 957,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 62,
+    "public_note": "State: Watch housing lies between jaws on the new diagonal axis; second placement remains pending. Check: Approach landed exactly without moving watch. Expect: Lower 5 mm and close across housing and band from the changed axis. Verify: Watch should remain enclosed at nonzero aperture; a short lift will test retention. Risk: Another slip or push; inspect contact before transport and change approach if unsuccessful. Lesson: The rotated approach provides a different contact geometry from the failed straight-axis grasps.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Diagonal jaws enclose part of watch housing at aperture 0.13; retention unknown. Check: Closure landed accurately and left housing visibly between jaws, unlike empty prior closures. Expect: Lift 32 mm to test this new grasp before transport. Verify: Watch must rise with jaws and remain at the same wrist-relative size. Risk: Housing can slip from shallow contact; if it stays down, reopen and reassess rather than transport. Lesson: Diagonal closure achieved visible housing contact, but lift evidence is still required.",
+      "targets": {
+        "right_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1031,
+        "start": 1028
+      },
+      "left_wrist": {
+        "end": 1031,
+        "start": 1028
+      },
+      "right_wrist": {
+        "end": 1031,
+        "start": 1028
+      }
+    },
+    "control_end": 967,
+    "control_start": 964,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 63,
+    "public_note": "State: Diagonal jaws enclose part of watch housing at aperture 0.13; retention unknown. Check: Closure landed accurately and left housing visibly between jaws, unlike empty prior closures. Expect: Lift 32 mm to test this new grasp before transport. Verify: Watch must rise with jaws and remain at the same wrist-relative size. Risk: Housing can slip from shallow contact; if it stays down, reopen and reassess rather than transport. Lesson: Diagonal closure achieved visible housing contact, but lift evidence is still required.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remained on table after diagonal lift; second placement is still unmet. Check: Lift arrived within 1 mm but jaws closed empty, disproving retention. Expect: Reopen after descending to a low pregrasp, preparing to engage near the band's table-supported base rather than its slipping upper edge. Verify: Open jaws should surround watch without displacing it. Risk: Low contact may push the loop; inspect before millimetre-scale final descent. Lesson: Both upper housing and band-edge contacts slipped; the table-supported lower section has not yet been grasped.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.785
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1041,
+        "start": 1032
+      },
+      "left_wrist": {
+        "end": 1041,
+        "start": 1032
+      },
+      "right_wrist": {
+        "end": 1041,
+        "start": 1032
+      }
+    },
+    "control_end": 976,
+    "control_start": 967,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 64,
+    "public_note": "State: Watch remained on table after diagonal lift; second placement is still unmet. Check: Lift arrived within 1 mm but jaws closed empty, disproving retention. Expect: Reopen after descending to a low pregrasp, preparing to engage near the band's table-supported base rather than its slipping upper edge. Verify: Open jaws should surround watch without displacing it. Risk: Low contact may push the loop; inspect before millimetre-scale final descent. Lesson: Both upper housing and band-edge contacts slipped; the table-supported lower section has not yet been grasped.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains between open jaws; lower-band grasp pending. Check: Low approach landed exactly and watch stayed on table. Expect: Lower 5 mm toward table-supported band contact. Verify: Jaws should descend beside band without tipping it. Risk: Table is close; use millimetre increments and inspect any displacement. Lesson: Previous higher contacts slipped; lower engagement is being tested.",
+      "targets": {
+        "right_z": 0.78
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1043,
+        "start": 1042
+      },
+      "left_wrist": {
+        "end": 1043,
+        "start": 1042
+      },
+      "right_wrist": {
+        "end": 1043,
+        "start": 1042
+      }
+    },
+    "control_end": 977,
+    "control_start": 976,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 65,
+    "public_note": "State: Watch remains between open jaws; lower-band grasp pending. Check: Low approach landed exactly and watch stayed on table. Expect: Lower 5 mm toward table-supported band contact. Verify: Jaws should descend beside band without tipping it. Risk: Table is close; use millimetre increments and inspect any displacement. Lesson: Previous higher contacts slipped; lower engagement is being tested.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains centered between open diagonal jaws; second placement is pending. Check: Descent landed 1 mm high with no visible displacement. Expect: Lower 5 mm and close at the lower band and housing level, below previous slipping contacts. Verify: A retained watch must follow a subsequent short lift; closure alone is insufficient. Risk: Table contact or squeezing the watch aside; inspect before lifting and reopen if displaced. Lesson: Higher watch contacts failed retention; this tests the table-supported lower section.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.776
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1051,
+        "start": 1044
+      },
+      "left_wrist": {
+        "end": 1051,
+        "start": 1044
+      },
+      "right_wrist": {
+        "end": 1051,
+        "start": 1044
+      }
+    },
+    "control_end": 984,
+    "control_start": 977,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 66,
+    "public_note": "State: Watch remains centered between open diagonal jaws; second placement is pending. Check: Descent landed 1 mm high with no visible displacement. Expect: Lower 5 mm and close at the lower band and housing level, below previous slipping contacts. Verify: A retained watch must follow a subsequent short lift; closure alone is insufficient. Risk: Table contact or squeezing the watch aside; inspect before lifting and reopen if displaced. Lesson: Higher watch contacts failed retention; this tests the table-supported lower section.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch was pushed toward the near side again; jaws are empty and second placement remains unmet. Check: Low closure reached zero aperture, so lowering alone did not solve the miss. Expect: Withdraw and reopen for a corrected nearward approach based on head-view offset. Verify: Watch should be visible free on table with hand clear. Risk: Repeating height-only corrections wastes attempts; correct fore-aft location before another grasp. Lesson: Repeated pushes across several heights indicate positional misalignment, not merely insufficient descent.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1063,
+        "start": 1052
+      },
+      "left_wrist": {
+        "end": 1063,
+        "start": 1052
+      },
+      "right_wrist": {
+        "end": 1063,
+        "start": 1052
+      }
+    },
+    "control_end": 995,
+    "control_start": 984,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 67,
+    "public_note": "State: Watch was pushed toward the near side again; jaws are empty and second placement remains unmet. Check: Low closure reached zero aperture, so lowering alone did not solve the miss. Expect: Withdraw and reopen for a corrected nearward approach based on head-view offset. Verify: Watch should be visible free on table with hand clear. Risk: Repeating height-only corrections wastes attempts; correct fore-aft location before another grasp. Lesson: Repeated pushes across several heights indicate positional misalignment, not merely insufficient descent.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains on table, nearward of prior grasp attempts; phone is placed first. Check: Withdrawal succeeded and exposed the watch; no grasp was retained. Expect: Shift 35 mm nearward with clearance and approach above the watch's actual center. Verify: Head view should show jaws overlapping the loop center rather than its far edge. Risk: Position estimate remains approximate; inspect before final descent. Lesson: Multiple empty closures at different heights point to fore-aft misalignment; this action changes that alignment substantially.",
+      "targets": {
+        "right_y": -0.05,
+        "right_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1071,
+        "start": 1064
+      },
+      "left_wrist": {
+        "end": 1071,
+        "start": 1064
+      },
+      "right_wrist": {
+        "end": 1071,
+        "start": 1064
+      }
+    },
+    "control_end": 1002,
+    "control_start": 995,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 68,
+    "public_note": "State: Watch remains on table, nearward of prior grasp attempts; phone is placed first. Check: Withdrawal succeeded and exposed the watch; no grasp was retained. Expect: Shift 35 mm nearward with clearance and approach above the watch's actual center. Verify: Head view should show jaws overlapping the loop center rather than its far edge. Risk: Position estimate remains approximate; inspect before final descent. Lesson: Multiple empty closures at different heights point to fore-aft misalignment; this action changes that alignment substantially.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch is now near the jaw span but offset to the right in rotated wrist view. Check: Nearward correction landed accurately without moving watch. Expect: Shift diagonally toward its loop center and lower to pregrasp height. Verify: Loop should be centered laterally between jaws before final closure. Risk: Near contact requires smaller follow-up corrections; stop if watch tips. Lesson: Fore-aft correction changed watch alignment substantially, unlike prior height-only adjustments.",
+      "targets": {
+        "right_x": 0.25,
+        "right_y": -0.065,
+        "right_z": 0.785
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1075,
+        "start": 1072
+      },
+      "left_wrist": {
+        "end": 1075,
+        "start": 1072
+      },
+      "right_wrist": {
+        "end": 1075,
+        "start": 1072
+      }
+    },
+    "control_end": 1005,
+    "control_start": 1002,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 69,
+    "public_note": "State: Watch is now near the jaw span but offset to the right in rotated wrist view. Check: Nearward correction landed accurately without moving watch. Expect: Shift diagonally toward its loop center and lower to pregrasp height. Verify: Loop should be centered laterally between jaws before final closure. Risk: Near contact requires smaller follow-up corrections; stop if watch tips. Lesson: Fore-aft correction changed watch alignment substantially, unlike prior height-only adjustments.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch loop sits right of jaw center in rotated wrist view; second placement remains pending. Check: Approach landed within 1 mm, but lateral centering prediction was wrong; watch appears tilted near the right jaw. Expect: Make a small diagonal correction toward the watch's image-right center without further descent. Verify: Watch should move toward image center without being pushed. Risk: Possible jaw contact; keep correction to 5 mm per axis and withdraw if watch shifts. Lesson: At this yaw, nearward motion moves the watch rightward in the wrist image; correct using the observed rotated projection.",
+      "targets": {
+        "right_x": 0.254,
+        "right_y": -0.059
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1077,
+        "start": 1076
+      },
+      "left_wrist": {
+        "end": 1077,
+        "start": 1076
+      },
+      "right_wrist": {
+        "end": 1077,
+        "start": 1076
+      }
+    },
+    "control_end": 1006,
+    "control_start": 1005,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 70,
+    "public_note": "State: Watch loop sits right of jaw center in rotated wrist view; second placement remains pending. Check: Approach landed within 1 mm, but lateral centering prediction was wrong; watch appears tilted near the right jaw. Expect: Make a small diagonal correction toward the watch's image-right center without further descent. Verify: Watch should move toward image center without being pushed. Risk: Possible jaw contact; keep correction to 5 mm per axis and withdraw if watch shifts. Lesson: At this yaw, nearward motion moves the watch rightward in the wrist image; correct using the observed rotated projection.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch loop is tilted against the right jaw, with its lower band inside the open span; second placement remains unmet. Check: Small correction landed within 1 mm but tilted the watch rather than simply centering it, indicating contact. Expect: Close at this lower-band contact to capture the loop instead of moving it farther. Verify: Band must remain between jaws and follow a subsequent short lift; closure alone will not prove retention. Risk: Watch may squeeze out again; if so withdraw and use a different approach rather than continue lateral pushing. Lesson: The latest correction revealed actual jaw-band contact, unlike earlier visually aligned but empty pinches.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1084,
+        "start": 1078
+      },
+      "left_wrist": {
+        "end": 1084,
+        "start": 1078
+      },
+      "right_wrist": {
+        "end": 1084,
+        "start": 1078
+      }
+    },
+    "control_end": 1012,
+    "control_start": 1006,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 71,
+    "public_note": "State: Watch loop is tilted against the right jaw, with its lower band inside the open span; second placement remains unmet. Check: Small correction landed within 1 mm but tilted the watch rather than simply centering it, indicating contact. Expect: Close at this lower-band contact to capture the loop instead of moving it farther. Verify: Band must remain between jaws and follow a subsequent short lift; closure alone will not prove retention. Risk: Watch may squeeze out again; if so withdraw and use a different approach rather than continue lateral pushing. Lesson: The latest correction revealed actual jaw-band contact, unlike earlier visually aligned but empty pinches.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Closed jaws appear to pinch the watch buckle or thin band; retention remains uncertain despite zero reported aperture. Check: Closure rotated the watch and brought a band segment between jaw tips. Expect: Short vertical lift tests this contact without lateral transport. Verify: Watch must rise and remain fixed relative to jaws; remaining on table contradicts retention. Risk: Thin contact may slip as before; do not transport unless lift evidence supports it. Lesson: Band contact is visible, but prior similar contacts were unreliable and require verification.",
+      "targets": {
+        "right_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1088,
+        "start": 1085
+      },
+      "left_wrist": {
+        "end": 1088,
+        "start": 1085
+      },
+      "right_wrist": {
+        "end": 1088,
+        "start": 1085
+      }
+    },
+    "control_end": 1015,
+    "control_start": 1012,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 72,
+    "public_note": "State: Closed jaws appear to pinch the watch buckle or thin band; retention remains uncertain despite zero reported aperture. Check: Closure rotated the watch and brought a band segment between jaw tips. Expect: Short vertical lift tests this contact without lateral transport. Verify: Watch must rise and remain fixed relative to jaws; remaining on table contradicts retention. Risk: Thin contact may slip as before; do not transport unless lift evidence supports it. Lesson: Band contact is visible, but prior similar contacts were unreliable and require verification.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch slipped from the buckle pinch and remains on table; phone placement is intact. Check: Lift reached within 2 mm but watch shrank and separated in wrist view, disproving retention. Expect: Reopen above the shifted rigid housing, moving diagonally away from the loose buckle contact. Verify: Housing should be centered near the jaw-tip contact line before descent. Risk: Another band-only grasp would fail; use the visible housing, not the loop center, for the next closure. Lesson: Buckle and band contacts repeatedly slipped; housing alignment must be explicit.",
+      "targets": {
+        "right_gripper": 1,
+        "right_x": 0.27,
+        "right_y": -0.04,
+        "right_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1097,
+        "start": 1089
+      },
+      "left_wrist": {
+        "end": 1097,
+        "start": 1089
+      },
+      "right_wrist": {
+        "end": 1097,
+        "start": 1089
+      }
+    },
+    "control_end": 1023,
+    "control_start": 1015,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 73,
+    "public_note": "State: Watch slipped from the buckle pinch and remains on table; phone placement is intact. Check: Lift reached within 2 mm but watch shrank and separated in wrist view, disproving retention. Expect: Reopen above the shifted rigid housing, moving diagonally away from the loose buckle contact. Verify: Housing should be centered near the jaw-tip contact line before descent. Risk: Another band-only grasp would fail; use the visible housing, not the loop center, for the next closure. Lesson: Buckle and band contacts repeatedly slipped; housing alignment must be explicit.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Rigid watch face is laterally centered but forward of the jaw-tip line in wrist view; no grasp. Check: Diagonal approach landed exactly and exposed housing rather than buckle. Expect: Translate along the rotated view's forward axis to bring housing to the contact line while keeping height. Verify: Housing should move downward toward jaw tips in wrist image without object displacement. Risk: Band contact during translation; stop if watch moves instead of image alignment changing. Lesson: Current view separates housing alignment from loop-center alignment, which previously led to slipping band pinches.",
+      "targets": {
+        "right_x": 0.25,
+        "right_y": -0.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1101,
+        "start": 1098
+      },
+      "left_wrist": {
+        "end": 1101,
+        "start": 1098
+      },
+      "right_wrist": {
+        "end": 1101,
+        "start": 1098
+      }
+    },
+    "control_end": 1026,
+    "control_start": 1023,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 74,
+    "public_note": "State: Rigid watch face is laterally centered but forward of the jaw-tip line in wrist view; no grasp. Check: Diagonal approach landed exactly and exposed housing rather than buckle. Expect: Translate along the rotated view's forward axis to bring housing to the contact line while keeping height. Verify: Housing should move downward toward jaw tips in wrist image without object displacement. Risk: Band contact during translation; stop if watch moves instead of image alignment changing. Lesson: Current view separates housing alignment from loop-center alignment, which previously led to slipping band pinches.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is now centered at the jaw-tip line; phone remains placed and watch is still second. Check: Translation landed within 1 mm and moved the housing down in wrist view as predicted without shifting the watch. Expect: Close directly across the rigid housing at this corrected position. Verify: Housing should remain between jaws at nonzero aperture; a short lift must then establish retention. Risk: Housing may still slip if contact is shallow; inspect before transport. Lesson: The rotated-view translation successfully aligned the housing, unlike prior loop-centered approaches.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1108,
+        "start": 1102
+      },
+      "left_wrist": {
+        "end": 1108,
+        "start": 1102
+      },
+      "right_wrist": {
+        "end": 1108,
+        "start": 1102
+      }
+    },
+    "control_end": 1032,
+    "control_start": 1026,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 75,
+    "public_note": "State: Watch housing is now centered at the jaw-tip line; phone remains placed and watch is still second. Check: Translation landed within 1 mm and moved the housing down in wrist view as predicted without shifting the watch. Expect: Close directly across the rigid housing at this corrected position. Verify: Housing should remain between jaws at nonzero aperture; a short lift must then establish retention. Risk: Housing may still slip if contact is shallow; inspect before transport. Lesson: The rotated-view translation successfully aligned the housing, unlike prior loop-centered approaches.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Housing-centered closure still reached zero aperture; watch remains on table. Check: Jaw motion nudged the housing but did not enclose it, so retention is unsupported. Expect: Reopen for a lower housing-level approach at the now-corrected lateral position. Verify: Watch should remain visible and free between open jaws. Risk: Repeating closure at this height would miss again; lower only after opening and inspect contact. Lesson: Correcting image alignment alone was insufficient at z 0.805; housing contact height remains unresolved.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1115,
+        "start": 1109
+      },
+      "left_wrist": {
+        "end": 1115,
+        "start": 1109
+      },
+      "right_wrist": {
+        "end": 1115,
+        "start": 1109
+      }
+    },
+    "control_end": 1038,
+    "control_start": 1032,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 76,
+    "public_note": "State: Housing-centered closure still reached zero aperture; watch remains on table. Check: Jaw motion nudged the housing but did not enclose it, so retention is unsupported. Expect: Reopen for a lower housing-level approach at the now-corrected lateral position. Verify: Watch should remain visible and free between open jaws. Risk: Repeating closure at this height would miss again; lower only after opening and inspect contact. Lesson: Correcting image alignment alone was insufficient at z 0.805; housing contact height remains unresolved.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing remains free between open jaws; second placement is unmet. Check: Opening left the watch stationary, confirming no retained grasp. Expect: Lower 10 mm toward housing-side engagement while preserving corrected position. Verify: Jaws should overlap housing sides without tipping it; inspect before closure. Risk: Contact height remains uncertain, so stop descent on visible displacement. Lesson: The last closure missed at z 0.805; a lower contact at this corrected position is not yet tested.",
+      "targets": {
+        "right_z": 0.796
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1117,
+        "start": 1116
+      },
+      "left_wrist": {
+        "end": 1117,
+        "start": 1116
+      },
+      "right_wrist": {
+        "end": 1117,
+        "start": 1116
+      }
+    },
+    "control_end": 1039,
+    "control_start": 1038,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 77,
+    "public_note": "State: Watch housing remains free between open jaws; second placement is unmet. Check: Opening left the watch stationary, confirming no retained grasp. Expect: Lower 10 mm toward housing-side engagement while preserving corrected position. Verify: Jaws should overlap housing sides without tipping it; inspect before closure. Risk: Contact height remains uncertain, so stop descent on visible displacement. Lesson: The last closure missed at z 0.805; a lower contact at this corrected position is not yet tested.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is aligned between open diagonal jaws; second placement remains pending. Check: Descent landed 1 mm high without moving watch. Expect: Lower 5 mm and close at housing-side height. Verify: Nonzero aperture plus housing following a subsequent lift would establish retention; closure alone will not. Risk: Housing could escape again; if closure misses, change tool tilt rather than repeat this approach. Lesson: Earlier closures above this height missed; this tests lower engagement at the corrected housing position.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.792
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1125,
+        "start": 1118
+      },
+      "left_wrist": {
+        "end": 1125,
+        "start": 1118
+      },
+      "right_wrist": {
+        "end": 1125,
+        "start": 1118
+      }
+    },
+    "control_end": 1046,
+    "control_start": 1039,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 78,
+    "public_note": "State: Watch housing is aligned between open diagonal jaws; second placement remains pending. Check: Descent landed 1 mm high without moving watch. Expect: Lower 5 mm and close at housing-side height. Verify: Nonzero aperture plus housing following a subsequent lift would establish retention; closure alone will not. Risk: Housing could escape again; if closure misses, change tool tilt rather than repeat this approach. Lesson: Earlier closures above this height missed; this tests lower engagement at the corrected housing position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is visibly pinched edge-on between jaws at aperture 0.07; retention remains unverified. Check: Closure reached position and rotated the housing into a distinct edge-on contact rather than closing empty. Expect: Lift 38 mm to test this housing pinch. Verify: Watch must rise with jaws and stay fixed relative to them; staying on table disproves retention. Risk: Shallow housing pinch may slip; stop transport if separation appears. Lesson: This closure visibly contacted the rigid housing, unlike prior band-only contacts.",
+      "targets": {
+        "right_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1129,
+        "start": 1126
+      },
+      "left_wrist": {
+        "end": 1129,
+        "start": 1126
+      },
+      "right_wrist": {
+        "end": 1129,
+        "start": 1126
+      }
+    },
+    "control_end": 1049,
+    "control_start": 1046,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 79,
+    "public_note": "State: Watch housing is visibly pinched edge-on between jaws at aperture 0.07; retention remains unverified. Check: Closure reached position and rotated the housing into a distinct edge-on contact rather than closing empty. Expect: Lift 38 mm to test this housing pinch. Verify: Watch must rise with jaws and stay fixed relative to them; staying on table disproves retention. Risk: Shallow housing pinch may slip; stop transport if separation appears. Lesson: This closure visibly contacted the rigid housing, unlike prior band-only contacts.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing pinch retained the watch through the short lift; phone is placed first. Check: Lift landed 2 mm low and watch stayed fixed relative to jaws, supporting retention. Expect: Carry watch to central staging space with left arm now withdrawn. Verify: Watch should remain in jaws and arms should stay separated. Risk: Earlier central transfer lost a band grasp and encountered the idle arm; monitor retention and clearance, stopping if either changes. Lesson: Edge-on housing pinch retained through lift, unlike the earlier band contacts; idle left arm is now clear.",
+      "targets": {
+        "right_x": 0.02,
+        "right_y": -0.2,
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1145,
+        "start": 1130
+      },
+      "left_wrist": {
+        "end": 1145,
+        "start": 1130
+      },
+      "right_wrist": {
+        "end": 1145,
+        "start": 1130
+      }
+    },
+    "control_end": 1064,
+    "control_start": 1049,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 80,
+    "public_note": "State: Watch housing pinch retained the watch through the short lift; phone is placed first. Check: Lift landed 2 mm low and watch stayed fixed relative to jaws, supporting retention. Expect: Carry watch to central staging space with left arm now withdrawn. Verify: Watch should remain in jaws and arms should stay separated. Risk: Earlier central transfer lost a band grasp and encountered the idle arm; monitor retention and clearance, stopping if either changes. Lesson: Edge-on housing pinch retained through lift, unlike the earlier band contacts; idle left arm is now clear.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch retained through central transport; second basket placement still pending. Check: Transfer landed exactly with watch fixed in jaws and no arm interference. Expect: Carry watch a short distance into shared reachable staging space for left-arm pickup. Verify: Watch should remain retained over clear table, away from left hand. Risk: Reach or arm clearance; if refused, use current central spot for staging. Lesson: Housing pinch survived lateral transport, and withdrawing idle arm prevented the prior interference.",
+      "targets": {
+        "right_x": -0.08,
+        "right_y": -0.24
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1157,
+        "start": 1146
+      },
+      "left_wrist": {
+        "end": 1157,
+        "start": 1146
+      },
+      "right_wrist": {
+        "end": 1157,
+        "start": 1146
+      }
+    },
+    "control_end": 1075,
+    "control_start": 1064,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 81,
+    "public_note": "State: Watch retained through central transport; second basket placement still pending. Check: Transfer landed exactly with watch fixed in jaws and no arm interference. Expect: Carry watch a short distance into shared reachable staging space for left-arm pickup. Verify: Watch should remain retained over clear table, away from left hand. Risk: Reach or arm clearance; if refused, use current central spot for staging. Lesson: Housing pinch survived lateral transport, and withdrawing idle arm prevented the prior interference.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains held over clear shared table space; it must still enter basket second. Check: Short transfer landed exactly and retained watch. Expect: Lower toward table for a controlled staging release accessible to left arm. Verify: Watch's lower band should approach table without being driven into it; retain grip until clearance is checked. Risk: Hanging band extends below grasp point; stop descent if it contacts or deforms. Lesson: Edge-on housing grip has survived both transfers.",
+      "targets": {
+        "right_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1168,
+        "start": 1158
+      },
+      "left_wrist": {
+        "end": 1168,
+        "start": 1158
+      },
+      "right_wrist": {
+        "end": 1168,
+        "start": 1158
+      }
+    },
+    "control_end": 1085,
+    "control_start": 1075,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 82,
+    "public_note": "State: Watch remains held over clear shared table space; it must still enter basket second. Check: Short transfer landed exactly and retained watch. Expect: Lower toward table for a controlled staging release accessible to left arm. Verify: Watch's lower band should approach table without being driven into it; retain grip until clearance is checked. Risk: Hanging band extends below grasp point; stop descent if it contacts or deforms. Lesson: Edge-on housing grip has survived both transfers.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch is held low over shared table staging space; basket step two remains pending. Check: Descent landed exactly with watch retained and no visible band deformation. Expect: Release watch onto table for left-arm pickup. Verify: Watch should separate from right jaws and settle near x -0.08, y -0.24, not enter either basket yet. Risk: Watch may roll or change orientation; locate it again before left approach. Lesson: Housing pinch transported watch reliably to shared reachable space.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1175,
+        "start": 1169
+      },
+      "left_wrist": {
+        "end": 1175,
+        "start": 1169
+      },
+      "right_wrist": {
+        "end": 1175,
+        "start": 1169
+      }
+    },
+    "control_end": 1091,
+    "control_start": 1085,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 83,
+    "public_note": "State: Watch is held low over shared table staging space; basket step two remains pending. Check: Descent landed exactly with watch retained and no visible band deformation. Expect: Release watch onto table for left-arm pickup. Verify: Watch should separate from right jaws and settle near x -0.08, y -0.24, not enter either basket yet. Risk: Watch may roll or change orientation; locate it again before left approach. Lesson: Housing pinch transported watch reliably to shared reachable space.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch has separated from right jaws and rests in shared table space; it still needs placement second. Check: Release opened fully and watch settled below the jaws. Expect: Raise empty right hand clear before withdrawing it from the left pickup path. Verify: Watch should remain on table while hand rises empty. Risk: Snagging the upright loop; stop if it follows or tips. Lesson: Staging release succeeded without disturbing the phone or later sequence objects.",
+      "targets": {
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1192,
+        "start": 1176
+      },
+      "left_wrist": {
+        "end": 1192,
+        "start": 1176
+      },
+      "right_wrist": {
+        "end": 1192,
+        "start": 1176
+      }
+    },
+    "control_end": 1107,
+    "control_start": 1091,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 84,
+    "public_note": "State: Watch has separated from right jaws and rests in shared table space; it still needs placement second. Check: Release opened fully and watch settled below the jaws. Expect: Raise empty right hand clear before withdrawing it from the left pickup path. Verify: Watch should remain on table while hand rises empty. Risk: Snagging the upright loop; stop if it follows or tips. Lesson: Staging release succeeded without disturbing the phone or later sequence objects.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains staged on table; phone alone is in policy basket. Check: Right hand rose empty and left watch stationary, confirming staging. Expect: Withdraw right arm to its own side to clear left pickup access. Verify: Watch should be unobstructed and right hand separated from left workspace. Risk: Cross-arm interference; keep left stationary and inspect arrival. Lesson: Empty vertical withdrawal did not snag the watch.",
+      "targets": {
+        "right_x": 0.3,
+        "right_y": -0.2
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1220,
+        "start": 1193
+      },
+      "left_wrist": {
+        "end": 1220,
+        "start": 1193
+      },
+      "right_wrist": {
+        "end": 1220,
+        "start": 1193
+      }
+    },
+    "control_end": 1134,
+    "control_start": 1107,
+    "feedback": "Accepted: playing 27 waypoints (1.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 85,
+    "public_note": "State: Watch remains staged on table; phone alone is in policy basket. Check: Right hand rose empty and left watch stationary, confirming staging. Expect: Withdraw right arm to its own side to clear left pickup access. Verify: Watch should be unobstructed and right hand separated from left workspace. Risk: Cross-arm interference; keep left stationary and inspect arrival. Lesson: Empty vertical withdrawal did not snag the watch.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch is staged within left reach, with housing upright; second basket placement remains pending. Check: Right withdrawal landed exactly and cleared the pickup path. Expect: Approach above staged watch with left hand, leaving clearance for orientation and alignment. Verify: Watch should be visible under left jaws and remain stationary. Risk: RGB staging position is approximate; inspect before descent. Lesson: Shared-space staging avoids the failed long left reach and keeps arms separated.",
+      "targets": {
+        "left_x": -0.08,
+        "left_y": -0.24,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1238,
+        "start": 1221
+      },
+      "left_wrist": {
+        "end": 1238,
+        "start": 1221
+      },
+      "right_wrist": {
+        "end": 1238,
+        "start": 1221
+      }
+    },
+    "control_end": 1151,
+    "control_start": 1134,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 86,
+    "public_note": "State: Watch is staged within left reach, with housing upright; second basket placement remains pending. Check: Right withdrawal landed exactly and cleared the pickup path. Expect: Approach above staged watch with left hand, leaving clearance for orientation and alignment. Verify: Watch should be visible under left jaws and remain stationary. Risk: RGB staging position is approximate; inspect before descent. Lesson: Shared-space staging avoids the failed long left reach and keeps arms separated.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Staged watch is visible below left hand; housing is upright on its right side. Check: Left approach landed exactly without disturbing watch. Expect: Rotate jaws to reproduce the successful diagonal housing pinch. Verify: Watch should remain stationary while jaw axis reaches 45 degrees. Risk: Rotation clearance; remain above watch and inspect before descent. Lesson: Diagonal edge-on housing contact retained the watch during right-arm transport.",
+      "targets": {
+        "left_yaw_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1255,
+        "start": 1239
+      },
+      "left_wrist": {
+        "end": 1255,
+        "start": 1239
+      },
+      "right_wrist": {
+        "end": 1255,
+        "start": 1239
+      }
+    },
+    "control_end": 1167,
+    "control_start": 1151,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 87,
+    "public_note": "State: Staged watch is visible below left hand; housing is upright on its right side. Check: Left approach landed exactly without disturbing watch. Expect: Rotate jaws to reproduce the successful diagonal housing pinch. Verify: Watch should remain stationary while jaw axis reaches 45 degrees. Risk: Rotation clearance; remain above watch and inspect before descent. Lesson: Diagonal edge-on housing contact retained the watch during right-arm transport.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Upright watch housing is aligned near left jaw center on the successful diagonal axis. Check: Rotation reached 45 exactly and watch stayed stationary. Expect: Lower above housing-side grasp height without closing. Verify: Housing should remain between jaws, not the loose band alone. Risk: Watch may tip if contacted; stop and inspect before final few millimetres. Lesson: Match the housing contact that survived transport, not the previously slipping band contacts.",
+      "targets": {
+        "left_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1260,
+        "start": 1256
+      },
+      "left_wrist": {
+        "end": 1260,
+        "start": 1256
+      },
+      "right_wrist": {
+        "end": 1260,
+        "start": 1256
+      }
+    },
+    "control_end": 1171,
+    "control_start": 1167,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 88,
+    "public_note": "State: Upright watch housing is aligned near left jaw center on the successful diagonal axis. Check: Rotation reached 45 exactly and watch stayed stationary. Expect: Lower above housing-side grasp height without closing. Verify: Housing should remain between jaws, not the loose band alone. Risk: Watch may tip if contacted; stop and inspect before final few millimetres. Lesson: Match the housing contact that survived transport, not the previously slipping band contacts.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Upright watch housing lies between left jaws; second placement remains pending. Check: Descent landed 1 mm high without disturbing watch. Expect: Lower 5 mm and pinch the housing edge, reproducing the retained right-arm contact. Verify: Housing must stay enclosed and follow a subsequent lift; closure alone is insufficient. Risk: Shallow pinch could slip; inspect before transport. Lesson: Edge-on housing contact, unlike band contact, survived the earlier transfer.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.796
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1268,
+        "start": 1261
+      },
+      "left_wrist": {
+        "end": 1268,
+        "start": 1261
+      },
+      "right_wrist": {
+        "end": 1268,
+        "start": 1261
+      }
+    },
+    "control_end": 1178,
+    "control_start": 1171,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 89,
+    "public_note": "State: Upright watch housing lies between left jaws; second placement remains pending. Check: Descent landed 1 mm high without disturbing watch. Expect: Lower 5 mm and pinch the housing edge, reproducing the retained right-arm contact. Verify: Housing must stay enclosed and follow a subsequent lift; closure alone is insufficient. Risk: Shallow pinch could slip; inspect before transport. Lesson: Edge-on housing contact, unlike band contact, survived the earlier transfer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left jaws visibly pinch watch housing at aperture 0.05; second placement remains pending. Check: Closure reached target and enclosed housing edge as intended. Expect: Lift 44 mm to verify retention before basket transport. Verify: Watch should rise with jaws and remain fixed in wrist view; staying on table contradicts retention. Risk: Housing pinch may slip; inspect before lateral motion. Lesson: The left contact resembles the right housing pinch that survived transport.",
+      "targets": {
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1273,
+        "start": 1269
+      },
+      "left_wrist": {
+        "end": 1273,
+        "start": 1269
+      },
+      "right_wrist": {
+        "end": 1273,
+        "start": 1269
+      }
+    },
+    "control_end": 1182,
+    "control_start": 1178,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 90,
+    "public_note": "State: Left jaws visibly pinch watch housing at aperture 0.05; second placement remains pending. Check: Closure reached target and enclosed housing edge as intended. Expect: Lift 44 mm to verify retention before basket transport. Verify: Watch should rise with jaws and remain fixed in wrist view; staying on table contradicts retention. Risk: Housing pinch may slip; inspect before lateral motion. Lesson: The left contact resembles the right housing pinch that survived transport.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch slipped from left housing pinch and rests slightly forward of staging point; second placement remains unmet. Check: Lift reached within 1 mm but aperture became zero and watch separated, disproving retention. Expect: Reopen above shifted housing with a forward correction, preparing deeper engagement. Verify: Housing should be centered between open jaws before final descent. Risk: Another shallow edge pinch could slip; lower contact must enclose more housing before lifting. Lesson: Reproducing yaw alone did not reproduce the successful right grasp; left contact was too shallow or offset.",
+      "targets": {
+        "left_gripper": 1,
+        "left_y": -0.22,
+        "left_z": 0.802
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1283,
+        "start": 1274
+      },
+      "left_wrist": {
+        "end": 1283,
+        "start": 1274
+      },
+      "right_wrist": {
+        "end": 1283,
+        "start": 1274
+      }
+    },
+    "control_end": 1191,
+    "control_start": 1182,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 91,
+    "public_note": "State: Watch slipped from left housing pinch and rests slightly forward of staging point; second placement remains unmet. Check: Lift reached within 1 mm but aperture became zero and watch separated, disproving retention. Expect: Reopen above shifted housing with a forward correction, preparing deeper engagement. Verify: Housing should be centered between open jaws before final descent. Risk: Another shallow edge pinch could slip; lower contact must enclose more housing before lifting. Lesson: Reproducing yaw alone did not reproduce the successful right grasp; left contact was too shallow or offset.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is left of jaw center after its slip; second placement pending. Check: Approach landed exactly, but wrist view shows remaining lateral offset. Expect: Correct diagonally toward housing and lower 5 mm for deeper side contact. Verify: Housing should approach center without watch displacement. Risk: Nearby band may touch a jaw; inspect and stop lateral adjustment if it tips. Lesson: Updated wrist view identifies the shifted housing rather than assuming the original staging pose.",
+      "targets": {
+        "left_x": -0.087,
+        "left_y": -0.227,
+        "left_z": 0.797
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1286,
+        "start": 1284
+      },
+      "left_wrist": {
+        "end": 1286,
+        "start": 1284
+      },
+      "right_wrist": {
+        "end": 1286,
+        "start": 1284
+      }
+    },
+    "control_end": 1193,
+    "control_start": 1191,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 92,
+    "public_note": "State: Watch housing is left of jaw center after its slip; second placement pending. Check: Approach landed exactly, but wrist view shows remaining lateral offset. Expect: Correct diagonally toward housing and lower 5 mm for deeper side contact. Verify: Housing should approach center without watch displacement. Risk: Nearby band may touch a jaw; inspect and stop lateral adjustment if it tips. Lesson: Updated wrist view identifies the shifted housing rather than assuming the original staging pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is now near jaw center; second basket placement remains pending. Check: Diagonal correction landed within 1 mm and improved alignment without moving watch. Expect: Lower 5 mm and close deeper around the housing edge. Verify: Housing must remain enclosed and follow a short lift; aperture alone is not proof. Risk: Another shallow pinch could slip; inspect housing contact before transport. Lesson: The corrected position now targets the shifted housing, rather than the original staging coordinates.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.792
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1294,
+        "start": 1287
+      },
+      "left_wrist": {
+        "end": 1294,
+        "start": 1287
+      },
+      "right_wrist": {
+        "end": 1294,
+        "start": 1287
+      }
+    },
+    "control_end": 1200,
+    "control_start": 1193,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 93,
+    "public_note": "State: Watch housing is now near jaw center; second basket placement remains pending. Check: Diagonal correction landed within 1 mm and improved alignment without moving watch. Expect: Lower 5 mm and close deeper around the housing edge. Verify: Housing must remain enclosed and follow a short lift; aperture alone is not proof. Risk: Another shallow pinch could slip; inspect housing contact before transport. Lesson: The corrected position now targets the shifted housing, rather than the original staging coordinates.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left jaws enclose the watch housing at aperture 0.06; second placement remains pending. Check: Corrected closure reached target with visible housing contact. Expect: Lift 38 mm to test retention before moving toward basket. Verify: Watch should rise with jaws and remain fixed in wrist view; separation would disprove retention. Risk: Housing may slip again; inspect before lateral transport. Lesson: The successful right grasp used housing contact at approximately this height, but left retention still needs verification.",
+      "targets": {
+        "left_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1298,
+        "start": 1295
+      },
+      "left_wrist": {
+        "end": 1298,
+        "start": 1295
+      },
+      "right_wrist": {
+        "end": 1298,
+        "start": 1295
+      }
+    },
+    "control_end": 1203,
+    "control_start": 1200,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 94,
+    "public_note": "State: Left jaws enclose the watch housing at aperture 0.06; second placement remains pending. Check: Corrected closure reached target with visible housing contact. Expect: Lift 38 mm to test retention before moving toward basket. Verify: Watch should rise with jaws and remain fixed in wrist view; separation would disprove retention. Risk: Housing may slip again; inspect before lateral transport. Lesson: The successful right grasp used housing contact at approximately this height, but left retention still needs verification.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch followed left lift and remains pinched by housing; second basket placement is pending. Check: Lift landed 2 mm low with watch fixed relative to jaws, supporting retention. Expect: Raise watch above basket rim for transport. Verify: Watch should remain retained with its lower band clear of obstacles. Risk: Grip could slip during rise; inspect before lateral travel. Lesson: Corrected, deeper left housing contact retained the watch through the test lift.",
+      "targets": {
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1309,
+        "start": 1299
+      },
+      "left_wrist": {
+        "end": 1309,
+        "start": 1299
+      },
+      "right_wrist": {
+        "end": 1309,
+        "start": 1299
+      }
+    },
+    "control_end": 1213,
+    "control_start": 1203,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 95,
+    "public_note": "State: Watch followed left lift and remains pinched by housing; second basket placement is pending. Check: Lift landed 2 mm low with watch fixed relative to jaws, supporting retention. Expect: Raise watch above basket rim for transport. Verify: Watch should remain retained with its lower band clear of obstacles. Risk: Grip could slip during rise; inspect before lateral travel. Lesson: Corrected, deeper left housing contact retained the watch through the test lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch has slipped during the higher lift and is falling or settling beneath the hand; second placement remains unmet. Check: Robot reached height, but aperture went to zero and watch separated, so the short-lift retention did not persist. Expect: Reopen and return to a clear observation height to locate its settled pose for a broader housing grasp. Verify: Watch should settle on table and be visible free of jaws. Risk: Its final pose is uncertain; do not close until observed. Lesson: The left edge pinch was only temporarily retained; a broader housing contact is needed, not another identical edge pinch.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1324,
+        "start": 1310
+      },
+      "left_wrist": {
+        "end": 1324,
+        "start": 1310
+      },
+      "right_wrist": {
+        "end": 1324,
+        "start": 1310
+      }
+    },
+    "control_end": 1227,
+    "control_start": 1213,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 96,
+    "public_note": "State: Watch has slipped during the higher lift and is falling or settling beneath the hand; second placement remains unmet. Check: Robot reached height, but aperture went to zero and watch separated, so the short-lift retention did not persist. Expect: Reopen and return to a clear observation height to locate its settled pose for a broader housing grasp. Verify: Watch should settle on table and be visible free of jaws. Risk: Its final pose is uncertain; do not close until observed. Lesson: The left edge pinch was only temporarily retained; a broader housing contact is needed, not another identical edge pinch.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch rolled toward the near table edge after slipping; phone remains placed first. Check: Recovery descent landed exactly, and new images show watch far nearer than its staging point. Expect: Move above its new estimated position at clearance height to recover it before proceeding. Verify: Watch should enter left wrist view beneath open jaws; no contact expected. Risk: Near-edge location and uncertain settling; inspect before lowering and avoid pushing toward edge. Lesson: A dropped upright watch can roll substantially; reacquire its actual position rather than reuse staging coordinates.",
+      "targets": {
+        "left_x": -0.06,
+        "left_y": -0.43
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1340,
+        "start": 1325
+      },
+      "left_wrist": {
+        "end": 1340,
+        "start": 1325
+      },
+      "right_wrist": {
+        "end": 1340,
+        "start": 1325
+      }
+    },
+    "control_end": 1242,
+    "control_start": 1227,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 97,
+    "public_note": "State: Watch rolled toward the near table edge after slipping; phone remains placed first. Check: Recovery descent landed exactly, and new images show watch far nearer than its staging point. Expect: Move above its new estimated position at clearance height to recover it before proceeding. Verify: Watch should enter left wrist view beneath open jaws; no contact expected. Risk: Near-edge location and uncertain settling; inspect before lowering and avoid pushing toward edge. Lesson: A dropped upright watch can roll substantially; reacquire its actual position rather than reuse staging coordinates.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch is visible near the table edge above a mounting fixture; second placement is still pending. Check: Recovery move ended 5 mm and 1 degree off target; watch is stationary and housing is visible to image-right. Expect: Approach the rigid housing with a small diagonal correction and lower while remaining above the fixture. Verify: Housing should align between jaws, with no watch or fixture displacement. Risk: Fixture and edge constrain descent; stop on obstruction and avoid pushing the watch outward. Lesson: Actual recovery pose differs from command, so alignment uses the new measured state and image.",
+      "targets": {
+        "left_x": -0.049,
+        "left_y": -0.416,
+        "left_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1345,
+        "start": 1341
+      },
+      "left_wrist": {
+        "end": 1345,
+        "start": 1341
+      },
+      "right_wrist": {
+        "end": 1345,
+        "start": 1341
+      }
+    },
+    "control_end": 1246,
+    "control_start": 1242,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 98,
+    "public_note": "State: Watch is visible near the table edge above a mounting fixture; second placement is still pending. Check: Recovery move ended 5 mm and 1 degree off target; watch is stationary and housing is visible to image-right. Expect: Approach the rigid housing with a small diagonal correction and lower while remaining above the fixture. Verify: Housing should align between jaws, with no watch or fixture displacement. Risk: Fixture and edge constrain descent; stop on obstruction and avoid pushing the watch outward. Lesson: Actual recovery pose differs from command, so alignment uses the new measured state and image.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is visible forward of the jaw contact line near the edge; second placement remains pending. Check: Approach landed within 1 mm without disturbing watch or fixture. Expect: Translate toward the housing along the rotated view axis, moving contact away from the near fixture. Verify: Housing should move toward the jaw contact line while watch stays stationary. Risk: Edge and fixture proximity; stop if contact moves the watch and withdraw rather than push outward. Lesson: The current wrist view permits housing-specific alignment; loop-center alignment previously produced slipping contacts.",
+      "targets": {
+        "left_x": -0.064,
+        "left_y": -0.401
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1348,
+        "start": 1346
+      },
+      "left_wrist": {
+        "end": 1348,
+        "start": 1346
+      },
+      "right_wrist": {
+        "end": 1348,
+        "start": 1346
+      }
+    },
+    "control_end": 1248,
+    "control_start": 1246,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 99,
+    "public_note": "State: Watch housing is visible forward of the jaw contact line near the edge; second placement remains pending. Check: Approach landed within 1 mm without disturbing watch or fixture. Expect: Translate toward the housing along the rotated view axis, moving contact away from the near fixture. Verify: Housing should move toward the jaw contact line while watch stays stationary. Risk: Edge and fixture proximity; stop if contact moves the watch and withdraw rather than push outward. Lesson: The current wrist view permits housing-specific alignment; loop-center alignment previously produced slipping contacts.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is aligned near the jaw contact line beside the table edge; second placement remains pending. Check: Translation landed within 1 mm and moved housing into alignment without displacing it. Expect: Lower 10 mm toward housing-side engagement while keeping clear of the nearby fixture. Verify: Housing should remain between open jaws without tipping or fixture contact. Risk: Constrained edge clearance; stop descent if watch or hand is obstructed. Lesson: Housing-specific alignment succeeded visually; retained contact still requires closure and lift verification.",
+      "targets": {
+        "left_z": 0.796
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1350,
+        "start": 1349
+      },
+      "left_wrist": {
+        "end": 1350,
+        "start": 1349
+      },
+      "right_wrist": {
+        "end": 1350,
+        "start": 1349
+      }
+    },
+    "control_end": 1249,
+    "control_start": 1248,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 100,
+    "public_note": "State: Watch housing is aligned near the jaw contact line beside the table edge; second placement remains pending. Check: Translation landed within 1 mm and moved housing into alignment without displacing it. Expect: Lower 10 mm toward housing-side engagement while keeping clear of the nearby fixture. Verify: Housing should remain between open jaws without tipping or fixture contact. Risk: Constrained edge clearance; stop descent if watch or hand is obstructed. Lesson: Housing-specific alignment succeeded visually; retained contact still requires closure and lift verification.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is centered between open jaws near the table edge; second placement remains unmet. Check: Descent landed 1 mm high without visible watch or fixture displacement. Expect: Lower 5 mm and close across the rigid housing at the height that previously supported right-arm transport. Verify: Housing should remain enclosed; a subsequent lift must establish retention. Risk: Edge pinch may slip or move watch outward; inspect contact before any transport. Lesson: Band pinches and shallow left housing contacts failed; target the rigid housing rather than the loop.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.792
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1358,
+        "start": 1351
+      },
+      "left_wrist": {
+        "end": 1358,
+        "start": 1351
+      },
+      "right_wrist": {
+        "end": 1358,
+        "start": 1351
+      }
+    },
+    "control_end": 1256,
+    "control_start": 1249,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 101,
+    "public_note": "State: Watch housing is centered between open jaws near the table edge; second placement remains unmet. Check: Descent landed 1 mm high without visible watch or fixture displacement. Expect: Lower 5 mm and close across the rigid housing at the height that previously supported right-arm transport. Verify: Housing should remain enclosed; a subsequent lift must establish retention. Risk: Edge pinch may slip or move watch outward; inspect contact before any transport. Lesson: Band pinches and shallow left housing contacts failed; target the rigid housing rather than the loop.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch is enclosed between left jaws at aperture 0.33, wider than prior slipping edge pinches; retention remains unverified. Check: Closure reached position and rotated watch into broader contact. Expect: Lift clear of edge and fixture to test retention. Verify: Watch must rise with jaws and remain fixed relative to them; separation contradicts retention. Risk: Watch could slip near edge; inspect before lateral transport. Lesson: This closure produced broader contact than the previous 0.05-aperture left pinches, but only lift evidence can establish retention.",
+      "targets": {
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1364,
+        "start": 1359
+      },
+      "left_wrist": {
+        "end": 1364,
+        "start": 1359
+      },
+      "right_wrist": {
+        "end": 1364,
+        "start": 1359
+      }
+    },
+    "control_end": 1261,
+    "control_start": 1256,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 102,
+    "public_note": "State: Watch is enclosed between left jaws at aperture 0.33, wider than prior slipping edge pinches; retention remains unverified. Check: Closure reached position and rotated watch into broader contact. Expect: Lift clear of edge and fixture to test retention. Verify: Watch must rise with jaws and remain fixed relative to them; separation contradicts retention. Risk: Watch could slip near edge; inspect before lateral transport. Lesson: This closure produced broader contact than the previous 0.05-aperture left pinches, but only lift evidence can establish retention.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch again remained on the edge after lift; second placement is unmet. Check: Lift reached within 1 mm but jaws closed empty and watch separated, disproving the broader-contact prediction. Expect: Open and change tool tilt in clearance to prepare a side-oriented housing grasp instead of another failed vertical pinch. Verify: Watch should remain stationary while tool reaches 45-degree tilt. Risk: Nearby fixture constrains rotation; inspect clearance and retreat if obstructed. Lesson: Repeated vertical left grasps have not retained the watch; change approach direction rather than repeat height adjustments.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1383,
+        "start": 1365
+      },
+      "left_wrist": {
+        "end": 1383,
+        "start": 1365
+      },
+      "right_wrist": {
+        "end": 1383,
+        "start": 1365
+      }
+    },
+    "control_end": 1279,
+    "control_start": 1261,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 103,
+    "public_note": "State: Watch again remained on the edge after lift; second placement is unmet. Check: Lift reached within 1 mm but jaws closed empty and watch separated, disproving the broader-contact prediction. Expect: Open and change tool tilt in clearance to prepare a side-oriented housing grasp instead of another failed vertical pinch. Verify: Watch should remain stationary while tool reaches 45-degree tilt. Risk: Nearby fixture constrains rotation; inspect clearance and retreat if obstructed. Lesson: Repeated vertical left grasps have not retained the watch; change approach direction rather than repeat height adjustments.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch location is now occluded near the edge; second placement remains unmet. Check: Tilt motion deviated 98 mm and 14 degrees, indicating obstruction or execution difficulty; no grasp occurred. Expect: Withdraw left arm into clear space to remove fixture interference and reveal watch. Verify: Left hand should clear the edge and watch should become visible for recovery. Risk: Further obstruction; move away from the fixture and inspect actual arrival before reapproach. Lesson: Tilting beside the edge fixture was not executed reliably; relocate before changing orientation or regrasping.",
+      "targets": {
+        "left_x": -0.3,
+        "left_y": -0.2,
+        "left_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1408,
+        "start": 1384
+      },
+      "left_wrist": {
+        "end": 1408,
+        "start": 1384
+      },
+      "right_wrist": {
+        "end": 1408,
+        "start": 1384
+      }
+    },
+    "control_end": 1303,
+    "control_start": 1279,
+    "feedback": "Accepted: playing 24 waypoints (1.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 104,
+    "public_note": "State: Watch location is now occluded near the edge; second placement remains unmet. Check: Tilt motion deviated 98 mm and 14 degrees, indicating obstruction or execution difficulty; no grasp occurred. Expect: Withdraw left arm into clear space to remove fixture interference and reveal watch. Verify: Left hand should clear the edge and watch should become visible for recovery. Risk: Further obstruction; move away from the fixture and inspect actual arrival before reapproach. Lesson: Tilting beside the edge fixture was not executed reliably; relocate before changing orientation or regrasping.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch is visible near the front edge, with left arm withdrawn; phone remains the only placed item. Check: Left withdrawal landed exactly and revealed watch unchanged near the fixture. Expect: Approach above watch with right arm, which previously achieved a retained housing grasp. Verify: Watch should appear under right open jaws with fixture clearance. Risk: Cross-body reach or edge interference; inspect actual arrival before descent. Lesson: Left edge approaches were unreliable; switching arms changes reach geometry while preserving the required object order.",
+      "targets": {
+        "right_x": -0.04,
+        "right_y": -0.39,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1437,
+        "start": 1409
+      },
+      "left_wrist": {
+        "end": 1437,
+        "start": 1409
+      },
+      "right_wrist": {
+        "end": 1437,
+        "start": 1409
+      }
+    },
+    "control_end": 1331,
+    "control_start": 1303,
+    "feedback": "Accepted: playing 28 waypoints (1.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 105,
+    "public_note": "State: Watch is visible near the front edge, with left arm withdrawn; phone remains the only placed item. Check: Left withdrawal landed exactly and revealed watch unchanged near the fixture. Expect: Approach above watch with right arm, which previously achieved a retained housing grasp. Verify: Watch should appear under right open jaws with fixture clearance. Risk: Cross-body reach or edge interference; inspect actual arrival before descent. Lesson: Left edge approaches were unreliable; switching arms changes reach geometry while preserving the required object order.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is visible left of right-jaw center near the edge; second placement remains pending. Check: Right approach landed exactly with watch and fixture unchanged. Expect: Correct diagonally toward housing and descend to pregrasp height, preserving fixture clearance. Verify: Housing should center between jaws without being pushed. Risk: Fixture lies close to the band; stop if descent is obstructed. Lesson: Right-arm approach reached the edge pose accurately, unlike the earlier left tilt attempt.",
+      "targets": {
+        "right_x": -0.052,
+        "right_y": -0.402,
+        "right_z": 0.801
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1442,
+        "start": 1438
+      },
+      "left_wrist": {
+        "end": 1442,
+        "start": 1438
+      },
+      "right_wrist": {
+        "end": 1442,
+        "start": 1438
+      }
+    },
+    "control_end": 1335,
+    "control_start": 1331,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 106,
+    "public_note": "State: Watch housing is visible left of right-jaw center near the edge; second placement remains pending. Check: Right approach landed exactly with watch and fixture unchanged. Expect: Correct diagonally toward housing and descend to pregrasp height, preserving fixture clearance. Verify: Housing should center between jaws without being pushed. Risk: Fixture lies close to the band; stop if descent is obstructed. Lesson: Right-arm approach reached the edge pose accurately, unlike the earlier left tilt attempt.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is centered between right jaws near the edge; second placement remains pending. Check: Approach landed 1 mm high without watch or fixture displacement. Expect: Lower 5 mm toward housing-side contact. Verify: Housing should remain stationary between open jaws with fixture clearance. Risk: Near-contact obstruction; stop if watch tips or arrival deviates. Lesson: Right-arm pose is executing accurately; retention still requires a verified housing grasp.",
+      "targets": {
+        "right_z": 0.797
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1444,
+        "start": 1443
+      },
+      "left_wrist": {
+        "end": 1444,
+        "start": 1443
+      },
+      "right_wrist": {
+        "end": 1444,
+        "start": 1443
+      }
+    },
+    "control_end": 1336,
+    "control_start": 1335,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 107,
+    "public_note": "State: Watch housing is centered between right jaws near the edge; second placement remains pending. Check: Approach landed 1 mm high without watch or fixture displacement. Expect: Lower 5 mm toward housing-side contact. Verify: Housing should remain stationary between open jaws with fixture clearance. Risk: Near-contact obstruction; stop if watch tips or arrival deviates. Lesson: Right-arm pose is executing accurately; retention still requires a verified housing grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch housing is aligned between right jaws; second basket placement remains pending. Check: Descent landed 1 mm high without disturbing watch or fixture. Expect: Lower 5 mm and close across the housing, using the right-arm contact geometry that previously retained it. Verify: Housing must remain enclosed and follow a subsequent lift; closure alone is insufficient. Risk: Shallow contact may slip; inspect before transport and avoid pushing toward the edge. Lesson: Right housing pinch previously survived transport, whereas left edge pinches did not.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.793
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1452,
+        "start": 1445
+      },
+      "left_wrist": {
+        "end": 1452,
+        "start": 1445
+      },
+      "right_wrist": {
+        "end": 1452,
+        "start": 1445
+      }
+    },
+    "control_end": 1343,
+    "control_start": 1336,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 108,
+    "public_note": "State: Watch housing is aligned between right jaws; second basket placement remains pending. Check: Descent landed 1 mm high without disturbing watch or fixture. Expect: Lower 5 mm and close across the housing, using the right-arm contact geometry that previously retained it. Verify: Housing must remain enclosed and follow a subsequent lift; closure alone is insufficient. Risk: Shallow contact may slip; inspect before transport and avoid pushing toward the edge. Lesson: Right housing pinch previously survived transport, whereas left edge pinches did not.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaws contact watch at aperture 0.40; retention is unverified and second placement remains pending. Check: Closure reached target and shifted watch into contact without visible fixture movement. Expect: Lift 42 mm to test retention and clear the edge. Verify: Watch must rise with jaws and stay fixed in wrist view; separation disproves retention. Risk: Broad contact may still be on the band rather than housing; inspect before transport. Lesson: Aperture alone has repeatedly failed to predict retention, so this lift is a necessary check.",
+      "targets": {
+        "right_z": 0.835
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1457,
+        "start": 1453
+      },
+      "left_wrist": {
+        "end": 1457,
+        "start": 1453
+      },
+      "right_wrist": {
+        "end": 1457,
+        "start": 1453
+      }
+    },
+    "control_end": 1347,
+    "control_start": 1343,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 109,
+    "public_note": "State: Right jaws contact watch at aperture 0.40; retention is unverified and second placement remains pending. Check: Closure reached target and shifted watch into contact without visible fixture movement. Expect: Lift 42 mm to test retention and clear the edge. Verify: Watch must rise with jaws and stay fixed in wrist view; separation disproves retention. Risk: Broad contact may still be on the band rather than housing; inspect before transport. Lesson: Aperture alone has repeatedly failed to predict retention, so this lift is a necessary check.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains in contact with right jaws, but shifted from broad contact to a narrow band pinch during lift; retention is uncertain. Check: Lift landed within 1 mm and aperture narrowed to 0.04; watch moved relative to jaws, so stable housing retention was not confirmed. Expect: Move inward over clear table while lifting, recovering the watch from the edge if the pinch holds. Verify: Watch must travel with jaws to the new location; remaining at the edge or falling would contradict retention. Risk: Narrow pinch may slip; keep route over table and inspect before basket approach. Lesson: The latest contact shifted under load, so do not assume the initial closure geometry persisted.",
+      "targets": {
+        "right_x": -0.1,
+        "right_y": -0.28,
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1477,
+        "start": 1458
+      },
+      "left_wrist": {
+        "end": 1477,
+        "start": 1458
+      },
+      "right_wrist": {
+        "end": 1477,
+        "start": 1458
+      }
+    },
+    "control_end": 1366,
+    "control_start": 1347,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 110,
+    "public_note": "State: Watch remains in contact with right jaws, but shifted from broad contact to a narrow band pinch during lift; retention is uncertain. Check: Lift landed within 1 mm and aperture narrowed to 0.04; watch moved relative to jaws, so stable housing retention was not confirmed. Expect: Move inward over clear table while lifting, recovering the watch from the edge if the pinch holds. Verify: Watch must travel with jaws to the new location; remaining at the edge or falling would contradict retention. Risk: Narrow pinch may slip; keep route over table and inspect before basket approach. Lesson: The latest contact shifted under load, so do not assume the initial closure geometry persisted.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains near the front edge after another slip; phone is placed first, all later targets remain outside. Check: Transfer ended 17 mm off target, shifted the idle left arm, and lost watch contact; no second placement occurred. Expect: Withdraw right arm to clear interference and permit a different left side-grasp approach. Verify: Arms should separate and watch remain visible at the edge. Risk: Close arms could interfere again; move only right away and check actual arrival. Lesson: Narrow band contacts failed transport and this central route again brought arms too close; clear the workspace before changing grasp direction.",
+      "targets": {
+        "right_gripper": 1,
+        "right_x": 0.3,
+        "right_y": -0.2
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1508,
+        "start": 1478
+      },
+      "left_wrist": {
+        "end": 1508,
+        "start": 1478
+      },
+      "right_wrist": {
+        "end": 1508,
+        "start": 1478
+      }
+    },
+    "control_end": 1396,
+    "control_start": 1366,
+    "feedback": "Accepted: playing 30 waypoints (1.2s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 111,
+    "public_note": "State: Watch remains near the front edge after another slip; phone is placed first, all later targets remain outside. Check: Transfer ended 17 mm off target, shifted the idle left arm, and lost watch contact; no second placement occurred. Expect: Withdraw right arm to clear interference and permit a different left side-grasp approach. Verify: Arms should separate and watch remain visible at the edge. Risk: Close arms could interfere again; move only right away and check actual arrival. Lesson: Narrow band contacts failed transport and this central route again brought arms too close; clear the workspace before changing grasp direction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains near the front edge; second placement is unmet. Right arm is now clear. Check: Right withdrawal landed exactly without further object changes. Expect: Reorient left jaws in free space for a side approach, replacing repeated slipping downward pinches. Verify: Left yaw and roll should reach zero while watch stays stationary. Risk: Rotation may be refused; split further if needed rather than rotate beside the fixture. Lesson: Orientation changes belong in clear space; the earlier edge-side tilt deviated substantially.",
+      "targets": {
+        "left_roll_deg": 0,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1540,
+        "start": 1509
+      },
+      "left_wrist": {
+        "end": 1540,
+        "start": 1509
+      },
+      "right_wrist": {
+        "end": 1540,
+        "start": 1509
+      }
+    },
+    "control_end": 1427,
+    "control_start": 1396,
+    "feedback": "Accepted: playing 31 waypoints (1.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 112,
+    "public_note": "State: Watch remains near the front edge; second placement is unmet. Right arm is now clear. Check: Right withdrawal landed exactly without further object changes. Expect: Reorient left jaws in free space for a side approach, replacing repeated slipping downward pinches. Verify: Left yaw and roll should reach zero while watch stays stationary. Risk: Rotation may be refused; split further if needed rather than rotate beside the fixture. Lesson: Orientation changes belong in clear space; the earlier edge-side tilt deviated substantially.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains at the near edge; phone alone is placed. Left jaws are aligned for a side approach. Check: Free-space yaw and roll correction landed exactly without object movement. Expect: Complete horizontal tool orientation before approaching watch housing from the near side. Verify: Pitch should reach 90 degrees with objects unchanged. Risk: Rotation clearance above basket; inspect arrival before travel. Lesson: Free-space reorientation executed accurately, unlike the earlier rotation beside the fixture.",
+      "targets": {
+        "left_pitch_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1561,
+        "start": 1541
+      },
+      "left_wrist": {
+        "end": 1561,
+        "start": 1541
+      },
+      "right_wrist": {
+        "end": 1561,
+        "start": 1541
+      }
+    },
+    "control_end": 1447,
+    "control_start": 1427,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 113,
+    "public_note": "State: Watch remains at the near edge; phone alone is placed. Left jaws are aligned for a side approach. Check: Free-space yaw and roll correction landed exactly without object movement. Expect: Complete horizontal tool orientation before approaching watch housing from the near side. Verify: Pitch should reach 90 degrees with objects unchanged. Risk: Rotation clearance above basket; inspect arrival before travel. Lesson: Free-space reorientation executed accurately, unlike the earlier rotation beside the fixture.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains near the front edge; second placement is pending. Left tool is horizontal for a new side grasp. Check: Pitch rotation landed exactly without object changes. Expect: Approach from the near side above watch height, keeping jaws open and clear of the mounting fixture. Verify: Housing should become visible ahead of the jaws before final approach. Risk: Fixture or reach obstruction; inspect actual arrival and do not advance blindly if blocked. Lesson: Repeated downward pinches slipped; this changes the approach direction rather than repeating them.",
+      "targets": {
+        "left_x": -0.04,
+        "left_y": -0.43,
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1648,
+        "start": 1562
+      },
+      "left_wrist": {
+        "end": 1648,
+        "start": 1562
+      },
+      "right_wrist": {
+        "end": 1648,
+        "start": 1562
+      }
+    },
+    "control_end": 1533,
+    "control_start": 1447,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 114,
+    "public_note": "State: Watch remains near the front edge; second placement is pending. Left tool is horizontal for a new side grasp. Check: Pitch rotation landed exactly without object changes. Expect: Approach from the near side above watch height, keeping jaws open and clear of the mounting fixture. Verify: Housing should become visible ahead of the jaws before final approach. Risk: Fixture or reach obstruction; inspect actual arrival and do not advance blindly if blocked. Lesson: Repeated downward pinches slipped; this changes the approach direction rather than repeating them.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains at the front edge; second placement is still unmet. Check: Side-grasp approach was refused by the planner; neither arm moved, so there is no new physical evidence. Expect: Move to a nearer free-space waypoint before attempting the edge approach. Verify: Hand should arrive clear of the watch and fixture, allowing a shorter next reach. Risk: Horizontal reach may remain infeasible; inspect planner feedback and change tilt if necessary. Lesson: The direct horizontal edge target was unreachable; split travel through a nearer pose rather than repeat it.",
+      "targets": {
+        "left_x": -0.1,
+        "left_y": -0.32,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1648,
+        "start": 1562
+      },
+      "left_wrist": {
+        "end": 1648,
+        "start": 1562
+      },
+      "right_wrist": {
+        "end": 1648,
+        "start": 1562
+      }
+    },
+    "control_end": 1533,
+    "control_start": 1447,
+    "feedback": "Accepted: playing 86 waypoints (3.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 114,
+    "public_note": "State: Watch remains at the front edge; second placement is still unmet. Check: Side-grasp approach was refused by the planner; neither arm moved, so there is no new physical evidence. Expect: Move to a nearer free-space waypoint before attempting the edge approach. Verify: Hand should arrive clear of the watch and fixture, allowing a shorter next reach. Risk: Horizontal reach may remain infeasible; inspect planner feedback and change tilt if necessary. Lesson: The direct horizontal edge target was unreachable; split travel through a nearer pose rather than repeat it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left hand is near the front fixture with no grasp; watch remains outside the basket. Only phone placement is verified. Check: Waypoint execution deviated 149 mm and 43.7 degrees, so the intended side approach did not occur; objects show no verified progress. Expect: Raise the empty hand away from the fixture to regain clearance before any further recovery. Verify: Actual height should increase and the watch should remain undisturbed; another large deviation would indicate continued obstruction. Risk: Fixture interference is the dominant risk; use vertical withdrawal rather than another lateral approach. Lesson: This horizontal approach executed unreliably near the front fixture; commanded pose cannot be treated as arrival.",
+      "targets": {
+        "left_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1663,
+        "start": 1649
+      },
+      "left_wrist": {
+        "end": 1663,
+        "start": 1649
+      },
+      "right_wrist": {
+        "end": 1663,
+        "start": 1649
+      }
+    },
+    "control_end": 1547,
+    "control_start": 1533,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 115,
+    "public_note": "State: Left hand is near the front fixture with no grasp; watch remains outside the basket. Only phone placement is verified. Check: Waypoint execution deviated 149 mm and 43.7 degrees, so the intended side approach did not occur; objects show no verified progress. Expect: Raise the empty hand away from the fixture to regain clearance before any further recovery. Verify: Actual height should increase and the watch should remain undisturbed; another large deviation would indicate continued obstruction. Risk: Fixture interference is the dominant risk; use vertical withdrawal rather than another lateral approach. Lesson: This horizontal approach executed unreliably near the front fixture; commanded pose cannot be treated as arrival.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left hand has cleared upward, but watch remains at the edge and second placement is unmet; phone remains inside policy basket. Check: Vertical withdrawal landed accurately and left objects unchanged, resolving immediate height obstruction. Expect: Move empty left hand back into central-left free space to recover a usable approach configuration. Verify: Hand should arrive away from the fixture with watch undisturbed. Risk: The unusual current arm configuration may cause refusal or deviation; inspect actual arrival before further approach. Lesson: Vertical withdrawal worked after the obstructed horizontal motion; recover clearance before attempting another grasp.",
+      "targets": {
+        "left_x": -0.2,
+        "left_y": -0.25
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1704,
+        "start": 1664
+      },
+      "left_wrist": {
+        "end": 1704,
+        "start": 1664
+      },
+      "right_wrist": {
+        "end": 1704,
+        "start": 1664
+      }
+    },
+    "control_end": 1587,
+    "control_start": 1547,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 116,
+    "public_note": "State: Left hand has cleared upward, but watch remains at the edge and second placement is unmet; phone remains inside policy basket. Check: Vertical withdrawal landed accurately and left objects unchanged, resolving immediate height obstruction. Expect: Move empty left hand back into central-left free space to recover a usable approach configuration. Verify: Hand should arrive away from the fixture with watch undisturbed. Risk: The unusual current arm configuration may cause refusal or deviation; inspect actual arrival before further approach. Lesson: Vertical withdrawal worked after the obstructed horizontal motion; recover clearance before attempting another grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains outside the basket; only first phone placement is verified. Left hand is elevated but in an awkward horizontal configuration. Check: Retreat proposal was refused; neither arm moved and no new object evidence was gained. Expect: Reduce tool pitch in elevated clearance to recover a configuration that can retreat and reapproach. Verify: Pitch should approach 45 degrees without object displacement; inspect actual position because prior rotations near the fixture deviated. Risk: Planner refusal or execution deviation; keep translation separate and use measured feedback. Lesson: The current horizontal configuration prevented the retreat target, so change orientation rather than repeat the same translation.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1704,
+        "start": 1664
+      },
+      "left_wrist": {
+        "end": 1704,
+        "start": 1664
+      },
+      "right_wrist": {
+        "end": 1704,
+        "start": 1664
+      }
+    },
+    "control_end": 1587,
+    "control_start": 1547,
+    "feedback": "Accepted: playing 40 waypoints (1.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 116,
+    "public_note": "State: Watch remains outside the basket; only first phone placement is verified. Left hand is elevated but in an awkward horizontal configuration. Check: Retreat proposal was refused; neither arm moved and no new object evidence was gained. Expect: Reduce tool pitch in elevated clearance to recover a configuration that can retreat and reapproach. Verify: Pitch should approach 45 degrees without object displacement; inspect actual position because prior rotations near the fixture deviated. Risk: Planner refusal or execution deviation; keep translation separate and use measured feedback. Lesson: The current horizontal configuration prevented the retreat target, so change orientation rather than repeat the same translation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains beside the front fixture; only phone placement is verified. Watch, black device, rabbit, and truck still require placement in that order; arm return is also incomplete. Check: Pitch recovery deviated 74 mm and 14.5 degrees, so the requested configuration was not reached. No object progress occurred. Expect: Raise the empty left hand vertically away from the fixture to recover clearance. Verify: Actual height should increase while watch and basket contents remain undisturbed; further deviation would indicate continued obstruction. Risk: Fixture interference remains the dominant concern; avoid further lateral contact and use measured arrival rather than commanded pose. Lesson: Vertical withdrawal previously executed accurately, whereas rotations in this constrained configuration did not.",
+      "targets": {
+        "left_z": 1.03
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1715,
+        "start": 1705
+      },
+      "left_wrist": {
+        "end": 1715,
+        "start": 1705
+      },
+      "right_wrist": {
+        "end": 1715,
+        "start": 1705
+      }
+    },
+    "control_end": 1597,
+    "control_start": 1587,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 117,
+    "public_note": "State: Watch remains beside the front fixture; only phone placement is verified. Watch, black device, rabbit, and truck still require placement in that order; arm return is also incomplete. Check: Pitch recovery deviated 74 mm and 14.5 degrees, so the requested configuration was not reached. No object progress occurred. Expect: Raise the empty left hand vertically away from the fixture to recover clearance. Verify: Actual height should increase while watch and basket contents remain undisturbed; further deviation would indicate continued obstruction. Risk: Fixture interference remains the dominant concern; avoid further lateral contact and use measured arrival rather than commanded pose. Lesson: Vertical withdrawal previously executed accurately, whereas rotations in this constrained configuration did not.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Phone is verified inside policy basket; watch, black device, rabbit, and truck remain outside. Demo objects remain in their basket; full sequence and arm return are incomplete. Check: Vertical withdrawal landed exactly without disturbing objects. Expect: Make a short elevated retreat toward the workspace, away from the front fixture. Verify: Hand should move forward while objects remain stationary; this does not complete another sequence step. Risk: Current configuration previously limited lateral travel; keep this retreat short and inspect arrival. Lesson: Accurate vertical withdrawal restored clearance, but repeated slipping watch grasps prevented further verified placement.",
+      "targets": {
+        "left_y": -0.46
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1719,
+        "start": 1716
+      },
+      "left_wrist": {
+        "end": 1719,
+        "start": 1716
+      },
+      "right_wrist": {
+        "end": 1719,
+        "start": 1716
+      }
+    },
+    "control_end": 1600,
+    "control_start": 1597,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 118,
+    "public_note": "State: Phone is verified inside policy basket; watch, black device, rabbit, and truck remain outside. Demo objects remain in their basket; full sequence and arm return are incomplete. Check: Vertical withdrawal landed exactly without disturbing objects. Expect: Make a short elevated retreat toward the workspace, away from the front fixture. Verify: Hand should move forward while objects remain stationary; this does not complete another sequence step. Risk: Current configuration previously limited lateral travel; keep this retreat short and inspect arrival. Lesson: Accurate vertical withdrawal restored clearance, but repeated slipping watch grasps prevented further verified placement.",
+    "tool": "move_eef"
+  }
+]

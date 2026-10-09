@@ -1,0 +1,1524 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Three tubes lie outside the empty rack; none is inserted. Left tube is the first candidate, with a near-cap grasp intended to leave its tip free. Check: No previous action. Expect: Turn the left tool halfway toward a downward approach without contacting objects. Verify: Measured pitch should approach 45 degrees and tubes should remain stationary. Risk: Large orientation changes may be refused; split the turn if necessary. Lesson: None established yet.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 17,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 17,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 17,
+        "start": 1
+      }
+    },
+    "control_end": 16,
+    "control_start": 0,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 0,
+    "public_note": "State: Three tubes lie outside the empty rack; none is inserted. Left tube is the first candidate, with a near-cap grasp intended to leave its tip free. Check: No previous action. Expect: Turn the left tool halfway toward a downward approach without contacting objects. Verify: Measured pitch should approach 45 degrees and tubes should remain stationary. Risk: Large orientation changes may be refused; split the turn if necessary. Lesson: None established yet.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left tube remains lying outside the rack; all insertions remain unmet. Check: The 45-degree turn landed exactly, with no visible object displacement. Expect: Finish a downward orientation with jaws aligned across the left tube. Verify: Pitch near zero and a downward wrist view should support approach alignment. Risk: Alignment is estimated from RGB; correct from the closer view before contact. Lesson: The first split rotation executed accurately.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_yaw_deg": -20
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 33,
+        "start": 18
+      },
+      "left_wrist": {
+        "end": 33,
+        "start": 18
+      },
+      "right_wrist": {
+        "end": 33,
+        "start": 18
+      }
+    },
+    "control_end": 31,
+    "control_start": 16,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "State: Left tube remains lying outside the rack; all insertions remain unmet. Check: The 45-degree turn landed exactly, with no visible object displacement. Expect: Finish a downward orientation with jaws aligned across the left tube. Verify: Pitch near zero and a downward wrist view should support approach alignment. Risk: Alignment is estimated from RGB; correct from the closer view before contact. Lesson: The first split rotation executed accurately.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: No tube is grasped or inserted; the left tube's near-cap position is estimated from the head image. Check: Downward orientation landed exactly; objects remain unchanged. Expect: Approach above the left tube while retaining vertical clearance, obtaining a useful wrist view. Verify: Tube should appear between or near the open jaws, still on the table. Risk: RGB position estimate may be offset; adjust above the tube before descending. Lesson: Split orientation changes have landed accurately.",
+      "targets": {
+        "left_x": -0.18,
+        "left_y": 0.015,
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 59,
+        "start": 34
+      },
+      "left_wrist": {
+        "end": 59,
+        "start": 34
+      },
+      "right_wrist": {
+        "end": 59,
+        "start": 34
+      }
+    },
+    "control_end": 56,
+    "control_start": 31,
+    "feedback": "Accepted: playing 25 waypoints (1.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "State: No tube is grasped or inserted; the left tube's near-cap position is estimated from the head image. Check: Downward orientation landed exactly; objects remain unchanged. Expect: Approach above the left tube while retaining vertical clearance, obtaining a useful wrist view. Verify: Tube should appear between or near the open jaws, still on the table. Risk: RGB position estimate may be offset; adjust above the tube before descending. Lesson: Split orientation changes have landed accurately.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Wrist view shows the left tube offset left of the jaw gap; no grasp or insertion yet. Check: Approach landed within 0 mm, but the RGB estimate was laterally offset. Expect: Center the near-cap body in the jaws and descend while remaining above contact. Verify: The neck should align with the jaw gap with visible clearance. Risk: Camera projection makes depth uncertain; stop above contact and recheck. Lesson: Initial left-tube estimate was too far toward positive x.",
+      "targets": {
+        "left_x": -0.2,
+        "left_y": -0.001,
+        "left_z": 0.809
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 70,
+        "start": 60
+      },
+      "left_wrist": {
+        "end": 70,
+        "start": 60
+      },
+      "right_wrist": {
+        "end": 70,
+        "start": 60
+      }
+    },
+    "control_end": 66,
+    "control_start": 56,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "State: Wrist view shows the left tube offset left of the jaw gap; no grasp or insertion yet. Check: Approach landed within 0 mm, but the RGB estimate was laterally offset. Expect: Center the near-cap body in the jaws and descend while remaining above contact. Verify: The neck should align with the jaw gap with visible clearance. Risk: Camera projection makes depth uncertain; stop above contact and recheck. Lesson: Initial left-tube estimate was too far toward positive x.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube remains outside the rack, with its near-cap body still left of the wrist-view center. Check: Correction landed accurately; no visible tube movement, and centering improved less than expected. Expect: Move toward the near-cap body and approach its table-level height without closing yet. Verify: Jaws should bracket the tube near the cap; contact or displacement would contradict the clearance estimate. Risk: Projection uncertainty may cause premature contact; use millimetre corrections after this approach. Lesson: Wrist-view offsets change with descent, so lateral estimates require rechecking.",
+      "targets": {
+        "left_x": -0.212,
+        "left_y": -0.031,
+        "left_z": 0.792
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 78,
+        "start": 71
+      },
+      "left_wrist": {
+        "end": 78,
+        "start": 71
+      },
+      "right_wrist": {
+        "end": 78,
+        "start": 71
+      }
+    },
+    "control_end": 73,
+    "control_start": 66,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "State: Tube remains outside the rack, with its near-cap body still left of the wrist-view center. Check: Correction landed accurately; no visible tube movement, and centering improved less than expected. Expect: Move toward the near-cap body and approach its table-level height without closing yet. Verify: Jaws should bracket the tube near the cap; contact or displacement would contradict the clearance estimate. Risk: Projection uncertainty may cause premature contact; use millimetre corrections after this approach. Lesson: Wrist-view offsets change with descent, so lateral estimates require rechecking.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open jaws are near the left tube, but the body remains left of their center; no retained grasp or insertion. Check: Arrival was accurate and tube stayed still; moving along its length did not resolve the lateral offset. Expect: A small transverse correction and 4 mm descent should improve jaw centering near the neck. Verify: Body should move toward the wrist-view gap center without rolling. Risk: Nearby tube contact could roll it; stop and reassess if it moves. Lesson: Correct across the tube rather than along its axis to center this grasp.",
+      "targets": {
+        "left_x": -0.22,
+        "left_y": -0.028,
+        "left_z": 0.788
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 80,
+        "start": 79
+      },
+      "left_wrist": {
+        "end": 80,
+        "start": 79
+      },
+      "right_wrist": {
+        "end": 80,
+        "start": 79
+      }
+    },
+    "control_end": 74,
+    "control_start": 73,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "State: Open jaws are near the left tube, but the body remains left of their center; no retained grasp or insertion. Check: Arrival was accurate and tube stayed still; moving along its length did not resolve the lateral offset. Expect: A small transverse correction and 4 mm descent should improve jaw centering near the neck. Verify: Body should move toward the wrist-view gap center without rolling. Risk: Nearby tube contact could roll it; stop and reassess if it moves. Lesson: Correct across the tube rather than along its axis to center this grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left tube neck is closer to the jaw center, still ungrasped; all insertions remain unmet. Check: Last correction landed within 1 mm and shifted the tube image toward center without visible object motion. Expect: Another small transverse correction and 4 mm descent will place jaws around the neck. Verify: Neck should be centered between jaws with no rolling. Risk: Table proximity limits descent; recheck before closure. Lesson: Negative-x, positive-y correction improved transverse alignment in this pose.",
+      "targets": {
+        "left_x": -0.225,
+        "left_y": -0.026,
+        "left_z": 0.784
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 82,
+        "start": 81
+      },
+      "left_wrist": {
+        "end": 82,
+        "start": 81
+      },
+      "right_wrist": {
+        "end": 82,
+        "start": 81
+      }
+    },
+    "control_end": 75,
+    "control_start": 74,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "State: Left tube neck is closer to the jaw center, still ungrasped; all insertions remain unmet. Check: Last correction landed within 1 mm and shifted the tube image toward center without visible object motion. Expect: Another small transverse correction and 4 mm descent will place jaws around the neck. Verify: Neck should be centered between jaws with no rolling. Risk: Table proximity limits descent; recheck before closure. Lesson: Negative-x, positive-y correction improved transverse alignment in this pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left tube neck is nearly centered; retention and all insertions remain unverified. Check: Small correction landed within 1 mm and improved centering without visible tube displacement. Expect: Final millimetre alignment and closure should grip the body just below the cap, leaving the tip clear. Verify: Jaws should stop around the body; a subsequent lift must establish retention. Risk: Closing too high could miss or push the tube; reopen and reassess if it escapes. Lesson: Small transverse corrections reliably centered this near-cap approach.",
+      "targets": {
+        "left_gripper": 0,
+        "left_x": -0.228,
+        "left_y": -0.025,
+        "left_z": 0.781
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 90,
+        "start": 83
+      },
+      "left_wrist": {
+        "end": 90,
+        "start": 83
+      },
+      "right_wrist": {
+        "end": 90,
+        "start": 83
+      }
+    },
+    "control_end": 82,
+    "control_start": 75,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "State: Left tube neck is nearly centered; retention and all insertions remain unverified. Check: Small correction landed within 1 mm and improved centering without visible tube displacement. Expect: Final millimetre alignment and closure should grip the body just below the cap, leaving the tip clear. Verify: Jaws should stop around the body; a subsequent lift must establish retention. Risk: Closing too high could miss or push the tube; reopen and reassess if it escapes. Lesson: Small transverse corrections reliably centered this near-cap approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaws visibly surround the left tube below its cap and closure stopped at 0.24; retention is not yet proven and no tube is inserted. Check: Closure landed accurately with the tube centered between jaws. Expect: Lift the tube clear of the table to test retention and provide rotation clearance. Verify: Tube should rise with the hand while maintaining its relation to the jaws; remaining on the table would show a failed grasp. Risk: Slip during lift; lower and regrasp if relative motion appears. Lesson: The near-cap grasp at z 0.781 produced visible jaw contact.",
+      "targets": {
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 101,
+        "start": 91
+      },
+      "left_wrist": {
+        "end": 101,
+        "start": 91
+      },
+      "right_wrist": {
+        "end": 101,
+        "start": 91
+      }
+    },
+    "control_end": 92,
+    "control_start": 82,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "State: Jaws visibly surround the left tube below its cap and closure stopped at 0.24; retention is not yet proven and no tube is inserted. Check: Closure landed accurately with the tube centered between jaws. Expect: Lift the tube clear of the table to test retention and provide rotation clearance. Verify: Tube should rise with the hand while maintaining its relation to the jaws; remaining on the table would show a failed grasp. Risk: Slip during lift; lower and regrasp if relative motion appears. Lesson: The near-cap grasp at z 0.781 produced visible jaw contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left tube lifted with the hand and stayed fixed between jaws, supporting retention; no insertion yet. Check: Lift landed accurately and the tube visibly cleared its original table position. Expect: Begin tipping the free tube end downward in clearance. Verify: Tube should rotate with the gripper toward upright without slipping. Risk: Tip sweeps downward; stop if it nears the table or loses its fixed jaw relation. Lesson: This near-cap grasp retained the tube during a 109 mm lift.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 129,
+        "start": 102
+      },
+      "left_wrist": {
+        "end": 129,
+        "start": 102
+      },
+      "right_wrist": {
+        "end": 129,
+        "start": 102
+      }
+    },
+    "control_end": 119,
+    "control_start": 92,
+    "feedback": "Accepted: playing 27 waypoints (1.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "State: Left tube lifted with the hand and stayed fixed between jaws, supporting retention; no insertion yet. Check: Lift landed accurately and the tube visibly cleared its original table position. Expect: Begin tipping the free tube end downward in clearance. Verify: Tube should rotate with the gripper toward upright without slipping. Risk: Tip sweeps downward; stop if it nears the table or loses its fixed jaw relation. Lesson: This near-cap grasp retained the tube during a 109 mm lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube remains retained and its tip has rotated downward; all insertion conditions remain unmet. Check: First 45-degree rotation landed exactly, with fixed tube-to-jaw relation. Expect: Finish rotating the tube upright, tip downward, ready for rack approach. Verify: Head view should show a vertical tube under the cap without slip. Risk: Orientation convention or initial tube angle could leave residual tilt; inspect before insertion. Lesson: The near-cap grasp remained stable through the first rotation.",
+      "targets": {
+        "left_pitch_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 165,
+        "start": 130
+      },
+      "left_wrist": {
+        "end": 165,
+        "start": 130
+      },
+      "right_wrist": {
+        "end": 165,
+        "start": 130
+      }
+    },
+    "control_end": 154,
+    "control_start": 119,
+    "feedback": "Accepted: playing 35 waypoints (1.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "State: Tube remains retained and its tip has rotated downward; all insertion conditions remain unmet. Check: First 45-degree rotation landed exactly, with fixed tube-to-jaw relation. Expect: Finish rotating the tube upright, tip downward, ready for rack approach. Verify: Head view should show a vertical tube under the cap without slip. Risk: Orientation convention or initial tube angle could leave residual tilt; inspect before insertion. Lesson: The near-cap grasp remained stable through the first rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube is retained tip-down, though residual tilt is uncertain; rack remains empty. Check: Rotation landed exactly and retention persisted, but the head projection does not prove vertical alignment. Expect: Carry the tube above the rack's left-central large opening with tip clearance for inspection. Verify: Tube tip should appear above the rack, not touching its plate; inspect tilt and slot alignment before descent. Risk: Estimated slot coordinates and tube tilt could misalign insertion; obtain a better view before contact. Lesson: Retention survived both rotation stages; upright alignment still needs checking.",
+      "targets": {
+        "left_x": -0.033,
+        "left_y": 0.075,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 181,
+        "start": 166
+      },
+      "left_wrist": {
+        "end": 181,
+        "start": 166
+      },
+      "right_wrist": {
+        "end": 181,
+        "start": 166
+      }
+    },
+    "control_end": 169,
+    "control_start": 154,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "State: Tube is retained tip-down, though residual tilt is uncertain; rack remains empty. Check: Rotation landed exactly and retention persisted, but the head projection does not prove vertical alignment. Expect: Carry the tube above the rack's left-central large opening with tip clearance for inspection. Verify: Tube tip should appear above the rack, not touching its plate; inspect tilt and slot alignment before descent. Risk: Estimated slot coordinates and tube tilt could misalign insertion; obtain a better view before contact. Lesson: Retention survived both rotation stages; upright alignment still needs checking.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Held tube is above the rack, but the working hand occludes its tip and slot alignment. No insertion verified. Check: Transport landed accurately and tube remains fixed in the jaws; current views do not resolve tilt or slot position. Expect: Move the idle right wrist closer to obtain a side view of the rack and held tube. Verify: Right camera should reveal tube-to-rack clearance and alignment. Risk: Avoid the held tube and rack by keeping the idle hand to their right and forward; retreat if clearance looks poor. Lesson: The working wrist cannot see the insertion tip while holding this tube.",
+      "targets": {
+        "right_x": 0.13,
+        "right_y": -0.08,
+        "right_z": 0.99
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 211,
+        "start": 182
+      },
+      "left_wrist": {
+        "end": 211,
+        "start": 182
+      },
+      "right_wrist": {
+        "end": 211,
+        "start": 182
+      }
+    },
+    "control_end": 198,
+    "control_start": 169,
+    "feedback": "Accepted: playing 29 waypoints (1.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "State: Held tube is above the rack, but the working hand occludes its tip and slot alignment. No insertion verified. Check: Transport landed accurately and tube remains fixed in the jaws; current views do not resolve tilt or slot position. Expect: Move the idle right wrist closer to obtain a side view of the rack and held tube. Verify: Right camera should reveal tube-to-rack clearance and alignment. Risk: Avoid the held tube and rack by keeping the idle hand to their right and forward; retreat if clearance looks poor. Lesson: The working wrist cannot see the insertion tip while holding this tube.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Idle-camera view reveals the held tube leaning laterally, so upright insertion is not yet ready. Check: Right-hand viewing move landed accurately and exposed a residual tube tilt rather than proving verticality. Expect: A 20-degree roll correction should bring the tube axis closer to vertical while remaining above the rack. Verify: In the right view, cap and lower tube should align more vertically; increased tilt would require reversing the correction. Risk: Rotation moves the free tip sideways; keep clearance and do not descend yet. Lesson: Pitch-only reorientation left a lateral tilt visible from the idle wrist.",
+      "targets": {
+        "left_roll_deg": 20
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 219,
+        "start": 212
+      },
+      "left_wrist": {
+        "end": 219,
+        "start": 212
+      },
+      "right_wrist": {
+        "end": 219,
+        "start": 212
+      }
+    },
+    "control_end": 205,
+    "control_start": 198,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "State: Idle-camera view reveals the held tube leaning laterally, so upright insertion is not yet ready. Check: Right-hand viewing move landed accurately and exposed a residual tube tilt rather than proving verticality. Expect: A 20-degree roll correction should bring the tube axis closer to vertical while remaining above the rack. Verify: In the right view, cap and lower tube should align more vertically; increased tilt would require reversing the correction. Risk: Rotation moves the free tip sideways; keep clearance and do not descend yet. Lesson: Pitch-only reorientation left a lateral tilt visible from the idle wrist.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Roll correction made the tube more upright in the idle view; tip-to-slot alignment remains obscured near the image edge. Check: Left roll landed within 0.1 degree and reduced visible lateral tilt without losing retention. Expect: Aim the idle camera leftward and downward to show the full tube and rack openings. Verify: The tip and candidate slot should become visible together. Risk: Camera-arm rotation could approach the working hand; keep its position fixed and inspect clearance. Lesson: A positive 20-degree roll reduced the lateral tilt for this grasp.",
+      "targets": {
+        "right_pitch_deg": 65,
+        "right_yaw_deg": 30
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 239,
+        "start": 220
+      },
+      "left_wrist": {
+        "end": 239,
+        "start": 220
+      },
+      "right_wrist": {
+        "end": 239,
+        "start": 220
+      }
+    },
+    "control_end": 224,
+    "control_start": 205,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "State: Roll correction made the tube more upright in the idle view; tip-to-slot alignment remains obscured near the image edge. Check: Left roll landed within 0.1 degree and reduced visible lateral tilt without losing retention. Expect: Aim the idle camera leftward and downward to show the full tube and rack openings. Verify: The tip and candidate slot should become visible together. Risk: Camera-arm rotation could approach the working hand; keep its position fixed and inspect clearance. Lesson: A positive 20-degree roll reduced the lateral tilt for this grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Idle wrist now shows an upright retained tube with its tip above the rack; the nearby large rear opening is visible, but precise alignment is not established. Check: Camera rotation landed accurately and resolved the previously hidden tip. Expect: Lower 35 mm through visible free space toward the rack, leaving clearance for fine alignment. Verify: Tip should approach the large opening without touching the plate; its image offset will guide corrections. Risk: The tip may not be centered over the opening; stop above contact rather than force insertion. Lesson: The idle wrist provides the needed tube-tip and slot view.",
+      "targets": {
+        "left_z": 0.905
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 243,
+        "start": 240
+      },
+      "left_wrist": {
+        "end": 243,
+        "start": 240
+      },
+      "right_wrist": {
+        "end": 243,
+        "start": 240
+      }
+    },
+    "control_end": 227,
+    "control_start": 224,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "State: Idle wrist now shows an upright retained tube with its tip above the rack; the nearby large rear opening is visible, but precise alignment is not established. Check: Camera rotation landed accurately and resolved the previously hidden tip. Expect: Lower 35 mm through visible free space toward the rack, leaving clearance for fine alignment. Verify: Tip should approach the large opening without touching the plate; its image offset will guide corrections. Risk: The tip may not be centered over the opening; stop above contact rather than force insertion. Lesson: The idle wrist provides the needed tube-tip and slot view.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Upright tube tip remains above the plate and appears offset right of the selected large opening. Check: Descent ended 2 mm high; tube moved down with the hand and retained its orientation. Expect: Correct the lateral offset while descending only through remaining visible clearance. Verify: Tip should approach the opening center rather than the blue rim. Risk: Perspective can distort the inferred offset; use smaller corrections once the tip is near the plate. Lesson: The first descent exposed a rightward slot-alignment error.",
+      "targets": {
+        "left_x": -0.053,
+        "left_y": 0.07,
+        "left_z": 0.892
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 246,
+        "start": 244
+      },
+      "left_wrist": {
+        "end": 246,
+        "start": 244
+      },
+      "right_wrist": {
+        "end": 246,
+        "start": 244
+      }
+    },
+    "control_end": 229,
+    "control_start": 227,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 16,
+    "public_note": "State: Upright tube tip remains above the plate and appears offset right of the selected large opening. Check: Descent ended 2 mm high; tube moved down with the hand and retained its orientation. Expect: Correct the lateral offset while descending only through remaining visible clearance. Verify: Tip should approach the opening center rather than the blue rim. Risk: Perspective can distort the inferred offset; use smaller corrections once the tip is near the plate. Lesson: The first descent exposed a rightward slot-alignment error.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tip is now nearly above the selected large rear opening, with a visible vertical gap; insertion remains unverified. Check: Correction landed within 2 mm and reduced the image offset without rack contact. Expect: Reduce the remaining gap and make a small leftward alignment correction. Verify: Tip should hover just over the opening, not over blue plate. Risk: Clearance is narrowing; subsequent descent will use millimetre increments. Lesson: Negative-x correction brought this tube toward the selected opening.",
+      "targets": {
+        "left_x": -0.058,
+        "left_z": 0.876
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 249,
+        "start": 247
+      },
+      "left_wrist": {
+        "end": 249,
+        "start": 247
+      },
+      "right_wrist": {
+        "end": 249,
+        "start": 247
+      }
+    },
+    "control_end": 231,
+    "control_start": 229,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "State: Tip is now nearly above the selected large rear opening, with a visible vertical gap; insertion remains unverified. Check: Correction landed within 2 mm and reduced the image offset without rack contact. Expect: Reduce the remaining gap and make a small leftward alignment correction. Verify: Tip should hover just over the opening, not over blue plate. Risk: Clearance is narrowing; subsequent descent will use millimetre increments. Lesson: Negative-x correction brought this tube toward the selected opening.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube is upright above the selected opening; exact tip clearance is uncertain near the gripper occlusion. Check: Last move landed within 1 mm and retained the tube, with no visible rack disturbance. Expect: A 5 mm descent should bring the tip closer to entering the opening. Verify: Tip should track into the hole while the rack remains stationary; lateral deflection or stalled arrival would indicate rim contact. Risk: Possible rim contact; retract slightly and realign if deflection appears. Lesson: Idle-view guidance has improved alignment, but depth still needs incremental verification.",
+      "targets": {
+        "left_z": 0.872
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 251,
+        "start": 250
+      },
+      "left_wrist": {
+        "end": 251,
+        "start": 250
+      },
+      "right_wrist": {
+        "end": 251,
+        "start": 250
+      }
+    },
+    "control_end": 232,
+    "control_start": 231,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "State: Tube is upright above the selected opening; exact tip clearance is uncertain near the gripper occlusion. Check: Last move landed within 1 mm and retained the tube, with no visible rack disturbance. Expect: A 5 mm descent should bring the tip closer to entering the opening. Verify: Tip should track into the hole while the rack remains stationary; lateral deflection or stalled arrival would indicate rim contact. Risk: Possible rim contact; retract slightly and realign if deflection appears. Lesson: Idle-view guidance has improved alignment, but depth still needs incremental verification.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube remains held upright over the rack; required insertion depth and release are unmet. Check: The 5 mm descent landed within 1 mm with no visible deflection or rack motion. Expect: Continue 5 mm downward toward the opening. Verify: Tip should descend along the opening axis without bending or shifting the rack. Risk: Rim contact remains possible; retract and correct laterally if motion stalls or the tube tilts. Lesson: The last small descent showed no visible contact obstruction.",
+      "targets": {
+        "left_z": 0.867
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 253,
+        "start": 252
+      },
+      "left_wrist": {
+        "end": 253,
+        "start": 252
+      },
+      "right_wrist": {
+        "end": 253,
+        "start": 252
+      }
+    },
+    "control_end": 233,
+    "control_start": 232,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "State: Tube remains held upright over the rack; required insertion depth and release are unmet. Check: The 5 mm descent landed within 1 mm with no visible deflection or rack motion. Expect: Continue 5 mm downward toward the opening. Verify: Tip should descend along the opening axis without bending or shifting the rack. Risk: Rim contact remains possible; retract and correct laterally if motion stalls or the tube tilts. Lesson: The last small descent showed no visible contact obstruction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube is not verified inside a slot; a lower gripper edge appears near the rack plate. Check: Last 5 mm descent achieved only about 3 mm and introduced slight angular error, suggesting possible contact rather than free insertion. Expect: Retract about 10 mm to relieve possible rack contact before changing alignment. Verify: Hand should regain the requested height without dragging the rack; tube should remain retained. Risk: Continuing downward could press the rim or gripper against the plate; retract first. Lesson: Increased arrival error near the rack is a cue to stop descent and reassess alignment.",
+      "targets": {
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 255,
+        "start": 254
+      },
+      "left_wrist": {
+        "end": 255,
+        "start": 254
+      },
+      "right_wrist": {
+        "end": 255,
+        "start": 254
+      }
+    },
+    "control_end": 234,
+    "control_start": 233,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "State: Tube is not verified inside a slot; a lower gripper edge appears near the rack plate. Check: Last 5 mm descent achieved only about 3 mm and introduced slight angular error, suggesting possible contact rather than free insertion. Expect: Retract about 10 mm to relieve possible rack contact before changing alignment. Verify: Hand should regain the requested height without dragging the rack; tube should remain retained. Risk: Continuing downward could press the rim or gripper against the plate; retract first. Lesson: Increased arrival error near the rack is a cue to stop descent and reassess alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube is retained above the opening; likely gripper clearance, not insertion depth, limited the last descent. Check: Retraction landed within 1 mm and restored clearance without moving the rack. Expect: A small lateral correction should place the tube's downward projected axis nearer the hole center. Verify: Idle view should show the tube aligned over the opening with the gripper clear; placement remains unverified. Risk: Projection error may persist; inspect before considering a gravity-assisted release. Lesson: Retraction relieved the apparent obstruction, so do not repeat the blocked descent unchanged.",
+      "targets": {
+        "left_x": -0.063,
+        "left_y": 0.068
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 257,
+        "start": 256
+      },
+      "left_wrist": {
+        "end": 257,
+        "start": 256
+      },
+      "right_wrist": {
+        "end": 257,
+        "start": 256
+      }
+    },
+    "control_end": 235,
+    "control_start": 234,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "State: Tube is retained above the opening; likely gripper clearance, not insertion depth, limited the last descent. Check: Retraction landed within 1 mm and restored clearance without moving the rack. Expect: A small lateral correction should place the tube's downward projected axis nearer the hole center. Verify: Idle view should show the tube aligned over the opening with the gripper clear; placement remains unverified. Risk: Projection error may persist; inspect before considering a gravity-assisted release. Lesson: Retraction relieved the apparent obstruction, so do not repeat the blocked descent unchanged.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube is upright above a large opening, with its projected downward path close to the opening center; insertion is still unverified. Check: Small lateral correction landed within 1 mm and improved projected alignment without rack disturbance. Expect: Open the jaws so gravity can seat the tube without driving the low gripper edge into the rack. Verify: Tube should descend into the hole and remain upright at depth after release; falling sideways or resting on the plate would be failure. Risk: Residual alignment error could cause a rim strike; observe the released tube and regrasp if necessary. Lesson: Gripper clearance limited driven descent, motivating a gravity-assisted seating attempt.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 263,
+        "start": 258
+      },
+      "left_wrist": {
+        "end": 263,
+        "start": 258
+      },
+      "right_wrist": {
+        "end": 263,
+        "start": 258
+      }
+    },
+    "control_end": 240,
+    "control_start": 235,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 5 move the gripper, once the arm has arrived.",
+    "policy_step": 22,
+    "public_note": "State: Tube is upright above a large opening, with its projected downward path close to the opening center; insertion is still unverified. Check: Small lateral correction landed within 1 mm and improved projected alignment without rack disturbance. Expect: Open the jaws so gravity can seat the tube without driving the low gripper edge into the rack. Verify: Tube should descend into the hole and remain upright at depth after release; falling sideways or resting on the plate would be failure. Risk: Residual alignment error could cause a rim strike; observe the released tube and regrasp if necessary. Lesson: Gripper clearance limited driven descent, motivating a gravity-assisted seating attempt.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Released tube has shifted and tilted rather than visibly seating upright; correct insertion is unverified. Check: Gripper opened fully, but the tube moved sideways and leaned, contradicting the expected straight drop. Expect: Withdraw the empty hand upward and forward to remove possible jaw interference and reveal the tube's resting state. Verify: Tube should settle independently; an upright tube through a hole would support placement, while lying on the plate would require recovery. Risk: Nearby jaws could catch the leaning tube; retreat away without closing. Lesson: The projected alignment was insufficient for a verified gravity-assisted insertion.",
+      "targets": {
+        "left_y": -0.04,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 274,
+        "start": 264
+      },
+      "left_wrist": {
+        "end": 274,
+        "start": 264
+      },
+      "right_wrist": {
+        "end": 274,
+        "start": 264
+      }
+    },
+    "control_end": 250,
+    "control_start": 240,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "State: Released tube has shifted and tilted rather than visibly seating upright; correct insertion is unverified. Check: Gripper opened fully, but the tube moved sideways and leaned, contradicting the expected straight drop. Expect: Withdraw the empty hand upward and forward to remove possible jaw interference and reveal the tube's resting state. Verify: Tube should settle independently; an upright tube through a hole would support placement, while lying on the plate would require recovery. Risk: Nearby jaws could catch the leaning tube; retreat away without closing. Lesson: The projected alignment was insufficient for a verified gravity-assisted insertion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Released tube now lies horizontally behind the rack; no tube is correctly inserted. Check: Withdrawal landed accurately and revealed failed placement rather than a seated tube. Expect: Reorient the idle right hand toward a downward recovery grasp of the fallen tube near its cap. Verify: A downward wrist view should expose the cap and rack boundary for a new approach. Risk: Rack proximity complicates recovery; keep height until alignment is established. Lesson: The previous release missed the opening and left the tube behind the rack; use a new grasp and approach rather than repeat that drop.",
+      "targets": {
+        "right_pitch_deg": 20,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 302,
+        "start": 275
+      },
+      "left_wrist": {
+        "end": 302,
+        "start": 275
+      },
+      "right_wrist": {
+        "end": 302,
+        "start": 275
+      }
+    },
+    "control_end": 277,
+    "control_start": 250,
+    "feedback": "Accepted: playing 27 waypoints (1.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "State: Released tube now lies horizontally behind the rack; no tube is correctly inserted. Check: Withdrawal landed accurately and revealed failed placement rather than a seated tube. Expect: Reorient the idle right hand toward a downward recovery grasp of the fallen tube near its cap. Verify: A downward wrist view should expose the cap and rack boundary for a new approach. Risk: Rack proximity complicates recovery; keep height until alignment is established. Lesson: The previous release missed the opening and left the tube behind the rack; use a new grasp and approach rather than repeat that drop.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: First tube lies behind the rack; two untouched tubes remain on the table and none is inserted. Check: Right-hand rotation landed exactly; its view shows the central untouched tube more accessible than the fallen tube beside the rack. Expect: Align a downward grasp across the central tube, changing to the less obstructed candidate. Verify: Downward view and jaw orientation should support a near-cap grasp. Risk: Another long-axis misalignment could complicate reorientation; inspect the near-cap alignment before closing. Lesson: The fallen tube's rack-adjacent position makes the central tube a clearer recovery route for useful progress.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_yaw_deg": 35
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 321,
+        "start": 303
+      },
+      "left_wrist": {
+        "end": 321,
+        "start": 303
+      },
+      "right_wrist": {
+        "end": 321,
+        "start": 303
+      }
+    },
+    "control_end": 295,
+    "control_start": 277,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 25,
+    "public_note": "State: First tube lies behind the rack; two untouched tubes remain on the table and none is inserted. Check: Right-hand rotation landed exactly; its view shows the central untouched tube more accessible than the fallen tube beside the rack. Expect: Align a downward grasp across the central tube, changing to the less obstructed candidate. Verify: Downward view and jaw orientation should support a near-cap grasp. Risk: Another long-axis misalignment could complicate reorientation; inspect the near-cap alignment before closing. Lesson: The fallen tube's rack-adjacent position makes the central tube a clearer recovery route for useful progress.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: No tube is inserted; right hand remains above the table at its previous pose. Check: Combined pitch and yaw proposal was rejected as unreachable, so no motion or new object evidence occurred. Expect: Complete only the downward pitch change, postponing jaw yaw until after repositioning. Verify: Measured pitch should approach zero with objects unchanged. Risk: Planner may still reject this configuration; move nearer the central tube before retrying orientation if needed. Lesson: The combined right-hand orientation change was not reachable from this pose; separate it.",
+      "targets": {
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 321,
+        "start": 303
+      },
+      "left_wrist": {
+        "end": 321,
+        "start": 303
+      },
+      "right_wrist": {
+        "end": 321,
+        "start": 303
+      }
+    },
+    "control_end": 295,
+    "control_start": 277,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 25,
+    "public_note": "State: No tube is inserted; right hand remains above the table at its previous pose. Check: Combined pitch and yaw proposal was rejected as unreachable, so no motion or new object evidence occurred. Expect: Complete only the downward pitch change, postponing jaw yaw until after repositioning. Verify: Measured pitch should approach zero with objects unchanged. Risk: Planner may still reject this configuration; move nearer the central tube before retrying orientation if needed. Lesson: The combined right-hand orientation change was not reachable from this pose; separate it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right hand is still empty; no tube is inserted. Check: Pitch-only change was also refused and neither arm moved. Expect: Reposition closer to the accessible central tube at the existing orientation, reducing the reach before reorientation. Verify: Hand should arrive above the central tube with clearance and a closer wrist view. Risk: Estimated tube location may be offset; do not close or descend to contact yet. Lesson: At the previous high pose, downward right-hand orientation was unreachable even when split; change position first.",
+      "targets": {
+        "right_x": 0.09,
+        "right_y": -0.17,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 321,
+        "start": 303
+      },
+      "left_wrist": {
+        "end": 321,
+        "start": 303
+      },
+      "right_wrist": {
+        "end": 321,
+        "start": 303
+      }
+    },
+    "control_end": 295,
+    "control_start": 277,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "State: Right hand is still empty; no tube is inserted. Check: Pitch-only change was also refused and neither arm moved. Expect: Reposition closer to the accessible central tube at the existing orientation, reducing the reach before reorientation. Verify: Hand should arrive above the central tube with clearance and a closer wrist view. Risk: Estimated tube location may be offset; do not close or descend to contact yet. Lesson: At the previous high pose, downward right-hand orientation was unreachable even when split; change position first.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right hand is above the central tube with open jaws; all insertion goals remain unmet. Check: Repositioning landed exactly and provided a clear near-cap view without moving the tube. Expect: Reattempt the downward, cross-tube orientation from this lower, nearer pose. Verify: Orientation should execute and show the tube axis aligned between jaws. Risk: Reachability is not guaranteed; if refused, use a smaller yaw change at this new position. Lesson: Translating first succeeded where orientation at the previous high pose failed.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_yaw_deg": 35
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 337,
+        "start": 322
+      },
+      "left_wrist": {
+        "end": 337,
+        "start": 322
+      },
+      "right_wrist": {
+        "end": 337,
+        "start": 322
+      }
+    },
+    "control_end": 310,
+    "control_start": 295,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "State: Right hand is above the central tube with open jaws; all insertion goals remain unmet. Check: Repositioning landed exactly and provided a clear near-cap view without moving the tube. Expect: Reattempt the downward, cross-tube orientation from this lower, nearer pose. Verify: Orientation should execute and show the tube axis aligned between jaws. Risk: Reachability is not guaranteed; if refused, use a smaller yaw change at this new position. Lesson: Translating first succeeded where orientation at the previous high pose failed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Central tube is visible near the right jaw gap but its near-cap region lies forward and right of center. Check: Orientation now executed exactly from the nearer pose; tube remains stationary. Expect: Approach the near-cap body with clearance and improve centering. Verify: Neck should lie between jaws in the closer view; no tube movement should occur yet. Risk: RGB offset estimate may be imperfect; use small corrections near contact. Lesson: Repositioning enabled the previously refused orientation.",
+      "targets": {
+        "right_x": 0.087,
+        "right_y": -0.137,
+        "right_z": 0.806
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 341,
+        "start": 338
+      },
+      "left_wrist": {
+        "end": 341,
+        "start": 338
+      },
+      "right_wrist": {
+        "end": 341,
+        "start": 338
+      }
+    },
+    "control_end": 313,
+    "control_start": 310,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "State: Central tube is visible near the right jaw gap but its near-cap region lies forward and right of center. Check: Orientation now executed exactly from the nearer pose; tube remains stationary. Expect: Approach the near-cap body with clearance and improve centering. Verify: Neck should lie between jaws in the closer view; no tube movement should occur yet. Risk: RGB offset estimate may be imperfect; use small corrections near contact. Lesson: Repositioning enabled the previously refused orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Near-cap body is slightly right of the right jaw center; no grasp or insertion yet. Check: Approach landed 2 mm high and brought the neck into the gap without moving the tube. Expect: Improve transverse centering and descend to just above grasp height. Verify: Neck should align centrally with open jaws and remain stationary. Risk: Approaching tube contact; follow with only millimetre corrections. Lesson: The central tube is accessible from this downward pose.",
+      "targets": {
+        "right_x": 0.093,
+        "right_y": -0.134,
+        "right_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 344,
+        "start": 342
+      },
+      "left_wrist": {
+        "end": 344,
+        "start": 342
+      },
+      "right_wrist": {
+        "end": 344,
+        "start": 342
+      }
+    },
+    "control_end": 315,
+    "control_start": 313,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "State: Near-cap body is slightly right of the right jaw center; no grasp or insertion yet. Check: Approach landed 2 mm high and brought the neck into the gap without moving the tube. Expect: Improve transverse centering and descend to just above grasp height. Verify: Neck should align centrally with open jaws and remain stationary. Risk: Approaching tube contact; follow with only millimetre corrections. Lesson: The central tube is accessible from this downward pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube is centered between open jaws near the cap; retention and insertion remain unmet. Check: Last move landed within 1 mm with no tube displacement. Expect: A small axial adjustment and 5 mm descent will place contact just below the cap. Verify: Jaws should flank the body rather than the cap edge. Risk: Closing on the cap edge may slip; inspect before closure. Lesson: Small transverse corrections centered this tube reliably.",
+      "targets": {
+        "right_x": 0.095,
+        "right_y": -0.138,
+        "right_z": 0.786
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 346,
+        "start": 345
+      },
+      "left_wrist": {
+        "end": 346,
+        "start": 345
+      },
+      "right_wrist": {
+        "end": 346,
+        "start": 345
+      }
+    },
+    "control_end": 316,
+    "control_start": 315,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "State: Tube is centered between open jaws near the cap; retention and insertion remain unmet. Check: Last move landed within 1 mm with no tube displacement. Expect: A small axial adjustment and 5 mm descent will place contact just below the cap. Verify: Jaws should flank the body rather than the cap edge. Risk: Closing on the cap edge may slip; inspect before closure. Lesson: Small transverse corrections centered this tube reliably.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Central tube body is centered near the cap; no retained grasp or correct insertion yet. Check: Millimetre adjustment landed within 1 mm and left the tube stationary. Expect: Descend 5 mm and close around the body, leaving the tip free. Verify: Jaws should contact the body; retention must then be checked by lifting. Risk: Cap-edge contact or a high grasp may slip; reopen if the tube is displaced. Lesson: The previous successful table grasp used z about 0.781, applicable to this similar tube.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.781
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 354,
+        "start": 347
+      },
+      "left_wrist": {
+        "end": 354,
+        "start": 347
+      },
+      "right_wrist": {
+        "end": 354,
+        "start": 347
+      }
+    },
+    "control_end": 323,
+    "control_start": 316,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "State: Central tube body is centered near the cap; no retained grasp or correct insertion yet. Check: Millimetre adjustment landed within 1 mm and left the tube stationary. Expect: Descend 5 mm and close around the body, leaving the tip free. Verify: Jaws should contact the body; retention must then be checked by lifting. Risk: Cap-edge contact or a high grasp may slip; reopen if the tube is displaced. Lesson: The previous successful table grasp used z about 0.781, applicable to this similar tube.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right jaws closed around the central tube near its cap, stopping at 0.29; retention remains untested. Check: Closure landed accurately and the tube is visibly between the jaws. Expect: Lift to test retention and create rotation clearance. Verify: Tube should rise with the hand and stay fixed relative to the jaws. Risk: Near-cap grasp may slip; lower and regrasp if relative motion occurs. Lesson: Closure alone is not retention evidence; the lift is the next test.",
+      "targets": {
+        "right_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 366,
+        "start": 355
+      },
+      "left_wrist": {
+        "end": 366,
+        "start": 355
+      },
+      "right_wrist": {
+        "end": 366,
+        "start": 355
+      }
+    },
+    "control_end": 334,
+    "control_start": 323,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "State: Right jaws closed around the central tube near its cap, stopping at 0.29; retention remains untested. Check: Closure landed accurately and the tube is visibly between the jaws. Expect: Lift to test retention and create rotation clearance. Verify: Tube should rise with the hand and stay fixed relative to the jaws. Risk: Near-cap grasp may slip; lower and regrasp if relative motion occurs. Lesson: Closure alone is not retention evidence; the lift is the next test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Central tube rose with the right hand and remains retained; no insertion yet. Check: Lift landed accurately with fixed tube-to-jaw relation. Expect: Begin rotating its tip downward while compensating part of the diagonal grasp angle. Verify: Tube should rotate toward vertical without slipping or nearing the table. Risk: Combined rotation could be refused or leave tilt; split further if needed and inspect orientation. Lesson: This near-cap grasp retained the tube through a 129 mm lift.",
+      "targets": {
+        "right_pitch_deg": 45,
+        "right_roll_deg": -17
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 391,
+        "start": 367
+      },
+      "left_wrist": {
+        "end": 391,
+        "start": 367
+      },
+      "right_wrist": {
+        "end": 391,
+        "start": 367
+      }
+    },
+    "control_end": 358,
+    "control_start": 334,
+    "feedback": "Accepted: playing 24 waypoints (1.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "State: Central tube rose with the right hand and remains retained; no insertion yet. Check: Lift landed accurately with fixed tube-to-jaw relation. Expect: Begin rotating its tip downward while compensating part of the diagonal grasp angle. Verify: Tube should rotate toward vertical without slipping or nearing the table. Risk: Combined rotation could be refused or leave tilt; split further if needed and inspect orientation. Lesson: This near-cap grasp retained the tube through a 129 mm lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Central tube is retained and partly tipped downward; no tube is inserted. Check: First compensated rotation landed accurately with stable retention. Expect: Finish making the tube upright while compensating its diagonal pickup orientation. Verify: Head or idle view should show a tip-down vertical tube; residual tilt will require correction before descent. Risk: Rotation consumes clearance and may be unreachable; inspect feedback before transport. Lesson: Compensated rotation preserved this grasp through the first stage.",
+      "targets": {
+        "right_pitch_deg": 90,
+        "right_roll_deg": -35
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 426,
+        "start": 392
+      },
+      "left_wrist": {
+        "end": 426,
+        "start": 392
+      },
+      "right_wrist": {
+        "end": 426,
+        "start": 392
+      }
+    },
+    "control_end": 392,
+    "control_start": 358,
+    "feedback": "Accepted: playing 34 waypoints (1.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "State: Central tube is retained and partly tipped downward; no tube is inserted. Check: First compensated rotation landed accurately with stable retention. Expect: Finish making the tube upright while compensating its diagonal pickup orientation. Verify: Head or idle view should show a tip-down vertical tube; residual tilt will require correction before descent. Risk: Rotation consumes clearance and may be unreachable; inspect feedback before transport. Lesson: Compensated rotation preserved this grasp through the first stage.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right-held tube is tip-down; rack remains empty and the first tube lies behind it. Check: Rotation landed accurately with retention, though final verticality needs a clearer placement view. Expect: Approach above a front-central large opening, using a more forward rack estimate than the failed rearward release. Verify: Idle camera should show the tube over the rack rather than behind its back edge. Risk: Slot coordinates remain RGB estimates; stop above the plate and refine from the visible tip. Lesson: The first released tube ended behind the rack, so that prior placement's forward-back estimate was wrong.",
+      "targets": {
+        "right_x": 0.03,
+        "right_y": -0.035,
+        "right_z": 0.925
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 437,
+        "start": 427
+      },
+      "left_wrist": {
+        "end": 437,
+        "start": 427
+      },
+      "right_wrist": {
+        "end": 437,
+        "start": 427
+      }
+    },
+    "control_end": 402,
+    "control_start": 392,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "State: Right-held tube is tip-down; rack remains empty and the first tube lies behind it. Check: Rotation landed accurately with retention, though final verticality needs a clearer placement view. Expect: Approach above a front-central large opening, using a more forward rack estimate than the failed rearward release. Verify: Idle camera should show the tube over the rack rather than behind its back edge. Risk: Slot coordinates remain RGB estimates; stop above the plate and refine from the visible tip. Lesson: The first released tube ended behind the rack, so that prior placement's forward-back estimate was wrong.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right-held tube is above the rack; its tip is visible from the left wrist but the tilted image complicates alignment. Check: Transport landed accurately and moved the tube over the plate rather than behind it. Expect: Level and tilt down the idle left camera to compare tube axis and slot center clearly. Verify: Tube tip and surrounding openings should be visible in a less rotated view. Risk: Idle hand is near the working hand; hold position and inspect for interference. Lesson: The corrected forward-back approach now places the tube visibly over the rack.",
+      "targets": {
+        "left_pitch_deg": 65,
+        "left_roll_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 458,
+        "start": 438
+      },
+      "left_wrist": {
+        "end": 458,
+        "start": 438
+      },
+      "right_wrist": {
+        "end": 458,
+        "start": 438
+      }
+    },
+    "control_end": 422,
+    "control_start": 402,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "State: Right-held tube is above the rack; its tip is visible from the left wrist but the tilted image complicates alignment. Check: Transport landed accurately and moved the tube over the plate rather than behind it. Expect: Level and tilt down the idle left camera to compare tube axis and slot center clearly. Verify: Tube tip and surrounding openings should be visible in a less rotated view. Risk: Idle hand is near the working hand; hold position and inspect for interference. Lesson: The corrected forward-back approach now places the tube visibly over the rack.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Leveled idle view reveals the right-held tube is strongly tilted, not upright; insertion must wait. Check: Camera move landed accurately and contradicted the assumed compensated orientation. Expect: Remove the negative roll compensation and observe how the tube axis changes. Verify: Tube should move toward vertical in the fixed left view; otherwise a different rotation is needed. Risk: Free tip sweeps near the rack, so keep height and stop if contact appears. Lesson: The negative-roll compensation was not valid for this grasp; direct side-view evidence overrides the assumed orientation.",
+      "targets": {
+        "right_roll_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 472,
+        "start": 459
+      },
+      "left_wrist": {
+        "end": 472,
+        "start": 459
+      },
+      "right_wrist": {
+        "end": 472,
+        "start": 459
+      }
+    },
+    "control_end": 435,
+    "control_start": 422,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 36,
+    "public_note": "State: Leveled idle view reveals the right-held tube is strongly tilted, not upright; insertion must wait. Check: Camera move landed accurately and contradicted the assumed compensated orientation. Expect: Remove the negative roll compensation and observe how the tube axis changes. Verify: Tube should move toward vertical in the fixed left view; otherwise a different rotation is needed. Risk: Free tip sweeps near the rack, so keep height and stop if contact appears. Lesson: The negative-roll compensation was not valid for this grasp; direct side-view evidence overrides the assumed orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube remains retained but tilted; no correct insertion. Check: Removing negative roll moved its tip downward in the fixed idle view, confirming the useful correction direction. Expect: Continue positive roll to bring the tube upright above the rack. Verify: Cap and tip should align with the vertical direction of rack posts in the idle view. Risk: Tip approaches the plate as it rotates; stop if contact or deflection appears. Lesson: Positive roll, not negative roll, moves this grasp toward tip-down verticality.",
+      "targets": {
+        "right_roll_deg": 35
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 486,
+        "start": 473
+      },
+      "left_wrist": {
+        "end": 486,
+        "start": 473
+      },
+      "right_wrist": {
+        "end": 486,
+        "start": 473
+      }
+    },
+    "control_end": 448,
+    "control_start": 435,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "State: Tube remains retained but tilted; no correct insertion. Check: Removing negative roll moved its tip downward in the fixed idle view, confirming the useful correction direction. Expect: Continue positive roll to bring the tube upright above the rack. Verify: Cap and tip should align with the vertical direction of rack posts in the idle view. Risk: Tip approaches the plate as it rotates; stop if contact or deflection appears. Lesson: Positive roll, not negative roll, moves this grasp toward tip-down verticality.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube remains retained above the rack; strong close-camera perspective leaves exact verticality uncertain. Check: Positive roll moved the tip farther downward, with no observed slip or rack motion. Expect: Lower through the remaining visible gap to improve the tip-to-hole comparison. Verify: Tip should approach a rack opening without lateral deflection; arrival error or plate contact would require retraction. Risk: Alignment remains uncertain, so stop before deeper insertion and use millimetre corrections next. Lesson: Close off-axis wrist perspective can exaggerate apparent tube lean; contact-free descent can provide more alignment evidence.",
+      "targets": {
+        "right_z": 0.895
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 490,
+        "start": 487
+      },
+      "left_wrist": {
+        "end": 490,
+        "start": 487
+      },
+      "right_wrist": {
+        "end": 490,
+        "start": 487
+      }
+    },
+    "control_end": 451,
+    "control_start": 448,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "State: Tube remains retained above the rack; strong close-camera perspective leaves exact verticality uncertain. Check: Positive roll moved the tip farther downward, with no observed slip or rack motion. Expect: Lower through the remaining visible gap to improve the tip-to-hole comparison. Verify: Tip should approach a rack opening without lateral deflection; arrival error or plate contact would require retraction. Risk: Alignment remains uncertain, so stop before deeper insertion and use millimetre corrections next. Lesson: Close off-axis wrist perspective can exaggerate apparent tube lean; contact-free descent can provide more alignment evidence.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube tip appears over the rack's front edge rather than centered in a large hole; insertion is unverified. Check: Descent ended 2 mm high with slight angular error, so possible contact cannot be excluded. Expect: Relieve contact by lifting 5 mm while shifting 5 mm toward the rack interior. Verify: Tip should clear the edge and move toward the nearest large opening without dragging the rack. Risk: Tip may scrape the edge; stop descent and continue alignment only in clearance. Lesson: This approach is too far forward at the visible tip, requiring an inward correction rather than more downward motion.",
+      "targets": {
+        "right_y": -0.03,
+        "right_z": 0.902
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 492,
+        "start": 491
+      },
+      "left_wrist": {
+        "end": 492,
+        "start": 491
+      },
+      "right_wrist": {
+        "end": 492,
+        "start": 491
+      }
+    },
+    "control_end": 452,
+    "control_start": 451,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "State: Tube tip appears over the rack's front edge rather than centered in a large hole; insertion is unverified. Check: Descent ended 2 mm high with slight angular error, so possible contact cannot be excluded. Expect: Relieve contact by lifting 5 mm while shifting 5 mm toward the rack interior. Verify: Tip should clear the edge and move toward the nearest large opening without dragging the rack. Risk: Tip may scrape the edge; stop descent and continue alignment only in clearance. Lesson: This approach is too far forward at the visible tip, requiring an inward correction rather than more downward motion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tip remains near the front rim; required upright seating and release are unverified. Check: Retraction and inward shift landed within 1 mm, with no visible rack motion. Expect: Shift another 5 mm inward at fixed height to approach the large opening. Verify: Tip should move away from the front edge toward the hole; rack should remain fixed. Risk: Possible edge contact; keep height and reverse if the tube deflects. Lesson: The small inward correction improved clearance without disturbing the rack.",
+      "targets": {
+        "right_y": -0.025
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 494,
+        "start": 493
+      },
+      "left_wrist": {
+        "end": 494,
+        "start": 493
+      },
+      "right_wrist": {
+        "end": 494,
+        "start": 493
+      }
+    },
+    "control_end": 453,
+    "control_start": 452,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 40,
+    "public_note": "State: Tip remains near the front rim; required upright seating and release are unverified. Check: Retraction and inward shift landed within 1 mm, with no visible rack motion. Expect: Shift another 5 mm inward at fixed height to approach the large opening. Verify: Tip should move away from the front edge toward the hole; rack should remain fixed. Risk: Possible edge contact; keep height and reverse if the tube deflects. Lesson: The small inward correction improved clearance without disturbing the rack.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tip is approaching the front-row large opening but remains forward-left of its center in the idle view. Check: The inward 5 mm shift landed within 1 mm and visibly moved the tip inward without rack motion. Expect: Shift slightly right and inward to center the tip over the large hole. Verify: Tip-to-hole offset should shrink in the fixed left view. Risk: Rim contact remains possible; keep height and stop if the tube changes orientation. Lesson: Fixed-camera image motion now provides a consistent direction for small alignment corrections.",
+      "targets": {
+        "right_x": 0.034,
+        "right_y": -0.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 496,
+        "start": 495
+      },
+      "left_wrist": {
+        "end": 496,
+        "start": 495
+      },
+      "right_wrist": {
+        "end": 496,
+        "start": 495
+      }
+    },
+    "control_end": 454,
+    "control_start": 453,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 41,
+    "public_note": "State: Tip is approaching the front-row large opening but remains forward-left of its center in the idle view. Check: The inward 5 mm shift landed within 1 mm and visibly moved the tip inward without rack motion. Expect: Shift slightly right and inward to center the tip over the large hole. Verify: Tip-to-hole offset should shrink in the fixed left view. Risk: Rim contact remains possible; keep height and stop if the tube changes orientation. Lesson: Fixed-camera image motion now provides a consistent direction for small alignment corrections.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tip overlaps the front edge of the selected large opening; seating is not yet verified. Check: Previous small correction landed within 1 mm and reduced the visible offset. Expect: Move a few millimetres farther inward and right to center over the hole before descent. Verify: Tip should cover the opening center rather than its blue rim. Risk: The tube body is wider than its tip; maintain clearance and watch for rim deflection. Lesson: Combined positive-x and positive-y corrections are converging on this opening.",
+      "targets": {
+        "right_x": 0.037,
+        "right_y": -0.015
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 498,
+        "start": 497
+      },
+      "left_wrist": {
+        "end": 498,
+        "start": 497
+      },
+      "right_wrist": {
+        "end": 498,
+        "start": 497
+      }
+    },
+    "control_end": 455,
+    "control_start": 454,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "State: Tip overlaps the front edge of the selected large opening; seating is not yet verified. Check: Previous small correction landed within 1 mm and reduced the visible offset. Expect: Move a few millimetres farther inward and right to center over the hole before descent. Verify: Tip should cover the opening center rather than its blue rim. Risk: The tube body is wider than its tip; maintain clearance and watch for rim deflection. Lesson: Combined positive-x and positive-y corrections are converging on this opening.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tip now visually overlaps the selected large opening; depth, uprightness and release remain unverified. Check: Fine correction landed within 1 mm and brought the tip toward the hole center. Expect: A 5 mm descent should begin entry without disturbing the rack. Verify: Tip should pass below the rim with stable tube orientation; stalling or sideways motion would indicate misalignment. Risk: Body may catch the rim despite tip overlap; retract if contact blocks descent. Lesson: Fixed idle-camera guidance has centered the visible tip sufficiently for a small entry test.",
+      "targets": {
+        "right_z": 0.896
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 500,
+        "start": 499
+      },
+      "left_wrist": {
+        "end": 500,
+        "start": 499
+      },
+      "right_wrist": {
+        "end": 500,
+        "start": 499
+      }
+    },
+    "control_end": 456,
+    "control_start": 455,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 43,
+    "public_note": "State: Tip now visually overlaps the selected large opening; depth, uprightness and release remain unverified. Check: Fine correction landed within 1 mm and brought the tip toward the hole center. Expect: A 5 mm descent should begin entry without disturbing the rack. Verify: Tip should pass below the rim with stable tube orientation; stalling or sideways motion would indicate misalignment. Risk: Body may catch the rim despite tip overlap; retract if contact blocks descent. Lesson: Fixed idle-camera guidance has centered the visible tip sufficiently for a small entry test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tip overlaps the opening, but entry depth and upright seating remain uncertain. Check: The 5 mm entry test landed within 1 mm with no visible rack movement or tube deflection. Expect: Lower another 5 mm along the same alignment. Verify: More of the tip should pass below the rim without growing arrival error. Risk: Rim interference may emerge as the wider body enters; retract if it tilts or stalls. Lesson: The first small entry test showed no obvious obstruction.",
+      "targets": {
+        "right_z": 0.891
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 502,
+        "start": 501
+      },
+      "left_wrist": {
+        "end": 502,
+        "start": 501
+      },
+      "right_wrist": {
+        "end": 502,
+        "start": 501
+      }
+    },
+    "control_end": 457,
+    "control_start": 456,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 44,
+    "public_note": "State: Tip overlaps the opening, but entry depth and upright seating remain uncertain. Check: The 5 mm entry test landed within 1 mm with no visible rack movement or tube deflection. Expect: Lower another 5 mm along the same alignment. Verify: More of the tip should pass below the rim without growing arrival error. Risk: Rim interference may emerge as the wider body enters; retract if it tilts or stalls. Lesson: The first small entry test showed no obvious obstruction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube remains held over the same opening; required depth and released stability are not yet established. Check: Last descent landed within 1 mm with no clear rim deflection; tip is partly hidden by the opening and tube body. Expect: Lower 5 mm farther to test continued entry. Verify: Hand and tube should descend together while the rack stays fixed; increased error or tilt would contradict free entry. Risk: Hidden rim contact remains possible; stop at the first evidence of obstruction. Lesson: Small descents have executed accurately, but that alone does not prove insertion.",
+      "targets": {
+        "right_z": 0.887
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 504,
+        "start": 503
+      },
+      "left_wrist": {
+        "end": 504,
+        "start": 503
+      },
+      "right_wrist": {
+        "end": 504,
+        "start": 503
+      }
+    },
+    "control_end": 458,
+    "control_start": 457,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "State: Tube remains held over the same opening; required depth and released stability are not yet established. Check: Last descent landed within 1 mm with no clear rim deflection; tip is partly hidden by the opening and tube body. Expect: Lower 5 mm farther to test continued entry. Verify: Hand and tube should descend together while the rack stays fixed; increased error or tilt would contradict free entry. Risk: Hidden rim contact remains possible; stop at the first evidence of obstruction. Lesson: Small descents have executed accurately, but that alone does not prove insertion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Tube tip appears within the selected opening, but full-depth upright seating is not established and the gripper still holds it. Check: Last descent landed within 1 mm; slight tube-to-jaw change suggests contact or settling, so further driven descent is not justified. Expect: Open the jaws to let the rack guide the tube into its resting position. Verify: Tube must remain upright through the opening at depth after release; leaning across the plate would disprove correct insertion. Risk: Residual tilt could make it fall sideways; inspect immediately and retain failure uncertainty if it does. Lesson: Accurate hand descent did not establish seating; released stability is the necessary next test.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 509,
+        "start": 505
+      },
+      "left_wrist": {
+        "end": 509,
+        "start": 505
+      },
+      "right_wrist": {
+        "end": 509,
+        "start": 505
+      }
+    },
+    "control_end": 462,
+    "control_start": 458,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 46,
+    "public_note": "State: Tube tip appears within the selected opening, but full-depth upright seating is not established and the gripper still holds it. Check: Last descent landed within 1 mm; slight tube-to-jaw change suggests contact or settling, so further driven descent is not justified. Expect: Open the jaws to let the rack guide the tube into its resting position. Verify: Tube must remain upright through the opening at depth after release; leaning across the plate would disprove correct insertion. Risk: Residual tilt could make it fall sideways; inspect immediately and retain failure uncertainty if it does. Lesson: Accurate hand descent did not establish seating; released stability is the necessary next test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Released second tube has tipped across the rack rather than remaining upright; neither attempted insertion is verified. Check: Jaws opened fully, but the tube rotated sideways, contradicting stable seating. Expect: Withdraw the empty right hand to clear the tube and reveal its settled position. Verify: A tube lying across the plate confirms failed insertion; any unexpected upright settling would need depth inspection. Risk: Open jaws may still touch the tube, so retreat upward and away without closing. Lesson: Visible tip overlap from one close view did not establish a vertical insertion path; both release attempts failed to seat upright.",
+      "targets": {
+        "right_y": -0.14,
+        "right_z": 0.97
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 524,
+        "start": 510
+      },
+      "left_wrist": {
+        "end": 524,
+        "start": 510
+      },
+      "right_wrist": {
+        "end": 524,
+        "start": 510
+      }
+    },
+    "control_end": 476,
+    "control_start": 462,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "State: Released second tube has tipped across the rack rather than remaining upright; neither attempted insertion is verified. Check: Jaws opened fully, but the tube rotated sideways, contradicting stable seating. Expect: Withdraw the empty right hand to clear the tube and reveal its settled position. Verify: A tube lying across the plate confirms failed insertion; any unexpected upright settling would need depth inspection. Risk: Open jaws may still touch the tube, so retreat upward and away without closing. Lesson: Visible tip overlap from one close view did not establish a vertical insertion path; both release attempts failed to seat upright.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "For these tubes, verify the complete tube axis and its intersection with the rack plane from a sufficiently distant idle-camera view before descending or releasing. Close-view tip overlap and assumed roll compensation were unreliable.",
+      "reason": "State: Rack is empty; one tube lies behind it, one in front, and the third remains to the right. Both grippers are open. Check: Withdrawal landed accurately and revealed the second tube outside the rack, confirming failed seating. Expect: End this unsuccessful episode; only 24 environment steps remain after two failed placements. Verify: All three insertions and return to origin remain unmet; no further observation will follow. Risk: Another rushed pickup would not resolve the demonstrated orientation and alignment errors within the remaining budget. Lesson: Retained grasps and accurate hand motion did not establish upright slot alignment; both releases tipped the tubes outside the rack."
+    },
+    "cameras": {
+      "head": {
+        "end": 526,
+        "start": 525
+      },
+      "left_wrist": {
+        "end": 526,
+        "start": 525
+      },
+      "right_wrist": {
+        "end": 526,
+        "start": 525
+      }
+    },
+    "control_end": 477,
+    "control_start": 476,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 48,
+    "public_note": "State: Rack is empty; one tube lies behind it, one in front, and the third remains to the right. Both grippers are open. Check: Withdrawal landed accurately and revealed the second tube outside the rack, confirming failed seating. Expect: End this unsuccessful episode; only 24 environment steps remain after two failed placements. Verify: All three insertions and return to origin remain unmet; no further observation will follow. Risk: Another rushed pickup would not resolve the demonstrated orientation and alignment errors within the remaining budget. Lesson: Retained grasps and accurate hand motion did not establish upright slot alignment; both releases tipped the tubes outside the rack.",
+    "tool": "give_up"
+  }
+]

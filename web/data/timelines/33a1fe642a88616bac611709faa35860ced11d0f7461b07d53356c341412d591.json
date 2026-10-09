@@ -1,0 +1,2504 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Two cars, two watches and two wooden lions appear outside three empty baskets; all sorting and return remain. Check: No previous action. Expect: Begin turning left tool downward for picking the yellow car. Verify: Tool pitch should reach 45 degrees without disturbing objects. Risk: Rotation near tabletop objects; stop or lift if contact appears. Lesson: None yet.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 17,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 17,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 17,
+        "start": 1
+      }
+    },
+    "control_end": 16,
+    "control_start": 0,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 0,
+    "public_note": "State: Two cars, two watches and two wooden lions appear outside three empty baskets; all sorting and return remain. Check: No previous action. Expect: Begin turning left tool downward for picking the yellow car. Verify: Tool pitch should reach 45 degrees without disturbing objects. Risk: Rotation near tabletop objects; stop or lift if contact appears. Lesson: None yet.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow car is the first target; no objects sorted. Check: Left rotation landed exactly; objects stayed put. Expect: Downward tool above yellow car provides an alignment view. Verify: Wrist image should show car relative to jaw centre. Risk: Position estimate is approximate; descend only after checking alignment. Lesson: Initial rotation was accurately executed.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": -0.23,
+        "left_y": -0.18
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 36,
+        "start": 18
+      },
+      "left_wrist": {
+        "end": 36,
+        "start": 18
+      },
+      "right_wrist": {
+        "end": 36,
+        "start": 18
+      }
+    },
+    "control_end": 34,
+    "control_start": 16,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "State: Yellow car is the first target; no objects sorted. Check: Left rotation landed exactly; objects stayed put. Expect: Downward tool above yellow car provides an alignment view. Verify: Wrist image should show car relative to jaw centre. Risk: Position estimate is approximate; descend only after checking alignment. Lesson: Initial rotation was accurately executed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Car remains on table, ahead and slightly left in wrist view; sorting unstarted. Check: Downward approach landed accurately with no object movement. Expect: Move closer above the yellow car for precise alignment. Verify: Car should approach the jaw gap centre while remaining untouched. Risk: Estimated lateral alignment could be wrong; keep clearance and correct from new view. Lesson: Wrist view exposes alignment better than the head view.",
+      "targets": {
+        "left_x": -0.25,
+        "left_y": -0.1,
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 43,
+        "start": 37
+      },
+      "left_wrist": {
+        "end": 43,
+        "start": 37
+      },
+      "right_wrist": {
+        "end": 43,
+        "start": 37
+      }
+    },
+    "control_end": 40,
+    "control_start": 34,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "State: Car remains on table, ahead and slightly left in wrist view; sorting unstarted. Check: Downward approach landed accurately with no object movement. Expect: Move closer above the yellow car for precise alignment. Verify: Car should approach the jaw gap centre while remaining untouched. Risk: Estimated lateral alignment could be wrong; keep clearance and correct from new view. Lesson: Wrist view exposes alignment better than the head view.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow car is below wrist-image centre; lion remains nearby and must not be mixed into car basket. Check: Robot landed within 1 mm; closer image indicates the forward move overshot car alignment. Expect: Backward correction and modest descent centre car between open jaws. Verify: Car roof should lie centrally in gap, with lion clear. Risk: Descending off-centre can push car; stop and realign if it shifts. Lesson: The previous forward shift was too large for this car.",
+      "targets": {
+        "left_y": -0.135,
+        "left_z": 0.815
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 49,
+        "start": 44
+      },
+      "left_wrist": {
+        "end": 49,
+        "start": 44
+      },
+      "right_wrist": {
+        "end": 49,
+        "start": 44
+      }
+    },
+    "control_end": 45,
+    "control_start": 40,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "State: Yellow car is below wrist-image centre; lion remains nearby and must not be mixed into car basket. Check: Robot landed within 1 mm; closer image indicates the forward move overshot car alignment. Expect: Backward correction and modest descent centre car between open jaws. Verify: Car roof should lie centrally in gap, with lion clear. Risk: Descending off-centre can push car; stop and realign if it shifts. Lesson: The previous forward shift was too large for this car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Car remains free on table, roughly centred laterally; grasp alignment is still uncertain. Check: Correction executed accurately; car remains below optical centre and unchanged in head view. Expect: Further backward approach positions jaws around car rather than nearby lion. Verify: Head and wrist views should show jaws straddling car. Risk: Wrong camera offset interpretation; use contact-free approach before closure. Lesson: Optical centre alone is not a calibrated grasp point.",
+      "targets": {
+        "left_y": -0.17,
+        "left_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 54,
+        "start": 50
+      },
+      "left_wrist": {
+        "end": 54,
+        "start": 50
+      },
+      "right_wrist": {
+        "end": 54,
+        "start": 50
+      }
+    },
+    "control_end": 49,
+    "control_start": 45,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "State: Car remains free on table, roughly centred laterally; grasp alignment is still uncertain. Check: Correction executed accurately; car remains below optical centre and unchanged in head view. Expect: Further backward approach positions jaws around car rather than nearby lion. Verify: Head and wrist views should show jaws straddling car. Risk: Wrong camera offset interpretation; use contact-free approach before closure. Lesson: Optical centre alone is not a calibrated grasp point.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow car is between open jaws in wrist view; not yet held. Check: Backward correction brought car toward jaw centre with no visible displacement. Expect: Lower jaws to car body height. Verify: Jaws should flank body without pushing it. Risk: Table or roof contact; use small corrections after this approach. Lesson: Backward motion improved alignment.",
+      "targets": {
+        "left_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 57,
+        "start": 55
+      },
+      "left_wrist": {
+        "end": 57,
+        "start": 55
+      },
+      "right_wrist": {
+        "end": 57,
+        "start": 55
+      }
+    },
+    "control_end": 51,
+    "control_start": 49,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "State: Yellow car is between open jaws in wrist view; not yet held. Check: Backward correction brought car toward jaw centre with no visible displacement. Expect: Lower jaws to car body height. Verify: Jaws should flank body without pushing it. Risk: Table or roof contact; use small corrections after this approach. Lesson: Backward motion improved alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaws flank yellow car at body height; retention unverified and all baskets still empty. Check: Descent landed within 1 mm without visible car movement. Expect: Closure contacts car sides. Verify: A nonzero jaw gap may indicate contact, but subsequent lift must verify retention. Risk: Jaws may miss longitudinally; reopen and correct if car remains behind. Lesson: Alignment is plausible, not yet validated by a grasp.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 64,
+        "start": 58
+      },
+      "left_wrist": {
+        "end": 64,
+        "start": 58
+      },
+      "right_wrist": {
+        "end": 64,
+        "start": 58
+      }
+    },
+    "control_end": 57,
+    "control_start": 51,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 6,
+    "public_note": "State: Jaws flank yellow car at body height; retention unverified and all baskets still empty. Check: Descent landed within 1 mm without visible car movement. Expect: Closure contacts car sides. Verify: A nonzero jaw gap may indicate contact, but subsequent lift must verify retention. Risk: Jaws may miss longitudinally; reopen and correct if car remains behind. Lesson: Alignment is plausible, not yet validated by a grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaws visibly contact yellow car and closure stopped at 0.41; retained grasp remains unverified. Check: Closure slightly shifted car and established side contact. Expect: Vertical lift carries car clear of table. Verify: Car should rise with jaws and leave its previous tabletop location empty. Risk: Shallow grasp may slip; lower and regrasp if car stays or falls. Lesson: This pose establishes car contact, but contact alone is insufficient.",
+      "targets": {
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 73,
+        "start": 65
+      },
+      "left_wrist": {
+        "end": 73,
+        "start": 65
+      },
+      "right_wrist": {
+        "end": 73,
+        "start": 65
+      }
+    },
+    "control_end": 65,
+    "control_start": 57,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "State: Jaws visibly contact yellow car and closure stopped at 0.41; retained grasp remains unverified. Check: Closure slightly shifted car and established side contact. Expect: Vertical lift carries car clear of table. Verify: Car should rise with jaws and leave its previous tabletop location empty. Risk: Shallow grasp may slip; lower and regrasp if car stays or falls. Lesson: This pose establishes car contact, but contact alone is insufficient.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow car is back on table; no retained grasp or sorting achieved. Check: Lift executed accurately but jaws fully closed and car stayed below, disproving retention. Expect: Reopen above a more rearward, lower-centred grasp approach. Verify: New view should place car body inside the jaw contact region. Risk: Repeating a shallow edge grasp; lower to body rather than roof before closing. Lesson: Previous side contact at z 0.791 did not retain the car.",
+      "targets": {
+        "left_gripper": 1,
+        "left_x": -0.26,
+        "left_y": -0.19,
+        "left_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 88,
+        "start": 74
+      },
+      "left_wrist": {
+        "end": 88,
+        "start": 74
+      },
+      "right_wrist": {
+        "end": 88,
+        "start": 74
+      }
+    },
+    "control_end": 79,
+    "control_start": 65,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "State: Yellow car is back on table; no retained grasp or sorting achieved. Check: Lift executed accurately but jaws fully closed and car stayed below, disproving retention. Expect: Reopen above a more rearward, lower-centred grasp approach. Verify: New view should place car body inside the jaw contact region. Risk: Repeating a shallow edge grasp; lower to body rather than roof before closing. Lesson: Previous side contact at z 0.791 did not retain the car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Car now lies forward-left of open jaw centre; still unsorted. Check: Robot arrived, but car moved during closed-jaw approach before opening, so prior position estimate is stale. Expect: Open-jaw translation centres car without further pushing. Verify: Car should align with jaw tips and remain fixed on table. Risk: Near-object translation may contact it; use a new view before descending. Lesson: Open before approaching objects; opening after arrival allowed unintended displacement.",
+      "targets": {
+        "left_x": -0.272,
+        "left_y": -0.165
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 91,
+        "start": 89
+      },
+      "left_wrist": {
+        "end": 91,
+        "start": 89
+      },
+      "right_wrist": {
+        "end": 91,
+        "start": 89
+      }
+    },
+    "control_end": 81,
+    "control_start": 79,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "State: Car now lies forward-left of open jaw centre; still unsorted. Check: Robot arrived, but car moved during closed-jaw approach before opening, so prior position estimate is stale. Expect: Open-jaw translation centres car without further pushing. Verify: Car should align with jaw tips and remain fixed on table. Risk: Near-object translation may contact it; use a new view before descending. Lesson: Open before approaching objects; opening after arrival allowed unintended displacement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Car body is centred across open jaws, with lion clear. Check: Translation landed within 2 mm and improved alignment without obvious object shift. Expect: Descend to deeper body contact height for a more secure grasp. Verify: Car stays between jaws and does not tip or translate. Risk: Table proximity; subsequent adjustments will be millimetric. Lesson: Open-jaw alignment is more controlled than the previous closed approach.",
+      "targets": {
+        "left_z": 0.785
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 94,
+        "start": 92
+      },
+      "left_wrist": {
+        "end": 94,
+        "start": 92
+      },
+      "right_wrist": {
+        "end": 94,
+        "start": 92
+      }
+    },
+    "control_end": 83,
+    "control_start": 81,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "State: Car body is centred across open jaws, with lion clear. Check: Translation landed within 2 mm and improved alignment without obvious object shift. Expect: Descend to deeper body contact height for a more secure grasp. Verify: Car stays between jaws and does not tip or translate. Risk: Table proximity; subsequent adjustments will be millimetric. Lesson: Open-jaw alignment is more controlled than the previous closed approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow car is between jaws at the revised lower grasp pose; all sorting remains. Check: Descent reached within 1 mm with car still stationary. Expect: Close around the broader body region. Verify: Side contact should persist, then a lift must establish retention. Risk: Angled car may squeeze out; reopen if it escapes. Lesson: Earlier higher, edge-biased grasp slipped on lifting.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 101,
+        "start": 95
+      },
+      "left_wrist": {
+        "end": 101,
+        "start": 95
+      },
+      "right_wrist": {
+        "end": 101,
+        "start": 95
+      }
+    },
+    "control_end": 89,
+    "control_start": 83,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 11,
+    "public_note": "State: Yellow car is between jaws at the revised lower grasp pose; all sorting remains. Check: Descent reached within 1 mm with car still stationary. Expect: Close around the broader body region. Verify: Side contact should persist, then a lift must establish retention. Risk: Angled car may squeeze out; reopen if it escapes. Lesson: Earlier higher, edge-biased grasp slipped on lifting.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Revised closure contacts yellow car at gap 0.68; retention still unverified. Check: Car shifted slightly but remains between jaws, with a wider contact than before. Expect: Lift car clear of table and basket rim height. Verify: Car must travel with hand and remain visibly between jaws. Risk: Slip; if car stays below, change grasp orientation rather than repeating this pose. Lesson: Wider contact is observable but not yet proof of retention.",
+      "targets": {
+        "left_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 112,
+        "start": 102
+      },
+      "left_wrist": {
+        "end": 112,
+        "start": 102
+      },
+      "right_wrist": {
+        "end": 112,
+        "start": 102
+      }
+    },
+    "control_end": 99,
+    "control_start": 89,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "State: Revised closure contacts yellow car at gap 0.68; retention still unverified. Check: Car shifted slightly but remains between jaws, with a wider contact than before. Expect: Lift car clear of table and basket rim height. Verify: Car must travel with hand and remain visibly between jaws. Risk: Slip; if car stays below, change grasp orientation rather than repeating this pose. Lesson: Wider contact is observable but not yet proof of retention.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow car visibly lifted and retained; left basket remains its destination. Check: Lift reached within 1 mm; car moved with jaws and left tabletop location, confirming retention. Expect: Carry car above white left basket with rim clearance. Verify: Car remains held and projects inside basket opening. Risk: Car hangs below hand; maintain clearance and correct before release if over rim. Lesson: Revised deeper, centred grasp successfully retained yellow car.",
+      "targets": {
+        "left_y": 0.1,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 132,
+        "start": 113
+      },
+      "left_wrist": {
+        "end": 132,
+        "start": 113
+      },
+      "right_wrist": {
+        "end": 132,
+        "start": 113
+      }
+    },
+    "control_end": 118,
+    "control_start": 99,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 13,
+    "public_note": "State: Yellow car visibly lifted and retained; left basket remains its destination. Check: Lift reached within 1 mm; car moved with jaws and left tabletop location, confirming retention. Expect: Carry car above white left basket with rim clearance. Verify: Car remains held and projects inside basket opening. Risk: Car hangs below hand; maintain clearance and correct before release if over rim. Lesson: Revised deeper, centred grasp successfully retained yellow car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow car remains held at last observed pose; basket placement unverified. Check: Planner refused previous target and neither arm moved; no new object evidence. Expect: Shorter forward translation approaches basket while preserving current height and orientation. Verify: Arrival and retained car should be visible closer to basket front. Risk: Reachability worsens far forward; split travel and adjust height if refused. Lesson: Combined long forward/upward basket target was not feasible from this pose.",
+      "targets": {
+        "left_y": -0.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 132,
+        "start": 113
+      },
+      "left_wrist": {
+        "end": 132,
+        "start": 113
+      },
+      "right_wrist": {
+        "end": 132,
+        "start": 113
+      }
+    },
+    "control_end": 118,
+    "control_start": 99,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "State: Yellow car remains held at last observed pose; basket placement unverified. Check: Planner refused previous target and neither arm moved; no new object evidence. Expect: Shorter forward translation approaches basket while preserving current height and orientation. Verify: Arrival and retained car should be visible closer to basket front. Risk: Reachability worsens far forward; split travel and adjust height if refused. Lesson: Combined long forward/upward basket target was not feasible from this pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Car retained near front of white basket, not yet inside opening in wrist view. Check: Short forward move landed accurately and retained car. Expect: Tilt tool moderately to enable farther forward reach while keeping car elevated. Verify: Car remains clamped and clear of basket rim. Risk: Rotation may swing car into rim; lift or retreat if clearance disappears. Lesson: Staged translation succeeded where the combined distant target failed.",
+      "targets": {
+        "left_pitch_deg": 30
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 153,
+        "start": 133
+      },
+      "left_wrist": {
+        "end": 153,
+        "start": 133
+      },
+      "right_wrist": {
+        "end": 153,
+        "start": 133
+      }
+    },
+    "control_end": 138,
+    "control_start": 118,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "State: Car retained near front of white basket, not yet inside opening in wrist view. Check: Short forward move landed accurately and retained car. Expect: Tilt tool moderately to enable farther forward reach while keeping car elevated. Verify: Car remains clamped and clear of basket rim. Risk: Rotation may swing car into rim; lift or retreat if clearance disappears. Lesson: Staged translation succeeded where the combined distant target failed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow car remains held above basket-front region; release location not yet verified. Check: Tilt reached 29.9 degrees with retention intact. Expect: Forward move puts car above the white basket interior. Verify: Both views should show car within the opening rather than over front rim. Risk: Reach refusal or rim contact; shorten reach if refused, retreat if contact. Lesson: Moderate tilt preserved this car grasp and changed reach configuration.",
+      "targets": {
+        "left_y": 0.105
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 170,
+        "start": 154
+      },
+      "left_wrist": {
+        "end": 170,
+        "start": 154
+      },
+      "right_wrist": {
+        "end": 170,
+        "start": 154
+      }
+    },
+    "control_end": 154,
+    "control_start": 138,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "State: Yellow car remains held above basket-front region; release location not yet verified. Check: Tilt reached 29.9 degrees with retention intact. Expect: Forward move puts car above the white basket interior. Verify: Both views should show car within the opening rather than over front rim. Risk: Reach refusal or rim contact; shorten reach if refused, retreat if contact. Lesson: Moderate tilt preserved this car grasp and changed reach configuration.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Yellow car is visibly inside left basket; green car remains outside, so car category is incomplete. Check: Forward move landed but grasp slipped; car fell into correct basket, not retained as predicted. Expect: Withdraw open hand above green car for second car pickup. Verify: Yellow car stays in basket and green car appears below approaching hand. Risk: Long diagonal reach may fail; split if needed. Lesson: Tilted transport did not preserve retention throughout; basket caught the slipped car.",
+      "targets": {
+        "left_gripper": 1,
+        "left_x": 0.065,
+        "left_y": -0.18
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 198,
+        "start": 171
+      },
+      "left_wrist": {
+        "end": 198,
+        "start": 171
+      },
+      "right_wrist": {
+        "end": 198,
+        "start": 171
+      }
+    },
+    "control_end": 181,
+    "control_start": 154,
+    "feedback": "Accepted: playing 27 waypoints (1.1s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 16,
+    "public_note": "State: Yellow car is visibly inside left basket; green car remains outside, so car category is incomplete. Check: Forward move landed but grasp slipped; car fell into correct basket, not retained as predicted. Expect: Withdraw open hand above green car for second car pickup. Verify: Yellow car stays in basket and green car appears below approaching hand. Risk: Long diagonal reach may fail; split if needed. Lesson: Tilted transport did not preserve retention throughout; basket caught the slipped car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car lies below open left hand; yellow car remains in white basket. Check: Transfer landed accurately without disturbing green car. Expect: Orient downward with jaws across the green car's narrow body. Verify: Wrist view should show jaw closing direction transverse to car length. Risk: Rotation at reach may be refused; split rotation if needed. Lesson: Aligning to car body should avoid the edge contact that failed earlier.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_yaw_deg": 40
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 220,
+        "start": 199
+      },
+      "left_wrist": {
+        "end": 220,
+        "start": 199
+      },
+      "right_wrist": {
+        "end": 220,
+        "start": 199
+      }
+    },
+    "control_end": 202,
+    "control_start": 181,
+    "feedback": "Accepted: playing 21 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "State: Green car lies below open left hand; yellow car remains in white basket. Check: Transfer landed accurately without disturbing green car. Expect: Orient downward with jaws across the green car's narrow body. Verify: Wrist view should show jaw closing direction transverse to car length. Risk: Rotation at reach may be refused; split rotation if needed. Lesson: Aligning to car body should avoid the edge contact that failed earlier.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car remains untouched; current yaw aligns jaws along its length rather than across width. Check: Rotation landed, but wrist image disproved intended transverse alignment. Expect: Begin correcting yaw while descending to a clear staging height. Verify: Car should rotate diagonally in view with clearance preserved. Risk: Reach posture near limits; split rotation and descent if refused. Lesson: Positive 40-degree yaw aligned with car length, so transverse grasp needs about 90 degrees less.",
+      "targets": {
+        "left_yaw_deg": -5,
+        "left_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 237,
+        "start": 221
+      },
+      "left_wrist": {
+        "end": 237,
+        "start": 221
+      },
+      "right_wrist": {
+        "end": 237,
+        "start": 221
+      }
+    },
+    "control_end": 218,
+    "control_start": 202,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "State: Green car remains untouched; current yaw aligns jaws along its length rather than across width. Check: Rotation landed, but wrist image disproved intended transverse alignment. Expect: Begin correcting yaw while descending to a clear staging height. Verify: Car should rotate diagonally in view with clearance preserved. Risk: Reach posture near limits; split rotation and descent if refused. Lesson: Positive 40-degree yaw aligned with car length, so transverse grasp needs about 90 degrees less.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car remains free beneath left hand; yellow car alone is sorted. Check: Intermediate yaw and descent landed accurately without displacement. Expect: Complete transverse jaw alignment across green car width. Verify: Car long axis should run vertically in wrist view. Risk: Rotation near roof; current staging height provides clearance, retreat if contact occurs. Lesson: Wrist orientation confirms the required yaw correction.",
+      "targets": {
+        "left_yaw_deg": -50
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 254,
+        "start": 238
+      },
+      "left_wrist": {
+        "end": 254,
+        "start": 238
+      },
+      "right_wrist": {
+        "end": 254,
+        "start": 238
+      }
+    },
+    "control_end": 234,
+    "control_start": 218,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "State: Green car remains free beneath left hand; yellow car alone is sorted. Check: Intermediate yaw and descent landed accurately without displacement. Expect: Complete transverse jaw alignment across green car width. Verify: Car long axis should run vertically in wrist view. Risk: Rotation near roof; current staging height provides clearance, retreat if contact occurs. Lesson: Wrist orientation confirms the required yaw correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car is correctly transverse to jaw closure; not held. Check: Yaw reached target and car length is vertical in wrist view. Expect: Lower open jaws to green car body height. Verify: Jaws flank its central body without moving it. Risk: Low car body may need a few millimetres more descent; inspect before closure. Lesson: Minus 50-degree yaw gives suitable widthwise alignment for this car.",
+      "targets": {
+        "left_z": 0.786
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 259,
+        "start": 255
+      },
+      "left_wrist": {
+        "end": 259,
+        "start": 255
+      },
+      "right_wrist": {
+        "end": 259,
+        "start": 255
+      }
+    },
+    "control_end": 238,
+    "control_start": 234,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "State: Green car is correctly transverse to jaw closure; not held. Check: Yaw reached target and car length is vertical in wrist view. Expect: Lower open jaws to green car body height. Verify: Jaws flank its central body without moving it. Risk: Low car body may need a few millimetres more descent; inspect before closure. Lesson: Minus 50-degree yaw gives suitable widthwise alignment for this car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car body is between open jaws near table height; category still incomplete. Check: Descent landed within 1 mm and car stayed fixed. Expect: Close across central car body. Verify: Visible side contact and nonzero gap, followed by lift testing, will distinguish grasp from miss. Risk: Contact could be too high on roof; lower incrementally if closure misses. Lesson: Orientation now offers narrower, more symmetric contact than the yellow-car first attempt.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 266,
+        "start": 260
+      },
+      "left_wrist": {
+        "end": 266,
+        "start": 260
+      },
+      "right_wrist": {
+        "end": 266,
+        "start": 260
+      }
+    },
+    "control_end": 244,
+    "control_start": 238,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 21,
+    "public_note": "State: Green car body is between open jaws near table height; category still incomplete. Check: Descent landed within 1 mm and car stayed fixed. Expect: Close across central car body. Verify: Visible side contact and nonzero gap, followed by lift testing, will distinguish grasp from miss. Risk: Contact could be too high on roof; lower incrementally if closure misses. Lesson: Orientation now offers narrower, more symmetric contact than the yellow-car first attempt.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car contacted by jaws at gap 0.34; retention unverified. Check: Closure achieved symmetric body contact with minimal movement. Expect: Lift carries green car above table. Verify: Car rises with jaws and old location becomes empty. Risk: Roof grip may slip; if so reopen before reapproaching lower. Lesson: Closure supports contact only; lifting is the retention test.",
+      "targets": {
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 278,
+        "start": 267
+      },
+      "left_wrist": {
+        "end": 278,
+        "start": 267
+      },
+      "right_wrist": {
+        "end": 278,
+        "start": 267
+      }
+    },
+    "control_end": 255,
+    "control_start": 244,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 22,
+    "public_note": "State: Green car contacted by jaws at gap 0.34; retention unverified. Check: Closure achieved symmetric body contact with minimal movement. Expect: Lift carries green car above table. Verify: Car rises with jaws and old location becomes empty. Risk: Roof grip may slip; if so reopen before reapproaching lower. Lesson: Closure supports contact only; lifting is the retention test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car is retained above table; yellow car is in left basket. Check: Lift landed accurately and green car followed without gap collapse. Expect: Carry second car to a clear staging point before white basket. Verify: Car remains held and basket stays clear of its edges. Risk: Hanging nose could strike rim; staging height is raised before insertion. Lesson: Widthwise green-car grasp retained through lift.",
+      "targets": {
+        "left_x": -0.255,
+        "left_y": -0.02,
+        "left_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 296,
+        "start": 279
+      },
+      "left_wrist": {
+        "end": 296,
+        "start": 279
+      },
+      "right_wrist": {
+        "end": 296,
+        "start": 279
+      }
+    },
+    "control_end": 272,
+    "control_start": 255,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "State: Green car is retained above table; yellow car is in left basket. Check: Lift landed accurately and green car followed without gap collapse. Expect: Carry second car to a clear staging point before white basket. Verify: Car remains held and basket stays clear of its edges. Risk: Hanging nose could strike rim; staging height is raised before insertion. Lesson: Widthwise green-car grasp retained through lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car fell upside down outside baskets and displaced the light watch; yellow car remains correctly placed. Check: Transfer reached target but gap collapsed and car did not follow, so lift retention was not transport-stable. Expect: Open and reorient empty hand before reapproaching overturned car. Verify: Open jaws and stationary tabletop objects. Risk: New car/watch positions invalidate old targets; re-estimate before pickup. Lesson: Green car needs deeper body contact; roof-level hold survived lift but failed lateral transport.",
+      "targets": {
+        "left_gripper": 1,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 321,
+        "start": 297
+      },
+      "left_wrist": {
+        "end": 321,
+        "start": 297
+      },
+      "right_wrist": {
+        "end": 321,
+        "start": 297
+      }
+    },
+    "control_end": 296,
+    "control_start": 272,
+    "feedback": "Accepted: playing 24 waypoints (1.0s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "State: Green car fell upside down outside baskets and displaced the light watch; yellow car remains correctly placed. Check: Transfer reached target but gap collapsed and car did not follow, so lift retention was not transport-stable. Expect: Open and reorient empty hand before reapproaching overturned car. Verify: Open jaws and stationary tabletop objects. Risk: New car/watch positions invalidate old targets; re-estimate before pickup. Lesson: Green car needs deeper body contact; roof-level hold survived lift but failed lateral transport.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Overturned green car lies just ahead of watches; yellow car remains in left basket. Check: Empty hand opened and reoriented accurately; objects settled. Expect: Approach overturned car with clearance to inspect underside grasp. Verify: Car appears centred below open jaws, separated from watch. Risk: Estimated position or reach may be wrong; inspect before final descent. Lesson: Reapproach with jaws already open avoids the earlier pushing failure.",
+      "targets": {
+        "left_x": -0.035,
+        "left_y": -0.065,
+        "left_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 332,
+        "start": 322
+      },
+      "left_wrist": {
+        "end": 332,
+        "start": 322
+      },
+      "right_wrist": {
+        "end": 332,
+        "start": 322
+      }
+    },
+    "control_end": 306,
+    "control_start": 296,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "State: Overturned green car lies just ahead of watches; yellow car remains in left basket. Check: Empty hand opened and reoriented accurately; objects settled. Expect: Approach overturned car with clearance to inspect underside grasp. Verify: Car appears centred below open jaws, separated from watch. Risk: Estimated position or reach may be wrong; inspect before final descent. Lesson: Reapproach with jaws already open avoids the earlier pushing failure.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Overturned car is centred near blue basket front, clear of watches. Check: Approach landed within 1 mm; underside is exposed and car length nearly lateral. Expect: Rotate jaws across narrow underside width for a deeper grip. Verify: Car length should be nearly vertical in wrist view without displacement. Risk: Rotation near basket rim; keep current height and back off if contact. Lesson: Previous roof grip failed during transfer; exposed underside offers a different contact region.",
+      "targets": {
+        "left_yaw_deg": 75
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 360,
+        "start": 333
+      },
+      "left_wrist": {
+        "end": 360,
+        "start": 333
+      },
+      "right_wrist": {
+        "end": 360,
+        "start": 333
+      }
+    },
+    "control_end": 333,
+    "control_start": 306,
+    "feedback": "Accepted: playing 27 waypoints (1.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "State: Overturned car is centred near blue basket front, clear of watches. Check: Approach landed within 1 mm; underside is exposed and car length nearly lateral. Expect: Rotate jaws across narrow underside width for a deeper grip. Verify: Car length should be nearly vertical in wrist view without displacement. Risk: Rotation near basket rim; keep current height and back off if contact. Lesson: Previous roof grip failed during transfer; exposed underside offers a different contact region.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Car underside is accessible; watch and basket remain nearby but separate. Check: Rotation ended 5 mm off position, so alignment needs correction. Expect: Small lateral correction and descent centre underside between jaws. Verify: Car remains stationary and central, with jaw clear of blue rim. Risk: Rim clearance on right side; stop descent if jaw meets basket. Lesson: Large wrist rotation introduced measurable position error, requiring visual realignment.",
+      "targets": {
+        "left_x": -0.036,
+        "left_y": -0.081,
+        "left_z": 0.792
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 368,
+        "start": 361
+      },
+      "left_wrist": {
+        "end": 368,
+        "start": 361
+      },
+      "right_wrist": {
+        "end": 368,
+        "start": 361
+      }
+    },
+    "control_end": 340,
+    "control_start": 333,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "State: Car underside is accessible; watch and basket remain nearby but separate. Check: Rotation ended 5 mm off position, so alignment needs correction. Expect: Small lateral correction and descent centre underside between jaws. Verify: Car remains stationary and central, with jaw clear of blue rim. Risk: Rim clearance on right side; stop descent if jaw meets basket. Lesson: Large wrist rotation introduced measurable position error, requiring visual realignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Underside lies between jaws near body height; car still outside basket. Check: Descent stopped about 5 mm high with slight orientation error; possible contact remains uncertain. Expect: Millimetric lowering then closure grips underside sides rather than roof. Verify: Stable nonzero gap and car captured centrally; later lift tests retention. Risk: Jaw may touch rim or table; if arrival remains high, lift and change approach instead of forcing down. Lesson: Near this basket the measured arrival differs, so commanded height cannot be assumed.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.793
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 376,
+        "start": 369
+      },
+      "left_wrist": {
+        "end": 376,
+        "start": 369
+      },
+      "right_wrist": {
+        "end": 376,
+        "start": 369
+      }
+    },
+    "control_end": 347,
+    "control_start": 340,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "State: Underside lies between jaws near body height; car still outside basket. Check: Descent stopped about 5 mm high with slight orientation error; possible contact remains uncertain. Expect: Millimetric lowering then closure grips underside sides rather than roof. Verify: Stable nonzero gap and car captured centrally; later lift tests retention. Risk: Jaw may touch rim or table; if arrival remains high, lift and change approach instead of forcing down. Lesson: Near this basket the measured arrival differs, so commanded height cannot be assumed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Jaws closed over the underside surface rather than securely around the car; retention doubtful. Check: Lowering reached within 2 mm, but narrow closure and visible jaw tips over chassis suggest grasp too high. Expect: Reopen without moving car, preparing a lower side grasp. Verify: Car stays still and jaws clear its sides. Risk: Small release displacement; re-read position before lowering. Lesson: The overturned car's accessible side contact is lower than this z 0.795 pose.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 382,
+        "start": 377
+      },
+      "left_wrist": {
+        "end": 382,
+        "start": 377
+      },
+      "right_wrist": {
+        "end": 382,
+        "start": 377
+      }
+    },
+    "control_end": 352,
+    "control_start": 347,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 5 move the gripper, once the arm has arrived.",
+    "policy_step": 29,
+    "public_note": "State: Jaws closed over the underside surface rather than securely around the car; retention doubtful. Check: Lowering reached within 2 mm, but narrow closure and visible jaw tips over chassis suggest grasp too high. Expect: Reopen without moving car, preparing a lower side grasp. Verify: Car stays still and jaws clear its sides. Risk: Small release displacement; re-read position before lowering. Lesson: The overturned car's accessible side contact is lower than this z 0.795 pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Car remains overturned and ungrasped; open jaws are close to its sides. Check: Reopening did not move car; persistent pose error suggests this reach configuration needs adjustment. Expect: Modest pitch change improves access for a lower side grasp. Verify: Tool reaches new pitch without car or basket movement. Risk: Jaw sweep near rim; if contact appears, retreat upward. Lesson: Repeating the same high closure would not address the observed shallow contact.",
+      "targets": {
+        "left_pitch_deg": 20
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 390,
+        "start": 383
+      },
+      "left_wrist": {
+        "end": 390,
+        "start": 383
+      },
+      "right_wrist": {
+        "end": 390,
+        "start": 383
+      }
+    },
+    "control_end": 359,
+    "control_start": 352,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "State: Car remains overturned and ungrasped; open jaws are close to its sides. Check: Reopening did not move car; persistent pose error suggests this reach configuration needs adjustment. Expect: Modest pitch change improves access for a lower side grasp. Verify: Tool reaches new pitch without car or basket movement. Risk: Jaw sweep near rim; if contact appears, retreat upward. Lesson: Repeating the same high closure would not address the observed shallow contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Open jaws surround overturned car; lower side contact remains needed. Check: Pitch adjustment executed within 1 mm without object motion. Expect: Lower 7 mm toward sidewalls. Verify: Car stays fixed and jaws descend beside rather than onto chassis. Risk: Table proximity; stop if arrival stalls or car tips. Lesson: Pitch adjustment reduced execution error at this reach.",
+      "targets": {
+        "left_z": 0.788
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 392,
+        "start": 391
+      },
+      "left_wrist": {
+        "end": 392,
+        "start": 391
+      },
+      "right_wrist": {
+        "end": 392,
+        "start": 391
+      }
+    },
+    "control_end": 360,
+    "control_start": 359,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "State: Open jaws surround overturned car; lower side contact remains needed. Check: Pitch adjustment executed within 1 mm without object motion. Expect: Lower 7 mm toward sidewalls. Verify: Car stays fixed and jaws descend beside rather than onto chassis. Risk: Table proximity; stop if arrival stalls or car tips. Lesson: Pitch adjustment reduced execution error at this reach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Car still centred and overturned; no secure grip yet. Check: Lowering moved only 3.5 mm and stopped 4 mm high; contact or tracking limitation remains possible. Expect: A final 5 mm lowering with closure tests side engagement at the revised tilt. Verify: Wider side contact than the previous 0.14 gap, then retained lift, would support improvement. Risk: Persistent shallow contact; if this fails, leave car temporarily and sort other categories. Lesson: This approach has limited vertical tracking, so repeated descent alone is not productive.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.787
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 400,
+        "start": 393
+      },
+      "left_wrist": {
+        "end": 400,
+        "start": 393
+      },
+      "right_wrist": {
+        "end": 400,
+        "start": 393
+      }
+    },
+    "control_end": 367,
+    "control_start": 360,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "State: Car still centred and overturned; no secure grip yet. Check: Lowering moved only 3.5 mm and stopped 4 mm high; contact or tracking limitation remains possible. Expect: A final 5 mm lowering with closure tests side engagement at the revised tilt. Verify: Wider side contact than the previous 0.14 gap, then retained lift, would support improvement. Risk: Persistent shallow contact; if this fails, leave car temporarily and sort other categories. Lesson: This approach has limited vertical tracking, so repeated descent alone is not productive.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Revised closure visibly grips car sides at gap 0.38; retention unverified. Check: Final descent reached target and side contact is wider than prior shallow attempt. Expect: Lift overturned car clear of basket rim. Verify: Car follows jaws and remains clamped; table location empties. Risk: Slip during lift; if lost, switch to other objects before retrying. Lesson: Lower tilted closure established genuine side contact rather than tips over chassis.",
+      "targets": {
+        "left_z": 0.905
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 411,
+        "start": 401
+      },
+      "left_wrist": {
+        "end": 411,
+        "start": 401
+      },
+      "right_wrist": {
+        "end": 411,
+        "start": 401
+      }
+    },
+    "control_end": 377,
+    "control_start": 367,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 33,
+    "public_note": "State: Revised closure visibly grips car sides at gap 0.38; retention unverified. Check: Final descent reached target and side contact is wider than prior shallow attempt. Expect: Lift overturned car clear of basket rim. Verify: Car follows jaws and remains clamped; table location empties. Risk: Slip during lift; if lost, switch to other objects before retrying. Lesson: Lower tilted closure established genuine side contact rather than tips over chassis.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car remains at last observed side-contact grasp; no lift evidence yet. Check: Planner refused tall lift; neither arm moved. Expect: Shorter vertical lift tests retention without changing orientation. Verify: Car rises with hand and leaves table. Risk: Reach configuration may still fail; use a small backward clearance move if needed. Lesson: This configuration cannot take the proposed full-height lift in one call.",
+      "targets": {
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 411,
+        "start": 401
+      },
+      "left_wrist": {
+        "end": 411,
+        "start": 401
+      },
+      "right_wrist": {
+        "end": 411,
+        "start": 401
+      }
+    },
+    "control_end": 377,
+    "control_start": 367,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "State: Green car remains at last observed side-contact grasp; no lift evidence yet. Check: Planner refused tall lift; neither arm moved. Expect: Shorter vertical lift tests retention without changing orientation. Verify: Car rises with hand and leaves table. Risk: Reach configuration may still fail; use a small backward clearance move if needed. Lesson: This configuration cannot take the proposed full-height lift in one call.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Overturned green car is visibly retained above table; white basket still awaits it. Check: Short lift landed and car followed with stable gap. Expect: Move laterally toward white basket while raising for rim clearance. Verify: Car remains held throughout and ends near white basket front. Risk: Previous lateral carry slipped; this deeper grip must be checked immediately afterward. Lesson: Revised underside grasp passed the short vertical lift test.",
+      "targets": {
+        "left_x": -0.25,
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 610,
+        "start": 412
+      },
+      "left_wrist": {
+        "end": 610,
+        "start": 412
+      },
+      "right_wrist": {
+        "end": 610,
+        "start": 412
+      }
+    },
+    "control_end": 575,
+    "control_start": 377,
+    "feedback": "Accepted: playing 198 waypoints (7.9s). The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "State: Overturned green car is visibly retained above table; white basket still awaits it. Check: Short lift landed and car followed with stable gap. Expect: Move laterally toward white basket while raising for rim clearance. Verify: Car remains held throughout and ends near white basket front. Risk: Previous lateral carry slipped; this deeper grip must be checked immediately afterward. Lesson: Revised underside grasp passed the short vertical lift test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car fell near white basket and lion shifted; only yellow car is sorted. Left hand is empty and far from its target. Check: Last execution deviated 534 mm and 86.7 degrees, spending many steps; transport failed. Expect: Switch to the untouched right arm and begin downward orientation for watches. Verify: Right arm reaches 45 degrees with objects unchanged. Risk: Left-arm path is unreliable in its current configuration; avoid further long left moves and reserve reset budget. Lesson: The previous left configuration produced a severe execution deviation, so planned arrival cannot be trusted.",
+      "targets": {
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 627,
+        "start": 611
+      },
+      "left_wrist": {
+        "end": 627,
+        "start": 611
+      },
+      "right_wrist": {
+        "end": 627,
+        "start": 611
+      }
+    },
+    "control_end": 591,
+    "control_start": 575,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "State: Green car fell near white basket and lion shifted; only yellow car is sorted. Left hand is empty and far from its target. Check: Last execution deviated 534 mm and 86.7 degrees, spending many steps; transport failed. Expect: Switch to the untouched right arm and begin downward orientation for watches. Verify: Right arm reaches 45 degrees with objects unchanged. Risk: Left-arm path is unreliable in its current configuration; avoid further long left moves and reserve reset budget. Lesson: The previous left configuration produced a severe execution deviation, so planned arrival cannot be trusted.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Two watches remain outside the middle basket; light watch is isolated near its front-right. Check: Right rotation landed exactly without object motion. Expect: Stage downward open hand above light watch for pickup. Verify: Wrist view shows band and face within jaw region. Risk: Combined reach may be refused; split if needed and inspect before contact. Lesson: Untouched right arm executed its initial rotation accurately.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_x": 0.075,
+        "right_y": -0.075,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 659,
+        "start": 628
+      },
+      "left_wrist": {
+        "end": 659,
+        "start": 628
+      },
+      "right_wrist": {
+        "end": 659,
+        "start": 628
+      }
+    },
+    "control_end": 622,
+    "control_start": 591,
+    "feedback": "Accepted: playing 31 waypoints (1.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 36,
+    "public_note": "State: Two watches remain outside the middle basket; light watch is isolated near its front-right. Check: Right rotation landed exactly without object motion. Expect: Stage downward open hand above light watch for pickup. Verify: Wrist view shows band and face within jaw region. Risk: Combined reach may be refused; split if needed and inspect before contact. Lesson: Untouched right arm executed its initial rotation accurately.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Light watch loop lies centred ahead of jaw tips; both watches still unsorted. Check: Approach landed exactly with watch stationary. Expect: Lower open jaws around watch band at grasp height. Verify: Band stays between jaws without displacement. Risk: Closing above band would miss; inspect height before closure. Lesson: Right-arm staging is accurate at this watch location.",
+      "targets": {
+        "right_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 665,
+        "start": 660
+      },
+      "left_wrist": {
+        "end": 665,
+        "start": 660
+      },
+      "right_wrist": {
+        "end": 665,
+        "start": 660
+      }
+    },
+    "control_end": 627,
+    "control_start": 622,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "State: Light watch loop lies centred ahead of jaw tips; both watches still unsorted. Check: Approach landed exactly with watch stationary. Expect: Lower open jaws around watch band at grasp height. Verify: Band stays between jaws without displacement. Risk: Closing above band would miss; inspect height before closure. Lesson: Right-arm staging is accurate at this watch location.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch band surrounds clear central space between open jaws; not held. Check: Descent reached within 1 mm with no displacement. Expect: Lower to band side height for closure. Verify: Jaws flank band rather than pass above it. Risk: Near tabletop, follow with only millimetric corrections if needed. Lesson: The light watch remains stable during open-jaw approach.",
+      "targets": {
+        "right_z": 0.779
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 667,
+        "start": 666
+      },
+      "left_wrist": {
+        "end": 667,
+        "start": 666
+      },
+      "right_wrist": {
+        "end": 667,
+        "start": 666
+      }
+    },
+    "control_end": 628,
+    "control_start": 627,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "State: Watch band surrounds clear central space between open jaws; not held. Check: Descent reached within 1 mm with no displacement. Expect: Lower to band side height for closure. Verify: Jaws flank band rather than pass above it. Risk: Near tabletop, follow with only millimetric corrections if needed. Lesson: The light watch remains stable during open-jaw approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains below right hand; low wrist view is now obscured by basket, so exact contact is unknown. Check: Descent landed 2 mm high; head view shows watch unchanged. Expect: Close at the previously aligned band pose. Verify: Nonzero closure followed by visible lifted watch will establish capture; closure alone will not. Risk: Occluded band may be missed; lift test and re-view if needed. Lesson: Basket occludes this wrist camera at low height.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 674,
+        "start": 668
+      },
+      "left_wrist": {
+        "end": 674,
+        "start": 668
+      },
+      "right_wrist": {
+        "end": 674,
+        "start": 668
+      }
+    },
+    "control_end": 634,
+    "control_start": 628,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 39,
+    "public_note": "State: Watch remains below right hand; low wrist view is now obscured by basket, so exact contact is unknown. Check: Descent landed 2 mm high; head view shows watch unchanged. Expect: Close at the previously aligned band pose. Verify: Nonzero closure followed by visible lifted watch will establish capture; closure alone will not. Risk: Occluded band may be missed; lift test and re-view if needed. Lesson: Basket occludes this wrist camera at low height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Closure stopped at 0.41 around light watch; retained grasp unverified. Check: Head view shows band within jaws, but wrist remains occluded. Expect: Lift watch and restore wrist visibility. Verify: Watch follows hand, leaving tabletop empty, with stable gap. Risk: Band may slip; reapproach a single band segment if it falls. Lesson: Lift provides both retention evidence and an unobstructed view here.",
+      "targets": {
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 688,
+        "start": 675
+      },
+      "left_wrist": {
+        "end": 688,
+        "start": 675
+      },
+      "right_wrist": {
+        "end": 688,
+        "start": 675
+      }
+    },
+    "control_end": 647,
+    "control_start": 634,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 40,
+    "public_note": "State: Closure stopped at 0.41 around light watch; retained grasp unverified. Check: Head view shows band within jaws, but wrist remains occluded. Expect: Lift watch and restore wrist visibility. Verify: Watch follows hand, leaving tabletop empty, with stable gap. Risk: Band may slip; reapproach a single band segment if it falls. Lesson: Lift provides both retention evidence and an unobstructed view here.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Light watch visibly retained above table; middle basket empty. Check: Lift landed and watch followed with stable gap. Expect: Moderate tilt enables forward basket reach while preserving band grasp. Verify: Watch remains clamped with rim clearance. Risk: Tilt can loosen contact; inspect before translation. Lesson: This band grasp retained through a 12 cm lift.",
+      "targets": {
+        "right_pitch_deg": 30
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 708,
+        "start": 689
+      },
+      "left_wrist": {
+        "end": 708,
+        "start": 689
+      },
+      "right_wrist": {
+        "end": 708,
+        "start": 689
+      }
+    },
+    "control_end": 666,
+    "control_start": 647,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 41,
+    "public_note": "State: Light watch visibly retained above table; middle basket empty. Check: Lift landed and watch followed with stable gap. Expect: Moderate tilt enables forward basket reach while preserving band grasp. Verify: Watch remains clamped with rim clearance. Risk: Tilt can loosen contact; inspect before translation. Lesson: This band grasp retained through a 12 cm lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Light watch retained after tilt; middle basket still empty. Check: Rotation landed exactly without loss of band contact. Expect: Carry watch over blue basket interior. Verify: Watch remains held and lies inside projected basket rim. Risk: Forward reach may fail or band slip; inspect before release. Lesson: Moderate tilt preserved this watch grip.",
+      "targets": {
+        "right_x": 0.015,
+        "right_y": 0.08
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 721,
+        "start": 709
+      },
+      "left_wrist": {
+        "end": 721,
+        "start": 709
+      },
+      "right_wrist": {
+        "end": 721,
+        "start": 709
+      }
+    },
+    "control_end": 678,
+    "control_start": 666,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 42,
+    "public_note": "State: Light watch retained after tilt; middle basket still empty. Check: Rotation landed exactly without loss of band contact. Expect: Carry watch over blue basket interior. Verify: Watch remains held and lies inside projected basket rim. Risk: Forward reach may fail or band slip; inspect before release. Lesson: Moderate tilt preserved this watch grip.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Watch remains held at last observed pose; basket entry unverified. Check: Diagonal target refused; no motion or new physical evidence. Expect: Shorter forward-only move approaches middle opening. Verify: Arrival and watch retention should be visible near blue rim. Risk: Reach limit; increase pitch in a separate action if needed. Lesson: Combined forward-left target exceeds this configuration's feasible reach.",
+      "targets": {
+        "right_y": 0.035
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 721,
+        "start": 709
+      },
+      "left_wrist": {
+        "end": 721,
+        "start": 709
+      },
+      "right_wrist": {
+        "end": 721,
+        "start": 709
+      }
+    },
+    "control_end": 678,
+    "control_start": 666,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "State: Watch remains held at last observed pose; basket entry unverified. Check: Diagonal target refused; no motion or new physical evidence. Expect: Shorter forward-only move approaches middle opening. Verify: Arrival and watch retention should be visible near blue rim. Risk: Reach limit; increase pitch in a separate action if needed. Lesson: Combined forward-left target exceeds this configuration's feasible reach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Light watch is held above blue basket interior, near its right side; second watch remains outside. Check: Forward move landed accurately and retained watch over the opening. Expect: Release watch into middle basket. Verify: Watch should settle inside blue walls and separate from open jaws. Risk: Bounce or rim catch; inspect settled position before leaving. Lesson: Short forward-only transfer preserved watch retention.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 726,
+        "start": 722
+      },
+      "left_wrist": {
+        "end": 726,
+        "start": 722
+      },
+      "right_wrist": {
+        "end": 726,
+        "start": 722
+      }
+    },
+    "control_end": 682,
+    "control_start": 678,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 43,
+    "public_note": "State: Light watch is held above blue basket interior, near its right side; second watch remains outside. Check: Forward move landed accurately and retained watch over the opening. Expect: Release watch into middle basket. Verify: Watch should settle inside blue walls and separate from open jaws. Risk: Bounce or rim catch; inspect settled position before leaving. Lesson: Short forward-only transfer preserved watch retention.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Light watch settled inside middle basket with jaws open; dark watch remains outside, so watch category incomplete. Check: Release produced visible separation and correct containment. Expect: Approach dark watch with open right hand. Verify: Dark watch appears beneath hand while placed watch stays in blue basket. Risk: Cross-body reach may be difficult; keep tilt and split if refused. Lesson: Blue-basket release location was valid.",
+      "targets": {
+        "right_x": -0.125,
+        "right_y": -0.16,
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 740,
+        "start": 727
+      },
+      "left_wrist": {
+        "end": 740,
+        "start": 727
+      },
+      "right_wrist": {
+        "end": 740,
+        "start": 727
+      }
+    },
+    "control_end": 695,
+    "control_start": 682,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 44,
+    "public_note": "State: Light watch settled inside middle basket with jaws open; dark watch remains outside, so watch category incomplete. Check: Release produced visible separation and correct containment. Expect: Approach dark watch with open right hand. Verify: Dark watch appears beneath hand while placed watch stays in blue basket. Risk: Cross-body reach may be difficult; keep tilt and split if refused. Lesson: Blue-basket release location was valid.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Dark watch loop centred between open jaws; one watch already contained. Check: Cross-body approach landed accurately and watch stayed fixed. Expect: Lower at retained 30-degree pitch to band height. Verify: Band remains in jaw gap without sliding. Risk: Angled jaws may contact table unevenly; inspect before final millimetric descent. Lesson: Keeping tilt permits accurate reach to this watch.",
+      "targets": {
+        "right_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 747,
+        "start": 741
+      },
+      "left_wrist": {
+        "end": 747,
+        "start": 741
+      },
+      "right_wrist": {
+        "end": 747,
+        "start": 741
+      }
+    },
+    "control_end": 701,
+    "control_start": 695,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "State: Dark watch loop centred between open jaws; one watch already contained. Check: Cross-body approach landed accurately and watch stayed fixed. Expect: Lower at retained 30-degree pitch to band height. Verify: Band remains in jaw gap without sliding. Risk: Angled jaws may contact table unevenly; inspect before final millimetric descent. Lesson: Keeping tilt permits accurate reach to this watch.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Dark watch band centred at low open-jaw pose; retention unverified. Check: Descent landed within 1 mm without displacement. Expect: Lower 9 mm and close around band sides. Verify: Nonzero contact gap with band inside jaws; lift will test retention. Risk: Angled tips may reach table; stop lowering if position stalls. Lesson: Band alignment remained stable during this approach.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.782
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 755,
+        "start": 748
+      },
+      "left_wrist": {
+        "end": 755,
+        "start": 748
+      },
+      "right_wrist": {
+        "end": 755,
+        "start": 748
+      }
+    },
+    "control_end": 708,
+    "control_start": 701,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "State: Dark watch band centred at low open-jaw pose; retention unverified. Check: Descent landed within 1 mm without displacement. Expect: Lower 9 mm and close around band sides. Verify: Nonzero contact gap with band inside jaws; lift will test retention. Risk: Angled tips may reach table; stop lowering if position stalls. Lesson: Band alignment remained stable during this approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Dark band contacted at gap 0.38; one watch already in basket. Check: Closure reached pose and flanks band visibly. Expect: Lift dark watch clear of table. Verify: Band follows hand with stable gap and empty prior location. Risk: Slip; reopen and target face if band escapes. Lesson: Both watches allow visible two-sided band contact.",
+      "targets": {
+        "right_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 764,
+        "start": 756
+      },
+      "left_wrist": {
+        "end": 764,
+        "start": 756
+      },
+      "right_wrist": {
+        "end": 764,
+        "start": 756
+      }
+    },
+    "control_end": 716,
+    "control_start": 708,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "State: Dark band contacted at gap 0.38; one watch already in basket. Check: Closure reached pose and flanks band visibly. Expect: Lift dark watch clear of table. Verify: Band follows hand with stable gap and empty prior location. Risk: Slip; reopen and target face if band escapes. Lesson: Both watches allow visible two-sided band contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Dark watch retained after lift; light watch inside middle basket. Check: Lift landed accurately and band stayed between jaws. Expect: Carry second watch above blue basket using tilted configuration. Verify: Watch stays clamped and projects within blue walls. Risk: Reach refusal; split translation if needed, avoiding forced far reach. Lesson: Dark-watch band grip passed lift test.",
+      "targets": {
+        "right_x": 0.04,
+        "right_y": 0.025,
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 776,
+        "start": 765
+      },
+      "left_wrist": {
+        "end": 776,
+        "start": 765
+      },
+      "right_wrist": {
+        "end": 776,
+        "start": 765
+      }
+    },
+    "control_end": 727,
+    "control_start": 716,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "State: Dark watch retained after lift; light watch inside middle basket. Check: Lift landed accurately and band stayed between jaws. Expect: Carry second watch above blue basket using tilted configuration. Verify: Watch stays clamped and projects within blue walls. Risk: Reach refusal; split translation if needed, avoiding forced far reach. Lesson: Dark-watch band grip passed lift test.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Dark watch held above blue opening, with its front edge near the front rim in wrist view. Check: Transfer landed within 1 mm and retained watch. Expect: Small forward shift gives release margin inside basket. Verify: Entire watch silhouette should lie over interior. Risk: Limited reach; stop if refused rather than force farther. Lesson: Tilted watch transfers have preserved retention.",
+      "targets": {
+        "right_y": 0.045
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 781,
+        "start": 777
+      },
+      "left_wrist": {
+        "end": 781,
+        "start": 777
+      },
+      "right_wrist": {
+        "end": 781,
+        "start": 777
+      }
+    },
+    "control_end": 731,
+    "control_start": 727,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 49,
+    "public_note": "State: Dark watch held above blue opening, with its front edge near the front rim in wrist view. Check: Transfer landed within 1 mm and retained watch. Expect: Small forward shift gives release margin inside basket. Verify: Entire watch silhouette should lie over interior. Risk: Limited reach; stop if refused rather than force farther. Lesson: Tilted watch transfers have preserved retention.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Dark watch is fully above blue interior; light watch remains inside. Check: Forward correction reached within 1 mm with retained grip and improved rim margin. Expect: Release second watch into assigned middle basket. Verify: Both watches should rest inside, no extra category present, and gripper open. Risk: Bounce or overlap obscuring containment; inspect next view. Lesson: Correcting release margin before opening avoids rim ambiguity.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 786,
+        "start": 782
+      },
+      "left_wrist": {
+        "end": 786,
+        "start": 782
+      },
+      "right_wrist": {
+        "end": 786,
+        "start": 782
+      }
+    },
+    "control_end": 735,
+    "control_start": 731,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 50,
+    "public_note": "State: Dark watch is fully above blue interior; light watch remains inside. Check: Forward correction reached within 1 mm with retained grip and improved rim margin. Expect: Release second watch into assigned middle basket. Verify: Both watches should rest inside, no extra category present, and gripper open. Risk: Bounce or overlap obscuring containment; inspect next view. Lesson: Correcting release margin before opening avoids rim ambiguity.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Both watches visibly contained in middle basket without extra objects; right gripper open. Cars and wooden toys remain incomplete, and reset remains. Check: Release settled dark watch beside light one inside blue walls. Expect: Approach right-side wooden lion with open hand. Verify: Lion appears centred below jaws, watches remain undisturbed. Risk: Lion irregular shape needs body contact rather than protruding face; inspect before descent. Lesson: Watch category is visually sorted and clean.",
+      "targets": {
+        "right_x": 0.35,
+        "right_y": -0.085,
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 815,
+        "start": 787
+      },
+      "left_wrist": {
+        "end": 815,
+        "start": 787
+      },
+      "right_wrist": {
+        "end": 815,
+        "start": 787
+      }
+    },
+    "control_end": 763,
+    "control_start": 735,
+    "feedback": "Accepted: playing 28 waypoints (1.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "State: Both watches visibly contained in middle basket without extra objects; right gripper open. Cars and wooden toys remain incomplete, and reset remains. Check: Release settled dark watch beside light one inside blue walls. Expect: Approach right-side wooden lion with open hand. Verify: Lion appears centred below jaws, watches remain undisturbed. Risk: Lion irregular shape needs body contact rather than protruding face; inspect before descent. Lesson: Watch category is visually sorted and clean.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right lion lies slightly behind jaw centre; wooden category unsorted. Check: Approach landed exactly; lion visible and separate from basket. Expect: Lower and shift back to flank lion body. Verify: Jaws bracket main body, not just face, with lion stationary. Risk: Irregular mane can deflect grip; inspect before closing. Lesson: Wrist view identifies body-centred approach for this lion.",
+      "targets": {
+        "right_y": -0.105,
+        "right_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 821,
+        "start": 816
+      },
+      "left_wrist": {
+        "end": 821,
+        "start": 816
+      },
+      "right_wrist": {
+        "end": 821,
+        "start": 816
+      }
+    },
+    "control_end": 768,
+    "control_start": 763,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "State: Right lion lies slightly behind jaw centre; wooden category unsorted. Check: Approach landed exactly; lion visible and separate from basket. Expect: Lower and shift back to flank lion body. Verify: Jaws bracket main body, not just face, with lion stationary. Risk: Irregular mane can deflect grip; inspect before closing. Lesson: Wrist view identifies body-centred approach for this lion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lion body and mane sit between jaws at z 0.806; no retention yet. Check: Approach landed within 1 mm without displacement. Expect: Close across main lion body. Verify: Visible bilateral contact, then lift, should establish capture. Risk: Sloped mane may squeeze out; reorient if closure displaces it. Lesson: Body is accessible without touching basket.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 828,
+        "start": 822
+      },
+      "left_wrist": {
+        "end": 828,
+        "start": 822
+      },
+      "right_wrist": {
+        "end": 828,
+        "start": 822
+      }
+    },
+    "control_end": 774,
+    "control_start": 768,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 53,
+    "public_note": "State: Lion body and mane sit between jaws at z 0.806; no retention yet. Check: Approach landed within 1 mm without displacement. Expect: Close across main lion body. Verify: Visible bilateral contact, then lift, should establish capture. Risk: Sloped mane may squeeze out; reorient if closure displaces it. Lesson: Body is accessible without touching basket.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lion contacted at gap 0.28; wooden category still unplaced. Check: Closure established body contact without obvious escape. Expect: Lift lion clear of table and rim. Verify: Lion follows jaws and remains clamped. Risk: Sloped grasp could slip; inspect immediately before transfer. Lesson: Closure established plausible body contact, not yet retention.",
+      "targets": {
+        "right_z": 0.915
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 839,
+        "start": 829
+      },
+      "left_wrist": {
+        "end": 839,
+        "start": 829
+      },
+      "right_wrist": {
+        "end": 839,
+        "start": 829
+      }
+    },
+    "control_end": 784,
+    "control_start": 774,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "State: Lion contacted at gap 0.28; wooden category still unplaced. Check: Closure established body contact without obvious escape. Expect: Lift lion clear of table and rim. Verify: Lion follows jaws and remains clamped. Risk: Sloped grasp could slip; inspect immediately before transfer. Lesson: Closure established plausible body contact, not yet retention.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right lion visibly retained after lift; red basket empty. Check: Lift reached target and lion followed with stable gap. Expect: Carry lion above right basket interior. Verify: Lion remains between jaws and over red opening. Risk: Sloped grasp could slip in transit; inspect before release. Lesson: Body grip retained this lion through lift.",
+      "targets": {
+        "right_x": 0.28,
+        "right_y": 0.06
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 855,
+        "start": 840
+      },
+      "left_wrist": {
+        "end": 855,
+        "start": 840
+      },
+      "right_wrist": {
+        "end": 855,
+        "start": 840
+      }
+    },
+    "control_end": 799,
+    "control_start": 784,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 55,
+    "public_note": "State: Right lion visibly retained after lift; red basket empty. Check: Lift reached target and lion followed with stable gap. Expect: Carry lion above right basket interior. Verify: Lion remains between jaws and over red opening. Risk: Sloped grasp could slip in transit; inspect before release. Lesson: Body grip retained this lion through lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lion held above red basket interior; second lion still outside. Check: Transfer landed accurately with retention intact. Expect: Release first wooden toy into right basket. Verify: Lion settles within red walls, separate from open jaws. Risk: Bounce; inspect containment before moving away. Lesson: This lion body grasp survived both lift and transfer.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 861,
+        "start": 856
+      },
+      "left_wrist": {
+        "end": 861,
+        "start": 856
+      },
+      "right_wrist": {
+        "end": 861,
+        "start": 856
+      }
+    },
+    "control_end": 804,
+    "control_start": 799,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 5 move the gripper, once the arm has arrived.",
+    "policy_step": 56,
+    "public_note": "State: Lion held above red basket interior; second lion still outside. Check: Transfer landed accurately with retention intact. Expect: Release first wooden toy into right basket. Verify: Lion settles within red walls, separate from open jaws. Risk: Bounce; inspect containment before moving away. Lesson: This lion body grasp survived both lift and transfer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: First lion contained in red basket; both watches sorted; green car and left lion remain outside. Check: Release visibly settled lion inside correct basket. Expect: Stage right hand toward remaining lion without crossing low over objects. Verify: Arrival near left-side objects with open jaws and no displacement. Risk: Far cross-body reach; use staging rather than one distant low target. Lesson: Red-basket release was successful.",
+      "targets": {
+        "right_x": -0.15,
+        "right_y": -0.11,
+        "right_z": 0.87
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 884,
+        "start": 862
+      },
+      "left_wrist": {
+        "end": 884,
+        "start": 862
+      },
+      "right_wrist": {
+        "end": 884,
+        "start": 862
+      }
+    },
+    "control_end": 826,
+    "control_start": 804,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 57,
+    "public_note": "State: First lion contained in red basket; both watches sorted; green car and left lion remain outside. Check: Release visibly settled lion inside correct basket. Expect: Stage right hand toward remaining lion without crossing low over objects. Verify: Arrival near left-side objects with open jaws and no displacement. Risk: Far cross-body reach; use staging rather than one distant low target. Lesson: Red-basket release was successful.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Remaining lion and car still outside on left; right hand empty. Check: Cross-body staging proposal refused; no motion occurred. Expect: Return to previously feasible dark-watch staging pose as an intermediate approach. Verify: Right hand arrives above cleared table region. Risk: Farther-left pickup may remain unreachable; consider left-arm recovery if needed. Lesson: Reach depends strongly on forward position; the more rearward watch pose was previously feasible.",
+      "targets": {
+        "right_x": -0.12,
+        "right_y": -0.17,
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 884,
+        "start": 862
+      },
+      "left_wrist": {
+        "end": 884,
+        "start": 862
+      },
+      "right_wrist": {
+        "end": 884,
+        "start": 862
+      }
+    },
+    "control_end": 826,
+    "control_start": 804,
+    "feedback": "Accepted: playing 22 waypoints (0.9s). The next observation reports how close the grasp point landed.",
+    "policy_step": 57,
+    "public_note": "State: Remaining lion and car still outside on left; right hand empty. Check: Cross-body staging proposal refused; no motion occurred. Expect: Return to previously feasible dark-watch staging pose as an intermediate approach. Verify: Right hand arrives above cleared table region. Risk: Farther-left pickup may remain unreachable; consider left-arm recovery if needed. Lesson: Reach depends strongly on forward position; the more rearward watch pose was previously feasible.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right hand staged but remaining objects are far left; left arm remains displaced and empty. Check: Right staging landed accurately; no sorting change. Expect: Small left-arm recovery toward its own side tests controllability and advances eventual reset. Verify: Left arrival should closely match target with no object contact. Risk: Prior left execution deviated severely; use short recovery and reassess rather than a long return. Lesson: Right arm is reliable locally but far-left reach is constrained.",
+      "targets": {
+        "left_gripper": 1,
+        "left_x": -0.05,
+        "left_y": -0.4
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 907,
+        "start": 885
+      },
+      "left_wrist": {
+        "end": 907,
+        "start": 885
+      },
+      "right_wrist": {
+        "end": 907,
+        "start": 885
+      }
+    },
+    "control_end": 848,
+    "control_start": 826,
+    "feedback": "Accepted: playing 22 waypoints (0.9s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 58,
+    "public_note": "State: Right hand staged but remaining objects are far left; left arm remains displaced and empty. Check: Right staging landed accurately; no sorting change. Expect: Small left-arm recovery toward its own side tests controllability and advances eventual reset. Verify: Left arrival should closely match target with no object contact. Risk: Prior left execution deviated severely; use short recovery and reassess rather than a long return. Lesson: Right arm is reliable locally but far-left reach is constrained.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Left recovery again deviated badly; remaining lion and green car are left of right hand. Watches remain sorted. Check: Left target missed by 182 mm and 24 degrees; no object progress. Expect: Tilt right tool toward world -x to improve access to remaining left objects. Verify: Right orientation should reach target without touching objects. Risk: Cross-body geometry; inspect before further reach. Lesson: Left arm is not reliably following recovery targets, so use right-arm orientation changes instead.",
+      "targets": {
+        "right_roll_deg": 30
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 924,
+        "start": 908
+      },
+      "left_wrist": {
+        "end": 924,
+        "start": 908
+      },
+      "right_wrist": {
+        "end": 924,
+        "start": 908
+      }
+    },
+    "control_end": 864,
+    "control_start": 848,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 59,
+    "public_note": "State: Left recovery again deviated badly; remaining lion and green car are left of right hand. Watches remain sorted. Check: Left target missed by 182 mm and 24 degrees; no object progress. Expect: Tilt right tool toward world -x to improve access to remaining left objects. Verify: Right orientation should reach target without touching objects. Risk: Cross-body geometry; inspect before further reach. Lesson: Left arm is not reliably following recovery targets, so use right-arm orientation changes instead.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Remaining lion stands beside green car; both outside white basket. Check: Right roll reached accurately and improved leftward view. Expect: Approach lion at a clear staging height using leftward tilt. Verify: Lion appears between jaws, with car separate and untouched. Risk: Reach or adjacent car contact; inspect before descent and split if refused. Lesson: Leftward tool tilt is accurately controllable on right arm.",
+      "targets": {
+        "right_x": -0.27,
+        "right_y": -0.095,
+        "right_z": 0.835
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 955,
+        "start": 925
+      },
+      "left_wrist": {
+        "end": 955,
+        "start": 925
+      },
+      "right_wrist": {
+        "end": 955,
+        "start": 925
+      }
+    },
+    "control_end": 894,
+    "control_start": 864,
+    "feedback": "Accepted: playing 30 waypoints (1.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 60,
+    "public_note": "State: Remaining lion stands beside green car; both outside white basket. Check: Right roll reached accurately and improved leftward view. Expect: Approach lion at a clear staging height using leftward tilt. Verify: Lion appears between jaws, with car separate and untouched. Risk: Reach or adjacent car contact; inspect before descent and split if refused. Lesson: Leftward tool tilt is accurately controllable on right arm.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lion centred below jaws, green car immediately beside it; wooden category awaits this lion. Check: Approach stopped 5 mm short but view confirms lion alignment. Expect: Lower and shift slightly back to contact lion away from car. Verify: Lion remains centred and car clear of closing region. Risk: Tilted jaw could touch car; use small further corrections after inspection. Lesson: Leftward tilt enabled previously inaccessible cross-body reach.",
+      "targets": {
+        "right_y": -0.11,
+        "right_z": 0.811
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 965,
+        "start": 956
+      },
+      "left_wrist": {
+        "end": 965,
+        "start": 956
+      },
+      "right_wrist": {
+        "end": 965,
+        "start": 956
+      }
+    },
+    "control_end": 903,
+    "control_start": 894,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 61,
+    "public_note": "State: Lion centred below jaws, green car immediately beside it; wooden category awaits this lion. Check: Approach stopped 5 mm short but view confirms lion alignment. Expect: Lower and shift slightly back to contact lion away from car. Verify: Lion remains centred and car clear of closing region. Risk: Tilted jaw could touch car; use small further corrections after inspection. Lesson: Leftward tilt enabled previously inaccessible cross-body reach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lion head/body lies within jaw gap, car above-right and outside intended contact. Check: Lowering landed accurately with no visible displacement. Expect: Close around lion only. Verify: Lion contacted while green car stays on table; lift must confirm retention. Risk: Nearby car contamination; if both objects move, reopen and separate rather than carry them together. Lesson: Small backward correction increased separation from car.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 972,
+        "start": 966
+      },
+      "left_wrist": {
+        "end": 972,
+        "start": 966
+      },
+      "right_wrist": {
+        "end": 972,
+        "start": 966
+      }
+    },
+    "control_end": 909,
+    "control_start": 903,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 62,
+    "public_note": "State: Lion head/body lies within jaw gap, car above-right and outside intended contact. Check: Lowering landed accurately with no visible displacement. Expect: Close around lion only. Verify: Lion contacted while green car stays on table; lift must confirm retention. Risk: Nearby car contamination; if both objects move, reopen and separate rather than carry them together. Lesson: Small backward correction increased separation from car.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lion contacted and tilted between jaws; green car remains separate. Check: Closure moved grasp point upward 7 mm and tilted lion, so contact altered pose. Expect: Lift with slight retreat toward reachable space, carrying lion alone. Verify: Lion follows hand while car stays behind. Risk: Shallow mane grip may slip; inspect immediately. Lesson: Closure changed lion orientation, so retention must be tested rather than assumed.",
+      "targets": {
+        "right_x": -0.23,
+        "right_y": -0.13,
+        "right_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 979,
+        "start": 973
+      },
+      "left_wrist": {
+        "end": 979,
+        "start": 973
+      },
+      "right_wrist": {
+        "end": 979,
+        "start": 973
+      }
+    },
+    "control_end": 915,
+    "control_start": 909,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 63,
+    "public_note": "State: Lion contacted and tilted between jaws; green car remains separate. Check: Closure moved grasp point upward 7 mm and tilted lion, so contact altered pose. Expect: Lift with slight retreat toward reachable space, carrying lion alone. Verify: Lion follows hand while car stays behind. Risk: Shallow mane grip may slip; inspect immediately. Lesson: Closure changed lion orientation, so retention must be tested rather than assumed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lion stayed on table; grasp failed, watches remain correctly sorted. Check: Lift landed but jaws closed fully and lion did not follow. Expect: Reopen before a deeper body approach, avoiding closed-jaw pushing. Verify: Open jaws with lion stationary. Risk: Repeat mane-only contact; next approach must be lower and body-centred. Lesson: The z 0.811 tilted grasp caught only a slipping upper feature.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 986,
+        "start": 980
+      },
+      "left_wrist": {
+        "end": 986,
+        "start": 980
+      },
+      "right_wrist": {
+        "end": 986,
+        "start": 980
+      }
+    },
+    "control_end": 921,
+    "control_start": 915,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 64,
+    "public_note": "State: Lion stayed on table; grasp failed, watches remain correctly sorted. Check: Lift landed but jaws closed fully and lion did not follow. Expect: Reopen before a deeper body approach, avoiding closed-jaw pushing. Verify: Open jaws with lion stationary. Risk: Repeat mane-only contact; next approach must be lower and body-centred. Lesson: The z 0.811 tilted grasp caught only a slipping upper feature.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lion remains upright beside car; previous upper grip failed. Check: Reopening left objects stationary. Expect: Approach lower through open gap to grip lion body more deeply. Verify: Body lies between jaws with car excluded. Risk: Tilted jaw/table contact; inspect then use millimetric corrections. Lesson: Lower body contact is needed rather than upper mane contact.",
+      "targets": {
+        "right_x": -0.278,
+        "right_y": -0.105,
+        "right_z": 0.794
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 995,
+        "start": 987
+      },
+      "left_wrist": {
+        "end": 995,
+        "start": 987
+      },
+      "right_wrist": {
+        "end": 995,
+        "start": 987
+      }
+    },
+    "control_end": 929,
+    "control_start": 921,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 65,
+    "public_note": "State: Lion remains upright beside car; previous upper grip failed. Check: Reopening left objects stationary. Expect: Approach lower through open gap to grip lion body more deeply. Verify: Body lies between jaws with car excluded. Risk: Tilted jaw/table contact; inspect then use millimetric corrections. Lesson: Lower body contact is needed rather than upper mane contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lion body now deeper between jaws, car remains separate. Check: Lower approach landed within 2 mm without displacement. Expect: Close around lower lion body for stronger retention. Verify: Body contact should persist through subsequent lift rather than squeeze off mane. Risk: Asymmetric jaw contact could tip lion; if so reassess new orientation. Lesson: Revised approach visibly reaches lower than failed grasp.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1002,
+        "start": 996
+      },
+      "left_wrist": {
+        "end": 1002,
+        "start": 996
+      },
+      "right_wrist": {
+        "end": 1002,
+        "start": 996
+      }
+    },
+    "control_end": 935,
+    "control_start": 929,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 66,
+    "public_note": "State: Lion body now deeper between jaws, car remains separate. Check: Lower approach landed within 2 mm without displacement. Expect: Close around lower lion body for stronger retention. Verify: Body contact should persist through subsequent lift rather than squeeze off mane. Risk: Asymmetric jaw contact could tip lion; if so reassess new orientation. Lesson: Revised approach visibly reaches lower than failed grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Lion captured lower across body at gap 0.35; car remains excluded. Check: Closure tipped lion but maintained broader body contact than before. Expect: Lift and retreat with lion retained. Verify: Lion follows hand while car remains on table. Risk: Another slip would invalidate this tilted approach; switch object or preserve partial progress rather than repeat. Lesson: Lower closure gives broader contact, pending lift verification.",
+      "targets": {
+        "right_x": -0.23,
+        "right_y": -0.13,
+        "right_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1011,
+        "start": 1003
+      },
+      "left_wrist": {
+        "end": 1011,
+        "start": 1003
+      },
+      "right_wrist": {
+        "end": 1011,
+        "start": 1003
+      }
+    },
+    "control_end": 943,
+    "control_start": 935,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 67,
+    "public_note": "State: Lion captured lower across body at gap 0.35; car remains excluded. Check: Closure tipped lion but maintained broader body contact than before. Expect: Lift and retreat with lion retained. Verify: Lion follows hand while car remains on table. Risk: Another slip would invalidate this tilted approach; switch object or preserve partial progress rather than repeat. Lesson: Lower closure gives broader contact, pending lift verification.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Second lion visibly retained; watches sorted and first lion in red basket. Check: Lift-retreat landed and lion followed while car stayed behind. Expect: Carry lion toward right basket via central high staging. Verify: Lion stays clamped and clear of objects. Risk: Long transfer can loosen grasp; inspect at staging before final placement. Lesson: Deeper body grasp retained where upper mane grasp failed.",
+      "targets": {
+        "right_x": 0.1,
+        "right_y": -0.1,
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1034,
+        "start": 1012
+      },
+      "left_wrist": {
+        "end": 1034,
+        "start": 1012
+      },
+      "right_wrist": {
+        "end": 1034,
+        "start": 1012
+      }
+    },
+    "control_end": 965,
+    "control_start": 943,
+    "feedback": "Accepted: playing 22 waypoints (0.9s). The next observation reports how close the grasp point landed.",
+    "policy_step": 68,
+    "public_note": "State: Second lion visibly retained; watches sorted and first lion in red basket. Check: Lift-retreat landed and lion followed while car stayed behind. Expect: Carry lion toward right basket via central high staging. Verify: Lion stays clamped and clear of objects. Risk: Long transfer can loosen grasp; inspect at staging before final placement. Lesson: Deeper body grasp retained where upper mane grasp failed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Second lion retained at central staging; red basket contains first lion only. Check: Transfer landed accurately with stable body contact. Expect: Move held lion above right basket opening. Verify: Lion remains clamped over red interior. Risk: Tilt shifts hanging object footprint left of hand; inspect margin before release. Lesson: Deeper lion grasp survived lateral transport.",
+      "targets": {
+        "right_x": 0.28,
+        "right_y": 0.065
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1050,
+        "start": 1035
+      },
+      "left_wrist": {
+        "end": 1050,
+        "start": 1035
+      },
+      "right_wrist": {
+        "end": 1050,
+        "start": 1035
+      }
+    },
+    "control_end": 980,
+    "control_start": 965,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 69,
+    "public_note": "State: Second lion retained at central staging; red basket contains first lion only. Check: Transfer landed accurately with stable body contact. Expect: Move held lion above right basket opening. Verify: Lion remains clamped over red interior. Risk: Tilt shifts hanging object footprint left of hand; inspect margin before release. Lesson: Deeper lion grasp survived lateral transport.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Held lion projects inside red basket; first lion rests below. Check: Transfer landed accurately with retention intact. Expect: Release second lion to complete wooden-toy category. Verify: Both lions settle inside red walls with no extra objects and jaws open. Risk: Bounce near left wall; inspect containment afterward. Lesson: Revised lower body grasp maintained retention throughout transfer.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1055,
+        "start": 1051
+      },
+      "left_wrist": {
+        "end": 1055,
+        "start": 1051
+      },
+      "right_wrist": {
+        "end": 1055,
+        "start": 1051
+      }
+    },
+    "control_end": 984,
+    "control_start": 980,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 70,
+    "public_note": "State: Held lion projects inside red basket; first lion rests below. Check: Transfer landed accurately with retention intact. Expect: Release second lion to complete wooden-toy category. Verify: Both lions settle inside red walls with no extra objects and jaws open. Risk: Bounce near left wall; inspect containment afterward. Lesson: Revised lower body grasp maintained retention throughout transfer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Both lions in right basket and both watches in middle, with no cross-category objects visible. Green car alone remains unsorted; reset still unmet. Check: Release settled second lion inside red walls. Expect: Approach green car using established leftward tilt. Verify: Car centred below open jaws without disturbing baskets. Risk: Budget and cross-body reach; inspect arrival before low grasp, preserving sorted categories. Lesson: Two categories now visibly satisfy clean placement.",
+      "targets": {
+        "right_x": -0.21,
+        "right_y": -0.105,
+        "right_z": 0.835
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1080,
+        "start": 1056
+      },
+      "left_wrist": {
+        "end": 1080,
+        "start": 1056
+      },
+      "right_wrist": {
+        "end": 1080,
+        "start": 1056
+      }
+    },
+    "control_end": 1008,
+    "control_start": 984,
+    "feedback": "Accepted: playing 24 waypoints (1.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 71,
+    "public_note": "State: Both lions in right basket and both watches in middle, with no cross-category objects visible. Green car alone remains unsorted; reset still unmet. Check: Release settled second lion inside red walls. Expect: Approach green car using established leftward tilt. Verify: Car centred below open jaws without disturbing baskets. Risk: Budget and cross-body reach; inspect arrival before low grasp, preserving sorted categories. Lesson: Two categories now visibly satisfy clean placement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car lies beneath open hand with long axis across jaw closure; only car placement and reset remain. Check: Approach landed within 1 mm and car unchanged. Expect: Rotate closing direction toward car width for a more secure grip. Verify: Car long axis becomes near vertical in wrist view. Risk: Rotation at reach or near basket; keep staging height and inspect. Lesson: Earlier car roof grasp failed in transit; widthwise deeper grasp is needed.",
+      "targets": {
+        "right_yaw_deg": 75
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1084,
+        "start": 1081
+      },
+      "left_wrist": {
+        "end": 1084,
+        "start": 1081
+      },
+      "right_wrist": {
+        "end": 1084,
+        "start": 1081
+      }
+    },
+    "control_end": 1011,
+    "control_start": 1008,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 72,
+    "public_note": "State: Green car lies beneath open hand with long axis across jaw closure; only car placement and reset remain. Check: Approach landed within 1 mm and car unchanged. Expect: Rotate closing direction toward car width for a more secure grip. Verify: Car long axis becomes near vertical in wrist view. Risk: Rotation at reach or near basket; keep staging height and inspect. Lesson: Earlier car roof grasp failed in transit; widthwise deeper grasp is needed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car remains ungrasped at staging; sorted watches and lions unchanged. Check: Positive yaw target refused, with no motion. Expect: Opposite yaw direction offers a transverse grasp through another wrist configuration. Verify: Rotation reaches target and car stays fixed. Risk: Reach refusal; if unavailable, do not repeat identical rotations. Lesson: Positive yaw is not feasible in this cross-body tilted pose.",
+      "targets": {
+        "right_yaw_deg": -60
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1084,
+        "start": 1081
+      },
+      "left_wrist": {
+        "end": 1084,
+        "start": 1081
+      },
+      "right_wrist": {
+        "end": 1084,
+        "start": 1081
+      }
+    },
+    "control_end": 1011,
+    "control_start": 1008,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 72,
+    "public_note": "State: Green car remains ungrasped at staging; sorted watches and lions unchanged. Check: Positive yaw target refused, with no motion. Expect: Opposite yaw direction offers a transverse grasp through another wrist configuration. Verify: Rotation reaches target and car stays fixed. Risk: Reach refusal; if unavailable, do not repeat identical rotations. Lesson: Positive yaw is not feasible in this cross-body tilted pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car remains below open jaws; orientation alternatives unavailable. Check: Opposite yaw also refused; no motion or new object evidence. Expect: Approach car body with current orientation for end-to-end contact, using lower height than failed roof grip. Verify: Jaws should flank car ends without basket contact. Risk: Car length may exceed effective jaw opening; inspect before closure and abandon this grasp if it cannot fit. Lesson: Current reach only supports a restricted wrist orientation.",
+      "targets": {
+        "right_y": -0.075,
+        "right_z": 0.791
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1084,
+        "start": 1081
+      },
+      "left_wrist": {
+        "end": 1084,
+        "start": 1081
+      },
+      "right_wrist": {
+        "end": 1084,
+        "start": 1081
+      }
+    },
+    "control_end": 1011,
+    "control_start": 1008,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 72,
+    "public_note": "State: Green car remains below open jaws; orientation alternatives unavailable. Check: Opposite yaw also refused; no motion or new object evidence. Expect: Approach car body with current orientation for end-to-end contact, using lower height than failed roof grip. Verify: Jaws should flank car ends without basket contact. Risk: Car length may exceed effective jaw opening; inspect before closure and abandon this grasp if it cannot fit. Lesson: Current reach only supports a restricted wrist orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Car fits within projected jaw gap but tilted contact remains uncertain. Check: Descent stopped 5 mm high and car shifted slightly; jaws are near its ends. Expect: Millimetric lowering and closure establish lower end contact. Verify: Car stays between jaws with nonzero gap; lift must prove retention. Risk: End grip may squeeze car out; if it escapes, preserve existing categories and stop retries. Lesson: Current approach can reach car but contact geometry is less favourable than widthwise grasp.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1092,
+        "start": 1085
+      },
+      "left_wrist": {
+        "end": 1092,
+        "start": 1085
+      },
+      "right_wrist": {
+        "end": 1092,
+        "start": 1085
+      }
+    },
+    "control_end": 1018,
+    "control_start": 1011,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 73,
+    "public_note": "State: Car fits within projected jaw gap but tilted contact remains uncertain. Check: Descent stopped 5 mm high and car shifted slightly; jaws are near its ends. Expect: Millimetric lowering and closure establish lower end contact. Verify: Car stays between jaws with nonzero gap; lift must prove retention. Risk: End grip may squeeze car out; if it escapes, preserve existing categories and stop retries. Lesson: Current approach can reach car but contact geometry is less favourable than widthwise grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Green car remains outside; jaws closed fully above it, so grasp failed. Two categories are cleanly sorted; reset remains unmet. Check: Closure landed but missed body, disproving contact. Expect: Withdraw empty right arm to clear central staging and reopen, beginning reset rather than repeating ineffective car grasp. Verify: Car stays on table and sorted baskets remain undisturbed. Risk: Withdrawal near car; move upward and away, checking clearance. Lesson: Current tilted end-grasp closes above the car and is ineffective.",
+      "targets": {
+        "right_gripper": 1,
+        "right_x": 0.1,
+        "right_y": -0.2,
+        "right_z": 0.93
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1127,
+        "start": 1093
+      },
+      "left_wrist": {
+        "end": 1127,
+        "start": 1093
+      },
+      "right_wrist": {
+        "end": 1127,
+        "start": 1093
+      }
+    },
+    "control_end": 1052,
+    "control_start": 1018,
+    "feedback": "Accepted: playing 34 waypoints (1.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 74,
+    "public_note": "State: Green car remains outside; jaws closed fully above it, so grasp failed. Two categories are cleanly sorted; reset remains unmet. Check: Closure landed but missed body, disproving contact. Expect: Withdraw empty right arm to clear central staging and reopen, beginning reset rather than repeating ineffective car grasp. Verify: Car stays on table and sorted baskets remain undisturbed. Risk: Withdrawal near car; move upward and away, checking clearance. Lesson: Current tilted end-grasp closes above the car and is ineffective.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right hand clear and empty; green car unsorted, watches and lions correctly contained. Both-arm reset remains incomplete. Check: Withdrawal reached accurately without disturbing placements. Expect: Return right position to origin and partially restore orientation. Verify: Right pose near starting position at 60-degree pitch. Risk: Combined orientation and position may be refused; split if necessary. Lesson: Right arm continues accurate tracking; left recovery remains unreliable.",
+      "targets": {
+        "right_pitch_deg": 60,
+        "right_roll_deg": 0,
+        "right_x": 0.3004,
+        "right_yaw_deg": 0,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1145,
+        "start": 1128
+      },
+      "left_wrist": {
+        "end": 1145,
+        "start": 1128
+      },
+      "right_wrist": {
+        "end": 1145,
+        "start": 1128
+      }
+    },
+    "control_end": 1069,
+    "control_start": 1052,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 75,
+    "public_note": "State: Right hand clear and empty; green car unsorted, watches and lions correctly contained. Both-arm reset remains incomplete. Check: Withdrawal reached accurately without disturbing placements. Expect: Return right position to origin and partially restore orientation. Verify: Right pose near starting position at 60-degree pitch. Risk: Combined orientation and position may be refused; split if necessary. Lesson: Right arm continues accurate tracking; left recovery remains unreliable.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "State: Right position is near origin but pitch is 30 degrees short; left reset and green-car placement remain unmet. Check: Right return stage landed accurately with baskets unchanged. Expect: Complete right-arm reset to starting orientation and y position. Verify: Right pose within origin tolerances, open and empty; this does not establish full task success. Risk: No material object-contact risk in this clear rotation. Lesson: Staged right-arm reset tracks accurately.",
+      "targets": {
+        "right_pitch_deg": 90,
+        "right_y": -0.2022
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1157,
+        "start": 1146
+      },
+      "left_wrist": {
+        "end": 1157,
+        "start": 1146
+      },
+      "right_wrist": {
+        "end": 1157,
+        "start": 1146
+      }
+    },
+    "control_end": 1080,
+    "control_start": 1069,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 76,
+    "public_note": "State: Right position is near origin but pitch is 30 degrees short; left reset and green-car placement remain unmet. Check: Right return stage landed accurately with baskets unchanged. Expect: Complete right-arm reset to starting orientation and y position. Verify: Right pose within origin tolerances, open and empty; this does not establish full task success. Risk: No material object-contact risk in this clear rotation. Lesson: Staged right-arm reset tracks accurately.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "Two categories were cleanly sorted. Earlier transition to the reliable right arm and deeper car-body contact could have conserved budget; left-arm targets required immediate reassessment after large execution deviations.",
+      "reason": "State: Both watches are in the middle basket and both wooden toys in the right, with no extra categories visible. Yellow car is in the left basket; green car remains outside. Right arm is reset, left arm is not. Check: Right reset landed exactly; left recovery previously showed large execution errors. Expect: End with verified partial sorting preserved; remaining budget cannot complete car placement and left recovery. Verify: Green-car placement and left-arm reset remain unmet; full success is not claimed. Risk: Further unreliable left motion could disturb the scene; terminate rather than repeat failed recovery. Lesson: Verify transport retention and actual arrival; deeper lion body grips succeeded while shallow car grips slipped."
+    },
+    "cameras": {
+      "head": {
+        "end": 1159,
+        "start": 1158
+      },
+      "left_wrist": {
+        "end": 1159,
+        "start": 1158
+      },
+      "right_wrist": {
+        "end": 1159,
+        "start": 1158
+      }
+    },
+    "control_end": 1081,
+    "control_start": 1080,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 77,
+    "public_note": "State: Both watches are in the middle basket and both wooden toys in the right, with no extra categories visible. Yellow car is in the left basket; green car remains outside. Right arm is reset, left arm is not. Check: Right reset landed exactly; left recovery previously showed large execution errors. Expect: End with verified partial sorting preserved; remaining budget cannot complete car placement and left recovery. Verify: Green-car placement and left-arm reset remain unmet; full success is not claimed. Risk: Further unreliable left motion could disturb the scene; terminate rather than repeat failed recovery. Lesson: Verify transport retention and actual arrival; deeper lion body grips succeeded while shallow car grips slipped.",
+    "tool": "give_up"
+  }
+]
