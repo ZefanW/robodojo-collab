@@ -13,6 +13,7 @@ import json
 from pathlib import Path
 import re
 import shutil
+from statistics import mean
 import tempfile
 
 from .export_legacy import INTERNAL, public
@@ -32,6 +33,22 @@ IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg", ".bmp", ".ti
 PRIVATE_FIELDS = {"threadid", "turnid", "responseid", "sessionid", "rawreasoning",
                   "auth", "rawsession", "rawsessions", "rawsessionjournal"}
 IMAGE_DATA = re.compile(r"data:image/|\"image_url\"\s*:", re.I)
+# Original ten configurations in protocol/l3-action-cap20-20261005/jobs.json.
+# Selection is fixed independently of outcomes; arbitrary ten-row subsets are
+# never accepted merely because their registry is labelled Devset10.
+DEVSET10_SOURCE_SHA256 = "0397d6cf8c1a9ab68bd5f12441d6dd957c0b6c7fbe45438e256d881565fbf397"
+DEVSET10_TASKS = {
+    "stack_bowls": ("Generalization", "standard"),
+    "push_T_random": ("Generalization", "random"),
+    "cover_blocks": ("Memory", "standard"),
+    "imitate_sorting_sequence": ("Memory", "standard"),
+    "insert_tubes": ("Precision", "standard"),
+    "build_tower": ("Precision", "standard"),
+    "put_bottles_into_dustbin": ("Long-Horizon", "standard"),
+    "organize_table": ("Long-Horizon", "standard"),
+    "classify_objects_by_language": ("Open", "standard"),
+    "solve_equation": ("Open", "standard"),
+}
 
 
 def _read(path):
@@ -236,7 +253,59 @@ def export_publication(source_bundle, destination, provenance=None):
             "manifest": manifest}
 
 
-def build_panel(manifests_or_paths, task_registry, panel_id, *, title=None, algorithm_id=None):
+def validate_panel_registry(task_registry, profile="full54"):
+    """Resolve an explicit metric roster; default full54 validation is unchanged."""
+    if profile not in ("full54", "devset10"):
+        raise ValidationError("Unknown panel metric profile; select full54 or devset10 explicitly")
+    registry = _read(task_registry) if isinstance(task_registry, (str, Path)) else task_registry
+    tasks = registry.get("tasks", []) if isinstance(registry, dict) else []
+    try:
+        universe = {task["task"]: task for task in tasks}
+    except (TypeError, KeyError):
+        raise ValidationError("Panel task registry requires task objects") from None
+    if profile == "full54":
+        if len(universe) != 54 or len(tasks) != 54:
+            raise ValidationError("Panel requires the exact original 54-task registry")
+    else:
+        if (registry.get("profile") != "devset10" or registry.get("roster_id") != "devset10-v1"
+                or registry.get("expected_task_count") != 10):
+            raise ValidationError("Devset10 requires its explicit profile, roster_id and expected_task_count")
+        if (len(tasks) != 10 or set(universe) != set(DEVSET10_TASKS) or
+                any((row.get("capability"), row.get("variant")) != DEVSET10_TASKS[name]
+                    for name, row in universe.items())):
+            raise ValidationError("Devset10 roster must exactly match the original ten task/capability/variant configurations")
+        if registry.get("source_manifest_sha256") != DEVSET10_SOURCE_SHA256:
+            raise ValidationError("Devset10 roster source SHA must match the pinned original selection manifest")
+        if any(type(registry.get(field)) is not int or registry[field] != 0
+               for field in ("official_seed", "layout_ordinal", "round_index")):
+            raise ValidationError("Original Devset10 roster is explicitly seed0/layout0/round0")
+    return registry, universe
+
+
+def devset10_summary(runs, universe):
+    """Ten original task configurations, each with weight 1/10 (not Full54)."""
+    chosen = {run["scene"]["task"]: run for run in runs}
+    missing = sorted(set(universe) - set(chosen))
+    complete = len(chosen) == 10 and not missing
+    capabilities = {}
+    for capability in dict.fromkeys(row["capability"] for row in universe.values()):
+        tasks = [task for task, row in universe.items() if row["capability"] == capability]
+        present = [chosen[task] for task in tasks if task in chosen]
+        full = len(present) == len(tasks)
+        capabilities[capability] = {"complete": full, "planned": len(tasks), "valid": len(present),
+            "score": mean(run["outcome"]["score"] * 100 for run in present) if full else None,
+            "success_rate": mean(float(run["outcome"]["success"]) * 100 for run in present) if full else None}
+    return {"complete": complete, "round_complete": complete, "valid": len(chosen), "planned": 10,
+            "score": mean(run["outcome"]["score"] * 100 for run in runs) if complete else None,
+            "success_rate": mean(float(run["outcome"]["success"]) * 100 for run in runs) if complete else None,
+            "capabilities": capabilities, "missing_or_incomplete": missing,
+            "structural_missing_tasks": [], "duplicate_tasks": [], "unexpected_tasks": [],
+            "metadata_mismatches": [], "excluded_repeat_attempts": [],
+            "selection_policy": "The fixed original Devset10 roster; one original attempt per task; no outcome-based selection.",
+            "aggregation": "Devset10: equal 1/10 weight per original task configuration for score and success rate. Capability means are descriptive; this is not the Full54 metric."}
+
+
+def build_panel(manifests_or_paths, task_registry, panel_id, *, title=None, algorithm_id=None, profile="full54"):
     """Build a compact, metadata-validated panel without rewriting run details.
 
     A differing historical algorithm/protocol is included only with an explicit
@@ -246,11 +315,7 @@ def build_panel(manifests_or_paths, task_registry, panel_id, *, title=None, algo
     """
     if not isinstance(panel_id, str) or not IDENT.fullmatch(panel_id):
         raise ValidationError("panel_id: safe identifier required")
-    registry = _read(task_registry) if isinstance(task_registry, (str, Path)) else task_registry
-    tasks = registry.get("tasks", []) if isinstance(registry, dict) else []
-    universe = {task["task"]: task for task in tasks}
-    if len(universe) != 54 or len(tasks) != 54:
-        raise ValidationError("Panel requires the exact original 54-task registry")
+    registry, universe = validate_panel_registry(task_registry, profile)
     runs = []
     for item in manifests_or_paths:
         if isinstance(item, (str, Path)):
@@ -270,6 +335,8 @@ def build_panel(manifests_or_paths, task_registry, panel_id, *, title=None, algo
     identities = {(r["scene"]["official_seed"], r["scene"]["layout_ordinal"], r["scene"]["round_index"]) for r in runs}
     if len(identities) != 1:
         raise ValidationError("Panel requires one common seed, layout ordinal and round")
+    if profile == "devset10" and identities != {(0, 0, 0)}:
+        raise ValidationError("Original Devset10 publication requires seed0/layout0/round0")
     if any((r["scene"]["capability"], r["scene"]["variant"]) !=
            (universe[r["scene"]["task"]]["capability"], universe[r["scene"]["task"]]["variant"]) for r in runs):
         raise ValidationError("Panel scene capability/variant differs from registered task")
@@ -289,7 +356,7 @@ def build_panel(manifests_or_paths, task_registry, panel_id, *, title=None, algo
         if not same and not (algorithm_id is not None and reused):
             raise ValidationError("Mixed algorithm/protocol requires explicit target and disclosed original reuse")
     runs.sort(key=lambda r: (r["scene"]["capability"], r["scene"]["task"]))
-    summary = official_summary(runs, universe)
+    summary = official_summary(runs, universe) if profile == "full54" else devset10_summary(runs, universe)
     rows = []
     for run in runs:
         scene, outcome = run["scene"], run["outcome"]
@@ -317,6 +384,17 @@ def build_panel(manifests_or_paths, task_registry, panel_id, *, title=None, algo
               "limitations": ["Official capability weighting is used; this is not a verified official leaderboard submission or the larger official evaluation protocol.",
                               "One seed/layout panel does not establish across-seed robustness. Original source metadata and disclosed historical reuse are retained.",
                               "This compact index validates metadata only; export and storage receipts separately establish local and cloud byte integrity."]}
+    if profile == "devset10":
+        result.pop("official54")
+        result.update(metric_profile="devset10", metric_label="Devset10 · 10-task equal weight",
+                      devset10=summary, scope="devset10: fixed original ten configurations, seed0/layout0; not Full54",
+                      roster={"id": "devset10-v1", "task_count": 10,
+                              "source_manifest_sha256": DEVSET10_SOURCE_SHA256,
+                              "task_registry_sha256": hashlib.sha256(canonical_bytes(registry)).hexdigest()},
+                      limitations=["Devset10 uses the fixed original ten task configurations with equal task weights. It is not Full54 and is not an official leaderboard submission.",
+                                   "This selected development set does not establish full-benchmark performance or across-seed robustness; no new experiment is implied by publication.",
+                                   "Original algorithms, protocols, costs and any explicitly disclosed reuse remain attached to original run identities.",
+                                   "This compact index validates metadata only; export and storage receipts separately establish local and cloud byte integrity."])
     errors = privacy_findings(result) + _extra_privacy(result)
     if errors:
         raise ValidationError("\n".join(errors))

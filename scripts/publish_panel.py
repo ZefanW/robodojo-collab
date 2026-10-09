@@ -19,7 +19,7 @@ from types import SimpleNamespace
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from robodojo_collab.publication import validate_publication, build_panel
+from robodojo_collab.publication import validate_publication, build_panel, validate_panel_registry
 from robodojo_collab.schema import file_sha256, privacy_findings, validate_registered_scene
 from robodojo_collab.storage import publish, write_json
 
@@ -89,12 +89,16 @@ def update_catalog(web):
         s = item['summary']
         if not s['complete']:
             continue
-        panels.append({'panel_id': item['panel_id'], 'title': item['title'],
+        entry = {'panel_id': item['panel_id'], 'title': item['title'],
             'algorithm_id': item['algorithm_id'], 'official_seed': item['official_seed'],
             'layout_ordinal': item['layout_ordinal'], 'valid': s['valid'], 'planned': s['planned'],
             'score': s['score'], 'success_rate': s['success_rate'],
             'href': 'publications.html?panel=' + item['panel_id'],
-            'index_url': 'data/publications/' + item['panel_id'] + '/index.json'})
+            'index_url': 'data/publications/' + item['panel_id'] + '/index.json'}
+        if item.get('metric_profile') == 'devset10':
+            entry.update(metric_profile='devset10', metric_label=item['metric_label'],
+                         scope=item['scope'], roster=item['roster'])
+        panels.append(entry)
     write_json(Path(web) / 'data/publications/catalog.json', {'schema_version': '1.0',
         'generated_at': datetime.now(timezone.utc).isoformat(), 'panels': panels})
 
@@ -111,7 +115,15 @@ def main(argv=None):
     parser.add_argument('--web', type=Path, default=ROOT / 'web')
     parser.add_argument('--state', type=Path, required=True)
     parser.add_argument('--storage-cache', type=Path, default=ROOT / 'registry/storage.json')
+    parser.add_argument('--profile', choices=('full54', 'devset10'), default='full54',
+                        help='Explicit scoring roster; default remains the original Full54 metric')
+    parser.add_argument('--task-registry', type=Path,
+                        help='Required for Devset10; exact pinned ten-task registry, never an arbitrary subset')
     args = parser.parse_args(argv)
+    if args.profile == 'devset10' and args.task_registry is None:
+        parser.error('--profile devset10 requires an explicit --task-registry')
+    registry_path = args.task_registry or ROOT / 'registry/tasks.json'
+    task_registry, _ = validate_panel_registry(read(registry_path), args.profile)
     if not args.panel_id or any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-_' for c in args.panel_id):
         raise ValueError('Unsafe panel identifier')
     args.state.mkdir(parents=True, exist_ok=True)
@@ -125,15 +137,19 @@ def main(argv=None):
         if errors:
             raise ValueError(p.parent.name + ': ' + '; '.join(errors))
         bundles.append((p.parent, m))
-    panel = build_panel([m for _, m in bundles], read(ROOT / 'registry/tasks.json'),
-                        args.panel_id, title=args.title, algorithm_id=args.algorithm_id)
+    panel = build_panel([m for _, m in bundles], task_registry,
+                        args.panel_id, title=args.title, algorithm_id=args.algorithm_id, profile=args.profile)
     if not panel['summary']['complete']:
-        raise ValueError('Pilot publication requires all original 54 valid native terminals')
+        if args.profile == 'full54':
+            raise ValueError('Pilot publication requires all original 54 valid native terminals')
+        raise ValueError('Devset10 publication requires all ten original valid native terminals; no missing-task zero fill')
     archive = metadata_tar(bundles, args.state / (args.panel_id + '-evidence.tar'))
     cache = read(args.storage_cache).get('artifacts', {}) if args.storage_cache.exists() else {}
     br, reused = upload(archive, args, cache, receipts)
     package = {**br, 'scope': 'panel', 'format': 'tar', 'run_count': len(bundles),
                'contains_images': False, 'contains_videos': False}
+    if args.profile == 'devset10':
+        package.update(metric_profile='devset10', roster_id='devset10-v1')
     output = args.web / 'data/publications' / args.panel_id
     (output / 'runs').mkdir(parents=True, exist_ok=True)
     objects = {br['sha256']: {'bytes': br['bytes'], 'reused': reused}}
@@ -160,6 +176,9 @@ def main(argv=None):
                     'member_sha256': art['sha256'], 'bundle_format': 'tar',
                     'verified_at': br['verified_at'], 'public_download_verified': True}
         m['package'] = package
+        if args.profile == 'devset10':
+            m['publication_scope'] = {'metric_profile': 'devset10', 'metric_label': panel['metric_label'],
+                                      'roster': panel['roster'], 'official_leaderboard_submission': False}
         if privacy_findings(m):
             raise ValueError('Public detail privacy check failed')
         write_json(output / 'runs' / (m['run_id'] + '.json'), m)

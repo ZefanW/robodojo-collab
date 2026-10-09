@@ -27,7 +27,10 @@
   function isReused(run) { return run.reused_original === true || run.provenance?.reused_original === true || run.provenance?.reused === true; }
   function score(run) { return run.score_percent ?? (run.score == null ? null : run.score * 100); }
   function successChip(value) { return `<span class="result-chip ${value === true ? 'success' : value == null ? 'unknown' : ''}">${value === true ? '成功' : value === false ? '未成功' : '未记录'}</span>`; }
-  function officialSummary(data) { return data.official54 || data.summary?.official_summary || data.summary?.official54 || data.official_summary || data.summary || {}; }
+  function panelSummary(data) {
+    if (data.metric_profile === 'devset10') return data.devset10 || data.summary || {};
+    return data.official54 || data.summary?.official_summary || data.summary?.official54 || data.official_summary || data.summary || {};
+  }
   function simulation(value) { return typeof value === 'object' && value ? value.simulator_version || value.version || value.name || '—' : value || '—'; }
   function assetKind(artifact) { return /demo|rationale/i.test(artifact.kind) ? '公开说明演示' : /video/i.test(artifact.kind) ? viewNames[artifact.view] || '原生录像' : /timeline/i.test(artifact.kind) ? '可读轨迹 JSON' : artifact.path || artifact.kind; }
   function costSummary(manifest) {
@@ -38,24 +41,31 @@
   async function getJSON(url, options) { const response = await fetch(url, options); if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }
 
   function renderPanel() {
-    const summary = officialSummary(panel), runs = panel.runs || [], reused = runs.filter(isReused).length;
+    const summary = panelSummary(panel), runs = panel.runs || [], reused = runs.filter(isReused).length;
+    const devset = panel.metric_profile === 'devset10';
+    const metricLabel = panel.metric_label || (devset ? 'Devset10 · 10-task equal weight' : 'Full54 · 官方五项能力权重');
+    const weighting = devset ? `${num(summary.planned ?? 10)} 项任务等权` : '五项能力等权';
     const title = panel.title || (typeof panel.algorithm === 'object' ? panel.algorithm.algorithm_id : panel.algorithm) || panel.panel_id;
     $('#panel-title').textContent = title;
     document.title = `${title} · 公开结果 | RoboDojo`;
     $('#cases-title').textContent = `${num(runs.length)} 个案例，逐个可核验`;
     $('#panel-tags').innerHTML = [
-      `官方 seed ${panel.official_seed ?? '—'}`, `layout ${panel.layout_ordinal ?? '—'}`, `${num(runs.length)} 个任务`
+      `官方 seed ${panel.official_seed ?? '—'}`, `layout ${panel.layout_ordinal ?? '—'}`, `${num(runs.length)} 个任务`, metricLabel
     ].map(text=>`<span class="tag">${esc(text)}</span>`).join('');
     $('#scope-description').textContent = reused ? `${num(runs.length-reused)} 条本轮记录 + ${num(reused)} 条原记录复用${cap20Pilot ? '（满足 cap20 长度等价条件）' : '（依据见详情）'}。本次发布没有重新运行实验。` : `${num(runs.length)} 条已有实验记录。本次发布没有重新运行实验，保留原得分、执行记录与来源。`;
-    $('#scope-note').innerHTML = `<strong>如何理解这些分数：</strong>这是 seed${esc(panel.official_seed)} / layout${esc(panel.layout_ordinal)} 的 ${num(summary.planned ?? runs.length)} 任务样本，按官方五项能力权重汇总${panel.panel_id === 'astra-l3-cap20-seed0-scene0' ? '，属于方法选择基线' : ''}；不等同于官方排行榜认证，也不代表跨种子鲁棒性。完整执行与任务成功分别列示，缺失或无效结果不计零分。`;
+    $('#scope-note').innerHTML = devset
+      ? `<strong>如何理解这些分数：</strong>这是原定 Devset10 的 seed${esc(panel.official_seed)} / layout${esc(panel.layout_ordinal)} ${num(summary.planned ?? 10)} 任务样本，按任务等权汇总；能力卡仅作分项描述。本结果不属于 Full54，也不等同于官方排行榜认证或跨种子鲁棒性验证。全部计划任务有效后才给出总体分数，缺失或无效结果不计零分。`
+      : `<strong>如何理解这些分数：</strong>这是 seed${esc(panel.official_seed)} / layout${esc(panel.layout_ordinal)} 的 ${num(summary.planned ?? runs.length)} 任务样本，按官方五项能力权重汇总${panel.panel_id === 'astra-l3-cap20-seed0-scene0' ? '，属于方法选择基线' : ''}；不等同于官方排行榜认证，也不代表跨种子鲁棒性。完整执行与任务成功分别列示，缺失或无效结果不计零分。`;
     $('#panel-metrics').innerHTML = [
-      ['官方加权 Score', num(summary.score), '/ 100','五项能力等权'],
-      ['官方加权成功率', percentage(summary.success_rate), '','SR · 五项能力等权'],
+      [devset ? 'Devset10 Score' : '官方加权 Score', num(summary.score), '/ 100',weighting],
+      [devset ? 'Devset10 成功率' : '官方加权成功率', percentage(summary.success_rate), '',`SR · ${weighting}`],
       ['有效原生终态', num(summary.valid ?? summary.completed_tasks), `/ ${num(summary.planned ?? runs.length)}`,'完成 ≠ 任务成功'],
       ['公开案例', num(runs.length), '例',`${num(reused)} 条原记录复用 · 点击按需读取`]
     ].map(([label,value,unit,note])=>`<div class="pub-metric"><span class="metric-label">${esc(label)}</span><strong>${value}<small>${esc(unit)}</small></strong><p>${esc(note)}</p></div>`).join('');
     $('#panel-metrics').hidden = false;
     const capabilities = summary.capabilities || {};
+    $('#capability-title').textContent = devset ? '五项能力，分项描述' : '五项能力，各占 20%';
+    $('#capability-note').textContent = devset ? '总体按任务等权 · 此处分项不另行加权' : '能力内按原协议计算';
     $('#capabilities').innerHTML = Object.entries(capabilities).map(([key,entry])=>`<article class="capability-card"><span class="capability-name">${esc(capNames[key] || key)}<small>${esc(key)}</small></span><span class="capability-score">${num(entry.score)}<small>Score</small></span><div class="capability-bar" aria-hidden="true"><span style="width:${Math.min(100,Math.max(0,Number(entry.score)||0))}%"></span></div><div class="capability-meta"><span>SR ${percentage(entry.success_rate)}</span><span>${num(entry.valid)} / ${num(entry.planned)}</span></div></article>`).join('');
     $('#capability-section').hidden = Object.keys(capabilities).length === 0;
     for (const cap of [...new Set(runs.map(r=>r.capability).filter(Boolean))]) { const option = document.createElement('option'); option.value = cap; option.textContent = capNames[cap] || cap; $('#capability-filter').append(option); }
@@ -84,7 +94,7 @@
   }
   function renderFiles(manifest, base) {
     const algorithm = manifest.algorithm || {}, scene = manifest.scene || {}, protocol = manifest.protocol || {}, environment = manifest.environment || {}, costs = costSummary(manifest), pkg = manifest.package;
-    return `<div class="evidence-grid"><dl><dt>算法与客户端</dt><dd>${esc(algorithm.algorithm_id || algorithm.model)}<br>${esc(algorithm.model)} · ${esc(algorithm.reasoning_effort)}<br>Codex ${esc(algorithm.codex_client_version)}</dd></dl><dl><dt>场景与协议</dt><dd>seed ${esc(scene.official_seed)} / layout ${esc(scene.layout_ordinal)}<br>${esc(protocol.id)} · 动作前缀上限 ${num(protocol.action_limit)}<br>场景 SHA-256：${esc(scene.asset_sha256)}</dd></dl><dl><dt>实际环境</dt><dd>${esc(environment.simulator_version)}<br>GPU：${esc(environment.gpu == null ? '历史记录未提供' : typeof environment.gpu === 'object' ? JSON.stringify(environment.gpu) : environment.gpu)}<br>驱动：${esc(environment.driver)}</dd></dl><dl><dt>全部已记录消耗</dt><dd>${num(costs.known)} 个已知输入与输出 token<br>其中缓存输入 ${num(costs.cached)}，已计入总量<br>${num(costs.unknown)} 条未知用量记录</dd></dl></div>${pkg ? `<div class="package-card">${link(pkg.download_url,pkg.scope==='panel'?`下载本轮轨迹与核验证据包（${num(pkg.run_count ?? panel.run_count ?? panel.runs.length)}例，不含视频）`:'下载轨迹与核验证据包',base)}<p>${num(pkg.bytes / 1048576)} MiB · ${esc(pkg.format || '归档包')}<br>SHA-256 ${esc(pkg.sha256)}</p></div>` : ''}<h3>公开文件与核验</h3><ul class="file-list">${(manifest.artifacts||[]).map(a=>{const storage=a.storage||{};return `<li><div><strong>${esc(assetKind(a))}</strong><div class="media-links">${storage.download_url?link(storage.download_url,storage.bundle_member?'下载所在证据包':'下载',base):storage.bundle_member?'<span class="muted">见本轮证据包</span>':'<span class="muted">独立下载未登记</span>'}${storage.timeline_url?link(storage.timeline_url,'轨迹 JSON',base):''}${storage.landing_url?link(storage.landing_url,'云盘页面',base):''}</div><code>${esc(a.path)}<br>SHA-256 ${esc(a.sha256)}</code></div><span>${num(a.bytes)} 字节<br>${esc(verificationNames[storage.verification] || '核验待完成')}</span></li>`;}).join('')}</ul><details><summary>原算法、来源与复用说明（完整公开清单）</summary><pre>${esc(JSON.stringify(manifest,null,2))}</pre></details>`;
+    return `<div class="evidence-grid"><dl><dt>算法与客户端</dt><dd>${esc(algorithm.algorithm_id || algorithm.model)}<br>${esc(algorithm.model)} · ${esc(algorithm.reasoning_effort)}<br>Codex ${esc(algorithm.codex_client_version)}</dd></dl><dl><dt>场景与协议</dt><dd>${esc(manifest.publication_scope?.metric_label || panel.metric_label || (panel.metric_profile === 'devset10' ? 'Devset10 · 10-task equal weight' : 'Full54 · 官方五项能力权重'))}<br>seed ${esc(scene.official_seed)} / layout ${esc(scene.layout_ordinal)}<br>${esc(protocol.id)} · 动作前缀上限 ${num(protocol.action_limit)}<br>场景 SHA-256：${esc(scene.asset_sha256)}</dd></dl><dl><dt>实际环境</dt><dd>${esc(environment.simulator_version)}<br>GPU：${esc(environment.gpu == null ? '历史记录未提供' : typeof environment.gpu === 'object' ? JSON.stringify(environment.gpu) : environment.gpu)}<br>驱动：${esc(environment.driver)}</dd></dl><dl><dt>全部已记录消耗</dt><dd>${num(costs.known)} 个已知输入与输出 token<br>其中缓存输入 ${num(costs.cached)}，已计入总量<br>${num(costs.unknown)} 条未知用量记录</dd></dl></div>${pkg ? `<div class="package-card">${link(pkg.download_url,pkg.scope==='panel'?`下载本轮轨迹与核验证据包（${num(pkg.run_count ?? panel.run_count ?? panel.runs.length)}例，不含视频）`:'下载轨迹与核验证据包',base)}<p>${num(pkg.bytes / 1048576)} MiB · ${esc(pkg.format || '归档包')}<br>SHA-256 ${esc(pkg.sha256)}</p></div>` : ''}<h3>公开文件与核验</h3><ul class="file-list">${(manifest.artifacts||[]).map(a=>{const storage=a.storage||{};return `<li><div><strong>${esc(assetKind(a))}</strong><div class="media-links">${storage.download_url?link(storage.download_url,storage.bundle_member?'下载所在证据包':'下载',base):storage.bundle_member?'<span class="muted">见本轮证据包</span>':'<span class="muted">独立下载未登记</span>'}${storage.timeline_url?link(storage.timeline_url,'轨迹 JSON',base):''}${storage.landing_url?link(storage.landing_url,'云盘页面',base):''}</div><code>${esc(a.path)}<br>SHA-256 ${esc(a.sha256)}</code></div><span>${num(a.bytes)} 字节<br>${esc(verificationNames[storage.verification] || '核验待完成')}</span></li>`;}).join('')}</ul><details><summary>原算法、来源与复用说明（完整公开清单）</summary><pre>${esc(JSON.stringify(manifest,null,2))}</pre></details>`;
   }
 
   async function openDetail(run) {
@@ -133,7 +143,7 @@
       const panels = catalog.panels || []; if(panels.length<2) return;
       const label=document.createElement('label');label.className='panel-switcher';label.textContent='切换公开实验';
       const select=document.createElement('select');select.setAttribute('aria-label','切换公开实验');
-      for(const item of panels){const option=document.createElement('option');option.value=item.panel_id;option.textContent=item.title||item.panel_id;option.selected=item.panel_id===panelId;select.append(option);}
+      for(const item of panels){const option=document.createElement('option');option.value=item.panel_id;option.textContent=`${item.metric_profile==='devset10'?'[Devset10] ':''}${item.title||item.panel_id}`;option.selected=item.panel_id===panelId;select.append(option);}
       select.addEventListener('change',()=>{location.href=`publications.html?panel=${encodeURIComponent(select.value)}`;});label.append(select);$('.pub-hero').before(label);
     } catch { /* A standalone pilot remains usable without a catalog. */ }
   }
