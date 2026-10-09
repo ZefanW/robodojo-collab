@@ -77,6 +77,26 @@ class ExportTests(unittest.TestCase):
             self.assertTrue(all(not a['usage_known'] and a['input_tokens'] is None
                                 for a in attempts))
 
+    def test_selected_retry_mirror_does_not_invent_original_usage(self):
+        with tempfile.TemporaryDirectory() as t:
+            root = Path(t) / '0076'
+            retry = root / 'retries' / '001'
+            usage = {'inputTokens': 100, 'cachedInputTokens': 80, 'outputTokens': 7}
+            write(root / 'selected-attempt.json', {'attempt_path': 'retries/001'})
+            for index, folder in enumerate([root, retry]):
+                write(folder / 'paid-start.json', {'thread_id': 'same-thread',
+                    'request_sha256': 'same-request', 'time': index})
+                write(folder / 'response.json', {'tokens': usage, 'actual_model_responses': 1})
+                write(folder / 'accounting.json', {'actual_model_responses': 1})
+            write(retry / 'usage.json', usage)
+            attempts = cost_attempts(Path(t))
+            self.assertEqual(len(attempts), 2)
+            self.assertFalse(attempts[0]['usage_known'])
+            self.assertIsNone(attempts[0]['input_tokens'])
+            self.assertIsNone(attempts[0]['model_responses'])
+            self.assertEqual(attempts[1]['input_tokens'], 100)
+            self.assertEqual(attempts[1]['model_responses'], 1)
+
     def test_cached_input_subset(self):
         with tempfile.TemporaryDirectory() as t:
             p=Path(t)/'0000'

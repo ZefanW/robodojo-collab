@@ -96,7 +96,10 @@ def cost_attempts(calls):
                 continue
             seen.add(identity)
         folder = p.parent
-        saved = read(folder / "response.json") if (folder / "response.json").exists() else {}
+        # A selected retry mirrors its response/accounting at the logical-call
+        # root. Those bytes cannot establish the original failed attempt's cost.
+        mirrored = (folder / "selected-attempt.json").exists()
+        saved = read(folder / "response.json") if (folder / "response.json").exists() and not mirrored else {}
         usage = read(folder / "usage.json") if (folder / "usage.json").exists() else saved.get("tokens", {})
         # Failed paid attempts may explicitly record null usage. Keep their cost
         # unknown rather than dropping the attempt or treating it as free.
@@ -106,7 +109,7 @@ def cost_attempts(calls):
         for name in ("raw-response-receipts.json", "journal-response-receipts.json"):
             if (folder / name).exists():
                 ids.update(x["responseId"] for x in read(folder / name) if x.get("responseId"))
-        accounting = read(folder / "accounting.json") if (folder / "accounting.json").exists() else {}
+        accounting = read(folder / "accounting.json") if (folder / "accounting.json").exists() and not mirrored else {}
         count = len(ids) or accounting.get("actual_model_responses") or saved.get("actual_model_responses")
         # Absent receipt means unknown, even if a paid request was started.
         if not known or type(count) is not int:
@@ -220,7 +223,7 @@ def export_run(source, destination, *, run_id, runtime, video_root, protocol, al
     if remote_receipts.get("verified") is not True or sha_file(video / "local-receipts-sha256.json") != remote_receipts.get("manifest_sha256"):
         raise ValueError("Archived receipt manifest lacks matching remote verification")
     consumed_proofs = {}
-    consumed_names = {"paid-start.json", "request.json", "response.json", "usage.json", "accounting.json", "raw-response-receipts.json", "journal-response-receipts.json"}
+    consumed_names = {"paid-start.json", "request.json", "response.json", "usage.json", "accounting.json", "raw-response-receipts.json", "journal-response-receipts.json", "selected-attempt.json"}
     for name, record in receipt_manifest["files"].items():
         parts = Path(name).parts
         if not parts or parts[0] not in {"calls", "codex"}:
