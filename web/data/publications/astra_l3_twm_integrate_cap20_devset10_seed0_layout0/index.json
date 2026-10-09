@@ -1,0 +1,917 @@
+{
+  "publication_manifest_version": "leaderboard-lite-v1",
+  "panel_id": "astra_l3_twm_integrate_cap20_devset10_seed0_layout0",
+  "title": "GPT6 L3 · twm_integrate · 20步 · Devset10 · seed0/scene0",
+  "algorithm_id": "astra_l3_twm_integrate_cap20",
+  "algorithm": {
+    "algorithm_id": "astra_l3_twm_integrate_cap20",
+    "codex_client_version": "0.153.4",
+    "model": "gpt-6-astra",
+    "policy_sha256": "c100751a3a4908eed0b5074b5c685bf84a35902a6403d3386a8758545a58a592",
+    "prompt_sha256": "a9de573346b23a8eaf4b99391ca2f2100fa0b6ebc2f61c3b2c6932ddc869e08a",
+    "reasoning_effort": "medium",
+    "source_commit": null,
+    "tools_sha256": "6015ca198368f839a130d15a6edd8be3550b690960260f080db9d9b5dccd8ac5",
+    "version": "legacy-v1"
+  },
+  "official_seed": 0,
+  "layout_ordinal": 0,
+  "round_index": 0,
+  "run_count": 10,
+  "summary": {
+    "complete": true,
+    "round_complete": true,
+    "valid": 10,
+    "planned": 10,
+    "score": 49.5,
+    "success_rate": 40.0,
+    "capabilities": {
+      "Precision": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 15.0,
+        "success_rate": 0.0
+      },
+      "Open": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 100.0,
+        "success_rate": 100.0
+      },
+      "Memory": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 50.0,
+        "success_rate": 50.0
+      },
+      "Long-Horizon": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 32.5,
+        "success_rate": 0.0
+      },
+      "Generalization": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 50.0,
+        "success_rate": 50.0
+      }
+    },
+    "missing_or_incomplete": [],
+    "structural_missing_tasks": [],
+    "duplicate_tasks": [],
+    "unexpected_tasks": [],
+    "metadata_mismatches": [],
+    "excluded_repeat_attempts": [],
+    "selection_policy": "The fixed original Devset10 roster; one original attempt per task; no outcome-based selection.",
+    "aggregation": "Devset10: equal 1/10 weight per original task configuration for score and success rate. Capability means are descriptive; this is not the Full54 metric."
+  },
+  "costs": {
+    "known_input_tokens": 61862280,
+    "known_cached_input_tokens": 59691776,
+    "known_uncached_input_tokens": 2170504,
+    "known_output_tokens": 138871,
+    "known_total_tokens": 62001151,
+    "paid_requests": 757,
+    "paid_requests_lower_bound": 757,
+    "model_responses_lower_bound": 757,
+    "unknown_attempts": 0,
+    "unknown_by_field": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "paid_requests": 0,
+      "model_responses": 0
+    },
+    "complete": true,
+    "cache_is_input_subset": true,
+    "attempt_records": 757
+  },
+  "runs": [
+    {
+      "run_id": "l3_cap20_twm_integrate_push_T_random_20261005_v1",
+      "task": "push_T_random",
+      "capability": "Generalization",
+      "variant": "random",
+      "status": "complete",
+      "score": 0.0,
+      "score_percent": 0.0,
+      "success": false,
+      "control_steps": 367,
+      "model_decisions": 96,
+      "actual_responses": 96,
+      "algorithm": {
+        "algorithm_id": "astra_l3_twm_integrate_cap20",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "c100751a3a4908eed0b5074b5c685bf84a35902a6403d3386a8758545a58a592",
+        "prompt_sha256": "a9de573346b23a8eaf4b99391ca2f2100fa0b6ebc2f61c3b2c6932ddc869e08a",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "6015ca198368f839a130d15a6edd8be3550b690960260f080db9d9b5dccd8ac5",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": 20,
+        "episode_control_limit": 600,
+        "id": "l3-action-cap20-20261005",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "All available historical runs and paid attempts, independent of outcome; incomplete or unverifiable runs remain separately listed.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "72ebda04303df1b6a283b60dde6980f1cab453373381310a1b96793fdc5c703b"
+      },
+      "costs": {
+        "known_input_tokens": 8633613,
+        "known_cached_input_tokens": 8186368,
+        "known_uncached_input_tokens": 447245,
+        "known_output_tokens": 17850,
+        "known_total_tokens": 8651463,
+        "paid_requests": 96,
+        "paid_requests_lower_bound": 96,
+        "model_responses_lower_bound": 96,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 96
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra_l3_twm_integrate_cap20_devset10_seed0_layout0/runs/l3_cap20_twm_integrate_push_T_random_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_cap20_twm_integrate_stack_bowls_20261005_v1",
+      "task": "stack_bowls",
+      "capability": "Generalization",
+      "variant": "standard",
+      "status": "complete",
+      "score": 1.0,
+      "score_percent": 100.0,
+      "success": true,
+      "control_steps": 376,
+      "model_decisions": 57,
+      "actual_responses": 57,
+      "algorithm": {
+        "algorithm_id": "astra_l3_twm_integrate_cap20",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "c100751a3a4908eed0b5074b5c685bf84a35902a6403d3386a8758545a58a592",
+        "prompt_sha256": "a9de573346b23a8eaf4b99391ca2f2100fa0b6ebc2f61c3b2c6932ddc869e08a",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "6015ca198368f839a130d15a6edd8be3550b690960260f080db9d9b5dccd8ac5",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": 20,
+        "episode_control_limit": 800,
+        "id": "l3-action-cap20-20261005",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "All available historical runs and paid attempts, independent of outcome; incomplete or unverifiable runs remain separately listed.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "0351fd8d434e553b6afcce24e24906a43fdc77704848f73ee4e6c5ba53fc0112"
+      },
+      "costs": {
+        "known_input_tokens": 3138482,
+        "known_cached_input_tokens": 3025408,
+        "known_uncached_input_tokens": 113074,
+        "known_output_tokens": 10015,
+        "known_total_tokens": 3148497,
+        "paid_requests": 57,
+        "paid_requests_lower_bound": 57,
+        "model_responses_lower_bound": 57,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 57
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra_l3_twm_integrate_cap20_devset10_seed0_layout0/runs/l3_cap20_twm_integrate_stack_bowls_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_cap20_twm_integrate_organize_table_20261005_v1",
+      "task": "organize_table",
+      "capability": "Long-Horizon",
+      "variant": "standard",
+      "status": "complete",
+      "score": 0.25,
+      "score_percent": 25.0,
+      "success": false,
+      "control_steps": 749,
+      "model_decisions": 98,
+      "actual_responses": 98,
+      "algorithm": {
+        "algorithm_id": "astra_l3_twm_integrate_cap20",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "c100751a3a4908eed0b5074b5c685bf84a35902a6403d3386a8758545a58a592",
+        "prompt_sha256": "a9de573346b23a8eaf4b99391ca2f2100fa0b6ebc2f61c3b2c6932ddc869e08a",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "6015ca198368f839a130d15a6edd8be3550b690960260f080db9d9b5dccd8ac5",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": 20,
+        "episode_control_limit": 1000,
+        "id": "l3-action-cap20-20261005",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "All available historical runs and paid attempts, independent of outcome; incomplete or unverifiable runs remain separately listed.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "ef323a26065e2dc6396742221b9ce58dd8f2e8eae2bf513db945257f16abd186"
+      },
+      "costs": {
+        "known_input_tokens": 8800330,
+        "known_cached_input_tokens": 8581632,
+        "known_uncached_input_tokens": 218698,
+        "known_output_tokens": 19768,
+        "known_total_tokens": 8820098,
+        "paid_requests": 98,
+        "paid_requests_lower_bound": 98,
+        "model_responses_lower_bound": 98,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 98
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra_l3_twm_integrate_cap20_devset10_seed0_layout0/runs/l3_cap20_twm_integrate_organize_table_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_cap20_twm_integrate_put_bottles_into_dustbin_20261005_v1",
+      "task": "put_bottles_into_dustbin",
+      "capability": "Long-Horizon",
+      "variant": "standard",
+      "status": "complete",
+      "score": 0.4,
+      "score_percent": 40.0,
+      "success": false,
+      "control_steps": 683,
+      "model_decisions": 67,
+      "actual_responses": 67,
+      "algorithm": {
+        "algorithm_id": "astra_l3_twm_integrate_cap20",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "c100751a3a4908eed0b5074b5c685bf84a35902a6403d3386a8758545a58a592",
+        "prompt_sha256": "a9de573346b23a8eaf4b99391ca2f2100fa0b6ebc2f61c3b2c6932ddc869e08a",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "6015ca198368f839a130d15a6edd8be3550b690960260f080db9d9b5dccd8ac5",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": 20,
+        "episode_control_limit": 700,
+        "id": "l3-action-cap20-20261005",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "All available historical runs and paid attempts, independent of outcome; incomplete or unverifiable runs remain separately listed.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "7e42f0e941c8064b5e5040f88a55f8f31793dd3b715ff22882351d72ef6be303"
+      },
+      "costs": {
+        "known_input_tokens": 4204509,
+        "known_cached_input_tokens": 4064512,
+        "known_uncached_input_tokens": 139997,
+        "known_output_tokens": 11372,
+        "known_total_tokens": 4215881,
+        "paid_requests": 67,
+        "paid_requests_lower_bound": 67,
+        "model_responses_lower_bound": 67,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 67
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra_l3_twm_integrate_cap20_devset10_seed0_layout0/runs/l3_cap20_twm_integrate_put_bottles_into_dustbin_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_cap20_twm_integrate_cover_blocks_20261005_v1",
+      "task": "cover_blocks",
+      "capability": "Memory",
+      "variant": "standard",
+      "status": "complete",
+      "score": 0.0,
+      "score_percent": 0.0,
+      "success": false,
+      "control_steps": 481,
+      "model_decisions": 74,
+      "actual_responses": 75,
+      "algorithm": {
+        "algorithm_id": "astra_l3_twm_integrate_cap20",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "c100751a3a4908eed0b5074b5c685bf84a35902a6403d3386a8758545a58a592",
+        "prompt_sha256": "a9de573346b23a8eaf4b99391ca2f2100fa0b6ebc2f61c3b2c6932ddc869e08a",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "6015ca198368f839a130d15a6edd8be3550b690960260f080db9d9b5dccd8ac5",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": 20,
+        "episode_control_limit": 800,
+        "id": "l3-action-cap20-20261005",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "All available historical runs and paid attempts, independent of outcome; incomplete or unverifiable runs remain separately listed.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "71727d015efb801d14952fa3bbbb428cb8e105e64ec4c4a03e71dcc37ee6a06b"
+      },
+      "costs": {
+        "known_input_tokens": 5505552,
+        "known_cached_input_tokens": 5141760,
+        "known_uncached_input_tokens": 363792,
+        "known_output_tokens": 12526,
+        "known_total_tokens": 5518078,
+        "paid_requests": 75,
+        "paid_requests_lower_bound": 75,
+        "model_responses_lower_bound": 75,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 75
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra_l3_twm_integrate_cap20_devset10_seed0_layout0/runs/l3_cap20_twm_integrate_cover_blocks_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_cap20_twm_integrate_imitate_sorting_sequence_20261005_v1",
+      "task": "imitate_sorting_sequence",
+      "capability": "Memory",
+      "variant": "standard",
+      "status": "complete",
+      "score": 1.0,
+      "score_percent": 100.0,
+      "success": true,
+      "control_steps": 1496,
+      "model_decisions": 100,
+      "actual_responses": 100,
+      "algorithm": {
+        "algorithm_id": "astra_l3_twm_integrate_cap20",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "c100751a3a4908eed0b5074b5c685bf84a35902a6403d3386a8758545a58a592",
+        "prompt_sha256": "a9de573346b23a8eaf4b99391ca2f2100fa0b6ebc2f61c3b2c6932ddc869e08a",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "6015ca198368f839a130d15a6edd8be3550b690960260f080db9d9b5dccd8ac5",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": 20,
+        "episode_control_limit": 1600,
+        "id": "l3-action-cap20-20261005",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "All available historical runs and paid attempts, independent of outcome; incomplete or unverifiable runs remain separately listed.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "3d4bf83d1804f35672fdea1446f6c991e762a4e29f37deb44689a4363a140bb2"
+      },
+      "costs": {
+        "known_input_tokens": 12858093,
+        "known_cached_input_tokens": 12543232,
+        "known_uncached_input_tokens": 314861,
+        "known_output_tokens": 18233,
+        "known_total_tokens": 12876326,
+        "paid_requests": 100,
+        "paid_requests_lower_bound": 100,
+        "model_responses_lower_bound": 100,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 100
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra_l3_twm_integrate_cap20_devset10_seed0_layout0/runs/l3_cap20_twm_integrate_imitate_sorting_sequence_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_cap20_twm_integrate_classify_objects_by_language_20261005_v1",
+      "task": "classify_objects_by_language",
+      "capability": "Open",
+      "variant": "standard",
+      "status": "complete",
+      "score": 1.0,
+      "score_percent": 100.0,
+      "success": true,
+      "control_steps": 889,
+      "model_decisions": 96,
+      "actual_responses": 96,
+      "algorithm": {
+        "algorithm_id": "astra_l3_twm_integrate_cap20",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "c100751a3a4908eed0b5074b5c685bf84a35902a6403d3386a8758545a58a592",
+        "prompt_sha256": "a9de573346b23a8eaf4b99391ca2f2100fa0b6ebc2f61c3b2c6932ddc869e08a",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "6015ca198368f839a130d15a6edd8be3550b690960260f080db9d9b5dccd8ac5",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": 20,
+        "episode_control_limit": 1100,
+        "id": "l3-action-cap20-20261005",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "All available historical runs and paid attempts, independent of outcome; incomplete or unverifiable runs remain separately listed.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "3f50831ccb802c62ec764ea67e104db066cc695fabb1ba8f8906795b7ed31531"
+      },
+      "costs": {
+        "known_input_tokens": 8626402,
+        "known_cached_input_tokens": 8438400,
+        "known_uncached_input_tokens": 188002,
+        "known_output_tokens": 15974,
+        "known_total_tokens": 8642376,
+        "paid_requests": 96,
+        "paid_requests_lower_bound": 96,
+        "model_responses_lower_bound": 96,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 96
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra_l3_twm_integrate_cap20_devset10_seed0_layout0/runs/l3_cap20_twm_integrate_classify_objects_by_language_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_cap20_twm_integrate_solve_equation_20261005_v1",
+      "task": "solve_equation",
+      "capability": "Open",
+      "variant": "standard",
+      "status": "complete",
+      "score": 1.0,
+      "score_percent": 100.0,
+      "success": true,
+      "control_steps": 260,
+      "model_decisions": 37,
+      "actual_responses": 37,
+      "algorithm": {
+        "algorithm_id": "astra_l3_twm_integrate_cap20",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "c100751a3a4908eed0b5074b5c685bf84a35902a6403d3386a8758545a58a592",
+        "prompt_sha256": "a9de573346b23a8eaf4b99391ca2f2100fa0b6ebc2f61c3b2c6932ddc869e08a",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "6015ca198368f839a130d15a6edd8be3550b690960260f080db9d9b5dccd8ac5",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": 20,
+        "episode_control_limit": 300,
+        "id": "l3-action-cap20-20261005",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "All available historical runs and paid attempts, independent of outcome; incomplete or unverifiable runs remain separately listed.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "3cb0d58f274ae927f663bf324d77b37057f1f7cd4eb10ae03b38de7f7d6d09f7"
+      },
+      "costs": {
+        "known_input_tokens": 1382589,
+        "known_cached_input_tokens": 1282176,
+        "known_uncached_input_tokens": 100413,
+        "known_output_tokens": 7790,
+        "known_total_tokens": 1390379,
+        "paid_requests": 37,
+        "paid_requests_lower_bound": 37,
+        "model_responses_lower_bound": 37,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 37
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra_l3_twm_integrate_cap20_devset10_seed0_layout0/runs/l3_cap20_twm_integrate_solve_equation_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_cap20_twm_integrate_build_tower_20261005_v1",
+      "task": "build_tower",
+      "capability": "Precision",
+      "variant": "standard",
+      "status": "complete",
+      "score": 0.1,
+      "score_percent": 10.0,
+      "success": false,
+      "control_steps": 561,
+      "model_decisions": 83,
+      "actual_responses": 83,
+      "algorithm": {
+        "algorithm_id": "astra_l3_twm_integrate_cap20",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "c100751a3a4908eed0b5074b5c685bf84a35902a6403d3386a8758545a58a592",
+        "prompt_sha256": "a9de573346b23a8eaf4b99391ca2f2100fa0b6ebc2f61c3b2c6932ddc869e08a",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "6015ca198368f839a130d15a6edd8be3550b690960260f080db9d9b5dccd8ac5",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": 20,
+        "episode_control_limit": 1050,
+        "id": "l3-action-cap20-20261005",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "All available historical runs and paid attempts, independent of outcome; incomplete or unverifiable runs remain separately listed.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "b7bef538e163d45d40743bdc713ba2e8085645929ceacbfef0ac5a1f9cf89183"
+      },
+      "costs": {
+        "known_input_tokens": 6324687,
+        "known_cached_input_tokens": 6163456,
+        "known_uncached_input_tokens": 161231,
+        "known_output_tokens": 15253,
+        "known_total_tokens": 6339940,
+        "paid_requests": 83,
+        "paid_requests_lower_bound": 83,
+        "model_responses_lower_bound": 83,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 83
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra_l3_twm_integrate_cap20_devset10_seed0_layout0/runs/l3_cap20_twm_integrate_build_tower_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_cap20_twm_integrate_insert_tubes_20261005_v1",
+      "task": "insert_tubes",
+      "capability": "Precision",
+      "variant": "standard",
+      "status": "complete",
+      "score": 0.2,
+      "score_percent": 20.0,
+      "success": false,
+      "control_steps": 469,
+      "model_decisions": 48,
+      "actual_responses": 48,
+      "algorithm": {
+        "algorithm_id": "astra_l3_twm_integrate_cap20",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "c100751a3a4908eed0b5074b5c685bf84a35902a6403d3386a8758545a58a592",
+        "prompt_sha256": "a9de573346b23a8eaf4b99391ca2f2100fa0b6ebc2f61c3b2c6932ddc869e08a",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "6015ca198368f839a130d15a6edd8be3550b690960260f080db9d9b5dccd8ac5",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": 20,
+        "episode_control_limit": 500,
+        "id": "l3-action-cap20-20261005",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "All available historical runs and paid attempts, independent of outcome; incomplete or unverifiable runs remain separately listed.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "080a1b6b2f9f97ba54e56eaaee49a89f41f956886c9402330f13b66d1553eead"
+      },
+      "costs": {
+        "known_input_tokens": 2388023,
+        "known_cached_input_tokens": 2264832,
+        "known_uncached_input_tokens": 123191,
+        "known_output_tokens": 10090,
+        "known_total_tokens": 2398113,
+        "paid_requests": 48,
+        "paid_requests_lower_bound": 48,
+        "model_responses_lower_bound": 48,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 48
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra_l3_twm_integrate_cap20_devset10_seed0_layout0/runs/l3_cap20_twm_integrate_insert_tubes_20261005_v1.json"
+    }
+  ],
+  "reused_count": 0,
+  "source_algorithm_ids": [
+    "astra_l3_twm_integrate_cap20"
+  ],
+  "scope": "devset10: fixed original ten configurations, seed0/layout0; not Full54",
+  "official_leaderboard_submission": false,
+  "limitations": [
+    "Devset10 uses the fixed original ten task configurations with equal task weights. It is not Full54 and is not an official leaderboard submission.",
+    "This selected development set does not establish full-benchmark performance or across-seed robustness; no new experiment is implied by publication.",
+    "Original algorithms, protocols, costs and any explicitly disclosed reuse remain attached to original run identities.",
+    "This compact index validates metadata only; export and storage receipts separately establish local and cloud byte integrity."
+  ],
+  "metric_profile": "devset10",
+  "metric_label": "Devset10 · 10-task equal weight",
+  "devset10": {
+    "complete": true,
+    "round_complete": true,
+    "valid": 10,
+    "planned": 10,
+    "score": 49.5,
+    "success_rate": 40.0,
+    "capabilities": {
+      "Precision": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 15.0,
+        "success_rate": 0.0
+      },
+      "Open": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 100.0,
+        "success_rate": 100.0
+      },
+      "Memory": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 50.0,
+        "success_rate": 50.0
+      },
+      "Long-Horizon": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 32.5,
+        "success_rate": 0.0
+      },
+      "Generalization": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 50.0,
+        "success_rate": 50.0
+      }
+    },
+    "missing_or_incomplete": [],
+    "structural_missing_tasks": [],
+    "duplicate_tasks": [],
+    "unexpected_tasks": [],
+    "metadata_mismatches": [],
+    "excluded_repeat_attempts": [],
+    "selection_policy": "The fixed original Devset10 roster; one original attempt per task; no outcome-based selection.",
+    "aggregation": "Devset10: equal 1/10 weight per original task configuration for score and success rate. Capability means are descriptive; this is not the Full54 metric."
+  },
+  "roster": {
+    "id": "devset10-v1",
+    "task_count": 10,
+    "source_manifest_sha256": "0397d6cf8c1a9ab68bd5f12441d6dd957c0b6c7fbe45438e256d881565fbf397",
+    "task_registry_sha256": "43a139ef9e829689aef7e9611a598f06a43b5212d60bb481cf86ed5247cf0926"
+  },
+  "package": {
+    "provider": "tsinghua",
+    "sha256": "c6a00a634b249416a7f1c061f4f29cc91c67cb1fd24a30ca1c03285d3db952ac",
+    "bytes": 5099520,
+    "remote_name": "c6a00a634b249416a7f1c061f4f29cc91c67cb1fd24a30ca1c03285d3db952ac--astra_l3_twm_integrate_cap20_devset10_seed0_layout0-evidence.tar",
+    "landing_url": "https://cloud.tsinghua.edu.cn/f/3055236f36d849fbb66f/",
+    "download_url": "https://cloud.tsinghua.edu.cn/f/3055236f36d849fbb66f/?dl=1",
+    "playback_url": null,
+    "verification": "remote_sha256",
+    "verified_at": "2026-10-09T17:15:56.027955+00:00",
+    "public_download_verified": true,
+    "public_probe": {
+      "ok": true,
+      "sha256": "c6a00a634b249416a7f1c061f4f29cc91c67cb1fd24a30ca1c03285d3db952ac",
+      "bytes": 5099520,
+      "content_type": "application/octet-stream",
+      "cors": "*",
+      "accept_ranges": null,
+      "checked_at": "2026-10-09T17:15:56.027903+00:00"
+    },
+    "action": "uploaded",
+    "scope": "panel",
+    "format": "tar",
+    "run_count": 10,
+    "contains_images": false,
+    "contains_videos": false,
+    "metric_profile": "devset10",
+    "roster_id": "devset10-v1"
+  },
+  "upload_summary": {
+    "unique_objects": 51,
+    "referenced_bytes": 144532835,
+    "uploaded_bytes": 5099520,
+    "reused_objects": 50,
+    "original_image_count": 0
+  },
+  "generated_at": "2026-10-09T17:15:56.115305+00:00"
+}
