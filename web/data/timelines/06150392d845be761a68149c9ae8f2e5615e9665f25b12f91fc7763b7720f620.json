@@ -1,0 +1,2919 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The slices stand upright beside the toaster. I will approach above the leftmost slice to grasp its top edge without blocking insertion.",
+      "targets": {
+        "left_x": -0.085,
+        "left_y": 0.015,
+        "left_z": 1.045
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 21,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 21,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 21,
+        "start": 1
+      }
+    },
+    "control_end": 20,
+    "control_start": 0,
+    "feedback": "Accepted: the original plan contains 34 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 0,
+    "public_note": "The slices stand upright beside the toaster. I will approach above the leftmost slice to grasp its top edge without blocking insertion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The previous approach was truncated; continue to the overhead position.",
+      "targets": {
+        "left_x": -0.085,
+        "left_y": 0.015,
+        "left_z": 1.045
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 35,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 35,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 35,
+        "start": 22
+      }
+    },
+    "control_end": 33,
+    "control_start": 20,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "The previous approach was truncated; continue to the overhead position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The arm reached its overhead target. Rotate toward a downward top-edge grasp in stages.",
+      "targets": {
+        "left_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 56,
+        "start": 36
+      },
+      "left_wrist": {
+        "end": 56,
+        "start": 36
+      },
+      "right_wrist": {
+        "end": 56,
+        "start": 36
+      }
+    },
+    "control_end": 53,
+    "control_start": 33,
+    "feedback": "Accepted: the original plan contains 35 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 2,
+    "public_note": "The arm reached its overhead target. Rotate toward a downward top-edge grasp in stages.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue rotating the tool downward while safely above the bread.",
+      "targets": {
+        "left_pitch_deg": 20,
+        "left_roll_deg": 0,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 69,
+        "start": 57
+      },
+      "left_wrist": {
+        "end": 69,
+        "start": 57
+      },
+      "right_wrist": {
+        "end": 69,
+        "start": 57
+      }
+    },
+    "control_end": 65,
+    "control_start": 53,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 3,
+    "public_note": "Continue rotating the tool downward while safely above the bread.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The larger rotation was refused; use a smaller rotation before continuing.",
+      "targets": {
+        "left_pitch_deg": 45,
+        "left_roll_deg": 0,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 69,
+        "start": 57
+      },
+      "left_wrist": {
+        "end": 69,
+        "start": 57
+      },
+      "right_wrist": {
+        "end": 69,
+        "start": 57
+      }
+    },
+    "control_end": 65,
+    "control_start": 53,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 3,
+    "public_note": "The larger rotation was refused; use a smaller rotation before continuing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist rotation is constrained at this reach. Bring the hand closer to its base before turning downward.",
+      "targets": {
+        "left_y": -0.065,
+        "left_z": 1.0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 69,
+        "start": 57
+      },
+      "left_wrist": {
+        "end": 69,
+        "start": 57
+      },
+      "right_wrist": {
+        "end": 69,
+        "start": 57
+      }
+    },
+    "control_end": 65,
+    "control_start": 53,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "The wrist rotation is constrained at this reach. Bring the hand closer to its base before turning downward.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "With the hand retracted, turn farther downward to align the jaws across a slice.",
+      "targets": {
+        "left_pitch_deg": 30,
+        "left_roll_deg": 0,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 90,
+        "start": 70
+      },
+      "left_wrist": {
+        "end": 90,
+        "start": 70
+      },
+      "right_wrist": {
+        "end": 90,
+        "start": 70
+      }
+    },
+    "control_end": 85,
+    "control_start": 65,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 4,
+    "public_note": "With the hand retracted, turn farther downward to align the jaws across a slice.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Complete the downward orientation above the upright bread.",
+      "targets": {
+        "left_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 98,
+        "start": 91
+      },
+      "left_wrist": {
+        "end": 98,
+        "start": 91
+      },
+      "right_wrist": {
+        "end": 98,
+        "start": 91
+      }
+    },
+    "control_end": 92,
+    "control_start": 85,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 5,
+    "public_note": "Complete the downward orientation above the upright bread.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower within clear space to improve wrist reachability before completing the rotation.",
+      "targets": {
+        "left_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 98,
+        "start": 91
+      },
+      "left_wrist": {
+        "end": 98,
+        "start": 91
+      },
+      "right_wrist": {
+        "end": 98,
+        "start": 91
+      }
+    },
+    "control_end": 92,
+    "control_start": 85,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "Lower within clear space to improve wrist reachability before completing the rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Try the straight-down grasp orientation at the lower, more reachable height.",
+      "targets": {
+        "left_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 110,
+        "start": 99
+      },
+      "left_wrist": {
+        "end": 110,
+        "start": 99
+      },
+      "right_wrist": {
+        "end": 110,
+        "start": 99
+      }
+    },
+    "control_end": 103,
+    "control_start": 92,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 6,
+    "public_note": "Try the straight-down grasp orientation at the lower, more reachable height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Use a slight tilt rather than forcing an unreachable vertical wrist pose.",
+      "targets": {
+        "left_pitch_deg": 15
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 110,
+        "start": 99
+      },
+      "left_wrist": {
+        "end": 110,
+        "start": 99
+      },
+      "right_wrist": {
+        "end": 110,
+        "start": 99
+      }
+    },
+    "control_end": 103,
+    "control_start": 92,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "Use a slight tilt rather than forcing an unreachable vertical wrist pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Align over the outer slice with a narrowed jaw opening so neighboring slices remain clear.",
+      "targets": {
+        "left_gripper": 0.3,
+        "left_x": -0.095,
+        "left_y": 0.0,
+        "left_z": 0.925
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 122,
+        "start": 111
+      },
+      "left_wrist": {
+        "end": 122,
+        "start": 111
+      },
+      "right_wrist": {
+        "end": 122,
+        "start": 111
+      }
+    },
+    "control_end": 114,
+    "control_start": 103,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "Align over the outer slice with a narrowed jaw opening so neighboring slices remain clear.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The outer slice is centered between the narrowed jaws. Descend toward its top edge while keeping the neighboring slice outside.",
+      "targets": {
+        "left_z": 0.895
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 130,
+        "start": 123
+      },
+      "left_wrist": {
+        "end": 130,
+        "start": 123
+      },
+      "right_wrist": {
+        "end": 130,
+        "start": 123
+      }
+    },
+    "control_end": 121,
+    "control_start": 114,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "The outer slice is centered between the narrowed jaws. Descend toward its top edge while keeping the neighboring slice outside.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws now straddle the outer slice near its upper edge. Close gently before testing the lift.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 133,
+        "start": 131
+      },
+      "left_wrist": {
+        "end": 133,
+        "start": 131
+      },
+      "right_wrist": {
+        "end": 133,
+        "start": 131
+      }
+    },
+    "control_end": 123,
+    "control_start": 121,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The last 2 move the gripper, once the arm has arrived.",
+    "policy_step": 9,
+    "public_note": "The jaws now straddle the outer slice near its upper edge. Close gently before testing the lift.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift a short distance to verify that the slice is securely held and clears its rack.",
+      "targets": {
+        "left_z": 0.935
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 146,
+        "start": 134
+      },
+      "left_wrist": {
+        "end": 146,
+        "start": 134
+      },
+      "right_wrist": {
+        "end": 146,
+        "start": 134
+      }
+    },
+    "control_end": 135,
+    "control_start": 123,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "Lift a short distance to verify that the slice is securely held and clears its rack.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The slice stayed on the rack, so the first closure was too high. Reopen just above it for a lower grasp.",
+      "targets": {
+        "left_gripper": 0.4,
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 163,
+        "start": 147
+      },
+      "left_wrist": {
+        "end": 163,
+        "start": 147
+      },
+      "right_wrist": {
+        "end": 163,
+        "start": 147
+      }
+    },
+    "control_end": 151,
+    "control_start": 135,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "The slice stayed on the rack, so the first closure was too high. Reopen just above it for a lower grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The head view shows the grasp is near the rear tip rather than the middle of the top edge. Shift toward the slice center while remaining above it.",
+      "targets": {
+        "left_y": -0.055
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 172,
+        "start": 164
+      },
+      "left_wrist": {
+        "end": 172,
+        "start": 164
+      },
+      "right_wrist": {
+        "end": 172,
+        "start": 164
+      }
+    },
+    "control_end": 159,
+    "control_start": 151,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "The head view shows the grasp is near the rear tip rather than the middle of the top edge. Shift toward the slice center while remaining above it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws now overlap the slice's upper edge near its middle. Close here to secure a single slice.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 176,
+        "start": 173
+      },
+      "left_wrist": {
+        "end": 176,
+        "start": 173
+      },
+      "right_wrist": {
+        "end": 176,
+        "start": 173
+      }
+    },
+    "control_end": 162,
+    "control_start": 159,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 13,
+    "public_note": "The jaws now overlap the slice's upper edge near its middle. Close here to secure a single slice.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Test the grasp with a short vertical lift before moving toward the toaster.",
+      "targets": {
+        "left_z": 0.924
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 181,
+        "start": 177
+      },
+      "left_wrist": {
+        "end": 181,
+        "start": 177
+      },
+      "right_wrist": {
+        "end": 181,
+        "start": 177
+      }
+    },
+    "control_end": 166,
+    "control_start": 162,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "Test the grasp with a short vertical lift before moving toward the toaster.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lift again left the bread behind. Recenter slightly toward the visible slice and reopen before lowering farther.",
+      "targets": {
+        "left_gripper": 0.45,
+        "left_x": -0.08,
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 188,
+        "start": 182
+      },
+      "left_wrist": {
+        "end": 188,
+        "start": 182
+      },
+      "right_wrist": {
+        "end": 188,
+        "start": 182
+      }
+    },
+    "control_end": 172,
+    "control_start": 166,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "The lift again left the bread behind. Recenter slightly toward the visible slice and reopen before lowering farther.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist view places the outer slice left of the jaw center. Correct left and lower slightly toward its edge.",
+      "targets": {
+        "left_x": -0.1,
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 192,
+        "start": 189
+      },
+      "left_wrist": {
+        "end": 192,
+        "start": 189
+      },
+      "right_wrist": {
+        "end": 192,
+        "start": 189
+      }
+    },
+    "control_end": 175,
+    "control_start": 172,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 16,
+    "public_note": "The wrist view places the outer slice left of the jaw center. Correct left and lower slightly toward its edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The hand did not reach the last target, indicating contact. Lift clear and widen the jaws before realigning around the outer slice.",
+      "targets": {
+        "left_gripper": 0.8,
+        "left_z": 0.93
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 201,
+        "start": 193
+      },
+      "left_wrist": {
+        "end": 201,
+        "start": 193
+      },
+      "right_wrist": {
+        "end": 201,
+        "start": 193
+      }
+    },
+    "control_end": 183,
+    "control_start": 175,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "The hand did not reach the last target, indicating contact. Lift clear and widen the jaws before realigning around the outer slice.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "With clearance restored, center the opening over the isolated outer slice rather than the gap beside it.",
+      "targets": {
+        "left_gripper": 0.55,
+        "left_x": -0.112,
+        "left_y": -0.065
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 207,
+        "start": 202
+      },
+      "left_wrist": {
+        "end": 207,
+        "start": 202
+      },
+      "right_wrist": {
+        "end": 207,
+        "start": 202
+      }
+    },
+    "control_end": 188,
+    "control_start": 183,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 2 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "With clearance restored, center the opening over the isolated outer slice rather than the gap beside it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The slice is now isolated within the opening. Make a small centering correction and approach its upper edge.",
+      "targets": {
+        "left_x": -0.104,
+        "left_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 211,
+        "start": 208
+      },
+      "left_wrist": {
+        "end": 211,
+        "start": 208
+      },
+      "right_wrist": {
+        "end": 211,
+        "start": 208
+      }
+    },
+    "control_end": 191,
+    "control_start": 188,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "The slice is now isolated within the opening. Make a small centering correction and approach its upper edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The opening surrounds only the outer slice. Lower six millimetres to establish contact below its top edge.",
+      "targets": {
+        "left_z": 0.895
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 213,
+        "start": 212
+      },
+      "left_wrist": {
+        "end": 213,
+        "start": 212
+      },
+      "right_wrist": {
+        "end": 213,
+        "start": 212
+      }
+    },
+    "control_end": 192,
+    "control_start": 191,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "The opening surrounds only the outer slice. Lower six millimetres to establish contact below its top edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Close around the centered outer slice at this corrected position.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 218,
+        "start": 214
+      },
+      "left_wrist": {
+        "end": 218,
+        "start": 214
+      },
+      "right_wrist": {
+        "end": 218,
+        "start": 214
+      }
+    },
+    "control_end": 196,
+    "control_start": 192,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 21,
+    "public_note": "Close around the centered outer slice at this corrected position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The gripper remains slightly open against the bread, indicating a grasp. Lift vertically to clear the rack.",
+      "targets": {
+        "left_z": 0.935
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 223,
+        "start": 219
+      },
+      "left_wrist": {
+        "end": 223,
+        "start": 219
+      },
+      "right_wrist": {
+        "end": 223,
+        "start": 219
+      }
+    },
+    "control_end": 200,
+    "control_start": 196,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 22,
+    "public_note": "The gripper remains slightly open against the bread, indicating a grasp. Lift vertically to clear the rack.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The slice is moving with the gripper. Lift and retract into clear space before carrying it across to the toaster.",
+      "targets": {
+        "left_y": -0.14,
+        "left_z": 0.99
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 228,
+        "start": 224
+      },
+      "left_wrist": {
+        "end": 228,
+        "start": 224
+      },
+      "right_wrist": {
+        "end": 228,
+        "start": 224
+      }
+    },
+    "control_end": 204,
+    "control_start": 200,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "The slice is moving with the gripper. Lift and retract into clear space before carrying it across to the toaster.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The bread is clear of the rack. Carry it toward the toaster through the open space in front.",
+      "targets": {
+        "left_x": 0.06,
+        "left_z": 1.015
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 240,
+        "start": 229
+      },
+      "left_wrist": {
+        "end": 240,
+        "start": 229
+      },
+      "right_wrist": {
+        "end": 240,
+        "start": 229
+      }
+    },
+    "control_end": 215,
+    "control_start": 204,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 24,
+    "public_note": "The bread is clear of the rack. Carry it toward the toaster through the open space in front.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The cross-table carry pose was unreachable. Tilt the wrist in clear space to extend the available reach.",
+      "targets": {
+        "left_pitch_deg": 40
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 240,
+        "start": 229
+      },
+      "left_wrist": {
+        "end": 240,
+        "start": 229
+      },
+      "right_wrist": {
+        "end": 240,
+        "start": 229
+      }
+    },
+    "control_end": 215,
+    "control_start": 204,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "The cross-table carry pose was unreachable. Tilt the wrist in clear space to extend the available reach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue carrying the held slice toward the toaster with the more reachable wrist tilt.",
+      "targets": {
+        "left_x": 0.06,
+        "left_z": 1.015
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 261,
+        "start": 241
+      },
+      "left_wrist": {
+        "end": 261,
+        "start": 241
+      },
+      "right_wrist": {
+        "end": 261,
+        "start": 241
+      }
+    },
+    "control_end": 235,
+    "control_start": 215,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "Continue carrying the held slice toward the toaster with the more reachable wrist tilt.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move the slice laterally above the near toaster slot, keeping its lower edge clear of the rim.",
+      "targets": {
+        "left_x": 0.165
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 277,
+        "start": 262
+      },
+      "left_wrist": {
+        "end": 277,
+        "start": 262
+      },
+      "right_wrist": {
+        "end": 277,
+        "start": 262
+      }
+    },
+    "control_end": 250,
+    "control_start": 235,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 26,
+    "public_note": "Move the slice laterally above the near toaster slot, keeping its lower edge clear of the rim.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lateral reach is constrained. Increase wrist tilt while the slice remains beside the toaster, then continue toward the slot.",
+      "targets": {
+        "left_pitch_deg": 65
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 277,
+        "start": 262
+      },
+      "left_wrist": {
+        "end": 277,
+        "start": 262
+      },
+      "right_wrist": {
+        "end": 277,
+        "start": 262
+      }
+    },
+    "control_end": 250,
+    "control_start": 235,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "The lateral reach is constrained. Increase wrist tilt while the slice remains beside the toaster, then continue toward the slot.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the lateral carry with the wrist in its extended configuration.",
+      "targets": {
+        "left_x": 0.165
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 297,
+        "start": 278
+      },
+      "left_wrist": {
+        "end": 297,
+        "start": 278
+      },
+      "right_wrist": {
+        "end": 297,
+        "start": 278
+      }
+    },
+    "control_end": 269,
+    "control_start": 250,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "Continue the lateral carry with the wrist in its extended configuration.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The slice slipped when approaching the toaster and is now beside it. Withdraw the left arm so the right arm can recover it with better reach.",
+      "targets": {
+        "left_x": 0.0,
+        "left_y": -0.22,
+        "left_z": 1.03
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 318,
+        "start": 298
+      },
+      "left_wrist": {
+        "end": 318,
+        "start": 298
+      },
+      "right_wrist": {
+        "end": 318,
+        "start": 298
+      }
+    },
+    "control_end": 289,
+    "control_start": 269,
+    "feedback": "Accepted: the original plan contains 23 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 28,
+    "public_note": "The slice slipped when approaching the toaster and is now beside it. Withdraw the left arm so the right arm can recover it with better reach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Clear the workspace by returning the left arm toward its initial pose. The right arm has the better reach for inserting bread.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": 90,
+        "left_roll_deg": 0,
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_yaw_deg": 0,
+        "left_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 339,
+        "start": 319
+      },
+      "left_wrist": {
+        "end": 339,
+        "start": 319
+      },
+      "right_wrist": {
+        "end": 339,
+        "start": 319
+      }
+    },
+    "control_end": 309,
+    "control_start": 289,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 29,
+    "public_note": "Clear the workspace by returning the left arm toward its initial pose. The right arm has the better reach for inserting bread.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Return in stages, moving left before restoring the starting wrist orientation.",
+      "targets": {
+        "left_x": -0.25,
+        "left_z": 0.96
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 339,
+        "start": 319
+      },
+      "left_wrist": {
+        "end": 339,
+        "start": 319
+      },
+      "right_wrist": {
+        "end": 339,
+        "start": 319
+      }
+    },
+    "control_end": 309,
+    "control_start": 289,
+    "feedback": "Accepted: the original plan contains 23 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 29,
+    "public_note": "Return in stages, moving left before restoring the starting wrist orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Prepare the right arm for a top-edge grasp, rotating away from its horizontal starting pose.",
+      "targets": {
+        "right_pitch_deg": 45
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 356,
+        "start": 340
+      },
+      "left_wrist": {
+        "end": 356,
+        "start": 340
+      },
+      "right_wrist": {
+        "end": 356,
+        "start": 340
+      }
+    },
+    "control_end": 325,
+    "control_start": 309,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "Prepare the right arm for a top-edge grasp, rotating away from its horizontal starting pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Raise the right hand above the toaster before crossing toward the remaining upright bread.",
+      "targets": {
+        "right_z": 1.07
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 372,
+        "start": 357
+      },
+      "left_wrist": {
+        "end": 372,
+        "start": 357
+      },
+      "right_wrist": {
+        "end": 372,
+        "start": 357
+      }
+    },
+    "control_end": 340,
+    "control_start": 325,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "Raise the right hand above the toaster before crossing toward the remaining upright bread.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Cross above the toaster toward the rightmost upright slice, staying well above all objects.",
+      "targets": {
+        "right_x": 0.02,
+        "right_y": -0.09,
+        "right_z": 1.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 391,
+        "start": 373
+      },
+      "left_wrist": {
+        "end": 391,
+        "start": 373
+      },
+      "right_wrist": {
+        "end": 391,
+        "start": 373
+      }
+    },
+    "control_end": 358,
+    "control_start": 340,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "Cross above the toaster toward the rightmost upright slice, staying well above all objects.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Align above the rightmost standing slice and narrow the jaws to avoid collecting its neighbor.",
+      "targets": {
+        "right_gripper": 0.45,
+        "right_x": -0.025,
+        "right_y": -0.065,
+        "right_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 401,
+        "start": 392
+      },
+      "left_wrist": {
+        "end": 401,
+        "start": 392
+      },
+      "right_wrist": {
+        "end": 401,
+        "start": 392
+      }
+    },
+    "control_end": 367,
+    "control_start": 358,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 33,
+    "public_note": "Align above the rightmost standing slice and narrow the jaws to avoid collecting its neighbor.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the rightmost slice with the existing wrist tilt, which can be preserved throughout the carry to keep the bread upright.",
+      "targets": {
+        "right_x": -0.018,
+        "right_z": 0.905
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 407,
+        "start": 402
+      },
+      "left_wrist": {
+        "end": 407,
+        "start": 402
+      },
+      "right_wrist": {
+        "end": 407,
+        "start": 402
+      }
+    },
+    "control_end": 372,
+    "control_start": 367,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "Approach the rightmost slice with the existing wrist tilt, which can be preserved throughout the carry to keep the bread upright.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower six millimetres with the slice centered between the jaws, checking contact before closure.",
+      "targets": {
+        "right_z": 0.899
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 409,
+        "start": 408
+      },
+      "left_wrist": {
+        "end": 409,
+        "start": 408
+      },
+      "right_wrist": {
+        "end": 409,
+        "start": 408
+      }
+    },
+    "control_end": 373,
+    "control_start": 372,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "Lower six millimetres with the slice centered between the jaws, checking contact before closure.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Close on the rightmost slice now that the jaws overlap its top edge.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 413,
+        "start": 410
+      },
+      "left_wrist": {
+        "end": 413,
+        "start": 410
+      },
+      "right_wrist": {
+        "end": 413,
+        "start": 410
+      }
+    },
+    "control_end": 376,
+    "control_start": 373,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 36,
+    "public_note": "Close on the rightmost slice now that the jaws overlap its top edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The gripper is holding the slice. Lift straight up before translating, preserving its upright orientation.",
+      "targets": {
+        "right_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 418,
+        "start": 414
+      },
+      "left_wrist": {
+        "end": 418,
+        "start": 414
+      },
+      "right_wrist": {
+        "end": 418,
+        "start": 414
+      }
+    },
+    "control_end": 380,
+    "control_start": 376,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "The gripper is holding the slice. Lift straight up before translating, preserving its upright orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The slice slipped back into the rack. Recenter over its shifted edge and reopen for a deeper grip.",
+      "targets": {
+        "right_gripper": 0.35,
+        "right_x": -0.03,
+        "right_z": 0.905
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 424,
+        "start": 419
+      },
+      "left_wrist": {
+        "end": 424,
+        "start": 419
+      },
+      "right_wrist": {
+        "end": 424,
+        "start": 419
+      }
+    },
+    "control_end": 385,
+    "control_start": 380,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 2 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "The slice slipped back into the rack. Recenter over its shifted edge and reopen for a deeper grip.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Make a small correction toward the outer face and descend five millimetres for a firmer single-slice grasp.",
+      "targets": {
+        "right_x": -0.024,
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 426,
+        "start": 425
+      },
+      "left_wrist": {
+        "end": 426,
+        "start": 425
+      },
+      "right_wrist": {
+        "end": 426,
+        "start": 425
+      }
+    },
+    "control_end": 386,
+    "control_start": 385,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "Make a small correction toward the outer face and descend five millimetres for a firmer single-slice grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Narrow the opening to clear the neighboring slice before lowering the grasp point farther.",
+      "targets": {
+        "right_gripper": 0.2
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 428,
+        "start": 427
+      },
+      "left_wrist": {
+        "end": 428,
+        "start": 427
+      },
+      "right_wrist": {
+        "end": 428,
+        "start": 427
+      }
+    },
+    "control_end": 387,
+    "control_start": 386,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The last 1 move the gripper, once the arm has arrived.",
+    "policy_step": 40,
+    "public_note": "Narrow the opening to clear the neighboring slice before lowering the grasp point farther.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower another five millimetres with the narrower opening to engage more of the bread edge.",
+      "targets": {
+        "right_z": 0.898
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 430,
+        "start": 429
+      },
+      "left_wrist": {
+        "end": 430,
+        "start": 429
+      },
+      "right_wrist": {
+        "end": 430,
+        "start": 429
+      }
+    },
+    "control_end": 388,
+    "control_start": 387,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 41,
+    "public_note": "Lower another five millimetres with the narrower opening to engage more of the bread edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Contact prevents a deeper grasp at this tilt. Lift clear before making the tool more vertical.",
+      "targets": {
+        "right_gripper": 0.45,
+        "right_z": 0.96
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 438,
+        "start": 431
+      },
+      "left_wrist": {
+        "end": 438,
+        "start": 431
+      },
+      "right_wrist": {
+        "end": 438,
+        "start": 431
+      }
+    },
+    "control_end": 395,
+    "control_start": 388,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 2 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "Contact prevents a deeper grasp at this tilt. Lift clear before making the tool more vertical.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Rotate toward a more vertical approach while above the bread to avoid the earlier contact.",
+      "targets": {
+        "right_pitch_deg": 25,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 459,
+        "start": 439
+      },
+      "left_wrist": {
+        "end": 459,
+        "start": 439
+      },
+      "right_wrist": {
+        "end": 459,
+        "start": 439
+      }
+    },
+    "control_end": 415,
+    "control_start": 395,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 43,
+    "public_note": "Rotate toward a more vertical approach while above the bread to avoid the earlier contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the isolated rightmost slice with the more vertical tool, keeping the jaw center on its upper edge.",
+      "targets": {
+        "right_x": -0.017,
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 476,
+        "start": 460
+      },
+      "left_wrist": {
+        "end": 476,
+        "start": 460
+      },
+      "right_wrist": {
+        "end": 476,
+        "start": 460
+      }
+    },
+    "control_end": 431,
+    "control_start": 415,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 44,
+    "public_note": "Approach the isolated rightmost slice with the more vertical tool, keeping the jaw center on its upper edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Shift five millimetres toward the outer slice and narrow the opening to free the inner finger from its neighbor.",
+      "targets": {
+        "right_gripper": 0.25,
+        "right_x": -0.012
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 480,
+        "start": 477
+      },
+      "left_wrist": {
+        "end": 480,
+        "start": 477
+      },
+      "right_wrist": {
+        "end": 480,
+        "start": 477
+      }
+    },
+    "control_end": 434,
+    "control_start": 431,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 2 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "Shift five millimetres toward the outer slice and narrow the opening to free the inner finger from its neighbor.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The inner finger now clears the neighboring bread. Lower five millimetres around the selected slice.",
+      "targets": {
+        "right_z": 0.898
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 482,
+        "start": 481
+      },
+      "left_wrist": {
+        "end": 482,
+        "start": 481
+      },
+      "right_wrist": {
+        "end": 482,
+        "start": 481
+      }
+    },
+    "control_end": 435,
+    "control_start": 434,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "The inner finger now clears the neighboring bread. Lower five millimetres around the selected slice.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower four millimetres and close around the slice for a deeper, more secure grip.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.894
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 486,
+        "start": 483
+      },
+      "left_wrist": {
+        "end": 486,
+        "start": 483
+      },
+      "right_wrist": {
+        "end": 486,
+        "start": 483
+      }
+    },
+    "control_end": 438,
+    "control_start": 435,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 2 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "Lower four millimetres and close around the slice for a deeper, more secure grip.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws are firmly separated by the bread. Lift vertically while preserving the wrist angles.",
+      "targets": {
+        "right_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 493,
+        "start": 487
+      },
+      "left_wrist": {
+        "end": 493,
+        "start": 487
+      },
+      "right_wrist": {
+        "end": 493,
+        "start": 487
+      }
+    },
+    "control_end": 444,
+    "control_start": 438,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "The jaws are firmly separated by the bread. Lift vertically while preserving the wrist angles.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The slice is securely lifted. Move upward and toward the right arm's base to clear the toaster rim without changing bread orientation.",
+      "targets": {
+        "right_x": 0.065,
+        "right_y": -0.12,
+        "right_z": 1.045
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 501,
+        "start": 494
+      },
+      "left_wrist": {
+        "end": 501,
+        "start": 494
+      },
+      "right_wrist": {
+        "end": 501,
+        "start": 494
+      }
+    },
+    "control_end": 451,
+    "control_start": 444,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 49,
+    "public_note": "The slice is securely lifted. Move upward and toward the right arm's base to clear the toaster rim without changing bread orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Raise the held bread farther before crossing the toaster wall, leaving clearance below its bottom edge.",
+      "targets": {
+        "right_x": 0.12,
+        "right_z": 1.1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 508,
+        "start": 502
+      },
+      "left_wrist": {
+        "end": 508,
+        "start": 502
+      },
+      "right_wrist": {
+        "end": 508,
+        "start": 502
+      }
+    },
+    "control_end": 457,
+    "control_start": 451,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 50,
+    "public_note": "Raise the held bread farther before crossing the toaster wall, leaving clearance below its bottom edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Use a lower reachable carry height while moving toward the slot; the bread bottom remains above the rim.",
+      "targets": {
+        "right_x": 0.17,
+        "right_z": 1.065
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 508,
+        "start": 502
+      },
+      "left_wrist": {
+        "end": 508,
+        "start": 502
+      },
+      "right_wrist": {
+        "end": 508,
+        "start": 502
+      }
+    },
+    "control_end": 457,
+    "control_start": 451,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "Use a lower reachable carry height while moving toward the slot; the bread bottom remains above the rim.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist view shows the bread slightly left of the left slot. Shift laterally to center its lower edge over the opening.",
+      "targets": {
+        "right_x": 0.192
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 511,
+        "start": 509
+      },
+      "left_wrist": {
+        "end": 511,
+        "start": 509
+      },
+      "right_wrist": {
+        "end": 511,
+        "start": 509
+      }
+    },
+    "control_end": 459,
+    "control_start": 457,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "The wrist view shows the bread slightly left of the left slot. Shift laterally to center its lower edge over the opening.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Center the slice a little farther inside the left slot and begin lowering toward the opening.",
+      "targets": {
+        "right_x": 0.199,
+        "right_z": 1.035
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 518,
+        "start": 512
+      },
+      "left_wrist": {
+        "end": 518,
+        "start": 512
+      },
+      "right_wrist": {
+        "end": 518,
+        "start": 512
+      }
+    },
+    "control_end": 465,
+    "control_start": 459,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "Center the slice a little farther inside the left slot and begin lowering toward the opening.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The bread has contacted the front rim and slipped slightly. Reopen to regrasp its exposed upper edge before shifting it back over the slot.",
+      "targets": {
+        "right_gripper": 0.35
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 521,
+        "start": 519
+      },
+      "left_wrist": {
+        "end": 521,
+        "start": 519
+      },
+      "right_wrist": {
+        "end": 521,
+        "start": 519
+      }
+    },
+    "control_end": 467,
+    "control_start": 465,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The last 2 move the gripper, once the arm has arrived.",
+    "policy_step": 53,
+    "public_note": "The bread has contacted the front rim and slipped slightly. Reopen to regrasp its exposed upper edge before shifting it back over the slot.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Regrasp five millimetres lower on the exposed slice so it can be lifted off the front rim.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 1.032
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 525,
+        "start": 522
+      },
+      "left_wrist": {
+        "end": 525,
+        "start": 522
+      },
+      "right_wrist": {
+        "end": 525,
+        "start": 522
+      }
+    },
+    "control_end": 470,
+    "control_start": 467,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 2 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "Regrasp five millimetres lower on the exposed slice so it can be lifted off the front rim.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift six millimetres to free the bread from the rim before correcting its fore-aft alignment.",
+      "targets": {
+        "right_z": 1.04
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 527,
+        "start": 526
+      },
+      "left_wrist": {
+        "end": 527,
+        "start": 526
+      },
+      "right_wrist": {
+        "end": 527,
+        "start": 526
+      }
+    },
+    "control_end": 471,
+    "control_start": 470,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 55,
+    "public_note": "Lift six millimetres to free the bread from the rim before correcting its fore-aft alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The grasp is retained. Raise enough to clear the front lip fully before moving the slice rearward.",
+      "targets": {
+        "right_z": 1.065
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 533,
+        "start": 528
+      },
+      "left_wrist": {
+        "end": 533,
+        "start": 528
+      },
+      "right_wrist": {
+        "end": 533,
+        "start": 528
+      }
+    },
+    "control_end": 476,
+    "control_start": 471,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 56,
+    "public_note": "The grasp is retained. Raise enough to clear the front lip fully before moving the slice rearward.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move the bread rearward so its front edge lies inside the slot rather than above the front rim.",
+      "targets": {
+        "right_y": -0.085
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 538,
+        "start": 534
+      },
+      "left_wrist": {
+        "end": 538,
+        "start": 534
+      },
+      "right_wrist": {
+        "end": 538,
+        "start": 534
+      }
+    },
+    "control_end": 480,
+    "control_start": 476,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 57,
+    "public_note": "Move the bread rearward so its front edge lies inside the slot rather than above the front rim.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The bread is resting diagonally across the opening. Approach its exposed upper edge from above to realign it inside the left slot.",
+      "targets": {
+        "right_gripper": 0.6,
+        "right_y": -0.045,
+        "right_z": 1.005
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 549,
+        "start": 539
+      },
+      "left_wrist": {
+        "end": 549,
+        "start": 539
+      },
+      "right_wrist": {
+        "end": 549,
+        "start": 539
+      }
+    },
+    "control_end": 490,
+    "control_start": 480,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 58,
+    "public_note": "The bread is resting diagonally across the opening. Approach its exposed upper edge from above to realign it inside the left slot.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Center over the exposed bread edge and lower toward a new grasp above the toaster.",
+      "targets": {
+        "right_x": 0.203,
+        "right_z": 0.975
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 554,
+        "start": 550
+      },
+      "left_wrist": {
+        "end": 554,
+        "start": 550
+      },
+      "right_wrist": {
+        "end": 554,
+        "start": 550
+      }
+    },
+    "control_end": 494,
+    "control_start": 490,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 59,
+    "public_note": "Center over the exposed bread edge and lower toward a new grasp above the toaster.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Descend five millimetres and close around the exposed slice to regain control of its alignment.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.97
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 560,
+        "start": 555
+      },
+      "left_wrist": {
+        "end": 560,
+        "start": 555
+      },
+      "right_wrist": {
+        "end": 560,
+        "start": 555
+      }
+    },
+    "control_end": 499,
+    "control_start": 494,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 60,
+    "public_note": "Descend five millimetres and close around the exposed slice to regain control of its alignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The slice is held upright over the left opening. Make a small inward correction and lower four millimetres into the slot.",
+      "targets": {
+        "right_x": 0.198,
+        "right_y": -0.04,
+        "right_z": 0.966
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 562,
+        "start": 561
+      },
+      "left_wrist": {
+        "end": 562,
+        "start": 561
+      },
+      "right_wrist": {
+        "end": 562,
+        "start": 561
+      }
+    },
+    "control_end": 500,
+    "control_start": 499,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 61,
+    "public_note": "The slice is held upright over the left opening. Make a small inward correction and lower four millimetres into the slot.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the small rearward and leftward correction while easing the bread into the left slot.",
+      "targets": {
+        "right_x": 0.194,
+        "right_y": -0.035,
+        "right_z": 0.963
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 564,
+        "start": 563
+      },
+      "left_wrist": {
+        "end": 564,
+        "start": 563
+      },
+      "right_wrist": {
+        "end": 564,
+        "start": 563
+      }
+    },
+    "control_end": 501,
+    "control_start": 500,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 62,
+    "public_note": "Continue the small rearward and leftward correction while easing the bread into the left slot.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The bread is centered over the left slot. Release it so it can settle into the opening without the jaws holding it tilted.",
+      "targets": {
+        "right_gripper": 0.5
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 568,
+        "start": 565
+      },
+      "left_wrist": {
+        "end": 568,
+        "start": 565
+      },
+      "right_wrist": {
+        "end": 568,
+        "start": 565
+      }
+    },
+    "control_end": 504,
+    "control_start": 501,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 63,
+    "public_note": "The bread is centered over the left slot. Release it so it can settle into the opening without the jaws holding it tilted.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The slice remains skewed across the slot. Lift the empty gripper clear before matching its diagonal edge for a controlled realignment.",
+      "targets": {
+        "right_z": 1.03
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 578,
+        "start": 569
+      },
+      "left_wrist": {
+        "end": 578,
+        "start": 569
+      },
+      "right_wrist": {
+        "end": 578,
+        "start": 569
+      }
+    },
+    "control_end": 513,
+    "control_start": 504,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 64,
+    "public_note": "The slice remains skewed across the slot. Lift the empty gripper clear before matching its diagonal edge for a controlled realignment.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The released slice has settled into the left slot. Withdraw above the clear space to prepare the next slice.",
+      "targets": {
+        "right_x": 0.02,
+        "right_y": -0.12,
+        "right_z": 1.015
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 590,
+        "start": 579
+      },
+      "left_wrist": {
+        "end": 590,
+        "start": 579
+      },
+      "right_wrist": {
+        "end": 590,
+        "start": 579
+      }
+    },
+    "control_end": 524,
+    "control_start": 513,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 65,
+    "public_note": "The released slice has settled into the left slot. Withdraw above the clear space to prepare the next slice.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Recover the dropped slice rather than removing another from the shelf, so exactly two remain there. Approach above the flat bread with fully open jaws.",
+      "targets": {
+        "right_gripper": 1,
+        "right_x": 0.075,
+        "right_y": -0.12,
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 611,
+        "start": 591
+      },
+      "left_wrist": {
+        "end": 611,
+        "start": 591
+      },
+      "right_wrist": {
+        "end": 611,
+        "start": 591
+      }
+    },
+    "control_end": 544,
+    "control_start": 524,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 66,
+    "public_note": "Recover the dropped slice rather than removing another from the shelf, so exactly two remain there. Approach above the flat bread with fully open jaws.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Turn straight downward above the flat slice for a grasp around its side edges.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 625,
+        "start": 612
+      },
+      "left_wrist": {
+        "end": 625,
+        "start": 612
+      },
+      "right_wrist": {
+        "end": 625,
+        "start": 612
+      }
+    },
+    "control_end": 557,
+    "control_start": 544,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 67,
+    "public_note": "Turn straight downward above the flat slice for a grasp around its side edges.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Center above the flat slice and descend to a short distance above the table, keeping the jaws fully open.",
+      "targets": {
+        "right_x": 0.085,
+        "right_z": 0.8
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 635,
+        "start": 626
+      },
+      "left_wrist": {
+        "end": 635,
+        "start": 626
+      },
+      "right_wrist": {
+        "end": 635,
+        "start": 626
+      }
+    },
+    "control_end": 566,
+    "control_start": 557,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 68,
+    "public_note": "Center above the flat slice and descend to a short distance above the table, keeping the jaws fully open.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The descent was blocked by the toaster-side finger. Lift clear before rotating the jaws to approach along the bread's front and back edges.",
+      "targets": {
+        "right_z": 0.96
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 647,
+        "start": 636
+      },
+      "left_wrist": {
+        "end": 647,
+        "start": 636
+      },
+      "right_wrist": {
+        "end": 647,
+        "start": 636
+      }
+    },
+    "control_end": 577,
+    "control_start": 566,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 69,
+    "public_note": "The descent was blocked by the toaster-side finger. Lift clear before rotating the jaws to approach along the bread's front and back edges.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Rotate the open jaws along the front-back direction to avoid the adjacent toaster wall.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 668,
+        "start": 648
+      },
+      "left_wrist": {
+        "end": 668,
+        "start": 648
+      },
+      "right_wrist": {
+        "end": 668,
+        "start": 648
+      }
+    },
+    "control_end": 597,
+    "control_start": 577,
+    "feedback": "Accepted: the original plan contains 32 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 70,
+    "public_note": "Rotate the open jaws along the front-back direction to avoid the adjacent toaster wall.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Finish the jaw rotation while descending only through clear space above the flat bread.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 90,
+        "right_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 681,
+        "start": 669
+      },
+      "left_wrist": {
+        "end": 681,
+        "start": 669
+      },
+      "right_wrist": {
+        "end": 681,
+        "start": 669
+      }
+    },
+    "control_end": 609,
+    "control_start": 597,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 71,
+    "public_note": "Finish the jaw rotation while descending only through clear space above the flat bread.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The rotated jaws now clear the toaster wall. Descend near the table to straddle the flat slice's front and back edges.",
+      "targets": {
+        "right_z": 0.795
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 690,
+        "start": 682
+      },
+      "left_wrist": {
+        "end": 690,
+        "start": 682
+      },
+      "right_wrist": {
+        "end": 690,
+        "start": 682
+      }
+    },
+    "control_end": 617,
+    "control_start": 609,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 72,
+    "public_note": "The rotated jaws now clear the toaster wall. Descend near the table to straddle the flat slice's front and back edges.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Center the opening between the front and back crusts and lower close to the table before the final grasp.",
+      "targets": {
+        "right_y": -0.111,
+        "right_z": 0.782
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 693,
+        "start": 691
+      },
+      "left_wrist": {
+        "end": 693,
+        "start": 691
+      },
+      "right_wrist": {
+        "end": 693,
+        "start": 691
+      }
+    },
+    "control_end": 619,
+    "control_start": 617,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 73,
+    "public_note": "Center the opening between the front and back crusts and lower close to the table before the final grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower five millimetres toward the table-level grasp while watching whether the crust blocks the fingers.",
+      "targets": {
+        "right_z": 0.778
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 695,
+        "start": 694
+      },
+      "left_wrist": {
+        "end": 695,
+        "start": 694
+      },
+      "right_wrist": {
+        "end": 695,
+        "start": 694
+      }
+    },
+    "control_end": 620,
+    "control_start": 619,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 74,
+    "public_note": "Lower five millimetres toward the table-level grasp while watching whether the crust blocks the fingers.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The flat slice is wider than the open jaws. Lift clear and move beside its left edge for a thinner edge-on grasp.",
+      "targets": {
+        "right_x": 0.015,
+        "right_z": 0.87
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 709,
+        "start": 696
+      },
+      "left_wrist": {
+        "end": 709,
+        "start": 696
+      },
+      "right_wrist": {
+        "end": 709,
+        "start": 696
+      }
+    },
+    "control_end": 633,
+    "control_start": 620,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 75,
+    "public_note": "The flat slice is wider than the open jaws. Lift clear and move beside its left edge for a thinner edge-on grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Turn the tool toward the thin left edge of the flat bread so the jaws can close across its thickness rather than its full width.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_roll_deg": -60,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 730,
+        "start": 710
+      },
+      "left_wrist": {
+        "end": 730,
+        "start": 710
+      },
+      "right_wrist": {
+        "end": 730,
+        "start": 710
+      }
+    },
+    "control_end": 653,
+    "control_start": 633,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 76,
+    "public_note": "Turn the tool toward the thin left edge of the flat bread so the jaws can close across its thickness rather than its full width.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The side-grasp pose is unreachable. Restore the successful upright-slice grasp orientation to fill the remaining toaster slot.",
+      "targets": {
+        "right_pitch_deg": 25,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 0,
+        "right_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 730,
+        "start": 710
+      },
+      "left_wrist": {
+        "end": 730,
+        "start": 710
+      },
+      "right_wrist": {
+        "end": 730,
+        "start": 710
+      }
+    },
+    "control_end": 653,
+    "control_start": 633,
+    "feedback": "Accepted: the original plan contains 33 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 76,
+    "public_note": "The side-grasp pose is unreachable. Restore the successful upright-slice grasp orientation to fill the remaining toaster slot.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Finish restoring the known grasp orientation and narrow the jaws above the rack.",
+      "targets": {
+        "right_gripper": 0.3,
+        "right_pitch_deg": 25,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 0,
+        "right_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 746,
+        "start": 731
+      },
+      "left_wrist": {
+        "end": 746,
+        "start": 731
+      },
+      "right_wrist": {
+        "end": 746,
+        "start": 731
+      }
+    },
+    "control_end": 668,
+    "control_start": 653,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 77,
+    "public_note": "Finish restoring the known grasp orientation and narrow the jaws above the rack.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the outer remaining standing slice using the successful top-edge grasp geometry.",
+      "targets": {
+        "right_x": -0.047,
+        "right_y": -0.065,
+        "right_z": 0.905
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 755,
+        "start": 747
+      },
+      "left_wrist": {
+        "end": 755,
+        "start": 747
+      },
+      "right_wrist": {
+        "end": 755,
+        "start": 747
+      }
+    },
+    "control_end": 676,
+    "control_start": 668,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 78,
+    "public_note": "Approach the outer remaining standing slice using the successful top-edge grasp geometry.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The outer slice is centered between the jaws. Lower six millimetres toward its top edge.",
+      "targets": {
+        "right_z": 0.899
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 758,
+        "start": 756
+      },
+      "left_wrist": {
+        "end": 758,
+        "start": 756
+      },
+      "right_wrist": {
+        "end": 758,
+        "start": 756
+      }
+    },
+    "control_end": 678,
+    "control_start": 676,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 79,
+    "public_note": "The outer slice is centered between the jaws. Lower six millimetres toward its top edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move five millimetres outward and narrow the jaws to avoid contact with the adjacent slice.",
+      "targets": {
+        "right_gripper": 0.2,
+        "right_x": -0.042
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 762,
+        "start": 759
+      },
+      "left_wrist": {
+        "end": 762,
+        "start": 759
+      },
+      "right_wrist": {
+        "end": 762,
+        "start": 759
+      }
+    },
+    "control_end": 681,
+    "control_start": 678,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 1 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 80,
+    "public_note": "Move five millimetres outward and narrow the jaws to avoid contact with the adjacent slice.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower five millimetres and close on the isolated outer slice.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.898
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 766,
+        "start": 763
+      },
+      "left_wrist": {
+        "end": 766,
+        "start": 763
+      },
+      "right_wrist": {
+        "end": 766,
+        "start": 763
+      }
+    },
+    "control_end": 684,
+    "control_start": 681,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 2 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 81,
+    "public_note": "Lower five millimetres and close on the isolated outer slice.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Test the grip with a short vertical lift before carrying the slice.",
+      "targets": {
+        "right_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 776,
+        "start": 767
+      },
+      "left_wrist": {
+        "end": 776,
+        "start": 767
+      },
+      "right_wrist": {
+        "end": 776,
+        "start": 767
+      }
+    },
+    "control_end": 693,
+    "control_start": 684,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 82,
+    "public_note": "Test the grip with a short vertical lift before carrying the slice.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The second grasp did not hold. Withdraw without disturbing the two shelf slices or the bread already in the toaster.",
+      "targets": {
+        "right_x": 0.3,
+        "right_y": -0.22,
+        "right_z": 1.0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 797,
+        "start": 777
+      },
+      "left_wrist": {
+        "end": 797,
+        "start": 777
+      },
+      "right_wrist": {
+        "end": 797,
+        "start": 777
+      }
+    },
+    "control_end": 713,
+    "control_start": 693,
+    "feedback": "Accepted: the original plan contains 27 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 83,
+    "public_note": "The second grasp did not hold. Withdraw without disturbing the two shelf slices or the bread already in the toaster.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Restore the left arm's starting orientation while preserving the bread already placed.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": 90,
+        "left_roll_deg": 0,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 817,
+        "start": 798
+      },
+      "left_wrist": {
+        "end": 817,
+        "start": 798
+      },
+      "right_wrist": {
+        "end": 817,
+        "start": 798
+      }
+    },
+    "control_end": 732,
+    "control_start": 713,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 84,
+    "public_note": "Restore the left arm's starting orientation while preserving the bread already placed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Return the left arm home and begin restoring the right wrist's initial orientation in clear space.",
+      "targets": {
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_z": 0.9215,
+        "right_gripper": 1,
+        "right_pitch_deg": 60,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 838,
+        "start": 818
+      },
+      "left_wrist": {
+        "end": 838,
+        "start": 818
+      },
+      "right_wrist": {
+        "end": 838,
+        "start": 818
+      }
+    },
+    "control_end": 752,
+    "control_start": 732,
+    "feedback": "Accepted: the original plan contains 22 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 85,
+    "public_note": "Return the left arm home and begin restoring the right wrist's initial orientation in clear space.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Return the right arm to its initial pose. Only one slice is in the toaster; the second placement and lever press remain incomplete.",
+      "targets": {
+        "right_gripper": 1,
+        "right_pitch_deg": 90,
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 859,
+        "start": 839
+      },
+      "left_wrist": {
+        "end": 859,
+        "start": 839
+      },
+      "right_wrist": {
+        "end": 859,
+        "start": 839
+      }
+    },
+    "control_end": 772,
+    "control_start": 752,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The last 1 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 86,
+    "public_note": "Return the right arm to its initial pose. Only one slice is in the toaster; the second placement and lever press remain incomplete.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "Use the right arm for both insertions, secure each slice deeper along its upper edge, preserve its orientation during transport, and center it over the slot before lowering. The dropped flat slice required an edge-on recovery grasp.",
+      "reason": "Only one slice was inserted. Repeated grasp failures prevented the second placement; the lever was not pressed. Both arms are back at their starting poses."
+    },
+    "cameras": {
+      "head": {
+        "end": 861,
+        "start": 860
+      },
+      "left_wrist": {
+        "end": 861,
+        "start": 860
+      },
+      "right_wrist": {
+        "end": 861,
+        "start": 860
+      }
+    },
+    "control_end": 773,
+    "control_start": 772,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 87,
+    "public_note": "Only one slice was inserted. Repeated grasp failures prevented the second placement; the lever was not pressed. Both arms are back at their starting poses.",
+    "tool": "give_up"
+  }
+]
