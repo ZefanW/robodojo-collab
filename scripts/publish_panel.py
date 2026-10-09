@@ -98,6 +98,8 @@ def update_catalog(web):
         if item.get('metric_profile') == 'devset10':
             entry.update(metric_profile='devset10', metric_label=item['metric_label'],
                          scope=item['scope'], roster=item['roster'])
+        if item.get('execution_kind') == 'native_vla':
+            entry['execution_kind'] = 'native_vla'
         panels.append(entry)
     write_json(Path(web) / 'data/publications/catalog.json', {'schema_version': '1.0',
         'generated_at': datetime.now(timezone.utc).isoformat(), 'panels': panels})

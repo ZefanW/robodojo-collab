@@ -19,6 +19,10 @@ def signature(run):
 
 
 def cost_summary(runs):
+    if runs and any(r.get('execution_kind')=='native_vla' for r in runs):
+        if not all(r.get('execution_kind')=='native_vla' for r in runs):
+            raise ValueError('Cannot merge native VLA and LLM cost applicability')
+        return native_vla_cost_summary(runs)
     fields=('input_tokens','cached_input_tokens','output_tokens','paid_requests','model_responses')
     total={k:0 for k in fields};unknown=0;missing={k:0 for k in fields};seen=set()
     for r in runs:
@@ -37,6 +41,31 @@ def cost_summary(runs):
             'paid_requests_lower_bound':total['paid_requests'],'model_responses_lower_bound':total['model_responses'],
             'unknown_attempts':unknown,'unknown_by_field':missing,'complete':not any(missing.values()) and unknown==0,
             'cache_is_input_subset':True,'attempt_records':len(seen)}
+
+
+def native_vla_cost_summary(runs):
+    attempts={}
+    for run in runs:
+        for attempt in run['costs']['attempts']:
+            key=(run['run_id'],attempt['attempt_id'])
+            if key in attempts and attempts[key]!=attempt:raise ValueError('Conflicting native VLA attempt evidence')
+            attempts[key]=attempt
+    complete=all(run['costs']['attempts_complete'] for run in runs)
+    selected=[a for a in attempts.values() if a['scope']=='selected_episode']
+    out={key:None for key in ('known_input_tokens','known_cached_input_tokens','known_uncached_input_tokens',
+        'known_output_tokens','known_total_tokens','paid_requests','paid_requests_lower_bound',
+        'model_responses_lower_bound','unknown_attempts','unknown_by_field')}
+    out.update(execution_kind='native_vla',llm_cost_applicability='not_applicable',
+               complete=False,attempts_complete=complete,attempt_records=len(attempts),
+               cache_is_input_subset=None,gpu_hours=None,gpu_dollar_cost=None,vla_inference_calls=None,
+               policy_action_requests=sum(a['policy_action_requests'] for a in selected),
+               policy_rpc_calls=sum(a['policy_rpc_calls'] for a in selected),
+               control_steps=sum(a['control_steps'] for a in selected),
+               infrastructure_attempt_records=sum(a['scope']=='infrastructure_attempt' for a in attempts.values()),
+               limitations=['LLM token/paid-request accounting is not applicable to native VLA policies.',
+                            'GPU hours and dollar billing were not measured; no zero cost is inferred.',
+                            'Selected-episode policy RPC counts are observed boundaries, not GPU billing.'])
+    return out
 
 
 def valid(r):

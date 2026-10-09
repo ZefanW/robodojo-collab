@@ -51,6 +51,14 @@ panel = build_panel(publication_manifests_or_paths, task_registry,
 
 CPU 校验：`python -m unittest discover -s tests -p 'test_publication.py' -v`。测试不调用付费模型、GPU 或网络。
 
+## 纯 VLA 的历史结果
+
+纯 VLA 基线与“GPT＋VLA”分别登记。纯 VLA 使用明确的 `native_vla` 执行类型，保留原模型、可核验的 checkpoint／配置来源、原生动作表示与时序；Codex 客户端、语言模型付费请求和 token 不适用，不能生成虚假的零费用回执。没有计量的 GPU 时长或金额仍为未知。策略推理次数、RPC 次数与控制步分别记录，不能由控制步或预测块长度推算实际推理调用数。
+
+导出仍需逐例核对原 `_result`、`episode_complete`、最终 `action_complete`、控制数、场景 SHA 和三路原视频。可读轨迹来自原始数值动作及执行反馈；没有模型自然语言说明时明确说明缺少该类说明，不补写理由。原始来源未保存的历史代码或权重 SHA 保持未知，当前文件的 SHA 不能证明历史运行采用该版本。纯 VLA 的模拟器兼容补跑及原结果复用也必须披露依据。
+
+同样先完成本地证据与隐私验证，再上传并匿名读回校验。只有实际完整的 54 任务才能使用 Full54 面板；旧的标准 42 任务及不完整批次不自动纳入这个范围。
+
 ## 发布一个完整面板
 
 把逐例精简目录放在同一父目录后，可以调用文件专用发布器：

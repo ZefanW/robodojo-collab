@@ -65,6 +65,96 @@ def _timestamp(value):
     try:return datetime.fromisoformat(value.replace('Z','+00:00')).tzinfo is not None
     except (ValueError,TypeError,AttributeError):return False
 
+def validate_native_vla_costs(costs):
+    errors=[]
+    if costs.get('execution_kind')!='native_vla' or costs.get('llm_cost_applicability')!='not_applicable':
+        errors.append('native_vla costs: explicit not-applicable LLM cost semantics required')
+    if type(costs.get('attempts_complete')) is not bool:errors.append('native_vla costs: attempts_complete must be explicit')
+    if costs.get('gpu_hours') is not None or costs.get('gpu_dollar_cost') is not None:
+        errors.append('native_vla costs: GPU billing is unmeasured in this adapter and must remain null')
+    attempts=costs.get('attempts',[])
+    seen=set()
+    if not isinstance(attempts,list):return errors+['native_vla costs: attempts list required']
+    for attempt in attempts:
+        if not isinstance(attempt,dict):errors.append('native_vla costs: attempt object required');continue
+        ident=attempt.get('attempt_id')
+        if not isinstance(ident,str) or not ident or ident in seen:errors.append('native_vla costs: unique original attempt identity required')
+        seen.add(ident)
+        for key in ('input_tokens','cached_input_tokens','output_tokens','paid_requests','model_responses','usage_known'):
+            if attempt.get(key) is not None:errors.append(f'native_vla costs: {key} is not applicable; no zero token receipt may be fabricated')
+        for key in ('control_steps','policy_action_requests','policy_rpc_calls'):
+            if key not in attempt or not _integer(attempt.get(key),True):errors.append(f'native_vla costs: {key} must be observed integer or explicit null')
+        if attempt.get('scope') not in ('selected_episode','infrastructure_attempt','original_run'):
+            errors.append('native_vla costs: original measurement scope required')
+        sha=attempt.get('source_sha256')
+        if not isinstance(sha,str) or not HEX.fullmatch(sha):errors.append('native_vla costs: source evidence SHA256 required')
+    return errors
+
+
+def native_event_payload(event):
+    return {k:v for k,v in event.items() if k not in ('source_line_number','source_line_sha256')}
+
+
+def validate_native_vla_evidence(m,nr,ep,acks,trajectory,costs):
+    errors=[];outcome=m.get('outcome',{});scene=m.get('scene',{});episode=m.get('native_episode',{})
+    eid=episode.get('episode_id');controls=outcome.get('control_steps')
+    if not isinstance(nr,dict) or not isinstance(ep,dict):return ['native_vla: readable original result and episode_complete required']
+    terminal=ep.get('native_results');details=nr.get('details',{})
+    item=details.get(str(eid),{}) if isinstance(details,dict) else {}
+    if item.get('score')!=outcome.get('score') or item.get('success') is not outcome.get('success') or item.get('layout_id')!=scene.get('layout_ordinal'):
+        errors.append('native_vla: selected original episode score/success/layout differs')
+    if terminal!=nr:
+        # A reused episode from a cumulative file keeps BOTH original objects intact.
+        try:prefix={k:v for k,v in details.items() if int(k)<=eid}
+        except (TypeError,ValueError):prefix={}
+        td=terminal.get('details') if isinstance(terminal,dict) else None
+        if not prefix or td!=prefix or str(eid) not in prefix:
+            errors.append('native_vla: terminal result is not the exact original cumulative episode prefix')
+        elif (terminal.get('eval_time',terminal.get('eval_times'))!=len(prefix) or
+              abs(terminal.get('score',-1)-sum(v['score'] for v in prefix.values())/len(prefix))>1e-9 or
+              abs(terminal.get('success_rate',-1)-sum(v['success'] for v in prefix.values())/len(prefix))>1e-9):
+            errors.append('native_vla: cumulative prefix aggregate differs from native details')
+    if ep.get('kind')!='episode_complete' or ep.get('control_steps')!=[controls] or ep.get('layout_by_env')!={'0':scene.get('layout_ordinal')} or ep.get('unstable_envs')!=[]:
+        errors.append('native_vla: terminal kind/controls/layout/unstable evidence differs')
+    if not isinstance(acks,list) or not acks or acks[-1]!=ep:
+        errors.append('native_vla: original terminal must be the last native ACK')
+    final=[a for a in acks or [] if isinstance(a,dict) and a.get('kind')=='action_complete']
+    if controls and (not final or final[-1].get('control_steps')!=[controls] or final[-1].get('layout_by_env')!=ep.get('layout_by_env') or final[-1].get('native_end')!=[True] or final[-1].get('native_success')!=[outcome.get('success')]):
+        errors.append('native_vla: final action ACK must match native terminal and success')
+    if not isinstance(trajectory,dict):return errors+['native_vla: complete numeric trajectory required']
+    events=trajectory.get('native_events');turns=trajectory.get('turns')
+    if trajectory.get('execution_kind')!='native_vla' or trajectory.get('native_episode_id')!=eid or not isinstance(events,list) or not isinstance(turns,list):
+        return errors+['native_vla: trajectory identity/events/turns required']
+    submitted=[e for e in events if e.get('kind')=='action_submit'];completed=[e for e in events if e.get('kind')=='action_complete']
+    if len(submitted)!=len(completed) or len(turns)!=len(submitted):errors.append('native_vla: trajectory action/ACK pairs are incomplete')
+    current=0
+    for index,(submit,done) in enumerate(zip(submitted,completed)):
+        start,end=submit.get('control_steps'),done.get('control_steps')
+        if start!=[current] or not isinstance(end,list) or len(end)!=1 or not _integer(end[0]) or end[0]<=current:
+            errors.append('native_vla: trajectory controls are not a complete monotonic original prefix');break
+        if submit.get('source_line_number',0)>=done.get('source_line_number',0):errors.append('native_vla: submitted action must precede its native ACK')
+        if index<len(turns):
+            expected={'kind':'native_action','step':index+1,'control_start':current,'control_end':end[0],
+                      'tool_call':{'name':'native_action','arguments':{'actions':submit.get('actions')}},
+                      'feedback':native_event_payload(done),'source_line_sha256':submit.get('source_line_sha256')}
+            if turns[index]!=expected:errors.append('native_vla: readable trajectory differs from original actions or feedback')
+        current=end[0]
+    if current!=controls:errors.append('native_vla: full numeric trajectory does not reach terminal controls')
+    for event in events:
+        if not isinstance(event.get('source_line_sha256'),str) or not HEX.fullmatch(event['source_line_sha256']):errors.append('native_vla: original event line SHA required')
+        if event.get('layout_by_env')!={'0':scene.get('layout_ordinal')} and not (event.get('kind')=='reset_start' and event.get('layout_by_env')=={}):errors.append('native_vla: trajectory event belongs to a different layout')
+    if completed and final and native_event_payload(completed[-1])!=final[-1]:errors.append('native_vla: trajectory final ACK differs from terminal evidence')
+    rpc=[e for e in events if e.get('kind')=='policy_rpc']
+    inference=[e for e in rpc if e.get('method') in ('get_action','get_action_batch')]
+    if len(rpc)!=outcome.get('policy_rpc_calls') or len(inference)!=outcome.get('policy_action_requests'):
+        errors.append('native_vla: policy RPC/inference counts differ from original events')
+    if costs!=m.get('costs'):errors.append('native_vla: full cost artifact differs from original cost ledger')
+    selected=[a for a in (costs or {}).get('attempts',[]) if a.get('scope')=='selected_episode']
+    if len(selected)!=1 or any(selected[0].get(k)!=outcome.get(k) for k in ('control_steps','policy_action_requests','policy_rpc_calls')):
+        errors.append('native_vla: selected-episode cost counts differ from native evidence')
+    return errors
+
+
 def validate_manifest(m, bundle_dir=None, check_files=True):
     """Return all validation errors; a valid object returns []."""
     errors=[]
@@ -76,12 +166,24 @@ def validate_manifest(m, bundle_dir=None, check_files=True):
     m=require(m,('schema_version','run_id','algorithm','protocol','scene','attempt','environment','status','timestamps','outcome','costs','artifacts','audit'),'$')
     if m.get('schema_version')!='1.0':errors.append('schema_version: expected 1.0')
     if not isinstance(m.get('run_id'),str) or not IDENT.fullmatch(m.get('run_id','')):errors.append('run_id: unsafe identifier')
+    native_vla=m.get('execution_kind')=='native_vla'
+    if m.get('execution_kind') not in (None,'native_vla'):errors.append('execution_kind: unsupported explicit kind')
     a=require(m.get('algorithm'),('algorithm_id','version','source_commit','prompt_sha256','tools_sha256','policy_sha256','model','reasoning_effort','codex_client_version'),'algorithm')
-    for k in ('algorithm_id','version','model','reasoning_effort','codex_client_version'):
+    for k in (('algorithm_id','version','model') if native_vla else ('algorithm_id','version','model','reasoning_effort','codex_client_version')):
         if not isinstance(a.get(k),str) or not a[k]:errors.append(f'algorithm.{k}: expected nonempty string')
     for k in ('prompt_sha256','tools_sha256','policy_sha256'):
         if a.get(k) is not None and (not isinstance(a[k],str) or not HEX.fullmatch(a[k])):errors.append(f'algorithm.{k}: expected SHA256 or null with limitation')
     if a.get('source_commit') is not None and not re.fullmatch(r'[0-9a-f]{40,64}',str(a['source_commit'])):errors.append('algorithm.source_commit: expected git hash or null')
+    if native_vla:
+        for k in ('prompt_sha256','tools_sha256','reasoning_effort','codex_client_version'):
+            if a.get(k) is not None:errors.append(f'native_vla: algorithm.{k} must be null, not a fabricated Codex identity')
+        checkpoint=require(a.get('checkpoint'),('name','sha256','revision'),'algorithm.checkpoint')
+        if not isinstance(checkpoint.get('name'),str) or not checkpoint['name']:errors.append('algorithm.checkpoint.name: original configuration name required')
+        if checkpoint.get('sha256') is not None and not HEX.fullmatch(str(checkpoint['sha256'])):errors.append('algorithm.checkpoint.sha256: SHA256 or null required')
+        episode=require(m.get('native_episode'),('episode_id','env_index','source_run_id'),'native_episode')
+        if not _integer(episode.get('episode_id')):errors.append('native_episode.episode_id: original nonnegative index required')
+        if type(episode.get('env_index')) is not int or episode['env_index']!=0:errors.append('native_episode.env_index: this adapter requires the original single environment index 0')
+        if episode.get('source_run_id')!=m.get('run_id'):errors.append('native_episode.source_run_id: original run identity must be retained')
     p=require(m.get('protocol'),('id','version','scope','action_limit','episode_control_limit','selection_policy'),'protocol')
     for k in ('id','version','scope','selection_policy'):
         if not isinstance(p.get(k),str) or not p[k]:errors.append(f'protocol.{k}: nonempty string required')
@@ -118,10 +220,17 @@ def validate_manifest(m, bundle_dir=None, check_files=True):
     if m.get('status')=='complete':
         if not all(o.get(k) is True for k in ('native_result','episode_complete','evidence_consistent')):errors.append('complete: requires matched native result, episode_complete and evidence')
         if o.get('unstable_envs') or o.get('score') is None or o.get('success') is None or o.get('control_steps') is None:errors.append('complete: missing valid native terminal measurements')
+    if native_vla:
+        if o.get('model_decisions') is not None or o.get('actual_responses') is not None:errors.append('native_vla: Codex model_decisions/actual_responses are not applicable and must be null')
+        for k in ('policy_action_requests','policy_rpc_calls'):
+            if not _integer(o.get(k)):errors.append(f'native_vla: outcome.{k} requires an evidence-derived count')
+        if o.get('vla_inference_calls') is not None:errors.append('native_vla: internal inference calls were not measured and must be null')
+        if _integer(o.get('policy_action_requests')) and _integer(o.get('policy_rpc_calls')) and o['policy_action_requests']>o['policy_rpc_calls']:errors.append('native_vla: inference calls cannot exceed policy RPC calls')
     costs=require(m.get('costs'),('attempts',),'costs'); ca=costs.get('attempts',[])
     if not isinstance(ca,list):errors.append('costs.attempts: array required');ca=[]
     seen=set()
-    for i,c in enumerate(ca):
+    if native_vla:errors.extend(validate_native_vla_costs(costs))
+    for i,c in enumerate([] if native_vla else ca):
         c=require(c,('attempt_id','input_tokens','cached_input_tokens','output_tokens','model_responses','paid_requests','usage_known'),f'costs.attempts[{i}]')
         cid=c.get('attempt_id')
         if not isinstance(cid,str) or not cid or cid in seen:errors.append('costs: missing/duplicate attempt_id')
@@ -167,19 +276,22 @@ def validate_manifest(m, bundle_dir=None, check_files=True):
                     if target.suffix=='.json':
                         parsed_data=json.loads(raw)
                         errors.extend(privacy_findings(parsed_data,path))
-                        if kind in ('native_result','episode_complete','native_ack'):evidence[kind]=parsed_data
+                        if kind in ('native_result','episode_complete','native_ack') or native_vla and kind in ('trajectory','costs','source_lock'):evidence[kind]=parsed_data
                     elif target.suffix=='.jsonl':
                         for n,line in enumerate(raw.splitlines()):
                             if line.strip():errors.extend(privacy_findings(json.loads(line),f'{path}:{n+1}'))
                 except (UnicodeError,json.JSONDecodeError) as ex:errors.append(f'{path}: invalid public text/JSON: {type(ex).__name__}')
     if m.get('status')=='complete':
         required={'native_result','episode_complete','trajectory','native_ack','public_session','public_demo'}
+        if native_vla:required=(required-{'public_session'})|{'public_timeline','source_lock','costs'}
         if required-kinds:errors.append('complete: missing artifacts '+', '.join(sorted(required-kinds)))
         if len(views-{None})<3:errors.append('complete: three distinct native video views required')
         if not ca:errors.append('complete: all-attempt cost accounting required, unknown attempts must remain null')
         if bundle_dir is not None and check_files:
             nr=evidence.get('native_result');ep=evidence.get('episode_complete');acks=evidence.get('native_ack')
-            if not isinstance(nr,dict) or not isinstance(ep,dict):
+            if native_vla:
+                errors.extend(validate_native_vla_evidence(m,nr,ep,acks,evidence.get('trajectory'),evidence.get('costs')))
+            elif not isinstance(nr,dict) or not isinstance(ep,dict):
                 errors.append('complete: native result and episode_complete must be readable JSON objects')
             else:
                 if ep.get('kind')!='episode_complete':errors.append('native evidence: wrong terminal event kind')
@@ -195,7 +307,7 @@ def validate_manifest(m, bundle_dir=None, check_files=True):
                 terminal=[ack for ack in acks if isinstance(ack,dict) and ack.get('kind')=='episode_complete']
                 if not terminal or terminal[-1].get('control_steps')!=[o.get('control_steps')]:
                     errors.append('native evidence: final ACK does not match terminal controls')
-                if terminal and terminal[-1].get('native_results')!=nr:
+                if terminal and not native_vla and terminal[-1].get('native_results')!=nr:
                     errors.append('native evidence: final ACK result differs')
     errors.extend(privacy_findings(m))
     return sorted(set(errors))

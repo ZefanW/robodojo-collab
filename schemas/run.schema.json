@@ -24,63 +24,7 @@
       "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,179}$"
     },
     "algorithm": {
-      "type": "object",
-      "required": [
-        "algorithm_id",
-        "version",
-        "source_commit",
-        "prompt_sha256",
-        "tools_sha256",
-        "policy_sha256",
-        "model",
-        "reasoning_effort",
-        "codex_client_version"
-      ],
-      "properties": {
-        "algorithm_id": {
-          "type": "string"
-        },
-        "version": {
-          "type": "string"
-        },
-        "source_commit": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "pattern": "^[0-9a-f]{40,64}$"
-        },
-        "prompt_sha256": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "pattern": "^[0-9a-f]{64}$"
-        },
-        "tools_sha256": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "pattern": "^[0-9a-f]{64}$"
-        },
-        "policy_sha256": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "pattern": "^[0-9a-f]{64}$"
-        },
-        "model": {
-          "type": "string"
-        },
-        "reasoning_effort": {
-          "type": "string"
-        },
-        "codex_client_version": {
-          "type": "string"
-        }
-      }
+      "type": "object"
     },
     "protocol": {
       "type": "object",
@@ -353,70 +297,7 @@
       }
     },
     "costs": {
-      "type": "object",
-      "required": [
-        "attempts"
-      ],
-      "properties": {
-        "attempts": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": [
-              "attempt_id",
-              "input_tokens",
-              "cached_input_tokens",
-              "output_tokens",
-              "model_responses",
-              "paid_requests",
-              "usage_known"
-            ],
-            "properties": {
-              "attempt_id": {
-                "type": "string"
-              },
-              "input_tokens": {
-                "type": [
-                  "integer",
-                  "null"
-                ],
-                "minimum": 0
-              },
-              "cached_input_tokens": {
-                "type": [
-                  "integer",
-                  "null"
-                ],
-                "minimum": 0
-              },
-              "output_tokens": {
-                "type": [
-                  "integer",
-                  "null"
-                ],
-                "minimum": 0
-              },
-              "model_responses": {
-                "type": [
-                  "integer",
-                  "null"
-                ],
-                "minimum": 0
-              },
-              "paid_requests": {
-                "type": [
-                  "integer",
-                  "null"
-                ],
-                "minimum": 0
-              },
-              "usage_known": {
-                "type": "boolean"
-              }
-            }
-          }
-        }
-      }
+      "type": "object"
     },
     "artifacts": {
       "type": "array",
@@ -593,6 +474,29 @@
           ]
         }
       }
+    },
+    "execution_kind": {
+      "const": "native_vla"
+    },
+    "native_episode": {
+      "type": "object",
+      "required": [
+        "episode_id",
+        "env_index",
+        "source_run_id"
+      ],
+      "properties": {
+        "episode_id": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "env_index": {
+          "const": 0
+        },
+        "source_run_id": {
+          "type": "string"
+        }
+      }
     }
   },
   "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -641,6 +545,361 @@
             "properties": {
               "attempts": {
                 "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "execution_kind"
+        ],
+        "properties": {
+          "execution_kind": {
+            "const": "native_vla"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "native_episode"
+        ],
+        "properties": {
+          "algorithm": {
+            "type": "object",
+            "required": [
+              "algorithm_id",
+              "version",
+              "source_commit",
+              "prompt_sha256",
+              "tools_sha256",
+              "policy_sha256",
+              "model",
+              "reasoning_effort",
+              "codex_client_version",
+              "checkpoint"
+            ],
+            "properties": {
+              "algorithm_id": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "source_commit": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^[0-9a-f]{40,64}$"
+              },
+              "prompt_sha256": {
+                "type": "null"
+              },
+              "tools_sha256": {
+                "type": "null"
+              },
+              "policy_sha256": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "model": {
+                "type": "string"
+              },
+              "reasoning_effort": {
+                "type": "null"
+              },
+              "codex_client_version": {
+                "type": "null"
+              },
+              "checkpoint": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "sha256",
+                  "revision"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "sha256": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "revision": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "costs": {
+            "type": "object",
+            "required": [
+              "execution_kind",
+              "llm_cost_applicability",
+              "attempts_complete",
+              "gpu_hours",
+              "gpu_dollar_cost",
+              "attempts"
+            ],
+            "properties": {
+              "execution_kind": {
+                "const": "native_vla"
+              },
+              "llm_cost_applicability": {
+                "const": "not_applicable"
+              },
+              "attempts_complete": {
+                "type": "boolean"
+              },
+              "gpu_hours": {
+                "type": "null"
+              },
+              "gpu_dollar_cost": {
+                "type": "null"
+              },
+              "attempts": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "attempt_id",
+                    "scope",
+                    "source_sha256",
+                    "control_steps",
+                    "policy_action_requests",
+                    "policy_rpc_calls"
+                  ],
+                  "properties": {
+                    "attempt_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "scope": {
+                      "enum": [
+                        "selected_episode",
+                        "infrastructure_attempt",
+                        "original_run"
+                      ]
+                    },
+                    "source_sha256": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    },
+                    "control_steps": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "policy_action_requests": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "policy_rpc_calls": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "input_tokens": {
+                      "type": "null"
+                    },
+                    "cached_input_tokens": {
+                      "type": "null"
+                    },
+                    "output_tokens": {
+                      "type": "null"
+                    },
+                    "paid_requests": {
+                      "type": "null"
+                    },
+                    "model_responses": {
+                      "type": "null"
+                    },
+                    "usage_known": {
+                      "type": "null"
+                    },
+                    "vla_inference_calls": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "outcome": {
+            "required": [
+              "policy_action_requests",
+              "policy_rpc_calls",
+              "vla_inference_calls"
+            ],
+            "properties": {
+              "policy_action_requests": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "policy_rpc_calls": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "vla_inference_calls": {
+                "type": "null"
+              },
+              "model_decisions": {
+                "type": "null"
+              },
+              "actual_responses": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "algorithm": {
+            "type": "object",
+            "required": [
+              "algorithm_id",
+              "version",
+              "source_commit",
+              "prompt_sha256",
+              "tools_sha256",
+              "policy_sha256",
+              "model",
+              "reasoning_effort",
+              "codex_client_version"
+            ],
+            "properties": {
+              "algorithm_id": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "source_commit": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^[0-9a-f]{40,64}$"
+              },
+              "prompt_sha256": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "tools_sha256": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "policy_sha256": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "model": {
+                "type": "string"
+              },
+              "reasoning_effort": {
+                "type": "string"
+              },
+              "codex_client_version": {
+                "type": "string"
+              }
+            }
+          },
+          "costs": {
+            "type": "object",
+            "required": [
+              "attempts"
+            ],
+            "properties": {
+              "attempts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "attempt_id",
+                    "input_tokens",
+                    "cached_input_tokens",
+                    "output_tokens",
+                    "model_responses",
+                    "paid_requests",
+                    "usage_known"
+                  ],
+                  "properties": {
+                    "attempt_id": {
+                      "type": "string"
+                    },
+                    "input_tokens": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "cached_input_tokens": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "output_tokens": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "model_responses": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "paid_requests": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "usage_known": {
+                      "type": "boolean"
+                    }
+                  }
+                }
               }
             }
           }

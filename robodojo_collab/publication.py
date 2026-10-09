@@ -89,6 +89,7 @@ def validate_publication(manifest, bundle_dir=None, check_files=True):
     if manifest.get("status") != "complete":
         errors.append("publication: only valid complete native runs may be published")
     legacy = {key: deepcopy(manifest.get(key)) for key in FIELDS}
+    legacy.update({key: deepcopy(manifest[key]) for key in ("execution_kind", "native_episode") if key in manifest})
     legacy.update(schema_version="1.0", artifacts=deepcopy(manifest.get("artifacts", [])))
     try:
         shared_errors = validate_manifest(legacy, bundle_dir, check_files)
@@ -175,6 +176,9 @@ def validate_publication(manifest, bundle_dir=None, check_files=True):
         trajectory = evidence.get("trajectory")
         if not isinstance(trajectory, dict) or trajectory.get("run_id") != manifest.get("run_id") or not isinstance(trajectory.get("turns"), list):
             errors.append("trajectory: original run_id and turns list required")
+        if manifest.get("execution_kind") == "native_vla" and isinstance(trajectory, dict):
+            if evidence.get("public_timeline") != trajectory.get("turns"):
+                errors.append("native_vla: public timeline differs from the original numeric trajectory")
         if not isinstance(evidence.get("public_timeline"), list):
             errors.append("public_timeline: readable event list required")
     errors.extend(privacy_findings(manifest))
@@ -191,6 +195,7 @@ def _publication(source, source_sha, provenance=None):
     if p["source_manifest_sha256"] != source_sha:
         raise ValidationError("Provenance source manifest SHA differs from original bytes")
     result = {key: deepcopy(source[key]) for key in FIELDS}
+    result.update({key: deepcopy(source[key]) for key in ("execution_kind", "native_episode") if key in source})
     result["environment"] = public(result["environment"])
     result.update(publication_manifest_version=VERSION, provenance=p,
                   artifacts=[deepcopy(a) for a in source["artifacts"] if a["kind"] in ARTIFACT_KINDS])
@@ -371,6 +376,14 @@ def build_panel(manifests_or_paths, task_registry, panel_id, *, title=None, algo
                      "provenance": run["provenance"], "costs": cost_summary([run]),
                      "artifact_count": len(run["artifacts"]),
                      "detail_url": f"data/publications/{panel_id}/runs/{run['run_id']}.json"})
+    kinds = {run.get("execution_kind", "codex") for run in runs}
+    if len(kinds) != 1:
+        raise ValidationError("Panel cannot mix native VLA and Codex execution costs")
+    if kinds == {"native_vla"}:
+        for row, run in zip(rows, runs):
+            row.update(execution_kind="native_vla", native_episode=run["native_episode"], vla_inference_calls=None,
+                       policy_action_requests=run["outcome"]["policy_action_requests"],
+                       policy_rpc_calls=run["outcome"]["policy_rpc_calls"])
     seed, layout, round_index = next(iter(identities))
     result = {"publication_manifest_version": VERSION, "panel_id": panel_id,
               "title": title or panel_id, "algorithm_id": target_algorithm,
@@ -384,6 +397,8 @@ def build_panel(manifests_or_paths, task_registry, panel_id, *, title=None, algo
               "limitations": ["Official capability weighting is used; this is not a verified official leaderboard submission or the larger official evaluation protocol.",
                               "One seed/layout panel does not establish across-seed robustness. Original source metadata and disclosed historical reuse are retained.",
                               "This compact index validates metadata only; export and storage receipts separately establish local and cloud byte integrity."]}
+    if kinds == {"native_vla"}:
+        result["execution_kind"] = "native_vla"
     if profile == "devset10":
         result.pop("official54")
         result.update(metric_profile="devset10", metric_label="Devset10 · 10-task equal weight",
