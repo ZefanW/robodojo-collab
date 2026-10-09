@@ -98,6 +98,9 @@ def cost_attempts(calls):
         folder = p.parent
         saved = read(folder / "response.json") if (folder / "response.json").exists() else {}
         usage = read(folder / "usage.json") if (folder / "usage.json").exists() else saved.get("tokens", {})
+        # Failed paid attempts may explicitly record null usage. Keep their cost
+        # unknown rather than dropping the attempt or treating it as free.
+        usage = usage if isinstance(usage, dict) else {}
         known = all(type(usage.get(k)) is int for k in ("inputTokens", "cachedInputTokens", "outputTokens"))
         ids = set()
         for name in ("raw-response-receipts.json", "journal-response-receipts.json"):
@@ -196,7 +199,7 @@ def protocol_metadata(row, run_id, *, scope=None, action_limit=None,
             "selection_policy": selection_policy}, False
 
 
-def export_run(source, destination, *, run_id, runtime, video_root, protocol, algorithm_id, evidence, client_version, contributor_id="maintainer-archive", policy_key=None, scene_verification=None, scope=None, action_limit=None, round_index=None, selection_policy=None):
+def export_run(source, destination, *, run_id, runtime, video_root, protocol, algorithm_id, evidence, client_version, contributor_id="maintainer-archive", policy_key=None, scene_verification=None, scope=None, action_limit=None, round_index=None, selection_policy=None, include_images=True):
     source, destination = Path(source).resolve(), Path(destination).resolve()
     if destination == source or source in destination.parents:
         raise ValueError("Exports must live outside the source workspace")
@@ -304,8 +307,10 @@ def export_run(source, destination, *, run_id, runtime, video_root, protocol, al
     timeline = []
     for turn in turns:
         for call in turn["calls"]:
-            args = call.get("arguments", {})
-            timeline.append({"policy_step": turn.get("policy_step"), "control_start": turn.get("observation", {}).get("env_step"), "control_end": turn.get("execution", {}).get("env_step_end"), "tool": call.get("tool"), "arguments": args, "public_note": args.get("note", args.get("reason")), "feedback": call.get("tool_result"), "accepted": call.get("accepted"), "cameras": turn.get("execution", {}).get("cameras", {})})
+            args = call.get("arguments")
+            observation, execution = turn.get("observation") or {}, turn.get("execution") or {}
+            note = args.get("note", args.get("reason")) if isinstance(args, dict) else None
+            timeline.append({"policy_step": turn.get("policy_step"), "control_start": observation.get("env_step"), "control_end": execution.get("env_step_end"), "tool": call.get("tool"), "arguments": args, "public_note": note, "feedback": call.get("tool_result"), "accepted": call.get("accepted"), "cameras": execution.get("cameras", {})})
     put("evidence/public-timeline.json", timeline, "public_timeline")
     # Native permanent-history input-N contains public system/user/tool messages.
     # Assistant text/output files, reasoning/session journals are never opened.
@@ -328,6 +333,9 @@ def export_run(source, destination, *, run_id, runtime, video_root, protocol, al
                         url = c.get("image_url", {}).get("url")
                         if not isinstance(url, str) or not url.startswith("data:image/"):
                             raise ValueError("Original image payload unavailable")
+                        if not include_images:
+                            new.append({"type": "image_omitted", "data_url_sha256": digest(url.encode()), "reason": "Image bytes omitted from this public export."})
+                            continue
                         header, data64 = url.split(",", 1)
                         raw = base64.b64decode(data64, validate=True)
                         ext = "jpg" if "jpeg" in header else "png" if "png" in header else None
@@ -347,7 +355,7 @@ def export_run(source, destination, *, run_id, runtime, video_root, protocol, al
                 content = public(content)
             messages.append({"role": role, "content": content})
         inputs.append({"index": data["index"], "messages": messages, "source_input_sha256": sha_file(p)})
-    if not inputs or not image_paths:
+    if not inputs or (include_images and not image_paths):
         raise ValueError("Original public input and images are required")
     put("evidence/public-session.json", {"export_policy": "public-input-tools-feedback-v1", "inputs": inputs, "tool_calls": timeline, "tools": public(request["tools"]), "private_reasoning_exported": False}, "public_session")
     first_observation_text = json.dumps(inputs[0]["messages"], ensure_ascii=False)
@@ -372,6 +380,8 @@ def export_run(source, destination, *, run_id, runtime, video_root, protocol, al
                     if legacy_sample else "This is one historical run; a complete comparable round requires independent coverage and evidence validation."), "Native internal identities are pseudonymized; raw account/session journals are retained only by the source owner.", "Public note/reason is original visible tool text, not hidden model reasoning.", "Historical GPU model, driver, full dependency versions, and source Git commit were not captured in the per-run imported records; null is intentional.", "Official scene asset bytes are not redistributed; scene identity is a SHA256."]
     if metadata["action_limit"] is None:
         limitations.append("Historical action limit is unknown or unspecified; null must not be interpreted as zero, 20, or an unlimited policy.")
+    if not include_images:
+        limitations.append("Observation image bytes are omitted from this public export; original input and image-data hashes are retained.")
     if not asset_verified:
         limitations.append("Asset identity is the frozen original manifest SHA; direct source asset bytes were not available for an independent hash check during this export.")
     if unavailable_locks:
@@ -407,6 +417,7 @@ def main():
     parser.add_argument("--action-limit", type=int, help="Evidence-backed action cap; omit for unknown, never inferred as 20")
     parser.add_argument("--round-index", type=int, help="Evidence-backed round; must agree with an original recorded round")
     parser.add_argument("--selection-policy", help="Explicit historical inclusion policy for the batch")
+    parser.add_argument("--no-images", dest="include_images", action="store_false", help="Omit observation image bytes while preserving input hashes")
     parser.add_argument("--tar", action="store_true")
     args = vars(parser.parse_args()); tar = args.pop("tar")
     result = export_run(**args)

@@ -64,6 +64,19 @@ class ExportTests(unittest.TestCase):
                 write(Path(t)/n/'paid-start.json',{})
             self.assertEqual(len(cost_attempts(Path(t))),2)
 
+    def test_explicit_null_usage_stays_unknown(self):
+        with tempfile.TemporaryDirectory() as t:
+            for n, explicit_usage in [('0000', True), ('0001', False)]:
+                p = Path(t) / n
+                write(p / 'paid-start.json', {})
+                write(p / 'response.json', {'tokens': None})
+                if explicit_usage:
+                    write(p / 'usage.json', None)
+            attempts = cost_attempts(Path(t))
+            self.assertEqual(len(attempts), 2)
+            self.assertTrue(all(not a['usage_known'] and a['input_tokens'] is None
+                                for a in attempts))
+
     def test_cached_input_subset(self):
         with tempfile.TemporaryDirectory() as t:
             p=Path(t)/'0000'
