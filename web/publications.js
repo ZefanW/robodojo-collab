@@ -35,7 +35,7 @@
     if (Array.isArray(attempts)) return {known:attempts.reduce((sum,a)=>sum+(a.input_tokens??0)+(a.output_tokens??0),0),cached:attempts.reduce((sum,a)=>sum+(a.cached_input_tokens??0),0),unknown:attempts.filter(a=>a.usage_known===false||a.input_tokens==null||a.output_tokens==null).length};
     return {known:costs.known_total_tokens ?? costs.total_tokens ?? null,cached:costs.known_cached_input_tokens ?? costs.cached_input_tokens ?? null,unknown:costs.unknown_usage_count ?? costs.unknown_attempts ?? null};
   }
-  async function getJSON(url) { const response = await fetch(url); if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }
+  async function getJSON(url, options) { const response = await fetch(url, options); if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }
 
   function renderPanel() {
     const summary = officialSummary(panel), runs = panel.runs || [], reused = runs.filter(isReused).length;
@@ -129,7 +129,7 @@
   }
   async function loadCatalog() {
     try {
-      const catalog = await getJSON(new URL('data/publications/catalog.json',pageBase));
+      const catalog = await getJSON(new URL('data/publications/catalog.json',pageBase), {cache:'no-store'});
       const panels = catalog.panels || []; if(panels.length<2) return;
       const label=document.createElement('label');label.className='panel-switcher';label.textContent='切换公开实验';
       const select=document.createElement('select');select.setAttribute('aria-label','切换公开实验');
