@@ -24,6 +24,73 @@ SECRET_RE = re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\b(?:
 INTERNAL_PATH = re.compile(r'(?:/Users/|/home/|/root/|/cephfs/|/nfs_|/localssd/|[A-Za-z]:\\Users\\)')
 SENSITIVE_NAME = re.compile(r'(^|/)(?:auth\.json|\.env(?:\.[^/]*)?|id_(?:rsa|ed25519)|cookies?\.(?:json|txt)|.*\.pem)$',re.I)
 
+# Exact standard variants of the frozen original Full54 roster.
+STANDARD42_SOURCE_SHA256 = '5b4c87033126d285ef3be773a027c02600d621fdad478e99f2e124f7f15a4728'
+STANDARD42_CAPABILITY_TASKS = {'Generalization': ('arrange_largest_number',
+                    'fold_clothes',
+                    'hang_mugs',
+                    'make_toast',
+                    'pack_objects_into_box',
+                    'pour_liquid_into_cup',
+                    'push_T',
+                    'sort_nesting_dolls_by_size',
+                    'stack_blocks',
+                    'stack_bowls',
+                    'store_laptop_and_headphones',
+                    'sweep_blocks'),
+ 'Memory': ('cover_blocks',
+            'imitate_sorting_sequence',
+            'match_and_pick_from_conveyor',
+            'press_by_number',
+            'swap_T',
+            'swap_blocks'),
+ 'Precision': ('build_tower',
+               'deposit_coin',
+               'fasten_screws',
+               'insert_key',
+               'insert_tubes',
+               'play_Xylophone',
+               'plug_in_charger',
+               'pour_balls_into_vase'),
+ 'Long-Horizon': ('classify_objects',
+                  'fill_egg_holder',
+                  'fill_pen_holder',
+                  'make_kong',
+                  'organize_table',
+                  'play_stacking_toy',
+                  'play_tic_tac_toe',
+                  'put_bottles_into_dustbin'),
+ 'Open': ('align_blocks',
+          'classify_objects_by_language',
+          'general_pickup',
+          'pick_from_conveyor_by_image',
+          'pour_by_language',
+          'solve_equation',
+          'stack_blocks_by_language',
+          'store_tools_in_toolbox')}
+STANDARD42_TASKS = {task: (capability, "standard")
+                    for capability, tasks in STANDARD42_CAPABILITY_TASKS.items() for task in tasks}
+
+NATIVE_STANDARD42_PROTOCOL = 'native-vla-original-standard42-v1'
+NATIVE_STANDARD42_DEMO_POLICY = 'original-three-cameras-demo-optional'
+
+
+def native_standard42_media(manifest):
+    """Narrow media exception for explicitly declared original Standard42 VLA."""
+    protocol, scene = manifest.get('protocol', {}), manifest.get('scene', {})
+    if not isinstance(protocol, dict) or not isinstance(scene, dict):
+        return False
+    task = scene.get('task')
+    expected = STANDARD42_TASKS.get(task) if isinstance(task, str) else None
+    return (manifest.get('execution_kind') == 'native_vla' and
+            protocol.get('id') == NATIVE_STANDARD42_PROTOCOL and
+            protocol.get('metric_profile') == 'standard42' and
+            protocol.get('roster_id') == 'standard42-v1' and
+            protocol.get('roster_source_sha256') == STANDARD42_SOURCE_SHA256 and
+            protocol.get('demo_policy') == NATIVE_STANDARD42_DEMO_POLICY and
+            expected is not None and (scene.get('capability'), scene.get('variant')) == expected)
+
+
 class ValidationError(ValueError):
     pass
 
@@ -284,6 +351,7 @@ def validate_manifest(m, bundle_dir=None, check_files=True):
     if m.get('status')=='complete':
         required={'native_result','episode_complete','trajectory','native_ack','public_session','public_demo'}
         if native_vla:required=(required-{'public_session'})|{'public_timeline','source_lock','costs'}
+        if native_standard42_media(m):required.discard('public_demo')
         if required-kinds:errors.append('complete: missing artifacts '+', '.join(sorted(required-kinds)))
         if len(views-{None})<3:errors.append('complete: three distinct native video views required')
         if not ca:errors.append('complete: all-attempt cost accounting required, unknown attempts must remain null')

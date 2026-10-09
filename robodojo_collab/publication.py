@@ -18,7 +18,8 @@ import tempfile
 
 from .export_legacy import INTERNAL, public
 from .schema import (HEX, IDENT, ValidationError, canonical_bytes, file_sha256,
-                     privacy_findings, validate_manifest)
+                     privacy_findings, validate_manifest, native_standard42_media,
+                     STANDARD42_SOURCE_SHA256, STANDARD42_CAPABILITY_TASKS, STANDARD42_TASKS)
 from .statistics import cost_summary, official_summary
 
 VERSION = "leaderboard-lite-v1"
@@ -49,6 +50,7 @@ DEVSET10_TASKS = {
     "classify_objects_by_language": ("Open", "standard"),
     "solve_equation": ("Open", "standard"),
 }
+
 
 
 def _read(path):
@@ -121,7 +123,8 @@ def validate_publication(manifest, bundle_dir=None, check_files=True):
     if not isinstance(artifacts, list):
         return sorted(set(errors + ["artifacts: array required"]))
     kinds = Counter(a.get("kind") for a in artifacts if isinstance(a, dict))
-    missing = REQUIRED_KINDS - set(kinds)
+    required = REQUIRED_KINDS - ({"public_demo"} if native_standard42_media(manifest) else set())
+    missing = required - set(kinds)
     if missing:
         errors.append("publication: missing artifacts " + ", ".join(sorted(missing)))
     for kind in REQUIRED_KINDS - {"native_video"}:
@@ -260,8 +263,8 @@ def export_publication(source_bundle, destination, provenance=None):
 
 def validate_panel_registry(task_registry, profile="full54"):
     """Resolve an explicit metric roster; default full54 validation is unchanged."""
-    if profile not in ("full54", "devset10"):
-        raise ValidationError("Unknown panel metric profile; select full54 or devset10 explicitly")
+    if profile not in ("full54", "devset10", "standard42"):
+        raise ValidationError("Unknown panel metric profile; select full54, devset10 or standard42 explicitly")
     registry = _read(task_registry) if isinstance(task_registry, (str, Path)) else task_registry
     tasks = registry.get("tasks", []) if isinstance(registry, dict) else []
     try:
@@ -271,7 +274,7 @@ def validate_panel_registry(task_registry, profile="full54"):
     if profile == "full54":
         if len(universe) != 54 or len(tasks) != 54:
             raise ValidationError("Panel requires the exact original 54-task registry")
-    else:
+    elif profile == "devset10":
         if (registry.get("profile") != "devset10" or registry.get("roster_id") != "devset10-v1"
                 or registry.get("expected_task_count") != 10):
             raise ValidationError("Devset10 requires its explicit profile, roster_id and expected_task_count")
@@ -284,6 +287,16 @@ def validate_panel_registry(task_registry, profile="full54"):
         if any(type(registry.get(field)) is not int or registry[field] != 0
                for field in ("official_seed", "layout_ordinal", "round_index")):
             raise ValidationError("Original Devset10 roster is explicitly seed0/layout0/round0")
+    else:
+        if (registry.get("profile") != "standard42" or registry.get("roster_id") != "standard42-v1"
+                or registry.get("expected_task_count") != 42):
+            raise ValidationError("Standard42 requires its explicit profile, roster_id and expected_task_count")
+        if (len(tasks) != 42 or set(universe) != set(STANDARD42_TASKS) or
+                any((row.get("capability"), row.get("variant")) != STANDARD42_TASKS[name]
+                    for name, row in universe.items())):
+            raise ValidationError("Standard42 roster must exactly match the original 42 standard task/capability configurations")
+        if registry.get("source_manifest_sha256") != STANDARD42_SOURCE_SHA256:
+            raise ValidationError("Standard42 roster source SHA must match the pinned original Full54 selection manifest")
     return registry, universe
 
 
@@ -308,6 +321,28 @@ def devset10_summary(runs, universe):
             "metadata_mismatches": [], "excluded_repeat_attempts": [],
             "selection_policy": "The fixed original Devset10 roster; one original attempt per task; no outcome-based selection.",
             "aggregation": "Devset10: equal 1/10 weight per original task configuration for score and success rate. Capability means are descriptive; this is not the Full54 metric."}
+
+
+def standard42_summary(runs, universe):
+    """Original 42 standard tasks: within-capability means, five weights of 20%."""
+    chosen = {run["scene"]["task"]: run for run in runs}
+    missing = sorted(set(universe) - set(chosen))
+    complete = len(chosen) == 42 and not missing
+    capabilities = {}
+    for capability, tasks in STANDARD42_CAPABILITY_TASKS.items():
+        present = [chosen[task] for task in tasks if task in chosen]
+        full = len(present) == len(tasks)
+        capabilities[capability] = {"complete": full, "planned": len(tasks), "valid": len(present),
+            "score": mean(run["outcome"]["score"] * 100 for run in present) if full else None,
+            "success_rate": mean(float(run["outcome"]["success"]) * 100 for run in present) if full else None}
+    return {"complete": complete, "round_complete": complete, "valid": len(chosen), "planned": 42,
+            "score": mean(group["score"] for group in capabilities.values()) if complete else None,
+            "success_rate": mean(group["success_rate"] for group in capabilities.values()) if complete else None,
+            "capabilities": capabilities, "missing_or_incomplete": missing,
+            "structural_missing_tasks": [], "duplicate_tasks": [], "unexpected_tasks": [],
+            "metadata_mismatches": [], "excluded_repeat_attempts": [],
+            "selection_policy": "The fixed original 42 standard configurations; one original attempt per task; no outcome-based selection or borrowed random results.",
+            "aggregation": "Standard42: mean within each capability, then five equal 20% capability weights for score and success rate; counts 12/6/8/8/8. Generalization uses only its 12 standard tasks. Not Full54; incomplete overall null."}
 
 
 def build_panel(manifests_or_paths, task_registry, panel_id, *, title=None, algorithm_id=None, profile="full54"):
@@ -361,7 +396,12 @@ def build_panel(manifests_or_paths, task_registry, panel_id, *, title=None, algo
         if not same and not (algorithm_id is not None and reused):
             raise ValidationError("Mixed algorithm/protocol requires explicit target and disclosed original reuse")
     runs.sort(key=lambda r: (r["scene"]["capability"], r["scene"]["task"]))
-    summary = official_summary(runs, universe) if profile == "full54" else devset10_summary(runs, universe)
+    if profile == "full54":
+        summary = official_summary(runs, universe)
+    elif profile == "devset10":
+        summary = devset10_summary(runs, universe)
+    else:
+        summary = standard42_summary(runs, universe)
     rows = []
     for run in runs:
         scene, outcome = run["scene"], run["outcome"]
@@ -408,6 +448,18 @@ def build_panel(manifests_or_paths, task_registry, panel_id, *, title=None, algo
                               "task_registry_sha256": hashlib.sha256(canonical_bytes(registry)).hexdigest()},
                       limitations=["Devset10 uses the fixed original ten task configurations with equal task weights. It is not Full54 and is not an official leaderboard submission.",
                                    "This selected development set does not establish full-benchmark performance or across-seed robustness; no new experiment is implied by publication.",
+                                   "Original algorithms, protocols, costs and any explicitly disclosed reuse remain attached to original run identities.",
+                                   "This compact index validates metadata only; export and storage receipts separately establish local and cloud byte integrity."])
+    if profile == "standard42":
+        result.pop("official54")
+        result.update(metric_profile="standard42", metric_label="Standard42 · five capabilities 20% each",
+                      standard42=summary, scope="standard42: fixed original 42 standard configurations; not Full54",
+                      roster={"id": "standard42-v1", "task_count": 42,
+                              "source_manifest_sha256": STANDARD42_SOURCE_SHA256,
+                              "task_registry_sha256": hashlib.sha256(canonical_bytes(registry)).hexdigest()},
+                      limitations=["Standard42 averages the original standard tasks within each capability, then gives each capability 20% weight. Counts are 12/6/8/8/8; random tasks are excluded.",
+                                   "This is not Full54 or an official leaderboard submission. No missing or abnormal task is filled with zero, and no result is borrowed from another layout.",
+                                   "One seed/layout panel does not establish across-seed robustness. Publication does not authorize a new experiment.",
                                    "Original algorithms, protocols, costs and any explicitly disclosed reuse remain attached to original run identities.",
                                    "This compact index validates metadata only; export and storage receipts separately establish local and cloud byte integrity."])
     errors = privacy_findings(result) + _extra_privacy(result)

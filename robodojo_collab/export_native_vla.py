@@ -11,9 +11,10 @@ import shutil
 import tempfile
 
 from .export_legacy import public
-from .publication import MANIFEST_NAME, _publication, validate_publication
+from .publication import MANIFEST_NAME, _publication, validate_publication, validate_panel_registry
 from .schema import (HEX, IDENT, ValidationError, canonical_bytes, file_sha256,
-    native_event_payload, privacy_findings, validate_manifest, validate_registered_scene)
+    native_event_payload, privacy_findings, validate_manifest, validate_registered_scene,
+    native_standard42_media, NATIVE_STANDARD42_PROTOCOL, NATIVE_STANDARD42_DEMO_POLICY, STANDARD42_SOURCE_SHA256)
 
 VIEWS = {'head', 'left_wrist', 'right_wrist'}
 EVENT_FIELDS = {
@@ -79,7 +80,7 @@ def _configuration(value):
     return value
 
 
-def native_vla_metadata(record_or_path, scene_registry):
+def native_vla_metadata(record_or_path, scene_registry, *, profile="full54", task_registry=None):
     """Derive reviewable public metadata without promoting current files to old locks.
 
     The common algorithm identifies the recorded model family. Per-run launch
@@ -87,6 +88,16 @@ def native_vla_metadata(record_or_path, scene_registry):
     Unknown historical checkpoint/source hashes stay null.
     """
     record, source_sha = _record(record_or_path)
+    if profile not in ('full54', 'standard42'):
+        raise ValidationError('Native metadata profile must be full54 or explicit standard42')
+    if profile == 'standard42':
+        if task_registry is None:
+            raise ValidationError('Standard42 native metadata requires its explicit pinned task registry')
+        _, universe = validate_panel_registry(task_registry, 'standard42')
+        task = record.get('task')
+        scene = record.get('scene', {})
+        if task not in universe or any(scene.get(k) != universe[task][k] for k in ('capability', 'variant')):
+            raise ValidationError('Native record does not match the fixed original Standard42 roster')
     source = _source_metadata(record)
     model = record['model']
     if model not in {'dm05', 'openwam', 'spatial_forcing', 'g05', 'pi05'}:
@@ -131,7 +142,7 @@ def native_vla_metadata(record_or_path, scene_registry):
     limits = {e['step_limit'] for e in events if e['kind'] == 'reset_complete' and type(e.get('step_limit')) is int}
     if len(limits) == 1:
         reset_limit = next(iter(limits))
-    return {'algorithm': {'algorithm_id': 'native_vla_' + model, 'version': 'historical-native-vla-v1',
+    metadata = {'algorithm': {'algorithm_id': 'native_vla_' + model, 'version': 'historical-native-vla-v1',
         'model': model, 'source_commit': None, 'prompt_sha256': None, 'tools_sha256': None,
         'policy_sha256': None, 'reasoning_effort': None, 'codex_client_version': None,
         'checkpoint': {'name': model, 'sha256': None, 'revision': None,
@@ -157,6 +168,19 @@ def native_vla_metadata(record_or_path, scene_registry):
                 'reported_policy_decisions': historical.get('vla_decisions_reported')},
             'limitations': limitations},
         'limitations': limitations, 'contributor_id': 'maintainer-native-archive'}
+    if profile == 'standard42':
+        metadata['protocol'].update(id=NATIVE_STANDARD42_PROTOCOL, metric_profile='standard42',
+            roster_id='standard42-v1', roster_source_sha256=STANDARD42_SOURCE_SHA256,
+            demo_policy=NATIVE_STANDARD42_DEMO_POLICY,
+            selection_policy='Original fixed 42 standard task configurations; no random results, rerun, replacement or missing-task zero fill.')
+        metadata['source_lock']['original_selection'].update(metric_profile='standard42',
+            roster_id='standard42-v1', roster_source_sha256=STANDARD42_SOURCE_SHA256)
+        limitations.append('Standard42 is the fixed original standard-task subset, not Full54; each capability has 20% weight.')
+        if record.get('demo') is None:
+            if record.get('demo_available') is not False:
+                raise ValidationError('Absent original Standard42 demo must be explicitly recorded as unavailable')
+            limitations.append('No original demo was indexed; the three original native camera videos are retained without a generated or borrowed replacement.')
+    return metadata
 
 
 def _read_events(record):
@@ -308,8 +332,13 @@ def export_native_vla(record_or_path, destination, *, metadata, scene_registry, 
         if video.get('historically_recorded_sha256') not in (None, video['sha256']):
             raise ValidationError('Original camera SHA differs from historical recorded SHA')
         files.append(('videos/' + video['view'] + '.mp4', 'native_video', path, video['sha256'], video['view']))
-    demo = record['demo'];path = _verified(demo['local_path'], demo['sha256'], demo.get('bytes'))
-    files.append(('videos/demo.mp4', 'public_demo', path, demo['sha256'], None))
+    demo = record.get('demo')
+    if demo is None:
+        if not native_standard42_media(m) or record.get('demo_available') is not False:
+            raise ValidationError('Original demo required outside explicit historical Standard42 native VLA')
+    else:
+        path = _verified(demo['local_path'], demo['sha256'], demo.get('bytes'))
+        files.append(('videos/demo.mp4', 'public_demo', path, demo['sha256'], None))
     errors = validate_registered_scene(m, scene_registry)
     for value in [m] + [value for _, value in objects.values()]: errors.extend(privacy_findings(value))
     if errors: raise ValidationError('\n'.join(errors))

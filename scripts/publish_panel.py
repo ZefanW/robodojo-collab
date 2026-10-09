@@ -95,8 +95,8 @@ def update_catalog(web):
             'score': s['score'], 'success_rate': s['success_rate'],
             'href': 'publications.html?panel=' + item['panel_id'],
             'index_url': 'data/publications/' + item['panel_id'] + '/index.json'}
-        if item.get('metric_profile') == 'devset10':
-            entry.update(metric_profile='devset10', metric_label=item['metric_label'],
+        if item.get('metric_profile') in ('devset10', 'standard42'):
+            entry.update(metric_profile=item['metric_profile'], metric_label=item['metric_label'],
                          scope=item['scope'], roster=item['roster'])
         if item.get('execution_kind') == 'native_vla':
             entry['execution_kind'] = 'native_vla'
@@ -117,13 +117,13 @@ def main(argv=None):
     parser.add_argument('--web', type=Path, default=ROOT / 'web')
     parser.add_argument('--state', type=Path, required=True)
     parser.add_argument('--storage-cache', type=Path, default=ROOT / 'registry/storage.json')
-    parser.add_argument('--profile', choices=('full54', 'devset10'), default='full54',
+    parser.add_argument('--profile', choices=('full54', 'devset10', 'standard42'), default='full54',
                         help='Explicit scoring roster; default remains the original Full54 metric')
     parser.add_argument('--task-registry', type=Path,
-                        help='Required for Devset10; exact pinned ten-task registry, never an arbitrary subset')
+                        help='Required for Devset10/Standard42; exact pinned roster, never an arbitrary subset')
     args = parser.parse_args(argv)
-    if args.profile == 'devset10' and args.task_registry is None:
-        parser.error('--profile devset10 requires an explicit --task-registry')
+    if args.profile in ('devset10', 'standard42') and args.task_registry is None:
+        parser.error(f'--profile {args.profile} requires an explicit --task-registry')
     registry_path = args.task_registry or ROOT / 'registry/tasks.json'
     task_registry, _ = validate_panel_registry(read(registry_path), args.profile)
     if not args.panel_id or any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-_' for c in args.panel_id):
@@ -144,14 +144,16 @@ def main(argv=None):
     if not panel['summary']['complete']:
         if args.profile == 'full54':
             raise ValueError('Pilot publication requires all original 54 valid native terminals')
-        raise ValueError('Devset10 publication requires all ten original valid native terminals; no missing-task zero fill')
+        if args.profile == 'devset10':
+            raise ValueError('Devset10 publication requires all ten original valid native terminals; no missing-task zero fill')
+        raise ValueError('Standard42 publication requires all 42 original standard valid native terminals; no missing-task zero fill')
     archive = metadata_tar(bundles, args.state / (args.panel_id + '-evidence.tar'))
     cache = read(args.storage_cache).get('artifacts', {}) if args.storage_cache.exists() else {}
     br, reused = upload(archive, args, cache, receipts)
     package = {**br, 'scope': 'panel', 'format': 'tar', 'run_count': len(bundles),
                'contains_images': False, 'contains_videos': False}
-    if args.profile == 'devset10':
-        package.update(metric_profile='devset10', roster_id='devset10-v1')
+    if args.profile in ('devset10', 'standard42'):
+        package.update(metric_profile=args.profile, roster_id=panel['roster']['id'])
     output = args.web / 'data/publications' / args.panel_id
     (output / 'runs').mkdir(parents=True, exist_ok=True)
     objects = {br['sha256']: {'bytes': br['bytes'], 'reused': reused}}
@@ -178,8 +180,8 @@ def main(argv=None):
                     'member_sha256': art['sha256'], 'bundle_format': 'tar',
                     'verified_at': br['verified_at'], 'public_download_verified': True}
         m['package'] = package
-        if args.profile == 'devset10':
-            m['publication_scope'] = {'metric_profile': 'devset10', 'metric_label': panel['metric_label'],
+        if args.profile in ('devset10', 'standard42'):
+            m['publication_scope'] = {'metric_profile': args.profile, 'metric_label': panel['metric_label'],
                                       'roster': panel['roster'], 'official_leaderboard_submission': False}
         if privacy_findings(m):
             raise ValueError('Public detail privacy check failed')
