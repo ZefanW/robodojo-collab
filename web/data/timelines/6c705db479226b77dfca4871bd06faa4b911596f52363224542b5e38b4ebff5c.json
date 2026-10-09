@@ -1,0 +1,3069 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The digits are 8, 7, 5, 3, and 0, so the target order is 87530. Turn both grippers downward to inspect and pick the digits without rotating them.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "right_pitch_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 21,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 21,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 21,
+        "start": 1
+      }
+    },
+    "control_end": 20,
+    "control_start": 0,
+    "feedback": "Accepted: the original plan contains 31 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 0,
+    "public_note": "The digits are 8, 7, 5, 3, and 0, so the target order is 87530. Turn both grippers downward to inspect and pick the digits without rotating them.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Finish the downward orientation while approaching the 8 and 5 from above.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": -0.18,
+        "left_y": -0.23,
+        "right_pitch_deg": 0,
+        "right_x": 0.32,
+        "right_y": -0.05
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 42,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 42,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 42,
+        "start": 22
+      }
+    },
+    "control_end": 40,
+    "control_start": 20,
+    "feedback": "Accepted: the original plan contains 24 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 1,
+    "public_note": "Finish the downward orientation while approaching the 8 and 5 from above.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower above the 8 and 5, using the wrist views to refine their estimated table positions.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": -0.18,
+        "left_y": -0.18,
+        "left_z": 0.81,
+        "right_pitch_deg": 0,
+        "right_x": 0.34,
+        "right_y": -0.015,
+        "right_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 52,
+        "start": 43
+      },
+      "left_wrist": {
+        "end": 52,
+        "start": 43
+      },
+      "right_wrist": {
+        "end": 52,
+        "start": 43
+      }
+    },
+    "control_end": 49,
+    "control_start": 40,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 2,
+    "public_note": "Lower above the 8 and 5, using the wrist views to refine their estimated table positions.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The 8 is centered and the 5 needs a small lateral adjustment. Approach to just above grasp height.",
+      "targets": {
+        "left_z": 0.784,
+        "right_x": 0.345,
+        "right_y": -0.02,
+        "right_z": 0.784
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 56,
+        "start": 53
+      },
+      "left_wrist": {
+        "end": 56,
+        "start": 53
+      },
+      "right_wrist": {
+        "end": 56,
+        "start": 53
+      }
+    },
+    "control_end": 52,
+    "control_start": 49,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 3,
+    "public_note": "The 8 is centered and the 5 needs a small lateral adjustment. Approach to just above grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Both digits remain between the jaws. Lower the final few millimetres before closing.",
+      "targets": {
+        "left_z": 0.777,
+        "right_z": 0.777
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 58,
+        "start": 57
+      },
+      "left_wrist": {
+        "end": 58,
+        "start": 57
+      },
+      "right_wrist": {
+        "end": 58,
+        "start": 57
+      }
+    },
+    "control_end": 53,
+    "control_start": 52,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "Both digits remain between the jaws. Lower the final few millimetres before closing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Close at table-level grasp height on the 8 and 5, keeping their orientations unchanged.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.773,
+        "right_gripper": 0,
+        "right_z": 0.773
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 66,
+        "start": 59
+      },
+      "left_wrist": {
+        "end": 66,
+        "start": 59
+      },
+      "right_wrist": {
+        "end": 66,
+        "start": 59
+      }
+    },
+    "control_end": 60,
+    "control_start": 53,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "Close at table-level grasp height on the 8 and 5, keeping their orientations unchanged.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift to check that each digit is securely held before transporting it to a pad.",
+      "targets": {
+        "left_z": 0.825,
+        "right_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 72,
+        "start": 67
+      },
+      "left_wrist": {
+        "end": 72,
+        "start": 67
+      },
+      "right_wrist": {
+        "end": 72,
+        "start": 67
+      }
+    },
+    "control_end": 65,
+    "control_start": 60,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "Lift to check that each digit is securely held before transporting it to a pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The lift shows both digits stayed on the table. Shift the open jaws toward their centers before retrying.",
+      "targets": {
+        "left_gripper": 1,
+        "left_y": -0.207,
+        "right_gripper": 1,
+        "right_y": -0.05
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 84,
+        "start": 73
+      },
+      "left_wrist": {
+        "end": 84,
+        "start": 73
+      },
+      "right_wrist": {
+        "end": 84,
+        "start": 73
+      }
+    },
+    "control_end": 76,
+    "control_start": 65,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "The lift shows both digits stayed on the table. Shift the open jaws toward their centers before retrying.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the corrected approach with both grippers open.",
+      "targets": {
+        "left_z": 0.784,
+        "right_z": 0.784
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 89,
+        "start": 85
+      },
+      "left_wrist": {
+        "end": 89,
+        "start": 85
+      },
+      "right_wrist": {
+        "end": 89,
+        "start": 85
+      }
+    },
+    "control_end": 80,
+    "control_start": 76,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 8,
+    "public_note": "Lower the corrected approach with both grippers open.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Advance seven millimetres toward the table while maintaining the corrected centering.",
+      "targets": {
+        "left_z": 0.777,
+        "right_z": 0.777
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 91,
+        "start": 90
+      },
+      "left_wrist": {
+        "end": 91,
+        "start": 90
+      },
+      "right_wrist": {
+        "end": 91,
+        "start": 90
+      }
+    },
+    "control_end": 81,
+    "control_start": 80,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "Advance seven millimetres toward the table while maintaining the corrected centering.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Close around the centered digits at the safe table grasp height.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.773,
+        "right_gripper": 0,
+        "right_z": 0.773
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 99,
+        "start": 92
+      },
+      "left_wrist": {
+        "end": 99,
+        "start": 92
+      },
+      "right_wrist": {
+        "end": 99,
+        "start": 92
+      }
+    },
+    "control_end": 88,
+    "control_start": 81,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 10,
+    "public_note": "Close around the centered digits at the safe table grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Both grippers now stop against the digits. Lift them clear of the table for transport.",
+      "targets": {
+        "left_z": 0.83,
+        "right_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 105,
+        "start": 100
+      },
+      "left_wrist": {
+        "end": 105,
+        "start": 100
+      },
+      "right_wrist": {
+        "end": 105,
+        "start": 100
+      }
+    },
+    "control_end": 93,
+    "control_start": 88,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "Both grippers now stop against the digits. Lift them clear of the table for transport.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Carry the 8 toward the leftmost pad and move the 5 partway toward the middle pad, keeping both clear of the surface.",
+      "targets": {
+        "left_x": -0.17,
+        "left_y": -0.065,
+        "right_x": 0.16,
+        "right_y": -0.065
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 120,
+        "start": 106
+      },
+      "left_wrist": {
+        "end": 120,
+        "start": 106
+      },
+      "right_wrist": {
+        "end": 120,
+        "start": 106
+      }
+    },
+    "control_end": 107,
+    "control_start": 93,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "Carry the 8 toward the leftmost pad and move the 5 partway toward the middle pad, keeping both clear of the surface.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move the 5 above the middle pad while lowering the 8 toward the leftmost pad.",
+      "targets": {
+        "left_z": 0.792,
+        "right_x": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 139,
+        "start": 121
+      },
+      "left_wrist": {
+        "end": 139,
+        "start": 121
+      },
+      "right_wrist": {
+        "end": 139,
+        "start": 121
+      }
+    },
+    "control_end": 125,
+    "control_start": 107,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 13,
+    "public_note": "Move the 5 above the middle pad while lowering the 8 toward the leftmost pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower both held digits toward their pads, using a small final approach for the 8.",
+      "targets": {
+        "left_z": 0.786,
+        "right_z": 0.792
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 147,
+        "start": 140
+      },
+      "left_wrist": {
+        "end": 147,
+        "start": 140
+      },
+      "right_wrist": {
+        "end": 147,
+        "start": 140
+      }
+    },
+    "control_end": 132,
+    "control_start": 125,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "Lower both held digits toward their pads, using a small final approach for the 8.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The digits have reached their pads. Open both grippers to let them settle flat without further downward pressure.",
+      "targets": {
+        "left_gripper": 1,
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 152,
+        "start": 148
+      },
+      "left_wrist": {
+        "end": 152,
+        "start": 148
+      },
+      "right_wrist": {
+        "end": 152,
+        "start": 148
+      }
+    },
+    "control_end": 136,
+    "control_start": 132,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived.",
+    "policy_step": 15,
+    "public_note": "The digits have reached their pads. Open both grippers to let them settle flat without further downward pressure.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The 8 is on its pad, but the 5 shifted during release. Raise and clear the grippers to locate it and plan a corrected placement.",
+      "targets": {
+        "left_z": 0.87,
+        "right_x": 0.18,
+        "right_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 162,
+        "start": 153
+      },
+      "left_wrist": {
+        "end": 162,
+        "start": 153
+      },
+      "right_wrist": {
+        "end": 162,
+        "start": 153
+      }
+    },
+    "control_end": 145,
+    "control_start": 136,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 16,
+    "public_note": "The 8 is on its pad, but the 5 shifted during release. Raise and clear the grippers to locate it and plan a corrected placement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the 7 for the second pad and inspect the displaced 5 behind the pad row.",
+      "targets": {
+        "left_x": -0.265,
+        "left_y": -0.19,
+        "left_z": 0.82,
+        "right_x": 0.05,
+        "right_y": 0.075,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 181,
+        "start": 163
+      },
+      "left_wrist": {
+        "end": 181,
+        "start": 163
+      },
+      "right_wrist": {
+        "end": 181,
+        "start": 163
+      }
+    },
+    "control_end": 163,
+    "control_start": 145,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 17,
+    "public_note": "Approach the 7 for the second pad and inspect the displaced 5 behind the pad row.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The combined move was refused, so move only the left arm to the 7 first.",
+      "targets": {
+        "left_x": -0.265,
+        "left_y": -0.19,
+        "left_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 181,
+        "start": 163
+      },
+      "left_wrist": {
+        "end": 181,
+        "start": 163
+      },
+      "right_wrist": {
+        "end": 181,
+        "start": 163
+      }
+    },
+    "control_end": 163,
+    "control_start": 145,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "The combined move was refused, so move only the left arm to the 7 first.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Center the 7 more deeply between the jaws and lower to the pre-grasp height.",
+      "targets": {
+        "left_x": -0.253,
+        "left_y": -0.208,
+        "left_z": 0.784
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 186,
+        "start": 182
+      },
+      "left_wrist": {
+        "end": 186,
+        "start": 182
+      },
+      "right_wrist": {
+        "end": 186,
+        "start": 182
+      }
+    },
+    "control_end": 167,
+    "control_start": 163,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 18,
+    "public_note": "Center the 7 more deeply between the jaws and lower to the pre-grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The 7 is centered across the jaw line. Lower a few millimetres before closing.",
+      "targets": {
+        "left_z": 0.777
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 188,
+        "start": 187
+      },
+      "left_wrist": {
+        "end": 188,
+        "start": 187
+      },
+      "right_wrist": {
+        "end": 188,
+        "start": 187
+      }
+    },
+    "control_end": 168,
+    "control_start": 167,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "The 7 is centered across the jaw line. Lower a few millimetres before closing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Grasp the 7 at table height without changing its orientation.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.773
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 196,
+        "start": 189
+      },
+      "left_wrist": {
+        "end": 196,
+        "start": 189
+      },
+      "right_wrist": {
+        "end": 196,
+        "start": 189
+      }
+    },
+    "control_end": 175,
+    "control_start": 168,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 20,
+    "public_note": "Grasp the 7 at table height without changing its orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift the 7 clear before correcting the small twist caused by grasping its slanted stem.",
+      "targets": {
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 203,
+        "start": 197
+      },
+      "left_wrist": {
+        "end": 203,
+        "start": 197
+      },
+      "right_wrist": {
+        "end": 203,
+        "start": 197
+      }
+    },
+    "control_end": 181,
+    "control_start": 175,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "Lift the 7 clear before correcting the small twist caused by grasping its slanted stem.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Carry the 7 to the second pad and undo its grasp-induced rotation so it matches its original orientation.",
+      "targets": {
+        "left_x": -0.085,
+        "left_y": -0.065,
+        "left_yaw_deg": -28
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 224,
+        "start": 204
+      },
+      "left_wrist": {
+        "end": 224,
+        "start": 204
+      },
+      "right_wrist": {
+        "end": 224,
+        "start": 204
+      }
+    },
+    "control_end": 201,
+    "control_start": 181,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 22,
+    "public_note": "Carry the 7 to the second pad and undo its grasp-induced rotation so it matches its original orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the 7 above the second pad, stopping before contact.",
+      "targets": {
+        "left_z": 0.798
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 229,
+        "start": 225
+      },
+      "left_wrist": {
+        "end": 229,
+        "start": 225
+      },
+      "right_wrist": {
+        "end": 229,
+        "start": 225
+      }
+    },
+    "control_end": 205,
+    "control_start": 201,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 23,
+    "public_note": "Lower the 7 above the second pad, stopping before contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the final descent in a small increment, keeping the 7 aligned with its pad.",
+      "targets": {
+        "left_z": 0.791
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 231,
+        "start": 230
+      },
+      "left_wrist": {
+        "end": 231,
+        "start": 230
+      },
+      "right_wrist": {
+        "end": 231,
+        "start": 230
+      }
+    },
+    "control_end": 206,
+    "control_start": 205,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "Continue the final descent in a small increment, keeping the 7 aligned with its pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Set the 7 down gently and release it on the second pad.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.787
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 238,
+        "start": 232
+      },
+      "left_wrist": {
+        "end": 238,
+        "start": 232
+      },
+      "right_wrist": {
+        "end": 238,
+        "start": 232
+      }
+    },
+    "control_end": 212,
+    "control_start": 206,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 5 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "Set the 7 down gently and release it on the second pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The 7 is placed. Raise the left hand and angle the right tool to extend its reach toward the displaced 5.",
+      "targets": {
+        "left_z": 0.87,
+        "right_pitch_deg": 35
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 258,
+        "start": 239
+      },
+      "left_wrist": {
+        "end": 258,
+        "start": 239
+      },
+      "right_wrist": {
+        "end": 258,
+        "start": 239
+      }
+    },
+    "control_end": 231,
+    "control_start": 212,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "The 7 is placed. Raise the left hand and angle the right tool to extend its reach toward the displaced 5.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the displaced 5 with the angled gripper, keeping clearance above the table.",
+      "targets": {
+        "right_x": 0.052,
+        "right_y": 0.082,
+        "right_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 276,
+        "start": 259
+      },
+      "left_wrist": {
+        "end": 276,
+        "start": 259
+      },
+      "right_wrist": {
+        "end": 276,
+        "start": 259
+      }
+    },
+    "control_end": 248,
+    "control_start": 231,
+    "feedback": "Accepted: playing 17 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 27,
+    "public_note": "Approach the displaced 5 with the angled gripper, keeping clearance above the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The displaced 5 is upside down in the table plane. Center the angled jaws over it for recovery.",
+      "targets": {
+        "right_y": 0.067,
+        "right_z": 0.791
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 282,
+        "start": 277
+      },
+      "left_wrist": {
+        "end": 282,
+        "start": 277
+      },
+      "right_wrist": {
+        "end": 282,
+        "start": 277
+      }
+    },
+    "control_end": 253,
+    "control_start": 248,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 28,
+    "public_note": "The displaced 5 is upside down in the table plane. Center the angled jaws over it for recovery.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the 5 in a small downward increment with the angled jaws centered around its upper curve.",
+      "targets": {
+        "right_z": 0.783
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 284,
+        "start": 283
+      },
+      "left_wrist": {
+        "end": 284,
+        "start": 283
+      },
+      "right_wrist": {
+        "end": 284,
+        "start": 283
+      }
+    },
+    "control_end": 254,
+    "control_start": 253,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "Approach the 5 in a small downward increment with the angled jaws centered around its upper curve.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Close gently on the 5 at the low angled approach.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.778
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 292,
+        "start": 285
+      },
+      "left_wrist": {
+        "end": 292,
+        "start": 285
+      },
+      "right_wrist": {
+        "end": 292,
+        "start": 285
+      }
+    },
+    "control_end": 261,
+    "control_start": 254,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "Close gently on the 5 at the low angled approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift the recovered 5 before moving it back toward the middle pad.",
+      "targets": {
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 299,
+        "start": 293
+      },
+      "left_wrist": {
+        "end": 299,
+        "start": 293
+      },
+      "right_wrist": {
+        "end": 299,
+        "start": 293
+      }
+    },
+    "control_end": 267,
+    "control_start": 261,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "Lift the recovered 5 before moving it back toward the middle pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Bring the 5 back into comfortable reach and move the idle hand clear for its orientation correction.",
+      "targets": {
+        "left_x": -0.3,
+        "left_y": -0.12,
+        "right_x": 0.015,
+        "right_y": -0.075
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 315,
+        "start": 300
+      },
+      "left_wrist": {
+        "end": 315,
+        "start": 300
+      },
+      "right_wrist": {
+        "end": 315,
+        "start": 300
+      }
+    },
+    "control_end": 282,
+    "control_start": 267,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "Bring the 5 back into comfortable reach and move the idle hand clear for its orientation correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Begin restoring the 5's original in-plane orientation with a partial turn in free space.",
+      "targets": {
+        "right_yaw_deg": 85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 336,
+        "start": 316
+      },
+      "left_wrist": {
+        "end": 336,
+        "start": 316
+      },
+      "right_wrist": {
+        "end": 336,
+        "start": 316
+      }
+    },
+    "control_end": 302,
+    "control_start": 282,
+    "feedback": "Accepted: the original plan contains 33 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 33,
+    "public_note": "Begin restoring the 5's original in-plane orientation with a partial turn in free space.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the orientation correction with adequate clearance for the held digit.",
+      "targets": {
+        "right_pitch_deg": 35,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 115,
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 357,
+        "start": 337
+      },
+      "left_wrist": {
+        "end": 357,
+        "start": 337
+      },
+      "right_wrist": {
+        "end": 357,
+        "start": 337
+      }
+    },
+    "control_end": 322,
+    "control_start": 302,
+    "feedback": "Accepted: the original plan contains 24 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 34,
+    "public_note": "Continue the orientation correction with adequate clearance for the held digit.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Finish most of the half-turn needed to restore the 5's upright orientation.",
+      "targets": {
+        "right_pitch_deg": 35,
+        "right_roll_deg": 0,
+        "right_yaw_deg": 170
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 370,
+        "start": 358
+      },
+      "left_wrist": {
+        "end": 370,
+        "start": 358
+      },
+      "right_wrist": {
+        "end": 370,
+        "start": 358
+      }
+    },
+    "control_end": 334,
+    "control_start": 322,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 35,
+    "public_note": "Finish most of the half-turn needed to restore the 5's upright orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The final angled turn is unreachable here. Straighten the wrist first, then complete the rotation.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_roll_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 370,
+        "start": 358
+      },
+      "left_wrist": {
+        "end": 370,
+        "start": 358
+      },
+      "right_wrist": {
+        "end": 370,
+        "start": 358
+      }
+    },
+    "control_end": 334,
+    "control_start": 322,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "The final angled turn is unreachable here. Straighten the wrist first, then complete the rotation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Complete the half-turn with the wrist straightened.",
+      "targets": {
+        "right_yaw_deg": 175
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 391,
+        "start": 371
+      },
+      "left_wrist": {
+        "end": 391,
+        "start": 371
+      },
+      "right_wrist": {
+        "end": 391,
+        "start": 371
+      }
+    },
+    "control_end": 354,
+    "control_start": 334,
+    "feedback": "Accepted: the original plan contains 22 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 36,
+    "public_note": "Complete the half-turn with the wrist straightened.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Bring the recovered digit over the center pad for a controlled set-down, avoiding the excessive pressure of the first attempt.",
+      "targets": {
+        "right_x": 0,
+        "right_y": -0.08,
+        "right_z": 0.813
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 398,
+        "start": 392
+      },
+      "left_wrist": {
+        "end": 398,
+        "start": 392
+      },
+      "right_wrist": {
+        "end": 398,
+        "start": 392
+      }
+    },
+    "control_end": 360,
+    "control_start": 354,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "Bring the recovered digit over the center pad for a controlled set-down, avoiding the excessive pressure of the first attempt.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Release the 5 just above the pad so it can settle without being compressed against the surface.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.807
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 404,
+        "start": 399
+      },
+      "left_wrist": {
+        "end": 404,
+        "start": 399
+      },
+      "right_wrist": {
+        "end": 404,
+        "start": 399
+      }
+    },
+    "control_end": 365,
+    "control_start": 360,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 38,
+    "public_note": "Release the 5 just above the pad so it can settle without being compressed against the surface.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Clear the center pad for inspection and approach the 3 with the left hand.",
+      "targets": {
+        "left_x": -0.38,
+        "left_y": -0.07,
+        "left_yaw_deg": 0,
+        "left_z": 0.82,
+        "right_x": 0.25,
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 416,
+        "start": 405
+      },
+      "left_wrist": {
+        "end": 416,
+        "start": 405
+      },
+      "right_wrist": {
+        "end": 416,
+        "start": 405
+      }
+    },
+    "control_end": 376,
+    "control_start": 365,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "Clear the center pad for inspection and approach the 3 with the left hand.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Center the 3 and lower above it while unwinding the empty right wrist.",
+      "targets": {
+        "left_x": -0.383,
+        "left_y": -0.078,
+        "left_z": 0.784,
+        "right_yaw_deg": 115
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 437,
+        "start": 417
+      },
+      "left_wrist": {
+        "end": 437,
+        "start": 417
+      },
+      "right_wrist": {
+        "end": 437,
+        "start": 417
+      }
+    },
+    "control_end": 396,
+    "control_start": 376,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 40,
+    "public_note": "Center the 3 and lower above it while unwinding the empty right wrist.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the 3 approach by seven millimetres and continue resetting the right wrist.",
+      "targets": {
+        "left_z": 0.777,
+        "right_yaw_deg": 55
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 458,
+        "start": 438
+      },
+      "left_wrist": {
+        "end": 458,
+        "start": 438
+      },
+      "right_wrist": {
+        "end": 458,
+        "start": 438
+      }
+    },
+    "control_end": 416,
+    "control_start": 396,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 41,
+    "public_note": "Lower the 3 approach by seven millimetres and continue resetting the right wrist.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Grasp the 3 at table height and finish resetting the right wrist.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.773,
+        "right_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 479,
+        "start": 459
+      },
+      "left_wrist": {
+        "end": 479,
+        "start": 459
+      },
+      "right_wrist": {
+        "end": 479,
+        "start": 459
+      }
+    },
+    "control_end": 436,
+    "control_start": 416,
+    "feedback": "Accepted: the original plan contains 26 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 42,
+    "public_note": "Grasp the 3 at table height and finish resetting the right wrist.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The previous motion ended before the gripper command. Close now on the centered 3.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 486,
+        "start": 480
+      },
+      "left_wrist": {
+        "end": 486,
+        "start": 480
+      },
+      "right_wrist": {
+        "end": 486,
+        "start": 480
+      }
+    },
+    "control_end": 442,
+    "control_start": 436,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 43,
+    "public_note": "The previous motion ended before the gripper command. Close now on the centered 3.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift the securely grasped 3 above the existing placements before carrying it to the fourth pad.",
+      "targets": {
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 496,
+        "start": 487
+      },
+      "left_wrist": {
+        "end": 496,
+        "start": 487
+      },
+      "right_wrist": {
+        "end": 496,
+        "start": 487
+      }
+    },
+    "control_end": 451,
+    "control_start": 442,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 44,
+    "public_note": "Lift the securely grasped 3 above the existing placements before carrying it to the fourth pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Carry the 3 across the left half of the row with ample clearance.",
+      "targets": {
+        "left_x": -0.12,
+        "left_y": -0.075
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 511,
+        "start": 497
+      },
+      "left_wrist": {
+        "end": 511,
+        "start": 497
+      },
+      "right_wrist": {
+        "end": 511,
+        "start": 497
+      }
+    },
+    "control_end": 465,
+    "control_start": 451,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "Carry the 3 across the left half of the row with ample clearance.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move the 3 above the fourth pad while preserving its original orientation.",
+      "targets": {
+        "left_x": 0.08,
+        "left_y": -0.075,
+        "left_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 525,
+        "start": 512
+      },
+      "left_wrist": {
+        "end": 525,
+        "start": 512
+      },
+      "right_wrist": {
+        "end": 525,
+        "start": 512
+      }
+    },
+    "control_end": 478,
+    "control_start": 465,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 46,
+    "public_note": "Move the 3 above the fourth pad while preserving its original orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The fourth pad is beyond the straight-down reach. Angle the wrist slightly in free space to extend its reach.",
+      "targets": {
+        "left_pitch_deg": 25
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 525,
+        "start": 512
+      },
+      "left_wrist": {
+        "end": 525,
+        "start": 512
+      },
+      "right_wrist": {
+        "end": 525,
+        "start": 512
+      }
+    },
+    "control_end": 478,
+    "control_start": 465,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "The fourth pad is beyond the straight-down reach. Angle the wrist slightly in free space to extend its reach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the fourth pad with the reach-extending wrist angle, keeping the 3 above the surface.",
+      "targets": {
+        "left_x": 0.082,
+        "left_y": -0.078,
+        "left_z": 0.83
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 541,
+        "start": 526
+      },
+      "left_wrist": {
+        "end": 541,
+        "start": 526
+      },
+      "right_wrist": {
+        "end": 541,
+        "start": 526
+      }
+    },
+    "control_end": 493,
+    "control_start": 478,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "Approach the fourth pad with the reach-extending wrist angle, keeping the 3 above the surface.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the 3 toward its pad, allowing for its tilted lower edge.",
+      "targets": {
+        "left_z": 0.807
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 544,
+        "start": 542
+      },
+      "left_wrist": {
+        "end": 544,
+        "start": 542
+      },
+      "right_wrist": {
+        "end": 544,
+        "start": 542
+      }
+    },
+    "control_end": 495,
+    "control_start": 493,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 48,
+    "public_note": "Lower the 3 toward its pad, allowing for its tilted lower edge.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Release the 3 just above the fourth pad so it settles flat without being pressed down.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.803
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 550,
+        "start": 545
+      },
+      "left_wrist": {
+        "end": 550,
+        "start": 545
+      },
+      "right_wrist": {
+        "end": 550,
+        "start": 545
+      }
+    },
+    "control_end": 500,
+    "control_start": 495,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 49,
+    "public_note": "Release the 3 just above the fourth pad so it settles flat without being pressed down.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The 3 is correctly placed. Lift and retreat before approaching the remaining 0.",
+      "targets": {
+        "left_x": -0.12,
+        "left_y": -0.15,
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 569,
+        "start": 551
+      },
+      "left_wrist": {
+        "end": 569,
+        "start": 551
+      },
+      "right_wrist": {
+        "end": 569,
+        "start": 551
+      }
+    },
+    "control_end": 518,
+    "control_start": 500,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 50,
+    "public_note": "The 3 is correctly placed. Lift and retreat before approaching the remaining 0.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the 0 with a straight-down grasp, keeping its original orientation.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": -0.28,
+        "left_y": -0.065,
+        "left_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 583,
+        "start": 570
+      },
+      "left_wrist": {
+        "end": 583,
+        "start": 570
+      },
+      "right_wrist": {
+        "end": 583,
+        "start": 570
+      }
+    },
+    "control_end": 531,
+    "control_start": 518,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "Approach the 0 with a straight-down grasp, keeping its original orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Refine the lateral alignment of the 0 and descend to just above grasp height.",
+      "targets": {
+        "left_x": -0.284,
+        "left_z": 0.784
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 586,
+        "start": 584
+      },
+      "left_wrist": {
+        "end": 586,
+        "start": 584
+      },
+      "right_wrist": {
+        "end": 586,
+        "start": 584
+      }
+    },
+    "control_end": 533,
+    "control_start": 531,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "Refine the lateral alignment of the 0 and descend to just above grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the centered 0 approach by a few millimetres.",
+      "targets": {
+        "left_z": 0.778
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 588,
+        "start": 587
+      },
+      "left_wrist": {
+        "end": 588,
+        "start": 587
+      },
+      "right_wrist": {
+        "end": 588,
+        "start": 587
+      }
+    },
+    "control_end": 534,
+    "control_start": 533,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 53,
+    "public_note": "Lower the centered 0 approach by a few millimetres.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Close around the 0 at table grasp height.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.773
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 596,
+        "start": 589
+      },
+      "left_wrist": {
+        "end": 596,
+        "start": 589
+      },
+      "right_wrist": {
+        "end": 596,
+        "start": 589
+      }
+    },
+    "control_end": 541,
+    "control_start": 534,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "Close around the 0 at table grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift the 0 clear for a transfer through the open table area in front of the pads.",
+      "targets": {
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 604,
+        "start": 597
+      },
+      "left_wrist": {
+        "end": 604,
+        "start": 597
+      },
+      "right_wrist": {
+        "end": 604,
+        "start": 597
+      }
+    },
+    "control_end": 548,
+    "control_start": 541,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 55,
+    "public_note": "Lift the 0 clear for a transfer through the open table area in front of the pads.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move the 0 to a clear staging spot reachable by the right arm.",
+      "targets": {
+        "left_x": 0.02,
+        "left_y": -0.23,
+        "left_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 624,
+        "start": 605
+      },
+      "left_wrist": {
+        "end": 624,
+        "start": 605
+      },
+      "right_wrist": {
+        "end": 624,
+        "start": 605
+      }
+    },
+    "control_end": 567,
+    "control_start": 548,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 56,
+    "public_note": "Move the 0 to a clear staging spot reachable by the right arm.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the 0 above the clear staging area.",
+      "targets": {
+        "left_z": 0.788
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 627,
+        "start": 625
+      },
+      "left_wrist": {
+        "end": 627,
+        "start": 625
+      },
+      "right_wrist": {
+        "end": 627,
+        "start": 625
+      }
+    },
+    "control_end": 569,
+    "control_start": 567,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 57,
+    "public_note": "Lower the 0 above the clear staging area.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Release the 0 gently onto the staging spot for pickup by the right hand.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.783
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 633,
+        "start": 628
+      },
+      "left_wrist": {
+        "end": 633,
+        "start": 628
+      },
+      "right_wrist": {
+        "end": 633,
+        "start": 628
+      }
+    },
+    "control_end": 574,
+    "control_start": 569,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 58,
+    "public_note": "Release the 0 gently onto the staging spot for pickup by the right hand.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Clear the left arm from the staged 0 so the right hand can approach safely.",
+      "targets": {
+        "left_x": -0.2,
+        "left_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 647,
+        "start": 634
+      },
+      "left_wrist": {
+        "end": 647,
+        "start": 634
+      },
+      "right_wrist": {
+        "end": 647,
+        "start": 634
+      }
+    },
+    "control_end": 587,
+    "control_start": 574,
+    "feedback": "Accepted: playing 13 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 59,
+    "public_note": "Clear the left arm from the staged 0 so the right hand can approach safely.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the staged 0 with the right hand at the known grasp position.",
+      "targets": {
+        "right_x": 0.02,
+        "right_y": -0.23,
+        "right_z": 0.79
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 664,
+        "start": 648
+      },
+      "left_wrist": {
+        "end": 664,
+        "start": 648
+      },
+      "right_wrist": {
+        "end": 664,
+        "start": 648
+      }
+    },
+    "control_end": 603,
+    "control_start": 587,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 60,
+    "public_note": "Approach the staged 0 with the right hand at the known grasp position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the right jaws toward the staged 0, stopping just above the final grasp height.",
+      "targets": {
+        "right_z": 0.778
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 666,
+        "start": 665
+      },
+      "left_wrist": {
+        "end": 666,
+        "start": 665
+      },
+      "right_wrist": {
+        "end": 666,
+        "start": 665
+      }
+    },
+    "control_end": 604,
+    "control_start": 603,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 61,
+    "public_note": "Lower the right jaws toward the staged 0, stopping just above the final grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Grasp the 0 with the right hand for its final placement.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.773
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 674,
+        "start": 667
+      },
+      "left_wrist": {
+        "end": 674,
+        "start": 667
+      },
+      "right_wrist": {
+        "end": 674,
+        "start": 667
+      }
+    },
+    "control_end": 611,
+    "control_start": 604,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 62,
+    "public_note": "Grasp the 0 with the right hand for its final placement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift the 0 clear of the table before carrying it to the rightmost pad.",
+      "targets": {
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 681,
+        "start": 675
+      },
+      "left_wrist": {
+        "end": 681,
+        "start": 675
+      },
+      "right_wrist": {
+        "end": 681,
+        "start": 675
+      }
+    },
+    "control_end": 617,
+    "control_start": 611,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 63,
+    "public_note": "Lift the 0 clear of the table before carrying it to the rightmost pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Carry the 0 above the rightmost pad while retaining its orientation.",
+      "targets": {
+        "right_x": 0.17,
+        "right_y": -0.068,
+        "right_z": 0.813
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 694,
+        "start": 682
+      },
+      "left_wrist": {
+        "end": 694,
+        "start": 682
+      },
+      "right_wrist": {
+        "end": 694,
+        "start": 682
+      }
+    },
+    "control_end": 629,
+    "control_start": 617,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 64,
+    "public_note": "Carry the 0 above the rightmost pad while retaining its orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the 0 above its pad, stopping before contact.",
+      "targets": {
+        "right_z": 0.792
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 697,
+        "start": 695
+      },
+      "left_wrist": {
+        "end": 697,
+        "start": 695
+      },
+      "right_wrist": {
+        "end": 697,
+        "start": 695
+      }
+    },
+    "control_end": 631,
+    "control_start": 629,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 65,
+    "public_note": "Lower the 0 above its pad, stopping before contact.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Set the 0 gently onto the rightmost pad and release it.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.787
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 703,
+        "start": 698
+      },
+      "left_wrist": {
+        "end": 703,
+        "start": 698
+      },
+      "right_wrist": {
+        "end": 703,
+        "start": 698
+      }
+    },
+    "control_end": 636,
+    "control_start": 631,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 66,
+    "public_note": "Set the 0 gently onto the rightmost pad and release it.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The 5 is face-down after its earlier tumble. Approach it with the left jaws turned across its length to turn it back over.",
+      "targets": {
+        "left_x": 0,
+        "left_y": -0.072,
+        "left_yaw_deg": 90,
+        "left_z": 0.85,
+        "right_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 724,
+        "start": 704
+      },
+      "left_wrist": {
+        "end": 724,
+        "start": 704
+      },
+      "right_wrist": {
+        "end": 724,
+        "start": 704
+      }
+    },
+    "control_end": 656,
+    "control_start": 636,
+    "feedback": "Accepted: the original plan contains 37 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 67,
+    "public_note": "The 5 is face-down after its earlier tumble. Approach it with the left jaws turned across its length to turn it back over.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Finish the approach to the face-down 5 and move the right hand clear of the turnover area.",
+      "targets": {
+        "left_x": 0,
+        "left_y": -0.072,
+        "left_yaw_deg": 90,
+        "left_z": 0.82,
+        "right_x": 0.3,
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 741,
+        "start": 725
+      },
+      "left_wrist": {
+        "end": 741,
+        "start": 725
+      },
+      "right_wrist": {
+        "end": 741,
+        "start": 725
+      }
+    },
+    "control_end": 672,
+    "control_start": 656,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 68,
+    "public_note": "Finish the approach to the face-down 5 and move the right hand clear of the turnover area.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Center the 5 between the lengthwise jaws and lower above the pad.",
+      "targets": {
+        "left_x": 0.006,
+        "left_z": 0.789
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 745,
+        "start": 742
+      },
+      "left_wrist": {
+        "end": 745,
+        "start": 742
+      },
+      "right_wrist": {
+        "end": 745,
+        "start": 742
+      }
+    },
+    "control_end": 675,
+    "control_start": 672,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 69,
+    "public_note": "Center the 5 between the lengthwise jaws and lower above the pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Grip the face-down 5 across its length at the pad surface.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.783
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 753,
+        "start": 746
+      },
+      "left_wrist": {
+        "end": 753,
+        "start": 746
+      },
+      "right_wrist": {
+        "end": 753,
+        "start": 746
+      }
+    },
+    "control_end": 682,
+    "control_start": 675,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 70,
+    "public_note": "Grip the face-down 5 across its length at the pad surface.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift the 5 into the clear area in front of the pads before turning it over.",
+      "targets": {
+        "left_y": -0.18,
+        "left_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 761,
+        "start": 754
+      },
+      "left_wrist": {
+        "end": 761,
+        "start": 754
+      },
+      "right_wrist": {
+        "end": 761,
+        "start": 754
+      }
+    },
+    "control_end": 689,
+    "control_start": 682,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 71,
+    "public_note": "Lift the 5 into the clear area in front of the pads before turning it over.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Start turning the held 5 over about its lengthwise axis, well above the table.",
+      "targets": {
+        "left_pitch_deg": 60
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 782,
+        "start": 762
+      },
+      "left_wrist": {
+        "end": 782,
+        "start": 762
+      },
+      "right_wrist": {
+        "end": 782,
+        "start": 762
+      }
+    },
+    "control_end": 709,
+    "control_start": 689,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 72,
+    "public_note": "Start turning the held 5 over about its lengthwise axis, well above the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Turn in the opposite direction to keep the wrist within its reachable workspace.",
+      "targets": {
+        "left_pitch_deg": -60
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 782,
+        "start": 762
+      },
+      "left_wrist": {
+        "end": 782,
+        "start": 762
+      },
+      "right_wrist": {
+        "end": 782,
+        "start": 762
+      }
+    },
+    "control_end": 709,
+    "control_start": 689,
+    "feedback": "Accepted: the original plan contains 27 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 72,
+    "public_note": "Turn in the opposite direction to keep the wrist within its reachable workspace.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue past vertical so the 5 will settle with its correct face upward.",
+      "targets": {
+        "left_pitch_deg": -115,
+        "left_roll_deg": 0,
+        "left_yaw_deg": 90
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 803,
+        "start": 783
+      },
+      "left_wrist": {
+        "end": 803,
+        "start": 783
+      },
+      "right_wrist": {
+        "end": 803,
+        "start": 783
+      }
+    },
+    "control_end": 729,
+    "control_start": 709,
+    "feedback": "Accepted: the original plan contains 188 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 73,
+    "public_note": "Continue past vertical so the 5 will settle with its correct face upward.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Use a smaller intermediate rotation to reach the vertical turnover pose reliably.",
+      "targets": {
+        "left_pitch_deg": -85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 824,
+        "start": 804
+      },
+      "left_wrist": {
+        "end": 824,
+        "start": 804
+      },
+      "right_wrist": {
+        "end": 824,
+        "start": 804
+      }
+    },
+    "control_end": 749,
+    "control_start": 729,
+    "feedback": "Accepted: the original plan contains 28 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 74,
+    "public_note": "Use a smaller intermediate rotation to reach the vertical turnover pose reliably.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Rotate the 5 past vertical while keeping it clear of the table.",
+      "targets": {
+        "left_pitch_deg": -115
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 841,
+        "start": 825
+      },
+      "left_wrist": {
+        "end": 841,
+        "start": 825
+      },
+      "right_wrist": {
+        "end": 841,
+        "start": 825
+      }
+    },
+    "control_end": 765,
+    "control_start": 749,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 75,
+    "public_note": "Rotate the 5 past vertical while keeping it clear of the table.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Adjust the wrist heading to avoid its joint limit while continuing the turnover past vertical.",
+      "targets": {
+        "left_pitch_deg": -100,
+        "left_yaw_deg": 55
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 841,
+        "start": 825
+      },
+      "left_wrist": {
+        "end": 841,
+        "start": 825
+      },
+      "right_wrist": {
+        "end": 841,
+        "start": 825
+      }
+    },
+    "control_end": 765,
+    "control_start": 749,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 75,
+    "public_note": "Adjust the wrist heading to avoid its joint limit while continuing the turnover past vertical.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The 5 slipped during the turnover and is now on the table. Withdraw the left hand to inspect its new face and orientation.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": -40,
+        "left_x": -0.16,
+        "left_y": -0.22,
+        "left_yaw_deg": 30,
+        "left_z": 0.98
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 862,
+        "start": 842
+      },
+      "left_wrist": {
+        "end": 862,
+        "start": 842
+      },
+      "right_wrist": {
+        "end": 862,
+        "start": 842
+      }
+    },
+    "control_end": 785,
+    "control_start": 765,
+    "feedback": "Accepted: the original plan contains 48 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 76,
+    "public_note": "The 5 slipped during the turnover and is now on the table. Withdraw the left hand to inspect its new face and orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Withdraw and straighten the left arm while bringing the right wrist above the fallen 5 for inspection.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0,
+        "left_x": -0.2,
+        "left_y": -0.22,
+        "left_yaw_deg": 0,
+        "left_z": 0.94,
+        "right_x": 0.09,
+        "right_y": -0.12,
+        "right_z": 0.82
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 883,
+        "start": 863
+      },
+      "left_wrist": {
+        "end": 883,
+        "start": 863
+      },
+      "right_wrist": {
+        "end": 883,
+        "start": 863
+      }
+    },
+    "control_end": 805,
+    "control_start": 785,
+    "feedback": "Accepted: the original plan contains 23 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 77,
+    "public_note": "Withdraw and straighten the left arm while bringing the right wrist above the fallen 5 for inspection.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The 5 is now face-up but rotated. Approach it for the final correction while beginning the left arm's return home.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": 55,
+        "left_roll_deg": 0,
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_yaw_deg": 0,
+        "left_z": 0.9215,
+        "right_x": 0.089,
+        "right_z": 0.784
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 904,
+        "start": 884
+      },
+      "left_wrist": {
+        "end": 904,
+        "start": 884
+      },
+      "right_wrist": {
+        "end": 904,
+        "start": 884
+      }
+    },
+    "control_end": 825,
+    "control_start": 805,
+    "feedback": "Accepted: the original plan contains 26 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 78,
+    "public_note": "The 5 is now face-up but rotated. Approach it for the final correction while beginning the left arm's return home.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the right jaws the final few millimetres and finish returning the left arm to its starting pose.",
+      "targets": {
+        "left_gripper": 1,
+        "left_pitch_deg": 90,
+        "right_z": 0.778
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 923,
+        "start": 905
+      },
+      "left_wrist": {
+        "end": 923,
+        "start": 905
+      },
+      "right_wrist": {
+        "end": 923,
+        "start": 905
+      }
+    },
+    "control_end": 843,
+    "control_start": 825,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 79,
+    "public_note": "Lower the right jaws the final few millimetres and finish returning the left arm to its starting pose.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Grasp the face-up 5 for its final rotation and placement.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.773
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 931,
+        "start": 924
+      },
+      "left_wrist": {
+        "end": 931,
+        "start": 924
+      },
+      "right_wrist": {
+        "end": 931,
+        "start": 924
+      }
+    },
+    "control_end": 850,
+    "control_start": 843,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 80,
+    "public_note": "Grasp the face-up 5 for its final rotation and placement.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift the 5 clear before rotating it upright.",
+      "targets": {
+        "right_z": 0.855
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 939,
+        "start": 932
+      },
+      "left_wrist": {
+        "end": 939,
+        "start": 932
+      },
+      "right_wrist": {
+        "end": 939,
+        "start": 932
+      }
+    },
+    "control_end": 857,
+    "control_start": 850,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 81,
+    "public_note": "Lift the 5 clear before rotating it upright.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Carry the 5 above the middle pad and begin rotating it back to its original upright direction.",
+      "targets": {
+        "right_x": 0,
+        "right_y": -0.067,
+        "right_yaw_deg": -65
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 960,
+        "start": 940
+      },
+      "left_wrist": {
+        "end": 960,
+        "start": 940
+      },
+      "right_wrist": {
+        "end": 960,
+        "start": 940
+      }
+    },
+    "control_end": 877,
+    "control_start": 857,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 82,
+    "public_note": "Carry the 5 above the middle pad and begin rotating it back to its original upright direction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Rotate in place first to avoid coupling the reach and wrist turn.",
+      "targets": {
+        "right_yaw_deg": -60
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 960,
+        "start": 940
+      },
+      "left_wrist": {
+        "end": 960,
+        "start": 940
+      },
+      "right_wrist": {
+        "end": 960,
+        "start": 940
+      }
+    },
+    "control_end": 877,
+    "control_start": 857,
+    "feedback": "Accepted: the original plan contains 22 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 82,
+    "public_note": "Rotate in place first to avoid coupling the reach and wrist turn.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue the in-plane correction so the 5 is upright again.",
+      "targets": {
+        "right_yaw_deg": -125
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 981,
+        "start": 961
+      },
+      "left_wrist": {
+        "end": 981,
+        "start": 961
+      },
+      "right_wrist": {
+        "end": 981,
+        "start": 961
+      }
+    },
+    "control_end": 897,
+    "control_start": 877,
+    "feedback": "Accepted: the original plan contains 23 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 83,
+    "public_note": "Continue the in-plane correction so the 5 is upright again.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move the reoriented 5 over the middle pad for its final set-down.",
+      "targets": {
+        "right_x": 0,
+        "right_y": -0.075,
+        "right_z": 0.812
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 994,
+        "start": 982
+      },
+      "left_wrist": {
+        "end": 994,
+        "start": 982
+      },
+      "right_wrist": {
+        "end": 994,
+        "start": 982
+      }
+    },
+    "control_end": 909,
+    "control_start": 897,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 84,
+    "public_note": "Move the reoriented 5 over the middle pad for its final set-down.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the 5 above the center pad, keeping its corrected face and orientation.",
+      "targets": {
+        "right_z": 0.792
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 998,
+        "start": 995
+      },
+      "left_wrist": {
+        "end": 998,
+        "start": 995
+      },
+      "right_wrist": {
+        "end": 998,
+        "start": 995
+      }
+    },
+    "control_end": 912,
+    "control_start": 909,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 85,
+    "public_note": "Lower the 5 above the center pad, keeping its corrected face and orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Release the corrected 5 gently onto the center pad.",
+      "targets": {
+        "right_gripper": 1,
+        "right_z": 0.787
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1004,
+        "start": 999
+      },
+      "left_wrist": {
+        "end": 1004,
+        "start": 999
+      },
+      "right_wrist": {
+        "end": 1004,
+        "start": 999
+      }
+    },
+    "control_end": 917,
+    "control_start": 912,
+    "feedback": "Accepted: playing 5 waypoints (0.2s). The last 4 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 86,
+    "public_note": "Release the corrected 5 gently onto the center pad.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "All five digits are now on their pads in 87530 order. Lift and return the right arm toward its starting position while unwinding the wrist.",
+      "targets": {
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_yaw_deg": -60,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1025,
+        "start": 1005
+      },
+      "left_wrist": {
+        "end": 1025,
+        "start": 1005
+      },
+      "right_wrist": {
+        "end": 1025,
+        "start": 1005
+      }
+    },
+    "control_end": 937,
+    "control_start": 917,
+    "feedback": "Accepted: the original plan contains 36 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 87,
+    "public_note": "All five digits are now on their pads in 87530 order. Lift and return the right arm toward its starting position while unwinding the wrist.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The row visibly reads 87530. Continue the right arm's return to its initial position and orientation.",
+      "targets": {
+        "right_pitch_deg": 45,
+        "right_roll_deg": 0,
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_yaw_deg": -25,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1046,
+        "start": 1026
+      },
+      "left_wrist": {
+        "end": 1046,
+        "start": 1026
+      },
+      "right_wrist": {
+        "end": 1046,
+        "start": 1026
+      }
+    },
+    "control_end": 957,
+    "control_start": 937,
+    "feedback": "Accepted: the original plan contains 23 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 88,
+    "public_note": "The row visibly reads 87530. Continue the right arm's return to its initial position and orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Finish returning the right arm to its starting pose, leaving 87530 undisturbed on the pads.",
+      "targets": {
+        "right_pitch_deg": 90,
+        "right_roll_deg": 0,
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_yaw_deg": 0,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1066,
+        "start": 1047
+      },
+      "left_wrist": {
+        "end": 1066,
+        "start": 1047
+      },
+      "right_wrist": {
+        "end": 1066,
+        "start": 1047
+      }
+    },
+    "control_end": 976,
+    "control_start": 957,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 89,
+    "public_note": "Finish returning the right arm to its starting pose, leaving 87530 undisturbed on the pads.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The pads read 87530 from left to right, and both arms have returned to their starting poses. Keep both grippers open and leave the arrangement undisturbed.",
+      "targets": {
+        "left_gripper": 1,
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1068,
+        "start": 1067
+      },
+      "left_wrist": {
+        "end": 1068,
+        "start": 1067
+      },
+      "right_wrist": {
+        "end": 1068,
+        "start": 1067
+      }
+    },
+    "control_end": 977,
+    "control_start": 976,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The last 1 move the gripper, once the arm has arrived.",
+    "policy_step": 90,
+    "public_note": "The pads read 87530 from left to right, and both arms have returned to their starting poses. Keep both grippers open and leave the arrangement undisturbed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Maintain both arms at their original positions with the completed 87530 arrangement left on the pads.",
+      "targets": {
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_z": 0.9215,
+        "right_x": 0.3004,
+        "right_y": -0.2022,
+        "right_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1070,
+        "start": 1069
+      },
+      "left_wrist": {
+        "end": 1070,
+        "start": 1069
+      },
+      "right_wrist": {
+        "end": 1070,
+        "start": 1069
+      }
+    },
+    "control_end": 978,
+    "control_start": 977,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The next observation reports how close the grasp point landed.",
+    "policy_step": 91,
+    "public_note": "Maintain both arms at their original positions with the completed 87530 arrangement left on the pads.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Keep the completed arrangement undisturbed and both arms at home with open grippers.",
+      "targets": {
+        "left_gripper": 1,
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1072,
+        "start": 1071
+      },
+      "left_wrist": {
+        "end": 1072,
+        "start": 1071
+      },
+      "right_wrist": {
+        "end": 1072,
+        "start": 1071
+      }
+    },
+    "control_end": 979,
+    "control_start": 978,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The last 1 move the gripper, once the arm has arrived.",
+    "policy_step": 92,
+    "public_note": "Keep the completed arrangement undisturbed and both arms at home with open grippers.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Maintain the visible 87530 arrangement and the verified home poses without further object motion.",
+      "targets": {
+        "left_gripper": 1,
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 1074,
+        "start": 1073
+      },
+      "left_wrist": {
+        "end": 1074,
+        "start": 1073
+      },
+      "right_wrist": {
+        "end": 1074,
+        "start": 1073
+      }
+    },
+    "control_end": 980,
+    "control_start": 979,
+    "feedback": "Accepted: playing 1 waypoints (0.0s). The last 1 move the gripper, once the arm has arrived.",
+    "policy_step": 93,
+    "public_note": "Maintain the visible 87530 arrangement and the verified home poses without further object motion.",
+    "tool": "move_eef"
+  }
+]

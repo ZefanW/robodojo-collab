@@ -1,0 +1,2585 @@
+[
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the upright blue-and-white bottle with a horizontal grasp around its body.",
+      "targets": {
+        "left_x": -0.15,
+        "left_y": 0.035,
+        "left_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 21,
+        "start": 1
+      },
+      "left_wrist": {
+        "end": 21,
+        "start": 1
+      },
+      "right_wrist": {
+        "end": 21,
+        "start": 1
+      }
+    },
+    "control_end": 20,
+    "control_start": 0,
+    "feedback": "Accepted: the original plan contains 40 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 0,
+    "public_note": "Approach the upright blue-and-white bottle with a horizontal grasp around its body.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The approach executed only partially; continue toward the bottle body.",
+      "targets": {
+        "left_x": -0.15,
+        "left_y": 0.035,
+        "left_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 42,
+        "start": 22
+      },
+      "left_wrist": {
+        "end": 42,
+        "start": 22
+      },
+      "right_wrist": {
+        "end": 42,
+        "start": 22
+      }
+    },
+    "control_end": 40,
+    "control_start": 20,
+    "feedback": "Accepted: playing 20 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 1,
+    "public_note": "The approach executed only partially; continue toward the bottle body.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The bottle has tipped away from the horizontal approach. Raise and turn toward a top-down grasp.",
+      "targets": {
+        "left_pitch_deg": 45,
+        "left_z": 1.04
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 63,
+        "start": 43
+      },
+      "left_wrist": {
+        "end": 63,
+        "start": 43
+      },
+      "right_wrist": {
+        "end": 63,
+        "start": 43
+      }
+    },
+    "control_end": 60,
+    "control_start": 40,
+    "feedback": "Accepted: the original plan contains 44 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 2,
+    "public_note": "The bottle has tipped away from the horizontal approach. Raise and turn toward a top-down grasp.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Continue raising and rotating the open jaws for a top-down pickup of the fallen bottle.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_z": 1.04
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 84,
+        "start": 64
+      },
+      "left_wrist": {
+        "end": 84,
+        "start": 64
+      },
+      "right_wrist": {
+        "end": 84,
+        "start": 64
+      }
+    },
+    "control_end": 80,
+    "control_start": 60,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 3,
+    "public_note": "Continue raising and rotating the open jaws for a top-down pickup of the fallen bottle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The larger rotation was refused; finish the previously feasible intermediate pose first.",
+      "targets": {
+        "left_pitch_deg": 45,
+        "left_x": -0.15,
+        "left_y": 0.035,
+        "left_z": 1.04
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 84,
+        "start": 64
+      },
+      "left_wrist": {
+        "end": 84,
+        "start": 64
+      },
+      "right_wrist": {
+        "end": 84,
+        "start": 64
+      }
+    },
+    "control_end": 80,
+    "control_start": 60,
+    "feedback": "Accepted: the original plan contains 26 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 3,
+    "public_note": "The larger rotation was refused; finish the previously feasible intermediate pose first.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Rotate the remaining angle while staying above the bottle.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_z": 0.96
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 99,
+        "start": 85
+      },
+      "left_wrist": {
+        "end": 99,
+        "start": 85
+      },
+      "right_wrist": {
+        "end": 99,
+        "start": 85
+      }
+    },
+    "control_end": 94,
+    "control_start": 80,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 4,
+    "public_note": "Rotate the remaining angle while staying above the bottle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Use a smaller rotation and retract slightly to keep the wrist within reach.",
+      "targets": {
+        "left_pitch_deg": 20,
+        "left_y": -0.06,
+        "left_z": 1.0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 99,
+        "start": 85
+      },
+      "left_wrist": {
+        "end": 99,
+        "start": 85
+      },
+      "right_wrist": {
+        "end": 99,
+        "start": 85
+      }
+    },
+    "control_end": 94,
+    "control_start": 80,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 4,
+    "public_note": "Use a smaller rotation and retract slightly to keep the wrist within reach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the fallen blue bottle from above with a shallow tool tilt, aiming at its white body.",
+      "targets": {
+        "left_pitch_deg": 20,
+        "left_x": -0.115,
+        "left_y": 0.19,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 111,
+        "start": 100
+      },
+      "left_wrist": {
+        "end": 111,
+        "start": 100
+      },
+      "right_wrist": {
+        "end": 111,
+        "start": 100
+      }
+    },
+    "control_end": 105,
+    "control_start": 94,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 5,
+    "public_note": "Approach the fallen blue bottle from above with a shallow tool tilt, aiming at its white body.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The far bottle pose is unreachable. Switch to the nearer pink bottle and align the jaws across its body.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_x": -0.055,
+        "left_y": -0.12,
+        "left_yaw_deg": -45,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 111,
+        "start": 100
+      },
+      "left_wrist": {
+        "end": 111,
+        "start": 100
+      },
+      "right_wrist": {
+        "end": 111,
+        "start": 100
+      }
+    },
+    "control_end": 105,
+    "control_start": 94,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 5,
+    "public_note": "The far bottle pose is unreachable. Switch to the nearer pink bottle and align the jaws across its body.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The wrist view shows the pink body to the right of the jaw centre. Shift diagonally onto it and descend to just above the surface.",
+      "targets": {
+        "left_x": -0.025,
+        "left_y": -0.15,
+        "left_z": 0.817
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 116,
+        "start": 112
+      },
+      "left_wrist": {
+        "end": 116,
+        "start": 112
+      },
+      "right_wrist": {
+        "end": 116,
+        "start": 112
+      }
+    },
+    "control_end": 109,
+    "control_start": 105,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 6,
+    "public_note": "The wrist view shows the pink body to the right of the jaw centre. Shift diagonally onto it and descend to just above the surface.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The pink bottle is centred between the open jaws. Lower to its body centre before closing.",
+      "targets": {
+        "left_z": 0.802
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 119,
+        "start": 117
+      },
+      "left_wrist": {
+        "end": 119,
+        "start": 117
+      },
+      "right_wrist": {
+        "end": 119,
+        "start": 117
+      }
+    },
+    "control_end": 111,
+    "control_start": 109,
+    "feedback": "Accepted: playing 2 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 7,
+    "public_note": "The pink bottle is centred between the open jaws. Lower to its body centre before closing.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Close the jaws around the centred pink bottle.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 126,
+        "start": 120
+      },
+      "left_wrist": {
+        "end": 126,
+        "start": 120
+      },
+      "right_wrist": {
+        "end": 126,
+        "start": 120
+      }
+    },
+    "control_end": 117,
+    "control_start": 111,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 8,
+    "public_note": "Close the jaws around the centred pink bottle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws stopped against the bottle. Lift it clear of the table before carrying it to the bin.",
+      "targets": {
+        "left_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 136,
+        "start": 127
+      },
+      "left_wrist": {
+        "end": 136,
+        "start": 127
+      },
+      "right_wrist": {
+        "end": 136,
+        "start": 127
+      }
+    },
+    "control_end": 126,
+    "control_start": 117,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 9,
+    "public_note": "The jaws stopped against the bottle. Lift it clear of the table before carrying it to the bin.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The pink bottle lifted securely. Carry it left toward the dustbin while maintaining table clearance.",
+      "targets": {
+        "left_x": -0.46,
+        "left_y": -0.15,
+        "left_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 157,
+        "start": 137
+      },
+      "left_wrist": {
+        "end": 157,
+        "start": 137
+      },
+      "right_wrist": {
+        "end": 157,
+        "start": 137
+      }
+    },
+    "control_end": 146,
+    "control_start": 126,
+    "feedback": "Accepted: the original plan contains 25 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 10,
+    "public_note": "The pink bottle lifted securely. Carry it left toward the dustbin while maintaining table clearance.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move slightly farther over the visible bin opening and release the pink bottle.",
+      "targets": {
+        "left_gripper": 1,
+        "left_x": -0.5
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 166,
+        "start": 158
+      },
+      "left_wrist": {
+        "end": 166,
+        "start": 158
+      },
+      "right_wrist": {
+        "end": 166,
+        "start": 158
+      }
+    },
+    "control_end": 154,
+    "control_start": 146,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The last 3 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 11,
+    "public_note": "Move slightly farther over the visible bin opening and release the pink bottle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The pink bottle is falling into the bin. Return above the blue bottle's nearer white end.",
+      "targets": {
+        "left_x": -0.12,
+        "left_y": 0.1,
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 186,
+        "start": 167
+      },
+      "left_wrist": {
+        "end": 186,
+        "start": 167
+      },
+      "right_wrist": {
+        "end": 186,
+        "start": 167
+      }
+    },
+    "control_end": 173,
+    "control_start": 154,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 12,
+    "public_note": "The pink bottle is falling into the bin. Return above the blue bottle's nearer white end.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Use an intermediate position nearer the base before approaching the farther bottle.",
+      "targets": {
+        "left_x": -0.15,
+        "left_y": -0.05,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 186,
+        "start": 167
+      },
+      "left_wrist": {
+        "end": 186,
+        "start": 167
+      },
+      "right_wrist": {
+        "end": 186,
+        "start": 167
+      }
+    },
+    "control_end": 173,
+    "control_start": 154,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 12,
+    "public_note": "Use an intermediate position nearer the base before approaching the farther bottle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Tilt the tool forward to extend reach toward the blue bottle without forcing a fully vertical wrist.",
+      "targets": {
+        "left_pitch_deg": 45,
+        "left_yaw_deg": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 207,
+        "start": 187
+      },
+      "left_wrist": {
+        "end": 207,
+        "start": 187
+      },
+      "right_wrist": {
+        "end": 207,
+        "start": 187
+      }
+    },
+    "control_end": 193,
+    "control_start": 173,
+    "feedback": "Accepted: the original plan contains 33 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 13,
+    "public_note": "Tilt the tool forward to extend reach toward the blue bottle without forcing a fully vertical wrist.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the blue bottle's white body with the forward-tilted jaws.",
+      "targets": {
+        "left_pitch_deg": 45,
+        "left_roll_deg": 0,
+        "left_x": -0.12,
+        "left_y": 0.12,
+        "left_yaw_deg": 0,
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 222,
+        "start": 208
+      },
+      "left_wrist": {
+        "end": 222,
+        "start": 208
+      },
+      "right_wrist": {
+        "end": 222,
+        "start": 208
+      }
+    },
+    "control_end": 207,
+    "control_start": 193,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 14,
+    "public_note": "Approach the blue bottle's white body with the forward-tilted jaws.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The bottle lies slightly left of the jaw centre. Correct laterally and lower toward its white body.",
+      "targets": {
+        "left_x": -0.135,
+        "left_z": 0.807
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 226,
+        "start": 223
+      },
+      "left_wrist": {
+        "end": 226,
+        "start": 223
+      },
+      "right_wrist": {
+        "end": 226,
+        "start": 223
+      }
+    },
+    "control_end": 210,
+    "control_start": 207,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 15,
+    "public_note": "The bottle lies slightly left of the jaw centre. Correct laterally and lower toward its white body.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws are centred around the bottle and descent met resistance. Close at this measured height rather than pushing lower.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 233,
+        "start": 227
+      },
+      "left_wrist": {
+        "end": 233,
+        "start": 227
+      },
+      "right_wrist": {
+        "end": 233,
+        "start": 227
+      }
+    },
+    "control_end": 216,
+    "control_start": 210,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 16,
+    "public_note": "The jaws are centred around the bottle and descent met resistance. Close at this measured height rather than pushing lower.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The jaws closed fully, so the bottle was not captured. Reopen and lower a few millimetres for another attempt.",
+      "targets": {
+        "left_gripper": 1,
+        "left_z": 0.819
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 241,
+        "start": 234
+      },
+      "left_wrist": {
+        "end": 241,
+        "start": 234
+      },
+      "right_wrist": {
+        "end": 241,
+        "start": 234
+      }
+    },
+    "control_end": 223,
+    "control_start": 216,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 17,
+    "public_note": "The jaws closed fully, so the bottle was not captured. Reopen and lower a few millimetres for another attempt.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The tilted approach is not reaching grasp height. Lift and make the tool more vertical before retrying.",
+      "targets": {
+        "left_pitch_deg": 15,
+        "left_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 262,
+        "start": 242
+      },
+      "left_wrist": {
+        "end": 262,
+        "start": 242
+      },
+      "right_wrist": {
+        "end": 262,
+        "start": 242
+      }
+    },
+    "control_end": 243,
+    "control_start": 223,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 18,
+    "public_note": "The tilted approach is not reaching grasp height. Lift and make the tool more vertical before retrying.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the near end of the blue bottle with a more horizontal tool to avoid the previous wrist constraint.",
+      "targets": {
+        "left_pitch_deg": 75,
+        "left_y": 0.075,
+        "left_z": 0.815
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 262,
+        "start": 242
+      },
+      "left_wrist": {
+        "end": 262,
+        "start": 242
+      },
+      "right_wrist": {
+        "end": 262,
+        "start": 242
+      }
+    },
+    "control_end": 243,
+    "control_start": 223,
+    "feedback": "Accepted: the original plan contains 187 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 18,
+    "public_note": "Approach the near end of the blue bottle with a more horizontal tool to avoid the previous wrist constraint.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Try a steeper grasp at the bottle body, reducing the tilted tool's low-clearance interference.",
+      "targets": {
+        "left_pitch_deg": 30,
+        "left_roll_deg": 0,
+        "left_x": -0.13,
+        "left_y": 0.115,
+        "left_yaw_deg": 0,
+        "left_z": 0.797
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 272,
+        "start": 263
+      },
+      "left_wrist": {
+        "end": 272,
+        "start": 263
+      },
+      "right_wrist": {
+        "end": 272,
+        "start": 263
+      }
+    },
+    "control_end": 252,
+    "control_start": 243,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 19,
+    "public_note": "Try a steeper grasp at the bottle body, reducing the tilted tool's low-clearance interference.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The revised approach reached bottle height successfully. Close around the white body.",
+      "targets": {
+        "left_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 279,
+        "start": 273
+      },
+      "left_wrist": {
+        "end": 279,
+        "start": 273
+      },
+      "right_wrist": {
+        "end": 279,
+        "start": 273
+      }
+    },
+    "control_end": 258,
+    "control_start": 252,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 20,
+    "public_note": "The revised approach reached bottle height successfully. Close around the white body.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The bottle is held between the jaws. Lift and retract it into easier reach before carrying left.",
+      "targets": {
+        "left_y": 0.04,
+        "left_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 288,
+        "start": 280
+      },
+      "left_wrist": {
+        "end": 288,
+        "start": 280
+      },
+      "right_wrist": {
+        "end": 288,
+        "start": 280
+      }
+    },
+    "control_end": 266,
+    "control_start": 258,
+    "feedback": "Accepted: playing 8 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 21,
+    "public_note": "The bottle is held between the jaws. Lift and retract it into easier reach before carrying left.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Carry the securely lifted blue bottle over the dustbin opening.",
+      "targets": {
+        "left_x": -0.5,
+        "left_y": -0.13,
+        "left_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 300,
+        "start": 289
+      },
+      "left_wrist": {
+        "end": 300,
+        "start": 289
+      },
+      "right_wrist": {
+        "end": 300,
+        "start": 289
+      }
+    },
+    "control_end": 277,
+    "control_start": 266,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 22,
+    "public_note": "Carry the securely lifted blue bottle over the dustbin opening.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Split the carry into a nearer intermediate pose after the full reach was refused.",
+      "targets": {
+        "left_x": -0.36,
+        "left_y": -0.13,
+        "left_z": 0.91
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 300,
+        "start": 289
+      },
+      "left_wrist": {
+        "end": 300,
+        "start": 289
+      },
+      "right_wrist": {
+        "end": 300,
+        "start": 289
+      }
+    },
+    "control_end": 277,
+    "control_start": 266,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 22,
+    "public_note": "Split the carry into a nearer intermediate pose after the full reach was refused.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Retract the held bottle and straighten the tool to use the previously successful bin-carry posture.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_y": -0.1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 300,
+        "start": 289
+      },
+      "left_wrist": {
+        "end": 300,
+        "start": 289
+      },
+      "right_wrist": {
+        "end": 300,
+        "start": 289
+      }
+    },
+    "control_end": 277,
+    "control_start": 266,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 22,
+    "public_note": "Retract the held bottle and straighten the tool to use the previously successful bin-carry posture.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The retraction stopped short. Continue into the vertical carry posture while keeping the bottle closed in the jaws.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0,
+        "left_y": -0.13
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 321,
+        "start": 301
+      },
+      "left_wrist": {
+        "end": 321,
+        "start": 301
+      },
+      "right_wrist": {
+        "end": 321,
+        "start": 301
+      }
+    },
+    "control_end": 297,
+    "control_start": 277,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 23,
+    "public_note": "The retraction stopped short. Continue into the vertical carry posture while keeping the bottle closed in the jaws.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move laterally in a smaller, lower carry step while preserving the current wrist orientation.",
+      "targets": {
+        "left_x": -0.3,
+        "left_y": -0.08,
+        "left_z": 0.87
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 321,
+        "start": 301
+      },
+      "left_wrist": {
+        "end": 321,
+        "start": 301
+      },
+      "right_wrist": {
+        "end": 321,
+        "start": 301
+      }
+    },
+    "control_end": 297,
+    "control_start": 277,
+    "feedback": "Accepted: the original plan contains 116 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 23,
+    "public_note": "Move laterally in a smaller, lower carry step while preserving the current wrist orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Bring the bottle to the known reachable central carry pose before moving toward the bin.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0,
+        "left_x": -0.025,
+        "left_y": -0.15,
+        "left_yaw_deg": -45,
+        "left_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 332,
+        "start": 322
+      },
+      "left_wrist": {
+        "end": 332,
+        "start": 322
+      },
+      "right_wrist": {
+        "end": 332,
+        "start": 322
+      }
+    },
+    "control_end": 307,
+    "control_start": 297,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 24,
+    "public_note": "Bring the bottle to the known reachable central carry pose before moving toward the bin.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Carry toward the bin at a lower clearance height to relieve the wrist limit that stopped the previous motion.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0,
+        "left_x": -0.48,
+        "left_y": -0.13,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 351,
+        "start": 333
+      },
+      "left_wrist": {
+        "end": 351,
+        "start": 333
+      },
+      "right_wrist": {
+        "end": 351,
+        "start": 333
+      }
+    },
+    "control_end": 325,
+    "control_start": 307,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 25,
+    "public_note": "Carry toward the bin at a lower clearance height to relieve the wrist limit that stopped the previous motion.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Use a short lateral transfer at lower height, keeping the bottle clear of the tabletop.",
+      "targets": {
+        "left_pitch_deg": 20,
+        "left_x": -0.3,
+        "left_y": -0.05,
+        "left_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 351,
+        "start": 333
+      },
+      "left_wrist": {
+        "end": 351,
+        "start": 333
+      },
+      "right_wrist": {
+        "end": 351,
+        "start": 333
+      }
+    },
+    "control_end": 325,
+    "control_start": 307,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 25,
+    "public_note": "Use a short lateral transfer at lower height, keeping the bottle clear of the tabletop.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The bottle remains held near the table edge. Continue laterally over the bin using the measured wrist posture.",
+      "targets": {
+        "left_x": -0.49,
+        "left_y": -0.1,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 361,
+        "start": 352
+      },
+      "left_wrist": {
+        "end": 361,
+        "start": 352
+      },
+      "right_wrist": {
+        "end": 361,
+        "start": 352
+      }
+    },
+    "control_end": 334,
+    "control_start": 325,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 26,
+    "public_note": "The bottle remains held near the table edge. Continue laterally over the bin using the measured wrist posture.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Keep all other dimensions fixed and move only left over the bin.",
+      "targets": {
+        "left_x": -0.48
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 361,
+        "start": 352
+      },
+      "left_wrist": {
+        "end": 361,
+        "start": 352
+      },
+      "right_wrist": {
+        "end": 361,
+        "start": 352
+      }
+    },
+    "control_end": 334,
+    "control_start": 325,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 26,
+    "public_note": "Keep all other dimensions fixed and move only left over the bin.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The blue bottle has dropped over the bin opening. Open the left jaws and prepare the right arm for the pale bottle.",
+      "targets": {
+        "left_gripper": 1,
+        "right_pitch_deg": 45,
+        "right_z": 1.02
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 382,
+        "start": 362
+      },
+      "left_wrist": {
+        "end": 382,
+        "start": 362
+      },
+      "right_wrist": {
+        "end": 382,
+        "start": 362
+      }
+    },
+    "control_end": 354,
+    "control_start": 334,
+    "feedback": "Accepted: the original plan contains 30 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 27,
+    "public_note": "The blue bottle has dropped over the bin opening. Open the left jaws and prepare the right arm for the pale bottle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move above the pale bottle with a vertical grasp; reopen the left jaws after the previous truncated action.",
+      "targets": {
+        "left_gripper": 1,
+        "right_pitch_deg": 0,
+        "right_x": 0.28,
+        "right_y": -0.1,
+        "right_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 403,
+        "start": 383
+      },
+      "left_wrist": {
+        "end": 403,
+        "start": 383
+      },
+      "right_wrist": {
+        "end": 403,
+        "start": 383
+      }
+    },
+    "control_end": 374,
+    "control_start": 354,
+    "feedback": "Accepted: the original plan contains 27 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 28,
+    "public_note": "Move above the pale bottle with a vertical grasp; reopen the left jaws after the previous truncated action.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Centre over the pale bottle's broad body and lower close to grasp height.",
+      "targets": {
+        "left_gripper": 1,
+        "right_x": 0.29,
+        "right_y": -0.09,
+        "right_z": 0.814
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 414,
+        "start": 404
+      },
+      "left_wrist": {
+        "end": 414,
+        "start": 404
+      },
+      "right_wrist": {
+        "end": 414,
+        "start": 404
+      }
+    },
+    "control_end": 384,
+    "control_start": 374,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 29,
+    "public_note": "Centre over the pale bottle's broad body and lower close to grasp height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the final centimetre and grasp the pale bottle around its body.",
+      "targets": {
+        "right_gripper": 0,
+        "right_z": 0.804
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 422,
+        "start": 415
+      },
+      "left_wrist": {
+        "end": 422,
+        "start": 415
+      },
+      "right_wrist": {
+        "end": 422,
+        "start": 415
+      }
+    },
+    "control_end": 391,
+    "control_start": 384,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 30,
+    "public_note": "Lower the final centimetre and grasp the pale bottle around its body.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift the pale bottle clear before transporting it into the shared workspace.",
+      "targets": {
+        "right_z": 0.92
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 433,
+        "start": 423
+      },
+      "left_wrist": {
+        "end": 433,
+        "start": 423
+      },
+      "right_wrist": {
+        "end": 433,
+        "start": 423
+      }
+    },
+    "control_end": 401,
+    "control_start": 391,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 31,
+    "public_note": "Lift the pale bottle clear before transporting it into the shared workspace.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Carry the pale bottle to the shared central workspace for transfer to the left arm.",
+      "targets": {
+        "right_x": 0.0,
+        "right_y": -0.16
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 450,
+        "start": 434
+      },
+      "left_wrist": {
+        "end": 450,
+        "start": 434
+      },
+      "right_wrist": {
+        "end": 450,
+        "start": 434
+      }
+    },
+    "control_end": 417,
+    "control_start": 401,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 32,
+    "public_note": "Carry the pale bottle to the shared central workspace for transfer to the left arm.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Position the open left hand above the exposed near end of the held bottle for a handover.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0,
+        "left_x": -0.06,
+        "left_y": -0.25,
+        "left_yaw_deg": 0,
+        "left_z": 0.99
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 471,
+        "start": 451
+      },
+      "left_wrist": {
+        "end": 471,
+        "start": 451
+      },
+      "right_wrist": {
+        "end": 471,
+        "start": 451
+      }
+    },
+    "control_end": 437,
+    "control_start": 417,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 33,
+    "public_note": "Position the open left hand above the exposed near end of the held bottle for a handover.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Retract the left arm toward its starting region to recover a usable handover posture.",
+      "targets": {
+        "left_pitch_deg": 60,
+        "left_roll_deg": 0,
+        "left_x": -0.3,
+        "left_y": -0.2,
+        "left_yaw_deg": 0,
+        "left_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 471,
+        "start": 451
+      },
+      "left_wrist": {
+        "end": 471,
+        "start": 451
+      },
+      "right_wrist": {
+        "end": 471,
+        "start": 451
+      }
+    },
+    "control_end": 437,
+    "control_start": 417,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 33,
+    "public_note": "Retract the left arm toward its starting region to recover a usable handover posture.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Return the empty left hand to its known starting pose before attempting the transfer again.",
+      "targets": {
+        "left_pitch_deg": 90,
+        "left_roll_deg": 0,
+        "left_x": -0.2996,
+        "left_y": -0.2022,
+        "left_yaw_deg": 0,
+        "left_z": 0.9215
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 471,
+        "start": 451
+      },
+      "left_wrist": {
+        "end": 471,
+        "start": 451
+      },
+      "right_wrist": {
+        "end": 471,
+        "start": 451
+      }
+    },
+    "control_end": 437,
+    "control_start": 417,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 33,
+    "public_note": "Return the empty left hand to its known starting pose before attempting the transfer again.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Raise the empty left hand in place to gain clearance and room for reorienting the wrist.",
+      "targets": {
+        "left_z": 1.04
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 471,
+        "start": 451
+      },
+      "left_wrist": {
+        "end": 471,
+        "start": 451
+      },
+      "right_wrist": {
+        "end": 471,
+        "start": 451
+      }
+    },
+    "control_end": 437,
+    "control_start": 417,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 33,
+    "public_note": "Raise the empty left hand in place to gain clearance and room for reorienting the wrist.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Extend the empty arm forward in its current orientation to move away from the folded wrist limit.",
+      "targets": {
+        "left_y": 0.14,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 471,
+        "start": 451
+      },
+      "left_wrist": {
+        "end": 471,
+        "start": 451
+      },
+      "right_wrist": {
+        "end": 471,
+        "start": 451
+      }
+    },
+    "control_end": 437,
+    "control_start": 417,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 33,
+    "public_note": "Extend the empty arm forward in its current orientation to move away from the folded wrist limit.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The left arm cannot reach a transfer pose. Move the held bottle leftward within the right arm's reach to test direct access to the bin.",
+      "targets": {
+        "right_x": -0.27,
+        "right_y": -0.24,
+        "right_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 471,
+        "start": 451
+      },
+      "left_wrist": {
+        "end": 471,
+        "start": 451
+      },
+      "right_wrist": {
+        "end": 471,
+        "start": 451
+      }
+    },
+    "control_end": 437,
+    "control_start": 417,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 33,
+    "public_note": "The left arm cannot reach a transfer pose. Move the held bottle leftward within the right arm's reach to test direct access to the bin.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Return the empty left arm to the forward posture used to pick up the blue bottle, removing the lateral wrist twist.",
+      "targets": {
+        "left_pitch_deg": 30,
+        "left_roll_deg": 0,
+        "left_x": -0.3,
+        "left_y": 0.02,
+        "left_yaw_deg": 0,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 471,
+        "start": 451
+      },
+      "left_wrist": {
+        "end": 471,
+        "start": 451
+      },
+      "right_wrist": {
+        "end": 471,
+        "start": 451
+      }
+    },
+    "control_end": 437,
+    "control_start": 417,
+    "feedback": "Accepted: the original plan contains 26 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 33,
+    "public_note": "Return the empty left arm to the forward posture used to pick up the blue bottle, removing the lateral wrist twist.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move the empty left hand toward the exposed bottle end, using a lower transfer approach.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0,
+        "left_x": -0.1,
+        "left_y": -0.22,
+        "left_yaw_deg": 0,
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 486,
+        "start": 472
+      },
+      "left_wrist": {
+        "end": 486,
+        "start": 472
+      },
+      "right_wrist": {
+        "end": 486,
+        "start": 472
+      }
+    },
+    "control_end": 451,
+    "control_start": 437,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 34,
+    "public_note": "Move the empty left hand toward the exposed bottle end, using a lower transfer approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Bring the bottle toward the left arm's reachable forward workspace for a neck-end handover.",
+      "targets": {
+        "right_pitch_deg": 30,
+        "right_x": -0.1,
+        "right_y": 0.0,
+        "right_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 486,
+        "start": 472
+      },
+      "left_wrist": {
+        "end": 486,
+        "start": 472
+      },
+      "right_wrist": {
+        "end": 486,
+        "start": 472
+      }
+    },
+    "control_end": 451,
+    "control_start": 437,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 34,
+    "public_note": "Bring the bottle toward the left arm's reachable forward workspace for a neck-end handover.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Use a smaller forward-left transfer pose without changing the holding wrist orientation.",
+      "targets": {
+        "right_x": -0.08,
+        "right_y": -0.08,
+        "right_z": 0.84
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 486,
+        "start": 472
+      },
+      "left_wrist": {
+        "end": 486,
+        "start": 472
+      },
+      "right_wrist": {
+        "end": 486,
+        "start": 472
+      }
+    },
+    "control_end": 451,
+    "control_start": 437,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 34,
+    "public_note": "Use a smaller forward-left transfer pose without changing the holding wrist orientation.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Recover the exact left-arm approach pose that successfully picked up the pink bottle.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0.8,
+        "left_x": -0.055,
+        "left_y": -0.12,
+        "left_yaw_deg": -45,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 486,
+        "start": 472
+      },
+      "left_wrist": {
+        "end": 486,
+        "start": 472
+      },
+      "right_wrist": {
+        "end": 486,
+        "start": 472
+      }
+    },
+    "control_end": 451,
+    "control_start": 437,
+    "feedback": "Accepted: playing 14 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 34,
+    "public_note": "Recover the exact left-arm approach pose that successfully picked up the pink bottle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lower the pale bottle onto the table in the shared workspace to make the transfer safer while the left wrist is constrained.",
+      "targets": {
+        "right_z": 0.812
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 499,
+        "start": 487
+      },
+      "left_wrist": {
+        "end": 499,
+        "start": 487
+      },
+      "right_wrist": {
+        "end": 499,
+        "start": 487
+      }
+    },
+    "control_end": 463,
+    "control_start": 451,
+    "feedback": "Accepted: playing 12 waypoints (0.5s). The next observation reports how close the grasp point landed.",
+    "policy_step": 35,
+    "public_note": "Lower the pale bottle onto the table in the shared workspace to make the transfer safer while the left wrist is constrained.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Separate the arms to clear the right wrist's descent path.",
+      "targets": {
+        "left_x": -0.28
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 511,
+        "start": 500
+      },
+      "left_wrist": {
+        "end": 511,
+        "start": 500
+      },
+      "right_wrist": {
+        "end": 511,
+        "start": 500
+      }
+    },
+    "control_end": 474,
+    "control_start": 463,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 36,
+    "public_note": "Separate the arms to clear the right wrist's descent path.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Withdraw the left hand to its reachable forward staging pose, away from the right arm.",
+      "targets": {
+        "left_pitch_deg": 30,
+        "left_roll_deg": 0,
+        "left_x": -0.3,
+        "left_y": 0.02,
+        "left_yaw_deg": 0,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 511,
+        "start": 500
+      },
+      "left_wrist": {
+        "end": 511,
+        "start": 500
+      },
+      "right_wrist": {
+        "end": 511,
+        "start": 500
+      }
+    },
+    "control_end": 474,
+    "control_start": 463,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 36,
+    "public_note": "Withdraw the left hand to its reachable forward staging pose, away from the right arm.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "With the left arm clear, lower the pale bottle to the table for a staged transfer.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_roll_deg": 0,
+        "right_z": 0.812
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 516,
+        "start": 512
+      },
+      "left_wrist": {
+        "end": 516,
+        "start": 512
+      },
+      "right_wrist": {
+        "end": 516,
+        "start": 512
+      }
+    },
+    "control_end": 478,
+    "control_start": 474,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 37,
+    "public_note": "With the left arm clear, lower the pale bottle to the table for a staged transfer.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Release the pale bottle onto the central table for pickup by the left arm.",
+      "targets": {
+        "right_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 520,
+        "start": 517
+      },
+      "left_wrist": {
+        "end": 520,
+        "start": 517
+      },
+      "right_wrist": {
+        "end": 520,
+        "start": 517
+      }
+    },
+    "control_end": 481,
+    "control_start": 478,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 38,
+    "public_note": "Release the pale bottle onto the central table for pickup by the left arm.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Clear the right arm away from the staged bottle so the left hand can approach unobstructed.",
+      "targets": {
+        "right_x": 0.2,
+        "right_z": 0.97
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 531,
+        "start": 521
+      },
+      "left_wrist": {
+        "end": 531,
+        "start": 521
+      },
+      "right_wrist": {
+        "end": 531,
+        "start": 521
+      }
+    },
+    "control_end": 491,
+    "control_start": 481,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 39,
+    "public_note": "Clear the right arm away from the staged bottle so the left hand can approach unobstructed.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the staged pale bottle from above with the left hand, now that the right arm is clear.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0,
+        "left_x": 0.035,
+        "left_y": -0.16,
+        "left_yaw_deg": 0,
+        "left_z": 0.825
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 550,
+        "start": 532
+      },
+      "left_wrist": {
+        "end": 550,
+        "start": 532
+      },
+      "right_wrist": {
+        "end": 550,
+        "start": 532
+      }
+    },
+    "control_end": 509,
+    "control_start": 491,
+    "feedback": "Accepted: playing 18 waypoints (0.7s). The next observation reports how close the grasp point landed.",
+    "policy_step": 40,
+    "public_note": "Approach the staged pale bottle from above with the left hand, now that the right arm is clear.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The bottle shifted during the approach. Lift clear before correcting its new position.",
+      "targets": {
+        "left_z": 0.9
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 562,
+        "start": 551
+      },
+      "left_wrist": {
+        "end": 562,
+        "start": 551
+      },
+      "right_wrist": {
+        "end": 562,
+        "start": 551
+      }
+    },
+    "control_end": 520,
+    "control_start": 509,
+    "feedback": "Accepted: playing 11 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 41,
+    "public_note": "The bottle shifted during the approach. Lift clear before correcting its new position.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Align above the shifted pale bottle, rotating the jaws across its diagonal body.",
+      "targets": {
+        "left_x": 0.11,
+        "left_y": -0.19,
+        "left_yaw_deg": -35
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 572,
+        "start": 563
+      },
+      "left_wrist": {
+        "end": 572,
+        "start": 563
+      },
+      "right_wrist": {
+        "end": 572,
+        "start": 563
+      }
+    },
+    "control_end": 529,
+    "control_start": 520,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 42,
+    "public_note": "Align above the shifted pale bottle, rotating the jaws across its diagonal body.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the nearer end of the diagonal bottle at a lower, more reachable height.",
+      "targets": {
+        "left_x": 0.095,
+        "left_y": -0.215,
+        "left_yaw_deg": -35,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 572,
+        "start": 563
+      },
+      "left_wrist": {
+        "end": 572,
+        "start": 563
+      },
+      "right_wrist": {
+        "end": 572,
+        "start": 563
+      }
+    },
+    "control_end": 529,
+    "control_start": 520,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 42,
+    "public_note": "Approach the nearer end of the diagonal bottle at a lower, more reachable height.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move the idle right arm farther away; it is obstructing the left-hand approach.",
+      "targets": {
+        "right_x": 0.4,
+        "right_y": -0.25
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 589,
+        "start": 573
+      },
+      "left_wrist": {
+        "end": 589,
+        "start": 573
+      },
+      "right_wrist": {
+        "end": 589,
+        "start": 573
+      }
+    },
+    "control_end": 545,
+    "control_start": 529,
+    "feedback": "Accepted: playing 16 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 43,
+    "public_note": "Move the idle right arm farther away; it is obstructing the left-hand approach.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "With the right arm clear, finish aligning over the pale bottle's nearer body.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0,
+        "left_x": 0.095,
+        "left_y": -0.215,
+        "left_yaw_deg": -35,
+        "left_z": 0.85
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 594,
+        "start": 590
+      },
+      "left_wrist": {
+        "end": 594,
+        "start": 590
+      },
+      "right_wrist": {
+        "end": 594,
+        "start": 590
+      }
+    },
+    "control_end": 549,
+    "control_start": 545,
+    "feedback": "Accepted: playing 4 waypoints (0.2s). The next observation reports how close the grasp point landed.",
+    "policy_step": 44,
+    "public_note": "With the right arm clear, finish aligning over the pale bottle's nearer body.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Correct the remaining lateral offset and lower toward the centre of the pale bottle.",
+      "targets": {
+        "left_x": 0.12,
+        "left_y": -0.231,
+        "left_z": 0.812
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 598,
+        "start": 595
+      },
+      "left_wrist": {
+        "end": 598,
+        "start": 595
+      },
+      "right_wrist": {
+        "end": 598,
+        "start": 595
+      }
+    },
+    "control_end": 552,
+    "control_start": 549,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The next observation reports how close the grasp point landed.",
+    "policy_step": 45,
+    "public_note": "Correct the remaining lateral offset and lower toward the centre of the pale bottle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The pale bottle is centred between the jaws. Lower a few millimetres and close.",
+      "targets": {
+        "left_gripper": 0,
+        "left_z": 0.805
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 606,
+        "start": 599
+      },
+      "left_wrist": {
+        "end": 606,
+        "start": 599
+      },
+      "right_wrist": {
+        "end": 606,
+        "start": 599
+      }
+    },
+    "control_end": 559,
+    "control_start": 552,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The last 6 move the gripper, once the arm has arrived. The next observation reports how close the grasp point landed.",
+    "policy_step": 46,
+    "public_note": "The pale bottle is centred between the jaws. Lower a few millimetres and close.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift the grasped pale bottle clear of the table before carrying it left.",
+      "targets": {
+        "left_z": 0.88
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 614,
+        "start": 607
+      },
+      "left_wrist": {
+        "end": 614,
+        "start": 607
+      },
+      "right_wrist": {
+        "end": 614,
+        "start": 607
+      }
+    },
+    "control_end": 566,
+    "control_start": 559,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 47,
+    "public_note": "Lift the grasped pale bottle clear of the table before carrying it left.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Lift while retracting slightly into the left arm's reachable workspace.",
+      "targets": {
+        "left_x": 0.05,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 614,
+        "start": 607
+      },
+      "left_wrist": {
+        "end": 614,
+        "start": 607
+      },
+      "right_wrist": {
+        "end": 614,
+        "start": 607
+      }
+    },
+    "control_end": 566,
+    "control_start": 559,
+    "feedback": "Accepted: playing 7 waypoints (0.3s). The next observation reports how close the grasp point landed.",
+    "policy_step": 47,
+    "public_note": "Lift while retracting slightly into the left arm's reachable workspace.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Carry the pale bottle through the forward-left pose that remains reachable with this arm configuration.",
+      "targets": {
+        "left_pitch_deg": 30,
+        "left_roll_deg": 0,
+        "left_x": -0.3,
+        "left_y": 0.02,
+        "left_yaw_deg": 0,
+        "left_z": 0.87
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 635,
+        "start": 615
+      },
+      "left_wrist": {
+        "end": 635,
+        "start": 615
+      },
+      "right_wrist": {
+        "end": 635,
+        "start": 615
+      }
+    },
+    "control_end": 586,
+    "control_start": 566,
+    "feedback": "Accepted: the original plan contains 21 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 48,
+    "public_note": "Carry the pale bottle through the forward-left pose that remains reachable with this arm configuration.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Move the held pale bottle laterally over the bin opening.",
+      "targets": {
+        "left_x": -0.49
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 646,
+        "start": 636
+      },
+      "left_wrist": {
+        "end": 646,
+        "start": 636
+      },
+      "right_wrist": {
+        "end": 646,
+        "start": 636
+      }
+    },
+    "control_end": 596,
+    "control_start": 586,
+    "feedback": "Accepted: playing 10 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 49,
+    "public_note": "Move the held pale bottle laterally over the bin opening.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Release the pale bottle over the dustbin opening.",
+      "targets": {
+        "left_gripper": 1
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 650,
+        "start": 647
+      },
+      "left_wrist": {
+        "end": 650,
+        "start": 647
+      },
+      "right_wrist": {
+        "end": 650,
+        "start": 647
+      }
+    },
+    "control_end": 599,
+    "control_start": 596,
+    "feedback": "Accepted: playing 3 waypoints (0.1s). The last 3 move the gripper, once the arm has arrived.",
+    "policy_step": 50,
+    "public_note": "Release the pale bottle over the dustbin opening.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Approach the remaining green bottle from above, aiming around its body.",
+      "targets": {
+        "right_pitch_deg": 0,
+        "right_roll_deg": 0,
+        "right_x": 0.49,
+        "right_y": -0.09,
+        "right_z": 0.94
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 670,
+        "start": 651
+      },
+      "left_wrist": {
+        "end": 670,
+        "start": 651
+      },
+      "right_wrist": {
+        "end": 670,
+        "start": 651
+      }
+    },
+    "control_end": 618,
+    "control_start": 599,
+    "feedback": "Accepted: playing 19 waypoints (0.8s). The next observation reports how close the grasp point landed.",
+    "policy_step": 51,
+    "public_note": "Approach the remaining green bottle from above, aiming around its body.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The green bottle is below the open jaws. Lower toward its shoulder while keeping it centred.",
+      "targets": {
+        "right_x": 0.48,
+        "right_z": 0.89
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 680,
+        "start": 671
+      },
+      "left_wrist": {
+        "end": 680,
+        "start": 671
+      },
+      "right_wrist": {
+        "end": 680,
+        "start": 671
+      }
+    },
+    "control_end": 627,
+    "control_start": 618,
+    "feedback": "Accepted: playing 9 waypoints (0.4s). The next observation reports how close the grasp point landed.",
+    "policy_step": 52,
+    "public_note": "The green bottle is below the open jaws. Lower toward its shoulder while keeping it centred.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The descent met the green bottle. Close the jaws at the measured position to test the grasp without pushing farther.",
+      "targets": {
+        "right_gripper": 0
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 687,
+        "start": 681
+      },
+      "left_wrist": {
+        "end": 687,
+        "start": 681
+      },
+      "right_wrist": {
+        "end": 687,
+        "start": 681
+      }
+    },
+    "control_end": 633,
+    "control_start": 627,
+    "feedback": "Accepted: playing 6 waypoints (0.2s). The last 6 move the gripper, once the arm has arrived.",
+    "policy_step": 53,
+    "public_note": "The descent met the green bottle. Close the jaws at the measured position to test the grasp without pushing farther.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Test the green-bottle grasp by lifting and bringing it toward the shared workspace.",
+      "targets": {
+        "right_x": 0.25,
+        "right_y": -0.16,
+        "right_z": 1.03
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 703,
+        "start": 688
+      },
+      "left_wrist": {
+        "end": 703,
+        "start": 688
+      },
+      "right_wrist": {
+        "end": 703,
+        "start": 688
+      }
+    },
+    "control_end": 648,
+    "control_start": 633,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 54,
+    "public_note": "Test the green-bottle grasp by lifting and bringing it toward the shared workspace.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Bring the green bottle, held by its neck, into the central workspace with its body exposed for handover.",
+      "targets": {
+        "right_x": 0.0,
+        "right_y": -0.1,
+        "right_z": 1.01
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 719,
+        "start": 704
+      },
+      "left_wrist": {
+        "end": 719,
+        "start": 704
+      },
+      "right_wrist": {
+        "end": 719,
+        "start": 704
+      }
+    },
+    "control_end": 663,
+    "control_start": 648,
+    "feedback": "right arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 55,
+    "public_note": "Bring the green bottle, held by its neck, into the central workspace with its body exposed for handover.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Use the lower central transfer pose that the right arm previously reached.",
+      "targets": {
+        "right_x": 0.0,
+        "right_y": -0.2,
+        "right_z": 0.95
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 719,
+        "start": 704
+      },
+      "left_wrist": {
+        "end": 719,
+        "start": 704
+      },
+      "right_wrist": {
+        "end": 719,
+        "start": 704
+      }
+    },
+    "control_end": 663,
+    "control_start": 648,
+    "feedback": "Accepted: playing 15 waypoints (0.6s). The next observation reports how close the grasp point landed.",
+    "policy_step": 55,
+    "public_note": "Use the lower central transfer pose that the right arm previously reached.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "The green bottle slipped onto the central table. Clear the right hand and approach its body with the left jaws.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0,
+        "left_x": -0.035,
+        "left_y": -0.225,
+        "left_yaw_deg": 55,
+        "left_z": 0.82,
+        "right_gripper": 1,
+        "right_x": 0.22
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 740,
+        "start": 720
+      },
+      "left_wrist": {
+        "end": 740,
+        "start": 720
+      },
+      "right_wrist": {
+        "end": 740,
+        "start": 720
+      }
+    },
+    "control_end": 683,
+    "control_start": 663,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 56,
+    "public_note": "The green bottle slipped onto the central table. Clear the right hand and approach its body with the left jaws.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Try a known feasible diagonal grasp posture over the remaining bottle.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0,
+        "left_x": -0.035,
+        "left_y": -0.19,
+        "left_yaw_deg": -45,
+        "left_z": 0.81
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 740,
+        "start": 720
+      },
+      "left_wrist": {
+        "end": 740,
+        "start": 720
+      },
+      "right_wrist": {
+        "end": 740,
+        "start": 720
+      }
+    },
+    "control_end": 683,
+    "control_start": 663,
+    "feedback": "left arm pose unreachable (planner status: Fail). The robot did not move; choose another pose. Neither arm moved.",
+    "policy_step": 56,
+    "public_note": "Try a known feasible diagonal grasp posture over the remaining bottle.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "note": "Return to the previously reachable central approach pose before making a final bottle correction.",
+      "targets": {
+        "left_pitch_deg": 0,
+        "left_roll_deg": 0.8,
+        "left_x": -0.055,
+        "left_y": -0.12,
+        "left_yaw_deg": -45,
+        "left_z": 0.86
+      }
+    },
+    "cameras": {
+      "head": {
+        "end": 740,
+        "start": 720
+      },
+      "left_wrist": {
+        "end": 740,
+        "start": 720
+      },
+      "right_wrist": {
+        "end": 740,
+        "start": 720
+      }
+    },
+    "control_end": 683,
+    "control_start": 663,
+    "feedback": "Accepted: the original plan contains 23 control steps; only its first 20 will execute before the next observation. The remaining steps will not execute automatically. This prefix may end before the target or before a scheduled gripper change; the next observation reports actual execution and target error.",
+    "policy_step": 56,
+    "public_note": "Return to the previously reachable central approach pose before making a final bottle correction.",
+    "tool": "move_eef"
+  },
+  {
+    "accepted": true,
+    "arguments": {
+      "hindsight": "Use top-down grasps initially, avoid the left wrist's constrained configuration, and reserve more steps for a stable handover and return home.",
+      "reason": "Three bottles are inside the dustbin, but the remaining motion budget is insufficient to retrieve the green bottle and return both arms home."
+    },
+    "cameras": {
+      "head": {
+        "end": 742,
+        "start": 741
+      },
+      "left_wrist": {
+        "end": 742,
+        "start": 741
+      },
+      "right_wrist": {
+        "end": 742,
+        "start": 741
+      }
+    },
+    "control_end": 684,
+    "control_start": 683,
+    "feedback": "Acknowledged give_up.",
+    "policy_step": 57,
+    "public_note": "Three bottles are inside the dustbin, but the remaining motion budget is insufficient to retrieve the green bottle and return both arms home.",
+    "tool": "give_up"
+  }
+]
