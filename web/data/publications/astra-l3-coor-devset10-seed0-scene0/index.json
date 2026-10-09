@@ -1,0 +1,917 @@
+{
+  "publication_manifest_version": "leaderboard-lite-v1",
+  "panel_id": "astra-l3-coor-devset10-seed0-scene0",
+  "title": "Astra L3 coor · 原版（非 cap20）· Devset10 · seed0/scene0",
+  "algorithm_id": "astra_l3_persistent_coor",
+  "algorithm": {
+    "algorithm_id": "astra_l3_persistent_coor",
+    "codex_client_version": "0.153.4",
+    "model": "gpt-6-astra",
+    "policy_sha256": "5d9b60e84b912adc9a83822c5db13ce001ad076482403839fdaa99bd55a7ec28",
+    "prompt_sha256": "517f48b53e516b6458381ee8ca7b85786d17f59925f8b14989414db12fb9ee1b",
+    "reasoning_effort": "medium",
+    "source_commit": null,
+    "tools_sha256": "ebb0b708deb201ee738bb5028993d462449a8b2cf6fdab4c74f656d0548423fe",
+    "version": "legacy-v1"
+  },
+  "official_seed": 0,
+  "layout_ordinal": 0,
+  "round_index": 0,
+  "run_count": 10,
+  "summary": {
+    "complete": true,
+    "round_complete": true,
+    "valid": 10,
+    "planned": 10,
+    "score": 48.0,
+    "success_rate": 40.0,
+    "capabilities": {
+      "Precision": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 15.0,
+        "success_rate": 0.0
+      },
+      "Open": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 50.0,
+        "success_rate": 50.0
+      },
+      "Memory": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 57.5,
+        "success_rate": 50.0
+      },
+      "Long-Horizon": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 17.5,
+        "success_rate": 0.0
+      },
+      "Generalization": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 100.0,
+        "success_rate": 100.0
+      }
+    },
+    "missing_or_incomplete": [],
+    "structural_missing_tasks": [],
+    "duplicate_tasks": [],
+    "unexpected_tasks": [],
+    "metadata_mismatches": [],
+    "excluded_repeat_attempts": [],
+    "selection_policy": "The fixed original Devset10 roster; one original attempt per task; no outcome-based selection.",
+    "aggregation": "Devset10: equal 1/10 weight per original task configuration for score and success rate. Capability means are descriptive; this is not the Full54 metric."
+  },
+  "costs": {
+    "known_input_tokens": 45986390,
+    "known_cached_input_tokens": 44543616,
+    "known_uncached_input_tokens": 1442774,
+    "known_output_tokens": 66536,
+    "known_total_tokens": 46052926,
+    "paid_requests": 628,
+    "paid_requests_lower_bound": 628,
+    "model_responses_lower_bound": 628,
+    "unknown_attempts": 0,
+    "unknown_by_field": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "paid_requests": 0,
+      "model_responses": 0
+    },
+    "complete": true,
+    "cache_is_input_subset": true,
+    "attempt_records": 628
+  },
+  "runs": [
+    {
+      "run_id": "l3_persistent_coor_push_T_random_s0_layout0_20261005_v1",
+      "task": "push_T_random",
+      "capability": "Generalization",
+      "variant": "random",
+      "status": "complete",
+      "score": 1.0,
+      "score_percent": 100.0,
+      "success": true,
+      "control_steps": 213,
+      "model_decisions": 68,
+      "actual_responses": 68,
+      "algorithm": {
+        "algorithm_id": "astra_l3_persistent_coor",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "5d9b60e84b912adc9a83822c5db13ce001ad076482403839fdaa99bd55a7ec28",
+        "prompt_sha256": "517f48b53e516b6458381ee8ca7b85786d17f59925f8b14989414db12fb9ee1b",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "ebb0b708deb201ee738bb5028993d462449a8b2cf6fdab4c74f656d0548423fe",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": null,
+        "episode_control_limit": 600,
+        "id": "devset1-l3-persistent-coor-remaining8-v1",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "Original fixed Devset10: insert_tubes and build_tower originally completed under the first coor protocol are reused unchanged, plus the remaining eight original runs exactly once; no cap20 wrapper, rerun, replacement, or outcome-based selection.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "daed0698cc117059bfad7e907fd3a820ac31fad86baf056068f153ef04dd860e"
+      },
+      "costs": {
+        "known_input_tokens": 4682884,
+        "known_cached_input_tokens": 4449536,
+        "known_uncached_input_tokens": 233348,
+        "known_output_tokens": 7018,
+        "known_total_tokens": 4689902,
+        "paid_requests": 68,
+        "paid_requests_lower_bound": 68,
+        "model_responses_lower_bound": 68,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 68
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra-l3-coor-devset10-seed0-scene0/runs/l3_persistent_coor_push_T_random_s0_layout0_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_persistent_coor_stack_bowls_s0_layout0_20261005_v1",
+      "task": "stack_bowls",
+      "capability": "Generalization",
+      "variant": "standard",
+      "status": "complete",
+      "score": 1.0,
+      "score_percent": 100.0,
+      "success": true,
+      "control_steps": 415,
+      "model_decisions": 47,
+      "actual_responses": 47,
+      "algorithm": {
+        "algorithm_id": "astra_l3_persistent_coor",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "5d9b60e84b912adc9a83822c5db13ce001ad076482403839fdaa99bd55a7ec28",
+        "prompt_sha256": "517f48b53e516b6458381ee8ca7b85786d17f59925f8b14989414db12fb9ee1b",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "ebb0b708deb201ee738bb5028993d462449a8b2cf6fdab4c74f656d0548423fe",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": null,
+        "episode_control_limit": 800,
+        "id": "devset1-l3-persistent-coor-remaining8-v1",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "Original fixed Devset10: insert_tubes and build_tower originally completed under the first coor protocol are reused unchanged, plus the remaining eight original runs exactly once; no cap20 wrapper, rerun, replacement, or outcome-based selection.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "bb4f9fef8658af440d96b1007cd80430cc497a374d6fd3dce8fca8f81d111908"
+      },
+      "costs": {
+        "known_input_tokens": 1949739,
+        "known_cached_input_tokens": 1860352,
+        "known_uncached_input_tokens": 89387,
+        "known_output_tokens": 4441,
+        "known_total_tokens": 1954180,
+        "paid_requests": 47,
+        "paid_requests_lower_bound": 47,
+        "model_responses_lower_bound": 47,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 47
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra-l3-coor-devset10-seed0-scene0/runs/l3_persistent_coor_stack_bowls_s0_layout0_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_persistent_coor_organize_table_s0_layout0_20261005_v1",
+      "task": "organize_table",
+      "capability": "Long-Horizon",
+      "variant": "standard",
+      "status": "complete",
+      "score": 0.25,
+      "score_percent": 25.0,
+      "success": false,
+      "control_steps": 925,
+      "model_decisions": 94,
+      "actual_responses": 94,
+      "algorithm": {
+        "algorithm_id": "astra_l3_persistent_coor",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "5d9b60e84b912adc9a83822c5db13ce001ad076482403839fdaa99bd55a7ec28",
+        "prompt_sha256": "517f48b53e516b6458381ee8ca7b85786d17f59925f8b14989414db12fb9ee1b",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "ebb0b708deb201ee738bb5028993d462449a8b2cf6fdab4c74f656d0548423fe",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": null,
+        "episode_control_limit": 1000,
+        "id": "devset1-l3-persistent-coor-remaining8-v1",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "Original fixed Devset10: insert_tubes and build_tower originally completed under the first coor protocol are reused unchanged, plus the remaining eight original runs exactly once; no cap20 wrapper, rerun, replacement, or outcome-based selection.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "97b12e7574198f14aaac1afa1c40094d5bc2a87809498f67c4cb029dfc50d450"
+      },
+      "costs": {
+        "known_input_tokens": 8072225,
+        "known_cached_input_tokens": 7848064,
+        "known_uncached_input_tokens": 224161,
+        "known_output_tokens": 9229,
+        "known_total_tokens": 8081454,
+        "paid_requests": 94,
+        "paid_requests_lower_bound": 94,
+        "model_responses_lower_bound": 94,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 94
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra-l3-coor-devset10-seed0-scene0/runs/l3_persistent_coor_organize_table_s0_layout0_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_persistent_coor_put_bottles_into_dustbin_s0_layout0_20261005_v1",
+      "task": "put_bottles_into_dustbin",
+      "capability": "Long-Horizon",
+      "variant": "standard",
+      "status": "complete",
+      "score": 0.1,
+      "score_percent": 10.0,
+      "success": false,
+      "control_steps": 663,
+      "model_decisions": 39,
+      "actual_responses": 39,
+      "algorithm": {
+        "algorithm_id": "astra_l3_persistent_coor",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "5d9b60e84b912adc9a83822c5db13ce001ad076482403839fdaa99bd55a7ec28",
+        "prompt_sha256": "517f48b53e516b6458381ee8ca7b85786d17f59925f8b14989414db12fb9ee1b",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "ebb0b708deb201ee738bb5028993d462449a8b2cf6fdab4c74f656d0548423fe",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": null,
+        "episode_control_limit": 700,
+        "id": "devset1-l3-persistent-coor-remaining8-v1",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "Original fixed Devset10: insert_tubes and build_tower originally completed under the first coor protocol are reused unchanged, plus the remaining eight original runs exactly once; no cap20 wrapper, rerun, replacement, or outcome-based selection.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "f870145a6400f7affd5df5ca1af353bfaf1ab9196302b5a6e6c042aea4ea2d79"
+      },
+      "costs": {
+        "known_input_tokens": 1391608,
+        "known_cached_input_tokens": 1319936,
+        "known_uncached_input_tokens": 71672,
+        "known_output_tokens": 3384,
+        "known_total_tokens": 1394992,
+        "paid_requests": 39,
+        "paid_requests_lower_bound": 39,
+        "model_responses_lower_bound": 39,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 39
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra-l3-coor-devset10-seed0-scene0/runs/l3_persistent_coor_put_bottles_into_dustbin_s0_layout0_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_persistent_coor_cover_blocks_s0_layout0_20261005_v1",
+      "task": "cover_blocks",
+      "capability": "Memory",
+      "variant": "standard",
+      "status": "complete",
+      "score": 0.15,
+      "score_percent": 15.0,
+      "success": false,
+      "control_steps": 549,
+      "model_decisions": 73,
+      "actual_responses": 73,
+      "algorithm": {
+        "algorithm_id": "astra_l3_persistent_coor",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "5d9b60e84b912adc9a83822c5db13ce001ad076482403839fdaa99bd55a7ec28",
+        "prompt_sha256": "517f48b53e516b6458381ee8ca7b85786d17f59925f8b14989414db12fb9ee1b",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "ebb0b708deb201ee738bb5028993d462449a8b2cf6fdab4c74f656d0548423fe",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": null,
+        "episode_control_limit": 800,
+        "id": "devset1-l3-persistent-coor-remaining8-v1",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "Original fixed Devset10: insert_tubes and build_tower originally completed under the first coor protocol are reused unchanged, plus the remaining eight original runs exactly once; no cap20 wrapper, rerun, replacement, or outcome-based selection.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "4e2965d535cf0043fd5f171ee87785196652b8f7b80fa7fad2678559c9671fe2"
+      },
+      "costs": {
+        "known_input_tokens": 5266082,
+        "known_cached_input_tokens": 5117440,
+        "known_uncached_input_tokens": 148642,
+        "known_output_tokens": 7772,
+        "known_total_tokens": 5273854,
+        "paid_requests": 73,
+        "paid_requests_lower_bound": 73,
+        "model_responses_lower_bound": 73,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 73
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra-l3-coor-devset10-seed0-scene0/runs/l3_persistent_coor_cover_blocks_s0_layout0_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_persistent_coor_imitate_sorting_sequence_s0_layout0_20261005_v1",
+      "task": "imitate_sorting_sequence",
+      "capability": "Memory",
+      "variant": "standard",
+      "status": "complete",
+      "score": 1.0,
+      "score_percent": 100.0,
+      "success": true,
+      "control_steps": 1346,
+      "model_decisions": 67,
+      "actual_responses": 67,
+      "algorithm": {
+        "algorithm_id": "astra_l3_persistent_coor",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "5d9b60e84b912adc9a83822c5db13ce001ad076482403839fdaa99bd55a7ec28",
+        "prompt_sha256": "517f48b53e516b6458381ee8ca7b85786d17f59925f8b14989414db12fb9ee1b",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "ebb0b708deb201ee738bb5028993d462449a8b2cf6fdab4c74f656d0548423fe",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": null,
+        "episode_control_limit": 1600,
+        "id": "devset1-l3-persistent-coor-remaining8-v1",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "Original fixed Devset10: insert_tubes and build_tower originally completed under the first coor protocol are reused unchanged, plus the remaining eight original runs exactly once; no cap20 wrapper, rerun, replacement, or outcome-based selection.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "98673decd7f2d7a184f90772acfd219861ee14eee34817256f1445aec599db0e"
+      },
+      "costs": {
+        "known_input_tokens": 6951895,
+        "known_cached_input_tokens": 6780928,
+        "known_uncached_input_tokens": 170967,
+        "known_output_tokens": 6187,
+        "known_total_tokens": 6958082,
+        "paid_requests": 67,
+        "paid_requests_lower_bound": 67,
+        "model_responses_lower_bound": 67,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 67
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra-l3-coor-devset10-seed0-scene0/runs/l3_persistent_coor_imitate_sorting_sequence_s0_layout0_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_persistent_coor_classify_objects_by_language_s0_layout0_20261005_v1",
+      "task": "classify_objects_by_language",
+      "capability": "Open",
+      "variant": "standard",
+      "status": "complete",
+      "score": 1.0,
+      "score_percent": 100.0,
+      "success": true,
+      "control_steps": 912,
+      "model_decisions": 77,
+      "actual_responses": 77,
+      "algorithm": {
+        "algorithm_id": "astra_l3_persistent_coor",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "5d9b60e84b912adc9a83822c5db13ce001ad076482403839fdaa99bd55a7ec28",
+        "prompt_sha256": "517f48b53e516b6458381ee8ca7b85786d17f59925f8b14989414db12fb9ee1b",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "ebb0b708deb201ee738bb5028993d462449a8b2cf6fdab4c74f656d0548423fe",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": null,
+        "episode_control_limit": 1100,
+        "id": "devset1-l3-persistent-coor-remaining8-v1",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "Original fixed Devset10: insert_tubes and build_tower originally completed under the first coor protocol are reused unchanged, plus the remaining eight original runs exactly once; no cap20 wrapper, rerun, replacement, or outcome-based selection.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "c4bb6102348db9e8565d7a0e92a9901f592d45971a24ade67adf084cd6919cec"
+      },
+      "costs": {
+        "known_input_tokens": 5702361,
+        "known_cached_input_tokens": 5546624,
+        "known_uncached_input_tokens": 155737,
+        "known_output_tokens": 7279,
+        "known_total_tokens": 5709640,
+        "paid_requests": 77,
+        "paid_requests_lower_bound": 77,
+        "model_responses_lower_bound": 77,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 77
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra-l3-coor-devset10-seed0-scene0/runs/l3_persistent_coor_classify_objects_by_language_s0_layout0_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_persistent_coor_solve_equation_s0_layout0_20261005_v1",
+      "task": "solve_equation",
+      "capability": "Open",
+      "variant": "standard",
+      "status": "complete",
+      "score": 0.0,
+      "score_percent": 0.0,
+      "success": false,
+      "control_steps": 248,
+      "model_decisions": 15,
+      "actual_responses": 15,
+      "algorithm": {
+        "algorithm_id": "astra_l3_persistent_coor",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "5d9b60e84b912adc9a83822c5db13ce001ad076482403839fdaa99bd55a7ec28",
+        "prompt_sha256": "517f48b53e516b6458381ee8ca7b85786d17f59925f8b14989414db12fb9ee1b",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "ebb0b708deb201ee738bb5028993d462449a8b2cf6fdab4c74f656d0548423fe",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": null,
+        "episode_control_limit": 300,
+        "id": "devset1-l3-persistent-coor-remaining8-v1",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "Original fixed Devset10: insert_tubes and build_tower originally completed under the first coor protocol are reused unchanged, plus the remaining eight original runs exactly once; no cap20 wrapper, rerun, replacement, or outcome-based selection.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": false,
+      "provenance": {
+        "reuse_reason": null,
+        "reused_original": false,
+        "source_manifest_sha256": "6c52c4b735c4f38499bdf3c85c4b7833ad2ee1384866ee3ae59add8a44b3e41e"
+      },
+      "costs": {
+        "known_input_tokens": 304688,
+        "known_cached_input_tokens": 272640,
+        "known_uncached_input_tokens": 32048,
+        "known_output_tokens": 2384,
+        "known_total_tokens": 307072,
+        "paid_requests": 15,
+        "paid_requests_lower_bound": 15,
+        "model_responses_lower_bound": 15,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 15
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra-l3-coor-devset10-seed0-scene0/runs/l3_persistent_coor_solve_equation_s0_layout0_20261005_v1.json"
+    },
+    {
+      "run_id": "l3_persistent_coor_build_tower_s0_layout0_20261004_v1",
+      "task": "build_tower",
+      "capability": "Precision",
+      "variant": "standard",
+      "status": "complete",
+      "score": 0.3,
+      "score_percent": 30.0,
+      "success": false,
+      "control_steps": 994,
+      "model_decisions": 100,
+      "actual_responses": 100,
+      "algorithm": {
+        "algorithm_id": "astra_l3_persistent_coor",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "5d9b60e84b912adc9a83822c5db13ce001ad076482403839fdaa99bd55a7ec28",
+        "prompt_sha256": "517f48b53e516b6458381ee8ca7b85786d17f59925f8b14989414db12fb9ee1b",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "ebb0b708deb201ee738bb5028993d462449a8b2cf6fdab4c74f656d0548423fe",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": null,
+        "episode_control_limit": 1050,
+        "id": "devset1-l3-persistent-coor-v1",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "Original fixed Devset10: insert_tubes and build_tower originally completed under the first coor protocol are reused unchanged, plus the remaining eight original runs exactly once; no cap20 wrapper, rerun, replacement, or outcome-based selection.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": true,
+      "provenance": {
+        "reuse_reason": "The original Devset10 continuation explicitly reused this original insert_tubes/build_tower coor run unchanged from the first two-case protocol, before running the remaining eight. It is not a cap20 run or a rerun.",
+        "reused_original": true,
+        "source_manifest_sha256": "8a974a459829255261d971744bc74d0f97dae53dc503917b040ad988f85a9497"
+      },
+      "costs": {
+        "known_input_tokens": 9460443,
+        "known_cached_input_tokens": 9239936,
+        "known_uncached_input_tokens": 220507,
+        "known_output_tokens": 12954,
+        "known_total_tokens": 9473397,
+        "paid_requests": 100,
+        "paid_requests_lower_bound": 100,
+        "model_responses_lower_bound": 100,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 100
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra-l3-coor-devset10-seed0-scene0/runs/l3_persistent_coor_build_tower_s0_layout0_20261004_v1.json"
+    },
+    {
+      "run_id": "l3_persistent_coor_insert_tubes_s0_layout0_20261004_v1",
+      "task": "insert_tubes",
+      "capability": "Precision",
+      "variant": "standard",
+      "status": "complete",
+      "score": 0.0,
+      "score_percent": 0.0,
+      "success": false,
+      "control_steps": 500,
+      "model_decisions": 48,
+      "actual_responses": 48,
+      "algorithm": {
+        "algorithm_id": "astra_l3_persistent_coor",
+        "codex_client_version": "0.153.4",
+        "model": "gpt-6-astra",
+        "policy_sha256": "5d9b60e84b912adc9a83822c5db13ce001ad076482403839fdaa99bd55a7ec28",
+        "prompt_sha256": "517f48b53e516b6458381ee8ca7b85786d17f59925f8b14989414db12fb9ee1b",
+        "reasoning_effort": "medium",
+        "source_commit": null,
+        "tools_sha256": "ebb0b708deb201ee738bb5028993d462449a8b2cf6fdab4c74f656d0548423fe",
+        "version": "legacy-v1"
+      },
+      "protocol": {
+        "action_limit": null,
+        "episode_control_limit": 500,
+        "id": "devset1-l3-persistent-coor-v1",
+        "model_decision_limit": 100,
+        "scope": "historical-import",
+        "selection_policy": "Original fixed Devset10: insert_tubes and build_tower originally completed under the first coor protocol are reused unchanged, plus the remaining eight original runs exactly once; no cap20 wrapper, rerun, replacement, or outcome-based selection.",
+        "version": "1"
+      },
+      "environment": {
+        "dependencies": {},
+        "driver": null,
+        "gpu": null,
+        "machine_id": "archive-simulator-sim6",
+        "os": "Linux",
+        "simulator_version": "Sim6"
+      },
+      "simulator": "Sim6",
+      "reused_original": true,
+      "provenance": {
+        "reuse_reason": "The original Devset10 continuation explicitly reused this original insert_tubes/build_tower coor run unchanged from the first two-case protocol, before running the remaining eight. It is not a cap20 run or a rerun.",
+        "reused_original": true,
+        "source_manifest_sha256": "13df158fe49132ae5a47ddcc3857e91208c6e3a874b18c76b62d1af163082a59"
+      },
+      "costs": {
+        "known_input_tokens": 2204465,
+        "known_cached_input_tokens": 2108160,
+        "known_uncached_input_tokens": 96305,
+        "known_output_tokens": 5888,
+        "known_total_tokens": 2210353,
+        "paid_requests": 48,
+        "paid_requests_lower_bound": 48,
+        "model_responses_lower_bound": 48,
+        "unknown_attempts": 0,
+        "unknown_by_field": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "paid_requests": 0,
+          "model_responses": 0
+        },
+        "complete": true,
+        "cache_is_input_subset": true,
+        "attempt_records": 48
+      },
+      "artifact_count": 11,
+      "detail_url": "data/publications/astra-l3-coor-devset10-seed0-scene0/runs/l3_persistent_coor_insert_tubes_s0_layout0_20261004_v1.json"
+    }
+  ],
+  "reused_count": 2,
+  "source_algorithm_ids": [
+    "astra_l3_persistent_coor"
+  ],
+  "scope": "devset10: fixed original ten configurations, seed0/layout0; not Full54",
+  "official_leaderboard_submission": false,
+  "limitations": [
+    "Devset10 uses the fixed original ten task configurations with equal task weights. It is not Full54 and is not an official leaderboard submission.",
+    "This selected development set does not establish full-benchmark performance or across-seed robustness; no new experiment is implied by publication.",
+    "Original algorithms, protocols, costs and any explicitly disclosed reuse remain attached to original run identities.",
+    "This compact index validates metadata only; export and storage receipts separately establish local and cloud byte integrity."
+  ],
+  "metric_profile": "devset10",
+  "metric_label": "Devset10 · 10-task equal weight",
+  "devset10": {
+    "complete": true,
+    "round_complete": true,
+    "valid": 10,
+    "planned": 10,
+    "score": 48.0,
+    "success_rate": 40.0,
+    "capabilities": {
+      "Precision": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 15.0,
+        "success_rate": 0.0
+      },
+      "Open": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 50.0,
+        "success_rate": 50.0
+      },
+      "Memory": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 57.5,
+        "success_rate": 50.0
+      },
+      "Long-Horizon": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 17.5,
+        "success_rate": 0.0
+      },
+      "Generalization": {
+        "complete": true,
+        "planned": 2,
+        "valid": 2,
+        "score": 100.0,
+        "success_rate": 100.0
+      }
+    },
+    "missing_or_incomplete": [],
+    "structural_missing_tasks": [],
+    "duplicate_tasks": [],
+    "unexpected_tasks": [],
+    "metadata_mismatches": [],
+    "excluded_repeat_attempts": [],
+    "selection_policy": "The fixed original Devset10 roster; one original attempt per task; no outcome-based selection.",
+    "aggregation": "Devset10: equal 1/10 weight per original task configuration for score and success rate. Capability means are descriptive; this is not the Full54 metric."
+  },
+  "roster": {
+    "id": "devset10-v1",
+    "task_count": 10,
+    "source_manifest_sha256": "0397d6cf8c1a9ab68bd5f12441d6dd957c0b6c7fbe45438e256d881565fbf397",
+    "task_registry_sha256": "43a139ef9e829689aef7e9611a598f06a43b5212d60bb481cf86ed5247cf0926"
+  },
+  "package": {
+    "provider": "tsinghua",
+    "sha256": "c08067f55acefc83243624ef8ac5b619fc7850a21ad4391536aa1af784c78478",
+    "bytes": 3502080,
+    "remote_name": "c08067f55acefc83243624ef8ac5b619fc7850a21ad4391536aa1af784c78478--astra-l3-coor-devset10-seed0-scene0-evidence.tar",
+    "landing_url": "https://cloud.tsinghua.edu.cn/f/2bc6ce5e4c8142599f5b/",
+    "download_url": "https://cloud.tsinghua.edu.cn/f/2bc6ce5e4c8142599f5b/?dl=1",
+    "playback_url": null,
+    "verification": "remote_sha256",
+    "verified_at": "2026-10-09T21:22:03.165725+00:00",
+    "public_download_verified": true,
+    "public_probe": {
+      "ok": true,
+      "sha256": "c08067f55acefc83243624ef8ac5b619fc7850a21ad4391536aa1af784c78478",
+      "bytes": 3502080,
+      "content_type": "application/octet-stream",
+      "cors": "*",
+      "accept_ranges": null,
+      "checked_at": "2026-10-09T21:22:03.165569+00:00"
+    },
+    "action": "uploaded",
+    "scope": "panel",
+    "format": "tar",
+    "run_count": 10,
+    "contains_images": false,
+    "contains_videos": false,
+    "metric_profile": "devset10",
+    "roster_id": "devset10-v1"
+  },
+  "upload_summary": {
+    "unique_objects": 51,
+    "referenced_bytes": 118037620,
+    "uploaded_bytes": 118037620,
+    "reused_objects": 0,
+    "original_image_count": 0
+  },
+  "generated_at": "2026-10-09T21:25:44.922447+00:00"
+}
