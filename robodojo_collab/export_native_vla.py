@@ -258,7 +258,20 @@ def export_native_vla(record_or_path, destination, *, metadata, scene_registry, 
     historical = source.get('historical_source_record', {})
     if historical.get('score_0_to_100') != item['score'] * 100 or historical.get('success') is not item['success']:
         raise ValidationError('Original inventory outcome differs from native result; no result selection allowed')
-    if record.get('recorded_report_control_steps') != ep['control_steps'][0]:
+    reported_controls = record.get('recorded_report_control_steps')
+    if reported_controls is None:
+        if (meta['protocol'].get('metric_profile') != 'standard42' or
+                historical.get('source_kind') != 'historical_multi_episode' or
+                'control_steps_reported' not in historical or historical['control_steps_reported'] is not None or
+                type(record.get('observed_native_control_steps')) is not int or
+                record['observed_native_control_steps'] != ep['control_steps'][0] or
+                expected_counts is None):
+            raise ValidationError('Unreported historical controls require explicit selected native observation and event coverage')
+        # Keep the old report null. This observation is a separate measurement.
+        meta['source_lock']['original_selection'].update(
+            observed_native_control_steps=record['observed_native_control_steps'],
+            observed_controls_basis='Original selected episode_complete and complete original action/ACK prefix; the historical report did not record controls.')
+    elif reported_controls != ep['control_steps'][0]:
         raise ValidationError('Original recorded controls differ from native terminal')
     # Public event projection excludes unreviewed extra keys while keeping full numeric commands/results.
     safe_events = []

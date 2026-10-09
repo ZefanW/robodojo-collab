@@ -162,6 +162,71 @@ def native_event_payload(event):
     return {k:v for k,v in event.items() if k not in ('source_line_number','source_line_sha256')}
 
 
+def _native_cumulative_scale(native_result):
+    """Infer the aggregate unit from the complete original object, never a prefix.
+
+    Native files use percent aggregates and fractional episode scores. Older
+    normalized evidence remains valid only if the SAME full object and prefix
+    agree on that convention. Success rate and episode count are also checked.
+    """
+    details = native_result.get('details', {})
+    if not isinstance(details, dict) or not details:
+        return None
+    values = list(details.values())
+    if any(not isinstance(v, dict) or not _finite(v.get('score')) or
+           not 0 <= v['score'] <= 1 or type(v.get('success')) is not bool for v in values):
+        return None
+    aggregate = native_result.get('score')
+    success_rate = native_result.get('success_rate')
+    if (not _finite(aggregate) or not _finite(success_rate) or
+            native_result.get('eval_time', native_result.get('eval_times')) != len(values) or
+            abs(success_rate - sum(v['success'] for v in values) / len(values)) > 1e-9):
+        return None
+    mean = sum(v['score'] for v in values) / len(values)
+    for scale in (100, 1):
+        if abs(aggregate - mean * scale) <= 1e-9:
+            return scale
+    return None
+
+
+def _historical_reset_boundary(m, nr, events):
+    """Recognize an original previous-layout reset at the selected episode start.
+
+    A policy reset RPC can occur between reset_start and reset_complete. Every
+    event after reset_start still belongs to the selected, zeroed target scene.
+    """
+    if (m.get('protocol', {}).get('id') != NATIVE_STANDARD42_PROTOCOL or
+            m.get('protocol', {}).get('metric_profile') != 'standard42' or not events):
+        return False
+    first = events[0]
+    if first.get('kind') != 'reset_start':
+        return False
+    prior_layout = first.get('layout_by_env')
+    prior_controls = first.get('control_steps')
+    if (not isinstance(prior_layout, dict) or set(prior_layout) != {'0'} or
+            not _integer(prior_layout['0']) or not isinstance(prior_controls, list) or
+            len(prior_controls) != 1 or not _integer(prior_controls[0])):
+        return False
+    eid = m.get('native_episode', {}).get('episode_id')
+    if type(eid) is not int or eid < 0:
+        return False
+    if eid > 0 and nr.get('details', {}).get(str(eid - 1), {}).get('layout_id') != prior_layout['0']:
+        return False
+    if sum(e.get('kind') == 'reset_start' for e in events) != 1:
+        return False
+    resets = [i for i, e in enumerate(events) if e.get('kind') == 'reset_complete']
+    starts = [i for i, e in enumerate(events) if e.get('kind') == 'episode_start']
+    if len(resets) != 1 or len(starts) != 1 or not 0 < resets[0] < starts[0]:
+        return False
+    target = {'0': m.get('scene', {}).get('layout_ordinal')}
+    for i, event in enumerate(events[1:starts[0] + 1], 1):
+        if event.get('layout_by_env') != target or event.get('control_steps') != [0]:
+            return False
+        if i not in (resets[0], starts[0]) and not (event.get('kind') == 'policy_rpc' and event.get('method') in ('reset', 'reset_evaluation')):
+            return False
+    return True
+
+
 def validate_native_vla_evidence(m,nr,ep,acks,trajectory,costs):
     errors=[];outcome=m.get('outcome',{});scene=m.get('scene',{});episode=m.get('native_episode',{})
     eid=episode.get('episode_id');controls=outcome.get('control_steps')
@@ -175,10 +240,12 @@ def validate_native_vla_evidence(m,nr,ep,acks,trajectory,costs):
         try:prefix={k:v for k,v in details.items() if int(k)<=eid}
         except (TypeError,ValueError):prefix={}
         td=terminal.get('details') if isinstance(terminal,dict) else None
+        aggregate_scale = _native_cumulative_scale(nr)
         if not prefix or td!=prefix or str(eid) not in prefix:
             errors.append('native_vla: terminal result is not the exact original cumulative episode prefix')
-        elif (terminal.get('eval_time',terminal.get('eval_times'))!=len(prefix) or
-              abs(terminal.get('score',-1)-sum(v['score'] for v in prefix.values())/len(prefix))>1e-9 or
+        elif (aggregate_scale is None or terminal.get('eval_time',terminal.get('eval_times'))!=len(prefix) or
+              not _finite(terminal.get('score')) or not _finite(terminal.get('success_rate')) or
+              abs(terminal['score']-aggregate_scale*sum(v['score'] for v in prefix.values())/len(prefix))>1e-9 or
               abs(terminal.get('success_rate',-1)-sum(v['success'] for v in prefix.values())/len(prefix))>1e-9):
             errors.append('native_vla: cumulative prefix aggregate differs from native details')
     if ep.get('kind')!='episode_complete' or ep.get('control_steps')!=[controls] or ep.get('layout_by_env')!={'0':scene.get('layout_ordinal')} or ep.get('unstable_envs')!=[]:
@@ -207,9 +274,10 @@ def validate_native_vla_evidence(m,nr,ep,acks,trajectory,costs):
             if turns[index]!=expected:errors.append('native_vla: readable trajectory differs from original actions or feedback')
         current=end[0]
     if current!=controls:errors.append('native_vla: full numeric trajectory does not reach terminal controls')
-    for event in events:
+    historical_reset = _historical_reset_boundary(m, nr, events)
+    for event_index, event in enumerate(events):
         if not isinstance(event.get('source_line_sha256'),str) or not HEX.fullmatch(event['source_line_sha256']):errors.append('native_vla: original event line SHA required')
-        if event.get('layout_by_env')!={'0':scene.get('layout_ordinal')} and not (event.get('kind')=='reset_start' and event.get('layout_by_env')=={}):errors.append('native_vla: trajectory event belongs to a different layout')
+        if event.get('layout_by_env')!={'0':scene.get('layout_ordinal')} and not (event.get('kind')=='reset_start' and event.get('layout_by_env')=={}) and not (event_index==0 and historical_reset):errors.append('native_vla: trajectory event belongs to a different layout')
     if completed and final and native_event_payload(completed[-1])!=final[-1]:errors.append('native_vla: trajectory final ACK differs from terminal evidence')
     rpc=[e for e in events if e.get('kind')=='policy_rpc']
     inference=[e for e in rpc if e.get('method') in ('get_action','get_action_batch')]
