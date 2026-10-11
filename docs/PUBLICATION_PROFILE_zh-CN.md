@@ -10,7 +10,7 @@
 
 `provenance.source_manifest_sha256` 是原始清单文件字节的 SHA256。`reused_original` 默认为 `false`，只对明确复用的旧条件结果设为 `true`，且必须提供 `reuse_reason`。普通历史结果的导出不算此类复用。复用也不修改原始算法、策略哈希、协议、运行标识或成本，不声称重新执行了目标条件。
 
-允许的文件类型只有：`native_result`、`episode_complete`、`native_ack`、`trajectory`、`public_timeline`、`costs`、`source_lock`、`environment`、`native_video` 和 `public_demo`。除可选的环境附属 JSON 外，必须包含这些证据及至少三个不同视角的原始视频；下述历史纯 VLA Standard42 对不存在的原 demo 有明确例外。环境本身始终记录在清单中。禁止图片文件、嵌入式图片、公开会话文件、私有会话标识、认证信息和原始推理。轨迹和公开说明必须来自原始导出，不补写理由。
+允许的文件类型只有：`native_result`、`episode_complete`、`native_ack`、`trajectory`、`public_timeline`、`costs`、`source_lock`、`environment`、`native_video` 和 `public_demo`。除可选的环境附属 JSON 外，必须包含这些证据及至少三个不同视角的原始视频；下述历史纯 VLA Standard42 和固定九个历史 L3 记录允许缺少额外演示剪辑。环境本身始终记录在清单中。禁止图片文件、嵌入式图片、公开会话文件、私有会话标识、认证信息和原始推理。轨迹和公开说明必须来自原始导出，不补写理由。
 
 每个列出的文件保留原始相对路径、SHA256、字节数和媒体类型。原始结果与 `episode_complete` 的评分和成功标记必须一致，最终物理 `action_complete` 的控制数必须与终态一致，`unstable_envs` 必须为空。GPT 轨迹若在最后物理动作后调用 `give_up`，保留该动作 ACK 和后续失败终态各自的字段，并核对原始放弃记录，不能将动作级成功误作任务成功。成本 JSON 必须与清单的完整尝试列表一致，失败或未知用量的尝试不能省略；缓存 token 是输入 token 的子集，不额外累加，未知用量保持 `null`。
 
@@ -92,3 +92,14 @@ python scripts/publish_panel.py <精简目录父路径> \
 凭据沿用 `docs/STORAGE.md` 的仓库外配置，不能放进命令参数或提交。发布器先按显式 profile 验证完整名单和官方场景哈希，默认仍为 Full54；重用已验证的相同SHA对象，只上传新文件。它生成一份不含图片和视频的面板JSON证据包，逐个登记可读轨迹与视频位置，并更新网页的轻量目录、逐例详情和CSV。匿名下载SHA校验失败时不会登记完成。候选播放地址仍需独立浏览器验证，不能仅凭文件下载成功宣称浏览器兼容。
 
 网页文件经CPU测试和公开信息扫描后提交到同一仓库；GitHub Pages成功部署、线上索引和可读轨迹可访问之后，才视为对外发布完成。发布器不自动提交Git，不启动或恢复任何实验。
+
+
+## 固定历史 L3 记录的原视频发布
+
+`public_demo` 是把原三相机录像与当时公开工具说明排在一起的额外观看剪辑，不是实验示范输入、训练数据，也不参与成绩计算。按用户要求，原始成绩、可读动作轨迹和原录像完整时，不再让这类附加剪辑阻挡以下九个历史记录。
+
+精确范围是 `astra_l3_persistent`、`l3-expansion-20261002`、seed0/layout0，run ID 固定为 `l3_persistent_v1_<task>_s0_layout0_20261002_v1`，task 仅含 `build_tower`、`classify_objects_by_language`、`imitate_sorting_sequence`、`insert_tubes`、`organize_table`、`push_T_random`、`put_bottles_into_dustbin`、`solve_equation`、`stack_bowls`。清单必须显式使用 `audit.media_policy=persistent-original-nine-cameras-v1`、`original_demo_available=false`，标明“此记录未提供额外演示剪辑；三路原始视频和动作轨迹可查阅。”不得生成或借用替代片。
+
+三路原相机视频和 SHA、原生终态/最后物理动作回执、完整公开动作/反馈轨迹、全部已记录尝试费用、来源与隐私校验仍必需；未知费用仍为 null。原 demo 的有界目录未找到不代表所有历史位置都不存在。仅省略该额外剪辑，不更改原 run ID、算法、协议、分数、权重或已发布清单；其他 Full54/Devset10 媒体门禁不变。
+
+这里的“L3 持续会话 54 任务”指原 L3 EEF 策略在 Full54 的54个任务配置上得到的结果，动作执行未加后来的20控制步截断。`persistent` 指每个场景回合内沿用一个原生模型会话、原生压缩与完整磁盘历史；每个新场景独立会话，不跨任务共享记忆。54是本组任务配置数量，不是54个种子或重复轮数。

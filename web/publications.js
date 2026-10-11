@@ -128,6 +128,9 @@
   function renderVideos(manifest, base) {
     if (nativeVLA(manifest)) return renderNativeVideos(manifest,base);
     const artifacts = manifest.artifacts || [], native = artifacts.filter(a=>/video/i.test(a.kind)&&!/demo|rationale/i.test(a.kind)), demos = artifacts.filter(a=>/demo|rationale/i.test(a.kind));
+    if (manifest.audit?.media_policy === 'persistent-original-nine-cameras-v1' && manifest.audit?.original_demo_available === false && demos.length === 0) {
+      return `<div class="media-heading"><h3>原生三视角录像</h3><span>点击播放才加载视频</span></div><div class="media-grid">${native.map(a=>renderVideo(a,base)).join('') || '<p class="muted">清单中未登记原生录像。</p>'}</div><p class="muted">${esc(manifest.audit.original_demo_note)}</p><p>额外演示剪辑是将原始录像和公开动作说明编排在一起的观看辅助材料，不参与实验执行或成绩计算。请在「可读轨迹」查看原始动作、公开说明与反馈。</p>`;
+    }
     return `<div class="media-heading"><h3>原生三视角录像</h3><span>点击播放才加载视频</span></div><div class="media-grid">${native.map(a=>renderVideo(a,base)).join('') || '<p class="muted">清单中未登记原生录像。</p>'}</div><h3>公开说明演示</h3><div class="media-grid demo-grid">${demos.map(a=>renderVideo(a,base)).join('') || '<p class="muted">清单中未登记演示视频。</p>'}<div class="demo-caption"><strong>对照动作与当时的公开说明。</strong>演示中的说明来自原始工具可见记录，保留当时的文本。更完整的动作参数与原生反馈，可在「可读轨迹」中按时间顺序查看。</div></div>`;
   }
   function renderFiles(manifest, base, correction) {

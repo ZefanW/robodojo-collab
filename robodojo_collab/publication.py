@@ -18,7 +18,7 @@ import tempfile
 
 from .export_legacy import INTERNAL, public
 from .schema import (HEX, IDENT, ValidationError, canonical_bytes, file_sha256,
-                     privacy_findings, validate_manifest, native_standard42_media,
+                     privacy_findings, validate_manifest, native_standard42_media, persistent_original_media,
                      STANDARD42_SOURCE_SHA256, STANDARD42_CAPABILITY_TASKS, STANDARD42_TASKS)
 from .statistics import cost_summary, official_summary
 
@@ -123,7 +123,7 @@ def validate_publication(manifest, bundle_dir=None, check_files=True):
     if not isinstance(artifacts, list):
         return sorted(set(errors + ["artifacts: array required"]))
     kinds = Counter(a.get("kind") for a in artifacts if isinstance(a, dict))
-    required = REQUIRED_KINDS - ({"public_demo"} if native_standard42_media(manifest) else set())
+    required = REQUIRED_KINDS - ({"public_demo"} if native_standard42_media(manifest) or persistent_original_media(manifest) else set())
     missing = required - set(kinds)
     if missing:
         errors.append("publication: missing artifacts " + ", ".join(sorted(missing)))

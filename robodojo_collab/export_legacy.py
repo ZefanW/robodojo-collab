@@ -202,7 +202,7 @@ def protocol_metadata(row, run_id, *, scope=None, action_limit=None,
             "selection_policy": selection_policy}, False
 
 
-def export_run(source, destination, *, run_id, runtime, video_root, protocol, algorithm_id, evidence, client_version, contributor_id="maintainer-archive", policy_key=None, scene_verification=None, scope=None, action_limit=None, round_index=None, selection_policy=None, include_images=True):
+def export_run(source, destination, *, run_id, runtime, video_root, protocol, algorithm_id, evidence, client_version, contributor_id="maintainer-archive", policy_key=None, scene_verification=None, scope=None, action_limit=None, round_index=None, selection_policy=None, include_images=True, original_demo_policy=None):
     source, destination = Path(source).resolve(), Path(destination).resolve()
     if destination == source or source in destination.parents:
         raise ValueError("Exports must live outside the source workspace")
@@ -210,13 +210,41 @@ def export_run(source, destination, *, run_id, runtime, video_root, protocol, al
     row = read(video / "native-source.json")
     metadata, legacy_sample = protocol_metadata(row, run_id, scope=scope, action_limit=action_limit,
                                                 round_index=round_index, selection_policy=selection_policy)
+    optional_demo = original_demo_policy is not None
+    demo_audit = {}
+    if optional_demo:
+        from .schema import (PERSISTENT_ORIGINAL_DEMO_POLICY, PERSISTENT_ORIGINAL_DEMO_NOTE,
+                             persistent_original_media)
+        demo_audit = {'media_policy': original_demo_policy, 'original_demo_available': False,
+                      'original_demo_note': PERSISTENT_ORIGINAL_DEMO_NOTE}
+        case = row['case']
+        identity = {'run_id': run_id, 'algorithm': {'algorithm_id': algorithm_id},
+                    'protocol': {'id': protocol, 'scope': metadata['scope'], 'action_limit': metadata['action_limit']},
+                    'scene': {'task': case['task'], 'capability': case['capability'], 'variant': case['variant'],
+                              'official_seed': case['evaluation_seed'], 'layout_ordinal': case['layout_ordinal']},
+                    'audit': demo_audit}
+        if original_demo_policy != PERSISTENT_ORIGINAL_DEMO_POLICY or not persistent_original_media(identity):
+            raise ValueError('Original demo policy does not match an allowlisted historical run')
+        if any((video / name).exists() for name in ('rationale-demo.json', '04_three_views_rationale.mp4')):
+            raise ValueError('Missing-demo policy cannot omit a recorded original demo')
+        # This is explicitly derived compatibility metadata, never a fabricated
+        # rationale-demo file. Its SHA binds the independently checked original trace.
+        trace_proof = read(video / 'original-transcript-verification.json')
+        if (trace_proof.get('run_id') != run_id or trace_proof.get('verified') is not True or
+                not re.fullmatch(r'[a-f0-9]{64}', str(trace_proof.get('evidence_sha256', '')))):
+            raise ValueError('Verified original transcript provenance is required without a demo')
+        expected_trace_sha = trace_proof.get('transcript_sha256')
+    else:
+        expected_trace_sha = read(video / 'rationale-demo.json').get('transcript_sha256')
     marker = read(source / runtime / "archives" / (run_id + ".json"))
-    if not all(marker.get(k) is True for k in ("verified", "videos_sha256", "receipts_and_sessions_sha256", "demo_sha256")):
+    required_marker = ("verified", "videos_sha256", "receipts_and_sessions_sha256")
+    if not optional_demo:
+        required_marker += ("demo_sha256",)
+    if not all(marker.get(k) is True for k in required_marker):
         raise ValueError("Archive marker is missing or unverified")
     native, terminal, native_acks = native_evidence(evidence, run_id)
     outcome = validate_terminal(row, native, terminal)
-    demo = read(video / "rationale-demo.json")
-    if sha_file(video / "public-transcript.json") != demo.get("transcript_sha256"):
+    if sha_file(video / "public-transcript.json") != expected_trace_sha:
         raise ValueError("Archived public transcript checksum mismatch")
     receipt_manifest = read(video / "local-receipts-sha256.json")
     remote_receipts = read(video / "receipts-remote-verified.json")
@@ -375,12 +403,15 @@ def export_run(source, destination, *, run_id, runtime, video_root, protocol, al
         if len(found) != 1 or found[0].name not in checks:
             raise ValueError("Exactly one archived native video per camera required")
         copy(found[0], "videos/" + view + ".mp4", "native_video", view, checks[found[0].name])
-    demo = read(video / "rationale-demo.json")
-    if demo.get("public_note_only") is not True:
-        raise ValueError("Demo is not marked public-note-only")
-    copy(video / "04_three_views_rationale.mp4", "videos/public-demo.mp4", "public_demo", expected=demo["video_sha256"])
+    if not optional_demo:
+        demo = read(video / "rationale-demo.json")
+        if demo.get("public_note_only") is not True:
+            raise ValueError("Demo is not marked public-note-only")
+        copy(video / "04_three_views_rationale.mp4", "videos/public-demo.mp4", "public_demo", expected=demo["video_sha256"])
     limitations = [("This representative sample is not a complete comparable round and has no overall benchmark score."
                     if legacy_sample else "This is one historical run; a complete comparable round requires independent coverage and evidence validation."), "Native internal identities are pseudonymized; raw account/session journals are retained only by the source owner.", "Public note/reason is original visible tool text, not hidden model reasoning.", "Historical GPU model, driver, full dependency versions, and source Git commit were not captured in the per-run imported records; null is intentional.", "Official scene asset bytes are not redistributed; scene identity is a SHA256."]
+    if optional_demo:
+        limitations.append(PERSISTENT_ORIGINAL_DEMO_NOTE)
     if metadata["action_limit"] is None:
         limitations.append("Historical action limit is unknown or unspecified; null must not be interpreted as zero, 20, or an unlimited policy.")
     if not include_images:
@@ -403,6 +434,8 @@ def export_run(source, destination, *, run_id, runtime, video_root, protocol, al
                 "outcome": {"native_result": True, "episode_complete": True, "score": outcome["score"], "score_scale": "0..1", "success": outcome["success"], "control_steps": row["control_steps"], "model_decisions": row["model_decisions"], "actual_responses": None if any(a["model_responses"] is None for a in attempts) else sum(a["model_responses"] for a in attempts), "unstable_envs": [], "evidence_consistent": True},
                 "costs": {"attempts": attempts}, "artifacts": sorted(artifacts, key=lambda x: x["path"]),
                 "audit": {"session_public_id": "public-" + digest(run_id.encode())[:20], "export_policy": "explicit-allowlist-v1", "redactions": ["account identifiers", "native session identifiers", "private reasoning and encrypted items", "private filesystem paths", "credentials and authentication records"], "limitations": limitations}}
+    if optional_demo:
+        manifest['audit'].update(demo_audit)
     if INTERNAL.search(json.dumps(manifest)):
         raise ValueError("Private infrastructure reference in manifest")
     write(bundle / "manifest.json", manifest)
@@ -421,6 +454,8 @@ def main():
     parser.add_argument("--round-index", type=int, help="Evidence-backed round; must agree with an original recorded round")
     parser.add_argument("--selection-policy", help="Explicit historical inclusion policy for the batch")
     parser.add_argument("--no-images", dest="include_images", action="store_false", help="Omit observation image bytes while preserving input hashes")
+    parser.add_argument("--original-demo-policy", choices=['persistent-original-nine-cameras-v1'],
+                        help="Explicit original-camera publication policy for nine fixed historical records")
     parser.add_argument("--tar", action="store_true")
     args = vars(parser.parse_args()); tar = args.pop("tar")
     result = export_run(**args)

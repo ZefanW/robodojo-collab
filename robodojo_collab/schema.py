@@ -91,6 +91,48 @@ def native_standard42_media(manifest):
             expected is not None and (scene.get('capability'), scene.get('variant')) == expected)
 
 
+# Historical records whose three original cameras survive but no composite clip
+# was indexed. This is a publication policy, not an experiment policy change.
+PERSISTENT_ORIGINAL_DEMO_POLICY = 'persistent-original-nine-cameras-v1'
+PERSISTENT_ORIGINAL_DEMO_NOTE = '此记录未提供额外演示剪辑；三路原始视频和动作轨迹可查阅。'
+PERSISTENT_ORIGINAL_DEMO_TASKS = {
+    'build_tower': ('Precision', 'standard'),
+    'classify_objects_by_language': ('Open', 'standard'),
+    'imitate_sorting_sequence': ('Memory', 'standard'),
+    'insert_tubes': ('Precision', 'standard'),
+    'organize_table': ('Long-Horizon', 'standard'),
+    'push_T_random': ('Generalization', 'random'),
+    'put_bottles_into_dustbin': ('Long-Horizon', 'standard'),
+    'solve_equation': ('Open', 'standard'),
+    'stack_bowls': ('Generalization', 'standard'),
+}
+
+
+def persistent_original_media(manifest):
+    """Permit an absent convenience clip only for nine exact original records."""
+    if not isinstance(manifest, dict):
+        return False
+    sections = [manifest.get(k, {}) for k in ('algorithm', 'protocol', 'scene', 'audit')]
+    if not all(isinstance(x, dict) for x in sections):
+        return False
+    algorithm, protocol, scene, audit = sections
+    task = scene.get('task')
+    expected = PERSISTENT_ORIGINAL_DEMO_TASKS.get(task) if isinstance(task, str) else None
+    return (expected is not None and
+            manifest.get('run_id') == f'l3_persistent_v1_{task}_s0_layout0_20261002_v1' and
+            manifest.get('execution_kind') in (None, 'codex') and
+            algorithm.get('algorithm_id') == 'astra_l3_persistent' and
+            protocol.get('id') == 'l3-expansion-20261002' and
+            protocol.get('scope') == 'historical-import' and
+            'action_limit' in protocol and protocol['action_limit'] is None and
+            (scene.get('capability'), scene.get('variant')) == expected and
+            type(scene.get('official_seed')) is int and scene['official_seed'] == 0 and
+            type(scene.get('layout_ordinal')) is int and scene['layout_ordinal'] == 0 and
+            audit.get('media_policy') == PERSISTENT_ORIGINAL_DEMO_POLICY and
+            audit.get('original_demo_available') is False and
+            audit.get('original_demo_note') == PERSISTENT_ORIGINAL_DEMO_NOTE)
+
+
 class ValidationError(ValueError):
     pass
 
@@ -419,7 +461,8 @@ def validate_manifest(m, bundle_dir=None, check_files=True):
     if m.get('status')=='complete':
         required={'native_result','episode_complete','trajectory','native_ack','public_session','public_demo'}
         if native_vla:required=(required-{'public_session'})|{'public_timeline','source_lock','costs'}
-        if native_standard42_media(m):required.discard('public_demo')
+        if native_standard42_media(m) or persistent_original_media(m):required.discard('public_demo')
+        if persistent_original_media(m) and 'public_demo' in kinds:errors.append('media policy: declared absent original demo conflicts with public_demo artifact')
         if required-kinds:errors.append('complete: missing artifacts '+', '.join(sorted(required-kinds)))
         if len(views-{None})<3:errors.append('complete: three distinct native video views required')
         if not ca:errors.append('complete: all-attempt cost accounting required, unknown attempts must remain null')
